@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Archivo — Radar Fleet by Pulpo</title>
+<meta name="description" content="Todas las ediciones de Radar Fleet by Pulpo — inteligencia semanal de mercado para el sector de gestión de flotas. Telemetría, pagos, electrificación, regulación.">
+<meta name="author" content="Pulpo — getpulpo.com">
+<meta property="og:title" content="Archivo — Radar Fleet by Pulpo">
+<meta property="og:description" content="Todas las ediciones de Radar Fleet by Pulpo. Inteligencia semanal de mercado para gestión de flotas.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="archive.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1b2e;
+    --near-black: #111318;
+    --off-white: #f7f4ef;
+    --warm-sand: #ede8e0;
+    --cream: #faf8f4;
+    --muted-gold: #c9a84c;
+    --electric-blue: #1e7fcb;
+    --text-dark: #1a1c22;
+    --text-mid: #3d4351;
+    --text-light: #6b7280;
+    --border-dark: rgba(0,0,0,0.08);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--off-white);
+    color: var(--text-dark);
+    line-height: 1.6;
+  }
+
+  /* ── TOPBAR ── */
+  .topbar {
+    background: var(--near-black);
+    padding: 14px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .topbar-brand {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+  }
+  .topbar-brand span { color: var(--muted-gold); }
+  .topbar-link {
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.35);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+  }
+  .topbar-link:hover { color: rgba(255,255,255,0.7); }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--near-black);
+    padding: 80px 40px 72px;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; }
+  .hero-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted-gold);
+    margin-bottom: 20px;
+    display: block;
+  }
+  .hero-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(40px, 6vw, 72px);
+    font-weight: 900;
+    line-height: 0.95;
+    color: #fff;
+    letter-spacing: -1px;
+    margin-bottom: 24px;
+  }
+  .hero-title span { color: var(--muted-gold); }
+  .hero-desc {
+    font-size: 15px;
+    color: rgba(255,255,255,0.45);
+    max-width: 520px;
+    line-height: 1.7;
+    border-left: 2px solid rgba(201,168,76,0.4);
+    padding-left: 18px;
+  }
+
+  /* ── MAIN LAYOUT ── */
+  .main {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 64px 40px 100px;
+  }
+
+  /* ── YEAR GROUP ── */
+  .year-group {
+    margin-bottom: 56px;
+  }
+  .year-label {
+    font-family: 'Fraunces', serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--text-light);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-dark);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .year-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border-dark);
+  }
+
+  /* ── EDITION ROW ── */
+  .edition-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .edition-row {
+    display: grid;
+    grid-template-columns: 64px 1fr auto;
+    align-items: center;
+    gap: 24px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--border-dark);
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.15s;
+    border-radius: 2px;
+  }
+  .edition-row:last-child { border-bottom: none; }
+  .edition-row:hover { background: rgba(0,0,0,0.02); }
+  .edition-row:hover .edition-title { color: var(--navy); }
+  .edition-row:hover .edition-arrow { opacity: 1; transform: translateX(3px); }
+
+  .edition-num {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: rgba(0,0,0,0.07);
+    line-height: 1;
+    text-align: right;
+    user-select: none;
+  }
+  .edition-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .edition-date {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-light);
+  }
+  .edition-title {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.2;
+    transition: color 0.15s;
+  }
+  .edition-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 4px;
+  }
+  .edition-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    background: rgba(0,0,0,0.05);
+    color: var(--text-light);
+    border-radius: 2px;
+  }
+  .edition-arrow {
+    font-size: 16px;
+    color: var(--text-light);
+    opacity: 0.3;
+    transition: opacity 0.15s, transform 0.15s;
+    flex-shrink: 0;
+  }
+
+  /* ── LATEST BADGE ── */
+  .latest-badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    background: var(--muted-gold);
+    color: var(--near-black);
+    border-radius: 2px;
+    vertical-align: middle;
+    margin-left: 10px;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--navy);
+    padding: 48px 40px;
+    text-align: center;
+  }
+  .footer-logo {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .footer-logo span { color: var(--muted-gold); }
+  .footer-tagline {
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 28px;
+  }
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .footer-link {
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.3);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    transition: color 0.2s;
+  }
+  .footer-link:hover { color: rgba(255,255,255,0.7); }
+  .footer-pulpo {
+    font-size: 11px;
+    color: rgba(255,255,255,0.2);
+  }
+  .footer-pulpo a {
+    color: var(--muted-gold);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  @media (max-width: 640px) {
+    .topbar { padding: 14px 20px; }
+    .hero { padding: 56px 20px 56px; }
+    .main { padding: 48px 20px 80px; }
+    .edition-row { grid-template-columns: 48px 1fr; }
+    .edition-arrow { display: none; }
+    .footer { padding: 40px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <a href="index.html" class="topbar-brand">Radar Fleet <span>by Pulpo</span></a>
+  <a href="https://www.getpulpo.com" target="_blank" rel="noopener" class="topbar-link">getpulpo.com →</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <span class="hero-label">Publicación semanal</span>
+    <h1 class="hero-title">Todas las<br>ediciones</h1>
+    <p class="hero-desc">Inteligencia de mercado para gestión de flotas. Telemetría, pagos, electrificación, regulación y más. Publicado cada lunes.</p>
+  </div>
+</div>
+
+<!-- MAIN ARCHIVE -->
+<main class="main">
+
+  <div class="year-group">
+    <div class="year-label">2026</div>
+    <div class="edition-list">
+
+      <a href="2026-04-14-radar-fleet-by-pulpo.html" class="edition-row">
+        <div class="edition-num">01</div>
+        <div class="edition-meta">
+          <div class="edition-date">14 de abril de 2026 <span class="latest-badge">Última</span></div>
+          <div class="edition-title">La semana que redefinió las reglas</div>
+          <div class="edition-tags">
+            <span class="edition-tag">WEX · Fuel+EV</span>
+            <span class="edition-tag">Samsara $1.59B</span>
+            <span class="edition-tag">FMCSA ELD</span>
+            <span class="edition-tag">México 24%</span>
+            <span class="edition-tag">España V16</span>
+          </div>
+        </div>
+        <div class="edition-arrow">→</div>
+      </a>
+
+      <!-- Las nuevas ediciones se añaden aquí encima, con la más reciente primero -->
+
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-logo">Radar Fleet <span>by Pulpo</span></div>
+  <div class="footer-tagline">Inteligencia semanal para el sector de gestión de flotas · Publicado cada lunes</div>
+  <div class="footer-links">
+    <a href="index.html" class="footer-link">Última edición</a>
+    <a href="archive.html" class="footer-link">Archivo</a>
+    <span class="footer-pulpo">Editado por <a href="https://www.getpulpo.com" target="_blank" rel="noopener">Pulpo</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

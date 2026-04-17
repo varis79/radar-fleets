@@ -1,0 +1,140 @@
+RADAR FLEET BY PULPO — EDICIÓN Nº 1
+14 de abril de 2026
+════════════════════════════════════════════════════════════════
+
+RESUMEN EJECUTIVO
+─────────────────
+Primera edición de Radar Fleet by Pulpo. La semana estuvo marcada por
+tres señales mayores: WEX lanzó la primera tarjeta de flota que unifica
+combustible y carga eléctrica en una sola cuenta; Samsara reportó
+$1.59B en ingresos anuales con 28% de crecimiento; y la FMCSA ejecutó
+el deadline de revocación de 9 ELDs con enforcement activo desde el 14
+de abril. En el fondo, el mercado global de telemática de flota supera
+los $12.5B en 2026 — y México solo tiene 24% de penetración.
+
+════════════════════════════════════════════════════════════════
+
+SEÑALES CLAVE DE MERCADO
+─────────────────────────
+1. SAMSARA — $1.59B de ingresos FY2026, 28% crecimiento YoY, ARR de
+   $1.89B. Segundo trimestre rentable en GAAP. 13 contratos nuevos de
+   $1M+ en Q4. El estándar de plataforma de flota sigue subiendo.
+
+2. WEX — Primera tarjeta de flota que unifica combustible convencional
+   + carga eléctrica pública. 160,000 gasolineras + EV en una cuenta,
+   una factura. El mercado de pagos de flota se transforma.
+
+3. FMCSA — 9 ELDs revocados. Fecha límite: 14 de abril. Enforcement
+   activo a partir de hoy. Dispositivos afectados: GTS ELD, UTRUCKIN,
+   ELD365, IRONMAN ELD, FACTOR/HOST ELD.
+
+4. GEOTAB — GO Focus Pro: dashcam 360° con IA predictiva, hasta 5
+   cámaras auxiliares, sin revisión humana. Disponible en N. América y
+   EMEA en Q2 2026.
+
+5. WEBFLEET + QUESTAR — Mantenimiento predictivo con IA en 9 mercados
+   europeos incluida España. 89% de precisión, 20–45 días de antelación.
+
+6. FLOCK + ADMIRAL — Adquisición por £80M + seguro de flota telemático
+   para carga pesada en UK. 10% reducción siniestros, 10% rebate de
+   prima por conducción segura.
+
+7. EV REALTY — Hub de carga para camiones en California: 76 puertos,
+   9 MW, 200+ camiones/día. Infraestructura compartida como modelo.
+
+8. MÉXICO — Solo 24% de flotas de carga usa telemetría. Tasas a la baja
+   en 2026. Iniciativa Olinia en fase decisiva. Marva opera 120
+   semirremolques BYD en Monterrey–Texas.
+
+9. ESPAÑA — V16 conectado obligatorio desde enero 2026. Tacógrafo G2V2
+   para vehículos ligeros en transporte internacional: julio 2026.
+
+10. MERCADO GLOBAL — Telemática de flota: $12.52B en 2026, proyectado
+    $29.8B para 2035 (CAGR 10.6%). Gestión de flotas total: $32.2B
+    en 2026, $153.7B en 2036 (CAGR 16.9%).
+
+════════════════════════════════════════════════════════════════
+
+IDEAS DE PRODUCTO PARA PULPO
+─────────────────────────────
+1. MANTENIMIENTO PREDICTIVO — Integración con OBD/FMS para pasar de
+   "registro de mantenimientos" a "predicción de fallas" con scoring
+   de salud vehicular. Señal: Webfleet+Questar con 89% de precisión en
+   Europa. El mercado mexicano no tiene esto todavía.
+
+2. PULPOPAY UNIFICADO — Tarjeta que cubra combustible + carga EV +
+   gastos de taller. Diferenciador: integrado con el perfil de vehículo
+   y conductor en Pulpo. Señal: WEX ya lanzó el modelo en USA.
+
+3. MÓDULO DE CUMPLIMIENTO NORMATIVO — Calendario de vencimientos
+   regulatorios por vehículo, alertas por urgencia, documentación
+   para auditorías. Señal: FMCSA enforcement + regulación DGT en España
+   + patrón regulatorio que llega a México.
+
+4. PULPO BENCHMARK — Índice de eficiencia de flota comparativo por
+   industria. "Tu costo/km está 18% sobre la mediana de tu sector."
+   Herramienta de ventas + retención. Señal: Samsara usa 25 billones
+   de datos para benchmarks de industria.
+
+5. PULPO SEGUROS — Alianza con aseguradora mexicana (Qualitas, GNP,
+   AXA) para seguro basado en datos de conducción de Pulpo. Revenue
+   sharing + diferenciador de retención. Señal: Flock+Admiral en UK.
+
+════════════════════════════════════════════════════════════════
+
+REGULACIÓN A VIGILAR
+─────────────────────
+URGENTE — USA: 9 ELDs revocados, enforcement activo desde 14 abril.
+
+ACTIVO — España: V16 conectado obligatorio desde 1 enero 2026.
+
+PRÓXIMO — España: Tacógrafo G2V2 obligatorio para ligeros en
+          transporte internacional desde 1 julio 2026.
+
+EN DESARROLLO — México: Regulación de telemetría obligatoria para
+                transporte federal en evolución. Iniciativa Olinia.
+
+════════════════════════════════════════════════════════════════
+
+IDEAS DE CONTENIDO
+───────────────────
+LINKEDIN (5 posts):
+- "El 76% de flotas en México no usa telemetría. ¿Qué están perdiendo?"
+- "WEX cambió las reglas del juego en pagos de flota. ¿Qué significa para México?"
+- "Samsara facturó $1.59B. La pregunta correcta es por qué importa en México"
+- "El mantenimiento predictivo llegó a Europa. México tiene 3 años de ventana"
+- "Transportes Marva ya tiene 120 camiones eléctricos. ¿Cómo se gestiona flota mixta?"
+
+OUTBOUND (3 ángulos):
+- Para directores de ops: "¿Cuánto te está costando operar sin datos?"
+- Para directores financieros: "El gasto de tu flota está descontrolado — y lo sabes"
+- Para transporte federal: "La regulación telemetría llega — ¿estás listo?"
+
+EDUCACIÓN A CLIENTES (3 piezas):
+- Guía: Mantenimiento preventivo vs. predictivo en flotas comerciales
+- Checklist: 10 métricas de flota que todo director de ops debe monitorear
+- Reporte: El estado de la flota en México 2026
+
+════════════════════════════════════════════════════════════════
+
+SEÑALES EN LAS QUE PULPO DEBE ACTUAR
+──────────────────────────────────────
+1. PulpoPay necesita tesis de producto para flotas mixtas (fuel + EV)
+   ahora, no en 2027. Ventana de 2–4 años antes de que lleguen globales.
+
+2. Mantenimiento predictivo es la oportunidad de producto más cercana
+   y de mayor impacto en México. Tecnología disponible via integraciones.
+
+3. Cumplimiento normativo como categoría de producto — posicionamiento
+   sin explotar que fortalece ventas, retención y pricing.
+
+4. El 76% de penetración disponible en México es el argumento #1 para
+   ventas y fundraising. Debe estar en cada deck y cada conversación.
+
+5. Explorar alianza con aseguradora mexicana para seguro basado en
+   datos de Pulpo. Modelo probado por Flock+Admiral en UK.
+
+════════════════════════════════════════════════════════════════
+Radar Fleet by Pulpo · Nº 1 · 14 abril 2026
+Próxima edición: 21 de abril de 2026 — publicación cada lunes 7:00 AM
+════════════════════════════════════════════════════════════════

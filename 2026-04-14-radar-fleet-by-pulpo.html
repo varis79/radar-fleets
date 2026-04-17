@@ -1,0 +1,1993 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Radar Fleet by Pulpo — Número 1 · 14 de abril 2026</title>
+<meta name="description" content="Inteligencia semanal de mercado para el sector de gestión de flotas. Telemetría, pagos, electrificación, regulación y más. Editado por Pulpo.">
+<meta name="author" content="Pulpo — getpulpo.com">
+<meta property="og:title" content="Radar Fleet by Pulpo — Número 1 · 14 de abril 2026">
+<meta property="og:description" content="Inteligencia semanal de mercado para el sector de gestión de flotas. Telemetría, pagos, electrificación, regulación y más.">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2026-04-14">
+<meta property="article:author" content="Pulpo">
+<link rel="canonical" href="2026-04-14-radar-fleet-by-pulpo.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,400;1,9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1b2e;
+    --navy-mid: #162540;
+    --navy-light: #1e3a5f;
+    --graphite: #2a2f3a;
+    --near-black: #111318;
+    --off-white: #f7f4ef;
+    --warm-sand: #ede8e0;
+    --cream: #faf8f4;
+    --deep-green: #0f3d2e;
+    --green-accent: #1a5c42;
+    --terracotta: #b84c3a;
+    --burgundy: #7a1f2e;
+    --electric-blue: #1e7fcb;
+    --amber: #d4891a;
+    --muted-gold: #c9a84c;
+    --text-dark: #1a1c22;
+    --text-mid: #3d4351;
+    --text-light: #6b7280;
+    --border-light: rgba(255,255,255,0.08);
+    --border-dark: rgba(0,0,0,0.08);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--off-white);
+    color: var(--text-dark);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  /* ── TYPOGRAPHY ── */
+  .fraunces { font-family: 'Fraunces', serif; }
+  .inter { font-family: 'Inter', sans-serif; }
+
+  h1, h2, h3 { font-family: 'Fraunces', serif; line-height: 1.15; }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 900px; margin: 0 auto; padding: 0 32px; }
+  .container-wide { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
+
+  /* ── NAV BAR ── */
+  .topbar {
+    background: var(--near-black);
+    padding: 12px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .topbar-brand {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #fff;
+    opacity: 0.9;
+  }
+  .topbar-meta {
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* ── COVER ── */
+  .cover {
+    background: var(--near-black);
+    background-image:
+      radial-gradient(ellipse 80% 60% at 20% 80%, rgba(30,60,120,0.6) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(13,61,46,0.5) 0%, transparent 55%),
+      radial-gradient(ellipse 100% 100% at 50% 50%, #0d1521 0%, #060a10 100%);
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 64px 64px 72px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(255,255,255,0.018) 80px),
+      repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(255,255,255,0.018) 80px);
+    pointer-events: none;
+  }
+  .cover-overline {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted-gold);
+    margin-bottom: 28px;
+  }
+  .cover-issue {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(64px, 10vw, 120px);
+    font-weight: 900;
+    line-height: 0.9;
+    color: #fff;
+    margin-bottom: 32px;
+    letter-spacing: -2px;
+  }
+  .cover-issue span {
+    display: block;
+    font-size: clamp(18px, 3vw, 28px);
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    color: rgba(255,255,255,0.55);
+    margin-top: 16px;
+    font-style: italic;
+  }
+  .cover-deck {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.55);
+    max-width: 540px;
+    line-height: 1.7;
+    margin-bottom: 48px;
+    border-left: 2px solid var(--muted-gold);
+    padding-left: 20px;
+  }
+  .cover-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .cover-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.5);
+    border-radius: 2px;
+  }
+  .cover-number {
+    position: absolute;
+    top: 48px;
+    right: 64px;
+    font-family: 'Fraunces', serif;
+    font-size: 200px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.02);
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+  }
+  .cover-logo {
+    position: absolute;
+    top: 40px;
+    left: 64px;
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.3px;
+  }
+  .cover-logo span {
+    color: var(--muted-gold);
+  }
+
+  /* ── SECTION WRAPPER ── */
+  .section {
+    padding: 80px 0;
+  }
+  .section-dark {
+    background: var(--navy);
+    color: #fff;
+  }
+  .section-graphite {
+    background: var(--graphite);
+    color: #fff;
+  }
+  .section-cream {
+    background: var(--cream);
+  }
+  .section-sand {
+    background: var(--warm-sand);
+  }
+  .section-near-black {
+    background: var(--near-black);
+    color: #fff;
+  }
+  .section-green {
+    background: var(--deep-green);
+    color: #fff;
+  }
+
+  /* ── SECTION HEADERS ── */
+  .section-header {
+    margin-bottom: 56px;
+  }
+  .section-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted-gold);
+    margin-bottom: 14px;
+    display: block;
+  }
+  .section-label-light {
+    color: rgba(255,255,255,0.4);
+  }
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.5px;
+  }
+  .section-title-light { color: #fff; }
+  .section-divider {
+    width: 48px;
+    height: 2px;
+    background: var(--muted-gold);
+    margin-top: 20px;
+  }
+
+  /* ── EDITOR'S NOTE ── */
+  .editors-note {
+    background: var(--cream);
+    padding: 80px 0;
+  }
+  .editors-note-inner {
+    max-width: 680px;
+  }
+  .editors-byline {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 24px;
+  }
+  .editors-body {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: var(--text-dark);
+    font-style: italic;
+  }
+  .editors-body strong {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--navy);
+  }
+  .editors-signature {
+    margin-top: 40px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-mid);
+  }
+  .editors-signature strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-top: 4px;
+  }
+
+  /* ── WHAT MATTERED ── */
+  .what-mattered-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+  .wm-card {
+    background: rgba(255,255,255,0.04);
+    padding: 32px;
+    border-top: 3px solid transparent;
+  }
+  .wm-card.signal { border-color: var(--electric-blue); }
+  .wm-card.ops { border-color: var(--muted-gold); }
+  .wm-card.market { border-color: var(--terracotta); }
+  .wm-card.product { border-color: #4ade80; }
+  .wm-card.regulation { border-color: #a78bfa; }
+  .wm-card.mx { border-color: #fb923c; }
+  .wm-number {
+    font-family: 'Fraunces', serif;
+    font-size: 56px;
+    font-weight: 900;
+    line-height: 1;
+    color: rgba(255,255,255,0.06);
+    margin-bottom: 16px;
+  }
+  .wm-headline {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  .wm-body {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.55);
+  }
+
+  /* ── STORY CARDS ── */
+  .story {
+    padding: 56px 0;
+    border-bottom: 1px solid var(--border-dark);
+  }
+  .story:last-child { border-bottom: none; }
+  .story-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 64px;
+    align-items: start;
+  }
+  .story-grid.reverse {
+    grid-template-columns: 2fr 1fr;
+  }
+  .story-number {
+    font-family: 'Fraunces', serif;
+    font-size: 100px;
+    font-weight: 900;
+    line-height: 0.85;
+    color: rgba(0,0,0,0.06);
+    margin-bottom: 16px;
+  }
+  .story-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 2px;
+    margin-bottom: 16px;
+  }
+  .tag-market { background: #ffe4cc; color: #8b3a0a; }
+  .tag-client { background: #d4f0e8; color: #0a5c3c; }
+  .tag-sales { background: #fde8d8; color: #7a2e14; }
+  .tag-product { background: #e0e7ff; color: #2d3ba8; }
+  .tag-competitive { background: #fce7f3; color: #831843; }
+  .tag-partner { background: #fef9c3; color: #713f12; }
+  .story-headline {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(22px, 3vw, 30px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+    letter-spacing: -0.3px;
+  }
+  .story-summary {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--text-mid);
+    margin-bottom: 24px;
+  }
+  .why-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  .why-item {
+    padding: 16px 20px;
+    border-radius: 4px;
+    border-left: 3px solid var(--electric-blue);
+  }
+  .why-item.for-pulpo {
+    border-left-color: var(--muted-gold);
+    background: rgba(201,168,76,0.06);
+  }
+  .why-item.for-fleet {
+    background: rgba(30,127,203,0.05);
+  }
+  .why-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 6px;
+  }
+  .why-text {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text-mid);
+  }
+  .story-meta {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-light);
+    letter-spacing: 0.05em;
+    margin-top: 20px;
+  }
+  .story-meta span {
+    display: inline-block;
+    margin-right: 16px;
+  }
+  .story-left {
+    position: sticky;
+    top: 80px;
+  }
+
+  /* ── COMPETITOR WATCH ── */
+  .comp-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .comp-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    padding: 28px;
+    border-radius: 4px;
+  }
+  .comp-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+  }
+  .comp-name {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .comp-type-pill {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 2px;
+  }
+  .pill-competitor { background: rgba(184,76,58,0.2); color: #f87171; border: 1px solid rgba(184,76,58,0.3); }
+  .pill-partner { background: rgba(74,222,128,0.1); color: #4ade80; border: 1px solid rgba(74,222,128,0.2); }
+  .pill-reference { background: rgba(201,168,76,0.15); color: #d4a84c; border: 1px solid rgba(201,168,76,0.25); }
+  .pill-signal { background: rgba(30,127,203,0.15); color: #60a5fa; border: 1px solid rgba(30,127,203,0.25); }
+  .comp-move {
+    font-size: 13px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 12px;
+  }
+  .comp-implication {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.4);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 12px;
+    font-style: italic;
+  }
+
+  /* ── REGIONAL RADAR ── */
+  .radar-header {
+    padding: 48px 0 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 40px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  .radar-flag {
+    font-size: 48px;
+    line-height: 1;
+  }
+  .radar-country {
+    font-family: 'Fraunces', serif;
+    font-size: 48px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    line-height: 1;
+  }
+  .radar-items {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .radar-item {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 20px;
+    align-items: start;
+    padding: 20px;
+    background: rgba(255,255,255,0.03);
+    border-left: 2px solid rgba(255,255,255,0.12);
+  }
+  .radar-item-num {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.12);
+    line-height: 1;
+  }
+  .radar-item-title {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 6px;
+    line-height: 1.2;
+  }
+  .radar-item-body {
+    font-size: 13px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.55);
+  }
+
+  /* ── PRODUCT IDEAS ── */
+  .product-ideas-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .product-idea-card {
+    background: var(--cream);
+    border: 1px solid var(--border-dark);
+    padding: 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  .product-idea-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: var(--navy);
+  }
+  .product-idea-number {
+    font-family: 'Fraunces', serif;
+    font-size: 72px;
+    font-weight: 900;
+    color: rgba(0,0,0,0.04);
+    position: absolute;
+    right: 24px;
+    top: 8px;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .product-idea-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--electric-blue);
+    margin-bottom: 10px;
+  }
+  .product-idea-title {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  .product-idea-body {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-mid);
+    margin-bottom: 16px;
+  }
+  .product-idea-trigger {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-light);
+    font-style: italic;
+    border-top: 1px solid var(--border-dark);
+    padding-top: 12px;
+  }
+  .product-idea-trigger strong {
+    color: var(--text-mid);
+    font-style: normal;
+  }
+
+  /* ── STAT CARDS ── */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 40px 0;
+  }
+  .stat-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    padding: 28px;
+    text-align: center;
+  }
+  .stat-number {
+    font-family: 'Fraunces', serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: var(--muted-gold);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .stat-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.4;
+  }
+
+  /* ── REGULATION ── */
+  .reg-item {
+    padding: 28px 32px;
+    border-left: 3px solid var(--terracotta);
+    background: rgba(184,76,58,0.04);
+    margin-bottom: 16px;
+  }
+  .reg-item.priority-high {
+    border-color: #ef4444;
+    background: rgba(239,68,68,0.06);
+  }
+  .reg-item.priority-medium {
+    border-color: var(--amber);
+    background: rgba(212,137,26,0.05);
+  }
+  .reg-jurisdiction {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 8px;
+  }
+  .reg-item.priority-high .reg-jurisdiction { color: #ef4444; }
+  .reg-item.priority-medium .reg-jurisdiction { color: var(--amber); }
+  .reg-title {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+  }
+  .reg-body {
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--text-mid);
+  }
+
+  /* ── SIGNALS ── */
+  .signals-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .signal-item {
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .signal-item:last-child { border-bottom: none; }
+  .signal-num {
+    padding: 28px 0;
+    font-family: 'Fraunces', serif;
+    font-size: 36px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.06);
+    align-self: start;
+    padding-top: 32px;
+  }
+  .signal-content {
+    padding: 28px 32px;
+  }
+  .signal-headline {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+  .signal-body {
+    font-size: 14px;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.6);
+  }
+  .signal-type {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-top: 8px;
+    display: block;
+  }
+
+  /* ── CONTENT IDEAS ── */
+  .content-col-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .content-col {
+    border-top: 2px solid var(--border-dark);
+    padding-top: 20px;
+  }
+  .content-col-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 20px;
+  }
+  .content-item {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border-dark);
+  }
+  .content-item:last-child { border-bottom: none; }
+  .content-item-title {
+    font-family: 'Fraunces', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+  .content-item-body {
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--text-mid);
+  }
+
+  /* ── OPINION ── */
+  .opinion-section {
+    background: var(--near-black);
+    padding: 100px 0;
+  }
+  .opinion-quote {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 700;
+    line-height: 1.25;
+    color: #fff;
+    max-width: 760px;
+    letter-spacing: -0.5px;
+    position: relative;
+    padding-left: 40px;
+  }
+  .opinion-quote::before {
+    content: '"';
+    position: absolute;
+    left: 0;
+    top: -8px;
+    font-size: 80px;
+    font-weight: 900;
+    color: var(--muted-gold);
+    line-height: 1;
+    font-style: italic;
+  }
+  .opinion-body {
+    font-size: 15px;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.55);
+    max-width: 640px;
+    margin-top: 32px;
+    padding-left: 40px;
+  }
+  .opinion-byline {
+    margin-top: 40px;
+    padding-left: 40px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* ── CLOSING ── */
+  .closing {
+    background: var(--navy);
+    padding: 80px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  .closing-logo {
+    font-family: 'Fraunces', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .closing-logo span { color: var(--muted-gold); }
+  .closing-tagline {
+    font-size: 13px;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 48px;
+    letter-spacing: 0.05em;
+  }
+  .closing-divider {
+    width: 48px;
+    height: 1px;
+    background: rgba(255,255,255,0.15);
+    margin: 0 auto 32px;
+  }
+  .closing-meta {
+    font-size: 11px;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 0.08em;
+  }
+
+  /* ── PULL QUOTE ── */
+  .pull-quote {
+    border-left: 3px solid var(--muted-gold);
+    padding: 20px 28px;
+    margin: 32px 0;
+    background: rgba(201,168,76,0.04);
+  }
+  .pull-quote-text {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--text-dark);
+    line-height: 1.5;
+  }
+
+  /* ── ALERT BOX ── */
+  .alert-box {
+    background: rgba(239,68,68,0.06);
+    border: 1px solid rgba(239,68,68,0.2);
+    border-left: 3px solid #ef4444;
+    padding: 16px 20px;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 16px;
+  }
+  .alert-box.amber {
+    background: rgba(212,137,26,0.06);
+    border-color: rgba(212,137,26,0.25);
+    border-left-color: var(--amber);
+  }
+  .alert-box-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #ef4444;
+    margin-bottom: 4px;
+  }
+  .alert-box.amber .alert-box-label { color: var(--amber); }
+  .alert-box-text {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-mid);
+  }
+
+  /* ── USA CARD ── */
+  .usa-card {
+    background: var(--cream);
+    border: 1px solid var(--border-dark);
+    padding: 32px;
+    margin-bottom: 16px;
+    display: grid;
+    grid-template-columns: 4px 1fr;
+    gap: 24px;
+  }
+  .usa-card-bar { background: var(--electric-blue); border-radius: 2px; }
+  .usa-card-content {}
+  .usa-card-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--electric-blue);
+    margin-bottom: 8px;
+  }
+  .usa-card-title {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+  .usa-card-body {
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--text-mid);
+  }
+  .usa-card-implication {
+    margin-top: 12px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--electric-blue);
+    font-style: italic;
+  }
+
+  /* ── EV SECTION ── */
+  .ev-card {
+    background: rgba(26,92,66,0.15);
+    border: 1px solid rgba(26,92,66,0.3);
+    padding: 28px;
+    border-top: 2px solid #4ade80;
+    margin-bottom: 16px;
+  }
+  .ev-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #4ade80;
+    margin-bottom: 8px;
+  }
+  .ev-title {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+  .ev-body {
+    font-size: 13px;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* ── MARKET DATA ── */
+  .market-stat-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin: 32px 0;
+  }
+  .market-stat {
+    padding: 28px 24px;
+    background: rgba(255,255,255,0.03);
+    text-align: center;
+  }
+  .market-stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--muted-gold);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .market-stat-desc {
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.4;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .cover { padding: 40px 24px 56px; min-height: 80vh; }
+    .cover-logo { left: 24px; }
+    .cover-number { display: none; }
+    .container, .container-wide { padding: 0 20px; }
+    .what-mattered-grid { grid-template-columns: 1fr; }
+    .story-grid, .story-grid.reverse { grid-template-columns: 1fr; gap: 24px; }
+    .story-left { position: static; }
+    .comp-grid { grid-template-columns: 1fr; }
+    .why-box { grid-template-columns: 1fr; }
+    .stat-grid { grid-template-columns: 1fr; }
+    .content-col-grid { grid-template-columns: 1fr; }
+    .market-stat-row { grid-template-columns: repeat(2, 1fr); }
+    .story-number { font-size: 64px; }
+    .opinion-quote { font-size: 24px; padding-left: 24px; }
+    .opinion-quote::before { font-size: 56px; }
+    .opinion-body, .opinion-byline { padding-left: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <span class="topbar-brand">Radar Fleet by Pulpo</span>
+  <span class="topbar-meta">Número 1 &nbsp;·&nbsp; 14 de abril de 2026</span>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     1. COVER
+═══════════════════════════════════════════ -->
+<section class="cover">
+  <div class="cover-logo">Radar Fleet <span>by Pulpo</span></div>
+  <div class="cover-number">01</div>
+
+  <div class="cover-overline">Edición semanal de inteligencia de mercado &nbsp;·&nbsp; Nº 1</div>
+
+  <div class="cover-issue">
+    La semana que<br>redefinió las reglas
+    <span>14 de abril de 2026 &nbsp;·&nbsp; Flota · Pagos · Telemetría · EV · Regulación</span>
+  </div>
+
+  <div class="cover-deck">
+    WEX lanza la primera tarjeta de flota que unifica combustible y carga eléctrica. FMCSA revocó 9 ELDs con fecha límite esta semana. Samsara supera los $1.59B de ingresos anuales. Y el mercado global de telemetría se acerca a los $13,000 millones de dólares. Todo lo que importa para Pulpo está aquí.
+  </div>
+
+  <div class="cover-tags">
+    <span class="cover-tag">🔥 Señal mayor</span>
+    <span class="cover-tag">⚙️ Producto &amp; Ops</span>
+    <span class="cover-tag">⚡ Electrificación</span>
+    <span class="cover-tag">📊 Datos de mercado</span>
+    <span class="cover-tag">👀 Regulación</span>
+    <span class="cover-tag">México · España · USA</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     2. EDITOR'S NOTE
+═══════════════════════════════════════════ -->
+<section class="editors-note">
+  <div class="container">
+    <div class="editors-note-inner">
+      <div class="editors-byline">Nota del editor &nbsp;·&nbsp; Número 1</div>
+      <div class="editors-body">
+        Esta es la primera edición de <strong>Radar Fleet by Pulpo</strong>: inteligencia de mercado semanal para el equipo, los clientes actuales y los prospectos que aún no saben que nos necesitan.<br><br>
+        El sector de gestión de flotas está en un punto de inflexión. Los grandes jugadores de EE.UU. reportan crecimientos del 28% anual. La inteligencia artificial está dejando de ser un diferenciador y convirtiéndose en infraestructura. Las tarjetas de combustible se están transformando en plataformas de gasto. Y en México, el 76% de las flotas todavía no usa telemetría. Eso es nuestra oportunidad.<br><br>
+        <strong>Radar Fleet no es un resumen de noticias. Es inteligencia editorial.</strong> Cada historia está aquí porque le importa a quien opera flotas, a quien toma decisiones de compra, o a quien necesita entender hacia dónde va la industria. Todo lo demás fue descartado.
+      </div>
+      <div class="editors-signature">
+        Publicado semanalmente cada lunes
+        <strong>Radar Fleet by Pulpo &nbsp;·&nbsp; Edición Nº 1</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     3. WHAT MATTERED THIS WEEK
+═══════════════════════════════════════════ -->
+<section class="section section-near-black">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label section-label-light">Esta semana</span>
+      <h2 class="section-title section-title-light">Lo que importó</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="what-mattered-grid">
+      <div class="wm-card signal">
+        <div class="wm-number">01</div>
+        <div class="wm-headline">WEX unifica combustible y carga EV en una sola tarjeta de flota</div>
+        <div class="wm-body">Primera tarjeta en la industria que cubre gasolineras y puntos de carga eléctrica en una sola cuenta, una sola factura. El mercado de pagos de flota nunca volverá a ser solo tarjetas de gasolina.</div>
+      </div>
+      <div class="wm-card market">
+        <div class="wm-number">02</div>
+        <div class="wm-headline">Samsara: $1.59B de ingresos, 28% de crecimiento anual, segundo trimestre rentable</div>
+        <div class="wm-body">El líder de telemática comercial consolida su posición con ARR de $1.89B. El estándar de referencia para plataformas de flota sigue subiendo.</div>
+      </div>
+      <div class="wm-card ops">
+        <div class="wm-number">03</div>
+        <div class="wm-headline">FMCSA revocó 9 ELDs: la fecha límite de reemplazo fue el 14 de abril</div>
+        <div class="wm-body">Transportistas con dispositivos revocados enfrentan órdenes de fuera de servicio a partir de hoy. Señal directa: el cumplimiento normativo es un pain point recurrente con urgencia real.</div>
+      </div>
+      <div class="wm-card signal">
+        <div class="wm-number">04</div>
+        <div class="wm-headline">Geotab lanza GO Focus Pro: dashcam con visión 360° y IA sin intervención humana</div>
+        <div class="wm-body">IA que detecta infracciones, puntos ciegos y riesgo de colisión en tiempo real. La videotelemática de flota se vuelve autónoma y predictiva.</div>
+      </div>
+      <div class="wm-card mx">
+        <div class="wm-number">05</div>
+        <div class="wm-headline">México: solo el 24% de flotas usa telemetría. Tasas a la baja = ventana de inversión</div>
+        <div class="wm-body">La baja penetración digital en flotas mexicanas y el contexto macroeconómico favorable definen una oportunidad de mercado concreta para 2026.</div>
+      </div>
+      <div class="wm-card product">
+        <div class="wm-number">06</div>
+        <div class="wm-headline">Webfleet + Questar: mantenimiento predictivo con IA disponible ya en 9 países europeos</div>
+        <div class="wm-body">89% de precisión prediciendo fallas mayores 20–45 días antes. El mantenimiento reactivo tiene los días contados en flotas profesionales.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     4. 10 KEY STORIES
+═══════════════════════════════════════════ -->
+<section class="section section-cream">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Las historias de la semana</span>
+      <h2 class="section-title">10 historias clave</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <!-- Story 1 -->
+    <div class="story">
+      <div class="story-grid">
+        <div class="story-left">
+          <div class="story-number">01</div>
+          <span class="story-tag tag-market">Inteligencia de mercado</span>
+          <div class="story-meta">
+            <span>🇺🇸 USA</span>
+            <span>Samsara</span>
+          </div>
+        </div>
+        <div>
+          <div class="story-headline">Samsara supera $1.59B de ingresos anuales con un crecimiento del 28% — y ya es rentable en GAAP</div>
+          <div class="story-summary">
+            Samsara cerró su año fiscal 2026 con ingresos de $1,597M, un ARR de $1.89B y el segundo trimestre consecutivo de rentabilidad GAAP. En Q4, cerró 13 contratos nuevos superiores a $1M en un solo trimestre. Sus clientes ancla incluyen Werner Enterprises, MTA de Harris County y Southern California Edison.
+          </div>
+          <div class="pull-quote">
+            <div class="pull-quote-text">Cuando una plataforma de flota acumula 25 billones de datos al año, el análisis competitivo tradicional se vuelve obsoleto. El moat ya no es el hardware — es el modelo.</div>
+          </div>
+          <div class="why-box">
+            <div class="why-item for-fleet">
+              <div class="why-label">Para operadores de flota</div>
+              <div class="why-text">Samsara está consolidando el mercado con escala y rentabilidad. La plataforma que elijas hoy para tu flota sobrevivirá y crecerá — o te dejará varado.</div>
+            </div>
+            <div class="why-item for-pulpo">
+              <div class="why-label">Para Pulpo</div>
+              <div class="why-text">El estándar de expectativa para software de flota sube cada trimestre. Samsara define el piso de UX, funcionalidad y confiabilidad con el que Pulpo compite indirectamente en México.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Story 2 -->
+    <div class="story">
+      <div class="story-grid reverse">
+        <div>
+          <div class="story-headline">WEX lanza la primera tarjeta de flota que unifica gasolina y carga eléctrica pública en una sola cuenta</div>
+          <div class="story-summary">
+            WEX presentó una tarjeta de flota que cubre tanto la red de combustible convencional (160,000 gasolineras en EE.UU., el 95% del mercado) como puntos de carga eléctrica pública — todo en una cuenta y una factura. Es la primera solución de este tipo en la industria.
+          </div>
+          <div class="why-box">
+            <div class="why-item for-fleet">
+              <div class="why-label">Para operadores de flota</div>
+              <div class="why-text">La transición a flotas mixtas (combustión + eléctrico) ya tiene un instrumento de gestión de gasto unificado. Simplifica operaciones y contabilidad considerablemente.</div>
+            </div>
+            <div class="why-item for-pulpo">
+              <div class="why-label">Para Pulpo / PulpoPay</div>
+              <div class="why-text">Esta es la dirección hacia la que debe ir PulpoPay. El producto de pagos de flota del futuro no puede ser solo combustible. La combinación fuel + EV + gastos operativos en una sola plataforma es el diferenciador que el mercado ya empieza a demandar.</div>
+            </div>
+          </div>
+        </div>
+        <div class="story-left">
+          <div class="story-number">02</div>
+          <span class="story-tag tag-product">Inspiración de producto</span>
+          <div class="story-meta">
+            <span>🇺🇸 USA</span>
+            <span>WEX · PulpoPay</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Story 3 -->
+    <div class="story">
+      <div class="story-grid">
+        <div class="story-left">
+          <div class="story-number">03</div>
+          <span class="story-tag tag-competitive">Señal competitiva</span>
+          <div class="story-meta">
+            <span>🌍 Global</span>
+            <span>Geotab</span>
+          </div>
+        </div>
+        <div>
+          <div class="story-headline">Geotab GO Focus Pro: dashcam 360° con IA que detecta riesgos sin revisión humana</div>
+          <div class="story-summary">
+            Geotab completó su familia de dashcams con el GO Focus Pro: hasta 5 cámaras auxiliares, visión 360°, detección de infracciones de tráfico, puntos ciegos y riesgo de colisión en tiempo real. Todo el pipeline es IA pura, sin revisión humana sistemática. Disponible en Norteamérica y EMEA a partir de Q2 2026.
+          </div>
+          <div class="why-box">
+            <div class="why-item for-fleet">
+              <div class="why-label">Para operadores de flota</div>
+              <div class="why-text">La videotelemática con IA ya no es premium: es el nuevo estándar de seguridad. Flotas que no adopten visión artificial en los próximos 2 años quedarán fuera de los requisitos de aseguradoras.</div>
+            </div>
+            <div class="why-item for-pulpo">
+              <div class="why-label">Para Pulpo</div>
+              <div class="why-text">Geotab no es competidor directo en México, pero es la referencia de producto. Su ecosistema de dashcams + telemetría integrada define el tipo de integración que clientes corporativos en México empezarán a exigir.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Story 4 -->
+    <div class="story">
+      <div class="story-grid reverse">
+        <div>
+          <div class="story-headline">FMCSA revoca 9 ELDs: deadline de reemplazo cumplido el 14 de abril — o fuera de servicio</div>
+          <div class="story-summary">
+            La FMCSA removió 9 dispositivos ELD de su lista registrada por no cumplir requisitos mínimos federales, dando 60 días de plazo para reemplazarlos. Ese plazo venció el 14 de abril. Transportistas con GTS ELD, UTRUCKIN, ELD365 ELOG, IRONMAN ELD, y FACTOR/HOST ELD deben cambiar hoy o enfrentan órdenes de fuera de servicio.
+          </div>
+          <div class="why-box">
+            <div class="why-item for-fleet">
+              <div class="why-label">Para operadores de flota</div>
+              <div class="why-text">El cumplimiento regulatorio de telemetría en EE.UU. es de alta urgencia real. No es una recomendación — es una obligación con consecuencias operativas inmediatas.</div>
+            </div>
+            <div class="why-item for-pulpo">
+              <div class="why-label">Para Pulpo</div>
+              <div class="why-text">En México, la regulación de telemetría obligatoria (transporte de carga federal) sigue madurando. Pulpo puede posicionar cumplimiento como valor central — no solo gestión. Este caso de EE.UU. es el guion del futuro regulatorio mexicano.</div>
+            </div>
+          </div>
+        </div>
+        <div class="story-left">
+          <div class="story-number">04</div>
+          <span class="story-tag tag-client">Educación al cliente</span>
+          <div class="story-meta">
+            <span>🇺🇸 USA</span>
+            <span>FMCSA · Regulación</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Story 5 -->
+    <div class="story">
+      <div class="story-grid">
+        <div class="story-left">
+          <div class="story-number">05</div>
+          <span class="story-tag tag-product">Inspiración de producto</span>
+          <div class="story-meta">
+            <span>🇪🇺 Europa</span>
+            <span>Webfleet · Questar</span>
+          </div>
+        </div>
+        <div>
+          <div class="story-headline">Webfleet y Questar lanzan mantenimiento predictivo con IA: 89% de precisión 20–45 días antes de la falla</div>
+          <div class="story-summary">
+            Bridgestone's Webfleet se asoció con Questar Auto Technologies para lanzar Predictive Vehicle Health Management (PVHM) en 9 mercados europeos. El sistema analiza datos de vehículo en tiempo real con IA y anticipa fallas mayores con 20 a 45 días de anticipación, enviando alertas directamente al panel de Webfleet.
+          </div>
+          <div class="why-box">
+            <div class="why-item for-fleet">
+              <div class="why-label">Para operadores de flota</div>
+              <div class="why-text">El mantenimiento correctivo tiene un costo promedio 3–5x superior al preventivo. Detectar fallas mayores con 30 días de anticipación transforma la P&L de cualquier flota comercial.</div>
+            </div>
+            <div class="why-item for-pulpo">
+              <div class="why-label">Para Pulpo</div>
+              <div class="why-text">Este es el siguiente nivel natural del módulo de mantenimiento de Pulpo. La integración con datos de OBD/FMS para pasar de "registro de mantenimientos" a "predicción de fallas" es una ventaja competitiva todavía accesible en el mercado mexicano.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Story 6 -->
+    <div class="story">
+      <div class="story-grid reverse">
+        <div>
+          <div class="story-headline">EV Realty abre hub de carga eléctrica para camiones con 76 puertos y 9 MW en el corazón logístico de California</div>
+          <div class="story-summary">
+            En San Bernardino — conectado con los Puertos de Los Ángeles y Long Beach — EV Realty inauguró un hub con 76 puertos de carga (hasta 1.2 MW con tecnología MCS), capacidad para 200+ camiones medianos y pesados por día. Clientes ancla: J.B. Hunt, Gate City Beverage y la naviera 100% eléctrica Nevoya. El modelo: infraestructura compartida para reducir capex individual.
+          </div>
+          <div class="why-box">
+            <div class="why-item for-fleet">
+              <div class="why-label">Para operadores de flota</div>
+              <div class="why-text">La infraestructura de carga pesada compartida es el modelo que resuelve la barrera más grande para electrificar flotas. El debate ya no es si — es cuándo y con qué socios.</div>
+            </div>
+            <div class="why-item for-pulpo">
+              <div class="why-label">Para Pulpo</div>
+              <div class="why-text">El modelo de EV Realty llegará a México en los próximos años. Pulpo puede posicionarse desde ahora como la plataforma de gestión que conecta flotas con infraestructura de carga, reportes de energía y costos por kilómetro eléctrico.</div>
+            </div>
+          </div>
+        </div>
+        <div class="story-left">
+          <div class="story-number">06</div>
+          <span class="story-tag tag-market">Inteligencia de mercado</span>
+          <div class="story-meta">
+            <span>🇺🇸 USA · California</span>
+            <span>⚡ EV Fleet</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Story 7 -->
+    <div class="story">
+      <div class="story-grid">
+        <div class="story-left">
+          <div class="story-number">07</div>
+          <span class="story-tag tag-competitive">Señal competitiva</span>
+          <div class="story-meta">
+            <span>🌍 Global</span>
+            <span>ABI Research · Lytx · Samsara</span>
+          </div>
+        </div>
+        <div>
+          <div class="story-headline">ABI Research rankea a Lytx #1 en videotelemática comercial; Samsara y Geotab completan el podio</div>
+          <div class="story-summary">
+            En su Commercial Video Telematics Competitive Assessment de febrero 2026, ABI Research posicionó a Lytx como líder por su modelo híbrido de Machine Vision + IA + revisión humana con más de 100 detecciones de comportamiento. Samsara ocupó el #2 con su ecosistema integrado y módulos de coaching automatizado. Geotab el #3 por plataforma abierta y marketplace.
+          </div>
+          <div class="why-box">
+            <div class="why-item for-fleet">
+              <div class="why-label">Para operadores de flota</div>
+              <div class="why-text">La videotelemática ya tiene jerarquía clara. La diferenciación real está en la calidad de IA, el coaching de conductores y la integración con la plataforma de gestión.</div>
+            </div>
+            <div class="why-item for-pulpo">
+              <div class="why-label">Para Pulpo</div>
+              <div class="why-text">El ranking sirve como mapa de posibles socios de integración. Lytx, Samsara y Geotab tienen APIs abiertas. Integrar videotelemática de nivel enterprise como capa dentro de Pulpo es más rápido que desarrollarla internamente.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Story 8 -->
+    <div class="story">
+      <div class="story-grid reverse">
+        <div>
+          <div class="story-headline">Admiral adquiere Flock por £80M y lanza seguro de flota impulsado por telemetría para transporte pesado en UK</div>
+          <div class="story-summary">
+            Admiral Group adquirió la insurtech de flota Flock por £80 millones. Dos meses después, Flock y Admiral lanzaron un producto de seguro de carga para flotas medianas y grandes en UK que usa datos de telemetría para calcular prima, con posibilidad de recuperar hasta 10% por conducción segura. Las flotas inscritas en el programa ya mostraron 10% menos en frecuencia de siniestros.
+          </div>
+          <div class="why-box">
+            <div class="why-item for-fleet">
+              <div class="why-label">Para operadores de flota</div>
+              <div class="why-text">El seguro basado en telemetría convierte los datos de conducción en ahorro directo en prima. Para flotas con buenos registros, este modelo cambia fundamentalmente la ecuación de costo.</div>
+            </div>
+            <div class="why-item for-pulpo">
+              <div class="why-label">Para Pulpo</div>
+              <div class="why-text">Oportunidad de ecosistema: Pulpo tiene los datos de conducción. Las aseguradoras mexicanas necesitan datos telemáticos verificados. Una alianza estratégica en seguros basados en comportamiento es una línea de ingresos adicional y un diferenciador de retención.</div>
+            </div>
+          </div>
+        </div>
+        <div class="story-left">
+          <div class="story-number">08</div>
+          <span class="story-tag tag-partner">Oportunidad de partner</span>
+          <div class="story-meta">
+            <span>🇬🇧 UK</span>
+            <span>Admiral · Flock</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Story 9 -->
+    <div class="story">
+      <div class="story-grid">
+        <div class="story-left">
+          <div class="story-number">09</div>
+          <span class="story-tag tag-market">Inteligencia de mercado</span>
+          <div class="story-meta">
+            <span>🌍 Global</span>
+            <span>Datos de mercado</span>
+          </div>
+        </div>
+        <div>
+          <div class="story-headline">El mercado global de telemática de flota vale $12.52B en 2026 y se proyecta a $29.8B para 2035</div>
+          <div class="story-summary">
+            Según múltiples reportes de mercado, el mercado de Fleet Telematics System alcanza $12.52B en 2026 con una CAGR del 10.6% hacia $29.8B en 2035. El segmento de transporte y logística representa el 28.99% del mercado global. Asia-Pacífico es la región de mayor crecimiento con CAGR del 27.2%.
+          </div>
+          <div class="why-box">
+            <div class="why-item for-fleet">
+              <div class="why-label">Para operadores de flota</div>
+              <div class="why-text">Un mercado que casi se triplica en 9 años implica adopción masiva. Los que digitalizan hoy capturan ventaja; los que esperan pagan primas de aprendizaje.</div>
+            </div>
+            <div class="why-item for-pulpo">
+              <div class="why-label">Para Pulpo</div>
+              <div class="why-text">Estos datos son combustible para ventas y fundraising. El mercado de gestión de flotas latinoamericano tiene uno de los mayores delta de penetración vs. potencial de todos los segmentos de software B2B en la región.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Story 10 -->
+    <div class="story">
+      <div class="story-grid reverse">
+        <div>
+          <div class="story-headline">FleetPride + TruckPro crean el mayor distribuidor independiente de refacciones para transporte pesado en EE.UU. con $2.4B+</div>
+          <div class="story-summary">
+            La fusión entre FleetPride ($1.8B de ingresos anuales) y TruckPro (~$650M) creó una entidad con 450+ ubicaciones, 110+ centros de servicio y 6 centros de distribución. El nuevo conglomerado redefine el aftermarket de transporte pesado en Norteamérica con escala para negociar con fabricantes y ofrecer servicio de campo nacional.
+          </div>
+          <div class="why-box">
+            <div class="why-item for-fleet">
+              <div class="why-label">Para operadores de flota</div>
+              <div class="why-text">La consolidación del aftermarket implica menos proveedores, mayor cobertura y posiblemente mejores condiciones para flotas grandes. Para flotas pequeñas, puede significar precios más altos.</div>
+            </div>
+            <div class="why-item for-pulpo">
+              <div class="why-label">Para Pulpo</div>
+              <div class="why-text">Este modelo de consolidación llegará a México. Pulpo puede ser el sistema de registro de proveedores que conecta flotas con talleres y distribuidores de refacciones, generando datos de gasto en mantenimiento y creando una red de valor.</div>
+            </div>
+          </div>
+        </div>
+        <div class="story-left">
+          <div class="story-number">10</div>
+          <span class="story-tag tag-market">Inteligencia de mercado</span>
+          <div class="story-meta">
+            <span>🇺🇸 USA</span>
+            <span>FleetPride · TruckPro</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     5. COMPETITOR & ECOSYSTEM WATCH
+═══════════════════════════════════════════ -->
+<section class="section section-graphite">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label section-label-light">Vigilancia de ecosistema</span>
+      <h2 class="section-title section-title-light">Competitor &amp;<br>Ecosystem Watch</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="comp-grid">
+      <div class="comp-card">
+        <div class="comp-card-header">
+          <div class="comp-name">Samsara</div>
+          <span class="comp-type-pill pill-competitor">Competidor directo</span>
+        </div>
+        <div class="comp-move">$1.59B de ingresos anuales, 28% de crecimiento, segundo trimestre consecutivo rentable en GAAP. 13 contratos nuevos superiores a $1M en Q4. ARR: $1.89B con 30% de crecimiento en divisa constante.</div>
+        <div class="comp-implication">Samsara define el estándar premium de plataforma de flota. Su escala de datos (25 billones de puntos/año) es ya una ventaja estructural en IA que ningún competidor puede replicar rápido.</div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-card-header">
+          <div class="comp-name">Geotab</div>
+          <span class="comp-type-pill pill-competitor">Competidor / Referencia</span>
+        </div>
+        <div class="comp-move">Lanzó GO Focus Pro — dashcam con visión 360°, 5 cámaras auxiliares, detección de infracciones y riesgo de colisión via IA sin revisión humana. Disponible en N. América y EMEA en Q2 2026. Integración Questar de predictive maintenance en marketplace.</div>
+        <div class="comp-implication">Geotab consolida hardware + software + IA + marketplace en una sola plataforma. El modelo de plataforma abierta con ecosystem de partners es cada vez más potente para enterprise.</div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-card-header">
+          <div class="comp-name">Webfleet</div>
+          <span class="comp-type-pill pill-competitor">Competidor / Señal</span>
+        </div>
+        <div class="comp-move">Lanzó mantenimiento predictivo con IA via Questar en 9 mercados europeos incluyendo España. 89% de precisión predicting fallas mayores 20–45 días antes. También presente en CV Show UK con soluciones de descarbonización.</div>
+        <div class="comp-implication">Webfleet está llevando la apuesta de mantenimiento predictivo al mercado europeo y español. Señal directa para el roadmap de Pulpo en España y para el posicionamiento de mantenimiento predictivo como categoría.</div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-card-header">
+          <div class="comp-name">Powerfleet</div>
+          <span class="comp-type-pill pill-signal">Señal de ecosistema</span>
+        </div>
+        <div class="comp-move">Q3 FY2026: $113.5M en ingresos (+7% YoY), services up 11%. Release 26.7 lanzado en abril incluye integración Samsara Level 1: clientes pueden ver activos rastreados por Samsara dentro de la plataforma Powerfleet unificada.</div>
+        <div class="comp-implication">La integración Powerfleet-Samsara es una señal de consolidación: el mercado de telemática comercial converge en plataformas que agregan múltiples fuentes de datos. El futuro es interoperable.</div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-card-header">
+          <div class="comp-name">WEX</div>
+          <span class="comp-type-pill pill-competitor">Competidor PulpoPay</span>
+        </div>
+        <div class="comp-move">Primera tarjeta de flota que unifica combustible convencional + carga eléctrica pública en una sola cuenta, red y factura. 160,000 gasolineras en USA + puntos de carga EV. Disponible enero 2026.</div>
+        <div class="comp-implication">WEX marca la dirección del mercado de pagos de flota: unificación total de gasto energético. PulpoPay necesita una tesis de producto que contemple este escenario ahora, no cuando llegue a México.</div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-card-header">
+          <div class="comp-name">DKV Mobility</div>
+          <span class="comp-type-pill pill-competitor">Competidor PulpoPay</span>
+        </div>
+        <div class="comp-move">Expandió red UK con 48 Welcome Break stations. Lanzó tarjeta con chip y NFC en Países Bajos. Red total: 70K gasolineras + 1M puntos de carga EV + 24K estaciones de combustible alternativo en Europa.</div>
+        <div class="comp-implication">DKV opera en España y expande su red. Referencia directa para la estrategia de red de aceptación que PulpoPay necesita construir en México y España.</div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-card-header">
+          <div class="comp-name">Flock / Admiral</div>
+          <span class="comp-type-pill pill-partner">Oportunidad partner</span>
+        </div>
+        <div class="comp-move">Admiral adquirió Flock por £80M. Juntos lanzaron seguro de flota impulsado por telemetría para carga pesada en UK: 10% reducción en siniestros, hasta 10% de rebate por conducción segura.</div>
+        <div class="comp-implication">El modelo de seguro basado en datos telemáticos es replicable. Pulpo tiene los datos — necesita el socio asegurador en México para crear este modelo.</div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-card-header">
+          <div class="comp-name">Lytx</div>
+          <span class="comp-type-pill pill-reference">Referencia de producto</span>
+        </div>
+        <div class="comp-move">Rankeda #1 por ABI Research en videotelemática comercial. Modelo diferenciador: Machine Vision + IA + Human Intelligence. +100 detecciones de comportamiento. Integrada en plataformas de terceros via API.</div>
+        <div class="comp-implication">Lytx es el estándar de excelencia en videotelemática. Su modelo de revisión humana como capa de calidad sobre IA es el que produce mejores resultados en reducción de accidentes.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     6. MEXICO RADAR
+═══════════════════════════════════════════ -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="radar-header">
+      <div>
+        <span class="section-label section-label-light">Radar regional</span>
+        <div class="radar-country section-title-light">México</div>
+      </div>
+      <div class="radar-flag">🇲🇽</div>
+    </div>
+    <div class="radar-items">
+      <div class="radar-item">
+        <div class="radar-item-num">1</div>
+        <div>
+          <div class="radar-item-title">Solo el 24% de flotas de carga usa telemetría — la brecha digital más grande de América del Norte</div>
+          <div class="radar-item-body">A pesar del crecimiento en penetración, tres de cada cuatro flotas de carga en México operan sin telemetría. La bajada de tasas en 2026 crea condiciones favorables para inversión tecnológica. Para Pulpo, esto es el argumento de mercado más contundente para prospectos: el 76% del mercado todavía está disponible.</div>
+        </div>
+      </div>
+      <div class="radar-item">
+        <div class="radar-item-num">2</div>
+        <div>
+          <div class="radar-item-title">Olinia: la iniciativa de electromovilidad de Sheinbaum entra en fase decisiva con presentación en el Mundial 2026</div>
+          <div class="radar-item-body">El gobierno federal avanza en marcos regulatorios y pilotos de flotas eléctricas bajo la iniciativa Olinia. La presentación oficial está planeada para el Mundial de Fútbol 2026. Esto genera un horizonte regulatorio y comercial que Pulpo debe mapear: ¿qué datos, reportes y gestión necesitan las flotas eléctricas en México?</div>
+        </div>
+      </div>
+      <div class="radar-item">
+        <div class="radar-item-num">3</div>
+        <div>
+          <div class="radar-item-title">Incertidumbre arancelaria EE.UU.–México sigue presionando industria automotriz y decisiones de inversión en flota</div>
+          <div class="radar-item-body">La incertidumbre sobre aranceles norteamericanos en 2026 genera cautela en compra de unidades nuevas. Sin embargo, esto puede acelerar la vida útil de flotas existentes — lo que aumenta la demanda de mantenimiento preventivo y control de costos operativos, dos áreas centrales de Pulpo.</div>
+        </div>
+      </div>
+      <div class="radar-item">
+        <div class="radar-item-num">4</div>
+        <div>
+          <div class="radar-item-title">Transportes Marva ya opera 120 semirremolques eléctricos BYD en la ruta Monterrey–Texas</div>
+          <div class="radar-item-body">El caso de Marva demuestra viabilidad comercial de electrificación en transporte pesado mexicano en rutas de 250–300 km. Es el antecedente de referencia para cualquier conversación sobre EV fleet en México, y un caso de uso que Pulpo puede usar para construir credibilidad en el tema.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     7. SPAIN RADAR
+═══════════════════════════════════════════ -->
+<section class="section" style="background: #1a0f2e; color: #fff;">
+  <div class="container">
+    <div class="radar-header" style="border-bottom-color: rgba(255,255,255,0.08);">
+      <div>
+        <span class="section-label section-label-light">Radar regional</span>
+        <div class="radar-country section-title-light">España</div>
+      </div>
+      <div class="radar-flag">🇪🇸</div>
+    </div>
+    <div class="radar-items">
+      <div class="radar-item" style="border-left-color: rgba(255,255,255,0.15);">
+        <div class="radar-item-num">1</div>
+        <div>
+          <div class="radar-item-title">V16 conectado obligatorio desde enero: las balizas de emergencia deben transmitir a la plataforma DGT 3.0</div>
+          <div class="radar-item-body">Desde el 1 de enero de 2026, solo los dispositivos V16 conectados (con SIM y GPS) son válidos legalmente en España. La ubicación se transmite automáticamente a la Plataforma de Vehículo Conectado (PVC) de la DGT. Para flotas: cumplimiento, coste de sustitución y oportunidad de integración telemática.</div>
+        </div>
+      </div>
+      <div class="radar-item" style="border-left-color: rgba(255,255,255,0.15);">
+        <div class="radar-item-num">2</div>
+        <div>
+          <div class="radar-item-title">Tacógrafo inteligente G2V2 obligatorio para vehículos ligeros en transporte internacional a partir de julio 2026</div>
+          <div class="radar-item-body">Desde el 1 de julio de 2026, la segunda generación del tacógrafo inteligente (G2V2) es obligatoria para vehículos de 2.5T a 3.5T en transporte internacional o cabotaje. Pulpo España tiene que tener esta integración en el roadmap — es cumplimiento normativo con fecha fija.</div>
+        </div>
+      </div>
+      <div class="radar-item" style="border-left-color: rgba(255,255,255,0.15);">
+        <div class="radar-item-num">3</div>
+        <div>
+          <div class="radar-item-title">El renting lidera la electrificación de flotas en España: Arval y Ayvens firman acuerdos con fabricantes chinos</div>
+          <div class="radar-item-body">La Asociación Española de Renting (AER) mantiene más de 144,000 vehículos en renting. Arval firmó acuerdos con BYD y otros fabricantes chinos para penetración B2B. El renting/leasing es el canal dominante de renovación de flota — y los gestores del sector presionan por IVA exento en EV de empresa.</div>
+        </div>
+      </div>
+      <div class="radar-item" style="border-left-color: rgba(255,255,255,0.15);">
+        <div class="radar-item-num">4</div>
+        <div>
+          <div class="radar-item-title">Mercado de telemática en España proyecta CAGR del 11.19% hasta 2031 — crecimiento sostenido impulsado por regulación</div>
+          <div class="radar-item-body">El mercado de telemática de flota en España crece a ritmo de doble dígito. Webfleet (Bridgestone), con lanzamientos recientes en mantenimiento predictivo y presencia en el CV Show UK, refuerza su posición en el mercado europeo incluyendo España. La regulación DGT 3.0 actúa como acelerador estructural de adopción.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     8. USA TRENDS TO WATCH
+═══════════════════════════════════════════ -->
+<section class="section section-cream">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Tendencias a observar</span>
+      <h2 class="section-title">USA: el guion<br>del futuro</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="usa-card">
+      <div class="usa-card-bar"></div>
+      <div class="usa-card-content">
+        <div class="usa-card-label">IA en telemática</div>
+        <div class="usa-card-title">Plataformas de flota como motores de IA — 25 billones de puntos de datos por año</div>
+        <div class="usa-card-body">Samsara procesa 25 billones de datos anuales para entrenar sus modelos de IA. Este volumen convierte la plataforma en una ventaja estructural imposible de replicar rápido. En EE.UU., la IA en flota ya no es feature — es infraestructura. Las flotas la usan para coaching de conductores, predictive maintenance, routing dinámico y compliance automático.</div>
+        <div class="usa-card-implication">→ Pulpo necesita una estrategia de datos clara. Los datos de sus clientes son el activo más valioso a largo plazo.</div>
+      </div>
+    </div>
+    <div class="usa-card">
+      <div class="usa-card-bar"></div>
+      <div class="usa-card-content">
+        <div class="usa-card-label">Pagos de flota</div>
+        <div class="usa-card-title">La tarjeta de combustible muere — nace el gasto unificado de flota</div>
+        <div class="usa-card-body">WEX marcó el camino: el producto de pagos de flota del futuro es una plataforma unificada que cubre combustible, carga eléctrica, mantenimiento, peajes y gastos operativos en una sola cuenta. En EE.UU., WEX, Corpay y Fleetcor ya compiten en esta dimensión. El mercado latinoamericano tiene 3–5 años de ventana antes de que esta presión llegue con fuerza.</div>
+        <div class="usa-card-implication">→ PulpoPay tiene la oportunidad de construir este modelo desde cero en México antes de que los jugadores globales lleguen.</div>
+      </div>
+    </div>
+    <div class="usa-card">
+      <div class="usa-card-bar"></div>
+      <div class="usa-card-content">
+        <div class="usa-card-label">Electrificación pesada</div>
+        <div class="usa-card-title">Hubs de carga compartida: el modelo que hace viable la electrificación de flotas pesadas</div>
+        <div class="usa-card-body">EV Realty inauguró el mayor hub de carga para transporte pesado en California: 76 puertos, 9 MW, 200+ camiones por día. El modelo de infraestructura compartida resuelve la barrera del capex: ninguna flota necesita construir su propio hub. En EE.UU., J.B. Hunt, Nevoya y Gate City ya están dentro.</div>
+        <div class="usa-card-implication">→ En México, el modelo Olinia puede funcionar similar. Pulpo debe estar preparado para gestionar datos de flota eléctrica desde el inicio.</div>
+      </div>
+    </div>
+    <div class="usa-card">
+      <div class="usa-card-bar"></div>
+      <div class="usa-card-content">
+        <div class="usa-card-label">Cumplimiento normativo</div>
+        <div class="usa-card-title">FMCSA como modelo de regulación telemática — la ola regulatoria llega a México</div>
+        <div class="usa-card-body">La FMCSA removió 9 ELDs de su lista registrada y puso fecha límite inmediata. Los transportistas con dispositivos no conformes enfrentan órdenes de fuera de servicio. Este modelo regulatorio — lista blanca de dispositivos aprobados + enforcement activo — es el que México está construyendo gradualmente en transporte federal.</div>
+        <div class="usa-card-implication">→ Posicionar Pulpo como plataforma de cumplimiento — no solo gestión — es una tesis de ventas que se fortalece cada ciclo regulatorio.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     9. IDEAS DE PRODUCTO PARA PULPO
+═══════════════════════════════════════════ -->
+<section class="section section-sand">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Roadmap &amp; producto</span>
+      <h2 class="section-title">Ideas de producto<br>para Pulpo</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="product-ideas-grid">
+      <div class="product-idea-card">
+        <div class="product-idea-number">1</div>
+        <div class="product-idea-label">⚙️ Mantenimiento predictivo</div>
+        <div class="product-idea-title">Motor de mantenimiento predictivo via OBD/FMS: de registro a predicción</div>
+        <div class="product-idea-body">
+          Pulpo registra mantenimientos. El siguiente paso es predecirlos. Integrar datos de OBD-II o FMS de los vehículos de los clientes para detectar patrones de falla antes de que ocurran. La propuesta es clara: en lugar de un recordatorio de cambio de aceite por kilometraje, un sistema que dice "este motor tiene señales de desgaste de frenos" 3 semanas antes.
+          <br><br>
+          <strong>Implementación mínima viable:</strong> Integración con proveedores de OBD como Geotab, Samsara o players locales. Algoritmo de scoring de salud por vehículo. Dashboard de alertas por severidad y urgencia.
+        </div>
+        <div class="product-idea-trigger"><strong>Señal:</strong> Webfleet + Questar lanzan PVHM en Europa con 89% de precisión. La tecnología ya existe y está integrable. El mercado mexicano no lo tiene todavía.</div>
+      </div>
+      <div class="product-idea-card">
+        <div class="product-idea-number">2</div>
+        <div class="product-idea-label">💳 PulpoPay</div>
+        <div class="product-idea-title">PulpoPay Unificado: combustible + carga EV + gastos operativos en una sola tarjeta</div>
+        <div class="product-idea-body">
+          WEX demostró que el mercado ya acepta — y demanda — una tarjeta de flota que cubra todo el gasto energético. PulpoPay tiene la oportunidad de construir esto en México antes de que WEX, Corpay o DKV lleguen. La propuesta: una sola tarjeta para gasolineras de la red, puntos de carga EV asociados y gastos de taller aprobados.
+          <br><br>
+          <strong>Diferenciador frente a competidores globales:</strong> PulpoPay puede integrar el control de gasto directamente con el perfil del vehículo y el conductor en Pulpo. Eso es algo que ningún jugador global puede ofrecer sin plataforma de gestión.
+        </div>
+        <div class="product-idea-trigger"><strong>Señal:</strong> WEX lanza primera tarjeta unificada fuel + EV en USA (enero 2026). El mercado mexicano tiene 2–4 años de ventana antes de que este modelo llegue.</div>
+      </div>
+      <div class="product-idea-card">
+        <div class="product-idea-number">3</div>
+        <div class="product-idea-label">🔒 Cumplimiento y regulación</div>
+        <div class="product-idea-title">Módulo de cumplimiento normativo activo: alertas, plazos y documentación regulatoria por vehículo</div>
+        <div class="product-idea-body">
+          La revocación de ELDs en EE.UU. dejó en claro que el cumplimiento normativo es urgente, recurrente y costoso cuando falla. En México, la SCT y el SAT tienen requisitos de telemetría, verificaciones de emisiones y permisos de transporte con fechas críticas. Pulpo puede ser la plataforma que gestiona el cumplimiento documental y normativo de cada vehículo en tiempo real.
+          <br><br>
+          <strong>Funcionalidad clave:</strong> Calendario de vencimientos regulatorios por vehículo (verificaciones, permisos, revisiones). Alertas escalables por urgencia. Generación de documentos de cumplimiento para auditorías.
+        </div>
+        <div class="product-idea-trigger"><strong>Señal:</strong> FMCSA revoca 9 ELDs con enforcement inmediato en USA. En España, V16 conectado obligatorio desde enero y tacógrafo G2V2 desde julio. México sigue el mismo patrón con retraso de 2–4 años.</div>
+      </div>
+      <div class="product-idea-card">
+        <div class="product-idea-number">4</div>
+        <div class="product-idea-label">📊 Datos y benchmarks</div>
+        <div class="product-idea-title">Pulpo Benchmark: índice de eficiencia de flota comparativo por industria y tamaño</div>
+        <div class="product-idea-body">
+          Los clientes de Pulpo colectivamente generan los datos más ricos sobre flotas en México. Un módulo de benchmarking que le diga a un operador de transporte "tu costo por kilómetro está 18% por encima de la mediana de tu industria" tiene un valor inmediato y es difícil de replicar sin escala de datos.
+          <br><br>
+          <strong>Aplicación comercial:</strong> Este módulo puede ser una herramienta de ventas poderosa ("¿quieres saber cómo estás vs. tu industria?") y un driver de retención para cuentas actuales.
+        </div>
+        <div class="product-idea-trigger"><strong>Señal:</strong> Samsara usa 25 billones de datos anuales para IA y benchmarks de industria. La ventaja de datos escala con la base de clientes — Pulpo ya tiene datos suficientes para empezar.</div>
+      </div>
+      <div class="product-idea-card">
+        <div class="product-idea-number">5</div>
+        <div class="product-idea-label">🤝 Ecosistema</div>
+        <div class="product-idea-title">Pulpo Seguros: alianza con aseguradora para seguro de flota basado en datos de conducción</div>
+        <div class="product-idea-body">
+          Flock + Admiral redujeron siniestros 10% y generan rebates de prima por conducción segura. Pulpo tiene los datos de comportamiento de conductores y vehículos que las aseguradoras necesitan para este modelo. Una alianza con una aseguradora mexicana (Qualitas, GNP, AXA) para construir un producto de seguro basado en telemetría de Pulpo sería un diferenciador de categoría.
+          <br><br>
+          <strong>Modelo comercial:</strong> Revenue sharing con aseguradora. Pulpo como fuente de datos verificados y panel de riesgo. Cliente paga prima más baja y Pulpo recibe fee por datos + referidos.
+        </div>
+        <div class="product-idea-trigger"><strong>Señal:</strong> Admiral adquiere Flock por £80M y lanza seguro de flota telemático en UK (abril 2026). El modelo es probado, replicable y el mercado mexicano no tiene nada equivalente.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     10. ELECTRIFICATION & FUTURE FLEET
+═══════════════════════════════════════════ -->
+<section class="section section-green">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label section-label-light">⚡ Electrificación</span>
+      <h2 class="section-title section-title-light">Electrificación<br>&amp; flota del futuro</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="ev-card">
+      <div class="ev-label">⚡ USA — Infraestructura</div>
+      <div class="ev-title">Hub de carga eléctrica pesada en California: 76 puertos, 9 MW, 200+ camiones/día</div>
+      <div class="ev-body">EV Realty inauguró el hub más grande de carga para transporte pesado en el corredor logístico de California. Megawatt Charging System (MCS) de hasta 1.2 MW por puerto. El modelo de infraestructura compartida entre múltiples flotas elimina la barrera de capex individual. J.B. Hunt y Nevoya ya están operando. Esta escala era impensable hace 18 meses.</div>
+    </div>
+    <div class="ev-card">
+      <div class="ev-label">⚡ México — Pioneros</div>
+      <div class="ev-title">Transportes Marva: 120 semirremolques BYD en Monterrey–Texas — la electrificación pesada ya es comercial en México</div>
+      <div class="ev-body">Marva opera la flota de semirremolques eléctricos más grande de México con 120 unidades BYD en rutas de 250–300 km. El caso demuestra viabilidad operativa y financiera en el contexto mexicano. La pregunta ya no es "si es posible" sino "cómo se gestiona, mide y optimiza una flota mixta en México."</div>
+    </div>
+    <div class="ev-card">
+      <div class="ev-label">⚡ España — Electrificación por renting</div>
+      <div class="ev-title">El renting como acelerador forzado de electrificación: Arval y Ayvens con OEMs chinos para flotas B2B</div>
+      <div class="ev-body">El sector renting español opera como mecanismo de transición eléctrica por diseño: renovación de flota cada 3–4 años + acuerdos con BYD y otros fabricantes chinos para entregar vehículos eléctricos competitivos en costo. Arval presiona al gobierno por IVA exento en EV de empresa. Si prospera, acelera aún más la penetración eléctrica en flotas medianas y grandes.</div>
+    </div>
+    <div class="ev-card">
+      <div class="ev-label">⚡ México — Política</div>
+      <div class="ev-title">Olinia: el plan federal de electromovilidad con presentación en el Mundial 2026</div>
+      <div class="ev-body">La iniciativa Olinia avanza en el gobierno de Claudia Sheinbaum con pilotos de flotas eléctricas y marcos regulatorios para transporte urbano e intermunicipal. La presentación del programa está planeada durante el Mundial de Fútbol 2026, lo que le da visibilidad internacional. Para Pulpo: monitorear la regulación que viene sobre reporting de emisiones, eficiencia energética y homologación de vehículos eléctricos de carga.</div>
+    </div>
+
+    <div class="pull-quote" style="margin-top: 40px; background: rgba(255,255,255,0.04); border-left-color: #4ade80;">
+      <div class="pull-quote-text" style="color: rgba(255,255,255,0.85);">La electrificación de flotas no es una tendencia verde — es una transformación de costos, datos y compliance. Quien controle el software de gestión en la transición, controla la flota del futuro.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     11. REGULATION & MARKET DATA
+═══════════════════════════════════════════ -->
+<section class="section section-cream">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Regulación &amp; datos de mercado</span>
+      <h2 class="section-title">Regulation &amp;<br>Market Data</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <h3 style="font-family:'Fraunces',serif; font-size:20px; font-weight:700; color:var(--text-dark); margin-bottom:20px; margin-top: 8px;">Regulación</h3>
+
+    <div class="reg-item priority-high">
+      <div class="reg-jurisdiction">🇺🇸 USA — FMCSA · URGENTE</div>
+      <div class="reg-title">9 ELDs revocados: fecha límite de reemplazo cumplida el 14 de abril — enforcement activo</div>
+      <div class="reg-body">Dispositivos GTS ELD, UTRUCKIN, ELD365 ELOG, IRONMAN ELD y FACTOR/HOST ELD removidos de la lista registrada FMCSA el 12 de febrero. Plazo de reemplazo: 60 días (14 de abril). A partir de hoy, conductores con estos dispositivos pueden recibir citas por 395.8(a)(1) y órdenes de fuera de servicio.</div>
+    </div>
+
+    <div class="reg-item priority-high">
+      <div class="reg-jurisdiction">🇪🇸 España — DGT · EN VIGOR</div>
+      <div class="reg-title">V16 conectado obligatorio desde el 1 de enero de 2026: sin SIM y GPS, no es válido en carretera</div>
+      <div class="reg-body">Solo los dispositivos V16 con SIM no extraíble y GPS que transmiten a la plataforma DGT 3.0 (PVC) son legalmente válidos. Las balizas de emergencia tradicionales están prohibidas en autopistas desde enero. Las flotas deben verificar cumplimiento en todos sus vehículos.</div>
+    </div>
+
+    <div class="reg-item priority-medium">
+      <div class="reg-jurisdiction">🇪🇸 España — DGT · JULIO 2026</div>
+      <div class="reg-title">Tacógrafo inteligente G2V2 obligatorio para vehículos ligeros en transporte internacional — 1 julio 2026</div>
+      <div class="reg-body">Segunda generación del tacógrafo inteligente obligatoria para vehículos de 2.5T a 3.5T que realicen transporte internacional o cabotaje. Flota España debe planificar la sustitución o adaptación de unidades antes de julio.</div>
+    </div>
+
+    <div class="reg-item">
+      <div class="reg-jurisdiction">🇺🇸 USA — FMCSA · EN VIGOR</div>
+      <div class="reg-title">FMCSA finaliza paquete de desregulación de equipos e inspecciones (19 feb 2026)</div>
+      <div class="reg-body">FMCSA publicó un paquete de desregulación de equipos e inspecciones con efectividad el 23 de marzo de 2026. La disposición sobre fusibles de repuesto entra en vigor el 20 de abril. Señal de administración actual: menos burocracia de compliance en algunos frentes, pero cumplimiento ELD más estricto.</div>
+    </div>
+
+    <h3 style="font-family:'Fraunces',serif; font-size:20px; font-weight:700; color:var(--text-dark); margin-bottom:20px; margin-top: 48px;">Datos de mercado 📊</h3>
+
+    <div class="market-stat-row" style="background: var(--navy); border-radius: 4px; overflow: hidden;">
+      <div class="market-stat">
+        <div class="market-stat-num">$12.5B</div>
+        <div class="market-stat-desc">Mercado global telemática de flota en 2026</div>
+      </div>
+      <div class="market-stat">
+        <div class="market-stat-num">$29.8B</div>
+        <div class="market-stat-desc">Proyección para 2035 (CAGR 10.6%)</div>
+      </div>
+      <div class="market-stat">
+        <div class="market-stat-num">24%</div>
+        <div class="market-stat-desc">Penetración de telemetría en flotas de carga de México</div>
+      </div>
+      <div class="market-stat">
+        <div class="market-stat-num">+11%</div>
+        <div class="market-stat-desc">CAGR proyectado del mercado telemática España 2026–2031</div>
+      </div>
+    </div>
+
+    <div class="alert-box amber" style="margin-top: 32px;">
+      <div class="alert-box-label">Dato clave</div>
+      <div class="alert-box-text">El mercado global de gestión de flotas (más amplio) está proyectado en $32.2B para 2026 y $153.7B para 2036 con CAGR del 16.9%. Asia-Pacífico lidera el crecimiento con 27.2% CAGR.</div>
+    </div>
+    <div class="alert-box amber">
+      <div class="alert-box-label">Dato clave — España</div>
+      <div class="alert-box-text">El sector renting en España supera los 144,000 vehículos registrados y actúa como canal principal de electrificación de flotas corporativas. Arval y Ayvens concentran la mayoría del mercado de leasing empresarial.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     12. SIGNALS PULPO SHOULD ACT ON
+═══════════════════════════════════════════ -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label section-label-light">Inteligencia accionable</span>
+      <h2 class="section-title section-title-light">Señales en las que<br>Pulpo debe actuar</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="signals-list">
+      <div class="signal-item">
+        <div class="signal-num">01</div>
+        <div class="signal-content">
+          <div class="signal-headline">PulpoPay necesita una tesis de producto para flotas mixtas (combustible + EV) — ahora, no en 2027</div>
+          <div class="signal-body">WEX ya lanzó la tarjeta unificada. En 2–3 años este será el estándar esperado. El mercado mexicano tiene una ventana de 2–4 años antes de que los jugadores globales lleguen con fuerza. La arquitectura de PulpoPay debe contemplar este escenario en el diseño actual.</div>
+          <span class="signal-type">Acción: Producto / Estrategia</span>
+        </div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-num">02</div>
+        <div class="signal-content">
+          <div class="signal-headline">Mantenimiento predictivo es la oportunidad de producto más cercana y de mayor impacto en el mercado mexicano</div>
+          <div class="signal-body">La tecnología existe (Questar, OBD integrations). El mercado mexicano no lo tiene. Y los clientes de Pulpo que ya registran mantenimientos están a un paso de recibir predicciones. La integración con un proveedor de OBD data y un modelo de scoring de salud vehicular es un proyecto de producto de alta palanca.</div>
+          <span class="signal-type">Acción: Roadmap de Producto</span>
+        </div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-num">03</div>
+        <div class="signal-content">
+          <div class="signal-headline">El cumplimiento normativo como categoría de producto es una oportunidad de posicionamiento sin explotar en México</div>
+          <div class="signal-body">La FMCSA, la DGT y próximamente la SCT van a hacer que el cumplimiento sea un pain point urgente y recurrente. Pulpo puede posicionarse como "la plataforma que asegura que tu flota siempre está en regla" — no solo gestionada. Esto afecta ventas, retención y pricing.</div>
+          <span class="signal-type">Acción: Posicionamiento / Ventas</span>
+        </div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-num">04</div>
+        <div class="signal-content">
+          <div class="signal-headline">El 76% de penetración disponible en México es el argumento de mercado #1 para clientes y para fundraising</div>
+          <div class="signal-body">Tres de cada cuatro flotas de carga en México no usan telemetría. Esto no es una estadística de industria — es la tesis de inversión y la propuesta de valor de Pulpo resumida en un número. Debe estar en cada deck, cada llamada de ventas y cada conversación con inversores.</div>
+          <span class="signal-type">Acción: Ventas / Narrativa / Fundraising</span>
+        </div>
+      </div>
+      <div class="signal-item">
+        <div class="signal-num">05</div>
+        <div class="signal-content">
+          <div class="signal-headline">Explorar alianza con aseguradora mexicana para seguro de flota basado en datos de Pulpo</div>
+          <div class="signal-body">El modelo Flock+Admiral es probado y replicable. Pulpo tiene los datos de comportamiento. Qualitas, GNP o AXA México son candidatos naturales. Una propuesta piloto puede estructurarse como: Pulpo provee scoring de riesgo verificado — aseguradora ofrece prima diferenciada — cliente recibe ahorro inmediato — Pulpo recibe fee de datos y referidos.</div>
+          <span class="signal-type">Acción: Partnerships / Nueva línea de ingresos</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     13. CONTENT IDEAS
+═══════════════════════════════════════════ -->
+<section class="section section-sand">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Contenido &amp; comercial</span>
+      <h2 class="section-title">Ideas de contenido</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="content-col-grid">
+      <div class="content-col">
+        <div class="content-col-label">LinkedIn — 5 posts</div>
+        <div class="content-item">
+          <div class="content-item-title">El 76% de flotas en México no usa telemetría. ¿Qué están perdiendo?</div>
+          <div class="content-item-body">Post de datos + perspectiva. Usar el dato de penetración del 24% como gancho. Incluir los 3 costos más visibles de operar sin datos.</div>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">WEX acaba de cambiar las reglas del juego en pagos de flota. ¿Qué significa para México?</div>
+          <div class="content-item-body">Análisis del lanzamiento WEX + reflexión sobre hacia dónde va el gasto de flota en LATAM. Posiciona a Pulpo como observador inteligente del mercado.</div>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Samsara facturó $1.59B el año pasado. La pregunta correcta no es cómo — es por qué importa en México</div>
+          <div class="content-item-body">Contextualizar el crecimiento de Samsara con la oportunidad local. Flotas en México tienen el mismo problema que resuelve Samsara — y la solución no tiene que costar lo mismo.</div>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">El mantenimiento predictivo llegó a Europa. México tiene 3 años de ventana antes de que sea el estándar</div>
+          <div class="content-item-body">Contar el lanzamiento Webfleet+Questar como señal de mercado. Educación sobre la diferencia entre mantenimiento reactivo, preventivo y predictivo en flotas comerciales.</div>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Transportes Marva ya tiene 120 camiones eléctricos. ¿Cómo se gestiona una flota mixta en México?</div>
+          <div class="content-item-body">Caso de estudio local + reflexión sobre qué necesita cambiar en la gestión operativa cuando parte de tu flota es eléctrica.</div>
+        </div>
+      </div>
+      <div class="content-col">
+        <div class="content-col-label">Ventas outbound — 3 ángulos</div>
+        <div class="content-item">
+          <div class="content-item-title">Para directores de operaciones: "¿Cuánto te está costando operar sin datos?"</div>
+          <div class="content-item-body">Ángulo de dolor + ROI. Usar benchmarks de costo por kilómetro, sobreconsumo de combustible y mantenimiento correctivo vs. preventivo. Ofrecer un diagnóstico gratuito de eficiencia de flota como opener.</div>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Para directores financieros: "El gasto de tu flota está descontrolado — y lo sabes"</div>
+          <div class="content-item-body">Enfocado en visibilidad de gasto operativo. PulpoPay como eje. El argumento: "Si no puedes ver el gasto en tiempo real, no puedes controlarlo." Demo de dashboard de gasto por vehículo, conductor y ruta.</div>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Para empresas de transporte federal: "La regulación telemetría llega — ¿estás listo?"</div>
+          <div class="content-item-body">Aprovechar la señal de la FMCSA y el patrón regulatorio en EE.UU. y España para construir urgencia de cumplimiento en México. Pulpo como la plataforma que asegura que tu flota siempre está en regla.</div>
+        </div>
+      </div>
+      <div class="content-col">
+        <div class="content-col-label">Educación a clientes — 3 piezas</div>
+        <div class="content-item">
+          <div class="content-item-title">Guía: Mantenimiento preventivo vs. predictivo — qué es, cuánto ahorra y cómo implementarlo en tu flota</div>
+          <div class="content-item-body">Contenido educativo premium. Datos de ahorro (3–5x de diferencia en costo por evento). Casos de referencia internacionales. CTA: cómo Pulpo ayuda a estructurar el calendario de mantenimiento.</div>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Checklist: 10 métricas de flota que todo director de operaciones debe monitorear cada semana</div>
+          <div class="content-item-body">Contenido práctico y descargable. Incluye KPIs de costo por km, consumo por vehículo, downtime, cumplimiento normativo y más. Cada métrica conectada con una funcionalidad de Pulpo.</div>
+        </div>
+        <div class="content-item">
+          <div class="content-item-title">Reporte: El estado de la flota en México 2026 — adopción digital, costos operativos y hacia dónde va la industria</div>
+          <div class="content-item-body">Reporte de autoridad usando datos de mercado, datos anonimizados de la base de clientes de Pulpo y benchmarks internacionales. Posiciona a Pulpo como la fuente de inteligencia del sector en México.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     14. ONE SHARP OPINION
+═══════════════════════════════════════════ -->
+<section class="opinion-section">
+  <div class="container">
+    <span class="section-label section-label-light" style="margin-bottom: 40px; display:block;">Opinión editorial</span>
+    <div class="opinion-quote">
+      El software de gestión de flotas dejó de ser una herramienta de registro. Se convirtió en infraestructura de datos. Y quien controla los datos, controla el margen.
+    </div>
+    <div class="opinion-body">
+      Samsara facturó $1.59B el año pasado no porque tenga el mejor GPS del mundo. Facturó $1.59B porque convenció a las flotas más grandes de EE.UU. de que su plataforma es el sistema nervioso de sus operaciones. Cada kilómetro recorrido, cada frenada brusca, cada litro consumido — todo alimenta un modelo de datos que se vuelve más valioso cada semana.<br><br>
+      En México, el 76% de flotas todavía opera con hojas de Excel o, en el mejor caso, con telemetría básica sin integración. Eso no es un problema de tecnología — es una brecha de educación de mercado y de costo de entrada percibido.<br><br>
+      La oportunidad no es copiar a Samsara. Es llegar primero al mercado mexicano con la propuesta correcta: visibilidad de operaciones, control de gasto y cumplimiento normativo en una sola plataforma accesible para flotas de 10 a 500 unidades. No la plataforma más cara — la más relevante para el contexto local.<br><br>
+      El que gane esa posición en los próximos 3 años, gana la industria por la próxima década.
+    </div>
+    <div class="opinion-byline">Radar Fleet by Pulpo · Edición Nº 1 · 14 de abril 2026</div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     15. CLOSING PAGE
+═══════════════════════════════════════════ -->
+<section class="closing">
+  <div class="container">
+    <div class="closing-logo">Radar Fleet <span>by Pulpo</span></div>
+    <div class="closing-tagline">Inteligencia semanal para el sector de gestión de flotas</div>
+    <div class="closing-divider"></div>
+    <p style="font-size:13px; color:rgba(255,255,255,0.3); max-width:480px; margin: 0 auto 32px; line-height:1.7;">
+      Publicación semanal interna y externa de Pulpo. Cada lunes a las 7:00 AM. Diseñado para equipos comerciales, clientes actuales y prospectos estratégicos.
+    </p>
+    <div class="closing-meta">
+      Número 1 &nbsp;·&nbsp; 14 de abril de 2026 &nbsp;·&nbsp; Próxima edición: 21 de abril de 2026
+    </div>
+    <div style="margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.05);">
+      <div style="display:flex; justify-content:center; gap:32px; flex-wrap:wrap; margin-bottom: 32px;">
+        <span style="font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.15);">México</span>
+        <span style="font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.15);">España</span>
+        <span style="font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.15);">Flota &amp; Pagos</span>
+        <span style="font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.15);">Telemetría</span>
+        <span style="font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.15);">Electrificación</span>
+        <span style="font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.15);">Regulación</span>
+      </div>
+      <div style="display:flex; justify-content:center; align-items:center; gap:40px; flex-wrap:wrap; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.04);">
+        <a href="archive.html" style="font-size:11px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.35); text-decoration:none; border-bottom: 1px solid rgba(255,255,255,0.12); padding-bottom:2px; transition: color 0.2s;">Todas las ediciones</a>
+        <span style="color:rgba(255,255,255,0.1); font-size:11px;">·</span>
+        <span style="font-size:11px; color:rgba(255,255,255,0.2);">
+          Editado por <a href="https://www.getpulpo.com" target="_blank" rel="noopener" style="color:var(--muted-gold); text-decoration:none; font-weight:600; border-bottom:1px solid rgba(201,168,76,0.3); padding-bottom:1px;">Pulpo</a>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
