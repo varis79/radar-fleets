@@ -1,4 +1,4 @@
-# Memoria editorial — Radar Fleet by Pulpo
+# Memoria editorial — Fleet Radar by Pulpo
 
 Registro acumulativo de temas, historias, players, cifras y ángulos ya tratados. Sirve para:
 

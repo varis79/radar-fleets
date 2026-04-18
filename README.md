@@ -1,4 +1,4 @@
-# Radar Fleet by Pulpo
+# Fleet Radar by Pulpo
 
 Publicación editorial semanal en español sobre gestión de flotas, combustible, telemática, mantenimiento, regulación, electrificación e IA aplicada a operaciones. Editada por [Pulpo](https://www.getpulpo.com/).
 

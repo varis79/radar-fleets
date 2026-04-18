@@ -90,9 +90,9 @@ a{color:inherit}
     radial-gradient(ellipse 80% 60% at 20% 80%, var(--cover-grad-a) 0%, transparent 60%),
     radial-gradient(ellipse 60% 50% at 80% 20%, var(--cover-grad-b) 0%, transparent 55%),
     radial-gradient(ellipse 100% 100% at 50% 50%, #0d1521 0%, #060a10 100%);
-  min-height:88vh;
-  display:flex;flex-direction:column;justify-content:flex-end;
-  padding:64px 64px 72px;
+  min-height:auto;
+  display:flex;flex-direction:column;justify-content:flex-start;
+  padding:112px 64px 72px;
   position:relative;overflow:hidden;
 }
 .cover::before{
@@ -103,8 +103,8 @@ a{color:inherit}
   pointer-events:none;
 }
 .cover-head{
-  position:absolute;top:40px;left:64px;right:64px;
-  display:flex;justify-content:space-between;align-items:flex-start;gap:20px;
+  position:absolute;top:28px;left:64px;right:64px;
+  display:flex;justify-content:space-between;align-items:center;gap:20px;
   z-index:2;
 }
 .cover-logo{
@@ -518,12 +518,12 @@ a{color:inherit}
   }
   .cover-head{
     position:static;
-    padding:0;margin-bottom:40px;
+    padding:0;margin-bottom:24px;
     gap:12px;
   }
   .cover-logo{font-size:18px}
   .cover-num{font-size:12px;padding:5px 10px}
-  .cover-overline{margin-top:48px;font-size:10px;letter-spacing:.2em;margin-bottom:16px}
+  .cover-overline{margin-top:12px;font-size:10px;letter-spacing:.2em;margin-bottom:14px}
   .cover-issue{font-size:clamp(28px,7.5vw,46px);letter-spacing:-.6px;margin-bottom:22px;line-height:1.05}
   .cover-deck{font-size:14px;line-height:1.7;margin-bottom:32px;padding-left:16px}
   .cover-tag{font-size:9px;padding:5px 10px}

@@ -9,9 +9,9 @@ Mantener este archivo editable por el equipo. Cuando algo cambia (p.ej. número 
 - **Nombre:** Pulpo (anteriormente también Pulpomatic en algunos materiales antiguos).
 - **URL principal:** https://www.getpulpo.com/
 - **Propuesta:** software de gestión de flotas con IA, multi-país, multi-industria.
-- **Fundación:** 2016.
-- **Geo-presencia:** España (Madrid, HQ), México (CDMX, Mérida), USA (Miami), Colombia (Bogotá).
-- **Audiencia objetivo:** flotas de 10 a 10.000 unidades; directores de operaciones, CFO y directores de flota.
+- **Fundación:** 2018.
+- **Geo-presencia:** México, España y otros países. Oficinas principales en Madrid, Ciudad de México, Mérida, Miami y Bogotá.
+- **Audiencia objetivo:** flotas de 10 a 10.000+ unidades de todos los sectores; directores de operaciones, CFO y directores de flota.
 
 ## Datos de tracción (actualizar cuando cambie)
 
@@ -20,7 +20,7 @@ Mantener este archivo editable por el equipo. Cuando algo cambia (p.ej. número 
 | Vehículos gestionados | +200.000 | 2026-Q1 |
 | Tamaño mínimo de cliente | 10 vehículos | — |
 | Tamaño máximo de cliente | +10.000 vehículos | — |
-| Años de operación | desde 2016 | — |
+| Años de operación | desde 2018 | — |
 
 ## Capacidades del producto (frases reutilizables)
 
@@ -32,8 +32,8 @@ Mantener este archivo editable por el equipo. Cuando algo cambia (p.ej. número 
 
 ✅ Sí — Cifras y hechos verificables:
 - "+200.000 vehículos gestionados"
-- "Operando desde 2016 en España y México"
-- "Clientes de 10 a 10.000 unidades"
+- "Operando desde 2018 en México, España y otros países"
+- "Clientes de 10 a más de 10.000 unidades de todos los sectores"
 - "Oficinas en Madrid, Ciudad de México, Mérida, Miami y Bogotá"
 - "IA aplicada a mantenimiento predictivo, optimización de rutas, fraude de combustible y scoring"
 
@@ -70,7 +70,7 @@ Estos ángulos pueden aparecer periódicamente en "Desde Pulpo" cuando haya mate
 ## Pistas de contenido "desde producto"
 
 Cuando Pulpo lance una feature, la entrada en `pulpo-update.md` debería poder responder:
-- ¿Qué problema resuelve para el lector de Radar Fleet?
+- ¿Qué problema resuelve para el lector de Fleet Radar?
 - ¿En qué país está disponible?
 - ¿Qué reemplaza o mejora?
 - ¿Hay un cliente que ya lo probó y puede citarse?
