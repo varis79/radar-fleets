@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tarjetas de flota (fuel cards) en 2026 · red, EV, peajes y control de gasto — The Fleet Radar · by Pulpo</title>
+<meta name="description" content="Cómo están cambiando las tarjetas de flota en 2026: absorción de nuevas redes (EV, peajes, mantenimiento), jugadores activos por geografía, criterios de evaluación y cifras del mercado.">
+<meta name="author" content="Pulpo — getpulpo.com">
+<meta name="keywords" content="tarjeta de flota, fuel card 2026, WEX, Corpay, Edenred, DKV, tarjeta combustible empresa, carga EV flota, control de gasto flota, PulpoPay, tarjeta combustible México, tarjeta flota España">
+<meta property="og:title" content="Tarjetas de flota (fuel cards) en 2026 — The Fleet Radar · by Pulpo">
+<meta property="og:description" content="Qué está cambiando en las fuel cards en 2026: carga EV privada, peajes integrados, control de gasto. Players, criterios y cifras.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://thefleetradar.com/temas/fuel-cards/">
+<meta property="og:site_name" content="The Fleet Radar · by Pulpo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tarjetas de flota (fuel cards) en 2026 — The Fleet Radar · by Pulpo">
+<meta name="twitter:description" content="Cambios 2026 en fuel cards: EV, peajes, POS y control de gasto. Jugadores y criterios.">
+<link rel="canonical" href="https://thefleetradar.com/temas/fuel-cards/">
+<link rel="alternate" type="application/rss+xml" title="The Fleet Radar · by Pulpo" href="/rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/radar.css">
+<style>
+  /* Acento · tema fuel-cards: amber + navy */
+  :root{
+    --accent:#d4891a;
+    --accent-2:#0d1b2e;
+    --cover-grad-a:rgba(212,137,26,0.22);
+    --cover-grad-b:rgba(13,27,46,0.25);
+  }
+  .t-hero{
+    background:var(--near-black);
+    background-image:
+      radial-gradient(ellipse 70% 50% at 20% 80%, var(--cover-grad-a) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 80% 20%, var(--cover-grad-b) 0%, transparent 55%),
+      radial-gradient(ellipse 100% 100% at 50% 50%, #0d1521 0%, #060a10 100%);
+    padding:80px 40px 64px;border-bottom:1px solid rgba(255,255,255,.06);
+  }
+  .t-hero-inner{max-width:920px;margin:0 auto}
+  .t-kicker{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;display:block}
+  .t-title{font-family:'Fraunces',serif;font-size:clamp(38px,5.6vw,66px);font-weight:900;line-height:1;letter-spacing:-1.1px;color:#fff;margin-bottom:22px}
+  .t-title span{color:var(--accent)}
+  .t-deck{font-size:16px;color:rgba(255,255,255,.68);max-width:680px;line-height:1.75;border-left:2px solid var(--accent);padding-left:20px}
+  .t-updated{margin-top:24px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+  .t-main{max-width:920px;margin:0 auto;padding:72px 40px 100px}
+  .t-body p{font-size:16px;line-height:1.8;color:var(--text-mid);margin-bottom:18px}
+  .t-body h2{font-family:'Fraunces',serif;font-size:30px;font-weight:700;color:var(--text-dark);margin-top:56px;margin-bottom:20px;letter-spacing:-.3px;line-height:1.15}
+  .t-body h3{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:var(--text-dark);margin-top:28px;margin-bottom:12px}
+  .t-body strong{color:var(--text-dark)}
+  .t-body a{color:var(--accent-2);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+  .t-body a:hover{color:var(--accent)}
+  .mov-list{list-style:none;margin:20px 0 0}
+  .mov-list li{padding:18px 22px;background:var(--cream);border-left:3px solid var(--accent);margin-bottom:10px}
+  .mov-list li strong{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  .crit-list{list-style:none;margin:20px 0 0;counter-reset:crit}
+  .crit-list li{padding:18px 22px 18px 64px;background:#fff;border:1px solid var(--border-dark);border-left:3px solid var(--accent);margin-bottom:10px;position:relative;counter-increment:crit}
+  .crit-list li::before{content:"0" counter(crit);position:absolute;left:22px;top:16px;font-family:'Fraunces',serif;font-size:28px;font-weight:900;color:var(--accent);line-height:1}
+  .crit-list li strong{display:block;font-family:'Fraunces',serif;font-size:16px;font-weight:700;color:var(--text-dark);margin-bottom:6px}
+  .players-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:20px}
+  .player-cat{padding:22px 24px;background:#fff;border:1px solid var(--border-dark);border-left:3px solid var(--accent)}
+  .player-cat h4{font-family:'Fraunces',serif;font-size:16px;font-weight:700;color:var(--text-dark);margin-bottom:10px}
+  .player-cat ul{list-style:none;margin:0;padding:0}
+  .player-cat li{font-size:13px;color:var(--text-mid);padding:4px 0;line-height:1.5}
+  .figures-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px}
+  .figure-card{padding:22px;background:var(--navy);color:#fff;border-left:3px solid var(--accent)}
+  .figure-num{font-family:'Fraunces',serif;font-size:36px;font-weight:900;line-height:1;color:#fff;margin-bottom:6px;letter-spacing:-.5px}
+  .figure-caption{font-size:13px;line-height:1.55;color:rgba(255,255,255,.72)}
+  .figure-source{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-top:10px}
+  .related-block{background:var(--warm-sand);padding:32px;margin-top:32px;border-radius:4px}
+  .related-block h3{font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin:0 0 12px 0;color:var(--text-dark)}
+  .related-block a{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--border-dark);text-decoration:none;color:inherit}
+  .related-block a:last-child{border-bottom:none}
+  .related-block a:hover .ed-title{color:var(--navy)}
+  .ed-title{font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:var(--text-dark)}
+  .ed-date{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);white-space:nowrap;align-self:center}
+  .linked-topics{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:20px}
+  .linked-topic{display:block;padding:20px 22px;background:#fff;border:1px solid var(--border-dark);border-left:3px solid var(--accent);text-decoration:none;color:inherit}
+  .linked-topic:hover{border-left-color:var(--accent-2)}
+  .linked-topic .lt-kicker{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:6px}
+  .linked-topic .lt-title{font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:var(--text-dark);line-height:1.25;margin-bottom:4px}
+  .linked-topic .lt-body{font-size:13px;color:var(--text-mid);line-height:1.55}
+  .t-cta{background:var(--warm-sand);padding:56px 32px;text-align:center;margin-top:56px;border-radius:4px}
+  .t-cta h3{font-family:'Fraunces',serif;font-size:24px;font-weight:700;color:var(--text-dark);margin-bottom:14px;letter-spacing:-.2px;line-height:1.3}
+  .t-cta p{font-size:15px;color:var(--text-mid);line-height:1.7;max-width:560px;margin:0 auto 24px}
+  .t-cta a{display:inline-block;padding:12px 28px;background:var(--navy);color:#fff;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border-radius:2px}
+  @media (max-width:720px){
+    .t-hero{padding:56px 20px 48px}
+    .t-main{padding:48px 20px 80px}
+    .figures-grid{grid-template-columns:1fr}
+    .related-block a{flex-direction:column;gap:4px}
+    .ed-date{align-self:flex-start}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a href="/" class="topbar-brand">The Fleet Radar <span>by Pulpo</span></a>
+  <div class="topbar-meta">Tema · Fuel cards</div>
+  <nav class="topbar-nav">
+    <a href="/" class="nav-extra">Última</a>
+    <a href="/archive.html">Archivo</a>
+    <a href="https://www.getpulpo.com/" class="cta" target="_blank" rel="noopener">Pulpo ↗</a>
+  </nav>
+</header>
+
+<section class="t-hero">
+  <div class="t-hero-inner">
+    <span class="t-kicker">Tema · Transversal · 2026</span>
+    <h1 class="t-title">Tarjetas de flota <span>(fuel cards)</span> en 2026</h1>
+    <p class="t-deck">La tarjeta de combustible ya no cubre solo combustible. En 2026 absorbe carga EV pública y privada, peajes, mantenimiento y control de gasto. Los grandes jugadores integran red de POS y ecosistema de cargadores. Aquí el panorama: qué cambia, quién juega y con qué criterios evaluar.</p>
+    <div class="t-updated">Actualizado · 18 de abril de 2026</div>
+  </div>
+</section>
+
+<main class="t-main">
+  <div class="t-body">
+
+    <p>La "fuel card" de 2026 poco tiene que ver con la tarjeta de combustible de hace cinco años. El movimiento estructural es claro: la tarjeta absorbe redes. Primero combustible. Después peajes. Después mantenimiento. Después carga EV pública. Ahora carga EV privada depot-to-depot. Cada integración baja la fricción de reconciliación y sube la cantidad de gasto que pasa por un mismo medio de pago.</p>
+
+    <p>En paralelo, los grandes jugadores se están apoyando en dos palancas: integración con redes de POS (un solo POS acepta varias tarjetas) y alianzas con operadores de carga EV (la tarjeta vale dentro del depósito, no solo en estaciones públicas). El resultado: el gestor de flota ve más gasto en menos cuentas y el cierre contable pierde fricción.</p>
+
+    <p>Esta página recoge qué movimientos observar, qué jugadores están activos por geografía y qué criterios editoriales aplicar antes de firmar un contrato. Se actualiza cuando hay señal relevante y cuando The Fleet Radar publica edición sobre el tema.</p>
+
+    <h2>Qué está cambiando en 2026</h2>
+
+    <ul class="mov-list">
+      <li>
+        <strong>Movimiento · Carga EV dentro de la tarjeta</strong>
+        Corpay se integra con Voltempo en el Reino Unido para que flotas eléctricas puedan localizar, reservar y pagar carga en depósitos privados con la misma charge card. Primer paso visible de "tarjeta de flota" a "tarjeta del kilovatio".
+      </li>
+      <li>
+        <strong>Movimiento · Integración de POS multi-tarjeta</strong>
+        Verifone lanza Commander Fleet para que gasolineras y tiendas de conveniencia acepten WEX y otras tarjetas comerciales con una sola integración de POS. NCR Voyix integra aceptación Corpay sobre su nueva generación de POS en más de 18.000 estaciones USA.
+      </li>
+      <li>
+        <strong>Movimiento · Tarjeta multi-gasto sobre Visa</strong>
+        Edenred Essentials cubre combustible, carga EV, peajes, parking, mantenimiento y lavado sobre red Visa. Cuando el medio de pago es Visa y el control vive en software, la tarjeta se convierte en configuración.
+      </li>
+      <li>
+        <strong>Movimiento · Red EV europea como diferenciador</strong>
+        DKV Mobility ya ofrece más de un millón de puntos de carga en su red. Declara la transparencia de precio como prioridad 2026. La diferenciación europea pasa de puntos de combustible a puntos EV con precio transparente.
+      </li>
+      <li>
+        <strong>Movimiento · Integración con software operativo</strong>
+        Fleetio absorbe cada transacción de Motive Card en su sistema de mantenimiento. La tarjeta deja de ser dato suelto y entra al ERP operativo del vehículo. Menos reconciliación manual, más datos contables por unidad.
+      </li>
+    </ul>
+
+    <h2>Jugadores activos por geografía</h2>
+
+    <div class="players-grid">
+      <div class="player-cat">
+        <h4>🇺🇸 USA + global</h4>
+        <ul>
+          <li>WEX · líder con Verifone Commander</li>
+          <li>Corpay (ex Fleetcor) · Select Fleet + NCR</li>
+          <li>Shell Card · legado global</li>
+          <li>Coast · expense management USA</li>
+          <li>Fuelman · legado</li>
+        </ul>
+      </div>
+      <div class="player-cat">
+        <h4>🇪🇺 Europa</h4>
+        <ul>
+          <li>DKV Mobility · HDV + EV</li>
+          <li>Edenred · multi-gasto Visa</li>
+          <li>UTA Edenred · HDV</li>
+          <li>Radius · UK/EU</li>
+          <li>Eurowag · Europa central</li>
+          <li>BP Plus · legado</li>
+        </ul>
+      </div>
+      <div class="player-cat">
+        <h4>🇪🇸 España</h4>
+        <ul>
+          <li>Solred · Repsol Empresas, red amplia</li>
+          <li>Repsol Empresas · fuel + EV</li>
+          <li>Cepsa Flotas · red ES</li>
+          <li>DKV Mobility · presencia EU</li>
+        </ul>
+      </div>
+      <div class="player-cat">
+        <h4>🇲🇽 México</h4>
+        <ul>
+          <li>Ruta Card · fuel card nacional</li>
+          <li>Efectivale · vale electrónico</li>
+          <li>Sí Vale · vale electrónico</li>
+          <li>WEX · entrada gradual</li>
+          <li>Edenred · multi-gasto</li>
+        </ul>
+      </div>
+      <div class="player-cat">
+        <h4>Integrado con software de flota</h4>
+        <ul>
+          <li>PulpoPay · desde <a href="/players/pulpo/">Pulpo</a></li>
+          <li>Motive Card · integrado en Motive</li>
+          <li>Fleetio + Motive · integración bidireccional</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>Criterios para evaluar una fuel card en 2026</h2>
+
+    <p>La fuel card deja de ser una decisión del responsable de combustible y entra al comité de compras. Estos son los criterios editoriales que The Fleet Radar aplica al analizar cualquier tarjeta nueva. No es una comparativa; es un marco.</p>
+
+    <ul class="crit-list">
+      <li>
+        <strong>Red de aceptación real</strong>
+        Cuántas estaciones y puntos EV aceptan la tarjeta en los corredores concretos de tu flota, no en el país en general.
+      </li>
+      <li>
+        <strong>Cobertura EV</strong>
+        Carga pública y privada. Si la flota mezcla ICE con EV, la tarjeta debería cubrir ambos sin crear una segunda cuenta.
+      </li>
+      <li>
+        <strong>Peajes y gasto del vehículo</strong>
+        Peajes, parking, lavado y mantenimiento bajo el mismo medio de pago. Cada integración baja reconciliación.
+      </li>
+      <li>
+        <strong>Control de gasto por conductor y vehículo</strong>
+        Límites, categorías, alertas de uso atípico, detección de fraude. La tarjeta sin reglas es un gasto ciego.
+      </li>
+      <li>
+        <strong>Integración con software de flota y ERP</strong>
+        Que cada transacción vuelva automáticamente al sistema operativo del vehículo. Conexión API, no export CSV.
+      </li>
+      <li>
+        <strong>Transparencia de precio</strong>
+        Spot, negociado o dinámico. Qué descuento real ofrece el emisor y cómo lo audita el gestor.
+      </li>
+      <li>
+        <strong>Soporte en idioma y horario del operador</strong>
+        Una flota MX o ES necesita soporte en español en horario local.
+      </li>
+      <li>
+        <strong>Arquitectura de datos</strong>
+        Quién es el propietario de los datos de transacción. Importante ante una migración futura de proveedor.
+      </li>
+      <li>
+        <strong>Contrato: plazo, SLA y penalizaciones</strong>
+        Cláusulas de permanencia, SLA de operación del POS, plazos de retirada sin coste.
+      </li>
+    </ul>
+
+    <p>Una guía extendida con estos criterios vendrá como pieza evergreen en <code>/evergreen/guias/criterios-evaluar-fuel-card/</code>.</p>
+
+    <h2>Cifras del mercado</h2>
+
+    <div class="figures-grid">
+      <div class="figure-card">
+        <div class="figure-num">+14,2%</div>
+        <div class="figure-caption">CAGR previsto para el mercado global de fuel cards entre 2026 y 2033.</div>
+        <div class="figure-source">Informe sectorial 2026</div>
+      </div>
+      <div class="figure-card">
+        <div class="figure-num">+1 M</div>
+        <div class="figure-caption">Puntos de carga EV en la red de DKV Mobility. Extensión al kilovatio de la tarjeta de combustible tradicional.</div>
+        <div class="figure-source">DKV · 2026</div>
+      </div>
+      <div class="figure-card">
+        <div class="figure-num">+18.000</div>
+        <div class="figure-caption">Estaciones de combustible en USA donde NCR Voyix integra aceptación Corpay sobre nueva generación de POS.</div>
+        <div class="figure-source">The Fleet Radar · Nº 2</div>
+      </div>
+      <div class="figure-card">
+        <div class="figure-num">+110k</div>
+        <div class="figure-caption">Puntos de servicio en la red de talleres de Fleetio, con Motive Card integrada bidireccional.</div>
+        <div class="figure-source">Fleetio · 2025/26</div>
+      </div>
+    </div>
+
+    <h2>Mercados relacionados</h2>
+
+    <div class="linked-topics">
+      <a href="/mercados/mexico/" class="linked-topic">
+        <div class="lt-kicker">Mercado · 🇲🇽</div>
+        <div class="lt-title">Flotas en México 2026</div>
+        <div class="lt-body">Fuel cards nacionales, vales electrónicos y entrada de jugadores globales.</div>
+      </a>
+      <a href="/mercados/espana/" class="linked-topic">
+        <div class="lt-kicker">Mercado · 🇪🇸</div>
+        <div class="lt-title">Flotas en España 2026</div>
+        <div class="lt-body">Solred, Cepsa, DKV y multi-gasto europeo.</div>
+      </a>
+      <a href="/players/pulpo/" class="linked-topic">
+        <div class="lt-kicker">Player · MX+ES</div>
+        <div class="lt-title">Pulpo</div>
+        <div class="lt-body">Plataforma de flotas con IA. PulpoPay como medio de pago integrado al software operativo.</div>
+      </a>
+    </div>
+
+    <h2>Ediciones que hablan del tema</h2>
+
+    <div class="related-block">
+      <h3>The Fleet Radar · by Pulpo</h3>
+      <a href="/magazines/2026-04-17-radar-fleet-by-pulpo.html">
+        <span class="ed-title">Nº 2 · Peajes por km, hub de 9 MW y cinco V-16 fuera de registro</span>
+        <span class="ed-date">17 abril 2026</span>
+      </a>
+      <a href="/magazines/2026-04-14-radar-fleet-by-pulpo.html">
+        <span class="ed-title">Nº 1 · La semana que redefinió las reglas</span>
+        <span class="ed-date">14 abril 2026</span>
+      </a>
+    </div>
+
+    <div class="t-cta">
+      <h3>La tarjeta sin software operativo es un gasto sin contexto</h3>
+      <p>Pulpo conecta el medio de pago con la vida operativa del vehículo: combustible, mantenimiento, documentación, conductor y gasto por ruta en un mismo sitio. Desde 2018, con +200.000 vehículos gestionados en México, España y otros países.</p>
+      <a href="https://www.getpulpo.com/" target="_blank" rel="noopener">Ver Pulpo en acción</a>
+    </div>
+
+  </div>
+</main>
+
+<footer class="closing" style="padding:48px 32px 40px;">
+  <div class="closing-logo">The Fleet Radar <span>by Pulpo</span></div>
+  <div class="closing-tagline">Inteligencia semanal para el sector de gestión de flotas</div>
+  <div class="closing-links" style="margin-top:24px;border-top:none;padding-top:0;">
+    <a href="/">Última edición</a>
+    <a href="/archive.html">Archivo</a>
+    <a href="/mercados/mexico/">México</a>
+    <a href="/mercados/espana/">España</a>
+    <a href="/rss.xml" class="gold">RSS</a>
+    <span class="closing-pulpo">Editado por <a href="https://www.getpulpo.com" target="_blank" rel="noopener">Pulpo</a></span>
+  </div>
+</footer>
+
+<script defer src="/_vercel/insights/script.js"></script>
+
+</body>
+</html>
