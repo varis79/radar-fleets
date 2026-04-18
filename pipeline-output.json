@@ -1,0 +1,179 @@
+{
+  "week": "2026-W17",
+  "steps": [
+    {
+      "name": "ingest",
+      "result": {
+        "week": "2026-W17",
+        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W17-raw.jsonl",
+        "total_items": 51,
+        "per_source": {
+          "FreightWaves": 24,
+          "Transport & Energy": 10,
+          "Fleet People ES": 7,
+          "T21 MX": 10
+        },
+        "errors": [
+          {
+            "source": "FleetOwner",
+            "error": "feed-bozo: <unknown>:116:16553: not well-formed (invalid token)"
+          },
+          {
+            "source": "Electrek · Transport",
+            "error": "feed-bozo: <unknown>:19:45: not well-formed (invalid token)"
+          },
+          {
+            "source": "Fleet News UK",
+            "error": "feed-bozo: <unknown>:23:48: not well-formed (invalid token)"
+          },
+          {
+            "source": "Trans.info",
+            "error": "feed-bozo: text/html; charset=utf-8 is not an XML media type"
+          },
+          {
+            "source": "Transporte Profesional",
+            "error": "feed-bozo: <unknown>:22:108: not well-formed (invalid token)"
+          },
+          {
+            "source": "Transportes y Turismo",
+            "error": "feed-bozo: <unknown>:3:212: not well-formed (invalid token)"
+          }
+        ]
+      }
+    },
+    {
+      "name": "classify",
+      "result": {
+        "week": "2026-W17",
+        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W17-classified.jsonl",
+        "total": 51,
+        "with_topic": 16,
+        "with_fleet_type": 7,
+        "with_players": 5,
+        "by_market": {
+          "usa": 24,
+          "europa": 11,
+          "peru": 1,
+          "espana": 5,
+          "mexico": 9,
+          "latam": 1
+        }
+      }
+    },
+    {
+      "name": "dedupe",
+      "result": {
+        "week": "2026-W17",
+        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W17-dedup.jsonl",
+        "in": 51,
+        "after_url_dedup": 51,
+        "after_title_dedup": 51
+      }
+    },
+    {
+      "name": "select",
+      "result": {
+        "week": "2026-W17",
+        "mode": "normal",
+        "total_candidates": 51,
+        "total_after_memory_dedup": 51,
+        "total_chosen": 10,
+        "warnings": [],
+        "discarded_repetition": [],
+        "path": "/home/runner/work/radar-fleets/radar-fleets/content/decisions/2026-W17-selection.json"
+      }
+    },
+    {
+      "name": "compose",
+      "result": {
+        "status": "composed",
+        "week": "2026-W17",
+        "mode": "normal",
+        "number": 3,
+        "edition_date": "2026-04-20",
+        "html_path": "magazines/2026-04-20-radar-fleet-by-pulpo.html",
+        "summary_path": "magazines/2026-04-20-radar-fleet-by-pulpo-summary.txt",
+        "llm": {
+          "mode": "llm",
+          "model": "claude-opus-4-1-20250805"
+        },
+        "is_stub": false,
+        "stories_count": 10,
+        "wm_cards_count": 6
+      }
+    },
+    {
+      "name": "qa",
+      "result": {
+        "status": "fail",
+        "week": "2026-W17",
+        "blockers": 11,
+        "warnings": 1,
+        "issues": [
+          {
+            "check": "C2-thin",
+            "severity": "block",
+            "message": "Edición demasiado corta (1753 palabras, mínimo 2200)"
+          },
+          {
+            "check": "C2-thin",
+            "severity": "block",
+            "message": "Story corta: 'Grupo Aralo reporta mejoras operativas con tecnología Samsar' tiene 88 palabras (mínimo 120)"
+          },
+          {
+            "check": "C2-thin",
+            "severity": "block",
+            "message": "Story corta: 'Gasto en taller de camiones sube 2.5% hasta 13.922 euros por' tiene 89 palabras (mínimo 120)"
+          },
+          {
+            "check": "C2-thin",
+            "severity": "block",
+            "message": "Story corta: 'Infraestructura portuaria mexicana permanece subutilizada fr' tiene 85 palabras (mínimo 120)"
+          },
+          {
+            "check": "C2-thin",
+            "severity": "block",
+            "message": "Story corta: 'Ventas de eléctricos en México crecen 21.6% con 25.003 unida' tiene 84 palabras (mínimo 120)"
+          },
+          {
+            "check": "C2-thin",
+            "severity": "block",
+            "message": "Story corta: 'TXT amplía flota con furgonetas eléctricas Farizon para dist' tiene 82 palabras (mínimo 120)"
+          },
+          {
+            "check": "C2-thin",
+            "severity": "block",
+            "message": "Story corta: 'Andalucía licita renting de 384 todoterrenos por 23.1 millon' tiene 78 palabras (mínimo 120)"
+          },
+          {
+            "check": "C2-thin",
+            "severity": "block",
+            "message": "Story corta: 'Reino Unido lidera mejoras de seguridad y adopción EV según ' tiene 80 palabras (mínimo 120)"
+          },
+          {
+            "check": "C2-thin",
+            "severity": "block",
+            "message": "Story corta: 'Manufactura mexicana repunta 3.4% en febrero tras arranque d' tiene 78 palabras (mínimo 120)"
+          },
+          {
+            "check": "C2-thin",
+            "severity": "block",
+            "message": "Story corta: 'ACEA propone flexibilizar CO₂ pero arriesga 74.000 millones ' tiene 78 palabras (mínimo 120)"
+          },
+          {
+            "check": "C2-thin",
+            "severity": "block",
+            "message": "Story corta: 'Isuzu cierra cuarta temporada de serie documental sobre tran' tiene 71 palabras (mínimo 120)"
+          },
+          {
+            "check": "C8-claim",
+            "severity": "warn",
+            "message": "porcentaje sin fuente explícita: 4% más (revisar que la cifra tenga contexto)",
+            "sample": "icipa mayor demanda de transporte. Un 3.4% más de producción se traduce en necesidad d"
+          }
+        ]
+      }
+    }
+  ],
+  "status": "qa-fail"
+}

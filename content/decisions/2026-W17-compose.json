@@ -1,0 +1,16 @@
+{
+  "status": "composed",
+  "week": "2026-W17",
+  "mode": "normal",
+  "number": 3,
+  "edition_date": "2026-04-20",
+  "html_path": "magazines/2026-04-20-radar-fleet-by-pulpo.html",
+  "summary_path": "magazines/2026-04-20-radar-fleet-by-pulpo-summary.txt",
+  "llm": {
+    "mode": "llm",
+    "model": "claude-opus-4-1-20250805"
+  },
+  "is_stub": false,
+  "stories_count": 10,
+  "wm_cards_count": 6
+}
