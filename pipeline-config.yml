@@ -1,0 +1,199 @@
+# The Fleet Radar · pipeline-config.yml
+#
+# Parametrización del MVP autónomo. Cambios aquí no requieren tocar scripts.
+# Todos los scripts del pipeline leen este fichero vía scripts/lib/config.py.
+
+# ─────────────────────────────────────────────
+# Identidad
+# ─────────────────────────────────────────────
+site:
+  name: "The Fleet Radar · by Pulpo"
+  domain: "https://thefleetradar.com"
+  locale: "es-ES"
+  timezone: "Europe/Madrid"
+  slug_prefix: "radar-fleet-by-pulpo"   # mantenido por compatibilidad con URLs ya indexadas
+
+# ─────────────────────────────────────────────
+# Cadencia
+# ─────────────────────────────────────────────
+cadence:
+  day: "monday"          # publicación semanal
+  hour_local: "07:00"
+  next_edition_number_source: "archive"   # se lee de archive.html contando filas
+
+# ─────────────────────────────────────────────
+# Fuentes de ingesta
+# Lista conservadora: calidad sobre cantidad. Mezclar RSS/Atom fiables.
+# Cada fuente tiene geo principal y topic hint opcional.
+# ─────────────────────────────────────────────
+sources:
+  # USA + global
+  - name: "FleetOwner"
+    url: "https://www.fleetowner.com/rss.xml"
+    geo: "usa"
+    lang: "en"
+  - name: "FreightWaves"
+    url: "https://www.freightwaves.com/news/feed"
+    geo: "usa"
+    lang: "en"
+  - name: "Electrek · Transport"
+    url: "https://electrek.co/guides/transport/feed/"
+    geo: "usa"
+    lang: "en"
+    topic_hint: "electrificacion-flotas"
+  # Europa
+  - name: "Fleet News UK"
+    url: "https://www.fleetnews.co.uk/rss/news.aspx"
+    geo: "europa"
+    lang: "en"
+  - name: "Transport & Energy"
+    url: "https://transportandenergy.com/feed/"
+    geo: "europa"
+    lang: "en"
+    topic_hint: "electrificacion-flotas"
+  - name: "Trans.info"
+    url: "https://trans.info/en/feed"
+    geo: "europa"
+    lang: "en"
+  # España
+  - name: "Transporte Profesional"
+    url: "https://transporteprofesional.es/feed/"
+    geo: "espana"
+    lang: "es"
+  - name: "Fleet People ES"
+    url: "https://fleetpeople.es/feed/"
+    geo: "espana"
+    lang: "es"
+  # México / LatAm
+  - name: "Transportes y Turismo"
+    url: "https://www.tyt.com.mx/feed/"
+    geo: "mexico"
+    lang: "es"
+  - name: "T21 MX"
+    url: "https://t21.com.mx/feed"
+    geo: "mexico"
+    lang: "es"
+
+# Ventana temporal considerada por ejecución (días hacia atrás)
+ingest:
+  lookback_days: 8
+  user_agent: "TheFleetRadarBot/1.0 (+https://thefleetradar.com)"
+  timeout_seconds: 20
+  max_items_per_source: 30
+
+# Dominios en blocklist (no se ingesta nada desde aquí)
+blocklist_domains:
+  - example.com
+  - pinterest.com
+
+# ─────────────────────────────────────────────
+# Clasificación
+# Mapeo keyword -> {topic, market, fleet_type, micro_tags}
+# Determinístico. Reglas explícitas, sin LLM.
+# ─────────────────────────────────────────────
+classification:
+  topics:
+    telematica:
+      ["telematic", "telemática", "gps fleet", "geotab", "samsara", "motive", "verizon connect", "webfleet", "fleetio"]
+    video-telematica:
+      ["dashcam", "dash cam", "adas", "lytx", "netradyne", "nauto"]
+    fuel-cards:
+      ["fuel card", "tarjeta de combustible", "tarjeta de flota", "wex", "corpay", "edenred", "dkv mobility", "uta edenred", "solred", "cepsa flotas"]
+    combustible:
+      ["diésel", "gasoil", "combustible", "diesel fuel", "fuel price", "consumo combustible"]
+    electrificacion-flotas:
+      ["ev fleet", "electric truck", "camión eléctrico", "mcs", "megawatt charging", "charging hub", "carga eléctrica", "voltempo", "vev", "scania ev", "byd truck"]
+    mantenimiento:
+      ["maintenance", "mantenimiento", "predictive maintenance", "mantenimiento predictivo", "taller", "workshop"]
+    compliance:
+      ["boe", "dof", "dgt", "fmcsa", "regulation", "regulación", "v-16", "tacógrafo", "tachograph", "eld", "cne", "sict"]
+    routing:
+      ["routing", "last mile", "última milla", "dispatch", "onerail", "bringg", "onfleet"]
+    seguridad:
+      ["driver safety", "siniestralidad", "seguridad vial", "scoring conductor", "road safety"]
+    fraude:
+      ["fraud", "fraude", "fuel theft", "robo combustible"]
+    control-gasto:
+      ["fleet spend", "control de gasto", "cost per mile", "coste por km", "tco"]
+    operacion-flotas:
+      ["fleet management", "gestión de flota", "fleet operations"]
+
+  markets:
+    mexico: ["méxico", "mexico", "cdmx", "dof", "sict", "cne", "autotransporte mexicano"]
+    espana: ["españa", "spain", "madrid", "barcelona", "dgt", "boe", "cepsa", "repsol"]
+    usa: ["united states", "u.s.", "usa", "fmcsa", "california", "texas", "florida"]
+    colombia: ["colombia", "bogotá", "bogota", "medellín"]
+    brasil: ["brasil", "brazil", "são paulo", "sao paulo"]
+    chile: ["chile", "santiago de chile", "codelco"]
+    peru: ["perú", "peru", "lima"]
+    argentina: ["argentina", "buenos aires"]
+    latam: ["latinoamérica", "latinoamerica", "latin america", "latam"]
+    europa: ["europe", "europa", "eu ", "european union", "unión europea"]
+    global: ["global market"]
+
+  fleet_types:
+    transporte-pesado: ["heavy duty", "class 8", "tractocamión", "tractocamion", "pesado", "hdv"]
+    vehiculos-comerciales-ligeros: ["van", "furgoneta", "lcv", "light commercial", "transit", "sprinter", "master", "crafter"]
+    pickups-utilitarios: ["pickup", "f-150", "hilux", "ranger", "frontier"]
+    reparto-ultima-milla: ["last mile", "última milla", "parcel delivery"]
+    field-service: ["field service", "servicio técnico"]
+    ambulancias-emergencias: ["ambulance", "ambulancia", "emergency"]
+    construccion: ["construction", "construcción", "hormigonera"]
+    mineria: ["mining", "minería"]
+    flotas-corporativas: ["corporate fleet", "flota corporativa", "renting"]
+
+# ─────────────────────────────────────────────
+# Dedupe
+# ─────────────────────────────────────────────
+dedupe:
+  title_similarity_threshold: 0.82    # si supera este ratio, items son el mismo hecho
+  strip_from_title: ["- The Times", "| Reuters", "- FleetOwner", "| Bloomberg"]
+
+# ─────────────────────────────────────────────
+# Selección editorial
+# ─────────────────────────────────────────────
+selection:
+  target_stories_normal: 10
+  target_stories_short: 7
+  min_stories_pause: 4        # por debajo de esto, pausa editorial
+  min_wm_cards: 6             # "Lo que importó"
+  topic_min_diversity: 3      # al menos 3 topics distintos
+  geo_min_primary_ratio: 0.30 # MX+ES >= 30% del total
+  recent_weeks_check: 8       # comparar contra las últimas N ediciones para evitar repetición
+  dedup_title_overlap_max: 0.85
+
+# ─────────────────────────────────────────────
+# Composición
+# ─────────────────────────────────────────────
+compose:
+  model_primary: "claude-opus-4-1-20250805"
+  model_fallback: "claude-sonnet-4-5-20250929"
+  max_tokens_per_call: 8000
+  temperature: 0.4
+  accent_palettes:             # 6 paletas. El pipeline rota.
+    - {accent: "#d4891a", accent_2: "#2fa678", grad_a: "rgba(212,137,26,0.22)", grad_b: "rgba(47,166,120,0.18)"}
+    - {accent: "#c9a84c", accent_2: "#1e7fcb", grad_a: "rgba(201,168,76,0.22)", grad_b: "rgba(30,127,203,0.18)"}
+    - {accent: "#b84c3a", accent_2: "#1e7fcb", grad_a: "rgba(184,76,58,0.18)", grad_b: "rgba(30,127,203,0.14)"}
+    - {accent: "#0f3d2e", accent_2: "#d4891a", grad_a: "rgba(15,61,46,0.22)", grad_b: "rgba(212,137,26,0.14)"}
+    - {accent: "#155e75", accent_2: "#d4891a", grad_a: "rgba(21,94,117,0.24)", grad_b: "rgba(212,137,26,0.14)"}
+    - {accent: "#6d28d9", accent_2: "#d4891a", grad_a: "rgba(109,40,217,0.22)", grad_b: "rgba(212,137,26,0.14)"}
+
+# ─────────────────────────────────────────────
+# QA bloqueantes / avisos
+# ─────────────────────────────────────────────
+qa:
+  min_words_edition_normal: 3500
+  min_words_edition_short: 2200
+  min_words_story: 120
+  max_em_dash_in_prose: 0
+  forbidden_framing_file: "prompts/qa-checklist.md"   # el listado vive ahí
+  external_link_check: false  # en MVP no hacemos HEAD externo para no gastar runtime
+  internal_link_check: true
+
+# ─────────────────────────────────────────────
+# Modos de edición
+# ─────────────────────────────────────────────
+modes:
+  normal: {stories: 10, wm_cards: 6, signals_cards: 8}
+  short:  {stories: 7,  wm_cards: 4, signals_cards: 5}
+  pause:  {stories: 0}    # no publica; registra pausa en memoria
