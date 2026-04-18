@@ -1,10 +1,10 @@
-# Fleet Radar by Pulpo — master prompt
+# The Fleet Radar · by Pulpo — master prompt
 
 Fuente única de verdad para generar cada edición semanal. Úsalo como input completo cuando ejecutes la rutina de publicación (manual o automatizada).
 
 ## Rol
 
-Actúa como editor, investigador, diseñador editorial y responsable de publicación de **Fleet Radar by Pulpo**.
+Actúa como editor, investigador, diseñador editorial y responsable de publicación de **The Fleet Radar · by Pulpo**.
 
 ## Objetivo
 
@@ -213,7 +213,7 @@ Cada edición mantiene:
 
 ### Precondiciones bloqueantes
 
-Si cualquiera de estos falla, abrir issue "Fleet Radar — edición bloqueada" en lugar de generar edición:
+Si cualquiera de estos falla, abrir issue "The Fleet Radar — edición bloqueada" en lugar de generar edición:
 
 - No hay noticias reales suficientes en la semana.
 - No se puede leer `prompts/radar-master-prompt.md`.

@@ -1,8 +1,8 @@
-# Fleet Radar by Pulpo
+# The Fleet Radar · by Pulpo
 
 Publicación editorial semanal en español sobre gestión de flotas, combustible, telemática, mantenimiento, regulación, electrificación e IA aplicada a operaciones. Editada por [Pulpo](https://www.getpulpo.com/).
 
-- **Producción:** [radar-fleets.vercel.app](https://radar-fleets.vercel.app/)
+- **Producción:** [thefleetradar.com](https://thefleetradar.com/)
 - **Cadencia:** cada lunes a las 7:00 (Europa/Madrid)
 
 ## Estructura del repo

@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
 <channel>
-  <title>Fleet Radar by Pulpo</title>
-  <link>https://radar-fleets.vercel.app/</link>
-  <atom:link href="https://radar-fleets.vercel.app/rss.xml" rel="self" type="application/rss+xml" />
+  <title>The Fleet Radar · by Pulpo</title>
+  <link>https://thefleetradar.com/</link>
+  <atom:link href="https://thefleetradar.com/rss.xml" rel="self" type="application/rss+xml" />
   <description>Inteligencia semanal de mercado para el sector de gestión de flotas. Telemática, pagos, electrificación, regulación, México, España, USA y Europa. Publicado cada lunes.</description>
   <language>es-ES</language>
   <copyright>© 2026 Pulpo · getpulpo.com</copyright>
-  <managingEditor>team@getpulpo.com (Fleet Radar by Pulpo)</managingEditor>
-  <webMaster>team@getpulpo.com (Fleet Radar by Pulpo)</webMaster>
+  <managingEditor>team@getpulpo.com (The Fleet Radar · by Pulpo)</managingEditor>
+  <webMaster>team@getpulpo.com (The Fleet Radar · by Pulpo)</webMaster>
   <lastBuildDate>Fri, 17 Apr 2026 09:00:00 +0200</lastBuildDate>
   <pubDate>Fri, 17 Apr 2026 09:00:00 +0200</pubDate>
   <ttl>1440</ttl>
   <image>
-    <url>https://radar-fleets.vercel.app/og-default.png</url>
-    <title>Fleet Radar by Pulpo</title>
-    <link>https://radar-fleets.vercel.app/</link>
+    <url>https://thefleetradar.com/og-default.png</url>
+    <title>The Fleet Radar · by Pulpo</title>
+    <link>https://thefleetradar.com/</link>
   </image>
 
   <item>
     <title>Nº 2 · Peajes por km, hub de 9 MW y cinco V-16 fuera de registro</title>
-    <link>https://radar-fleets.vercel.app/magazines/2026-04-17-radar-fleet-by-pulpo.html</link>
-    <guid isPermaLink="true">https://radar-fleets.vercel.app/magazines/2026-04-17-radar-fleet-by-pulpo.html</guid>
+    <link>https://thefleetradar.com/magazines/2026-04-17-radar-fleet-by-pulpo.html</link>
+    <guid isPermaLink="true">https://thefleetradar.com/magazines/2026-04-17-radar-fleet-by-pulpo.html</guid>
     <pubDate>Fri, 17 Apr 2026 09:00:00 +0200</pubDate>
-    <dc:creator>Fleet Radar by Pulpo</dc:creator>
+    <dc:creator>The Fleet Radar · by Pulpo</dc:creator>
     <category>Fleet management</category>
     <category>Telemática</category>
     <category>Electrificación</category>
@@ -35,10 +35,10 @@
 
   <item>
     <title>Nº 1 · La semana que redefinió las reglas</title>
-    <link>https://radar-fleets.vercel.app/magazines/2026-04-14-radar-fleet-by-pulpo.html</link>
-    <guid isPermaLink="true">https://radar-fleets.vercel.app/magazines/2026-04-14-radar-fleet-by-pulpo.html</guid>
+    <link>https://thefleetradar.com/magazines/2026-04-14-radar-fleet-by-pulpo.html</link>
+    <guid isPermaLink="true">https://thefleetradar.com/magazines/2026-04-14-radar-fleet-by-pulpo.html</guid>
     <pubDate>Tue, 14 Apr 2026 07:00:00 +0200</pubDate>
-    <dc:creator>Fleet Radar by Pulpo</dc:creator>
+    <dc:creator>The Fleet Radar · by Pulpo</dc:creator>
     <category>Fleet management</category>
     <description><![CDATA[
       Primera edición. WEX lanza la primera tarjeta de flota que unifica combustible y carga eléctrica. Samsara reporta 1.59 B$ en ingresos anuales. FMCSA ejecuta deadline de revocación de 9 ELDs. Geotab GO Focus Pro. México al 24% de penetración telemática. España: V-16 conectada y tacógrafo G2V2.
