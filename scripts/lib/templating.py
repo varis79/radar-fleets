@@ -170,6 +170,20 @@ HTML_STORY = Template("""
 """)
 
 
+HTML_OPINION = Template("""
+<section class="opinion-section">
+  <div class="container">
+    <span class="section-label section-label-light" style="margin-bottom:40px;display:block;">Opinión editorial</span>
+    <div class="opinion-quote">$opinion_quote</div>
+    <div class="opinion-body">
+$opinion_body
+    </div>
+    <div class="opinion-byline">The Fleet Radar · by Pulpo · Nº $number · $human_date</div>
+  </div>
+</section>
+""")
+
+
 HTML_CTA = Template("""
 <section class="cta-band">
   <div class="cta-inner">
@@ -322,6 +336,28 @@ def render_edition(data: dict) -> str:
         parts.append(HTML_STORIES_WRAP.substitute(
             stories_title=data.get("stories_title", f"{len(data['stories'])} historias clave"),
             stories=stories_html,
+        ))
+
+    # Sección de opinión editorial. Se renderiza solo si el compose produce
+    # quote + body con contenido real. Si alguno falta o está vacío, se omite
+    # limpiamente (no deja sección vacía). El CSS de radar.css ya soporta las
+    # clases .opinion-section / .opinion-quote / .opinion-body / .opinion-byline.
+    op_quote = (data.get("opinion_quote") or "").strip()
+    op_body = (data.get("opinion_body") or "").strip()
+    if op_quote and op_body:
+        # opinion_body puede venir con párrafos separados por \n\n o con <br><br>.
+        # Lo envolvemos en <p> si no trae marcado HTML explícito.
+        if "<p" not in op_body and "<br" not in op_body:
+            # Split por doble salto de línea y mete <p>
+            paragraphs = [p.strip() for p in op_body.split("\n\n") if p.strip()]
+            op_body_html = "\n".join(f"      <p>{p}</p>" for p in paragraphs)
+        else:
+            op_body_html = op_body
+        parts.append(HTML_OPINION.substitute(
+            opinion_quote=op_quote,
+            opinion_body=op_body_html,
+            number=data["number"],
+            human_date=human_date_es(d),
         ))
 
     parts.append(HTML_CTA.substitute(
