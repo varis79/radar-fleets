@@ -542,6 +542,31 @@ a{color:inherit}
   .topbar-nav a{font-size:10px}
 }
 
+/* ───────────────── HUB PAGES ─────────────────
+   Base compartida para páginas tipo hub (mercados, temas, players,
+   evergreen). Coherente con .container / .container-wide del sistema.
+   Max-width 1100px para alineación con la revista. El texto corrido
+   va a 820px para legibilidad; grids y cards ocupan el 100% del main.
+   Las páginas actuales siguen usando sus clases inline (mkt-*, t-*,
+   p-*, topic-*) con estos mismos valores; este bloque sirve de
+   referencia canónica y para páginas futuras.
+*/
+.hub-wrap{max-width:1100px;margin:0 auto;padding:0 32px}
+.hub-body > p,
+.hub-body > h2,
+.hub-body > h3,
+.hub-body > ul,
+.hub-body > ol{max-width:820px}
+
+/* Tablet breakpoint intermedio: reduce padding lateral cuando el
+   viewport queda entre 721 y 1024 px. Evita el salto brusco de
+   desktop a mobile en hub pages. Se aplica además como fallback por
+   si una página nueva olvida igualar padding a 32px. */
+@media (max-width:1024px){
+  .mkt-hero,.t-hero,.p-hero,.e-hero,.topic-hero,
+  .mkt-main,.t-main,.p-main,.e-main,.topic-main{padding-left:24px;padding-right:24px}
+}
+
 /* ───────────────── GEO TAGS ─────────────────
    Clases de clasificación geográfica. Uso en etiquetas,
    story-meta, radar-header y tablas. Coherentes con las

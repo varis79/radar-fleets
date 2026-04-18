@@ -19,8 +19,8 @@ Publicación editorial semanal en español sobre gestión de flotas, combustible
 ├── magazines/
 │   ├── 2026-04-14-radar-fleet-by-pulpo.html          # Nº 1
 │   ├── 2026-04-14-radar-fleet-by-pulpo-summary.txt
-│   ├── 2026-04-20-radar-fleet-by-pulpo.html          # Nº 2 (última)
-│   └── 2026-04-20-radar-fleet-by-pulpo-summary.txt
+│   ├── 2026-04-17-radar-fleet-by-pulpo.html          # Nº 2 (última)
+│   └── 2026-04-17-radar-fleet-by-pulpo-summary.txt
 ├── prompts/
 │   └── radar-master-prompt.md       # Fuente única de verdad para generar ediciones
 └── content/
