@@ -70,7 +70,7 @@ Estos ángulos pueden aparecer periódicamente en "Desde Pulpo" cuando haya mate
 ## Pistas de contenido "desde producto"
 
 Cuando Pulpo lance una feature, la entrada en `pulpo-update.md` debería poder responder:
-- ¿Qué problema resuelve para el lector de Fleet Radar?
+- ¿Qué problema resuelve para el lector de The Fleet Radar?
 - ¿En qué país está disponible?
 - ¿Qué reemplaza o mejora?
 - ¿Hay un cliente que ya lo probó y puede citarse?

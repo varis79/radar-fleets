@@ -1,4 +1,4 @@
-# Market watch — Fleet Radar by Pulpo
+# Market watch — The Fleet Radar · by Pulpo
 
 Watchlist rodante del sector. Se consulta ANTES de cada curación semanal y se actualiza DESPUÉS. Separado por ejes para navegar rápido: temáticas, players, geografías, regulación viva, cifras de referencia.
 

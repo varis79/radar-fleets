@@ -68,7 +68,7 @@ Tono: operativo, con referencias a DOF.
 ### Players
 
 #### 5. `players/pulpo/`
-La casa. Propósito: punto de aterrizaje para quien llega por SEO buscando "Pulpo software flotas". Extracto de `pulpo-facts.md` + testimonios + CTA fuerte a getpulpo.com. No es un landing comercial: es la página editorial de Pulpo dentro de Fleet Radar.
+La casa. Propósito: punto de aterrizaje para quien llega por SEO buscando "Pulpo software flotas". Extracto de `pulpo-facts.md` + testimonios + CTA fuerte a getpulpo.com. No es un landing comercial: es la página editorial de Pulpo dentro de The Fleet Radar.
 
 ---
 
@@ -102,7 +102,7 @@ Crear página por player cuando tenga 3+ apariciones sustanciales en ediciones y
 - Páginas por tag genérico ("Pagos", "IA", "Regulación") — son ejes transversales, se cubren en las temáticas narrativas de arriba, no en taxonomía paralela.
 - Páginas por país fuera del top-4 (MX, ES, USA, Europa). LatAm merece una página agregada, no una por país.
 - Páginas por autor/editor — no aporta, dispersa.
-- Páginas "Sobre Fleet Radar" — vive bien en `about` dentro del footer si se pide.
+- Páginas "Sobre The Fleet Radar" — vive bien en `about` dentro del footer si se pide.
 - Páginas de "newsletter subscribe" — RSS + archivo son suficientes. Si hace falta email, se integra más adelante con Buttondown o Beehiiv vía embed.
 
 ---
