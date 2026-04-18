@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://radar-fleets.vercel.app/sitemap.xml
