@@ -63,6 +63,20 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Ensure PR labels exist
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Crea los 4 labels del pipeline de forma idempotente. --force no
+          # falla si ya existen (los actualiza). Si el comando falla por
+          # cualquier razón, se ignora: más abajo hay un paso tolerante.
+          set +e
+          gh label create "ready-to-review"      --color "2da44e" --description "Edición compuesta con QA OK; preview de Vercel, revisar y mergear"      --force
+          gh label create "needs-editorial-fix"  --color "d93f0b" --description "QA bloqueó la edición; revisar content/qa/YYYY-WW-report.md"          --force
+          gh label create "editorial-pause"      --color "8a8a8a" --description "Material insuficiente; no se publica. El sitio no se ha tocado"    --force
+          gh label create "pipeline-error"       --color "b60205" --description "Fallo técnico del pipeline; mirar pipeline-output.json"              --force
+          set -e
+
       - name: Configure git identity
         run: |
           git config user.name "the-fleet-radar-bot"
@@ -166,12 +180,22 @@ jobs:
           EOF
           )
 
-          gh pr create \
-            --base main \
-            --head "$BRANCH" \
-            --title "$TITLE" \
-            --body "$BODY" \
-            --label "$LABEL"
+          # Tolerancia ante un label que no exista: si `--label` falla,
+          # volvemos a intentar sin label para no perder el PR por una
+          # tontería. El título y el body ya señalan el status.
+          if ! gh pr create \
+                --base main \
+                --head "$BRANCH" \
+                --title "$TITLE" \
+                --body "$BODY" \
+                --label "$LABEL"; then
+            echo "gh pr create con label falló; reintentando sin label..."
+            gh pr create \
+                --base main \
+                --head "$BRANCH" \
+                --title "$TITLE" \
+                --body "$BODY · [label manual: $LABEL]"
+          fi
 
       - name: Report
         run: |
