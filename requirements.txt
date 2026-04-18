@@ -2,4 +2,6 @@ feedparser==6.0.11
 pyyaml==6.0.2
 requests==2.32.3
 beautifulsoup4==4.12.3
-anthropic==0.39.0
+# Pin >=0.45 para evitar TypeError('proxies') con httpx>=0.28
+# (anthropic<=0.39 pasaba `proxies` a httpx.Client que ya no lo acepta).
+anthropic>=0.45.0,<1.0.0
