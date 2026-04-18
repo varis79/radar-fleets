@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guía: cómo leer un recibo de peaje europeo en 2026 — The Fleet Radar · by Pulpo</title>
+<meta name="description" content="Guía operativa 2026: cómo se calcula el peaje de un camión en Europa. Distancia, ejes, CO2 y ruido. País a país: Países Bajos, Austria, Alemania, Francia, Bélgica, Italia. Qué revisar antes de licitar.">
+<meta name="author" content="Pulpo — getpulpo.com">
+<meta name="keywords" content="peaje camión Europa 2026, peaje por kilómetro Holanda, peaje CO2 Austria, Eurovignette fin, coste externo peajes UE, guía peaje camión, tarifa peaje por ejes, AETR peaje europa">
+<meta property="og:title" content="Guía: cómo leer un recibo de peaje europeo en 2026 — The Fleet Radar · by Pulpo">
+<meta property="og:description" content="Cómo se calcula el peaje de un camión en Europa en 2026. Distancia, ejes, CO2, ruido, coste externo. País a país y qué revisar antes de licitar.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://thefleetradar.com/evergreen/guias/peaje-europa-2026/">
+<meta property="og:site_name" content="The Fleet Radar · by Pulpo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Guía: cómo leer un recibo de peaje europeo en 2026">
+<meta name="twitter:description" content="Cálculo componente a componente, país a país, con cifras y fechas.">
+<link rel="canonical" href="https://thefleetradar.com/evergreen/guias/peaje-europa-2026/">
+<link rel="alternate" type="application/rss+xml" title="The Fleet Radar · by Pulpo" href="/rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/radar.css">
+<style>
+  /* Acento · evergreen guía · peaje EU: violet + amber */
+  :root{
+    --accent:#6d28d9;
+    --accent-2:#d4891a;
+    --cover-grad-a:rgba(109,40,217,0.22);
+    --cover-grad-b:rgba(212,137,26,0.14);
+  }
+  .e-hero{background:var(--near-black);background-image:
+      radial-gradient(ellipse 70% 50% at 20% 80%, var(--cover-grad-a) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 80% 20%, var(--cover-grad-b) 0%, transparent 55%),
+      radial-gradient(ellipse 100% 100% at 50% 50%, #0d1521 0%, #060a10 100%);
+      padding:72px 40px 56px;border-bottom:1px solid rgba(255,255,255,.06);}
+  .e-hero-inner{max-width:840px;margin:0 auto}
+  .e-kicker{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-2);margin-bottom:18px;display:block}
+  .e-title{font-family:'Fraunces',serif;font-size:clamp(34px,5vw,58px);font-weight:900;line-height:1.05;letter-spacing:-1px;color:#fff;margin-bottom:22px}
+  .e-title span{color:var(--accent-2)}
+  .e-deck{font-size:16px;color:rgba(255,255,255,.68);max-width:660px;line-height:1.75;border-left:2px solid var(--accent-2);padding-left:20px}
+  .e-updated{margin-top:24px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+  .e-main{max-width:780px;margin:0 auto;padding:64px 40px 100px}
+  .e-body p{font-size:16px;line-height:1.85;color:var(--text-mid);margin-bottom:18px}
+  .e-body h2{font-family:'Fraunces',serif;font-size:28px;font-weight:700;color:var(--text-dark);margin-top:48px;margin-bottom:18px;letter-spacing:-.3px;line-height:1.15}
+  .e-body h3{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:var(--text-dark);margin-top:28px;margin-bottom:12px;display:flex;align-items:baseline;gap:10px}
+  .e-body h3 .flag{font-size:22px}
+  .e-body strong{color:var(--text-dark)}
+  .e-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+  .e-body a:hover{color:var(--accent-2)}
+  .e-body ul{margin:0 0 20px 24px}
+  .e-body li{font-size:16px;line-height:1.75;color:var(--text-mid);margin-bottom:6px}
+  .comp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:20px 0 0}
+  .comp-card{padding:18px;background:var(--cream);border-left:3px solid var(--accent)}
+  .comp-card h4{font-family:'Fraunces',serif;font-size:15px;font-weight:700;color:var(--text-dark);margin-bottom:6px}
+  .comp-card p{font-size:13px;color:var(--text-mid);line-height:1.6;margin:0}
+  .country-block{margin-top:28px;padding:22px 26px;background:#fff;border:1px solid var(--border-dark);border-left:3px solid var(--accent-2)}
+  .country-block h3{margin-top:0}
+  .country-block p{font-size:15px;line-height:1.75;color:var(--text-mid);margin-bottom:10px}
+  .country-block p:last-child{margin-bottom:0}
+  .figures-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px}
+  .figure-card{padding:22px;background:var(--navy);color:#fff;border-left:3px solid var(--accent-2)}
+  .figure-num{font-family:'Fraunces',serif;font-size:34px;font-weight:900;line-height:1;color:#fff;margin-bottom:6px;letter-spacing:-.5px}
+  .figure-caption{font-size:13px;line-height:1.55;color:rgba(255,255,255,.72)}
+  .figure-source{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-top:10px}
+  .check-box{padding:22px 26px;background:rgba(109,40,217,.05);border-left:3px solid var(--accent);margin-top:20px}
+  .check-box h4{font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:var(--text-dark);margin-bottom:10px}
+  .check-box ol{margin:0 0 0 22px;padding:0}
+  .check-box li{font-size:15px;line-height:1.7;color:var(--text-mid);margin-bottom:6px}
+  .related-block{background:var(--warm-sand);padding:32px;margin-top:32px;border-radius:4px}
+  .related-block h3{font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin:0 0 12px 0;color:var(--text-dark)}
+  .related-block a{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--border-dark);text-decoration:none;color:inherit}
+  .related-block a:last-child{border-bottom:none}
+  .related-block a:hover .ed-title{color:var(--navy)}
+  .ed-title{font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:var(--text-dark)}
+  .ed-date{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);white-space:nowrap;align-self:center}
+  .linked-topics{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:20px}
+  .linked-topic{display:block;padding:20px 22px;background:#fff;border:1px solid var(--border-dark);border-left:3px solid var(--accent);text-decoration:none;color:inherit}
+  .linked-topic:hover{border-left-color:var(--accent-2)}
+  .linked-topic .lt-kicker{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:6px}
+  .linked-topic .lt-title{font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:var(--text-dark);line-height:1.25;margin-bottom:4px}
+  .linked-topic .lt-body{font-size:13px;color:var(--text-mid);line-height:1.55}
+  .e-cta{background:var(--warm-sand);padding:48px 32px;text-align:center;margin-top:48px;border-radius:4px}
+  .e-cta h3{font-family:'Fraunces',serif;font-size:22px;font-weight:700;color:var(--text-dark);margin-bottom:14px;letter-spacing:-.2px;line-height:1.3}
+  .e-cta p{font-size:15px;color:var(--text-mid);line-height:1.7;max-width:540px;margin:0 auto 24px}
+  .e-cta a{display:inline-block;padding:12px 28px;background:var(--navy);color:#fff;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border-radius:2px}
+  @media (max-width:720px){
+    .e-hero{padding:56px 20px 48px}
+    .e-main{padding:48px 20px 80px}
+    .figures-grid{grid-template-columns:1fr}
+    .related-block a{flex-direction:column;gap:4px}
+    .ed-date{align-self:flex-start}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a href="/" class="topbar-brand">The Fleet Radar <span>by Pulpo</span></a>
+  <div class="topbar-meta">Guía · Peaje Europa 2026</div>
+  <nav class="topbar-nav">
+    <a href="/" class="nav-extra">Última</a>
+    <a href="/archive.html">Archivo</a>
+    <a href="https://www.getpulpo.com/" class="cta" target="_blank" rel="noopener">Pulpo ↗</a>
+  </nav>
+</header>
+
+<section class="e-hero">
+  <div class="e-hero-inner">
+    <span class="e-kicker">Guía · Regulación · Europa · 2026</span>
+    <h1 class="e-title">Guía: cómo leer un <span>recibo de peaje europeo</span> en 2026</h1>
+    <p class="e-deck">El peaje ya no es distancia por tarifa fija. En 2026 incorpora ejes, emisiones CO₂, ruido y coste externo obligatorio para vehículos pesados. Países Bajos cambia a cobro por kilómetro el 1 de julio. Austria ya cobra por ejes, CO₂ y ruido. Esta guía explica, componente a componente y país a país, cómo se calcula el recibo que recibe un operador.</p>
+    <div class="e-updated">Actualizado · 18 de abril de 2026</div>
+  </div>
+</section>
+
+<main class="e-main">
+  <div class="e-body">
+
+    <p>Durante años, el recibo de peaje de un camión fue fácil de leer: kilómetros recorridos por una tarifa fija, con ligeras variaciones por carretera. En 2026 eso cambia de raíz. La <strong>Directiva Eurovignette revisada</strong> obliga a incluir en los peajes de vehículos pesados el coste externo de contaminación atmosférica. Países individuales están yendo más lejos, incorporando CO₂, ruido y ejes como factores de tarifa.</p>
+
+    <p>Esto no afecta solo a transportistas internacionales. Afecta a cualquier flota española, portuguesa o italiana con rutas a centro y norte de Europa. Y afecta a la licitación de contratos a 24 meses: si el comercial no sabe cómo se calcula el recibo real, la oferta pierde margen a partir del segundo semestre.</p>
+
+    <p>La guía se organiza en cuatro bloques. Primero, los cuatro componentes que definen una tarifa moderna. Segundo, qué cambia en 2026 a nivel UE. Tercero, cómo lo aplica cada país relevante. Cuarto, un checklist mínimo antes de licitar rutas internacionales.</p>
+
+    <h2>Los cuatro componentes de una tarifa moderna</h2>
+
+    <p>Un recibo de peaje moderno descompone el coste en hasta cuatro factores. No todos los países aplican los cuatro con la misma intensidad, pero conocerlos es condición para leer cualquier factura.</p>
+
+    <div class="comp-grid">
+      <div class="comp-card">
+        <h4>Distancia</h4>
+        <p>Kilómetros recorridos sobre la red sujeta a peaje. Base de cualquier cálculo.</p>
+      </div>
+      <div class="comp-card">
+        <h4>Ejes</h4>
+        <p>Número de ejes del vehículo y combinación (rígido, articulado, con remolque). A más ejes, mayor tarifa por kilómetro.</p>
+      </div>
+      <div class="comp-card">
+        <h4>CO₂</h4>
+        <p>Clase de emisión del vehículo. Euro VI tiene mejor tarifa que Euro V. Vehículos eléctricos reciben descuento o exención.</p>
+      </div>
+      <div class="comp-card">
+        <h4>Ruido</h4>
+        <p>Nivel sonoro homologado. Aplicado con especial dureza en corredores alpinos y en tramos sensibles.</p>
+      </div>
+    </div>
+
+    <p>Algunos países suman un quinto factor: coste externo de contaminación atmosférica, obligatorio para HDV en toda la UE desde 2026 y ya trasladado a tarifa en Austria y Países Bajos.</p>
+
+    <h2>Qué cambia en 2026 a nivel UE</h2>
+
+    <ul>
+      <li><strong>Coste externo obligatorio en peajes HDV.</strong> Desde 2026, los peajes para vehículos pesados deben incorporar el coste externo de contaminación atmosférica. Se aplica de forma gradual por país.</li>
+      <li><strong>Descuentos explícitos para vehículos limpios.</strong> Euro VI paga menos que Euro V. EV paga menos que Euro VI. Es incentivo económico alineado con el objetivo climático.</li>
+      <li><strong>Transición del Eurovignette al per-km.</strong> Países Bajos da el primer gran paso: elimina el Eurovignette el 30 de junio y arranca el peaje por kilómetro el 1 de julio.</li>
+      <li><strong>Tarifas diferenciadas por tramo y por hora.</strong> Más países moviéndose a tarifa dinámica (horaria, por nivel de congestión) en autopistas urbanas.</li>
+    </ul>
+
+    <h2>País a país</h2>
+
+    <div class="country-block">
+      <h3><span class="flag">🇳🇱</span> Países Bajos</h3>
+      <p><strong>Cambio mayor el 1 de julio de 2026.</strong> Se elimina el Eurovignette (€1.250 por camión al año) el 30 de junio. A partir del 1 de julio entra cobro por kilómetro en casi toda la red de autopistas, con tarifas más bajas para vehículos limpios. Afecta a rígidos y articulados sujetos a peaje HDV.</p>
+      <p>El recibo pasa de fijo anual a variable mensual. La facturación se vuelve granular por vehículo y por ruta. Esto exige que el software de flota capture kilómetros en red de peaje neerlandesa y los concilie con la factura del operador.</p>
+    </div>
+
+    <div class="country-block">
+      <h3><span class="flag">🇦🇹</span> Austria</h3>
+      <p><strong>Tarifa multifactor activa desde enero de 2026.</strong> El peaje depende del número de ejes, las emisiones CO₂ (clase Euro) y el nivel sonoro del vehículo. Corredores alpinos como el Brennero aplican recargos adicionales por tramo y por hora.</p>
+      <p>Un camión Euro VI con 5 ejes y bajo nivel de ruido paga sustancialmente menos que un Euro V de 6 ejes ruidoso, para el mismo kilometraje. Exige que la flota tenga actualizada la homologación CO₂ y ruido de cada unidad.</p>
+    </div>
+
+    <div class="country-block">
+      <h3><span class="flag">🇩🇪</span> Alemania</h3>
+      <p>La Maut alemana ya incorpora coste CO₂ desde diciembre de 2023. Clases de emisión con tarifas muy diferenciadas. La extensión a más tramos y la revisión anual de tarifas siguen en evolución. Corredores principales con peaje 24/7 para HDV.</p>
+    </div>
+
+    <div class="country-block">
+      <h3><span class="flag">🇫🇷</span> Francia</h3>
+      <p>Red de autopistas concesionadas con tarifas por clase de vehículo. Proyecto de peaje ecológico en debate. Variaciones por concesionaria. Importante para operadores ES/PT que exportan al centro y norte de Europa.</p>
+    </div>
+
+    <div class="country-block">
+      <h3><span class="flag">🇧🇪</span> Bélgica</h3>
+      <p>Sistema Viapass con peaje por kilómetro en camiones desde 2016. Tarifa depende de peso, clase Euro y región (Flandes, Valonia, Bruselas). Modelo similar al que Países Bajos adopta en julio.</p>
+    </div>
+
+    <div class="country-block">
+      <h3><span class="flag">🇮🇹</span> Italia</h3>
+      <p>Red concesionada con tarifas por clase. Corredores alpinos y pasos como el Mont Blanc o el Frejus con recargos específicos. Subir el tonelaje o cruzar túneles encarece desproporcionadamente.</p>
+    </div>
+
+    <h2>Cómo impacta a operadores de España y LatAm con rutas europeas</h2>
+
+    <p>Para una flota española con rutas internacionales, dos consecuencias concretas. Primera, el coste medio por kilómetro ruta-país va a variar más que en años anteriores. La licitación debe dejar de asumir tarifa plana y empezar a modelar por tramo. Segunda, renovar a Euro VI y priorizar corredores donde la flota pueda operar EV tiene payback mensurable. No es ideológico; es financiero.</p>
+
+    <p>Para operadores LatAm con filiales europeas o con exportación vía operadores UE, el impacto es indirecto pero real. Los operadores contratados aplicarán tarifas revisadas y las trasladarán a los contratos. Pedir transparencia sobre el cálculo es parte de la negociación.</p>
+
+    <h2>Cifras útiles</h2>
+
+    <div class="figures-grid">
+      <div class="figure-card">
+        <div class="figure-num">€1.250</div>
+        <div class="figure-caption">Coste anual del Eurovignette holandés por camión, que se elimina el 30 de junio de 2026.</div>
+        <div class="figure-source">Trans.info · 2026</div>
+      </div>
+      <div class="figure-card">
+        <div class="figure-num">1 jul 2026</div>
+        <div class="figure-caption">Entrada en vigor del peaje por kilómetro en Países Bajos en casi toda la red de autopistas.</div>
+        <div class="figure-source">Ministerio NL</div>
+      </div>
+      <div class="figure-card">
+        <div class="figure-num">1 ene 2026</div>
+        <div class="figure-caption">Aplicación en Austria de tarifas por ejes, CO₂ y ruido para vehículos pesados.</div>
+        <div class="figure-source">Asfinag · AT</div>
+      </div>
+      <div class="figure-card">
+        <div class="figure-num">UE 2026</div>
+        <div class="figure-caption">Obligatoriedad de incluir coste externo de contaminación atmosférica en peajes HDV en toda la UE.</div>
+        <div class="figure-source">Directiva Eurovignette</div>
+      </div>
+    </div>
+
+    <h2>Checklist mínimo antes de licitar rutas internacionales</h2>
+
+    <div class="check-box">
+      <h4>Antes de firmar una ruta a 24 meses con destino en Europa, confirma</h4>
+      <ol>
+        <li>Homologación CO₂ y Euro de cada vehículo asignado a la ruta.</li>
+        <li>Nivel de ruido homologado de los vehículos.</li>
+        <li>Kilómetros en red de peaje HDV por tramo y país.</li>
+        <li>Tarifa prevista por país, con coste externo incluido cuando aplique.</li>
+        <li>Descuentos por clase Euro y por EV, si la ruta se puede operar con eléctrico.</li>
+        <li>Cláusula de revisión de tarifa si un país cambia modelo (como NL en julio).</li>
+        <li>Integración del peaje con el medio de pago y el software de flota.</li>
+        <li>Auditoría del recibo con datos reales de telemática, no con estimaciones.</li>
+      </ol>
+    </div>
+
+    <h2>Páginas relacionadas</h2>
+
+    <div class="linked-topics">
+      <a href="/mercados/espana/" class="linked-topic">
+        <div class="lt-kicker">Mercado · 🇪🇸</div>
+        <div class="lt-title">Flotas en España 2026</div>
+        <div class="lt-body">Compliance español y peajes europeos que afectan al operador.</div>
+      </a>
+      <a href="/temas/electrificacion-flotas/" class="linked-topic">
+        <div class="lt-kicker">Tema · Transversal</div>
+        <div class="lt-title">Electrificación de flotas</div>
+        <div class="lt-body">Cómo los descuentos EV en peaje entran en el TCO.</div>
+      </a>
+      <a href="/temas/compliance-espana/" class="linked-topic">
+        <div class="lt-kicker">Tema · 🇪🇸</div>
+        <div class="lt-title">Compliance de flota en España 2026</div>
+        <div class="lt-body">V-16, tacógrafo G2V2, ADAS y ZBE. Lectura complementaria.</div>
+      </a>
+      <a href="/temas/fuel-cards/" class="linked-topic">
+        <div class="lt-kicker">Tema · Transversal</div>
+        <div class="lt-title">Tarjetas de flota (fuel cards)</div>
+        <div class="lt-body">Peajes integrados en la tarjeta corporativa.</div>
+      </a>
+    </div>
+
+    <h2>Ediciones con material de peajes europeos</h2>
+
+    <div class="related-block">
+      <h3>The Fleet Radar · by Pulpo</h3>
+      <a href="/magazines/2026-04-17-radar-fleet-by-pulpo.html">
+        <span class="ed-title">Nº 2 · Peajes por km, hub de 9 MW y cinco V-16 fuera de registro</span>
+        <span class="ed-date">17 abril 2026</span>
+      </a>
+    </div>
+
+    <div class="e-cta">
+      <h3>Auditar peajes con datos reales, no con estimaciones</h3>
+      <p>Pulpo captura kilómetros, clase Euro, ruta y coste por vehículo en un solo sitio. Útil para cruzar la factura del operador de peajes con lo que realmente recorrió la flota. Desde 2018 con +200.000 vehículos gestionados en México, España y otros países.</p>
+      <a href="https://www.getpulpo.com/" target="_blank" rel="noopener">Ver Pulpo en acción</a>
+    </div>
+
+  </div>
+</main>
+
+<footer class="closing" style="padding:48px 32px 40px;">
+  <div class="closing-logo">The Fleet Radar <span>by Pulpo</span></div>
+  <div class="closing-tagline">Inteligencia semanal para el sector de gestión de flotas</div>
+  <div class="closing-links" style="margin-top:24px;border-top:none;padding-top:0;">
+    <a href="/">Última edición</a>
+    <a href="/archive.html">Archivo</a>
+    <a href="/mercados/espana/">España</a>
+    <a href="/temas/electrificacion-flotas/">Electrificación</a>
+    <a href="/rss.xml" class="gold">RSS</a>
+    <span class="closing-pulpo">Editado por <a href="https://www.getpulpo.com" target="_blank" rel="noopener">Pulpo</a></span>
+  </div>
+</footer>
+
+<script defer src="/_vercel/insights/script.js"></script>
+
+</body>
+</html>

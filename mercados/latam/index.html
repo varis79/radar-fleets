@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flotas en LatAm 2026 · panorama regional, países, players y cifras — The Fleet Radar · by Pulpo</title>
+<meta name="description" content="Panorama regional de flotas en LatAm en 2026: México, Brasil, Colombia, Chile, Perú, Argentina. Adopción de telemática, electrificación, video telemática, players activos y casos corporativos.">
+<meta name="author" content="Pulpo — getpulpo.com">
+<meta name="keywords" content="flotas LatAm, fleet management Latinoamérica, telemática LatAm, electrificación flotas Latinoamérica, PepsiCo LatAm, penetración telemática LatAm, VecFleet, Powerfleet LatAm, Pulpo LatAm">
+<meta property="og:title" content="Flotas en LatAm 2026 — The Fleet Radar · by Pulpo">
+<meta property="og:description" content="Panorama regional: países, cifras, players y electrificación. Cómo está el mercado de gestión de flotas en LatAm en 2026.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thefleetradar.com/mercados/latam/">
+<meta property="og:site_name" content="The Fleet Radar · by Pulpo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Flotas en LatAm 2026 — The Fleet Radar · by Pulpo">
+<meta name="twitter:description" content="México, Brasil, Colombia, Chile, Perú, Argentina. Telemática, EV y players regionales.">
+<link rel="canonical" href="https://thefleetradar.com/mercados/latam/">
+<link rel="alternate" type="application/rss+xml" title="The Fleet Radar · by Pulpo" href="/rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/radar.css">
+<style>
+  /* Acento · mercado LatAm: azul atlántico + amber */
+  :root{
+    --accent:#155e75;
+    --accent-2:#d4891a;
+    --cover-grad-a:rgba(21,94,117,0.24);
+    --cover-grad-b:rgba(212,137,26,0.14);
+  }
+  .mkt-hero{background:var(--near-black);background-image:
+      radial-gradient(ellipse 70% 50% at 20% 80%, var(--cover-grad-a) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 80% 20%, var(--cover-grad-b) 0%, transparent 55%),
+      radial-gradient(ellipse 100% 100% at 50% 50%, #0d1521 0%, #060a10 100%);
+      padding:80px 40px 64px;border-bottom:1px solid rgba(255,255,255,.06);}
+  .mkt-hero-inner{max-width:920px;margin:0 auto}
+  .mkt-flag{font-size:56px;line-height:1;margin-bottom:16px}
+  .mkt-kicker{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-2);margin-bottom:18px;display:block}
+  .mkt-title{font-family:'Fraunces',serif;font-size:clamp(40px,6vw,72px);font-weight:900;line-height:.98;letter-spacing:-1.2px;color:#fff;margin-bottom:22px}
+  .mkt-title span{color:var(--accent-2)}
+  .mkt-deck{font-size:16px;color:rgba(255,255,255,.68);max-width:680px;line-height:1.75;border-left:2px solid var(--accent-2);padding-left:20px}
+  .mkt-updated{margin-top:24px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+  .mkt-main{max-width:920px;margin:0 auto;padding:72px 40px 100px}
+  .mkt-body p{font-size:16px;line-height:1.8;color:var(--text-mid);margin-bottom:18px}
+  .mkt-body h2{font-family:'Fraunces',serif;font-size:30px;font-weight:700;color:var(--text-dark);margin-top:56px;margin-bottom:20px;letter-spacing:-.3px;line-height:1.15}
+  .mkt-body h3{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:var(--text-dark);margin-top:28px;margin-bottom:12px}
+  .mkt-body strong{color:var(--text-dark)}
+  .mkt-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+  .mkt-body a:hover{color:var(--accent-2)}
+  .country-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:20px}
+  .country-card{padding:22px 24px;background:var(--cream);border-left:3px solid var(--accent)}
+  .country-card h4{font-family:'Fraunces',serif;font-size:18px;font-weight:700;color:var(--text-dark);margin-bottom:8px;display:flex;align-items:center;gap:10px}
+  .country-card h4 .flag{font-size:22px;line-height:1}
+  .country-card p{font-size:14px;color:var(--text-mid);line-height:1.65;margin:0}
+  .country-card.mx{border-left-color:#0f3d2e}
+  .country-card.br{border-left-color:#065f46}
+  .country-card.co{border-left-color:#d4891a}
+  .country-card.ar{border-left-color:#155e75}
+  .country-card.cl{border-left-color:#3730a3}
+  .country-card.pe{border-left-color:#8b3a0a}
+  .players-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:20px}
+  .player-cat{padding:22px 24px;background:#fff;border:1px solid var(--border-dark);border-left:3px solid var(--accent)}
+  .player-cat h4{font-family:'Fraunces',serif;font-size:16px;font-weight:700;color:var(--text-dark);margin-bottom:10px}
+  .player-cat ul{list-style:none;margin:0;padding:0}
+  .player-cat li{font-size:13px;color:var(--text-mid);padding:4px 0;line-height:1.5}
+  .figures-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px}
+  .figure-card{padding:22px;background:var(--navy);color:#fff;border-left:3px solid var(--accent-2)}
+  .figure-num{font-family:'Fraunces',serif;font-size:36px;font-weight:900;line-height:1;color:#fff;margin-bottom:6px;letter-spacing:-.5px}
+  .figure-caption{font-size:13px;line-height:1.55;color:rgba(255,255,255,.72)}
+  .figure-source{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-top:10px}
+  .related-block{background:var(--warm-sand);padding:32px;margin-top:32px;border-radius:4px}
+  .related-block h3{font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin:0 0 12px 0;color:var(--text-dark)}
+  .related-block a{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--border-dark);text-decoration:none;color:inherit}
+  .related-block a:last-child{border-bottom:none}
+  .related-block a:hover .ed-title{color:var(--navy)}
+  .ed-title{font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:var(--text-dark)}
+  .ed-date{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);white-space:nowrap;align-self:center}
+  .linked-topics{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:20px}
+  .linked-topic{display:block;padding:20px 22px;background:#fff;border:1px solid var(--border-dark);border-left:3px solid var(--accent);text-decoration:none;color:inherit}
+  .linked-topic:hover{border-left-color:var(--accent-2)}
+  .linked-topic .lt-kicker{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:6px}
+  .linked-topic .lt-title{font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:var(--text-dark);line-height:1.25;margin-bottom:4px}
+  .linked-topic .lt-body{font-size:13px;color:var(--text-mid);line-height:1.55}
+  .mkt-cta{background:var(--warm-sand);padding:56px 32px;text-align:center;margin-top:56px;border-radius:4px}
+  .mkt-cta h3{font-family:'Fraunces',serif;font-size:24px;font-weight:700;color:var(--text-dark);margin-bottom:14px;letter-spacing:-.2px;line-height:1.3}
+  .mkt-cta p{font-size:15px;color:var(--text-mid);line-height:1.7;max-width:560px;margin:0 auto 24px}
+  .mkt-cta a{display:inline-block;padding:12px 28px;background:var(--navy);color:#fff;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border-radius:2px}
+  @media (max-width:720px){
+    .mkt-hero{padding:56px 20px 48px}
+    .mkt-main{padding:48px 20px 80px}
+    .figures-grid{grid-template-columns:1fr}
+    .related-block a{flex-direction:column;gap:4px}
+    .ed-date{align-self:flex-start}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a href="/" class="topbar-brand">The Fleet Radar <span>by Pulpo</span></a>
+  <div class="topbar-meta">Mercado · LatAm 🌎</div>
+  <nav class="topbar-nav">
+    <a href="/" class="nav-extra">Última</a>
+    <a href="/archive.html">Archivo</a>
+    <a href="https://www.getpulpo.com/" class="cta" target="_blank" rel="noopener">Pulpo ↗</a>
+  </nav>
+</header>
+
+<section class="mkt-hero">
+  <div class="mkt-hero-inner">
+    <div class="mkt-flag">🌎</div>
+    <span class="mkt-kicker">Mercado · LatAm · 2026</span>
+    <h1 class="mkt-title">Flotas en <span>LatAm</span> 2026</h1>
+    <p class="mkt-deck">Seis países en momentos distintos del mismo proceso: digitalización, electrificación selectiva y entrada de compliance al autotransporte. México lidera en regulación, Brasil en volumen, Chile y Colombia en IA y seguridad, Argentina empuja EV, Perú el pesado minero. El mercado regional tiene 2-4 años de ventaja competitiva por delante antes de que los grandes jugadores globales saturen.</p>
+    <div class="mkt-updated">Actualizado · 18 de abril de 2026</div>
+  </div>
+</section>
+
+<main class="mkt-main">
+  <div class="mkt-body">
+
+    <p>LatAm no se comporta como un mercado único. Se comporta como seis mercados con distinto ritmo regulatorio, distinta madurez tecnológica y distinta penetración de telemática, que comparten una infraestructura industrial parecida y una red de corredores logísticos interconectados. Esta página recoge el panorama regional: qué pasa en cada país, qué cifras conviene tener a mano, qué players están activos y qué casos corporativos están sentando tendencia.</p>
+
+    <p>La penetración de telemática en flotas LatAm ronda el 5% y la video telemática el 1%. Son cifras bajas respecto a USA o Europa, pero son cifras con tendencia clara al alza. Los corporativos multinacionales que operan flotas grandes (PepsiCo, Coca-Cola, cementeras, mineras) están moviendo estándares que bajan después a mid-market local. Es el mismo patrón que vimos en Europa hace seis años.</p>
+
+    <h2>Por país</h2>
+
+    <div class="country-grid">
+      <div class="country-card mx">
+        <h4><span class="flag">🇲🇽</span> México</h4>
+        <p>Regulación más activa de la región. CNE obliga telemática en transporte de hidrocarburos. Programa de Atención Inmediata con 6.000 MDP abierto. Iniciativa Olinia en evolución. Primer caso HDV eléctrico regional (Marva, 120 BYD). Panorama detallado en <a href="/mercados/mexico/">mercados/méxico</a>.</p>
+      </div>
+      <div class="country-card br">
+        <h4><span class="flag">🇧🇷</span> Brasil</h4>
+        <p>Mayor volumen regional. Liderando adopción de telemática por escala. Segmentos fuertes: logística agro, distribución FMCG, mineria (Vale). Fabricantes asiáticos (BYD, Foton) entrando con flotas piloto. Webfleet y Powerfleet con presencia consolidada.</p>
+      </div>
+      <div class="country-card co">
+        <h4><span class="flag">🇨🇴</span> Colombia</h4>
+        <p>Foco operativo en seguridad y flota verde. Pulpo operativo desde sede en Bogotá. Logística urbana en expansión con e-commerce. Regulación empuja ZBE en Bogotá y Medellín. Nicho relevante: pickups y vehículos comerciales ligeros.</p>
+      </div>
+      <div class="country-card cl">
+        <h4><span class="flag">🇨🇱</span> Chile</h4>
+        <p>Adopción de IA y flexibilidad operativa. Sector minero marca estándares altos (SQM, Codelco, Antofagasta Minerals). Electrificación en logística urbana con pilotos relevantes en Santiago. Mid-market con interés creciente en scoring y predictivo.</p>
+      </div>
+      <div class="country-card pe">
+        <h4><span class="flag">🇵🇪</span> Perú</h4>
+        <p>Pesado minero como motor principal. Autotransporte con nichos muy específicos (cemento, hidrocarburos, minería). Compliance documental en transición. Ventana de entrada para software de flota con foco vertical.</p>
+      </div>
+      <div class="country-card ar">
+        <h4><span class="flag">🇦🇷</span> Argentina</h4>
+        <p>Empuje en electrificación por fabricantes locales y entrada de chinos. Logística de granos y food service marcan el pulso. Telemática adoptada desordenadamente según sector. Macroeconomía afecta decisiones de CAPEX de flota.</p>
+      </div>
+    </div>
+
+    <h2>Players regionales y globales activos</h2>
+
+    <p>El ecosistema combina plataformas con foco local, globales con cuenta regional y fabricantes que entran con flotas piloto. Los más relevantes esta temporada:</p>
+
+    <div class="players-grid">
+      <div class="player-cat">
+        <h4>Software de flota</h4>
+        <ul>
+          <li><a href="/players/pulpo/">Pulpo</a> · MX, ES, LatAm</li>
+          <li>VecFleet · regional</li>
+          <li>Powerfleet (ex MiX) · LatAm + EMEA</li>
+          <li>Wialon · emerging markets</li>
+          <li>Samsara · PepsiCo 29k región</li>
+          <li>Geotab · enterprise</li>
+          <li>Webfleet · BR, MX</li>
+        </ul>
+      </div>
+      <div class="player-cat">
+        <h4>Pagos y fuel cards</h4>
+        <ul>
+          <li>Edenred · MX, BR, CO</li>
+          <li>WEX · entrada en MX</li>
+          <li>Ruta Card · MX</li>
+          <li>Efectivale, Sí Vale · vales MX</li>
+          <li>Operadores nacionales por país</li>
+        </ul>
+      </div>
+      <div class="player-cat">
+        <h4>Fabricantes con tracción</h4>
+        <ul>
+          <li>Ford · F-150, Transit</li>
+          <li>Toyota · Hilux, HiAce</li>
+          <li>Nissan · Frontier, NP300</li>
+          <li>BYD · HDV eléctrico MX, BR, CL</li>
+          <li>Foton · pesado asiático</li>
+          <li>Hino, Isuzu · medio</li>
+          <li>Scania, Volvo · pesado europeo</li>
+        </ul>
+      </div>
+      <div class="player-cat">
+        <h4>Renting y fleet management</h4>
+        <ul>
+          <li>Element Fleet · MX enterprise</li>
+          <li>Arval · corporativo global</li>
+          <li>Operadores locales por país con renting creciente</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>Tipos de flota dominantes en LatAm</h2>
+
+    <ul>
+      <li><strong>Transporte pesado</strong> — corredores intraregionales, exportación, cadenas logísticas industriales.</li>
+      <li><strong>Distribución intermedia</strong> — bebidas, alimentación, cadenas minoristas urbanas.</li>
+      <li><strong>Pickups y utilitarios</strong> — construcción, servicio técnico, flotas corporativas mid-market.</li>
+      <li><strong>Flotas mineras</strong> — Chile, Perú, Brasil y norte de México. Seguridad y gestión de fatiga con ADAS específico.</li>
+      <li><strong>Flotas cementeras y de construcción</strong> — Cemex y regionales. Peso, emisiones, horarios.</li>
+      <li><strong>Reparto y última milla</strong> — e-commerce creciente con pilotos EV urbanos.</li>
+    </ul>
+
+    <h2>Cifras regionales</h2>
+
+    <div class="figures-grid">
+      <div class="figure-card">
+        <div class="figure-num">~5%</div>
+        <div class="figure-caption">Penetración estimada de telemática en flotas LatAm en 2026. Video telemática ronda el 1%.</div>
+        <div class="figure-source">Global Fleet · 2026</div>
+      </div>
+      <div class="figure-card">
+        <div class="figure-num">~8%</div>
+        <div class="figure-caption">Proporción esperada de vehículos eléctricos en la flota regional en 2026. Adopción por sector y país muy desigual.</div>
+        <div class="figure-source">Global Fleet · 2026</div>
+      </div>
+      <div class="figure-card">
+        <div class="figure-num">29.000</div>
+        <div class="figure-caption">Vehículos que PepsiCo opera en LatAm. Despliegue regional de video telemática con IA como referencia corporativa.</div>
+        <div class="figure-source">The Fleet Radar · Nº 2</div>
+      </div>
+      <div class="figure-card">
+        <div class="figure-num">120</div>
+        <div class="figure-caption">Semirremolques eléctricos BYD que Marva opera en el corredor Monterrey-Texas. Primera referencia HDV EV en MX.</div>
+        <div class="figure-source">The Fleet Radar · Nº 1</div>
+      </div>
+      <div class="figure-card">
+        <div class="figure-num">6</div>
+        <div class="figure-caption">Países LatAm con cobertura editorial activa: MX, BR, CO, CL, PE, AR.</div>
+        <div class="figure-source">Taxonomía interna</div>
+      </div>
+      <div class="figure-card">
+        <div class="figure-num">+200.000</div>
+        <div class="figure-caption">Vehículos gestionados por Pulpo desde México, España y otros países. Mayoría del volumen regional.</div>
+        <div class="figure-source">Pulpo · 2026-Q1</div>
+      </div>
+    </div>
+
+    <h2>Mercados y temas relacionados</h2>
+
+    <div class="linked-topics">
+      <a href="/mercados/mexico/" class="linked-topic">
+        <div class="lt-kicker">Mercado · 🇲🇽</div>
+        <div class="lt-title">Flotas en México 2026</div>
+        <div class="lt-body">Regulación, Programa 6.000 MDP, players y tipos de flota.</div>
+      </a>
+      <a href="/mercados/espana/" class="linked-topic">
+        <div class="lt-kicker">Mercado · 🇪🇸</div>
+        <div class="lt-title">Flotas en España 2026</div>
+        <div class="lt-body">Compliance, peajes europeos y mercado español.</div>
+      </a>
+      <a href="/temas/electrificacion-flotas/" class="linked-topic">
+        <div class="lt-kicker">Tema · Transversal</div>
+        <div class="lt-title">Electrificación de flotas</div>
+        <div class="lt-body">Camión eléctrico, MCS, hubs compartidos y TCO.</div>
+      </a>
+      <a href="/temas/fuel-cards/" class="linked-topic">
+        <div class="lt-kicker">Tema · Transversal</div>
+        <div class="lt-title">Tarjetas de flota (fuel cards)</div>
+        <div class="lt-body">Pagos, red, EV y control de gasto.</div>
+      </a>
+    </div>
+
+    <h2>Ediciones con material de LatAm</h2>
+
+    <div class="related-block">
+      <h3>The Fleet Radar · by Pulpo</h3>
+      <a href="/magazines/2026-04-17-radar-fleet-by-pulpo.html">
+        <span class="ed-title">Nº 2 · Peajes por km, hub de 9 MW y cinco V-16 fuera de registro</span>
+        <span class="ed-date">17 abril 2026</span>
+      </a>
+      <a href="/magazines/2026-04-14-radar-fleet-by-pulpo.html">
+        <span class="ed-title">Nº 1 · La semana que redefinió las reglas</span>
+        <span class="ed-date">14 abril 2026</span>
+      </a>
+    </div>
+
+    <div class="mkt-cta">
+      <h3>Pulpo opera en LatAm desde 2018</h3>
+      <p>Plataforma de gestión de flotas con IA, con oficinas en Ciudad de México, Mérida, Madrid, Miami y Bogotá. Más de 200.000 vehículos gestionados en la región, con clientes de 10 a más de 10.000 unidades.</p>
+      <a href="https://www.getpulpo.com/" target="_blank" rel="noopener">Ver Pulpo en acción</a>
+    </div>
+
+  </div>
+</main>
+
+<footer class="closing" style="padding:48px 32px 40px;">
+  <div class="closing-logo">The Fleet Radar <span>by Pulpo</span></div>
+  <div class="closing-tagline">Inteligencia semanal para el sector de gestión de flotas</div>
+  <div class="closing-links" style="margin-top:24px;border-top:none;padding-top:0;">
+    <a href="/">Última edición</a>
+    <a href="/archive.html">Archivo</a>
+    <a href="/mercados/mexico/">México</a>
+    <a href="/mercados/espana/">España</a>
+    <a href="/rss.xml" class="gold">RSS</a>
+    <span class="closing-pulpo">Editado por <a href="https://www.getpulpo.com" target="_blank" rel="noopener">Pulpo</a></span>
+  </div>
+</footer>
+
+<script defer src="/_vercel/insights/script.js"></script>
+
+</body>
+</html>
