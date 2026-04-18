@@ -1,0 +1,62 @@
+THE FLEET RADAR · BY PULPO — EDICIÓN Nº 3
+20 de abril de 2026
+"Telemática marca el ritmo, costos de taller suben y el mar espera su turno"
+════════════════════════════════════════════════════════════════
+
+RESUMEN EJECUTIVO
+─────────────────
+Semana marcada por avances en telemática operativa y presión en costos de mantenimiento. Grupo Aralo reporta mejoras con tecnología Samsara. España registra 13.922 euros de gasto promedio en taller por camión. México debate diversificación modal mientras las ventas de eléctricos mantienen ritmo de doble dígito.
+
+════════════════════════════════════════════════════════════════
+
+HISTORIAS
+─────────
+1. 🇲🇽 Grupo Aralo reporta mejoras operativas con tecnología Samsara
+   La empresa mexicana de transporte confirma avances en indicadores de seguridad y eficiencia tras implementar soluciones de telemática. La adopción responde a la presión dual de reducir riesgos en carretera mientras se mantiene productividad en entornos operativos complejos.
+
+2. 🇪🇸 Gasto en taller de camiones sube 2.5% hasta 13.922 euros por vehículo
+   El costo promedio de mantenimiento por camión en España aumenta en el arranque de 2026, según datos de referencia del mercado. La cifra refleja presión continua en costos operativos del transporte pesado, un factor crítico para márgenes del sector.
+
+3. 🇲🇽 Infraestructura portuaria mexicana permanece subutilizada frente a dominio terrestre
+   México mantiene dependencia casi absoluta del transporte por carretera para mover mercancías, pese a contar con amplia capacidad portuaria. La concentración modal genera costos y riesgos que podrían mitigarse con diversificación hacia transporte marítimo de cabotaje.
+
+4. 🇲🇽 Ventas de eléctricos en México crecen 21.6% con 25.003 unidades en 1T26
+   El mercado mexicano de vehículos eléctricos mantiene ritmo de crecimiento de doble dígito en el primer trimestre de 2026. La Electro Movilidad Asociación reporta 25.003 unidades vendidas contra 20.560 del mismo periodo en 2025.
+
+5. 🇪🇸 TXT amplía flota con furgonetas eléctricas Farizon para distribución urbana
+   La empresa española de transporte incorpora vehículos eléctricos de última milla a su operación. El movimiento refuerza la tendencia de electrificación en segmentos de reparto urbano donde la ecuación económica y operativa ya cierra.
+
+6. 🇪🇸 Andalucía licita renting de 384 todoterrenos por 23.1 millones de euros
+   La comunidad autónoma busca renovar la flota de agentes medioambientales mediante modelo de suscripción. La operación por 23.1 millones refleja la tendencia del sector público hacia renting como alternativa a compra directa.
+
+7. 🇪🇺 Reino Unido lidera mejoras de seguridad y adopción EV según Geotab
+   Estudio de telemática posiciona al mercado británico como maduro en vehículos eléctricos y con el mayor avance en seguridad vial de Europa. Los datos reflejan correlación entre adopción tecnológica y mejora en indicadores operativos.
+
+8. 🇲🇽 Manufactura mexicana repunta 3.4% en febrero tras arranque débil
+   La producción manufacturera aumenta en febrero de 2026 según el INEGI, recuperándose del inicio de año lento. El incremento del 3.4% mensual señala reactivación en sectores industriales que demandan servicios de transporte y logística.
+
+9. 🇪🇺 ACEA propone flexibilizar CO₂ pero arriesga 74.000 millones en importación petrolera
+   La asociación europea de fabricantes busca relajar objetivos de emisiones, pero análisis advierte riesgo de aumentar dependencia energética. La tensión entre metas ambientales y realidad industrial define el debate regulatorio del transporte.
+
+10. 🇲🇽 Isuzu cierra cuarta temporada de serie documental sobre transporte
+   La marca japonesa concluye 'Los Imparables', proyecto audiovisual enfocado en historias de clientes y operaciones de transporte. La iniciativa refleja estrategia de marketing de contenido dirigida al sector.
+
+════════════════════════════════════════════════════════════════
+
+ETIQUETAS POR HISTORIA
+──────────────────────
+1. topic:telematica, market:mexico, fleet-type:transporte-pesado, player:samsara, sigla:KPI, operacion:seguridad, operacion:productividad
+2. topic:mantenimiento, market:espana, fleet-type:transporte-pesado, player:scania, metrica:TCO, metrica:euros, operacion:taller
+3. topic:routing, market:mexico, fleet-type:transporte-pesado, infraestructura:puertos, operacion:cabotaje, estrategia:diversificacion
+4. topic:electrificacion, market:mexico, fleet-type:vehiculos-comerciales-ligeros, metrica:unidades, metrica:porcentaje, sigla:EMA, sigla:EV
+5. topic:routing, market:espana, fleet-type:vehiculos-comerciales-ligeros, operacion:ultima-milla, vehiculo:furgoneta, sigla:EV
+6. topic:gestion-flotas, market:espana, fleet-type:flotas-corporativas, modelo:renting, metrica:euros, sector:publico
+7. topic:telematica, market:europa, fleet-type:flotas-corporativas, player:geotab, geografia:UK, metrica:seguridad, sigla:EV
+8. topic:gestion-flotas, market:mexico, fleet-type:vehiculos-comerciales-ligeros, sigla:INEGI, metrica:porcentaje, sector:manufactura
+9. topic:regulacion, market:europa, fleet-type:flotas-corporativas, sigla:ACEA, regulacion:CO2, metrica:euros
+10. topic:gestion-flotas, market:mexico, fleet-type:transporte-pesado, player:isuzu, estrategia:marketing, formato:documental
+
+════════════════════════════════════════════════════════════════
+The Fleet Radar · by Pulpo · Nº 3 · 20 de abril de 2026
+Próxima edición: 27 de abril de 2026 (lunes) — cadencia semanal
+════════════════════════════════════════════════════════════════
