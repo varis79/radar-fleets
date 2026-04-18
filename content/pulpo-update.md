@@ -21,7 +21,7 @@ Orden de lectura al curar la edición:
 - País(es): MX | ES | USA | LATAM | Global
 - Estado: pendiente | usado en Nº N | descartado
 - Resumen (2–4 líneas sin adjetivos huecos)
-- Por qué importa al lector de Radar Fleet (1 línea)
+- Por qué importa al lector de The Fleet Radar (1 línea)
 - Enlace: https://...
 ```
 
