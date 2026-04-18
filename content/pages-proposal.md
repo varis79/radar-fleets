@@ -1,148 +1,100 @@
-# Propuesta — páginas temáticas y de players
+# Propuesta — páginas temáticas, de players, mercados y evergreen
 
-Arquitectura acumulativa del sitio para SEO, navegación y captación. **No queremos páginas automáticas vacías por cada tag.** Solo creamos páginas indexables cuando:
+Arquitectura acumulativa del sitio para SEO, navegación y captación. Alineada con la taxonomía formal de `content/taxonomy/`.
 
-1. El tema o player tiene valor evergreen (no es una noticia puntual).
-2. Hay suficiente contenido en ediciones para enlazar.
-3. Se puede escribir una introducción útil de 300–500 palabras sin relleno.
-4. Aporta a navegación, autoridad y captación.
+**Regla dura:** no se crean páginas automáticas. Solo páginas indexables con valor evergreen, material suficiente, intro útil redactable y aporte a navegación + SEO + captación. Ver los cinco criterios en `content/taxonomy/README.md`.
 
-Cualquier página nueva debe incluir: intro editorial, selección curada de ediciones relacionadas, 3–5 datos/cifras de referencia, CTA suave a Pulpo, metadatos SEO propios.
-
----
-
-## Estructura propuesta
+## Estructura pública
 
 ```
-/
-├── /temas/                     ← Paraguas de páginas temáticas
-│   ├── peajes-europa/
-│   ├── electrificacion-flotas/
-│   ├── telematica-flotas/
-│   ├── compliance-espana/
-│   ├── regulacion-mexico/
-│   ├── tarjetas-combustible/
-│   └── ia-operativa-flotas/
-│
-├── /players/                   ← Paraguas de páginas de players
-│   ├── samsara/
-│   ├── geotab/
-│   ├── motive/
-│   ├── fleetio/
-│   ├── corpay/
-│   ├── wex/
-│   └── pulpo/                  ← casa
-│
-└── /magazines/...
+/temas/{slug}/               → topics (hoy 2; llegarán a 4-6 en Q2, 10+ en Q3)
+/players/{slug}/             → players (uno inicial: pulpo)
+/mercados/{slug}/            → markets (primary + aggregate)
+/evergreen/{tipo}/{slug}/    → piezas evergreen (guías, checklists, explicadores, etc.)
 ```
 
-URLs cortas, sin fechas, en español. Cleans URLs activadas en `vercel.json`.
+Hubs padres (`/temas/`, `/players/`, `/mercados/`, `/evergreen/`) no se crean hasta acumular 5+ hijos. Hasta entonces, navegación por footer y bloques "Explora por tema" dentro del contenido.
 
----
+## Ya creado (producción)
 
-## Qué CREAR AHORA (valor evergreen con material suficiente)
+- `/temas/compliance-espana/` — V-16, tacógrafo G2V2, ADAS, ZBE.
+- `/temas/regulacion-mexico/` — CNE hidrocarburos, Programa 6.000 MDP, SICT.
 
-### Temas
+## Tanda 1 — crear después del PR de taxonomía
 
-#### 1. `temas/peajes-europa/`
-Por qué ahora: dos eventos calientes (NL 1-jul, AT enero) + obligación coste externo 2026. El tema va a crecer todo el año y atrae búsqueda alta-intención ("peaje camión Holanda 2026", "coste CO₂ peaje Austria").
-Material de apoyo: ediciones Nº 2 y siguientes (se esperan 8–10 en 2026).
-Tono: explicativo, con tabla por país.
-KPI a observar: CTR desde búsqueda genérica a CTA de Pulpo.
+Esta es la prioridad final consensuada. Son cuatro páginas que cumplen los cinco criterios y cubren huecos reales:
 
-#### 2. `temas/electrificacion-flotas/`
-Por qué ahora: MCS, hubs compartidos, LatAm 8% EV, corredores reales. Tema estructural para la década.
-Material: hub San Bernardino, VEV UK, Scania MCS, Corpay+Voltempo, hubs MX cuando lleguen.
-Tono: mezcla de roadmap y práctico (TCO, infraestructura).
+| # | URL | Tipo | Por qué ahora |
+|---|---|---|---|
+| 1 | `/mercados/mexico/` | market primary | Landing geográfica MX, prioridad editorial máxima. Agrupa regulación, players activos y ediciones. |
+| 2 | `/mercados/espana/` | market primary | Landing geográfica ES, prioridad editorial máxima. Complemento natural a compliance-espana. |
+| 3 | `/players/pulpo/` | player (casa) | Página editorial de la casa. Extracto de `pulpo-facts.md`. Mueve leads por SEO directo. |
+| 4 | `/temas/fuel-cards/` | topic | Tres ediciones con material denso. Búsqueda alta. Sin competencia editorial seria en español. |
 
-#### 3. `temas/compliance-espana/`
-Por qué ahora: 2026 es año clave (V-16, ADAS, tacógrafo, ZBE). Búsqueda fiscal y operativa fuerte.
-Material: V-16 retirada, Orden TRM/282/2026, G2V2 ligeros, ZBE.
-Tono: práctico, casi checklist, actualizable por BOE.
+## Tanda 2 — siguiente, no en este PR
 
-#### 4. `temas/regulacion-mexico/`
-Por qué ahora: CNE, Programa 6.000 MDP, Olinia, restricciones SICT. Contenido que hoy no tiene equivalente en medios ES-LatAm de flota.
-Material: CNE hidrocarburos, Programa, restricciones Semana Santa, iniciativa Olinia.
-Tono: operativo, con referencias a DOF.
+| # | URL | Tipo | Por qué no ahora |
+|---|---|---|---|
+| 5 | `/mercados/latam/` | market aggregate | Requiere masa crítica de material por país antes de agregar. |
+| 6 | `/temas/electrificacion-flotas/` | topic | Material abundante pero mejor después de tener fuel-cards publicada para cruzar enlaces. |
+| 7 | `/evergreen/guias/peaje-europa-2026/` | evergreen guía | Primera guía evergreen. Mejor tras consolidar `/mercados/espana/` para apuntarla. |
+| 8 | `/evergreen/checklists/evaluar-telematica-2026/` | evergreen checklist | Alta intención comercial. Se crea con un esqueleto de arquitectura ya estable. |
 
-### Players
+## Tanda 3 — Q3 2026
 
-#### 5. `players/pulpo/`
-La casa. Propósito: punto de aterrizaje para quien llega por SEO buscando "Pulpo software flotas". Extracto de `pulpo-facts.md` + testimonios + CTA fuerte a getpulpo.com. No es un landing comercial: es la página editorial de Pulpo dentro de The Fleet Radar.
+Topics:
 
----
+- `/temas/telematica-flotas/`
+- `/temas/video-telematica/`
+- `/temas/mantenimiento/`
+- `/temas/compliance-mexico/` (separación de `regulacion-mexico` si crece mucho)
+- `/temas/compliance-usa/`
+- `/temas/control-gasto/`
 
-## Qué CREAR EN Q3 2026 (cuando haya masa crítica)
+Players (cuando cada uno tenga 3+ menciones sustanciales + ángulo propio):
 
-### Temas
+- `/players/samsara/`
+- `/players/motive/`
+- `/players/geotab/`
+- `/players/fleetio/`
+- `/players/corpay/`
 
-#### 6. `temas/telematica-flotas/`
-Esperar a tener 3–4 ediciones con historias cruzadas Samsara/Motive/Geotab/Lytx para escribir una intro con jerarquía real. Crear cuando ocurra el primer evento mayor post-IPO de Motive.
+Markets:
 
-#### 7. `temas/tarjetas-combustible/`
-Esperar 2–3 ediciones más que consoliden la narrativa "tarjeta absorbe redes". Crear cuando haya suficientes historias cruzadas WEX/Corpay/Edenred/DKV.
+- `/mercados/europa/`
 
-#### 8. `temas/ia-operativa-flotas/`
-Esperar al "second wave" de voice agents (post Geotab Connect 2026 y anuncios de Motive post-IPO). Crear cuando haya 3–4 casos reales de uso contados.
+Evergreen (orden de `content/evergreen-plan.md`):
 
-### Players
-
-Crear página por player cuando tenga 3+ apariciones sustanciales en ediciones y alguna perspectiva editorial propia (no solo ficha corporativa):
-
-- `players/samsara/` — trigger: cuarto trimestre con noticia sustancial.
-- `players/motive/` — trigger: IPO efectiva + primer earnings público.
-- `players/geotab/` — trigger: post-Geotab Connect con cobertura de voice agent.
-- `players/fleetio/` — trigger: segunda adquisición después de Auto Integrate.
-- `players/corpay/` — trigger: segundo movimiento de ecosistema (EV, POS).
-
----
+- `/evergreen/explicadores/mcs-charging/`
+- `/evergreen/guias/criterios-evaluar-fuel-card/`
+- `/evergreen/comparativas/samsara-motive-geotab-es-latam/`
+- `/evergreen/faqs/ice-a-ev-flota-mixta/`
+- `/evergreen/errores/implementacion-telematica-primera-vez/`
+- `/evergreen/checklists/revision-mensual-flota/`
 
 ## Qué NO crear (al menos de momento)
 
-- Páginas por tag genérico ("Pagos", "IA", "Regulación") — son ejes transversales, se cubren en las temáticas narrativas de arriba, no en taxonomía paralela.
-- Páginas por país fuera del top-4 (MX, ES, USA, Europa). LatAm merece una página agregada, no una por país.
-- Páginas por autor/editor — no aporta, dispersa.
-- Páginas "Sobre The Fleet Radar" — vive bien en `about` dentro del footer si se pide.
-- Páginas de "newsletter subscribe" — RSS + archivo son suficientes. Si hace falta email, se integra más adelante con Buttondown o Beehiiv vía embed.
+- Páginas por micro-tag. Nunca.
+- Páginas por país fuera del top-2 primary + LatAm + Europa aggregate.
+- Hubs padres vacíos (`/temas/` solo, etc.).
+- Páginas por autor/editor.
+- Página "Sobre The Fleet Radar" — si se pide, vive como `about` discreto en footer, sin URL propia destacada.
+- Newsletter subscribe — RSS y archivo cubren. Si se integra email, será embed de Buttondown o Beehiiv, no página propia.
+- Páginas por fleet-type a granel. Solo si el vertical tiene búsqueda real y material (evaluar con los cinco criterios).
 
----
+## Requisitos técnicos de cada página pública
 
-## Requisitos técnicos comunes para las páginas de `temas/` y `players/`
-
-Cada página debe:
-
-1. **Estructura:**
-   - `<h1>` claro (máx 10 palabras).
+1. **Estructura**:
+   - `<h1>` claro, ≤10 palabras.
    - Intro editorial de 300–500 palabras.
-   - Sección "Ediciones que hablan de esto" con 3–N enlaces a permalinks de `/magazines/...`.
+   - Sección "Ediciones que hablan de esto" con 3–N enlaces a `/magazines/...`.
    - Sección "Cifras de referencia" (3–5 datos de `market-watch.md`).
-   - CTA suave a Pulpo (tono editorial, no banner).
-
-2. **Metadatos:**
-   - `<title>` y `<meta description>` únicos y orientados a búsqueda.
-   - OG tags propios.
+   - CTA suave a Pulpo con el copy acordado (ver `pulpo-facts.md`).
+2. **Metadatos**:
+   - `<title>` y `<meta description>` según patrones de `slug-rules.md`.
+   - Open Graph + Twitter card completos.
    - `<link rel="canonical">` a la URL propia.
    - Entrada en `sitemap.xml`.
-
-3. **CSS:**
-   - Carga `/assets/radar.css`.
-   - Puede declarar acento propio si conviene temática.
-
-4. **Update cadence:**
-   - Actualizarse cuando una edición nueva añada una historia relevante.
-   - Revisión mínima trimestral.
-   - Sección "Actualizado por última vez: YYYY-MM-DD" visible al pie.
-
----
-
-## Propuesta de orden de implementación
-
-Siguiente iteración (después de que la base editorial esté estable):
-
-1. `temas/compliance-espana/` — hay material más fresco y claro para redactar hoy.
-2. `temas/regulacion-mexico/` — combinación de ventaja editorial (poca competencia) y material denso.
-3. `temas/peajes-europa/` — aprovecha el evento del 1-jul como pico de búsqueda.
-4. `players/pulpo/` — la casa, cuando queramos mover leads por SEO directo.
-5. `temas/electrificacion-flotas/` — una vez haya otra edición con material EV sustancial.
-
-Cada una debería poder publicarse en una sesión de 45–60 minutos de edición + maquetado.
+3. **CSS**: carga `/assets/radar.css`. Puede declarar acento propio en `:root` si conviene al tema.
+4. **Geografía**: si la página tiene geografía clara, lleva `.geo-tag.{country}` en header y en metadatos OG.
+5. **Cadencia de actualización**: revisión mínima trimestral. Fecha "actualizado" visible al pie.

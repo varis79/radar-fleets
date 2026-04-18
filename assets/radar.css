@@ -541,3 +541,39 @@ a{color:inherit}
   .cover-issue{font-size:clamp(28px,9vw,40px)}
   .topbar-nav a{font-size:10px}
 }
+
+/* ───────────────── GEO TAGS ─────────────────
+   Clases de clasificación geográfica. Uso en etiquetas,
+   story-meta, radar-header y tablas. Coherentes con las
+   banderas del prompt maestro y del archivo markets.md. */
+.geo-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:'Inter',sans-serif;font-size:10px;font-weight:700;
+  letter-spacing:.15em;text-transform:uppercase;
+  padding:4px 10px;border-radius:2px;white-space:nowrap;
+}
+.geo-tag .flag{font-size:13px;line-height:1}
+.geo-tag.mx{background:#fde68a;color:#78350f}        /* México */
+.geo-tag.es{background:#fecaca;color:#7f1d1d}        /* España */
+.geo-tag.usa{background:#dbeafe;color:#1e3a8a}       /* USA */
+.geo-tag.co{background:#fef3c7;color:#713f12}        /* Colombia */
+.geo-tag.br{background:#d1fae5;color:#065f46}        /* Brasil */
+.geo-tag.cl{background:#e0e7ff;color:#3730a3}        /* Chile */
+.geo-tag.pe{background:#ffe4cc;color:#8b3a0a}        /* Perú */
+.geo-tag.ar{background:#cffafe;color:#155e75}        /* Argentina */
+.geo-tag.latam{background:#fce7f3;color:#831843}     /* LatAm */
+.geo-tag.eu{background:#e9d5ff;color:#4c1d95}        /* Europa */
+.geo-tag.global{background:#e5e7eb;color:#111827}    /* Global */
+
+/* Variante oscura para fondos navy / graphite */
+.geo-tag.on-dark.mx{background:rgba(251,146,60,.18);color:#fdba74;border:1px solid rgba(251,146,60,.3)}
+.geo-tag.on-dark.es{background:rgba(184,76,58,.2);color:#fca5a5;border:1px solid rgba(184,76,58,.3)}
+.geo-tag.on-dark.usa{background:rgba(30,127,203,.18);color:#93c5fd;border:1px solid rgba(30,127,203,.3)}
+.geo-tag.on-dark.co{background:rgba(212,137,26,.18);color:#fcd34d;border:1px solid rgba(212,137,26,.3)}
+.geo-tag.on-dark.br{background:rgba(74,222,128,.15);color:#86efac;border:1px solid rgba(74,222,128,.25)}
+.geo-tag.on-dark.cl{background:rgba(99,102,241,.18);color:#a5b4fc;border:1px solid rgba(99,102,241,.3)}
+.geo-tag.on-dark.pe{background:rgba(251,146,60,.15);color:#fdba74;border:1px solid rgba(251,146,60,.25)}
+.geo-tag.on-dark.ar{background:rgba(34,211,238,.15);color:#67e8f9;border:1px solid rgba(34,211,238,.25)}
+.geo-tag.on-dark.latam{background:rgba(236,72,153,.15);color:#f9a8d4;border:1px solid rgba(236,72,153,.25)}
+.geo-tag.on-dark.eu{background:rgba(167,139,250,.18);color:#c4b5fd;border:1px solid rgba(167,139,250,.3)}
+.geo-tag.on-dark.global{background:rgba(255,255,255,.07);color:rgba(255,255,255,.68);border:1px solid rgba(255,255,255,.14)}
