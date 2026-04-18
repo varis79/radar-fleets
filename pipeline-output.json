@@ -1,0 +1,95 @@
+{
+  "week": "2026-W17",
+  "steps": [
+    {
+      "name": "ingest",
+      "result": {
+        "week": "2026-W17",
+        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W17-raw.jsonl",
+        "total_items": 51,
+        "per_source": {
+          "FreightWaves": 24,
+          "Transport & Energy": 10,
+          "Fleet People ES": 7,
+          "T21 MX": 10
+        },
+        "errors": [
+          {
+            "source": "FleetOwner",
+            "error": "feed-bozo: <unknown>:116:16553: not well-formed (invalid token)"
+          },
+          {
+            "source": "Electrek · Transport",
+            "error": "feed-bozo: <unknown>:19:45: not well-formed (invalid token)"
+          },
+          {
+            "source": "Fleet News UK",
+            "error": "feed-bozo: <unknown>:23:48: not well-formed (invalid token)"
+          },
+          {
+            "source": "Trans.info",
+            "error": "feed-bozo: text/html; charset=utf-8 is not an XML media type"
+          },
+          {
+            "source": "Transporte Profesional",
+            "error": "feed-bozo: <unknown>:22:108: not well-formed (invalid token)"
+          },
+          {
+            "source": "Transportes y Turismo",
+            "error": "feed-bozo: <unknown>:3:212: not well-formed (invalid token)"
+          }
+        ]
+      }
+    },
+    {
+      "name": "classify",
+      "result": {
+        "week": "2026-W17",
+        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W17-classified.jsonl",
+        "total": 51,
+        "with_topic": 16,
+        "with_fleet_type": 7,
+        "with_players": 5,
+        "by_market": {
+          "usa": 24,
+          "europa": 11,
+          "peru": 1,
+          "espana": 5,
+          "mexico": 9,
+          "latam": 1
+        }
+      }
+    },
+    {
+      "name": "dedupe",
+      "result": {
+        "week": "2026-W17",
+        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W17-dedup.jsonl",
+        "in": 51,
+        "after_url_dedup": 51,
+        "after_title_dedup": 51
+      }
+    },
+    {
+      "name": "select",
+      "result": {
+        "week": "2026-W17",
+        "mode": "normal",
+        "total_candidates": 51,
+        "total_after_memory_dedup": 51,
+        "total_chosen": 10,
+        "warnings": [],
+        "discarded_repetition": [],
+        "path": "/home/runner/work/radar-fleets/radar-fleets/content/decisions/2026-W17-selection.json"
+      }
+    },
+    {
+      "name": "compose",
+      "result": {
+        "error": "TypeError: Client.__init__() got an unexpected keyword argument 'proxies'"
+      }
+    }
+  ],
+  "status": "fail",
+  "reason": "TypeError: Client.__init__() got an unexpected keyword argument 'proxies'"
+}
