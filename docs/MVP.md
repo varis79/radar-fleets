@@ -85,12 +85,12 @@ Ver `prompts/qa-checklist.md` para la lista completa. Resumen:
 |---|---|---|
 | C1 framing | Expresiones prohibidas (competidor, Para Pulpo, argumento comercial, etc.) | Sí |
 | C2 thin | Edición demasiado corta o stories con <120 palabras | Sí |
-| C3 voice | Em dashes en prosa, "no es X, es Y" | Sí |
+| C3 voice | Em dashes en prosa (> 1), "no es X, es Y" | Sí |
 | C4 meta | title, description, canonical, og:url, article:published_time | Sí |
 | C5 structure | H1 único, cover / editors-note / cta / closing presentes | Sí |
 | C6 links | Enlaces internos rotos | Sí |
 | C7 repetition | Headline cover muy similar a ediciones recientes | Sí |
-| C8 claims | Afirmaciones absolutas sin fuente | Sí |
+| C8 claims | Afirmaciones absolutas (líder/mejor del mundo, más barato que X) | Sí (bloquea solo estos casos). Los porcentajes sin "fuente"/"según" cercano generan aviso, no bloqueo. |
 | C9 stub | Marker `[stub:` presente | Sí |
 | A1 geo mix | Ratio MX+ES bajo | Aviso |
 | A2 topics | Pocos topics distintos | Aviso |

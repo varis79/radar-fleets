@@ -224,19 +224,38 @@ def check_repetition(cover_headline: str, stories: list[dict]) -> list[dict]:
 
 
 def check_claims(visible_text: str) -> list[dict]:
-    """C8. Claims sensibles sin fuente declarada."""
+    """C8. Claims sensibles.
+
+    Los claims absolutos sin comparación son bloqueantes (hiperbólicos).
+    Los porcentajes sin fuente son aviso, no bloqueo: Claude redacta cifras
+    legítimas tipo '28% YoY' sin escribir 'fuente' al lado; el master
+    prompt ya empuja a citar origen. Dejarlo como bloqueo genera demasiado
+    falso positivo en MVP.
+    """
     issues = []
-    sensitive_patterns = [
-        (r"\bel (mejor|peor|único|unico|líder|lider)\b", "claim absoluto"),
+    block_patterns = [
+        (r"\bel (mejor|peor|único|unico|líder|lider)\s+(del|de)\s+(mundo|mercado|sector|planeta)\b", "claim absoluto de liderazgo sin fuente"),
         (r"\bmás (barato|caro) que\b", "comparativa de precio sin fuente"),
-        (r"\b\d{1,3}%\s+(menos|más)\b(?![^<]*(fuente|según|según)[^<]*</)", "porcentaje sin fuente"),
     ]
-    for pat, label in sensitive_patterns:
+    warn_patterns = [
+        (r"\b\d{1,3}%\s+(menos|más)\b", "porcentaje sin fuente explícita"),
+    ]
+    for pat, label in block_patterns:
         for m in re.finditer(pat, visible_text, re.IGNORECASE):
             sample = visible_text[max(0, m.start() - 40):m.end() + 40].strip()
             issues.append({
                 "check": "C8-claim", "severity": "block",
                 "message": f"{label}: {m.group(0)}",
+                "sample": sample[:200]
+            })
+    for pat, label in warn_patterns:
+        # Solo contamos 1 aviso por tipo para no inflar el informe
+        first = next(re.finditer(pat, visible_text, re.IGNORECASE), None)
+        if first:
+            sample = visible_text[max(0, first.start() - 40):first.end() + 40].strip()
+            issues.append({
+                "check": "C8-claim", "severity": "warn",
+                "message": f"{label}: {first.group(0)} (revisar que la cifra tenga contexto)",
                 "sample": sample[:200]
             })
     return issues

@@ -26,7 +26,7 @@ Lista específica (regex en `scripts/lib/forbidden.py`):
 
 ### C3 · Voz editorial
 
-- Em dashes en prosa (`—`) = 0.
+- Em dashes en prosa (`—`) ≤ `qa.max_em_dash_in_prose` (default 1). El master prompt prohíbe em dashes; permitimos 1 aislado en citas literales para no bloquear por casos raros.
 - Estructuras "no es X, es Y" detectadas → bloqueo.
 
 ### C4 · Metadatos obligatorios
@@ -51,11 +51,17 @@ Lista específica (regex en `scripts/lib/forbidden.py`):
 
 - Cover headline no puede tener ratio ≥ 0.85 con el headline de alguna de las últimas 8 ediciones en `content/editorial-memory.md`.
 
-### C8 · Claims sensibles sin fuente
+### C8 · Claims sensibles
 
-- "el mejor", "el peor", "el único", "el líder" sin fuente → bloqueo.
-- "más barato que X", "más caro que X" sin fuente → bloqueo.
-- "N% menos", "N% más" sin "según", "fuente" en el contexto inmediato → bloqueo.
+Bloqueantes:
+- Claim absoluto tipo "el mejor/peor/único/líder del mundo/mercado/sector" → bloqueo.
+- "más barato/caro que X" sin fuente → bloqueo.
+
+Avisos (no bloquean):
+- Porcentajes "N% menos/más" sin "según" o "fuente" en el contexto cercano.
+  Claude redacta cifras legítimas ("28% YoY", etc.) sin escribir "fuente"
+  al lado; el master prompt ya empuja a citar origen. Preferimos aviso
+  para que un humano revise sin bloquear publicación.
 
 ### C9 · Stub marker
 

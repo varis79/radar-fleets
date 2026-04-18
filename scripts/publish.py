@@ -42,12 +42,13 @@ def update_index_from_edition(edition_html: str, permalink: str) -> str:
         can["href"] = "https://thefleetradar.com/"
     if og:
         og["content"] = "https://thefleetradar.com/"
-    # Añadir alternate al permalink justo después del canonical
+    # Añadir alternate al permalink justo después del canonical.
+    # Title sacado del <title> de la propia edición (si existe) para que
+    # el head-metadata del home incluya el título real del permalink.
     if can:
-        alt = soup.new_tag(
-            "link", rel="alternate", href=permalink,
-            title=f"Permalink"
-        )
+        t_tag = soup.find("title")
+        alt_title = t_tag.get_text(strip=True) if t_tag else "Permalink"
+        alt = soup.new_tag("link", rel="alternate", href=permalink, title=alt_title)
         can.insert_after(alt)
     return str(soup)
 

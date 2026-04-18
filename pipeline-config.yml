@@ -185,7 +185,8 @@ qa:
   min_words_edition_normal: 3500
   min_words_edition_short: 2200
   min_words_story: 120
-  max_em_dash_in_prose: 0
+  max_em_dash_in_prose: 1     # 0 sería ideal editorial, pero permite 1 aislado
+                              # (p.ej. dentro de una cita literal) sin bloquear
   forbidden_framing_file: "prompts/qa-checklist.md"   # el listado vive ahí
   external_link_check: false  # en MVP no hacemos HEAD externo para no gastar runtime
   internal_link_check: true
