@@ -12,6 +12,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Markets -->
   <url>
     <loc>https://thefleetradar.com/mercados/mexico/</loc>
     <lastmod>2026-04-18</lastmod>
@@ -25,13 +27,21 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://thefleetradar.com/players/pulpo/</loc>
+    <loc>https://thefleetradar.com/mercados/latam/</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Topics -->
+  <url>
+    <loc>https://thefleetradar.com/temas/fuel-cards/</loc>
     <lastmod>2026-04-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://thefleetradar.com/temas/fuel-cards/</loc>
+    <loc>https://thefleetradar.com/temas/electrificacion-flotas/</loc>
     <lastmod>2026-04-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
@@ -48,6 +58,30 @@
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
+
+  <!-- Players -->
+  <url>
+    <loc>https://thefleetradar.com/players/pulpo/</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Evergreen -->
+  <url>
+    <loc>https://thefleetradar.com/evergreen/guias/peaje-europa-2026/</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thefleetradar.com/evergreen/checklists/evaluar-telematica-2026/</loc>
+    <lastmod>2026-04-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Magazines -->
   <url>
     <loc>https://thefleetradar.com/magazines/2026-04-17-radar-fleet-by-pulpo.html</loc>
     <lastmod>2026-04-18</lastmod>

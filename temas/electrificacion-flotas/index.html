@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Electrificación de flotas 2026 · MCS, hubs compartidos y TCO — The Fleet Radar · by Pulpo</title>
+<meta name="description" content="Electrificación de flotas comerciales en 2026: camión eléctrico, infraestructura MCS, hubs compartidos, integración con pagos y criterios de decisión TCO. Players, cifras y casos reales.">
+<meta name="author" content="Pulpo — getpulpo.com">
+<meta name="keywords" content="electrificación flotas, camión eléctrico 2026, MCS Megawatt Charging System, hub carga camiones, TCO camión eléctrico, flota EV empresa, carga EV flota, Scania MCS, EV Realty, Voltempo, VEV, BYD camión eléctrico">
+<meta property="og:title" content="Electrificación de flotas 2026 — The Fleet Radar · by Pulpo">
+<meta property="og:description" content="MCS, hubs compartidos, integración con pagos y criterios de TCO. Panorama editorial de la flota eléctrica en 2026.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://thefleetradar.com/temas/electrificacion-flotas/">
+<meta property="og:site_name" content="The Fleet Radar · by Pulpo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Electrificación de flotas 2026 — The Fleet Radar · by Pulpo">
+<meta name="twitter:description" content="Camión eléctrico, MCS, hubs compartidos, pagos y TCO. Players, cifras y casos.">
+<link rel="canonical" href="https://thefleetradar.com/temas/electrificacion-flotas/">
+<link rel="alternate" type="application/rss+xml" title="The Fleet Radar · by Pulpo" href="/rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/radar.css">
+<style>
+  /* Acento · tema electrificación: verde flota + electric blue */
+  :root{
+    --accent:#0f3d2e;
+    --accent-2:#1e7fcb;
+    --cover-grad-a:rgba(15,61,46,0.22);
+    --cover-grad-b:rgba(30,127,203,0.18);
+  }
+  .t-hero{background:var(--near-black);background-image:
+      radial-gradient(ellipse 70% 50% at 20% 80%, var(--cover-grad-a) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 80% 20%, var(--cover-grad-b) 0%, transparent 55%),
+      radial-gradient(ellipse 100% 100% at 50% 50%, #0d1521 0%, #060a10 100%);
+      padding:80px 40px 64px;border-bottom:1px solid rgba(255,255,255,.06);}
+  .t-hero-inner{max-width:920px;margin:0 auto}
+  .t-kicker{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-2);margin-bottom:18px;display:block}
+  .t-title{font-family:'Fraunces',serif;font-size:clamp(38px,5.6vw,66px);font-weight:900;line-height:1;letter-spacing:-1.1px;color:#fff;margin-bottom:22px}
+  .t-title span{color:var(--accent-2)}
+  .t-deck{font-size:16px;color:rgba(255,255,255,.68);max-width:680px;line-height:1.75;border-left:2px solid var(--accent-2);padding-left:20px}
+  .t-updated{margin-top:24px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+  .t-main{max-width:920px;margin:0 auto;padding:72px 40px 100px}
+  .t-body p{font-size:16px;line-height:1.8;color:var(--text-mid);margin-bottom:18px}
+  .t-body h2{font-family:'Fraunces',serif;font-size:30px;font-weight:700;color:var(--text-dark);margin-top:56px;margin-bottom:20px;letter-spacing:-.3px;line-height:1.15}
+  .t-body h3{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:var(--text-dark);margin-top:28px;margin-bottom:12px}
+  .t-body strong{color:var(--text-dark)}
+  .t-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+  .t-body a:hover{color:var(--accent-2)}
+  .mov-list{list-style:none;margin:20px 0 0}
+  .mov-list li{padding:18px 22px;background:var(--cream);border-left:3px solid var(--accent);margin-bottom:10px}
+  .mov-list li strong{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  .crit-list{list-style:none;margin:20px 0 0;counter-reset:crit}
+  .crit-list li{padding:18px 22px 18px 64px;background:#fff;border:1px solid var(--border-dark);border-left:3px solid var(--accent-2);margin-bottom:10px;position:relative;counter-increment:crit}
+  .crit-list li::before{content:"0" counter(crit);position:absolute;left:22px;top:16px;font-family:'Fraunces',serif;font-size:28px;font-weight:900;color:var(--accent-2);line-height:1}
+  .crit-list li strong{display:block;font-family:'Fraunces',serif;font-size:16px;font-weight:700;color:var(--text-dark);margin-bottom:6px}
+  .players-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:20px}
+  .player-cat{padding:22px 24px;background:#fff;border:1px solid var(--border-dark);border-left:3px solid var(--accent)}
+  .player-cat h4{font-family:'Fraunces',serif;font-size:16px;font-weight:700;color:var(--text-dark);margin-bottom:10px}
+  .player-cat ul{list-style:none;margin:0;padding:0}
+  .player-cat li{font-size:13px;color:var(--text-mid);padding:4px 0;line-height:1.5}
+  .figures-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px}
+  .figure-card{padding:22px;background:var(--navy);color:#fff;border-left:3px solid var(--accent-2)}
+  .figure-num{font-family:'Fraunces',serif;font-size:36px;font-weight:900;line-height:1;color:#fff;margin-bottom:6px;letter-spacing:-.5px}
+  .figure-caption{font-size:13px;line-height:1.55;color:rgba(255,255,255,.72)}
+  .figure-source{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-top:10px}
+  .related-block{background:var(--warm-sand);padding:32px;margin-top:32px;border-radius:4px}
+  .related-block h3{font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin:0 0 12px 0;color:var(--text-dark)}
+  .related-block a{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--border-dark);text-decoration:none;color:inherit}
+  .related-block a:last-child{border-bottom:none}
+  .related-block a:hover .ed-title{color:var(--navy)}
+  .ed-title{font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:var(--text-dark)}
+  .ed-date{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);white-space:nowrap;align-self:center}
+  .linked-topics{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:20px}
+  .linked-topic{display:block;padding:20px 22px;background:#fff;border:1px solid var(--border-dark);border-left:3px solid var(--accent);text-decoration:none;color:inherit}
+  .linked-topic:hover{border-left-color:var(--accent-2)}
+  .linked-topic .lt-kicker{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:6px}
+  .linked-topic .lt-title{font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:var(--text-dark);line-height:1.25;margin-bottom:4px}
+  .linked-topic .lt-body{font-size:13px;color:var(--text-mid);line-height:1.55}
+  .t-cta{background:var(--warm-sand);padding:56px 32px;text-align:center;margin-top:56px;border-radius:4px}
+  .t-cta h3{font-family:'Fraunces',serif;font-size:24px;font-weight:700;color:var(--text-dark);margin-bottom:14px;letter-spacing:-.2px;line-height:1.3}
+  .t-cta p{font-size:15px;color:var(--text-mid);line-height:1.7;max-width:560px;margin:0 auto 24px}
+  .t-cta a{display:inline-block;padding:12px 28px;background:var(--navy);color:#fff;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border-radius:2px}
+  @media (max-width:720px){
+    .t-hero{padding:56px 20px 48px}
+    .t-main{padding:48px 20px 80px}
+    .figures-grid{grid-template-columns:1fr}
+    .related-block a{flex-direction:column;gap:4px}
+    .ed-date{align-self:flex-start}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a href="/" class="topbar-brand">The Fleet Radar <span>by Pulpo</span></a>
+  <div class="topbar-meta">Tema · Electrificación</div>
+  <nav class="topbar-nav">
+    <a href="/" class="nav-extra">Última</a>
+    <a href="/archive.html">Archivo</a>
+    <a href="https://www.getpulpo.com/" class="cta" target="_blank" rel="noopener">Pulpo ↗</a>
+  </nav>
+</header>
+
+<section class="t-hero">
+  <div class="t-hero-inner">
+    <span class="t-kicker">Tema · Transversal · 2026</span>
+    <h1 class="t-title">Electrificación <span>de flotas</span> en 2026</h1>
+    <p class="t-deck">2026 es el primer año en el que el camión eléctrico pasa de demo a ruta. El Megawatt Charging System empieza a dar servicio. Hubs compartidos abren en California, Reino Unido y Europa Central. La tarjeta de flota absorbe la carga EV privada. Los fabricantes europeos entregan las primeras unidades MCS-capables. Aquí el panorama editorial del año.</p>
+    <div class="t-updated">Actualizado · 18 de abril de 2026</div>
+  </div>
+</section>
+
+<main class="t-main">
+  <div class="t-body">
+
+    <p>La electrificación de flotas lleva tres años en conversación. Este es el primer año en el que los tres bloqueos que impedían que el camión eléctrico saliera del piloto empiezan a ceder a la vez. Uno, la potencia: el <strong>Megawatt Charging System</strong> (MCS) entra en servicio con los primeros camiones comerciales capaces de usarlo. Dos, la infraestructura: se inauguran hubs compartidos pensados para flota, no para turismo. Tres, el pago: la tarjeta de flota absorbe carga EV pública y privada, así que la reconciliación contable deja de ser un tapón.</p>
+
+    <p>Los tres cambios interactúan. Un corredor con hub MCS + una tarjeta de flota que cubre kilovatios + un camión que puede recibir 750 kW equivale a una operación eléctrica planificable en rutas de 400 a 600 km. No resuelve todo, pero resuelve la objeción más repetida en comités financieros.</p>
+
+    <p>Esta página recoge qué está cambiando, qué players están activos por categoría, qué criterios aplicar antes de electrificar un corredor concreto y qué cifras del mercado conviene tener a mano. Se actualiza cada vez que hay señal relevante y cuando The Fleet Radar publica material sobre electrificación.</p>
+
+    <h2>Qué está cambiando en 2026</h2>
+
+    <ul class="mov-list">
+      <li>
+        <strong>Movimiento · MCS (Megawatt Charging System) entra en servicio</strong>
+        Scania comercializa sus primeros camiones eléctricos MCS-capables con conectores que entregan hasta 750 kW. Es el estándar pensado específicamente para vehículo pesado. Ventana de recarga pasa de horas a minutos para operación de larga distancia.
+      </li>
+      <li>
+        <strong>Movimiento · Hubs compartidos como modelo por defecto</strong>
+        San Bernardino (9 MW, 76 conectores, 200+ camiones/día) en California. VEV + Maritime Transport (5 MW, tres hubs) en UK. Europa Central con proyectos similares. El CAPEX por vehículo baja cuando la infraestructura es compartida entre transportistas.
+      </li>
+      <li>
+        <strong>Movimiento · Integración EV en la tarjeta de flota</strong>
+        Corpay y Voltempo integran carga privada en UK. DKV Mobility ofrece +1M puntos EV públicos con transparencia de precio como prioridad. Edenred Essentials sobre Visa cubre carga. Ver cruce con <a href="/temas/fuel-cards/">fuel cards</a>.
+      </li>
+      <li>
+        <strong>Movimiento · Fabricantes europeos entregan unidades MCS-capables</strong>
+        Scania abre. Volvo Trucks, DAF y MAN siguen en 2026-27. Las flotas en Europa con renovación planificada encuentran unidades compatibles con estándar abierto, no tecnología propietaria.
+      </li>
+      <li>
+        <strong>Movimiento · Electrificación urbana en LatAm</strong>
+        Marva opera 120 semirremolques BYD en el corredor Monterrey-Texas. Chile y Argentina con pilotos de logística urbana. Proyección regional del 8% de EV en flota para 2026 (ver <a href="/mercados/latam/">mercados/LatAm</a>).
+      </li>
+    </ul>
+
+    <h2>Players por categoría</h2>
+
+    <div class="players-grid">
+      <div class="player-cat">
+        <h4>Charging HDV · USA</h4>
+        <ul>
+          <li>EV Realty · hub 9 MW California</li>
+          <li>TeraWatt Infrastructure · HDV USA</li>
+          <li>WattEV · charging + trucking</li>
+          <li>ChargePoint · público y privado</li>
+        </ul>
+      </div>
+      <div class="player-cat">
+        <h4>Charging HDV · Europa</h4>
+        <ul>
+          <li>Voltempo · UK privado HDV</li>
+          <li>VEV (Vitol) · UK HDV 5 MW</li>
+          <li>IONITY · DC público</li>
+          <li>Allego · público Europa</li>
+          <li>Fastned · público Europa</li>
+          <li>Milence · HDV pan-europeo</li>
+        </ul>
+      </div>
+      <div class="player-cat">
+        <h4>Fabricantes · camión EV</h4>
+        <ul>
+          <li>Scania · primeros MCS-capables</li>
+          <li>Volvo Trucks · gama pesada EV</li>
+          <li>DAF · EV pesado</li>
+          <li>MAN · EV pesado</li>
+          <li>BYD · pesado EV (MX, BR, CL)</li>
+          <li>Foton · pesado asiático EV</li>
+          <li>Tesla Semi · USA</li>
+        </ul>
+      </div>
+      <div class="player-cat">
+        <h4>Fabricantes · ligero y van EV</h4>
+        <ul>
+          <li>Mercedes-Benz eSprinter</li>
+          <li>Ford E-Transit</li>
+          <li>Renault Master E-Tech</li>
+          <li>VW ID. Buzz Cargo</li>
+          <li>Peugeot / Citroën gama eléctrica</li>
+        </ul>
+      </div>
+      <div class="player-cat">
+        <h4>Integración EV + pago</h4>
+        <ul>
+          <li>Corpay + Voltempo · UK</li>
+          <li>DKV Mobility · +1M puntos EV</li>
+          <li>Edenred Essentials · Visa multi-gasto</li>
+          <li>PulpoPay · integrado en <a href="/players/pulpo/">Pulpo</a></li>
+        </ul>
+      </div>
+      <div class="player-cat">
+        <h4>Gestión operativa EV</h4>
+        <ul>
+          <li>Samsara · módulo EV</li>
+          <li>Geotab · monitorización batería</li>
+          <li>Webfleet · ruta + consumo EV</li>
+          <li>Fleetio · mantenimiento EV</li>
+          <li>Pulpo · control operativo y documental</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>Criterios para electrificar un corredor en 2026</h2>
+
+    <p>No electrificar toda la flota a la vez; electrificar corredores concretos donde el TCO cuadra. Estos son los criterios editoriales que aplicamos al analizar un proyecto de electrificación de flota.</p>
+
+    <ul class="crit-list">
+      <li>
+        <strong>Mapeo real del corredor</strong>
+        Distancia media por viaje, paradas naturales, tipo de carga, ventanas operativas. Si el corredor no tiene parada factible durante 200-300 km, no hay electrificación estable.
+      </li>
+      <li>
+        <strong>Disponibilidad de carga de alta potencia (MCS o DC rápido)</strong>
+        Mapear los puntos existentes y los anunciados en el horizonte de 12 meses. Confirmar soporte MCS o, al menos, DC rápido de 350 kW+.
+      </li>
+      <li>
+        <strong>SLA de potencia y disponibilidad</strong>
+        No es suficiente con que exista el punto; tiene que funcionar. Contrato con el operador debe incluir SLA de potencia entregada y de uptime.
+      </li>
+      <li>
+        <strong>TCO honesto a 5-7 años</strong>
+        Coste de adquisición + financiación + consumo eléctrico real (con degradación de batería) + mantenimiento + residual. Comparar contra ICE equivalente en el mismo corredor.
+      </li>
+      <li>
+        <strong>Ventanas de recarga operativas</strong>
+        ¿La recarga cabe en el turno? Una recarga de 30-60 minutos en ruta es operativa; una recarga de 4 horas en destino requiere reajustar toda la operación.
+      </li>
+      <li>
+        <strong>Integración de pago unificado</strong>
+        La tarjeta de flota debe cubrir los puntos del corredor. Dos cuentas (una fuel, una EV) es deuda técnica contable.
+      </li>
+      <li>
+        <strong>Gestión operativa con datos reales</strong>
+        Consumo por ruta, degradación de batería, uptime efectivo. Sin plataforma de flota capturando esos datos, la segunda fase de electrificación se toma a ciegas.
+      </li>
+      <li>
+        <strong>Formación de conductores</strong>
+        Regenerativa, planificación de cargas, gestión de temperatura en condiciones extremas. Cambia el estilo de conducción y eso afecta al TCO real.
+      </li>
+      <li>
+        <strong>Incentivos fiscales y ayudas</strong>
+        Por país y por región. Afectan materialmente al payback. Mapear antes del comité de inversión, no después.
+      </li>
+    </ul>
+
+    <h2>Cifras del mercado</h2>
+
+    <div class="figures-grid">
+      <div class="figure-card">
+        <div class="figure-num">750 kW</div>
+        <div class="figure-caption">Potencia entregada por los primeros conectores MCS comerciales en camiones Scania MCS-capables.</div>
+        <div class="figure-source">Scania · 2026</div>
+      </div>
+      <div class="figure-card">
+        <div class="figure-num">9 MW</div>
+        <div class="figure-caption">Capacidad del nuevo hub de carga de camiones eléctricos en San Bernardino, California.</div>
+        <div class="figure-source">Electrek · 09 abr 2026</div>
+      </div>
+      <div class="figure-card">
+        <div class="figure-num">5 MW</div>
+        <div class="figure-caption">Implantación de VEV en Maritime Transport, repartida en tres hubs logísticos UK. Una de las mayores para HDV en el país.</div>
+        <div class="figure-source">Charged EVs · 2026</div>
+      </div>
+      <div class="figure-card">
+        <div class="figure-num">+1 M</div>
+        <div class="figure-caption">Puntos de carga EV en la red de DKV Mobility. Tarjeta de flota como puerta de acceso.</div>
+        <div class="figure-source">DKV · 2026</div>
+      </div>
+      <div class="figure-card">
+        <div class="figure-num">120</div>
+        <div class="figure-caption">Semirremolques BYD eléctricos que Marva opera en el corredor Monterrey-Texas. Primera referencia HDV EV en MX.</div>
+        <div class="figure-source">The Fleet Radar · Nº 1</div>
+      </div>
+      <div class="figure-card">
+        <div class="figure-num">~8%</div>
+        <div class="figure-caption">Proporción esperada de vehículos eléctricos en flota regional LatAm en 2026.</div>
+        <div class="figure-source">Global Fleet · 2026</div>
+      </div>
+    </div>
+
+    <h2>Mercados y temas relacionados</h2>
+
+    <div class="linked-topics">
+      <a href="/temas/fuel-cards/" class="linked-topic">
+        <div class="lt-kicker">Tema · Transversal</div>
+        <div class="lt-title">Tarjetas de flota (fuel cards)</div>
+        <div class="lt-body">Cómo se integra el pago de carga EV en la tarjeta corporativa.</div>
+      </a>
+      <a href="/mercados/mexico/" class="linked-topic">
+        <div class="lt-kicker">Mercado · 🇲🇽</div>
+        <div class="lt-title">Flotas en México 2026</div>
+        <div class="lt-body">Marva, BYD y panorama eléctrico en autotransporte.</div>
+      </a>
+      <a href="/mercados/espana/" class="linked-topic">
+        <div class="lt-kicker">Mercado · 🇪🇸</div>
+        <div class="lt-title">Flotas en España 2026</div>
+        <div class="lt-body">Peajes EU con descuento EV y panorama español.</div>
+      </a>
+      <a href="/mercados/latam/" class="linked-topic">
+        <div class="lt-kicker">Mercado · 🌎</div>
+        <div class="lt-title">Flotas en LatAm 2026</div>
+        <div class="lt-body">8% EV esperado regional. Chile, México, Argentina, Brasil.</div>
+      </a>
+    </div>
+
+    <h2>Ediciones que hablan de electrificación</h2>
+
+    <div class="related-block">
+      <h3>The Fleet Radar · by Pulpo</h3>
+      <a href="/magazines/2026-04-17-radar-fleet-by-pulpo.html">
+        <span class="ed-title">Nº 2 · Peajes por km, hub de 9 MW y cinco V-16 fuera de registro</span>
+        <span class="ed-date">17 abril 2026</span>
+      </a>
+      <a href="/magazines/2026-04-14-radar-fleet-by-pulpo.html">
+        <span class="ed-title">Nº 1 · La semana que redefinió las reglas</span>
+        <span class="ed-date">14 abril 2026</span>
+      </a>
+    </div>
+
+    <div class="t-cta">
+      <h3>Electrificar con datos operativos reales</h3>
+      <p>Pulpo integra combustible, mantenimiento, consumo EV, documentación y gasto en un mismo sitio. Útil para mapear TCO real antes de un comité financiero de electrificación, y para medir el proyecto después. Desde 2018 con +200.000 vehículos gestionados.</p>
+      <a href="https://www.getpulpo.com/" target="_blank" rel="noopener">Ver Pulpo en acción</a>
+    </div>
+
+  </div>
+</main>
+
+<footer class="closing" style="padding:48px 32px 40px;">
+  <div class="closing-logo">The Fleet Radar <span>by Pulpo</span></div>
+  <div class="closing-tagline">Inteligencia semanal para el sector de gestión de flotas</div>
+  <div class="closing-links" style="margin-top:24px;border-top:none;padding-top:0;">
+    <a href="/">Última edición</a>
+    <a href="/archive.html">Archivo</a>
+    <a href="/mercados/mexico/">México</a>
+    <a href="/mercados/espana/">España</a>
+    <a href="/rss.xml" class="gold">RSS</a>
+    <span class="closing-pulpo">Editado por <a href="https://www.getpulpo.com" target="_blank" rel="noopener">Pulpo</a></span>
+  </div>
+</footer>
+
+<script defer src="/_vercel/insights/script.js"></script>
+
+</body>
+</html>

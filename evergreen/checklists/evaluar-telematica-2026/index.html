@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checklist: 10 preguntas antes de firmar un contrato de telemática en 2026 — The Fleet Radar · by Pulpo</title>
+<meta name="description" content="Checklist editorial 2026: las 10 preguntas que conviene hacerse antes de firmar un contrato de telemática de flota. Datos, integraciones, video, soporte, SLA y salida.">
+<meta name="author" content="Pulpo — getpulpo.com">
+<meta name="keywords" content="contrato telemática flota, evaluar telemática 2026, checklist GPS flota, Samsara vs Motive, Geotab, Webfleet, Fleetio, preguntas antes de contratar telemática, TCO telemática flota">
+<meta property="og:title" content="Checklist: 10 preguntas antes de firmar un contrato de telemática en 2026 — The Fleet Radar · by Pulpo">
+<meta property="og:description" content="10 preguntas operativas antes de firmar telemática en 2026: datos, video, scoring, SLA, soporte, salida y ruta de producto.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://thefleetradar.com/evergreen/checklists/evaluar-telematica-2026/">
+<meta property="og:site_name" content="The Fleet Radar · by Pulpo">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Checklist: 10 preguntas antes de firmar telemática en 2026">
+<meta name="twitter:description" content="Criterios operativos para evaluar Samsara, Motive, Geotab, Webfleet, Pulpo y el resto.">
+<link rel="canonical" href="https://thefleetradar.com/evergreen/checklists/evaluar-telematica-2026/">
+<link rel="alternate" type="application/rss+xml" title="The Fleet Radar · by Pulpo" href="/rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/radar.css">
+<style>
+  /* Acento · evergreen checklist · telemática: electric blue + amber */
+  :root{
+    --accent:#1e7fcb;
+    --accent-2:#d4891a;
+    --cover-grad-a:rgba(30,127,203,0.24);
+    --cover-grad-b:rgba(212,137,26,0.14);
+  }
+  .e-hero{background:var(--near-black);background-image:
+      radial-gradient(ellipse 70% 50% at 20% 80%, var(--cover-grad-a) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 80% 20%, var(--cover-grad-b) 0%, transparent 55%),
+      radial-gradient(ellipse 100% 100% at 50% 50%, #0d1521 0%, #060a10 100%);
+      padding:72px 40px 56px;border-bottom:1px solid rgba(255,255,255,.06);}
+  .e-hero-inner{max-width:840px;margin:0 auto}
+  .e-kicker{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-2);margin-bottom:18px;display:block}
+  .e-title{font-family:'Fraunces',serif;font-size:clamp(32px,4.8vw,56px);font-weight:900;line-height:1.05;letter-spacing:-1px;color:#fff;margin-bottom:22px}
+  .e-title span{color:var(--accent-2)}
+  .e-deck{font-size:16px;color:rgba(255,255,255,.68);max-width:660px;line-height:1.75;border-left:2px solid var(--accent-2);padding-left:20px}
+  .e-updated{margin-top:24px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+  .e-main{max-width:780px;margin:0 auto;padding:64px 40px 100px}
+  .e-body p{font-size:16px;line-height:1.85;color:var(--text-mid);margin-bottom:18px}
+  .e-body h2{font-family:'Fraunces',serif;font-size:28px;font-weight:700;color:var(--text-dark);margin-top:48px;margin-bottom:18px;letter-spacing:-.3px;line-height:1.15}
+  .e-body strong{color:var(--text-dark)}
+  .e-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+  .e-body a:hover{color:var(--accent-2)}
+  .check-list{list-style:none;margin:24px 0 0;counter-reset:chk}
+  .check-list li{padding:22px 24px 22px 80px;background:#fff;border:1px solid var(--border-dark);border-left:3px solid var(--accent);margin-bottom:12px;position:relative;counter-increment:chk}
+  .check-list li::before{content:counter(chk,decimal-leading-zero);position:absolute;left:22px;top:20px;font-family:'Fraunces',serif;font-size:32px;font-weight:900;color:var(--accent);line-height:1}
+  .check-list li strong{display:block;font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:var(--text-dark);margin-bottom:8px}
+  .check-list li p{font-size:15px;line-height:1.7;color:var(--text-mid);margin:0}
+  .alert-box{padding:22px 26px;background:rgba(184,76,58,.06);border-left:3px solid var(--burgundy);margin-top:24px}
+  .alert-box h4{font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:var(--text-dark);margin-bottom:10px}
+  .alert-box ul{margin:0 0 0 22px;padding:0}
+  .alert-box li{font-size:15px;line-height:1.7;color:var(--text-mid);margin-bottom:6px}
+  .figures-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px}
+  .figure-card{padding:22px;background:var(--navy);color:#fff;border-left:3px solid var(--accent)}
+  .figure-num{font-family:'Fraunces',serif;font-size:34px;font-weight:900;line-height:1;color:#fff;margin-bottom:6px;letter-spacing:-.5px}
+  .figure-caption{font-size:13px;line-height:1.55;color:rgba(255,255,255,.72)}
+  .figure-source{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-top:10px}
+  .related-block{background:var(--warm-sand);padding:32px;margin-top:32px;border-radius:4px}
+  .related-block h3{font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin:0 0 12px 0;color:var(--text-dark)}
+  .related-block a{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--border-dark);text-decoration:none;color:inherit}
+  .related-block a:last-child{border-bottom:none}
+  .related-block a:hover .ed-title{color:var(--navy)}
+  .ed-title{font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:var(--text-dark)}
+  .ed-date{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);white-space:nowrap;align-self:center}
+  .linked-topics{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:20px}
+  .linked-topic{display:block;padding:20px 22px;background:#fff;border:1px solid var(--border-dark);border-left:3px solid var(--accent);text-decoration:none;color:inherit}
+  .linked-topic:hover{border-left-color:var(--accent-2)}
+  .linked-topic .lt-kicker{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:6px}
+  .linked-topic .lt-title{font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:var(--text-dark);line-height:1.25;margin-bottom:4px}
+  .linked-topic .lt-body{font-size:13px;color:var(--text-mid);line-height:1.55}
+  .e-cta{background:var(--warm-sand);padding:48px 32px;text-align:center;margin-top:48px;border-radius:4px}
+  .e-cta h3{font-family:'Fraunces',serif;font-size:22px;font-weight:700;color:var(--text-dark);margin-bottom:14px;letter-spacing:-.2px;line-height:1.3}
+  .e-cta p{font-size:15px;color:var(--text-mid);line-height:1.7;max-width:540px;margin:0 auto 24px}
+  .e-cta a{display:inline-block;padding:12px 28px;background:var(--navy);color:#fff;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border-radius:2px}
+  @media (max-width:720px){
+    .e-hero{padding:56px 20px 48px}
+    .e-main{padding:48px 20px 80px}
+    .figures-grid{grid-template-columns:1fr}
+    .related-block a{flex-direction:column;gap:4px}
+    .ed-date{align-self:flex-start}
+    .check-list li{padding:20px 20px 20px 72px}
+    .check-list li::before{font-size:28px;left:20px}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a href="/" class="topbar-brand">The Fleet Radar <span>by Pulpo</span></a>
+  <div class="topbar-meta">Checklist · Telemática 2026</div>
+  <nav class="topbar-nav">
+    <a href="/" class="nav-extra">Última</a>
+    <a href="/archive.html">Archivo</a>
+    <a href="https://www.getpulpo.com/" class="cta" target="_blank" rel="noopener">Pulpo ↗</a>
+  </nav>
+</header>
+
+<section class="e-hero">
+  <div class="e-hero-inner">
+    <span class="e-kicker">Checklist · Telemática · 2026</span>
+    <h1 class="e-title">10 preguntas antes de firmar un contrato de <span>telemática</span> en 2026</h1>
+    <p class="e-deck">El contrato de telemática no es un contrato de hardware. Es un contrato de datos, plataforma, servicio y salida. Esta checklist editorial reúne las diez preguntas concretas que conviene hacerse, y que deberían quedar respondidas por escrito en la propuesta, antes de firmar con cualquier proveedor.</p>
+    <div class="e-updated">Actualizado · 18 de abril de 2026</div>
+  </div>
+</section>
+
+<main class="e-main">
+  <div class="e-body">
+
+    <p>La compra de telemática ha cambiado de fondo en los últimos tres años. Antes se valoraba la caja GPS y el precio por unidad. Hoy se valora la capacidad de integrar datos en el ERP, el modelo de IA, la calidad del coaching al conductor, la salida del contrato y la hoja de ruta del producto. La diferencia entre proveedores maduros es pequeña en hardware y grande en todo lo demás.</p>
+
+    <p>Esta checklist está pensada para comités de compras con flotas de 50 a más de 5.000 unidades. No es comparativa de proveedores; es el conjunto de preguntas que, respondidas por escrito, permiten comparar ofertas con criterio. Sirve para evaluar Samsara, Motive, Geotab, Webfleet, Fleetio, Lytx, Verizon Connect, Pulpo y cualquier otro sistema relevante en 2026.</p>
+
+    <h2>Las 10 preguntas</h2>
+
+    <ul class="check-list">
+      <li>
+        <strong>¿Qué datos captura el sistema por vehículo y por conductor?</strong>
+        <p>GPS es mínimo aceptable. Lo que importa: OBD-II, FMS (en pesado), eventos de aceleración/frenada, tiempo motor encendido, consumo, eventos ADAS, estado de batería (EV), temperatura (refrigerado). Pide lista concreta de parámetros con frecuencia de muestreo y confirma cuáles requieren hardware adicional.</p>
+      </li>
+      <li>
+        <strong>¿Cómo se integra con tu software de flota y tu ERP?</strong>
+        <p>API documentada, webhooks, export CSV programado o integración nativa bidireccional. No aceptar "tiene API" sin documentación abierta y sin ejemplos concretos. Confirmar qué casos de uso están cubiertos de serie y cuáles requieren desarrollo a medida.</p>
+      </li>
+      <li>
+        <strong>¿El vídeo está incluido, es opcional o requiere otro contrato?</strong>
+        <p>Si la flota necesita dashcam (safety, siniestralidad, defensa legal), pedir especificación: resolución, IA a bordo, detección de eventos, revisión humana, retención, almacenamiento. Confirmar si es edge AI o cloud. Coste por cámara con y sin retención.</p>
+      </li>
+      <li>
+        <strong>¿Qué scoring y coaching ofrece al conductor?</strong>
+        <p>Algoritmo abierto o caja negra, configuración de umbrales, integración con procesos de RRHH y formación, capacidad de comparar por perfil/cliente/ruta. Una plataforma que da notas sin explicar el porqué crea fricción con conductores.</p>
+      </li>
+      <li>
+        <strong>¿Incluye mantenimiento predictivo y en qué nivel?</strong>
+        <p>Alertas básicas de OBD ya las da casi todo el mundo. Predictivo serio requiere modelo entrenado, umbrales por marca/modelo y histórico propio. Pedir ejemplos de predicciones reales sobre flotas del mismo segmento del tuyo.</p>
+      </li>
+      <li>
+        <strong>¿Cuál es el soporte en tu idioma y horario?</strong>
+        <p>Soporte en español y en horario local no es un lujo, es operativo. Confirmar canales (teléfono, chat, correo, portal), tiempos de primera respuesta por severidad y si hay account manager asignado.</p>
+      </li>
+      <li>
+        <strong>¿Cómo se exportan tus datos si cancelas?</strong>
+        <p>Pregunta clave. Formato (CSV, Parquet, API de migración), retención tras cancelación, coste de export, soporte para auditar la calidad del export. Si un proveedor no tiene respuesta por escrito, asume que hay encierro.</p>
+      </li>
+      <li>
+        <strong>¿Cuál es el SLA de uptime y de calidad del dato?</strong>
+        <p>Uptime de plataforma (99,5%, 99,9%). Calidad del dato: porcentaje de vehículos reportando a tiempo, latencia media, tolerancia a interrupciones 3G/4G. Penalizaciones por incumplimiento deben estar en el contrato.</p>
+      </li>
+      <li>
+        <strong>¿Qué plazo, permanencia y sanciones tiene el contrato?</strong>
+        <p>Plazo habitual: 24-36 meses. Clause de permanencia, coste de salida anticipada, renovación automática, revisión de tarifas. Mejor plazo corto con renovación opt-in que plazo largo con penalización alta.</p>
+      </li>
+      <li>
+        <strong>¿Cuál es la ruta de producto a 12-18 meses?</strong>
+        <p>Un proveedor maduro tiene roadmap. Pregunta qué features concretas entran en los próximos trimestres, en qué fase están (beta, GA), si tu input tiene canal. La ausencia de roadmap es señal de que el producto está en modo mantenimiento.</p>
+      </li>
+    </ul>
+
+    <h2>Señales de alerta</h2>
+
+    <div class="alert-box">
+      <h4>Cuándo conviene decir que no, aunque el precio sea atractivo</h4>
+      <ul>
+        <li>La propuesta evita responder por escrito a cualquiera de las 10 preguntas.</li>
+        <li>El hardware requiere conexión propietaria que no migra a otro proveedor.</li>
+        <li>El coste de export de datos es elevado o no está cotizado.</li>
+        <li>El soporte está en otro idioma y otro huso horario sin excepción.</li>
+        <li>El SLA está solo en marketing, no en contrato.</li>
+        <li>No hay roadmap público ni canal para feedback de cliente.</li>
+        <li>El plazo mínimo es 36+ meses con permanencia dura.</li>
+      </ul>
+    </div>
+
+    <h2>Cifras del mercado</h2>
+
+    <div class="figures-grid">
+      <div class="figure-card">
+        <div class="figure-num">99</div>
+        <div class="figure-caption">Score medio de Samsara en G2 durante 2025. Quinto trimestre consecutivo como #1.</div>
+        <div class="figure-source">G2 · 2025/26</div>
+      </div>
+      <div class="figure-card">
+        <div class="figure-num">97,2</div>
+        <div class="figure-caption">Score medio de Motive en G2. Con IPO registrada en 2026.</div>
+        <div class="figure-source">G2 · 2026</div>
+      </div>
+      <div class="figure-card">
+        <div class="figure-num">#1 ABI</div>
+        <div class="figure-caption">Lytx lidera el ranking de video telemática comercial de ABI Research en febrero 2026.</div>
+        <div class="figure-source">ABI Research · feb 2026</div>
+      </div>
+      <div class="figure-card">
+        <div class="figure-num">4,6 M</div>
+        <div class="figure-caption">Vehículos activos en Geotab globalmente. Ace como capa de IA sobre MyGeotab.</div>
+        <div class="figure-source">Geotab · 2026</div>
+      </div>
+    </div>
+
+    <h2>Páginas relacionadas</h2>
+
+    <div class="linked-topics">
+      <a href="/temas/fuel-cards/" class="linked-topic">
+        <div class="lt-kicker">Tema · Transversal</div>
+        <div class="lt-title">Tarjetas de flota (fuel cards)</div>
+        <div class="lt-body">Integración de pagos con plataforma de flota, criterios similares.</div>
+      </a>
+      <a href="/temas/electrificacion-flotas/" class="linked-topic">
+        <div class="lt-kicker">Tema · Transversal</div>
+        <div class="lt-title">Electrificación de flotas</div>
+        <div class="lt-body">Consumo, batería y datos específicos para operación EV.</div>
+      </a>
+      <a href="/players/pulpo/" class="linked-topic">
+        <div class="lt-kicker">Player · MX+ES</div>
+        <div class="lt-title">Pulpo</div>
+        <div class="lt-body">Plataforma con IA para gestión operativa, datos y cumplimiento.</div>
+      </a>
+      <a href="/mercados/mexico/" class="linked-topic">
+        <div class="lt-kicker">Mercado · 🇲🇽</div>
+        <div class="lt-title">Flotas en México 2026</div>
+        <div class="lt-body">CNE, Programa 6.000 MDP y cómo afecta a la decisión.</div>
+      </a>
+    </div>
+
+    <h2>Ediciones con material sobre telemática</h2>
+
+    <div class="related-block">
+      <h3>The Fleet Radar · by Pulpo</h3>
+      <a href="/magazines/2026-04-17-radar-fleet-by-pulpo.html">
+        <span class="ed-title">Nº 2 · Peajes por km, hub de 9 MW y cinco V-16 fuera de registro</span>
+        <span class="ed-date">17 abril 2026</span>
+      </a>
+      <a href="/magazines/2026-04-14-radar-fleet-by-pulpo.html">
+        <span class="ed-title">Nº 1 · La semana que redefinió las reglas</span>
+        <span class="ed-date">14 abril 2026</span>
+      </a>
+    </div>
+
+    <div class="e-cta">
+      <h3>Si estás evaluando telemática, podemos ayudarte a aterrizar criterios</h3>
+      <p>Pulpo gestiona flotas con IA desde 2018 en México, España y otros países. +200.000 vehículos gestionados, de 10 a más de 10.000 unidades. Podemos acompañarte en la evaluación sin compromiso, con lectura editorial y no comercial.</p>
+      <a href="https://www.getpulpo.com/" target="_blank" rel="noopener">Ver Pulpo en acción</a>
+    </div>
+
+  </div>
+</main>
+
+<footer class="closing" style="padding:48px 32px 40px;">
+  <div class="closing-logo">The Fleet Radar <span>by Pulpo</span></div>
+  <div class="closing-tagline">Inteligencia semanal para el sector de gestión de flotas</div>
+  <div class="closing-links" style="margin-top:24px;border-top:none;padding-top:0;">
+    <a href="/">Última edición</a>
+    <a href="/archive.html">Archivo</a>
+    <a href="/players/pulpo/">Pulpo</a>
+    <a href="/temas/fuel-cards/">Fuel cards</a>
+    <a href="/rss.xml" class="gold">RSS</a>
+    <span class="closing-pulpo">Editado por <a href="https://www.getpulpo.com" target="_blank" rel="noopener">Pulpo</a></span>
+  </div>
+</footer>
+
+<script defer src="/_vercel/insights/script.js"></script>
+
+</body>
+</html>
