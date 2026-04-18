@@ -196,12 +196,71 @@ Estas etiquetas se guardan **en el summary.txt** de la edición en una sección 
 
 ### Dos niveles
 
-- **Capa interna**: todo se etiqueta. Siempre. Nada se omite por granularidad.
+- **Capa interna**: todo se etiqueta. Siempre. Nada se omite por granularidad. Topics, players, markets, fleet-types y micro-tags viven aquí en `content/taxonomy/*.md` y en la memoria editorial, con la granularidad que haga falta para decisiones editoriales, clustering y AI retrieval.
 - **Capa pública**: solo hay URL indexable si la entidad cumple los cinco criterios (evergreen, material, intro redactable, aporte real, no thin). Revisión humana obligatoria antes de promover.
+
+La taxonomía interna **nunca se muestra al lector en bruto**. Si una clasificación tiene que aparecer en el texto visible (tag de historia, pill de sección, label de card, microcopy de why-item), se reformula en clave editorial pública, neutra y útil. Ver las reglas duras de la siguiente sección.
 
 ### Fleet-types — evitar el sesgo
 
 "Flota" no es sinónimo de camión pesado. La edición semanal debe equilibrar cobertura entre long-haul, distribución, ligero comercial, last-mile, field-service, especializado, pasajeros y no-motorizado. Si una edición queda sesgada a un solo cluster sin justificación, se anota en memoria para compensar en la siguiente.
+
+---
+
+## Framing editorial — qué NO aparece en la capa pública
+
+Regla dura, sin excepciones. Cualquier label, tag, sección, headline, microcopy o pie de card visible al lector debe sonar a **medio editorial público**. Nunca a memo interno, análisis comercial o watchlist competitiva.
+
+### Prohibido en la capa visible
+
+Estas expresiones y cualquier variante equivalente **no pueden aparecer** en titulares, pills, tags, section-labels, why-labels, cover-tags, bylines ni cuerpos de texto:
+
+- "Competidor", "competidor directo", "competidor / referencia", "competidor / señal"
+- "Competidor PulpoPay", "competencia de PulpoPay"
+- "Oportunidad partner", "oportunidad de partner"
+- "Referencia de producto", "inspiración de producto"
+- "Señal competitiva", "vigilancia competitiva", "competitor watch"
+- "Educación al cliente", "outreach", "argumento de mercado", "argumento comercial"
+- "Para Pulpo", "para Pulpo / PulpoPay", "implicación para Pulpo"
+- "Pulpo debe", "Pulpo necesita", "PulpoPay necesita"
+- "Roadmap de Pulpo", "tesis de producto de Pulpo"
+- Cualquier otra formulación que hable del negocio de Pulpo como sujeto operativo interno o que trate a otro actor como "competidor" o "prospecto".
+
+### Reformulación en clave editorial pública
+
+Cuando la clasificación interna se refiere a algo que debe verse, se traduce así:
+
+| Interno (memoria, análisis) | Público (editorial, neutro) |
+|---|---|
+| Competidor directo / Competidor PulpoPay / Competidor watch | Liderazgo · Movimiento de mercado · Pagos · Integración · Producto |
+| Oportunidad partner | Partnership · Acuerdo |
+| Referencia de producto · Inspiración de producto | Producto · Lanzamiento |
+| Señal competitiva | Movimiento de mercado |
+| Educación al cliente | Tendencia operativa |
+| Para Pulpo / Implicación para Pulpo | Para el negocio · Para quien opera · Para el mercado |
+| Pulpo debe / necesita | (reescribir en tercera persona, con foco en la lectura del sector, no en acciones de Pulpo) |
+| Argumento comercial / argumento de mercado más contundente | (reescribir con la cifra o el hecho concreto, sin dirigirlo a comercial) |
+
+### Cuándo sí aparece Pulpo en texto visible
+
+- **Firma editorial**: "The Fleet Radar · by Pulpo" en topbar, closing, bylines de opinión.
+- **CTA suave**: un bloque al final de edición o página con copy acordado (ver `content/pulpo-facts.md`).
+- **Mención neutra**: cuando Pulpo es uno más de los actores del ecosistema (p.ej. en `/temas/fuel-cards/` o `/mercados/mexico/` junto a WEX/Corpay/VecFleet).
+- **Sección "Desde Pulpo"**: solo si `content/pulpo-update.md` tiene material real y autorizado.
+
+Fuera de estos usos, Pulpo no es protagonista del texto editorial.
+
+### Checklist de QA previa a publicar
+
+Antes de mergear cualquier edición, página o evergreen nuevos, confirmar:
+
+- [ ] No aparece ninguna expresión de la lista "Prohibido en la capa visible" ni equivalente.
+- [ ] El tono se lee como medio editorial público, útil para un gestor de flota externo; no como memo interno o nota comercial.
+- [ ] Pulpo no figura como protagonista comercial del texto. Solo aparece en firma, CTA suave, mención neutra dentro del ecosistema o sección "Desde Pulpo" cuando procede.
+- [ ] Todos los labels, pills, tags, section-labels y headings visibles son públicos y neutros (p.ej. "Movimiento de mercado", "Partnership", "Producto", "Integración", "Liderazgo"), no categorías internas.
+- [ ] Los why-labels usan "Para quien opera" / "Para el negocio" / "Para el mercado", no "Para Pulpo".
+
+Si algún check falla, se arregla antes del merge.
 
 ---
 
