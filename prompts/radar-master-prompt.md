@@ -160,18 +160,102 @@ Si dudas entre una frase vistosa y una clara, elige la clara.
 
 ## Memoria editorial y watch
 
-Antes de curar el contenido de la semana, leer:
+Antes de curar el contenido de la semana, leer en este orden:
 
-1. `content/editorial-memory.md` — qué se ha publicado antes. No repetir sin novedad real. Si una historia evoluciona, referenciarla en el summary.
-2. `content/market-watch.md` — watchlist viva de temas, players, geografías, cifras y regulación. Guía de ventanas abiertas y próximos hitos.
-3. `content/pulpo-update.md` — entrada para la sección "Desde Pulpo".
-4. `content/pulpo-facts.md` — datos y claims reutilizables sobre Pulpo.
+1. `content/taxonomy/README.md` — cómo funciona la taxonomía de topics, players, markets, fleet-types y micro-tags.
+2. `content/taxonomy/topics.md` — ejes editoriales vigentes y su estado público.
+3. `content/taxonomy/players.md` — fichas de actores por categoría.
+4. `content/taxonomy/markets.md` — geografías, tiers y banderas.
+5. `content/taxonomy/fleet-types.md` — tipos de flota, verticales y casos de uso.
+6. `content/taxonomy/micro-tags.md` — vocabulario controlado granular.
+7. `content/editorial-memory.md` — qué se ha publicado antes. No repetir sin novedad real.
+8. `content/market-watch.md` — watchlist viva. Ventanas abiertas y próximos hitos.
+9. `content/pulpo-update.md` — entrada para "Desde Pulpo".
+10. `content/pulpo-facts.md` — datos durables sobre Pulpo.
 
 Al cerrar la edición:
 
-1. Añadir bloque nuevo al final de `editorial-memory.md` (no editar bloques anteriores).
-2. Actualizar `market-watch.md` donde algo haya cambiado (línea temporal, cifras, estado).
-3. Si se usó una entrada de `pulpo-update.md`, moverla a "Entradas usadas" con "usado en Nº N".
+1. Añadir bloque nuevo al final de `editorial-memory.md` (no editar bloques anteriores). Debe incluir las etiquetas taxonómicas de cada historia.
+2. Ejecutar el pass de descubrimiento del `content/discovery-playbook.md`. Actualizar `players.md` con los nuevos.
+3. Actualizar `market-watch.md` donde algo haya cambiado (línea temporal, cifras, estado).
+4. Si se usó una entrada de `pulpo-update.md`, moverla a "Entradas usadas" con "usado en Nº N".
+
+---
+
+## Taxonomía — clasificación obligatoria
+
+Cada historia de la edición lleva **etiquetado interno** (no visible al lector) con estas capas:
+
+- `topic:` — 1 topic primario de `topics.md` (obligatorio).
+- `fleet-type:` — 1 primario + opcional 1 secundario de `fleet-types.md` cuando aplique.
+- `players:` — 1-3 players de `players.md`.
+- `market:` — 1 market primario de `markets.md` (obligatorio).
+- `microtags:` — 3-8 micro-tags de `micro-tags.md`.
+
+Estas etiquetas se guardan **en el summary.txt** de la edición en una sección final llamada "Etiquetas por historia", y se copian al bloque correspondiente de `editorial-memory.md`.
+
+### Dos niveles
+
+- **Capa interna**: todo se etiqueta. Siempre. Nada se omite por granularidad.
+- **Capa pública**: solo hay URL indexable si la entidad cumple los cinco criterios (evergreen, material, intro redactable, aporte real, no thin). Revisión humana obligatoria antes de promover.
+
+### Fleet-types — evitar el sesgo
+
+"Flota" no es sinónimo de camión pesado. La edición semanal debe equilibrar cobertura entre long-haul, distribución, ligero comercial, last-mile, field-service, especializado, pasajeros y no-motorizado. Si una edición queda sesgada a un solo cluster sin justificación, se anota en memoria para compensar en la siguiente.
+
+---
+
+## Geografía — disciplina de clasificación
+
+Las 11 geografías vigentes con sus banderas:
+
+- 🇲🇽 México · `mexico` · primary
+- 🇪🇸 España · `espana` · primary
+- 🇺🇸 USA · `usa` · secondary
+- 🇨🇴 Colombia · `colombia` · secondary
+- 🇧🇷 Brasil · `brasil` · secondary
+- 🇨🇱 Chile · `chile` · secondary
+- 🇵🇪 Perú · `peru` · secondary
+- 🇦🇷 Argentina · `argentina` · secondary
+- 🌎 LatAm · `latam` · aggregate
+- 🇪🇺 Europa · `europa` · aggregate
+- 🌐 Global · `global` · aggregate residual
+
+### Reglas duras
+
+- Prioridad editorial a México y España. Siempre aparecen con sección propia, aunque sean 2-3 señales.
+- Una historia se etiqueta con la geografía del **hecho**, no la del lector.
+- **No mezclar regulación de un país con mercado de otro sin contexto**. Si una norma austríaca afecta al operador español, se dice exactamente así.
+- Banderas con criterio, no decorativas. Usar `.geo-tag.{country}` (o `.geo-tag.on-dark.{country}` en secciones oscuras) en story-meta, radar-headers y listas de señales.
+- LatAm como agregador no sustituye a país concreto si la señal es específica.
+- Global se reserva a señales verdaderamente transversales (mercado mundial, jugador global sin geo relevante para la semana).
+
+### Escaneo rápido por regiones
+
+Cada edición sigue el patrón: sección México → sección España → sección Internacional (USA + Europa + LatAm). Si hay material abundante de un tercer país, puede tener sección propia esa edición; si no, cae en Internacional con su bandera y kicker.
+
+---
+
+## Descubrimiento de actores nuevos
+
+Cada edición incluye **pass de descubrimiento** al cerrar, según `content/discovery-playbook.md`. Resumen:
+
+1. Listar toda empresa, producto u organismo mencionado.
+2. Cruzar contra `players.md`. Añadir nuevos con ficha mínima. Actualizar existentes.
+3. Marcar `candidato` a los que alcanzan 3+ menciones sustanciales.
+4. Nunca crear página pública automáticamente. Se propone en `pages-proposal.md` y espera revisión humana.
+5. Los organismos reguladores (DGT, FMCSA, CNE, SICT…) van en `micro-tags.md` bajo `organismo:`, no en `players.md`.
+6. Los fabricantes de vehículo tienen ficha pero rara vez tienen página: su valor vive en `fleet-types.md` y en evergreen por segmento.
+
+El pass de descubrimiento se registra en `editorial-memory.md` con un bloque corto:
+
+```
+### Discovery pass · Nº N · YYYY-MM-DD
+Nuevos: {lista}
+Actualizados: {lista}
+Candidatos a página pública (nuevo): {lista o "ninguno"}
+Promovidos: {lista o "ninguno"}
+```
 
 ---
 
@@ -199,15 +283,19 @@ Cada edición mantiene:
 ### Cada ejecución automática debe:
 
 1. Crear rama `claude/edition-NNN-YYYY-MM-DD` partiendo de `main` actualizado.
-2. Leer memoria + watch + pulpo-update.
+2. Leer, en orden: taxonomía completa (`content/taxonomy/*`), `editorial-memory.md`, `market-watch.md`, `pulpo-update.md`, `pulpo-facts.md`, `discovery-playbook.md`.
 3. Investigar noticias reales de la última semana (MX → ES → USA → LatAm → EU). No fabricar cifras.
 4. Decidir acento semanal (4 vars CSS). Rotar paleta respecto a las dos ediciones anteriores.
-5. Generar `magazines/YYYY-MM-DD-radar-fleet-by-pulpo.html` linkando `/assets/radar.css` y declarando las 4 vars.
-6. Generar el `…-summary.txt`.
-7. Copiar la edición a `index.html` con canonical a raíz y alternate al permalink.
-8. Actualizar `archive.html` (nueva fila arriba con pill "Última"; quitar "Última" de la anterior).
-9. Actualizar `sitemap.xml` y `rss.xml`.
-10. Actualizar `editorial-memory.md` y `market-watch.md`.
+5. Etiquetar cada historia con topic + fleet-type + players + market + micro-tags antes de redactar.
+6. Verificar balance por fleet-type para evitar sesgo a transporte pesado.
+7. Generar `magazines/YYYY-MM-DD-radar-fleet-by-pulpo.html` linkando `/assets/radar.css` y declarando las 4 vars.
+8. Generar el `…-summary.txt` con sección "Etiquetas por historia" al final.
+9. Copiar la edición a `index.html` con canonical a raíz y alternate al permalink.
+10. Actualizar `archive.html` (nueva fila arriba con pill "Última"; quitar "Última" de la anterior).
+11. Actualizar `sitemap.xml` y `rss.xml`.
+12. Ejecutar pass de descubrimiento según `discovery-playbook.md`. Actualizar `players.md`.
+13. Actualizar `editorial-memory.md` con etiquetas + bloque de Discovery pass.
+14. Actualizar `market-watch.md` donde algo haya cambiado.
 11. Commit con título: `Nº NNN · YYYY-MM-DD · <titular>` y cuerpo resumiendo historias.
 12. Push + abrir PR contra `main`.
 
