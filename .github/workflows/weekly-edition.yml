@@ -1,0 +1,180 @@
+name: Radar Fleet — Weekly edition
+
+# Pipeline autónomo semanal.
+#
+# Lunes 05:07 UTC (~07:07 Madrid CEST / ~06:07 CET) ingesta noticias,
+# clasifica, deduplica, selecciona, compone, valida QA y abre PR.
+#
+# NO hace auto-merge. Siempre abre PR etiquetado para revisión humana.
+# QA bloqueante pone label needs-editorial-fix y no corre publish.
+# QA OK pone label ready-to-review.
+#
+# Ejecución manual con workflow_dispatch (inputs opcionales):
+#   edition_date: YYYY-MM-DD (fuerza fecha objetivo)
+#   allow_stub:   si true, tolera compose sin ANTHROPIC_API_KEY (modo prueba)
+
+on:
+  schedule:
+    - cron: '7 5 * * 1'
+  workflow_dispatch:
+    inputs:
+      edition_date:
+        description: 'Fecha objetivo YYYY-MM-DD (opcional)'
+        required: false
+        default: ''
+      allow_stub:
+        description: 'Permitir stub si no hay ANTHROPIC_API_KEY (solo pruebas)'
+        required: false
+        default: 'false'
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: weekly-edition
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-${{ hashFiles('requirements.txt') }}
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Configure git identity
+        run: |
+          git config user.name "the-fleet-radar-bot"
+          git config user.email "bot@thefleetradar.com"
+
+      - name: Compute edition date
+        id: date
+        run: |
+          if [ -n "${{ inputs.edition_date }}" ]; then
+            EDITION_DATE="${{ inputs.edition_date }}"
+          else
+            EDITION_DATE=$(python -c "import datetime as d; today=d.date.today(); off=(7-today.weekday())%7; off = off or (7 if today.weekday()!=0 else 0); print((today + d.timedelta(days=off)).isoformat())")
+          fi
+          echo "edition_date=$EDITION_DATE" >> "$GITHUB_OUTPUT"
+          BRANCH="claude/edition-$(date -u +%Y-%m-%d)-${GITHUB_RUN_ID}"
+          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+
+      - name: Create working branch
+        run: |
+          git checkout -b "${{ steps.date.outputs.branch }}"
+
+      - name: Run pipeline
+        id: pipeline
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          set +e
+          python -m scripts.pipeline --date "${{ steps.date.outputs.edition_date }}" | tee pipeline-output.json
+          EXIT=$?
+          echo "exit_code=$EXIT" >> "$GITHUB_OUTPUT"
+          # Extraer status del JSON de salida
+          STATUS=$(python -c "import json; d=json.load(open('pipeline-output.json')); print(d.get('status','unknown'))" || echo "unknown")
+          echo "status=$STATUS" >> "$GITHUB_OUTPUT"
+          exit 0  # no reventar el step; el status decide el PR
+
+      - name: Check if there are changes
+        id: changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit changes
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          git add -A
+          STATUS="${{ steps.pipeline.outputs.status }}"
+          DATE="${{ steps.date.outputs.edition_date }}"
+          git commit -m "Pipeline $STATUS · edición $DATE · run ${GITHUB_RUN_ID}"
+
+      - name: Push branch
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          git push origin "${{ steps.date.outputs.branch }}"
+
+      - name: Create PR
+        if: steps.changes.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          STATUS="${{ steps.pipeline.outputs.status }}"
+          DATE="${{ steps.date.outputs.edition_date }}"
+          BRANCH="${{ steps.date.outputs.branch }}"
+
+          case "$STATUS" in
+            ok)
+              LABEL="ready-to-review"
+              TITLE="Edición $DATE · QA OK"
+              ;;
+            qa-fail)
+              LABEL="needs-editorial-fix"
+              TITLE="Edición $DATE · QA bloqueante (requiere revisión)"
+              ;;
+            pause)
+              LABEL="editorial-pause"
+              TITLE="Pausa editorial semana $DATE"
+              ;;
+            *)
+              LABEL="pipeline-error"
+              TITLE="Pipeline error · semana $DATE"
+              ;;
+          esac
+
+          BODY=$(cat <<EOF
+          **Pipeline status**: \`$STATUS\`
+
+          **Artefactos generados:**
+          - \`content/raw/\`, \`content/qa/\`, \`content/decisions/\`
+          - Edición: \`magazines/${DATE}-radar-fleet-by-pulpo.html\` (si no es pause)
+
+          **Siguiente paso:**
+          - Revisar informe QA en \`content/qa/\` del PR.
+          - Si label = \`ready-to-review\`, verificar preview de Vercel y mergear.
+          - Si label = \`needs-editorial-fix\`, corregir lo que marca el informe QA y relanzar \`workflow_dispatch\`.
+          - Si label = \`editorial-pause\`, cerrar PR o descartar rama. Memoria editorial ya registra la pausa.
+
+          ---
+          _Generado por \`weekly-edition.yml\` · run \`${GITHUB_RUN_ID}\`._
+          EOF
+          )
+
+          gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "$TITLE" \
+            --body "$BODY" \
+            --label "$LABEL"
+
+      - name: Report
+        run: |
+          echo "Status: ${{ steps.pipeline.outputs.status }}"
+          echo "Exit:   ${{ steps.pipeline.outputs.exit_code }}"
+          echo "Changes: ${{ steps.changes.outputs.has_changes }}"
