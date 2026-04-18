@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<channel>
+  <title>Radar Fleet by Pulpo</title>
+  <link>https://radar-fleets.vercel.app/</link>
+  <atom:link href="https://radar-fleets.vercel.app/rss.xml" rel="self" type="application/rss+xml" />
+  <description>Inteligencia semanal de mercado para el sector de gestión de flotas. Telemática, pagos, electrificación, regulación, México, España, USA y Europa. Publicado cada lunes.</description>
+  <language>es-ES</language>
+  <copyright>© 2026 Pulpo · getpulpo.com</copyright>
+  <managingEditor>team@getpulpo.com (Radar Fleet by Pulpo)</managingEditor>
+  <webMaster>team@getpulpo.com (Radar Fleet by Pulpo)</webMaster>
+  <lastBuildDate>Mon, 20 Apr 2026 07:00:00 +0200</lastBuildDate>
+  <pubDate>Mon, 20 Apr 2026 07:00:00 +0200</pubDate>
+  <ttl>1440</ttl>
+  <image>
+    <url>https://radar-fleets.vercel.app/og-default.png</url>
+    <title>Radar Fleet by Pulpo</title>
+    <link>https://radar-fleets.vercel.app/</link>
+  </image>
+
+  <item>
+    <title>Nº 2 · Cuando la red define al camión</title>
+    <link>https://radar-fleets.vercel.app/magazines/2026-04-20-radar-fleet-by-pulpo.html</link>
+    <guid isPermaLink="true">https://radar-fleets.vercel.app/magazines/2026-04-20-radar-fleet-by-pulpo.html</guid>
+    <pubDate>Mon, 20 Apr 2026 07:00:00 +0200</pubDate>
+    <dc:creator>Radar Fleet by Pulpo</dc:creator>
+    <category>Fleet management</category>
+    <category>Telemática</category>
+    <category>Electrificación</category>
+    <category>Regulación</category>
+    <description><![CDATA[
+      Un hub de 9 MW para camiones eléctricos abre en California. Países Bajos cambia el peaje del tiempo al kilómetro el 1 de julio; Austria cobra CO2 y ruido desde enero. La DGT retira cinco balizas V-16. México obliga telemática en transporte de hidrocarburos y anuncia 6.000 MDP para modernizar autotransporte. Corpay integra carga EV privada en la tarjeta de flota. Samsara gana 30 M$ a Motive en arbitraje; Motive presenta salida a bolsa. Geotab Ace empieza a hablar. El vehículo se estandariza; la diferencia está en la red.
+    ]]></description>
+  </item>
+
+  <item>
+    <title>Nº 1 · La semana que redefinió las reglas</title>
+    <link>https://radar-fleets.vercel.app/magazines/2026-04-14-radar-fleet-by-pulpo.html</link>
+    <guid isPermaLink="true">https://radar-fleets.vercel.app/magazines/2026-04-14-radar-fleet-by-pulpo.html</guid>
+    <pubDate>Tue, 14 Apr 2026 07:00:00 +0200</pubDate>
+    <dc:creator>Radar Fleet by Pulpo</dc:creator>
+    <category>Fleet management</category>
+    <description><![CDATA[
+      Primera edición. WEX lanza la primera tarjeta de flota que unifica combustible y carga eléctrica en una sola cuenta. Samsara reporta 1.59 B$ en ingresos anuales con 28% de crecimiento. FMCSA ejecuta deadline de revocación de 9 ELDs. Geotab GO Focus Pro. México: 24% de penetración telemática. España: V-16 conectada y tacógrafo G2V2.
+    ]]></description>
+  </item>
+
+</channel>
+</rss>
