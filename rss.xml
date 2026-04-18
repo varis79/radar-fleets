@@ -9,8 +9,8 @@
   <copyright>© 2026 Pulpo · getpulpo.com</copyright>
   <managingEditor>team@getpulpo.com (Radar Fleet by Pulpo)</managingEditor>
   <webMaster>team@getpulpo.com (Radar Fleet by Pulpo)</webMaster>
-  <lastBuildDate>Mon, 20 Apr 2026 07:00:00 +0200</lastBuildDate>
-  <pubDate>Mon, 20 Apr 2026 07:00:00 +0200</pubDate>
+  <lastBuildDate>Fri, 17 Apr 2026 09:00:00 +0200</lastBuildDate>
+  <pubDate>Fri, 17 Apr 2026 09:00:00 +0200</pubDate>
   <ttl>1440</ttl>
   <image>
     <url>https://radar-fleets.vercel.app/og-default.png</url>
@@ -19,17 +19,17 @@
   </image>
 
   <item>
-    <title>Nº 2 · Cuando la red define al camión</title>
-    <link>https://radar-fleets.vercel.app/magazines/2026-04-20-radar-fleet-by-pulpo.html</link>
-    <guid isPermaLink="true">https://radar-fleets.vercel.app/magazines/2026-04-20-radar-fleet-by-pulpo.html</guid>
-    <pubDate>Mon, 20 Apr 2026 07:00:00 +0200</pubDate>
+    <title>Nº 2 · Peajes por km, hub de 9 MW y cinco V-16 fuera de registro</title>
+    <link>https://radar-fleets.vercel.app/magazines/2026-04-17-radar-fleet-by-pulpo.html</link>
+    <guid isPermaLink="true">https://radar-fleets.vercel.app/magazines/2026-04-17-radar-fleet-by-pulpo.html</guid>
+    <pubDate>Fri, 17 Apr 2026 09:00:00 +0200</pubDate>
     <dc:creator>Radar Fleet by Pulpo</dc:creator>
     <category>Fleet management</category>
     <category>Telemática</category>
     <category>Electrificación</category>
     <category>Regulación</category>
     <description><![CDATA[
-      Un hub de 9 MW para camiones eléctricos abre en California. Países Bajos cambia el peaje del tiempo al kilómetro el 1 de julio; Austria cobra CO2 y ruido desde enero. La DGT retira cinco balizas V-16. México obliga telemática en transporte de hidrocarburos y anuncia 6.000 MDP para modernizar autotransporte. Corpay integra carga EV privada en la tarjeta de flota. Samsara gana 30 M$ a Motive en arbitraje; Motive presenta salida a bolsa. Geotab Ace empieza a hablar. El vehículo se estandariza; la diferencia está en la red.
+      Holanda pasa a cobrar el peaje por kilómetro el 1 de julio. Austria ya cobra por ejes, CO2 y ruido. California estrena un hub de 9 MW para camión eléctrico. La DGT retira cinco balizas V-16. El BOE abre la tarjeta de tacógrafo al permiso B. México obliga telemática en transporte de hidrocarburos y anuncia 6.000 MDP para renovar flota. Corpay y Voltempo integran carga EV privada en la tarjeta de flota. Samsara gana 30 M$ a Motive en arbitraje y Motive registra IPO. Geotab Ace se vuelve agente de voz.
     ]]></description>
   </item>
 
@@ -41,7 +41,7 @@
     <dc:creator>Radar Fleet by Pulpo</dc:creator>
     <category>Fleet management</category>
     <description><![CDATA[
-      Primera edición. WEX lanza la primera tarjeta de flota que unifica combustible y carga eléctrica en una sola cuenta. Samsara reporta 1.59 B$ en ingresos anuales con 28% de crecimiento. FMCSA ejecuta deadline de revocación de 9 ELDs. Geotab GO Focus Pro. México: 24% de penetración telemática. España: V-16 conectada y tacógrafo G2V2.
+      Primera edición. WEX lanza la primera tarjeta de flota que unifica combustible y carga eléctrica. Samsara reporta 1.59 B$ en ingresos anuales. FMCSA ejecuta deadline de revocación de 9 ELDs. Geotab GO Focus Pro. México al 24% de penetración telemática. España: V-16 conectada y tacógrafo G2V2.
     ]]></description>
   </item>
 
