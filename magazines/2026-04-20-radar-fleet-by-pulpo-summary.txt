@@ -1,0 +1,62 @@
+THE FLEET RADAR · BY PULPO — EDICIÓN Nº 3
+20 de abril de 2026
+"Telemática define costos, puertos olvidados y 384 todoterrenos"
+════════════════════════════════════════════════════════════════
+
+RESUMEN EJECUTIVO
+─────────────────
+Edición enfocada en telemática operativa, costos de mantenimiento y electrificación. Grupo Aralo mejora indicadores con Samsara. España reporta 13.922€ por camión en taller. México desaprovecha infraestructura portuaria mientras el mercado EV crece. Andalucía licita flota pública significativa.
+
+════════════════════════════════════════════════════════════════
+
+HISTORIAS
+─────────
+1. 🇲🇽 Grupo Aralo documenta mejoras operativas con tecnología Samsara en México
+   Grupo Aralo reportó mejoras concretas en sus indicadores operativos tras adoptar la plataforma de Samsara, según documentó T21. La implementación aborda dos ejes críticos: seguridad en carretera y eficiencia operativa, en un contexto donde los riesgos viales y la presión por productividad definen la operación diaria de
+
+2. 🇪🇸 Gasto en taller sube 2.5% hasta 13.922 euros por camión en España
+   El costo de mantenimiento por camión alcanzó 13.922 euros anuales en el primer trimestre de 2026, un incremento del 2.5% respecto al periodo anterior, según datos de Scania reportados por Fleet People. La cifra establece el nuevo baseline de gastos operativos en el mercado español, donde la presión inflacionaria y la e
+
+3. 🇪🇸 TXT amplía flota de última milla con furgonetas eléctricas Farizon
+   TXT incorporó furgonetas eléctricas del fabricante chino Farizon a su operación de última milla en España, según reportó Fleet People. La decisión marca la entrada de Farizon al mercado español de vans comerciales eléctricas, compitiendo con marcas establecidas en el segmento de distribución urbana. TXT no reveló el nú
+
+4. 🇲🇽 México desaprovecha 89% de capacidad portuaria mientras satura carreteras
+   Solo el 11% de la capacidad portuaria mexicana está en uso mientras el 89% de la carga nacional se mueve por carretera, reveló un análisis de T21. El país cuenta con infraestructura portuaria extensa que podría manejar volúmenes significativamente mayores, pero la dependencia del transporte terrestre genera sobrecostos
+
+5. 🇪🇺 Reino Unido lidera mejoras de seguridad y adopción EV según Geotab
+   El Reino Unido registró la mayor mejora en seguridad vial de Europa y alcanzó estatus de mercado maduro en adopción de vehículos eléctricos, según estudio de Geotab reportado por Transport & Energy. Los datos de la plataforma telemática, que monitorea millones de vehículos comerciales, muestran reducción consistente en
+
+6. 🇲🇽 Ventas de eléctricos en México crecen 21.6% con 25.003 unidades en Q1
+   El mercado mexicano de vehículos eléctricos vendió 25.003 unidades en el primer trimestre de 2026, un crecimiento del 21.6% versus las 20.560 unidades del mismo periodo en 2025, según cifras de la Electro Movilidad Asociación (EMA) reportadas por T21. El incremento supera las proyecciones iniciales del sector y confirm
+
+7. 🇪🇸 Andalucía licita 384 todoterrenos por 23.1 millones para agentes ambientales
+   La Junta de Andalucía licitó el renting de 384 vehículos todoterreno para sus agentes medioambientales por 23.1 millones de euros, según reportó Fleet People. El contrato, que equivale a aproximadamente 60.000 euros por unidad en modalidad de renting integral, establece un precedente importante para licitaciones públic
+
+8. 🇲🇽 Manufactura mexicana repunta 3.4% en febrero tras arranque débil
+   La producción manufacturera en México creció 3.4% en febrero respecto a enero, recuperándose de un inicio de año débil, según datos del INEGI reportados por T21. El repunte en el volumen físico de producción, medido por la Encuesta Mensual de la Industria Manufacturera, señala recuperación en sectores clave que demanda
+
+9. 🇪🇺 ACEA propone flexibilizar CO₂ pero implica importar 74.000 millones en petróleo
+   La Asociación Europea de Fabricantes de Automóviles (ACEA) propuso flexibilizar los objetivos de reducción de CO₂ para vehículos comerciales, pero análisis de Fleet People revela que esto implicaría importaciones adicionales de petróleo por 74.000 millones de euros. La propuesta busca aliviar presión sobre fabricantes 
+
+10. 🇲🇽 Isuzu cierra serie documental con cuarta temporada de historias de transporte
+   Isuzu Motors de México estrenó la cuarta y última temporada de 'Los Imparables', serie documental que narra historias de clientes y sus operaciones de transporte, según reportó T21. El proyecto audiovisual de cuatro temporadas representa una inversión sostenida en content marketing sectorial, documentando casos reales 
+
+════════════════════════════════════════════════════════════════
+
+ETIQUETAS POR HISTORIA
+──────────────────────
+1. topic:telematica, market:mexico, fleet-type:transporte-pesado, player:samsara, seguridad:mejora-indicadores, productividad:presion-operativa, adopcion:tecnologia-central
+2. topic:mantenimiento, market:espana, fleet-type:transporte-pesado, player:scania, costos:incremento-trimestral, benchmark:13922-euros, inflacion:presion-sostenida
+3. topic:routing, market:espana, fleet-type:vehiculos-comerciales-ligeros, player:farizon, ultima-milla:expansion-flota, fabricante:entrada-mercado, ev:adopcion-comercial
+4. topic:routing, market:mexico, fleet-type:transporte-pesado, infraestructura:capacidad-ociosa, intermodal:oportunidad-perdida, costos:74000-millones
+5. topic:telematica, market:europa, fleet-type:flotas-corporativas, player:geotab, seguridad:mejora-europea, ev:mercado-maduro, benchmark:reino-unido
+6. topic:electrificacion, market:mexico, fleet-type:vehiculos-comerciales-ligeros, ventas:crecimiento-21-porciento, mercado:25003-unidades, tendencia:aceleracion-sostenida
+7. topic:gestion-flotas, market:espana, fleet-type:flotas-corporativas, licitacion:23-millones, renting:60000-por-unidad, flota-publica:384-vehiculos
+8. topic:gestion-flotas, market:mexico, fleet-type:vehiculos-comerciales-ligeros, manufactura:crecimiento-3-4, produccion:recuperacion-febrero, demanda:incremento-potencial
+9. topic:regulacion, market:europa, fleet-type:flotas-corporativas, player:acea, co2:flexibilizacion-propuesta, petroleo:74000-millones, regulacion:tension-objetivos
+10. topic:gestion-flotas, market:mexico, fleet-type:vehiculos-comerciales-ligeros, player:isuzu, marketing:serie-documental, marca:estrategia-contenido, casos:historias-clientes
+
+════════════════════════════════════════════════════════════════
+The Fleet Radar · by Pulpo · Nº 3 · 20 de abril de 2026
+Próxima edición: 27 de abril de 2026 (lunes) — cadencia semanal
+════════════════════════════════════════════════════════════════

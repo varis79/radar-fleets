@@ -9,14 +9,26 @@
   <copyright>© 2026 Pulpo · getpulpo.com</copyright>
   <managingEditor>team@getpulpo.com (The Fleet Radar · by Pulpo)</managingEditor>
   <webMaster>team@getpulpo.com (The Fleet Radar · by Pulpo)</webMaster>
-  <lastBuildDate>Fri, 17 Apr 2026 09:00:00 +0200</lastBuildDate>
-  <pubDate>Fri, 17 Apr 2026 09:00:00 +0200</pubDate>
+  <lastBuildDate>Mon, 20 Apr 2026 07:00:00 +0200</lastBuildDate>
+  <pubDate>Mon, 20 Apr 2026 07:00:00 +0200</pubDate>
   <ttl>1440</ttl>
   <image>
     <url>https://thefleetradar.com/og-default.png</url>
     <title>The Fleet Radar · by Pulpo</title>
     <link>https://thefleetradar.com/</link>
   </image>
+
+  <item>
+    <title>Nº 3 · Telemática define costos, puertos olvidados y 384 todoterrenos</title>
+    <link>https://thefleetradar.com/magazines/2026-04-20-radar-fleet-by-pulpo.html</link>
+    <guid isPermaLink="true">https://thefleetradar.com/magazines/2026-04-20-radar-fleet-by-pulpo.html</guid>
+    <pubDate>Mon, 20 Apr 2026 07:00:00 +0200</pubDate>
+    <dc:creator>The Fleet Radar · by Pulpo</dc:creator>
+    <category>Fleet management</category>
+    <description><![CDATA[
+      La semana trajo señales claras sobre dónde se mueve el valor en flotas: Grupo Aralo reporta mejoras operativas con Samsara en México, mientras el costo de mantenimiento en España alcanza 13.922 euros por camión en el primer trimestre. El mercado eléctrico mexicano creció 21.6% con 25.003 unidades vendidas, TXT incorpora furgonetas eléctricas Farizon para última milla en España, y Andalucía licita 384 todoterrenos por 23.1 millones. Un análisis de T21 revela que México usa solo el 11% de su capacidad portuaria mientras el 89% de la carga va por carretera.
+    ]]></description>
+  </item>
 
   <item>
     <title>Nº 2 · Peajes por km, hub de 9 MW y cinco V-16 fuera de registro</title>
