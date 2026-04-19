@@ -136,3 +136,21 @@ Tarjeta de flota absorbe nuevas redes; IA de dashboard a voz; coste externo en p
 
 ### Ángulo editorial
 Cambios concretos y fechados del coste del kilómetro. Tres revisiones prioritarias para una flota esta semana: corredores críticos (peajes nuevos), documentación (V-16 por placa) y calidad de datos (agente de voz).
+
+## Nº 3 · 2026-04-20 · "Telemática define costos, puertos olvidados y 384 todoterrenos"
+Acento semanal: #d4891a, #2fa678
+Permalink: /magazines/2026-04-20-radar-fleet-by-pulpo.html
+Modo: normal
+
+### Historias cubiertas
+- [telematica] Grupo Aralo documenta mejoras operativas con tecnología Samsara en México · mexico
+- [mantenimiento] Gasto en taller sube 2.5% hasta 13.922 euros por camión en España · espana
+- [routing] TXT amplía flota de última milla con furgonetas eléctricas Farizon · espana
+- [?] México desaprovecha 89% de capacidad portuaria mientras satura carreteras · mexico
+- [?] Reino Unido lidera mejoras de seguridad y adopción EV según Geotab · mexico
+- [telematica] Ventas de eléctricos en México crecen 21.6% con 25.003 unidades en Q1 · europa
+- [?] Andalucía licita 384 todoterrenos por 23.1 millones para agentes ambientales · mexico
+- [?] Manufactura mexicana repunta 3.4% en febrero tras arranque débil · espana
+- [?] ACEA propone flexibilizar CO₂ pero implica importar 74.000 millones en petróleo · mexico
+- [?] Isuzu cierra serie documental con cuarta temporada de historias de transporte · espana
+
