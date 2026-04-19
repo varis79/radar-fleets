@@ -77,8 +77,23 @@ def build_user_prompt(selection: dict, edition_date: dt.date, number: int, mode:
     lines.append("- Los headlines son claros y periodísticos. Nada de metáforas grandilocuentes tipo 'la semana que redefinió…'.")
     lines.append("- Nada de em dashes; usa comas, puntos o paréntesis.")
     lines.append("- Nada de 'no es X, es Y'. Nada de 'Para Pulpo' / 'Pulpo debe' / 'competidor'. Nada de 'argumento comercial'.")
-    lines.append("- Cada story del JSON lleva: headline (máx 100 chars), summary (180-320 chars), why_operator (100-220 chars), why_business (100-220 chars).")
-    lines.append("- wm_cards son 6 en modo normal, 4 en modo short. Cada card: headline (máx 90 chars) + body (120-220 chars).")
+    lines.append("")
+    lines.append("### Longitudes objetivo (críticas; el QA bloquea si no se cumplen)")
+    lines.append("")
+    lines.append("Medidas en palabras, no caracteres. Escribe con densidad editorial real: datos, contexto operativo, cifras y consecuencias. Nada de relleno.")
+    lines.append("")
+    lines.append("- `cover_deck`: **70-110 palabras**. Panorámica con las señales más fuertes y al menos 3 datos concretos.")
+    lines.append("- `editors_body`: **180-260 palabras** en 3-4 párrafos. Primer párrafo enmarca la semana. Segundo aterriza cifras. Tercero conecta con el lector operativo. `<strong>` y `<br><br>` permitidos para separar.")
+    lines.append("- `wm_cards` (6 en normal, 4 en short). Cada tarjeta: `headline` 8-14 palabras, `body` **35-60 palabras** con un dato concreto.")
+    lines.append("- `stories` (10 en normal, 7 en short). Cada historia **150-210 palabras** sumando summary + why_operator + why_business. Dentro:")
+    lines.append("  - `summary`: **70-110 palabras**. Qué pasó con datos, fechas, cifras y actores. Contexto suficiente para entender sin clicar la fuente.")
+    lines.append("  - `why_operator`: **35-55 palabras**. Qué significa para quien opera la flota. Concreto y accionable.")
+    lines.append("  - `why_business`: **35-55 palabras**. Qué significa para el negocio, el presupuesto o la licitación.")
+    lines.append("- `opinion_quote`: **15-28 palabras**. Una frase editorial que resume el ángulo de la semana. Sin em dashes ni grandilocuencia.")
+    lines.append("- `opinion_body`: **140-220 palabras** en 2-3 párrafos. Argumenta con los datos ya citados en las stories, sin inventar nuevos. Cierra con una acción observable para el lector.")
+    lines.append("- `cta_headline`: 10-15 palabras, editorial (no publicitario).")
+    lines.append("")
+    lines.append("Total acumulado esperado: 10 stories × ~175 palabras + wm_cards + editors + opinion + cover_deck supera holgadamente 2.200 palabras (umbral QA). Si una historia tiene poco material fuente, prefiere quitarla antes que inflarla.")
     lines.append("")
     lines.append("## Formato de respuesta obligatorio")
     lines.append("")
@@ -87,14 +102,16 @@ def build_user_prompt(selection: dict, edition_date: dt.date, number: int, mode:
     lines.append("Schema esperado:")
     lines.append("""```
 {
-  "cover_headline": "...",                // string. 3-10 palabras. Claro.
-  "cover_deck": "...",                    // 220-380 chars. Resume la edición.
+  "cover_headline": "...",                // 3-10 palabras. Claro, periodístico.
+  "cover_deck": "...",                    // 70-110 palabras (ver reglas arriba).
   "overline": "Edición semanal · …",      // opcional
   "cover_tags": ["...", "..."],           // 4-6 etiquetas cortas, neutras
   "meta_description": "...",              // 140-160 chars para <meta>
   "executive_summary": "...",             // 3-5 líneas para summary.txt
-  "editors_body": "...",                  // 2-3 párrafos editoriales. <strong> y <br> permitidos.
-  "cta_headline": "...",                  // 8-15 palabras
+  "editors_body": "...",                  // 180-260 palabras, 3-4 párrafos. <strong> y <br> permitidos.
+  "cta_headline": "...",                  // 10-15 palabras, editorial
+  "opinion_quote": "...",                 // 15-28 palabras. Una sola frase con el ángulo de la semana.
+  "opinion_body": "...",                  // 140-220 palabras, 2-3 párrafos. <br><br> permitidos.
   "wm_cards": [
     {"tone":"signal","headline":"...","body":"..."},
     ...
@@ -107,9 +124,9 @@ def build_user_prompt(selection: dict, edition_date: dt.date, number: int, mode:
       "market": "mexico|espana|usa|colombia|brasil|chile|peru|argentina|latam|europa|global",
       "date_label": "...",                 // etiqueta humana corta
       "headline": "...",
-      "summary": "...",
-      "why_operator": "...",
-      "why_business": "...",
+      "summary": "...",                    // 70-110 palabras
+      "why_operator": "...",               // 35-55 palabras
+      "why_business": "...",               // 35-55 palabras
       "topic": "...",                      // slug taxonómico
       "fleet_type": "...",                 // opcional
       "players": ["..."],
@@ -213,6 +230,8 @@ def compose_stub(selection: dict, edition_date: dt.date, number: int) -> dict:
         "executive_summary": "Stub. No publicar sin composición editorial completa.",
         "editors_body": "<strong>Stub.</strong><br><br>Esta edición se generó sin API key de LLM. QA la marcará como thin content y bloqueará publicación.",
         "cta_headline": "Edición stub pendiente de redacción",
+        "opinion_quote": "[stub: opinión editorial pendiente]",
+        "opinion_body": "[stub: cuerpo de opinión pendiente]",
         "wm_cards": [
             {"tone": "signal", "headline": f"Item {i + 1}: {c['title'][:70]}", "body": (c.get("summary") or "")[:200]}
             for i, c in enumerate(chosen[:6])
