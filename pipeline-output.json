@@ -6,11 +6,11 @@
       "result": {
         "week": "2026-W17",
         "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W17-raw.jsonl",
-        "total_items": 51,
+        "total_items": 48,
         "per_source": {
           "FreightWaves": 24,
           "Transport & Energy": 10,
-          "Fleet People ES": 7,
+          "Fleet People ES": 4,
           "T21 MX": 10
         },
         "errors": [
@@ -46,15 +46,14 @@
       "result": {
         "week": "2026-W17",
         "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W17-classified.jsonl",
-        "total": 51,
-        "with_topic": 16,
-        "with_fleet_type": 7,
+        "total": 48,
+        "with_topic": 13,
+        "with_fleet_type": 5,
         "with_players": 5,
         "by_market": {
-          "usa": 24,
-          "europa": 11,
-          "peru": 1,
-          "espana": 5,
+          "usa": 25,
+          "europa": 10,
+          "espana": 3,
           "mexico": 9,
           "latam": 1
         }
@@ -65,9 +64,9 @@
       "result": {
         "week": "2026-W17",
         "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W17-dedup.jsonl",
-        "in": 51,
-        "after_url_dedup": 51,
-        "after_title_dedup": 51
+        "in": 48,
+        "after_url_dedup": 48,
+        "after_title_dedup": 48
       }
     },
     {
@@ -75,8 +74,8 @@
       "result": {
         "week": "2026-W17",
         "mode": "normal",
-        "total_candidates": 51,
-        "total_after_memory_dedup": 51,
+        "total_candidates": 48,
+        "total_after_memory_dedup": 48,
         "total_chosen": 10,
         "warnings": [],
         "discarded_repetition": [],
@@ -89,7 +88,7 @@
         "status": "composed",
         "week": "2026-W17",
         "mode": "normal",
-        "number": 3,
+        "number": 4,
         "edition_date": "2026-04-20",
         "html_path": "magazines/2026-04-20-radar-fleet-by-pulpo.html",
         "summary_path": "magazines/2026-04-20-radar-fleet-by-pulpo-summary.txt",
@@ -118,7 +117,7 @@
         "status": "published",
         "week": "2026-W17",
         "edition_date": "2026-04-20",
-        "number": 3,
+        "number": 4,
         "files_touched": [
           "magazines/2026-04-20-radar-fleet-by-pulpo.html",
           "magazines/2026-04-20-radar-fleet-by-pulpo-summary.txt",

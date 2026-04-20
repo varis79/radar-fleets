@@ -154,3 +154,21 @@ Modo: normal
 - [?] ACEA propone flexibilizar CO₂ pero implica importar 74.000 millones en petróleo · mexico
 - [?] Isuzu cierra serie documental con cuarta temporada de historias de transporte · espana
 
+
+## Nº 4 · 2026-04-20 · "Telemática define operación, renting mueve 112M€ y EVs cruzan paridad"
+Acento semanal: #d4891a, #2fa678
+Permalink: /magazines/2026-04-20-radar-fleet-by-pulpo.html
+Modo: normal
+
+### Historias cubiertas
+- [telematica] Grupo Aralo documenta mejoras operativas concretas con plataforma Samsara · mexico
+- [?] Catalunya adjudica megacontrato de 112M€ para renting municipal · espana
+- [routing] EVs alcanzan paridad de precio con gasolina por primera vez en UK · europa
+- [?] Uber invierte 9.200 millones en expansión de flotas autónomas · espana
+- [electrificacion-flotas] UK mantiene cuarto puesto europeo en infraestructura de carga pública · europa
+- [electrificacion-flotas] Geotab confirma UK como mercado maduro en EV y líder en seguridad · europa
+- [?] Last Mile alcanza 1 millón de conexiones de infraestructura utility · mexico
+- [?] Isuzu cierra serie documental con historias de operadores mexicanos · espana
+- [?] México subutiliza infraestructura portuaria para transporte de carga · mexico
+- [telematica] Mercado español de flotas entre presión de cortistas y avance de robotaxis · europa
+
