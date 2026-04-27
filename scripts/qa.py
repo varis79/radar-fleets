@@ -111,8 +111,8 @@ def check_voice(visible_text: str) -> list[dict]:
             "message": f"Encontrados {em_count} em dashes en prosa (máximo permitido {max_em})",
             "sample": "—"
         })
-    # "no es X, es Y"
-    rx = re.compile(r"\bno\s+es\s+[a-záéíóú][^.,]{3,40}[,.]?\s*es\s+[a-záéíóú]", re.IGNORECASE)
+    # "no es X, es Y" — patrón de IA. Excluye ":" para no bloquear "no es casual:" etc.
+    rx = re.compile(r"\bno\s+es\s+[a-záéíóú][^.,:]{3,40}[,.]?\s*es\s+[a-záéíóú]", re.IGNORECASE)
     for m in rx.finditer(visible_text):
         issues.append({
             "check": "C3-voice",

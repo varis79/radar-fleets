@@ -172,3 +172,21 @@ Modo: normal
 - [?] México subutiliza infraestructura portuaria para transporte de carga · mexico
 - [telematica] Mercado español de flotas entre presión de cortistas y avance de robotaxis · europa
 
+
+## Nº 5 · 2026-04-27 · "Recambios, ITV y metanol verde"
+Acento semanal: #c9a84c, #1e7fcb
+Permalink: /magazines/2026-04-27-radar-fleet-by-pulpo.html
+Modo: normal
+
+### Historias cubiertas
+- [mantenimiento] 1,59 millones de vehículos comerciales sin ITV vigente en España · espana
+- [?] 55% de conductores elige recambios alternativos sobre piezas originales · espana
+- [?] México arranca construcción de planta de metanol verde con inversión de 3.300 millones USD · espana
+- [?] Exportaciones mexicanas crecen 27,7% y alcanzan 70.727 millones USD en marzo · espana
+- [?] Fastned reporta crecimiento del 40% con ingresos récord de 39,2 millones EUR · mexico
+- [?] Torremolinos destina 666.642 euros a renting para renovar flota policial · espana
+- [?] Mercedes-Benz lanza Clase C eléctrico con autonomía de hasta 762 kilómetros · espana
+- [?] Cepal proyecta crecimiento del 1,5% para México en 2026 · mexico
+- [?] Socio de Ayvens en USA compra división de interiores de Forvia por 1.820 millones · mexico
+- [?] Sector del renting acelera transición eléctrica tras crisis de semiconductores · espana
+
