@@ -1,60 +1,60 @@
 THE FLEET RADAR · BY PULPO — EDICIÓN Nº 5
 27 de abril de 2026
-"Alphabet toma 1.400 vehículos, 1,59M sin ITV y aranceles al acero"
+"Recambios, ITV y metanol verde"
 ════════════════════════════════════════════════════════════════
 
 RESUMEN EJECUTIVO
 ─────────────────
-Semana marcada por la licitación de Alphabet para la Guardia Civil sin vehículos eléctricos, el problema masivo de ITVs vencidas en España y cambios arancelarios en Norteamérica. La infraestructura de carga acelera con inversiones millonarias mientras VEV demuestra que los datos pueden reducir costos de electrificación en 30%.
+Semana marcada por el control regulatorio en España con 1,59 millones de vehículos comerciales sin ITV y la preferencia del 55% de conductores por recambios alternativos. México arranca construcción de planta de metanol verde con inversión récord de 3.300 millones de dólares mientras sus exportaciones crecen 27,7%. Fastned reporta crecimiento del 40% en ingresos de carga rápida.
 
 ════════════════════════════════════════════════════════════════
 
 HISTORIAS
 ─────────
-1. 🇪🇸 Alphabet se adjudica 24 millones para 1.400 vehículos de la Guardia Civil sin eléctricos
-   Alphabet ha ganado la licitación para el renting de 1.400 vehículos destinados a la Guardia Civil por un importe de 24 millones de euros. La adjudicación no incluye ningún vehículo eléctrico, marcando una decisión que contrasta con los objetivos de descarbonización del sector público. El contrato cubre vehículos operat
+1. 🇪🇸 1,59 millones de vehículos comerciales sin ITV vigente en España
+   España registra 1,59 millones de camiones y furgonetas circulando sin la Inspección Técnica de Vehículos al día, según datos del sector. El incumplimiento masivo expone a las empresas a multas de hasta 500 euros por vehículo y potenciales problemas con las aseguradoras en caso de siniestro. La cifra representa aproxima
 
-2. 🇪🇸 1,59 millones de camiones y furgonetas circulan sin ITV en España
-   Un análisis del parque circulante revela que 1,59 millones de vehículos comerciales (camiones y furgonetas) operan sin ITV en vigor en España. Esto representa aproximadamente el 25% del parque comercial total. Las multas por circular sin ITV oscilan entre 200 y 500 euros, además de la responsabilidad civil en caso de a
+2. 🇪🇸 55% de conductores elige recambios alternativos sobre piezas originales
+   Un estudio del sector revela que el 55% de los conductores profesionales prefiere recambios alternativos frente a piezas originales del fabricante. La decisión se basa principalmente en disponibilidad inmediata (evitar tiempos de espera de 2-3 semanas por piezas originales) y en precios hasta 40% menores. Los recambios
 
-3. 🇲🇽 Trump reduce aranceles al acero y aluminio para vehículos pesados desde México
-   El Departamento de Comercio de Estados Unidos anunció una exención arancelaria limitada para acero y aluminio provenientes de México y Canadá destinados al sector de vehículos medianos y pesados. La medida excluye vehículos ligeros. La Secretaría de Economía mexicana confirmó la reducción, que impacta directamente los 
+3. 🇲🇽 México arranca construcción de planta de metanol verde con inversión de 3.300 millones USD
+   México inició en Topolobampo, Sinaloa, la construcción de la mayor planta de metanol de ultra bajo carbono del mundo, con inversión superior a 3.300 millones de dólares. La instalación producirá metanol verde para uso en transporte pesado y marítimo, posicionando al país como referente global en combustibles alternativ
 
-4. 🇪🇺 Fastned aumenta ingresos 40% hasta 39,2 millones en Q1
-   Fastned reportó ingresos de 39,2 millones de euros en el primer trimestre, un crecimiento del 40% interanual. El operador de carga rápida atribuye el resultado a mayor utilización de su red de 280 estaciones y al incremento en el volumen de energía dispensada. La utilización promedio de la red subió al 18% desde el 13%
+4. 🇲🇽 Exportaciones mexicanas crecen 27,7% y alcanzan 70.727 millones USD en marzo
+   Las exportaciones mexicanas sumaron 70.727 millones de dólares en marzo de 2026, un crecimiento del 27,7% respecto al mismo mes de 2025, según el INEGI. El dinamismo del comercio exterior contrasta con la proyección de crecimiento del PIB de solo 1,5% para 2026 que estima la Cepal. El sector automotriz y manufacturero 
 
-5. 🇪🇺 VEV: enfoque basado en datos reduce costos de electrificación 30%
-   VEV ha publicado un análisis demostrando que las autoridades locales y empresas pueden reducir hasta 30% los costos de electrificación de flotas mediante planificación basada en datos desde fase inicial. El estudio analizó 50 proyectos de transición, identificando que el sobredimensionamiento de infraestructura y la se
+5. 🇪🇺 Fastned reporta crecimiento del 40% con ingresos récord de 39,2 millones EUR
+   Fastned, operador de estaciones de carga rápida, reportó ingresos de 39,2 millones de euros en el primer trimestre, un aumento del 40% interanual. La compañía procesó 147 GWh de energía, equivalente a 3,7 millones de sesiones de carga. El ticket promedio por sesión aumentó a 10,60 euros y la utilización de las estacion
 
-6. 🇪🇺 Be.EV invierte 1,3 millones en carga ultrarrápida en East Midlands
-   Be.EV anunció una inversión de 1,3 millones de libras para desplegar cargadores ultrarrápidos en sitios comerciales de East Midlands, Reino Unido. La red nacional de carga está instalando unidades de 150-350kW en ubicaciones retail estratégicas. El proyecto forma parte de un plan de expansión de 10 millones de libras p
+6. 🇪🇸 Torremolinos destina 666.642 euros a renting para renovar flota policial
+   El Ayuntamiento de Torremolinos invierte 666.642 euros en contratos de renting para reforzar el parque móvil de su Policía Local. La modalidad de renting operativo permite al municipio renovar la flota sin inversión inicial, incluyendo mantenimiento, seguros y gestión integral en una cuota mensual fija. El modelo se ex
 
-7. 🌐 ChargePoint lanza Express Solo para sitios independientes
-   ChargePoint introdujo Express Solo, un cargador EV standalone diseñado para sitios que no requieren infraestructura de red compleja. El equipo ofrece carga DC rápida hasta 62.5kW con opciones de actualización modular a 125kW. Express Solo incluye pantalla táctil de 10 pulgadas, acepta pagos contactless y no requiere su
+7. 🌐 Mercedes-Benz lanza Clase C eléctrico con autonomía de hasta 762 kilómetros
+   Mercedes-Benz presentó la versión completamente eléctrica de su Clase C, con autonomía de hasta 762 kilómetros según ciclo WLTP. El vehículo incorpora batería de 100 kWh con química avanzada y sistema de gestión térmica optimizado. La carga rápida permite recuperar 300 km de autonomía en 15 minutos en estaciones de 350
 
-8. 🇪🇺 Siemens y Evolt se alían con Source para O&M de red de carga
-   Source, joint venture entre SSE y TotalEnergies, cerró colaboración con Siemens eMobility y Evolt Charging para operación y mantenimiento de su red de carga ultrarrápida en Reino Unido e Irlanda. El acuerdo cubre 200 sitios proyectados con más de 2.000 puntos de carga. Siemens proveerá hardware y software de gestión, m
+8. 🇲🇽 Cepal proyecta crecimiento del 1,5% para México en 2026
+   La Comisión Económica para América Latina y el Caribe (Cepal) proyecta un crecimiento del PIB mexicano del 1,5% para 2026, afectado por tensiones globales y condiciones financieras restrictivas. La proyección representa una mejora respecto a 2025 pero queda por debajo del promedio histórico del 2,2%. El organismo señal
 
-9. 🇪🇸 Autoclick cierra dejando flotas sin servicio de renting flexible
-   El cierre de Autoclick, plataforma de renting flexible, deja un vacío en el segmento de alquiler de medio plazo (1-24 meses) en España. La empresa gestionaba cerca de 3.000 vehículos para pymes y autónomos que necesitaban flexibilidad sin compromiso de largo plazo. El modelo de Autoclick permitía devolución con 30 días
+9. 🇺🇸 Socio de Ayvens en USA compra división de interiores de Forvia por 1.820 millones
+   El propietario de Wheels, socio estratégico de Ayvens en Estados Unidos, adquirió el negocio de interiores automotrices de Forvia por 1.820 millones de euros. La operación incluye 17 plantas de producción y contratos con los principales OEMs. La compra refuerza la integración vertical en la cadena de valor del leasing 
 
-10. 🌐 Citroën crece 10% global en Q1 con foco en vehículos comerciales
-   Citroën reportó un crecimiento del 10% en ventas globales durante el primer trimestre, impulsado por su división de vehículos comerciales ligeros. La marca vendió 278.000 unidades, con particular fortaleza en los segmentos de furgonetas compactas (Berlingo) y medianas (Jumpy). Europa representa el 65% de las ventas, mi
+10. 🇪🇸 Sector del renting acelera transición eléctrica tras crisis de semiconductores
+   El sector del renting en España recupera dinamismo tras superar la crisis de semiconductores, con foco en la electrificación de flotas corporativas. Los operadores reportan reducción en plazos de entrega de 18 a 6 meses y mayor disponibilidad de modelos eléctricos. El mercado de renting representa ya el 25% de las matr
 
 ════════════════════════════════════════════════════════════════
 
 ETIQUETAS POR HISTORIA
 ──────────────────────
-1. topic:fleet-management, market:espana, fleet-type:flotas-corporativas, player:alphabet, licitacion:guardia-civil, renting:24m, combustion:1400-unidades
-2. topic:compliance, market:espana, fleet-type:vehiculos-comerciales-ligeros, itv:vencida, multas:200-500eur, riesgo:seguro, parque:25-porciento
-3. topic:regulacion, market:mexico, fleet-type:transporte-pesado, arancel:acero, arancel:aluminio, nafta:vehiculos-pesados, clase:4-8
-4. topic:electrificacion-flotas, market:europa, fleet-type:flotas-corporativas, player:fastned, carga:publica, ingresos:39.2m, crecimiento:40pct, utilizacion:18pct
-5. topic:electrificacion-flotas, market:europa, fleet-type:flotas-corporativas, player:vev, datos:telematica, ahorro:30pct, roi:125k-por-100, sobredimension:70pct
-6. topic:electrificacion-flotas, market:europa, fleet-type:distribucion-urbana, carga:ultrarrapida, inversion:1.3m, potencia:350kw, tiempo:27min
-7. topic:electrificacion-flotas, market:global, fleet-type:last-mile, player:chargepoint, cargador:standalone, potencia:62.5kw, precio:35k-usd, contactless:pagos
-8. topic:mantenimiento, market:europa, fleet-type:flotas-corporativas, sla:99pct, om:2000-puntos, respuesta:4h, monitoreo:24-7
-9. topic:fleet-management, market:espana, fleet-type:flotas-corporativas, renting:flexible, cierre:3000-vehiculos, plazo:1-24meses, gap:mercado
-10. topic:fleet-management, market:global, fleet-type:vehiculos-comerciales-ligeros, ventas:278k, crecimiento:10pct, b2b:18pct, lcv:foco
+1. topic:regulacion, market:espana, fleet-type:vehiculos-comerciales-ligeros, regulacion:itv, cumplimiento:inspecciones, riesgo:multas, seguro:cobertura
+2. topic:mantenimiento, market:espana, fleet-type:vehiculos-comerciales-ligeros, mantenimiento:recambios, costos:optimizacion, talleres:independientes, disponibilidad:piezas
+3. topic:combustibles-alternativos, market:mexico, fleet-type:transporte-pesado, combustible:metanol, inversion:infraestructura, ubicacion:sinaloa, capacidad:1.7M-ton
+4. topic:logistica, market:mexico, fleet-type:transporte-pesado, comercio:exportaciones, crecimiento:27.7%, volumen:70727M-usd, destino:usa-80%
+5. topic:electrificacion, market:europa, fleet-type:vehiculos-comerciales-ligeros, player:fastned, carga:rapida, ingresos:39.2M-eur, crecimiento:40%, utilizacion:17%
+6. topic:gestion-flotas, market:espana, fleet-type:flotas-corporativas, renting:publico, inversion:666K-eur, flota:policial, modelo:operativo
+7. topic:electrificacion, market:global, fleet-type:flotas-corporativas, autonomia:762km, carga:350kw, segmento:premium, precio:65K-eur
+8. topic:mercado, market:mexico, fleet-type:transporte-pesado, pib:1.5%, logistica:3.8%, nearshoring:driver, exportaciones:compensan
+9. topic:gestion-flotas, market:usa, fleet-type:flotas-corporativas, player:ayvens, ma:1820M-eur, integracion:vertical, mercado:usa, componentes:interiores
+10. topic:electrificacion, market:espana, fleet-type:flotas-corporativas, renting:electrico, crecimiento:45%, plazos:6-meses, cuota:25%-matriculaciones
 
 ════════════════════════════════════════════════════════════════
 The Fleet Radar · by Pulpo · Nº 5 · 27 de abril de 2026
