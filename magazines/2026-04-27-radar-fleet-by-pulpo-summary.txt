@@ -1,0 +1,62 @@
+THE FLEET RADAR · BY PULPO — EDICIÓN Nº 5
+27 de abril de 2026
+"Alphabet toma 1.400 vehículos, 1,59M sin ITV y aranceles al acero"
+════════════════════════════════════════════════════════════════
+
+RESUMEN EJECUTIVO
+─────────────────
+Semana marcada por la licitación de Alphabet para la Guardia Civil sin vehículos eléctricos, el problema masivo de ITVs vencidas en España y cambios arancelarios en Norteamérica. La infraestructura de carga acelera con inversiones millonarias mientras VEV demuestra que los datos pueden reducir costos de electrificación en 30%.
+
+════════════════════════════════════════════════════════════════
+
+HISTORIAS
+─────────
+1. 🇪🇸 Alphabet se adjudica 24 millones para 1.400 vehículos de la Guardia Civil sin eléctricos
+   Alphabet ha ganado la licitación para el renting de 1.400 vehículos destinados a la Guardia Civil por un importe de 24 millones de euros. La adjudicación no incluye ningún vehículo eléctrico, marcando una decisión que contrasta con los objetivos de descarbonización del sector público. El contrato cubre vehículos operat
+
+2. 🇪🇸 1,59 millones de camiones y furgonetas circulan sin ITV en España
+   Un análisis del parque circulante revela que 1,59 millones de vehículos comerciales (camiones y furgonetas) operan sin ITV en vigor en España. Esto representa aproximadamente el 25% del parque comercial total. Las multas por circular sin ITV oscilan entre 200 y 500 euros, además de la responsabilidad civil en caso de a
+
+3. 🇲🇽 Trump reduce aranceles al acero y aluminio para vehículos pesados desde México
+   El Departamento de Comercio de Estados Unidos anunció una exención arancelaria limitada para acero y aluminio provenientes de México y Canadá destinados al sector de vehículos medianos y pesados. La medida excluye vehículos ligeros. La Secretaría de Economía mexicana confirmó la reducción, que impacta directamente los 
+
+4. 🇪🇺 Fastned aumenta ingresos 40% hasta 39,2 millones en Q1
+   Fastned reportó ingresos de 39,2 millones de euros en el primer trimestre, un crecimiento del 40% interanual. El operador de carga rápida atribuye el resultado a mayor utilización de su red de 280 estaciones y al incremento en el volumen de energía dispensada. La utilización promedio de la red subió al 18% desde el 13%
+
+5. 🇪🇺 VEV: enfoque basado en datos reduce costos de electrificación 30%
+   VEV ha publicado un análisis demostrando que las autoridades locales y empresas pueden reducir hasta 30% los costos de electrificación de flotas mediante planificación basada en datos desde fase inicial. El estudio analizó 50 proyectos de transición, identificando que el sobredimensionamiento de infraestructura y la se
+
+6. 🇪🇺 Be.EV invierte 1,3 millones en carga ultrarrápida en East Midlands
+   Be.EV anunció una inversión de 1,3 millones de libras para desplegar cargadores ultrarrápidos en sitios comerciales de East Midlands, Reino Unido. La red nacional de carga está instalando unidades de 150-350kW en ubicaciones retail estratégicas. El proyecto forma parte de un plan de expansión de 10 millones de libras p
+
+7. 🌐 ChargePoint lanza Express Solo para sitios independientes
+   ChargePoint introdujo Express Solo, un cargador EV standalone diseñado para sitios que no requieren infraestructura de red compleja. El equipo ofrece carga DC rápida hasta 62.5kW con opciones de actualización modular a 125kW. Express Solo incluye pantalla táctil de 10 pulgadas, acepta pagos contactless y no requiere su
+
+8. 🇪🇺 Siemens y Evolt se alían con Source para O&M de red de carga
+   Source, joint venture entre SSE y TotalEnergies, cerró colaboración con Siemens eMobility y Evolt Charging para operación y mantenimiento de su red de carga ultrarrápida en Reino Unido e Irlanda. El acuerdo cubre 200 sitios proyectados con más de 2.000 puntos de carga. Siemens proveerá hardware y software de gestión, m
+
+9. 🇪🇸 Autoclick cierra dejando flotas sin servicio de renting flexible
+   El cierre de Autoclick, plataforma de renting flexible, deja un vacío en el segmento de alquiler de medio plazo (1-24 meses) en España. La empresa gestionaba cerca de 3.000 vehículos para pymes y autónomos que necesitaban flexibilidad sin compromiso de largo plazo. El modelo de Autoclick permitía devolución con 30 días
+
+10. 🌐 Citroën crece 10% global en Q1 con foco en vehículos comerciales
+   Citroën reportó un crecimiento del 10% en ventas globales durante el primer trimestre, impulsado por su división de vehículos comerciales ligeros. La marca vendió 278.000 unidades, con particular fortaleza en los segmentos de furgonetas compactas (Berlingo) y medianas (Jumpy). Europa representa el 65% de las ventas, mi
+
+════════════════════════════════════════════════════════════════
+
+ETIQUETAS POR HISTORIA
+──────────────────────
+1. topic:fleet-management, market:espana, fleet-type:flotas-corporativas, player:alphabet, licitacion:guardia-civil, renting:24m, combustion:1400-unidades
+2. topic:compliance, market:espana, fleet-type:vehiculos-comerciales-ligeros, itv:vencida, multas:200-500eur, riesgo:seguro, parque:25-porciento
+3. topic:regulacion, market:mexico, fleet-type:transporte-pesado, arancel:acero, arancel:aluminio, nafta:vehiculos-pesados, clase:4-8
+4. topic:electrificacion-flotas, market:europa, fleet-type:flotas-corporativas, player:fastned, carga:publica, ingresos:39.2m, crecimiento:40pct, utilizacion:18pct
+5. topic:electrificacion-flotas, market:europa, fleet-type:flotas-corporativas, player:vev, datos:telematica, ahorro:30pct, roi:125k-por-100, sobredimension:70pct
+6. topic:electrificacion-flotas, market:europa, fleet-type:distribucion-urbana, carga:ultrarrapida, inversion:1.3m, potencia:350kw, tiempo:27min
+7. topic:electrificacion-flotas, market:global, fleet-type:last-mile, player:chargepoint, cargador:standalone, potencia:62.5kw, precio:35k-usd, contactless:pagos
+8. topic:mantenimiento, market:europa, fleet-type:flotas-corporativas, sla:99pct, om:2000-puntos, respuesta:4h, monitoreo:24-7
+9. topic:fleet-management, market:espana, fleet-type:flotas-corporativas, renting:flexible, cierre:3000-vehiculos, plazo:1-24meses, gap:mercado
+10. topic:fleet-management, market:global, fleet-type:vehiculos-comerciales-ligeros, ventas:278k, crecimiento:10pct, b2b:18pct, lcv:foco
+
+════════════════════════════════════════════════════════════════
+The Fleet Radar · by Pulpo · Nº 5 · 27 de abril de 2026
+Próxima edición: 4 de mayo de 2026 (lunes) — cadencia semanal
+════════════════════════════════════════════════════════════════
