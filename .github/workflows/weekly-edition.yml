@@ -118,7 +118,7 @@ jobs:
       - name: Push branch
         if: steps.changes.outputs.has_changes == 'true'
         run: |
-          git push origin "${{ steps.date.outputs.branch }}"
+          git push origin "${{ steps.date.outputs.branch }}" --force
 
       - name: Create PR
         if: steps.changes.outputs.has_changes == 'true'
