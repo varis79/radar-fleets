@@ -107,14 +107,20 @@
       "result": {
         "status": "fail",
         "week": "2026-W18",
-        "blockers": 1,
+        "blockers": 2,
         "warnings": 1,
         "issues": [
+          {
+            "check": "C1-framing",
+            "severity": "block",
+            "message": "Término 'competidor' (visible)",
+            "sample": "competidores"
+          },
           {
             "check": "C3-voice",
             "severity": "block",
             "message": "Estructura 'no es X, es Y' detectada",
-            "sample": "no es casual: las exportaciones m"
+            "sample": "no es anécdota: es l"
           },
           {
             "check": "A2-topic",
