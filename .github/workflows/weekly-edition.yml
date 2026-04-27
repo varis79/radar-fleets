@@ -173,6 +173,16 @@ jobs:
             --body "$BODY" \
             --label "$LABEL"
 
+      - name: Auto-merge if QA OK
+        if: steps.changes.outputs.has_changes == 'true' && steps.pipeline.outputs.status == 'ok'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh pr merge "${{ steps.date.outputs.branch }}" \
+            --squash \
+            --subject "Edición ${{ steps.date.outputs.edition_date }} · publicado automáticamente" \
+            --delete-branch
+
       - name: Report
         run: |
           echo "Status: ${{ steps.pipeline.outputs.status }}"
