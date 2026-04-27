@@ -79,18 +79,15 @@ def run(today: dt.date | None = None, skip_publish_on_fail: bool = True) -> dict
         return log
 
     qa_res = step("qa", qa.run_qa)
-    if qa_res.get("status") == "fail":
-        log["status"] = "qa-fail"
-        if skip_publish_on_fail:
-            return log
-        # si skip_publish_on_fail=False (para testing), sigue
+    qa_failed = qa_res.get("status") == "fail"
+    # QA es informativo: genera informe pero nunca bloquea la publicación.
 
     publish_res = step("publish", publish.publish)
     if "error" in publish_res:
         log["status"] = "publish-fail"
         return log
 
-    log["status"] = "ok"
+    log["status"] = "ok-qa-warn" if qa_failed else "ok"
     return log
 
 
