@@ -1,0 +1,62 @@
+THE FLEET RADAR · BY PULPO — EDICIÓN Nº 6
+4 de mayo de 2026
+"Presión fiscal, conducción autónoma y el peso del nearshoring"
+════════════════════════════════════════════════════════════════
+
+RESUMEN EJECUTIVO
+─────────────────
+Edición dominada por tensiones fiscales y regulatorias en México, con CPKC escalando a arbitraje internacional. El nearshoring sigue transformando la frontera norte con mega-desarrollos industriales. La conducción autónoma avanza con Waabi mientras la electrificación enfrenta barreras de precio en España.
+
+════════════════════════════════════════════════════════════════
+
+HISTORIAS
+─────────
+1. 🇲🇽 CPKC lleva a México a arbitraje internacional por disputa tributaria
+   Canadian Pacific Kansas City (CPKC) presentó solicitud de arbitraje internacional contra México por acciones de autoridades tributarias mexicanas. La ferroviaria asegura que la medida busca preservar todos sus derechos legales y que no afectará las operaciones ni situación financiera de su filial en el país. El caso ma
+
+2. 🇲🇽 Nearshoring impulsa construcción de 800,000 pies cuadrados en El Paso
+   El nearshoring acelera desarrollo industrial masivo de 800,000 pies cuadrados en El Paso, respondiendo a demanda creciente de capacidad logística en la frontera México-USA. Hutchison Ports añade grúas eléctricas en el Puerto de Manzanillo para aumentar eficiencia de carga, mientras Burlington inicia construcción de cen
+
+3. 🇲🇽 Autotransporte en Estado de México enfrenta crisis de seguridad y regulación
+   El autotransporte de carga en Estado de México alcanza punto crítico donde seguridad en carretera y eficiencia regulatoria determinan la continuidad operativa. Garantizar que unidades lleguen a destino y reducir riesgos en ruta pasó de ser objetivo sectorial a necesidad de supervivencia. Operadores reportan incremento 
+
+4. 🌐 Waabi avanza en conducción autónoma profesional con IA
+   Waabi, liderada por la directiva vasca Raquel Urtasun, demuestra avances concretos en conducción autónoma profesional guiada por inteligencia artificial. La empresa enfoca su tecnología en transporte de carga pesada en rutas largas predecibles, donde la IA puede optimizar consumo de combustible y reducir accidentes. La
+
+5. 🇺🇸 Orden ejecutiva transforma seguridad vial en highways de USA
+   Una orden ejecutiva reshape la seguridad en highways estadounidenses, marcando el período de 12 meses más agresivo en política de seguridad vial. La Casa Blanca, Department of Transportation y FMCSA actuaron coordinadamente sobre fallas específicas de seguridad que afectan la industria del transporte. Las medidas inclu
+
+6. 🇪🇺 Volkswagen declara agotado su modelo industrial alemán
+   Volkswagen da por terminado su modelo industrial tradicional alemán y prepara recortes adicionales en su estructura de costos. La declaración marca un punto de inflexión para el mayor fabricante automotriz europeo, que enfrenta presión de competidores chinos en eléctricos y costos laborales insostenibles en Alemania. L
+
+7. 🇪🇺 Mercedes-Benz reporta caída del 17% en beneficios por presión china
+   Mercedes-Benz registra descenso del 17% en beneficios del primer trimestre, atribuido a presión competitiva china y efectos de aranceles comerciales. El fabricante premium enfrenta erosión de márgenes en su mercado más rentable mientras compite con marcas chinas que ofrecen vehículos eléctricos premium a precios 30% me
+
+8. 🇪🇸 Vehículo eléctrico en España: penetración inferior al 5% en rentas medias
+   El coche eléctrico en España permanece concentrado en rentas altas, con penetración inferior al 5% en segmentos de renta media y baja. La brecha de precio promedio de 15,000 euros entre vehículos eléctricos y sus equivalentes de combustión mantiene la tecnología fuera del alcance de compradores particulares y flotas co
+
+9. 🇪🇺 Fleet Electrification Forum analiza el rol cambiante del gestor de flota
+   El Fleet Electrification Forum dedicará sesión central al rol cambiante del gestor de flota en contexto de transición eléctrica. El evento reconoce que la electrificación no es solo cambio de combustible sino transformación completa del modelo operativo. Los gestores deben ahora dominar planificación de carga, gestión 
+
+10. 🇲🇽 T21 lanza edición mayo 2026 con foco en logística y transporte
+   La revista T21 publicó su edición de mayo 2026 enfocada en tendencias de logística y transporte en México. La publicación especializada mantiene su posición como referencia del sector, cubriendo desde política de transporte hasta tecnología aplicada a cadenas de suministro. Esta edición incluye análisis del impacto del
+
+════════════════════════════════════════════════════════════════
+
+ETIQUETAS POR HISTORIA
+──────────────────────
+1. topic:compliance, market:mexico, fleet-type:rail-intermodal, player:cpkc, arbitraje:internacional, fiscalidad:mexico, ferrocarril:cpkc, nearshoring:impacto
+2. topic:infrastructure, market:mexico, fleet-type:cross-border, player:hutchison-ports, player:burlington, nearshoring:infraestructura, frontera:el-paso, desarrollo:industrial, puerto:manzanillo
+3. topic:compliance, market:mexico, fleet-type:trucking, seguridad:carretera, regulacion:presion, estado-mexico:crisis, costos:seguridad
+4. topic:ai-automation, market:global, fleet-type:long-haul, player:waabi, ia:conduccion, autonomo:carga, tecnologia:waabi, rutas:largas
+5. topic:compliance, market:usa, fleet-type:trucking, sigla:FMCSA, seguridad:highways, regulacion:usa, hos:enforcement
+6. topic:market-dynamics, market:europa, fleet-type:light-commercial, player:volkswagen, fabricante:vw, reestructuracion:alemania, modelo:industrial, crisis:automotriz
+7. topic:market-dynamics, market:europa, fleet-type:light-commercial, player:mercedes-benz, beneficios:caida, competencia:china, aranceles:impacto, margenes:presion
+8. topic:electrification, market:espana, fleet-type:light-commercial, penetracion:baja, precio:brecha, renta:alta, adopcion:limitada
+9. topic:electrification, market:europa, fleet-type:mixed, evento:forum, rol:gestor, capacitacion:ev, transformacion:operativa
+10. topic:market-dynamics, market:mexico, fleet-type:mixed, player:t21, publicacion:t21, revista:especializada, logistica:mexico, analisis:sectorial
+
+════════════════════════════════════════════════════════════════
+The Fleet Radar · by Pulpo · Nº 6 · 4 de mayo de 2026
+Próxima edición: 11 de mayo de 2026 (lunes) — cadencia semanal
+════════════════════════════════════════════════════════════════

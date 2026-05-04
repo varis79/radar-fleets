@@ -9,14 +9,26 @@
   <copyright>© 2026 Pulpo · getpulpo.com</copyright>
   <managingEditor>team@getpulpo.com (The Fleet Radar · by Pulpo)</managingEditor>
   <webMaster>team@getpulpo.com (The Fleet Radar · by Pulpo)</webMaster>
-  <lastBuildDate>Mon, 27 Apr 2026 07:00:00 +0200</lastBuildDate>
-  <pubDate>Mon, 27 Apr 2026 07:00:00 +0200</pubDate>
+  <lastBuildDate>Mon, 04 May 2026 07:00:00 +0200</lastBuildDate>
+  <pubDate>Mon, 04 May 2026 07:00:00 +0200</pubDate>
   <ttl>1440</ttl>
   <image>
     <url>https://thefleetradar.com/og-default.png</url>
     <title>The Fleet Radar · by Pulpo</title>
     <link>https://thefleetradar.com/</link>
   </image>
+
+  <item>
+    <title>Nº 6 · Presión fiscal, conducción autónoma y el peso del nearshoring</title>
+    <link>https://thefleetradar.com/magazines/2026-05-04-radar-fleet-by-pulpo.html</link>
+    <guid isPermaLink="true">https://thefleetradar.com/magazines/2026-05-04-radar-fleet-by-pulpo.html</guid>
+    <pubDate>Mon, 04 May 2026 07:00:00 +0200</pubDate>
+    <dc:creator>The Fleet Radar · by Pulpo</dc:creator>
+    <category>Fleet management</category>
+    <description><![CDATA[
+      La semana arranca con CPKC llevando a México a arbitraje internacional por disputas tributarias mientras el autotransporte en Estado de México enfrenta presiones de seguridad y regulación. En Europa, Volkswagen declara agotado su modelo industrial alemán y Mercedes-Benz reporta caída del 17% en beneficios por presión china. El nearshoring impulsa 800,000 pies cuadrados de construcción industrial en El Paso, Waabi avanza en conducción autónoma con IA para transporte pesado, y España confirma que el vehículo eléctrico sigue concentrado en rentas altas con penetración inferior al 5% en segmentos populares.
+    ]]></description>
+  </item>
 
   <item>
     <title>Nº 5 · Recambios, ITV y metanol verde</title>
