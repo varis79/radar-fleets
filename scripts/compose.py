@@ -100,7 +100,7 @@ def build_user_prompt(selection: dict, edition_date: dt.date, number: int, mode:
     lines.append("Texto plano para el canal de Slack del equipo. Formato exacto:")
     lines.append("")
     lines.append("```")
-    lines.append(f"Ya está fuera la nueva edición de The Fleet Radar by Pulpo - Nº {number} · [fecha humana, p.ej. 05 may 2026]")
+    lines.append(f"Ya está fuera la nueva edición de The Fleet Radar by Pulpo - Nº {number} · {human_date_es(edition_date)}")
     lines.append("")
     lines.append("Algunas ideas que nos conviene tener en el radar:")
     lines.append("")
