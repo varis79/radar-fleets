@@ -9,8 +9,9 @@ Pasos:
   3. dedupe      (local)
   4. select      (local)
   5. compose     (LLM si hay ANTHROPIC_API_KEY, stub si no)
-  6. qa          (local, bloqueante)
+  6. qa          (informativo, nunca bloquea)
   7. publish     (local, actualiza sitio)
+  8. notify      (Slack, opcional; requiere SLACK_WEBHOOK_URL)
 
 Devuelve exit code:
   0  → edición lista (o pausa registrada); el workflow abre PR.
@@ -26,7 +27,7 @@ import json
 import sys
 from pathlib import Path
 
-from scripts import ingest, classify, dedupe, select, compose, qa, publish
+from scripts import ingest, classify, dedupe, select, compose, qa, publish, notify
 from scripts.lib.paths import ensure_dirs, iso_week_key
 
 
@@ -88,6 +89,10 @@ def run(today: dt.date | None = None, skip_publish_on_fail: bool = True) -> dict
         return log
 
     log["status"] = "ok-qa-warn" if qa_failed else "ok"
+
+    # Notify: opcional, nunca bloquea el pipeline
+    step("notify", notify.notify)
+
     return log
 
 

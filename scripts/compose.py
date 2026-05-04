@@ -95,6 +95,33 @@ def build_user_prompt(selection: dict, edition_date: dt.date, number: int, mode:
     lines.append("")
     lines.append("Total acumulado esperado: 10 stories × ~175 palabras + wm_cards + editors + opinion + cover_deck supera holgadamente 2.200 palabras (umbral QA). Si una historia tiene poco material fuente, prefiere quitarla antes que inflarla.")
     lines.append("")
+    lines.append("### slack_summary")
+    lines.append("")
+    lines.append("Texto plano para el canal de Slack del equipo. Formato exacto:")
+    lines.append("")
+    lines.append("```")
+    lines.append(f"Ya está fuera la nueva edición de The Fleet Radar by Pulpo - Nº {number} · [fecha humana, p.ej. 05 may 2026]")
+    lines.append("")
+    lines.append("Algunas ideas que nos conviene tener en el radar:")
+    lines.append("")
+    lines.append("[bloque con emoji de bandera/globo + título temático o región]")
+    lines.append("• [bullet corto con dato concreto, 1-2 líneas]")
+    lines.append("• [otro bullet]")
+    lines.append("")
+    lines.append("[siguiente bloque regional, si aplica]")
+    lines.append("• ...")
+    lines.append("")
+    lines.append("En resumen: [2-3 frases que conecten las señales con lo que hace Pulpo. Sin mencionar 'argumento comercial' ni 'competidor'.]")
+    lines.append("```")
+    lines.append("")
+    lines.append("Reglas del slack_summary:")
+    lines.append("- Longitud: 180-320 palabras.")
+    lines.append("- Emojis de banderas/globo para marcar región: 🇲🇽 México, 🇪🇸 España, 🇺🇸 USA, 🌐 Global o Industria.")
+    lines.append("- Bullets (•) cortos, cada uno con al menos un dato concreto o cifra.")
+    lines.append("- Agrupar por región o por tema transversal (si el ángulo de la semana lo pide).")
+    lines.append("- Cierre 'En resumen:' conecta las señales con gestión de flotas y el espacio de Pulpo. Nunca mencionar a la competencia ni hacer pitch de ventas.")
+    lines.append("- Sin em dashes, sin markdown complejo. Solo texto plano con saltos de línea y •.")
+    lines.append("")
     lines.append("## Formato de respuesta obligatorio")
     lines.append("")
     lines.append("Responde SOLO con un JSON válido dentro de un bloque ```json ... ```. Sin texto adicional.")
@@ -116,6 +143,7 @@ def build_user_prompt(selection: dict, edition_date: dt.date, number: int, mode:
     {"tone":"signal","headline":"...","body":"..."},
     ...
   ],
+  "slack_summary": "...",               // Resumen para Slack (ver instrucciones abajo)
   "stories": [
     {
       "ref_id": "<id del item seleccionado>",  // obligatorio
@@ -304,6 +332,12 @@ def compose(today: dt.date | None = None) -> dict:
     paths["html"].write_text(html, encoding="utf-8")
     paths["summary"].write_text(txt, encoding="utf-8")
 
+    # Guardar resumen Slack (si el LLM lo generó)
+    slack_txt = editorial.get("slack_summary", "")
+    slack_path = DECISIONS_DIR / f"{week}-slack.txt"
+    if slack_txt:
+        slack_path.write_text(slack_txt, encoding="utf-8")
+
     compose_info = {
         "status": "composed",
         "week": week,
@@ -312,6 +346,7 @@ def compose(today: dt.date | None = None) -> dict:
         "edition_date": edition_date.isoformat(),
         "html_path": str(paths["html"].relative_to(ROOT)),
         "summary_path": str(paths["summary"].relative_to(ROOT)),
+        "slack_path": str(slack_path.relative_to(ROOT)) if slack_txt else None,
         "llm": llm_meta,
         "is_stub": bool(editorial.get("_stub")),
         "stories_count": len(editorial.get("stories", [])),
