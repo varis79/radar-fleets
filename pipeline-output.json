@@ -1,22 +1,22 @@
 {
-  "week": "2026-W18",
+  "week": "2026-W19",
   "steps": [
     {
       "name": "ingest",
       "result": {
-        "week": "2026-W18",
-        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W18-raw.jsonl",
-        "total_items": 52,
+        "week": "2026-W19",
+        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W19-raw.jsonl",
+        "total_items": 49,
         "per_source": {
           "FreightWaves": 24,
           "Transport & Energy": 10,
-          "Fleet People ES": 8,
+          "Fleet People ES": 5,
           "T21 MX": 10
         },
         "errors": [
           {
             "source": "FleetOwner",
-            "error": "feed-bozo: <unknown>:116:15196: not well-formed (invalid token)"
+            "error": "feed-bozo: <unknown>:116:15329: not well-formed (invalid token)"
           },
           {
             "source": "Electrek · Transport",
@@ -28,7 +28,7 @@
           },
           {
             "source": "Trans.info",
-            "error": "feed-bozo: text/html; charset=utf-8 is not an XML media type"
+            "error": "feed-bozo: text/html is not an XML media type"
           },
           {
             "source": "Transporte Profesional",
@@ -44,55 +44,55 @@
     {
       "name": "classify",
       "result": {
-        "week": "2026-W18",
-        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W18-classified.jsonl",
-        "total": 52,
-        "with_topic": 14,
-        "with_fleet_type": 7,
-        "with_players": 4,
+        "week": "2026-W19",
+        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W19-classified.jsonl",
+        "total": 49,
+        "with_topic": 12,
+        "with_fleet_type": 0,
+        "with_players": 0,
         "by_market": {
-          "usa": 24,
-          "europa": 10,
-          "espana": 8,
-          "mexico": 10
+          "usa": 23,
+          "mexico": 10,
+          "europa": 12,
+          "espana": 4
         }
       }
     },
     {
       "name": "dedupe",
       "result": {
-        "week": "2026-W18",
-        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W18-dedup.jsonl",
-        "in": 52,
-        "after_url_dedup": 52,
-        "after_title_dedup": 52
+        "week": "2026-W19",
+        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W19-dedup.jsonl",
+        "in": 49,
+        "after_url_dedup": 49,
+        "after_title_dedup": 49
       }
     },
     {
       "name": "select",
       "result": {
-        "week": "2026-W18",
+        "week": "2026-W19",
         "mode": "normal",
-        "total_candidates": 52,
-        "total_after_memory_dedup": 52,
+        "total_candidates": 49,
+        "total_after_memory_dedup": 49,
         "total_chosen": 10,
         "warnings": [
-          "topic-diversity-low:1<3"
+          "topic-diversity-low:2<3"
         ],
         "discarded_repetition": [],
-        "path": "/home/runner/work/radar-fleets/radar-fleets/content/decisions/2026-W18-selection.json"
+        "path": "/home/runner/work/radar-fleets/radar-fleets/content/decisions/2026-W19-selection.json"
       }
     },
     {
       "name": "compose",
       "result": {
         "status": "composed",
-        "week": "2026-W18",
+        "week": "2026-W19",
         "mode": "normal",
-        "number": 5,
-        "edition_date": "2026-04-27",
-        "html_path": "magazines/2026-04-27-radar-fleet-by-pulpo.html",
-        "summary_path": "magazines/2026-04-27-radar-fleet-by-pulpo-summary.txt",
+        "number": 6,
+        "edition_date": "2026-05-04",
+        "html_path": "magazines/2026-05-04-radar-fleet-by-pulpo.html",
+        "summary_path": "magazines/2026-05-04-radar-fleet-by-pulpo-summary.txt",
         "llm": {
           "mode": "llm",
           "model": "claude-opus-4-1-20250805"
@@ -106,24 +106,42 @@
       "name": "qa",
       "result": {
         "status": "fail",
-        "week": "2026-W18",
+        "week": "2026-W19",
         "blockers": 1,
         "warnings": 1,
         "issues": [
           {
-            "check": "C3-voice",
+            "check": "C1-framing",
             "severity": "block",
-            "message": "Estructura 'no es X, es Y' detectada",
-            "sample": "no es casual: las exportaciones m"
+            "message": "Término 'competidor' (visible)",
+            "sample": "competidores"
           },
           {
             "check": "A2-topic",
             "severity": "warn",
-            "message": "Pocos topics distintos (1). Esperado ≥ 3"
+            "message": "Pocos topics distintos (2). Esperado ≥ 3"
           }
+        ]
+      }
+    },
+    {
+      "name": "publish",
+      "result": {
+        "status": "published",
+        "week": "2026-W19",
+        "edition_date": "2026-05-04",
+        "number": 6,
+        "files_touched": [
+          "magazines/2026-05-04-radar-fleet-by-pulpo.html",
+          "magazines/2026-05-04-radar-fleet-by-pulpo-summary.txt",
+          "index.html",
+          "archive.html",
+          "sitemap.xml",
+          "rss.xml",
+          "content/editorial-memory.md"
         ]
       }
     }
   ],
-  "status": "qa-fail"
+  "status": "ok-qa-warn"
 }

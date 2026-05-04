@@ -190,3 +190,21 @@ Modo: normal
 - [?] Socio de Ayvens en USA compra división de interiores de Forvia por 1.820 millones · mexico
 - [?] Sector del renting acelera transición eléctrica tras crisis de semiconductores · espana
 
+
+## Nº 6 · 2026-05-04 · "Presión fiscal, conducción autónoma y el peso del nearshoring"
+Acento semanal: #b84c3a, #1e7fcb
+Permalink: /magazines/2026-05-04-radar-fleet-by-pulpo.html
+Modo: normal
+
+### Historias cubiertas
+- [compliance] CPKC lleva a México a arbitraje internacional por disputa tributaria · mexico
+- [?] Nearshoring impulsa construcción de 800,000 pies cuadrados en El Paso · espana
+- [?] Autotransporte en Estado de México enfrenta crisis de seguridad y regulación · espana
+- [?] Waabi avanza en conducción autónoma profesional con IA · espana
+- [?] Orden ejecutiva transforma seguridad vial en highways de USA · espana
+- [?] Volkswagen declara agotado su modelo industrial alemán · mexico
+- [?] Mercedes-Benz reporta caída del 17% en beneficios por presión china · mexico
+- [?] Vehículo eléctrico en España: penetración inferior al 5% en rentas medias · mexico
+- [electrificacion-flotas] Fleet Electrification Forum analiza el rol cambiante del gestor de flota · usa
+- [electrificacion-flotas] T21 lanza edición mayo 2026 con foco en logística y transporte · europa
+
