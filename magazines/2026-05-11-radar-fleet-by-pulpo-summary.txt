@@ -1,0 +1,62 @@
+THE FLEET RADAR · BY PULPO — EDICIÓN Nº 7
+11 de mayo de 2026
+"Robo al transporte, fraude logístico y 370 Tesla Semi"
+════════════════════════════════════════════════════════════════
+
+RESUMEN EJECUTIVO
+─────────────────
+Edición enfocada en seguridad y transformación logística. Samsara responde con IA a los 10,367 robos reportados en México. WattEV marca récord con 370 Tesla Semi para California. Fraude de $10M en Chicago expone vulnerabilidades del sector. México presenta Plan 2030 para resolver infraestructura y competitividad.
+
+════════════════════════════════════════════════════════════════
+
+HISTORIAS
+─────────
+1. 🇲🇽 Samsara despliega IA contra 10,367 robos al transporte en México
+   El SESNSP reportó 10,367 robos contra vehículos pesados en México durante 2025, mientras 62% de líderes del sector confirman que estos incidentes presionan la operación logística. Samsara responde con tecnología de IA especializada para acelerar la detección y respuesta ante robos. La plataforma busca reducir tiempos d
+
+2. 🇺🇸 WattEV ordena 370 Tesla Semi en récord para California
+   WattEV anunció en ACT Expo el pedido de 370 Tesla Semi Class 8 eléctricos, marcando la orden más grande hasta la fecha para estos camiones. Las primeras 50 unidades llegarán en 2026, completando el despliegue total para finales de 2027. Una vez completado, será el despliegue de camiones eléctricos más grande en un solo
+
+3. 🇺🇸 Fraude de $10M en Chicago expone vulnerabilidades del sector
+   Un esquema de fraude por 10 millones de dólares fue destapado en Chicago, revelando vulnerabilidades sistémicas en la verificación y control de operaciones logísticas. El caso expone cómo la falta de protocolos de verificación permite que operaciones fraudulentas escalen hasta montos millonarios antes de ser detectadas
+
+4. 🇲🇽 Plan 2030 busca convertir a México en potencia logística
+   México presenta el Plan 2030 para resolver problemas estructurales que frenan su competitividad: infraestructura insuficiente, inseguridad carretera, saturación portuaria y procesos aduanales poco ágiles. El panel de expertos concluyó que el país tiene la oportunidad de cerrar la década como una de las plataformas logí
+
+5. 🇲🇽 BNSF Railway expande servicios intermodales hacia México
+   BNSF Railway fortalece su compromiso con México mediante expansión de servicios intermodales y desarrollo de soluciones para cadenas de suministro con control de temperatura. El ferrocarril evalúa estratégicamente las oportunidades del mercado mexicano en un contexto de creciente integración logística norteamericana. L
+
+6. 🇲🇽 Tresguerras preparará logística del Mundial 2026 en México
+   Tresguerras se alista para operar la logística del Mundial 2026 en las ciudades sede mexicanas. El operativo incluirá movilización de equipos deportivos, staff técnico y materiales especializados con protocolos de seguridad reforzados. La operación requiere coordinación milimétrica entre estadios, hoteles y aeropuertos
+
+7. 🇺🇸 FedEx reactiva flota MD-11 tras rediseño con Boeing
+   FedEx está en las etapas finales de reactivar su flota MD-11 después de ayudar a Boeing a rediseñar una pieza que contribuyó al accidente de un jet de UPS en noviembre. Los ejecutivos confirmaron durante una reunión con empleados que el primer vuelo de prueba será una ruta corta de carga hacia Miami. La colaboración Fe
+
+8. 🌐 ABAC impulsa cadenas verdes ante 60% de emisiones desde Asia-Pacífico
+   El Consejo Consultivo Empresarial de APEC (ABAC) impulsa una agenda verde para cadenas de suministro más sustentables, respondiendo al hecho de que Asia-Pacífico genera 60% de las emisiones globales de gases de efecto invernadero. Las 21 economías del foro enfrentan el desafío de descarbonizar mientras mantienen compet
+
+9. 🇪🇺 MFG lanza Plug & Charge con Octopus en UK
+   El operador británico de estaciones MFG lanzó tecnología Plug & Charge en asociación con Octopus Electroverse. El sistema permite a conductores de vehículos eléctricos conectar y cargar sin necesidad de tarjetas o apps, con autenticación y pago automáticos. La implementación marca un paso hacia la simplificación de la 
+
+10. 🇪🇸 Alpine dispara ventas mundiales 54.7% en arranque de año
+   Alpine reportó un incremento del 54.7% en sus ventas mundiales durante el primer trimestre del año. El crecimiento marca una aceleración significativa para la marca deportiva del grupo Renault, impulsada por demanda en mercados europeos clave. Los resultados reflejan el apetito creciente por vehículos deportivos premiu
+
+════════════════════════════════════════════════════════════════
+
+ETIQUETAS POR HISTORIA
+──────────────────────
+1. topic:telematica, market:mexico, fleet-type:transporte-pesado, player:samsara, seguridad:robo-carga, tecnologia:ia-predictiva, operacion:respuesta-rapida
+2. topic:electrificacion-flotas, market:usa, fleet-type:transporte-pesado, player:wattev, player:tesla, vehiculo:tesla-semi, despliegue:california, volumen:370-unidades
+3. topic:fraude, market:usa, riesgo:fraude-logistico, monto:10-millones, ubicacion:chicago
+4. topic:infraestructura, market:mexico, fleet-type:vehiculos-comerciales-ligeros, estrategia:plan-2030, infraestructura:puertos, proceso:aduanas
+5. topic:infraestructura, market:mexico, player:bnsf, servicio:intermodal, especialidad:cadena-frio, corredor:mexico-usa
+6. topic:operaciones, market:mexico, fleet-type:transporte-especializado, player:tresguerras, evento:mundial-2026, operacion:alta-visibilidad, protocolo:seguridad-reforzada
+7. topic:operaciones, market:usa, player:fedex, player:boeing, aeronave:md-11, seguridad:rediseno-parte, ruta:miami
+8. topic:sostenibilidad, market:global, region:asia-pacifico, emision:60-porciento-global, organismo:apec-abac
+9. topic:electrificacion-flotas, market:europa, player:mfg, player:octopus, tecnologia:plug-and-charge, ubicacion:uk, experiencia:carga-simplificada
+10. topic:mercado, market:espana, player:alpine, player:renault, crecimiento:54.7-porciento, segmento:premium-deportivo, periodo:q1-2026
+
+════════════════════════════════════════════════════════════════
+The Fleet Radar · by Pulpo · Nº 7 · 11 de mayo de 2026
+Próxima edición: 18 de mayo de 2026 (lunes) — cadencia semanal
+════════════════════════════════════════════════════════════════
