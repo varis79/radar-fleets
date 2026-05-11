@@ -1,11 +1,11 @@
 {
-  "week": "2026-W19",
+  "week": "2026-W20",
   "steps": [
     {
       "name": "ingest",
       "result": {
-        "week": "2026-W19",
-        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W19-raw.jsonl",
+        "week": "2026-W20",
+        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W20-raw.jsonl",
         "total_items": 49,
         "per_source": {
           "FreightWaves": 24,
@@ -28,7 +28,7 @@
           },
           {
             "source": "Trans.info",
-            "error": "feed-bozo: text/html is not an XML media type"
+            "error": "feed-bozo: text/html; charset=utf-8 is not an XML media type"
           },
           {
             "source": "Transporte Profesional",
@@ -44,25 +44,26 @@
     {
       "name": "classify",
       "result": {
-        "week": "2026-W19",
-        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W19-classified.jsonl",
+        "week": "2026-W20",
+        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W20-classified.jsonl",
         "total": 49,
-        "with_topic": 12,
-        "with_fleet_type": 0,
-        "with_players": 0,
+        "with_topic": 18,
+        "with_fleet_type": 5,
+        "with_players": 2,
         "by_market": {
           "usa": 23,
-          "mexico": 10,
-          "europa": 12,
-          "espana": 4
+          "europa": 14,
+          "espana": 3,
+          "mexico": 8,
+          "latam": 1
         }
       }
     },
     {
       "name": "dedupe",
       "result": {
-        "week": "2026-W19",
-        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W19-dedup.jsonl",
+        "week": "2026-W20",
+        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W20-dedup.jsonl",
         "in": 49,
         "after_url_dedup": 49,
         "after_title_dedup": 49
@@ -71,28 +72,27 @@
     {
       "name": "select",
       "result": {
-        "week": "2026-W19",
+        "week": "2026-W20",
         "mode": "normal",
         "total_candidates": 49,
         "total_after_memory_dedup": 49,
         "total_chosen": 10,
-        "warnings": [
-          "topic-diversity-low:2<3"
-        ],
+        "warnings": [],
         "discarded_repetition": [],
-        "path": "/home/runner/work/radar-fleets/radar-fleets/content/decisions/2026-W19-selection.json"
+        "path": "/home/runner/work/radar-fleets/radar-fleets/content/decisions/2026-W20-selection.json"
       }
     },
     {
       "name": "compose",
       "result": {
         "status": "composed",
-        "week": "2026-W19",
+        "week": "2026-W20",
         "mode": "normal",
-        "number": 6,
-        "edition_date": "2026-05-04",
-        "html_path": "magazines/2026-05-04-radar-fleet-by-pulpo.html",
-        "summary_path": "magazines/2026-05-04-radar-fleet-by-pulpo-summary.txt",
+        "number": 7,
+        "edition_date": "2026-05-11",
+        "html_path": "magazines/2026-05-11-radar-fleet-by-pulpo.html",
+        "summary_path": "magazines/2026-05-11-radar-fleet-by-pulpo-summary.txt",
+        "slack_path": "content/decisions/2026-W20-slack.txt",
         "llm": {
           "mode": "llm",
           "model": "claude-opus-4-1-20250805"
@@ -106,20 +106,45 @@
       "name": "qa",
       "result": {
         "status": "fail",
-        "week": "2026-W19",
-        "blockers": 1,
-        "warnings": 1,
+        "week": "2026-W20",
+        "blockers": 7,
+        "warnings": 0,
         "issues": [
           {
-            "check": "C1-framing",
+            "check": "C2-thin",
             "severity": "block",
-            "message": "Término 'competidor' (visible)",
-            "sample": "competidores"
+            "message": "Story corta: 'Plan 2030 busca convertir a México en potencia logística' tiene 116 palabras (mínimo 120)"
           },
           {
-            "check": "A2-topic",
-            "severity": "warn",
-            "message": "Pocos topics distintos (2). Esperado ≥ 3"
+            "check": "C2-thin",
+            "severity": "block",
+            "message": "Story corta: 'BNSF Railway expande servicios intermodales hacia México' tiene 113 palabras (mínimo 120)"
+          },
+          {
+            "check": "C2-thin",
+            "severity": "block",
+            "message": "Story corta: 'Tresguerras preparará logística del Mundial 2026 en México' tiene 118 palabras (mínimo 120)"
+          },
+          {
+            "check": "C2-thin",
+            "severity": "block",
+            "message": "Story corta: 'ABAC impulsa cadenas verdes ante 60% de emisiones desde Asia' tiene 114 palabras (mínimo 120)"
+          },
+          {
+            "check": "C2-thin",
+            "severity": "block",
+            "message": "Story corta: 'MFG lanza Plug & Charge con Octopus en UK' tiene 119 palabras (mínimo 120)"
+          },
+          {
+            "check": "C2-thin",
+            "severity": "block",
+            "message": "Story corta: 'Alpine dispara ventas mundiales 54.7% en arranque de año' tiene 112 palabras (mínimo 120)"
+          },
+          {
+            "check": "C3-voice",
+            "severity": "block",
+            "message": "Estructura 'no es X, es Y' detectada",
+            "sample": "no es solo estadística, es e"
           }
         ]
       }
@@ -128,18 +153,25 @@
       "name": "publish",
       "result": {
         "status": "published",
-        "week": "2026-W19",
-        "edition_date": "2026-05-04",
-        "number": 6,
+        "week": "2026-W20",
+        "edition_date": "2026-05-11",
+        "number": 7,
         "files_touched": [
-          "magazines/2026-05-04-radar-fleet-by-pulpo.html",
-          "magazines/2026-05-04-radar-fleet-by-pulpo-summary.txt",
+          "magazines/2026-05-11-radar-fleet-by-pulpo.html",
+          "magazines/2026-05-11-radar-fleet-by-pulpo-summary.txt",
           "index.html",
           "archive.html",
           "sitemap.xml",
           "rss.xml",
           "content/editorial-memory.md"
         ]
+      }
+    },
+    {
+      "name": "notify",
+      "result": {
+        "status": "skipped",
+        "reason": "no SLACK_WEBHOOK_URL"
       }
     }
   ],

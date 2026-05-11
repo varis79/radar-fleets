@@ -208,3 +208,21 @@ Modo: normal
 - [electrificacion-flotas] Fleet Electrification Forum analiza el rol cambiante del gestor de flota · usa
 - [electrificacion-flotas] T21 lanza edición mayo 2026 con foco en logística y transporte · europa
 
+
+## Nº 7 · 2026-05-11 · "Robo al transporte, fraude logístico y 370 Tesla Semi"
+Acento semanal: #d4891a, #2fa678
+Permalink: /magazines/2026-05-11-radar-fleet-by-pulpo.html
+Modo: normal
+
+### Historias cubiertas
+- [telematica] Samsara despliega IA contra 10,367 robos al transporte en México · mexico
+- [?] WattEV ordena 370 Tesla Semi en récord para California · mexico
+- [compliance] Fraude de $10M en Chicago expone vulnerabilidades del sector · espana
+- [electrificacion-flotas] Plan 2030 busca convertir a México en potencia logística · usa
+- [?] BNSF Railway expande servicios intermodales hacia México · mexico
+- [?] Tresguerras preparará logística del Mundial 2026 en México · mexico
+- [fraude] FedEx reactiva flota MD-11 tras rediseño con Boeing · usa
+- [?] ABAC impulsa cadenas verdes ante 60% de emisiones desde Asia-Pacífico · mexico
+- [?] MFG lanza Plug & Charge con Octopus en UK · espana
+- [electrificacion-flotas] Alpine dispara ventas mundiales 54.7% en arranque de año · europa
+
