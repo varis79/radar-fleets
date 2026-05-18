@@ -1,22 +1,22 @@
 {
-  "week": "2026-W20",
+  "week": "2026-W21",
   "steps": [
     {
       "name": "ingest",
       "result": {
-        "week": "2026-W20",
-        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W20-raw.jsonl",
-        "total_items": 49,
+        "week": "2026-W21",
+        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W21-raw.jsonl",
+        "total_items": 50,
         "per_source": {
           "FreightWaves": 24,
           "Transport & Energy": 10,
-          "Fleet People ES": 5,
+          "Fleet People ES": 6,
           "T21 MX": 10
         },
         "errors": [
           {
             "source": "FleetOwner",
-            "error": "feed-bozo: <unknown>:116:15329: not well-formed (invalid token)"
+            "error": "feed-bozo: <unknown>:116:15371: not well-formed (invalid token)"
           },
           {
             "source": "Electrek · Transport",
@@ -44,17 +44,18 @@
     {
       "name": "classify",
       "result": {
-        "week": "2026-W20",
-        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W20-classified.jsonl",
-        "total": 49,
-        "with_topic": 18,
-        "with_fleet_type": 5,
+        "week": "2026-W21",
+        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W21-classified.jsonl",
+        "total": 50,
+        "with_topic": 12,
+        "with_fleet_type": 6,
         "with_players": 2,
         "by_market": {
-          "usa": 23,
-          "europa": 14,
-          "espana": 3,
-          "mexico": 8,
+          "usa": 24,
+          "mexico": 9,
+          "europa": 10,
+          "peru": 1,
+          "espana": 5,
           "latam": 1
         }
       }
@@ -62,37 +63,39 @@
     {
       "name": "dedupe",
       "result": {
-        "week": "2026-W20",
-        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W20-dedup.jsonl",
-        "in": 49,
-        "after_url_dedup": 49,
-        "after_title_dedup": 49
+        "week": "2026-W21",
+        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W21-dedup.jsonl",
+        "in": 50,
+        "after_url_dedup": 50,
+        "after_title_dedup": 50
       }
     },
     {
       "name": "select",
       "result": {
-        "week": "2026-W20",
+        "week": "2026-W21",
         "mode": "normal",
-        "total_candidates": 49,
-        "total_after_memory_dedup": 49,
+        "total_candidates": 50,
+        "total_after_memory_dedup": 50,
         "total_chosen": 10,
-        "warnings": [],
+        "warnings": [
+          "topic-diversity-low:1<3"
+        ],
         "discarded_repetition": [],
-        "path": "/home/runner/work/radar-fleets/radar-fleets/content/decisions/2026-W20-selection.json"
+        "path": "/home/runner/work/radar-fleets/radar-fleets/content/decisions/2026-W21-selection.json"
       }
     },
     {
       "name": "compose",
       "result": {
         "status": "composed",
-        "week": "2026-W20",
+        "week": "2026-W21",
         "mode": "normal",
-        "number": 7,
-        "edition_date": "2026-05-11",
-        "html_path": "magazines/2026-05-11-radar-fleet-by-pulpo.html",
-        "summary_path": "magazines/2026-05-11-radar-fleet-by-pulpo-summary.txt",
-        "slack_path": "content/decisions/2026-W20-slack.txt",
+        "number": 8,
+        "edition_date": "2026-05-18",
+        "html_path": "magazines/2026-05-18-radar-fleet-by-pulpo.html",
+        "summary_path": "magazines/2026-05-18-radar-fleet-by-pulpo-summary.txt",
+        "slack_path": "content/decisions/2026-W21-slack.txt",
         "llm": {
           "mode": "llm",
           "model": "claude-opus-4-1-20250805"
@@ -106,45 +109,60 @@
       "name": "qa",
       "result": {
         "status": "fail",
-        "week": "2026-W20",
-        "blockers": 7,
-        "warnings": 0,
+        "week": "2026-W21",
+        "blockers": 9,
+        "warnings": 1,
         "issues": [
           {
             "check": "C2-thin",
             "severity": "block",
-            "message": "Story corta: 'Plan 2030 busca convertir a México en potencia logística' tiene 116 palabras (mínimo 120)"
+            "message": "Story corta: 'Tráfico ferroviario norteamericano sube 2% con 12 millones d' tiene 112 palabras (mínimo 120)"
           },
           {
             "check": "C2-thin",
             "severity": "block",
-            "message": "Story corta: 'BNSF Railway expande servicios intermodales hacia México' tiene 113 palabras (mínimo 120)"
+            "message": "Story corta: 'China controla 60 empresas de autopartes en EEUU y participa' tiene 108 palabras (mínimo 120)"
           },
           {
             "check": "C2-thin",
             "severity": "block",
-            "message": "Story corta: 'Tresguerras preparará logística del Mundial 2026 en México' tiene 118 palabras (mínimo 120)"
+            "message": "Story corta: 'Mutua Madrileña adquiere 100% de distribuidora de recambios ' tiene 109 palabras (mínimo 120)"
           },
           {
             "check": "C2-thin",
             "severity": "block",
-            "message": "Story corta: 'ABAC impulsa cadenas verdes ante 60% de emisiones desde Asia' tiene 114 palabras (mínimo 120)"
+            "message": "Story corta: 'Corredor Cali-Baja enfrenta nuevas regulaciones y competenci' tiene 110 palabras (mínimo 120)"
           },
           {
             "check": "C2-thin",
             "severity": "block",
-            "message": "Story corta: 'MFG lanza Plug & Charge con Octopus en UK' tiene 119 palabras (mínimo 120)"
+            "message": "Story corta: 'Logtech Day marca urgencia de transformación digital en logí' tiene 109 palabras (mínimo 120)"
           },
           {
             "check": "C2-thin",
             "severity": "block",
-            "message": "Story corta: 'Alpine dispara ventas mundiales 54.7% en arranque de año' tiene 112 palabras (mínimo 120)"
+            "message": "Story corta: 'Puerto de Manzanillo refuerza protocolos para materiales pel' tiene 106 palabras (mínimo 120)"
+          },
+          {
+            "check": "C2-thin",
+            "severity": "block",
+            "message": "Story corta: 'Volkswagen lanza ID. Polo GTI eléctrico con 226CV y 424km de' tiene 104 palabras (mínimo 120)"
+          },
+          {
+            "check": "C2-thin",
+            "severity": "block",
+            "message": "Story corta: 'Bolt y Dongfeng despliegan flota eléctrica compartida en Sud' tiene 104 palabras (mínimo 120)"
           },
           {
             "check": "C3-voice",
             "severity": "block",
             "message": "Estructura 'no es X, es Y' detectada",
-            "sample": "no es solo estadística, es e"
+            "sample": "no es casualidad. Es l"
+          },
+          {
+            "check": "A2-topic",
+            "severity": "warn",
+            "message": "Pocos topics distintos (1). Esperado ≥ 3"
           }
         ]
       }
@@ -153,12 +171,12 @@
       "name": "publish",
       "result": {
         "status": "published",
-        "week": "2026-W20",
-        "edition_date": "2026-05-11",
-        "number": 7,
+        "week": "2026-W21",
+        "edition_date": "2026-05-18",
+        "number": 8,
         "files_touched": [
-          "magazines/2026-05-11-radar-fleet-by-pulpo.html",
-          "magazines/2026-05-11-radar-fleet-by-pulpo-summary.txt",
+          "magazines/2026-05-18-radar-fleet-by-pulpo.html",
+          "magazines/2026-05-18-radar-fleet-by-pulpo-summary.txt",
           "index.html",
           "archive.html",
           "sitemap.xml",

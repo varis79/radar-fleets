@@ -226,3 +226,21 @@ Modo: normal
 - [?] MFG lanza Plug & Charge con Octopus en UK · espana
 - [electrificacion-flotas] Alpine dispara ventas mundiales 54.7% en arranque de año · europa
 
+
+## Nº 8 · 2026-05-18 · "Carga sin seguro, operadores en riesgo y el ferrocarril que crece"
+Acento semanal: #c9a84c, #1e7fcb
+Permalink: /magazines/2026-05-18-radar-fleet-by-pulpo.html
+Modo: normal
+
+### Historias cubiertas
+- [video-telematica] Solo 4% de la carga mexicana está asegurada pese a violencia creciente · mexico
+- [video-telematica] Operador veterano asesinado en Edomex pese a acuerdos gubernamentales · latam
+- [?] Tráfico ferroviario norteamericano sube 2% con 12 millones de vagones · espana
+- [?] China controla 60 empresas de autopartes en EEUU y participa en 10.000 más · espana
+- [?] Mutua Madrileña adquiere 100% de distribuidora de recambios Reynasa · mexico
+- [?] Corredor Cali-Baja enfrenta nuevas regulaciones y competencia intensificada · mexico
+- [?] Logtech Day marca urgencia de transformación digital en logística mexicana · espana
+- [?] Puerto de Manzanillo refuerza protocolos para materiales peligrosos · mexico
+- [?] Volkswagen lanza ID. Polo GTI eléctrico con 226CV y 424km de autonomía · mexico
+- [?] Bolt y Dongfeng despliegan flota eléctrica compartida en Sudáfrica · espana
+
