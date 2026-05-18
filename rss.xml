@@ -9,14 +9,26 @@
   <copyright>© 2026 Pulpo · getpulpo.com</copyright>
   <managingEditor>team@getpulpo.com (The Fleet Radar · by Pulpo)</managingEditor>
   <webMaster>team@getpulpo.com (The Fleet Radar · by Pulpo)</webMaster>
-  <lastBuildDate>Mon, 11 May 2026 07:00:00 +0200</lastBuildDate>
-  <pubDate>Mon, 11 May 2026 07:00:00 +0200</pubDate>
+  <lastBuildDate>Mon, 18 May 2026 07:00:00 +0200</lastBuildDate>
+  <pubDate>Mon, 18 May 2026 07:00:00 +0200</pubDate>
   <ttl>1440</ttl>
   <image>
     <url>https://thefleetradar.com/og-default.png</url>
     <title>The Fleet Radar · by Pulpo</title>
     <link>https://thefleetradar.com/</link>
   </image>
+
+  <item>
+    <title>Nº 8 · Carga sin seguro, operadores en riesgo y el ferrocarril que crece</title>
+    <link>https://thefleetradar.com/magazines/2026-05-18-radar-fleet-by-pulpo.html</link>
+    <guid isPermaLink="true">https://thefleetradar.com/magazines/2026-05-18-radar-fleet-by-pulpo.html</guid>
+    <pubDate>Mon, 18 May 2026 07:00:00 +0200</pubDate>
+    <dc:creator>The Fleet Radar · by Pulpo</dc:creator>
+    <category>Fleet management</category>
+    <description><![CDATA[
+      Solo 4% de la carga mexicana viaja asegurada mientras los operadores enfrentan violencia creciente en carreteras. El tráfico ferroviario norteamericano sube 2% en 18 semanas con 12 millones de vagones movidos. China controla 60 empresas de componentes en EEUU y participa en otras 10.000. Mutua Madrileña compra el 100% de Reynasa para reforzar su red de talleres.
+    ]]></description>
+  </item>
 
   <item>
     <title>Nº 7 · Robo al transporte, fraude logístico y 370 Tesla Semi</title>

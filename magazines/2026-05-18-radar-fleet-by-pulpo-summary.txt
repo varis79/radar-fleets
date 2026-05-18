@@ -1,0 +1,62 @@
+THE FLEET RADAR · BY PULPO — EDICIÓN Nº 8
+18 de mayo de 2026
+"Carga sin seguro, operadores en riesgo y el ferrocarril que crece"
+════════════════════════════════════════════════════════════════
+
+RESUMEN EJECUTIVO
+─────────────────
+La semana expone vulnerabilidades críticas en el transporte mexicano con apenas 4% de carga asegurada y operadores bajo amenaza constante. El ferrocarril norteamericano muestra crecimiento sostenido del 2% mientras China consolida su control sobre la cadena de componentes automotrices en EEUU.
+
+════════════════════════════════════════════════════════════════
+
+HISTORIAS
+─────────
+1. 🇲🇽 Solo 4% de la carga mexicana está asegurada pese a violencia creciente
+   Keeper Cargo Insurance revela que apenas 4% de las mercancías transportadas por carretera en México cuentan con seguro, pese a ser considerado uno de los mercados más importantes para este tipo de cobertura en Latinoamérica. La cifra contrasta dramáticamente con el contexto de violencia e inseguridad que enfrentan los 
+
+2. 🇲🇽 Operador veterano asesinado en Edomex pese a acuerdos gubernamentales
+   Jorge, operador con más de 20 años de experiencia, fue asesinado el 10 de mayo en Cuautitlán Izcalli, Estado de México, mientras esperaba acceso al patio de un cliente. El crimen ocurrió mientras enviaba mensajes del Día de las Madres, evidenciando que las reuniones con fiscalías y acuerdos con gobierno no han logrado 
+
+3. 🇺🇸 Tráfico ferroviario norteamericano sube 2% con 12 millones de vagones
+   El tráfico ferroviario en Norteamérica creció 2% entre enero y mayo de 2026 comparado con el mismo periodo de 2025, según la Asociación de Ferrocarriles Americanos (AAR). El volumen alcanzó 12 millones de vagones en las primeras 18 semanas del año, mostrando resiliencia del modo ferroviario mientras el autotransporte e
+
+4. 🇺🇸 China controla 60 empresas de autopartes en EEUU y participa en 10.000 más
+   China mantiene propiedad directa sobre 60 empresas de componentes automotrices en territorio estadounidense y participación accionaria en otras 10.000 compañías del sector. Este nivel de control sobre la cadena de suministro de autopartes genera preocupación sobre dependencia estratégica y vulnerabilidad de la industri
+
+5. 🇪🇸 Mutua Madrileña adquiere 100% de distribuidora de recambios Reynasa
+   Mutua Madrileña completó la adquisición del 100% de Reynasa, consolidando su estrategia de integración vertical en el sector de recambios y talleres. La aseguradora española refuerza así su control sobre la cadena de valor del mantenimiento vehicular, siguiendo la tendencia de grandes grupos aseguradores que buscan cap
+
+6. 🇲🇽 Corredor Cali-Baja enfrenta nuevas regulaciones y competencia intensificada
+   El corredor logístico California-Baja California, uno de los más dinámicos de Norteamérica, opera bajo presión creciente por nuevas regulaciones que impactan el transporte transfronterizo. La integración productiva y comercial binacional genera esquemas cada vez más especializados, mientras transportistas enfrentan com
+
+7. 🇲🇽 Logtech Day marca urgencia de transformación digital en logística mexicana
+   KLog realizó por primera vez en México el Logtech Day, reuniendo a especialistas, clientes, startups y líderes de cadena de suministro para abordar la aplicación de tecnología e inteligencia artificial en logística. El evento marcó un punto de inflexión donde la transformación digital pasó de ser conversación futurista
+
+8. 🇲🇽 Puerto de Manzanillo refuerza protocolos para materiales peligrosos
+   La Administración del Sistema Portuario Nacional (Asipona) Manzanillo realizó práctica especializada de identificación y contención de materiales peligrosos, reforzando la preparación ante contingencias en uno de los nodos logísticos más relevantes del sistema portuario mexicano. El ejercicio responde a la necesidad de
+
+9. 🇪🇸 Volkswagen lanza ID. Polo GTI eléctrico con 226CV y 424km de autonomía
+   Volkswagen presentó el ID. Polo GTI, versión eléctrica deportiva con 226 caballos de potencia y 424 kilómetros de autonomía. El modelo marca la entrada de VW al segmento de compactos eléctricos deportivos, combinando la herencia GTI con propulsión cero emisiones y apuntando a flotas que buscan electrificar sin sacrific
+
+10. 🌐 Bolt y Dongfeng despliegan flota eléctrica compartida en Sudáfrica
+   Bolt se alió con el fabricante chino Dongfeng para desplegar una flota de vehículos eléctricos en Sudáfrica, marcando una expansión significativa de movilidad eléctrica compartida en el continente africano. La alianza combina la plataforma tecnológica de Bolt con vehículos eléctricos de Dongfeng, apuntando a reducir em
+
+════════════════════════════════════════════════════════════════
+
+ETIQUETAS POR HISTORIA
+──────────────────────
+1. topic:gestion-flotas, market:mexico, fleet-type:transporte-carga, player:keeper-cargo-insurance, seguro:carga, riesgo:operativo, violencia:carreteras
+2. topic:gestion-flotas, market:mexico, fleet-type:transporte-carga, violencia:operadores, seguridad:edomex, riesgo:mortal
+3. topic:gestion-flotas, market:usa, fleet-type:ferrocarril, player:aar, ferrocarril:crecimiento, intermodal:oportunidad, volumen:12millones
+4. topic:mantenimiento, market:usa, fleet-type:vehiculos-comerciales, china:componentes, cadena:suministro, riesgo:geopolitico
+5. topic:mantenimiento, market:espana, fleet-type:vehiculos-comerciales, player:mutua-madrilena, player:reynasa, m&a:recambios, integracion:vertical, distribucion:consolidacion
+6. topic:regulacion, market:mexico, fleet-type:transporte-carga, corredor:calibaja, regulacion:transfronteriza, competencia:binacional
+7. topic:ia-automatizacion, market:mexico, fleet-type:transporte-carga, player:klog, evento:logtech, ia:logistica, transformacion:digital
+8. topic:gestion-flotas, market:mexico, fleet-type:transporte-carga, player:asipona, puerto:manzanillo, materiales:peligrosos, protocolo:emergencias
+9. topic:electrificacion, market:espana, fleet-type:vehiculos-comerciales-ligeros, player:volkswagen, ev:deportivo, autonomia:424km, potencia:226cv
+10. topic:electrificacion, market:global, fleet-type:ride-hailing, player:bolt, player:dongfeng, alianza:ev, movilidad:compartida, mercado:sudafrica
+
+════════════════════════════════════════════════════════════════
+The Fleet Radar · by Pulpo · Nº 8 · 18 de mayo de 2026
+Próxima edición: 25 de mayo de 2026 (lunes) — cadencia semanal
+════════════════════════════════════════════════════════════════
