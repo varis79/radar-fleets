@@ -100,23 +100,53 @@ def select(today: dt.date | None = None) -> dict:
         else:
             kept.append(it)
 
-    # Scoring simple por editorial signal (recency + topic present + geo primary + players)
+    # Scoring por editorial signal. Pesos en config para poder afinar sin tocar código.
+    # Histórico:
+    #   2026-05-21 — pesos por mercado introducidos (USA/Europa antes valían 0;
+    #   ahora USA = market_secondary, Europa = market_tertiary). Mantenemos MX/ES
+    #   como primarios pero el gap es menor para que USA pueda competir cuando
+    #   tiene topic + recency frescos. Y `source_topic_hint_fallback` da puntos
+    #   a items de fuentes con hint cuando el classifier no encontró keyword.
     primary_markets = {"mexico", "espana"}
+    scoring = sel_cfg.get("scoring", {})
+    w_topic = float(scoring.get("topic_match", 1.0))
+    w_mkt_primary = float(scoring.get("market_primary", 0.7))
+    w_mkt_secondary = float(scoring.get("market_secondary", 0.45))
+    w_mkt_tertiary = float(scoring.get("market_tertiary", 0.3))
+    w_mkt_other = float(scoring.get("market_other", 0.15))
+    w_player_base = float(scoring.get("player_base", 0.5))
+    w_player_each = float(scoring.get("player_extra_each", 0.1))
+    w_fleet = float(scoring.get("fleet_type", 0.3))
+    w_recency_max = float(scoring.get("recency_max", 2.0))
+    w_recency_decay = float(scoring.get("recency_decay_per_day", 0.2))
+    w_hint_fallback = float(scoring.get("source_topic_hint_fallback", 0.5))
+
+    secondary_markets = set(sel_cfg.get("geo_secondary_markets", ["usa"]))
+    tertiary_markets = {"europa", "canada"}
+
     def score(it: dict) -> float:
         s = 0.0
         if it.get("topic"):
-            s += 1.0
-        if it.get("market") in primary_markets:
-            s += 1.0
+            s += w_topic
+        elif it.get("source_topic_hint"):
+            s += w_hint_fallback
+        m = it.get("market")
+        if m in primary_markets:
+            s += w_mkt_primary
+        elif m in secondary_markets:
+            s += w_mkt_secondary
+        elif m in tertiary_markets:
+            s += w_mkt_tertiary
+        else:
+            s += w_mkt_other
         if it.get("players"):
-            s += 0.5 + 0.1 * min(len(it["players"]), 3)
+            s += w_player_base + w_player_each * min(len(it["players"]), 3)
         if it.get("fleet_type"):
-            s += 0.3
-        # recency: items más nuevos priorizados
+            s += w_fleet
         if it.get("published_iso"):
             try:
                 age_days = (dt.datetime.now(dt.timezone.utc) - dt.datetime.fromisoformat(it["published_iso"])).total_seconds() / 86400
-                s += max(0.0, 2.0 - age_days * 0.2)  # bonus decrece en ~10 días
+                s += max(0.0, w_recency_max - age_days * w_recency_decay)
             except Exception:
                 pass
         return s
@@ -128,18 +158,49 @@ def select(today: dt.date | None = None) -> dict:
     min_pause = int(sel_cfg.get("min_stories_pause", 4))
     topic_min = int(sel_cfg.get("topic_min_diversity", 3))
     geo_min_ratio = float(sel_cfg.get("geo_min_primary_ratio", 0.30))
+    geo_secondary_quota = int(sel_cfg.get("geo_secondary_quota", 0))
 
-    # Selección greedy con balance
+    # Selección greedy con cuota de mercados secundarios (USA).
+    # Primera pasada: coge top-N por score. Segunda pasada: si tras eso quedan
+    # menos de `geo_secondary_quota` items de mercados secundarios, sustituye
+    # los últimos items no-secundarios por los mejores secundarios descartados.
     def select_with_balance(target: int) -> list[dict]:
-        chosen: list[dict] = []
-        topics_used: set[str] = set()
-        for it in kept_sorted:
-            if len(chosen) >= target:
+        chosen = kept_sorted[:target]
+        if not geo_secondary_quota or not secondary_markets:
+            return chosen
+        present = sum(1 for c in chosen if c.get("market") in secondary_markets)
+        if present >= geo_secondary_quota:
+            return chosen
+        # Cuántos faltan + candidatos secundarios fuera de la lista
+        need = geo_secondary_quota - present
+        outside_secondary = [
+            it for it in kept_sorted[target:]
+            if it.get("market") in secondary_markets
+        ][:need]
+        if not outside_secondary:
+            return chosen
+        # Sustituir los items no-secundarios de menor score por los secundarios faltantes.
+        # Conservamos primarios siempre: solo quitamos otros (tertiary/other/europa).
+        protected = primary_markets | secondary_markets
+        chosen_sorted = sorted(
+            enumerate(chosen),
+            key=lambda iv: (iv[1].get("market") in protected, score(iv[1]))
+        )
+        # Los primeros en `chosen_sorted` son los que SÍ podemos quitar (no protected, low score).
+        to_remove_idx = []
+        for idx, it in chosen_sorted:
+            if it.get("market") in protected:
                 break
-            chosen.append(it)
-            if it.get("topic"):
-                topics_used.add(it["topic"])
-        return chosen
+            to_remove_idx.append(idx)
+            if len(to_remove_idx) >= len(outside_secondary):
+                break
+        if not to_remove_idx:
+            return chosen  # no había nada que quitar sin tocar primarios; respetamos jerarquía
+        new_chosen = [c for i, c in enumerate(chosen) if i not in set(to_remove_idx)]
+        new_chosen.extend(outside_secondary[:len(to_remove_idx)])
+        # Reordenar por score para mantener orden lógico
+        new_chosen.sort(key=lambda it: -score(it))
+        return new_chosen
 
     chosen_normal = select_with_balance(target_normal)
     chosen_short = select_with_balance(target_short)

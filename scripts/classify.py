@@ -57,6 +57,25 @@ def load_players(players_md: Path) -> list[tuple[str, str, re.Pattern]]:
     return out
 
 
+_KW_REGEX_CACHE: dict[str, re.Pattern] = {}
+
+
+def _kw_match(kw: str, hay: str) -> bool:
+    """Match con word boundary para evitar falsos positivos (e.g. 'epa' en
+    'preparación', 'wage' en 'volkswagen', 'adas' en 'vinculadas'). Acepta
+    keywords con espacios o puntuación; las trata como una unidad."""
+    pat = _KW_REGEX_CACHE.get(kw)
+    if pat is None:
+        # \b funciona bien con caracteres ASCII alfanuméricos. Para keywords con
+        # tildes (ej. 'méxico') usamos lookarounds que excluyen caracteres de
+        # palabra incluyendo letras Unicode comunes.
+        escaped = re.escape(kw.lower())
+        # Lookarounds que aceptan límites: principio/final de cadena o no-letra
+        pat = re.compile(rf"(?<![A-Za-zÁÉÍÓÚáéíóúÑñÜü0-9]){escaped}(?![A-Za-zÁÉÍÓÚáéíóúÑñÜü0-9])")
+        _KW_REGEX_CACHE[kw] = pat
+    return pat.search(hay) is not None
+
+
 def classify_one(item: dict, cfg: dict, players_db) -> dict:
     hay = f"{item.get('title', '')} {item.get('summary', '')}".lower()
 
@@ -65,7 +84,7 @@ def classify_one(item: dict, cfg: dict, players_db) -> dict:
     topic_alt: list[str] = []
     for topic_slug, keywords in cfg["classification"]["topics"].items():
         for kw in keywords:
-            if kw.lower() in hay:
+            if _kw_match(kw, hay):
                 if topic_match is None:
                     topic_match = topic_slug
                 elif topic_slug != topic_match and topic_slug not in topic_alt:
@@ -79,7 +98,7 @@ def classify_one(item: dict, cfg: dict, players_db) -> dict:
     market_match: str = item.get("source_geo", "global")
     for market_slug, keywords in cfg["classification"]["markets"].items():
         for kw in keywords:
-            if kw.lower() in hay:
+            if _kw_match(kw, hay):
                 market_match = market_slug
                 break
 
@@ -87,7 +106,7 @@ def classify_one(item: dict, cfg: dict, players_db) -> dict:
     fleet_type_match: str | None = None
     for ft_slug, keywords in cfg["classification"]["fleet_types"].items():
         for kw in keywords:
-            if kw.lower() in hay:
+            if _kw_match(kw, hay):
                 fleet_type_match = ft_slug
                 break
         if fleet_type_match:
