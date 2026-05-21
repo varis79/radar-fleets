@@ -57,8 +57,10 @@ como `[done]` con el commit/PR de aterrizaje.
   - "Páginas relacionadas" hacia otros hubs cercanos.
 - Coste extra LLM: ~$0.10/semana.
 
-#### PR-SEO-3 · Saturación de páginas pilar con noindex + sistema de liberación gradual (sesión 3+, varios sprints)
-**Estrategia confirmada:** crear ~80-100 páginas iniciales, todas con `noindex, follow` por defecto, y liberar a `index` automáticamente cuando cumplen threshold de calidad.
+#### PR-SEO-3 · Sistema vivo de páginas pilar (sesión 3+, varios sprints)
+
+**Filosofía:** trabajo manual cero por defecto. LLM hace todo el ciclo de vida.
+Intervención humana solo como vía de override via GitHub Web.
 
 **Templates de páginas a generar** (cluster de keywords MX/ES):
 - Geo+Topic: "Telemática para flotas en México 2026", "Tarjetas de combustible España 2026", "Electrificación flotas en CDMX", "Última milla España", "ITV camiones 2026".
@@ -68,13 +70,116 @@ como `[done]` con el commit/PR de aterrizaje.
 - Sectores verticales: "Flotas cementeras México", "Flotas mineras LatAm", "Flotas telco España", "Flotas utilities ibericas", "Flotas alimentación última milla".
 - Evergreen guías: "Cómo evaluar telemática 2026", "Peajes Europa 2026", "Renting vs leasing flota empresa".
 
-**Threshold de liberación (noindex → index, automático):**
-Una página se libera cuando cumple ≥1 de:
-- 3+ historias relacionadas en `editorial-memory.md` (acumulación natural con el tiempo).
-- Contenido propio editado manualmente >500 palabras.
-- Score mínimo de calidad evaluado por LLM (revisión trimestral).
+---
 
-Páginas no liberadas no entran al sitemap. Las que ya están en sitemap se quedan; las nuevas se añaden a medida que se liberan.
+**Subsistema 1 · Generación inicial (one-shot al lanzar)**
+Cada página pilar nace de un `.md` en `content/pillar-pages/<slug>.md` con metadata:
+```yaml
+slug: telematica-flotas-mexico-2026
+title_es: "Telemática para flotas en México 2026"
+keyword_principal: "telemática flotas méxico"
+intent: informational
+sub_topics: [definicion, regulacion-cne, mercado-mx, casos-uso, comparativa]
+data_overrides: {}    # campos para forzar datos propios cuando quieras
+paused: false         # true = no regenerar automáticamente
+forced_index: false   # true = saltarse threshold y publicar ya
+```
+Claude Opus genera HTML completo (~800-1500 palabras) basado en:
+- Historias relacionadas existentes en `editorial-memory.md`.
+- Conocimiento general del LLM sobre el tema.
+- Estructura definida (intro, sub-secciones, FAQ, data box, schema.org Article).
+
+Coste: ~$3-5 una sola vez para las 80-100 páginas iniciales.
+
+---
+
+**Subsistema 2 · Updates automáticos en cada publish semanal**
+En cada `publish.py`:
+1. Para cada historia de la edición, identificar páginas pilar relacionadas vía mapping topic/market/player.
+2. Para cada página pilar afectada (no paused):
+   - LLM evalúa si la nueva historia cambia el análisis principal.
+   - Si sí, regenera sólo las 1-2 secciones afectadas (eficiente).
+   - Si no, sólo añade snippet en sección "Últimas relacionadas".
+
+Coste: ~$0.20-0.50/semana.
+
+---
+
+**Subsistema 3 · Liberación automática noindex → index**
+Job semanal (junto al pipeline o canary martes):
+- Evalúa cada página en noindex.
+- Criterios de liberación (≥1 cumplido):
+  - **3+ historias** relacionadas en `editorial-memory.md`.
+  - **Score LLM publicable**: verificador LLM puntúa la página ≥7/10 en {longitud, estructura, factualidad, valor lector, unicidad vs otras páginas}.
+  - **`forced_index: true`** en el `.md` (override manual).
+- Si cumple, cambio automático a `index, follow` + add al sitemap + commit dispatch + Vercel deploy.
+
+Coste: ~$0.10/semana.
+
+---
+
+**Subsistema 4 · Detección automática de huecos**
+Job semanal: analiza historias publicadas sin página pilar asociada.
+Si encuentra clusters (3+ historias sobre el mismo tema sin página existente), abre un **GitHub Issue** con label `pillar-page-suggested`:
+
+> Detectados 4 historias sobre ZBE Sevilla en últimas 6 ediciones. Propuesta de nueva página pilar:
+> - slug: `zbe-sevilla-flotas-comerciales`
+> - keyword: "ZBE Sevilla flotas"
+> - sub-topics propuestos: [...]
+>
+> Responde con `/approve` para generar, `/reject` para descartar.
+
+Usuario comenta `/approve` → workflow lee el comentario, crea el `.md`, dispara la generación inicial vía subsistema 1.
+
+Coste: ~$0.05/semana.
+
+---
+
+**Subsistema 5 · Verificador LLM interno (paz mental)**
+Antes de cualquier publicación o liberación, LLM separado revisa el contenido:
+- Detecta claims sospechosos sin fuente.
+- Detecta estadísticas exactas no respaldadas.
+- Detecta posibles errores factuales conocidos.
+
+Si detecta problemas, marca la página con label `needs-review` y NO se libera. Issue creado para revisión humana.
+
+Coste: ~$0.20/sem (incluido en otros costes).
+
+---
+
+**Subsistema 6 · Disclaimer transparente**
+Footer discreto en páginas autogeneradas:
+
+> Esta página recopila y sintetiza información pública sobre [tema] usando las ediciones semanales de The Fleet Radar y fuentes citadas. ¿Detectas un dato incorrecto? [Repórtalo en GitHub](link).
+
+Aporta transparencia, permite feedback de lectores. No afecta SEO.
+
+---
+
+**Panel admin = GitHub Web**
+- Cada página pilar es un `.md` editable en `content/pillar-pages/<slug>.md`.
+- Editar en github.dev (web) o github.com directamente.
+- Campos del `.md`:
+  - `paused: true` → pausa regeneración automática.
+  - `forced_index: true` → fuerza liberación inmediata.
+  - `data_overrides: {key: value}` → datos propios que el LLM debe usar (estadísticas Pulpo, fuentes confidenciales, etc.).
+  - `manual_intro: |` → texto introductorio escrito por humano (sobrescribe el del LLM).
+- Sin auth nueva, sin infra nueva.
+
+---
+
+**Trabajo manual REAL en este modelo**
+
+| Tarea | Frecuencia |
+|---|---|
+| Comentar `/approve` en issues de nuevas páginas sugeridas | 1-2/semana al principio, menos después |
+| Revisar issues con label `needs-review` (verificador detectó algo) | Cuando ocurra |
+| Editar `.md` para forzar liberación o añadir dato propio | Opcional |
+| **Todo lo demás** | **Automático** |
+
+**Coste total mensual estimado:** ~$3-5/mes recurrente + $3-5 one-shot al lanzar.
+
+---
 
 **Decisión multi-idioma confirmada:**
 - ES primero (todo el plan).
