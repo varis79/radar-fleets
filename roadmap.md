@@ -13,7 +13,7 @@ como `[done]` con el commit/PR de aterrizaje.
 | ID | Idea | Estado | Notas |
 |---|---|---|---|
 | C-4 | PR-SEO-1 · Fundamentos técnicos | PR `claude/seo-1-foundations` | Schema.org, robots LLM bots, internal linking. |
-| C-5 | PR-SEO-3.1 · Matriz long-tail (estructura) | PR `claude/seo-3-1-matrix` | 300 páginas planeadas: 49 T1 + 96 T2 + 155 T3. 10 mercados hispanos. 28 topics. 4 intents. CSV en `content/pillar-matrix/matrix.csv` para revisión. Sin contenido aún. |
+| C-5 | PR-SEO-3.1 · Matriz long-tail (estructura) | PR `claude/seo-3-1-matrix` | **~900 páginas planeadas** en 4 dimensiones: 300 topic + 280 use-case + 184 subgeo + 140 vertical. 14 casos de uso Pulpo con clientes reales (Banorte, DHL, Iberdrola, Bofrost...). 14 sectores. Ciudades MX/ES/AR/CO/CL/PE. Todo arranca en noindex; liberación gradual con threshold. CSV en `content/pillar-matrix/matrix.csv`. |
 
 ## Backlog ordenado (alta prioridad → baja)
 

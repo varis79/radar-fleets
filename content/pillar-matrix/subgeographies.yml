@@ -1,0 +1,97 @@
+# Subgeografías (ciudades grandes) por mercado.
+#
+# Para mercados grandes, generamos páginas tipo "telemática flotas Madrid",
+# "última milla CDMX" cruzando ciudad × topic core. Esto multiplica el
+# long-tail SEO en queries muy específicas con intención local.
+#
+# Solo aplica a un subset reducido de topics core (los que tienen volumen
+# de búsqueda local relevante).
+#
+# Estructura: por mercado, lista de ciudades con metadata.
+
+subgeographies:
+  espana:
+    topics_applicable:
+      - telematica
+      - fuel-cards
+      - electrificacion-flotas
+      - mantenimiento
+      - zbe              # ZBE es ciudad-específica
+      - logistica-distribucion
+      - renting-leasing
+    cities:
+      - {slug: madrid,        label: "Madrid",        relevance: high}
+      - {slug: barcelona,     label: "Barcelona",     relevance: high}
+      - {slug: valencia,      label: "Valencia",      relevance: medium}
+      - {slug: sevilla,       label: "Sevilla",       relevance: medium}
+      - {slug: bilbao,        label: "Bilbao",        relevance: medium}
+      - {slug: zaragoza,      label: "Zaragoza",      relevance: medium}
+      - {slug: malaga,        label: "Málaga",        relevance: medium}
+      - {slug: murcia,        label: "Murcia",        relevance: low}
+      - {slug: palma,         label: "Palma de Mallorca", relevance: low}
+      - {slug: las-palmas,    label: "Las Palmas",    relevance: low}
+
+  mexico:
+    topics_applicable:
+      - telematica
+      - fuel-cards
+      - electrificacion-flotas
+      - mantenimiento
+      - logistica-distribucion
+      - cargo-theft       # robo de carga es muy local en MX
+    cities:
+      - {slug: cdmx,          label: "Ciudad de México",       relevance: high}
+      - {slug: guadalajara,   label: "Guadalajara",            relevance: high}
+      - {slug: monterrey,     label: "Monterrey",              relevance: high}
+      - {slug: queretaro,     label: "Querétaro",              relevance: medium}
+      - {slug: puebla,        label: "Puebla",                 relevance: medium}
+      - {slug: leon,          label: "León",                   relevance: medium}
+      - {slug: tijuana,       label: "Tijuana",                relevance: medium}
+      - {slug: ciudad-juarez, label: "Ciudad Juárez",          relevance: medium}
+      - {slug: merida,        label: "Mérida",                 relevance: low}
+      - {slug: san-luis-potosi, label: "San Luis Potosí",      relevance: low}
+
+  argentina:
+    topics_applicable:
+      - telematica
+      - fuel-cards
+      - electrificacion-flotas
+      - logistica-distribucion
+    cities:
+      - {slug: buenos-aires,  label: "Buenos Aires",  relevance: high}
+      - {slug: cordoba,       label: "Córdoba",       relevance: medium}
+      - {slug: rosario,       label: "Rosario",       relevance: medium}
+      - {slug: mendoza,       label: "Mendoza",       relevance: low}
+
+  colombia:
+    topics_applicable:
+      - telematica
+      - fuel-cards
+      - electrificacion-flotas
+      - logistica-distribucion
+      - cargo-theft
+    cities:
+      - {slug: bogota,        label: "Bogotá",        relevance: high}
+      - {slug: medellin,      label: "Medellín",      relevance: high}
+      - {slug: cali,          label: "Cali",          relevance: medium}
+      - {slug: barranquilla,  label: "Barranquilla",  relevance: medium}
+
+  chile:
+    topics_applicable:
+      - telematica
+      - fuel-cards
+      - electrificacion-flotas
+      - logistica-distribucion
+    cities:
+      - {slug: santiago,      label: "Santiago",      relevance: high}
+      - {slug: valparaiso,    label: "Valparaíso",    relevance: low}
+      - {slug: concepcion,    label: "Concepción",    relevance: low}
+
+  peru:
+    topics_applicable:
+      - telematica
+      - fuel-cards
+      - electrificacion-flotas
+    cities:
+      - {slug: lima,          label: "Lima",          relevance: high}
+      - {slug: arequipa,      label: "Arequipa",      relevance: low}

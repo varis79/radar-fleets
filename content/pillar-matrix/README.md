@@ -15,14 +15,33 @@ content/pillar-matrix/
 ├── README.md              ← este archivo
 ├── markets.yml            ← 13 mercados con tier_default + active flag
 ├── topics.yml             ← 28 topics con slug_template + intents + tier_modifier
+├── use-cases.yml          ← 14 casos de uso Pulpo con referencias de clientes
+│                            reales por mercado (MX/ES)
+├── verticals.yml          ← 14 sectores verticales con use cases típicos
+├── subgeographies.yml     ← ciudades grandes por mercado para topics core
 ├── intents.yml            ← 4 intents con schema_type + section_template
 ├── data-overrides/
 │   ├── _template.yml      ← plantilla para cada mercado
 │   ├── mexico.yml
 │   ├── espana.yml
 │   └── ... (uno por mercado activo)
+├── matrix.csv             ← export del estado actual
 └── pages/                 ← .md por página, generados en SEO-3.2
 ```
+
+## 4 dimensiones de páginas
+
+El sistema genera páginas cruzando estas dimensiones. Cada combinación
+válida produce una URL única en un directorio diferente:
+
+| Dimensión | URL pattern | Lo que es |
+|---|---|---|
+| `topic` | `/temas/<slug>/` | market × topic × intent. Páginas temáticas. |
+| `use-case` | `/casos-uso/<slug>/` | caso de uso Pulpo × market × intent. Páginas operativas con referencias de clientes Pulpo reales. |
+| `vertical` | `/sectores/<slug>/` | vertical (industria del cliente final) × market. |
+| `subgeo` | `/ciudades/<slug>/` | ciudad grande × topic core. Long-tail local. |
+
+Volumen actual: ~900 páginas planeadas.
 
 ## Cómo se calcula cada página
 

@@ -57,15 +57,31 @@ def load_intents() -> dict[str, dict]:
         return yaml.safe_load(f)["intents"]
 
 
+def load_use_cases() -> list[dict]:
+    with open(PILLAR_DIR / "use-cases.yml", encoding="utf-8") as f:
+        return yaml.safe_load(f)["use_cases"]
+
+
+def load_verticals() -> list[dict]:
+    with open(PILLAR_DIR / "verticals.yml", encoding="utf-8") as f:
+        return yaml.safe_load(f)["verticals"]
+
+
+def load_subgeographies() -> dict[str, dict]:
+    with open(PILLAR_DIR / "subgeographies.yml", encoding="utf-8") as f:
+        return yaml.safe_load(f)["subgeographies"]
+
+
 # ─────────── Lógica de matriz ───────────
 
 @dataclass
 class PillarPage:
-    """Una página pilar concreta (combinación market × topic × intent)."""
+    """Una página pilar concreta (combinación de dimensiones)."""
+    dimension: str                   # "topic" | "use-case" | "vertical" | "subgeo"
     market_code: str
     market_label: str
     market_slug: str
-    topic_code: str
+    topic_code: str                  # topic, use_case_code, vertical_code o subgeo
     intent_code: str
     slug: str                        # final URL slug
     label: str                       # título humano
@@ -74,10 +90,19 @@ class PillarPage:
     review_days: int                 # cada cuánto revisar
     pulpopay_relevant: bool
     section_template: list[str] = field(default_factory=list)
+    # Refs útiles para SEO-3.2 (sin uso aún en 3.1)
+    metadata: dict = field(default_factory=dict)
 
     def url_path(self) -> str:
-        """Devuelve el path relativo de la página en el sitio."""
-        return f"/temas/{self.slug}/"
+        """Devuelve el path relativo de la página en el sitio.
+        Cada dimensión vive en su propio directorio para SEO y arquitectura clara."""
+        prefix = {
+            "topic":     "/temas/",
+            "use-case":  "/casos-uso/",
+            "vertical":  "/sectores/",
+            "subgeo":    "/ciudades/",
+        }.get(self.dimension, "/temas/")
+        return f"{prefix}{self.slug}/"
 
     def file_path(self) -> Path:
         """Devuelve la ruta del .md que la representa en el repo."""
@@ -155,54 +180,162 @@ def intent_key_of(intent: dict) -> str:
     return intent.get("_key", "")
 
 
-def enumerate_pages(only_active_markets: bool = True) -> list[PillarPage]:
-    """Genera todas las páginas pilar válidas según las reglas de la matriz."""
-    markets = load_markets()
-    topics = load_topics()
-    intents = load_intents()
+def _market_active(market: dict, only_active: bool) -> bool:
+    return market.get("active", True) or not only_active
 
-    # Marcar cada intent dict con su key (utilidad)
-    for k, v in intents.items():
-        v["_key"] = k
 
-    pages: list[PillarPage] = []
-
+def enumerate_topic_pages(markets, topics, intents) -> list[PillarPage]:
+    """Dimensión 1: market × topic × intent (la matriz original)."""
+    pages = []
     for market in markets:
-        if only_active_markets and not market.get("active", True):
-            continue
-
         for topic in topics:
             if not applies_to_market(topic, market["code"]):
                 continue
-
             for intent_code in topic.get("intents", ["informational"]):
                 intent = intents.get(intent_code)
                 if not intent:
                     continue
-
                 tier = tier_for_page(market, topic, intent_code)
                 slug = build_slug(topic, market, intent)
                 label = build_label(topic, market, intent)
-
-                review_days = intent.get("review_days")
-                if review_days is None:
-                    review_days = REVIEW_DAYS_BY_TIER[tier]
-
+                review_days = intent.get("review_days") or REVIEW_DAYS_BY_TIER[tier]
                 pages.append(PillarPage(
-                    market_code=market["code"],
-                    market_label=market["label"],
-                    market_slug=market["slug"],
-                    topic_code=topic["code"],
-                    intent_code=intent_code,
-                    slug=slug,
-                    label=label,
-                    tier=tier,
-                    schema_type=intent["schema_type"],
-                    review_days=int(review_days),
+                    dimension="topic",
+                    market_code=market["code"], market_label=market["label"], market_slug=market["slug"],
+                    topic_code=topic["code"], intent_code=intent_code,
+                    slug=slug, label=label, tier=tier,
+                    schema_type=intent["schema_type"], review_days=int(review_days),
                     pulpopay_relevant=bool(topic.get("pulpopay_relevant", False)),
                     section_template=intent.get("section_template", []),
                 ))
+    return pages
 
+
+def enumerate_use_case_pages(markets, use_cases, intents) -> list[PillarPage]:
+    """Dimensión 2: use_case × market × intent (informational + guía).
+    Cada use case se aplica a TODOS los mercados activos (con tier modulado
+    por mercado). PulpoPay relevance derivado de product_priority."""
+    pages = []
+    intents_for_use_case = ["informational", "guia-practica"]
+    for uc in use_cases:
+        pp_relevant = uc.get("product_priority") in ("pulpopay", "both")
+        for market in markets:
+            for intent_code in intents_for_use_case:
+                intent = intents.get(intent_code)
+                if not intent:
+                    continue
+                # Tier: base del mercado + tier_modifier del use case
+                tier = max(1, min(3, int(market.get("tier_default", 3)) + int(uc.get("tier_modifier", 0))))
+                base = f"flota-{uc['code']}-{market['slug']}-{CURRENT_YEAR}"
+                suffix = intent.get("slug_suffix", "")
+                if suffix:
+                    base = base.replace(f"-{CURRENT_YEAR}", f"{suffix}-{CURRENT_YEAR}")
+                label = f"{uc['label']} en {market['label']} {CURRENT_YEAR}"
+                if intent_code == "guia-practica":
+                    label += " · guía"
+                review_days = intent.get("review_days") or REVIEW_DAYS_BY_TIER[tier]
+                pages.append(PillarPage(
+                    dimension="use-case",
+                    market_code=market["code"], market_label=market["label"], market_slug=market["slug"],
+                    topic_code=uc["code"], intent_code=intent_code,
+                    slug=base, label=label, tier=tier,
+                    schema_type=intent["schema_type"], review_days=int(review_days),
+                    pulpopay_relevant=pp_relevant,
+                    section_template=intent.get("section_template", []),
+                    metadata={"product_priority": uc.get("product_priority", "")},
+                ))
+    return pages
+
+
+def enumerate_vertical_pages(markets, verticals, intents) -> list[PillarPage]:
+    """Dimensión 3: vertical × market (informational solo).
+    Sectores de industria que cubre Pulpo."""
+    pages = []
+    intent_code = "informational"
+    intent = intents.get(intent_code, {})
+    for v in verticals:
+        for market in markets:
+            tier = max(1, min(3, int(market.get("tier_default", 3)) + int(v.get("tier_modifier", 0))))
+            slug = f"flotas-{v['code']}-{market['slug']}-{CURRENT_YEAR}"
+            label = f"Flotas en {v['label']} en {market['label']} {CURRENT_YEAR}"
+            review_days = REVIEW_DAYS_BY_TIER[tier]
+            pages.append(PillarPage(
+                dimension="vertical",
+                market_code=market["code"], market_label=market["label"], market_slug=market["slug"],
+                topic_code=v["code"], intent_code=intent_code,
+                slug=slug, label=label, tier=tier,
+                schema_type=intent.get("schema_type", "Article"), review_days=int(review_days),
+                pulpopay_relevant=False,
+                section_template=intent.get("section_template", []),
+                metadata={"typical_use_cases": v.get("typical_use_cases", [])},
+            ))
+    return pages
+
+
+def enumerate_subgeo_pages(markets, topics, subgeos, intents) -> list[PillarPage]:
+    """Dimensión 4: ciudad × topic (informational solo, mercado heredado).
+    Solo para mercados grandes con subgeografía definida."""
+    pages = []
+    intent_code = "informational"
+    intent = intents.get(intent_code, {})
+    markets_by_code = {m["code"]: m for m in markets}
+    topics_by_code = {t["code"]: t for t in topics}
+
+    for market_code, sg_data in subgeos.items():
+        market = markets_by_code.get(market_code)
+        if not market:
+            continue
+        applicable_topics = sg_data.get("topics_applicable", [])
+        for city in sg_data.get("cities", []):
+            for topic_code in applicable_topics:
+                topic = topics_by_code.get(topic_code)
+                if not topic:
+                    continue
+                # Tier para ciudad: base + 1 (porque es más nicho) + relevance modifier
+                rel_modifier = {"high": 0, "medium": 1, "low": 2}.get(city.get("relevance", "medium"), 1)
+                tier = max(1, min(3, int(market.get("tier_default", 3)) + rel_modifier))
+                # Evitamos duplicar "flotas-flotas" si el topic_code ya termina así.
+                base = topic_code if topic_code.endswith("-flotas") else f"{topic_code}-flotas"
+                slug = f"{base}-{city['slug']}-{CURRENT_YEAR}"
+                label = f"{topic['label_template'].split(' en ')[0].split('para flotas')[0].strip()} para flotas en {city['label']} ({market['label']}) {CURRENT_YEAR}"
+                review_days = REVIEW_DAYS_BY_TIER[tier]
+                pages.append(PillarPage(
+                    dimension="subgeo",
+                    market_code=market["code"], market_label=market["label"], market_slug=market["slug"],
+                    topic_code=topic_code, intent_code=intent_code,
+                    slug=slug, label=label, tier=tier,
+                    schema_type="Article", review_days=int(review_days),
+                    pulpopay_relevant=bool(topic.get("pulpopay_relevant", False)),
+                    section_template=intent.get("section_template", []),
+                    metadata={"city_slug": city["slug"], "city_label": city["label"]},
+                ))
+    return pages
+
+
+def enumerate_pages(only_active_markets: bool = True) -> list[PillarPage]:
+    """Genera todas las páginas pilar válidas cruzando 4 dimensiones:
+    - topic × market × intent (la matriz original)
+    - use_case × market × intent
+    - vertical × market
+    - subgeography × topic
+    """
+    markets_all = load_markets()
+    markets = [m for m in markets_all if _market_active(m, only_active_markets)]
+    topics = load_topics()
+    intents = load_intents()
+    use_cases = load_use_cases()
+    verticals = load_verticals()
+    subgeos = load_subgeographies()
+
+    # Marcar cada intent con su key
+    for k, v in intents.items():
+        v["_key"] = k
+
+    pages: list[PillarPage] = []
+    pages.extend(enumerate_topic_pages(markets, topics, intents))
+    pages.extend(enumerate_use_case_pages(markets, use_cases, intents))
+    pages.extend(enumerate_vertical_pages(markets, verticals, intents))
+    pages.extend(enumerate_subgeo_pages(markets, topics, subgeos, intents))
     return pages
 
 
@@ -214,6 +347,7 @@ def summarize(pages: list[PillarPage]) -> dict[str, Any]:
     by_market: dict[str, int] = {}
     by_topic: dict[str, int] = {}
     by_intent: dict[str, int] = {}
+    by_dimension: dict[str, int] = {}
     pulpopay_count = 0
 
     for p in pages:
@@ -221,11 +355,13 @@ def summarize(pages: list[PillarPage]) -> dict[str, Any]:
         by_market[p.market_label] = by_market.get(p.market_label, 0) + 1
         by_topic[p.topic_code] = by_topic.get(p.topic_code, 0) + 1
         by_intent[p.intent_code] = by_intent.get(p.intent_code, 0) + 1
+        by_dimension[p.dimension] = by_dimension.get(p.dimension, 0) + 1
         if p.pulpopay_relevant:
             pulpopay_count += 1
 
     return {
         "total_pages": len(pages),
+        "by_dimension": by_dimension,
         "by_tier": by_tier,
         "by_market": dict(sorted(by_market.items(), key=lambda kv: -kv[1])),
         "by_topic": dict(sorted(by_topic.items(), key=lambda kv: -kv[1])),

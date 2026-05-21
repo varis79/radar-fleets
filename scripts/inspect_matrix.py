@@ -29,6 +29,11 @@ def print_summary(pages: list[PillarPage]) -> None:
     print(f"  Matriz long-tail · {s['total_pages']} páginas planeadas")
     print("══════════════════════════════════════════════════════════════════════")
     print()
+    print("Por DIMENSIÓN (origen de la página):")
+    for dim, n in sorted(s["by_dimension"].items(), key=lambda kv: -kv[1]):
+        bar = "█" * int(n / max(s["by_dimension"].values()) * 30)
+        print(f"  {dim:20s} {n:>4}  {bar}")
+    print()
     print("Por tier (ciclo de vida):")
     for tier in [1, 2, 3]:
         n = s["by_tier"][tier]
@@ -41,12 +46,12 @@ def print_summary(pages: list[PillarPage]) -> None:
         bar = "█" * int(n / max(s["by_market"].values()) * 30)
         print(f"  {m:25s} {n:>4}  {bar}")
     print()
-    print("Por topic (top 15):")
+    print("Por topic/dimension item (top 15):")
     for i, (t, n) in enumerate(s["by_topic"].items()):
         if i >= 15:
             break
         bar = "█" * int(n / max(s["by_topic"].values()) * 25)
-        print(f"  {t:30s} {n:>4}  {bar}")
+        print(f"  {t:35s} {n:>4}  {bar}")
     print()
     print("Por intent:")
     for it, n in s["by_intent"].items():
@@ -77,10 +82,10 @@ def print_slugs(pages: list[PillarPage]) -> None:
 
 def export_csv(pages: list[PillarPage]) -> None:
     w = csv.writer(sys.stdout)
-    w.writerow(["slug", "label", "market", "topic", "intent", "tier",
+    w.writerow(["dimension", "slug", "label", "market", "topic_code", "intent", "tier",
                 "review_days", "schema_type", "pulpopay", "url_path"])
     for p in pages:
-        w.writerow([p.slug, p.label, p.market_code, p.topic_code,
+        w.writerow([p.dimension, p.slug, p.label, p.market_code, p.topic_code,
                     p.intent_code, p.tier, p.review_days, p.schema_type,
                     p.pulpopay_relevant, p.url_path()])
 
@@ -91,6 +96,7 @@ def main(argv=None):
     p.add_argument("--market")
     p.add_argument("--topic")
     p.add_argument("--intent")
+    p.add_argument("--dimension", choices=["topic", "use-case", "vertical", "subgeo"])
     p.add_argument("--csv", action="store_true")
     p.add_argument("--slugs", action="store_true")
     p.add_argument("--samples", type=int, default=5)
@@ -106,6 +112,8 @@ def main(argv=None):
         pages = [p for p in pages if p.topic_code == args.topic]
     if args.intent:
         pages = [p for p in pages if p.intent_code == args.intent]
+    if args.dimension:
+        pages = [p for p in pages if p.dimension == args.dimension]
 
     if args.csv:
         export_csv(pages)
