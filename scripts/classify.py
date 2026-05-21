@@ -77,7 +77,9 @@ def _kw_match(kw: str, hay: str) -> bool:
 
 
 def classify_one(item: dict, cfg: dict, players_db) -> dict:
-    hay = f"{item.get('title', '')} {item.get('summary', '')}".lower()
+    title_low = (item.get("title") or "").lower()
+    summary_low = (item.get("summary") or "").lower()
+    hay = f"{title_low} {summary_low}"
 
     # topic
     topic_match: str | None = None
@@ -94,13 +96,25 @@ def classify_one(item: dict, cfg: dict, players_db) -> dict:
     if topic_match is None and item.get("source_topic_hint"):
         topic_match = item["source_topic_hint"]
 
-    # market: explícito por keywords, fallback source_geo
-    market_match: str = item.get("source_geo", "global")
+    # market: cuenta matches por mercado, prioriza título (×2) sobre summary (×1).
+    # Esto evita que menciones laterales pisen el market real. Ej: una noticia
+    # "Borderlands Mexico" con mención pasajera a 'chinese manufacturer' en el
+    # summary mantiene market=mexico/usa (lo del título), no china.
+    market_scores: dict[str, int] = {}
     for market_slug, keywords in cfg["classification"]["markets"].items():
+        score = 0
         for kw in keywords:
-            if _kw_match(kw, hay):
-                market_match = market_slug
-                break
+            if _kw_match(kw, title_low):
+                score += 2
+            elif _kw_match(kw, summary_low):
+                score += 1
+        if score > 0:
+            market_scores[market_slug] = score
+    if market_scores:
+        # gana el de mayor score; en empate, orden del config (estable)
+        market_match = max(market_scores, key=lambda m: market_scores[m])
+    else:
+        market_match = item.get("source_geo", "global")
 
     # fleet_type (opcional)
     fleet_type_match: str | None = None

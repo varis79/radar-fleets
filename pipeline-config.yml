@@ -235,11 +235,16 @@ classification:
     argentina: ["argentina", "buenos aires", "rosario"]
     latam: ["latinoamérica", "latinoamerica", "latin america", "latam",
             "central america", "centroamérica"]
-    europa: ["europe", "europa", "european union", "unión europea",
-             "germany", "alemania", "france", "francia", "italy", "italia",
-             "united kingdom", "britain", "netherlands", "países bajos",
-             "poland", "polonia", "portugal", "brussels", "bruselas"]
+    europa: ["europe", "europa", "europea", "europeo", "european union",
+             "unión europea", "germany", "alemania", "france", "francia",
+             "italy", "italia", "united kingdom", "britain", "netherlands",
+             "países bajos", "poland", "polonia", "portugal",
+             "brussels", "bruselas"]
     canada: ["canada", "canadá", "ontario", "quebec", "alberta"]
+    china: ["china", "chinese", "beijing", "shanghai", "shenzhen", "guangzhou",
+            "wuhan", "tianjin", "byd", "geely", "great wall motors", "saic",
+            "dongfeng motors", "faw group", "xpeng", "nio", "li auto",
+            "huawei automotive", "catl"]
     global: ["global market", "worldwide", "international fleet"]
 
   fleet_types:
@@ -280,19 +285,29 @@ dedupe:
 #   USA en la edición (default 2/10).
 # ─────────────────────────────────────────────
 selection:
-  target_stories_normal: 10
-  target_stories_short: 7
+  target_stories_normal: 12
+  target_stories_short: 9
   min_stories_pause: 4        # por debajo de esto, pausa editorial
   min_wm_cards: 6             # "Lo que importó"
   topic_min_diversity: 3      # al menos 3 topics distintos
-  geo_min_primary_ratio: 0.30 # MX+ES >= 30% del total
+  geo_min_primary_ratio: 0.55 # MX+ES >= 55% del total (warning, no bloquea)
   recent_weeks_check: 8       # comparar contra las últimas N ediciones para evitar repetición
   dedup_title_overlap_max: 0.85
   # Pesos del score (ajustables sin tocar select.py)
+  #
+  # Histórico:
+  #   2026-05-21 (v1): pesos por mercado (MX/ES = 0.7, USA = 0.45) para que USA
+  #     no quedase invisible. Resultado en simulación: 5 USA / 10 — demasiado.
+  #   2026-05-21 (v2): subido market_primary a 1.2 y bajado secondary a 0.4
+  #     para reflejar el foco editorial real (Pulpo MX+ES). USA solo entra por
+  #     cuota, no por score. Y añadido topic_priority_boost para empujar temas
+  #     editorialmente interesantes (vehículos, combustible, mantenimiento,
+  #     seguridad, telemática, electrificación, fuel cards, geopolítica).
   scoring:
     topic_match: 1.0
-    market_primary: 0.7       # MX, ES
-    market_secondary: 0.45    # USA
+    market_primary: 1.2       # MX, ES — manda en la curación
+    market_secondary: 0.4     # USA
+    market_china: 0.4         # China
     market_tertiary: 0.3      # Europa, Canada
     market_other: 0.15        # latam, global, etc.
     player_base: 0.5
@@ -301,9 +316,50 @@ selection:
     recency_max: 2.0          # bonus máximo si publicación es hoy
     recency_decay_per_day: 0.2
     source_topic_hint_fallback: 0.5  # si no hay topic pero la fuente tiene hint
-  # Cuota mínima para mercados secundarios (asegura presencia USA)
-  geo_secondary_markets: ["usa"]
-  geo_secondary_quota: 2      # al menos 2 historias USA en edición normal
+    # Boost a topics editorialmente preferidos (vehículos, combustible,
+    # mantenimiento, seguridad, telemática, electrificación, fuel cards,
+    # geopolítica que afecta al sector). Bajamos perfil de freight forwarding
+    # puro USA-céntrico.
+    topic_priority_boost: 0.5
+    topic_priority_list:
+      - "combustible"
+      - "fuel-cards"
+      - "mantenimiento"
+      - "seguridad"
+      - "telematica"
+      - "video-telematica"
+      - "electrificacion-flotas"
+      - "compliance"
+      - "tariffs-trade"
+      - "autonomous-trucking"
+      - "truck-oem"
+      - "cargo-theft"
+      - "control-gasto"
+      - "fraude"
+      - "operacion-flotas"
+
+  # ───── Cuotas por bucket geográfico ─────
+  # El selector tras scoring redistribuye para respetar este reparto.
+  # Cuando hay material suficiente:  8 MX/ES + 2 USA + 1 China + 1 resto = 12.
+  # Cuando hay poco material en algún bucket, no fuerza — completa con el siguiente
+  # mejor disponible respetando los máximos.
+  geo_quotas:
+    primary:                      # MX + ES
+      min: 7
+      max: 10
+      markets: ["mexico", "espana"]
+    secondary:                    # USA
+      min: 1
+      max: 2
+      markets: ["usa"]
+    china:
+      min: 1          # garantiza presencia china si hay material; si no, queda vacío
+      max: 1
+      markets: ["china"]
+    other:                        # Europa + Canada + Global + LatAm
+      min: 0
+      max: 2
+      markets: ["europa", "canada", "global", "latam", "colombia", "brasil", "chile", "peru", "argentina"]
 
 # ─────────────────────────────────────────────
 # Composición
