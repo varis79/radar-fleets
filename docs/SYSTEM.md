@@ -101,6 +101,20 @@ Fuentes actuales (mayo 2026):
 - Actualiza `sitemap.xml` y `rss.xml`.
 - Append en `content/editorial-memory.md` (historias cubiertas).
 
+### SEO técnico (PR-SEO-1, mayo 2026)
+- **Schema.org JSON-LD** en cada página:
+  - Editions (magazines): `NewsArticle` + `Organization` + `WebSite` + `BreadcrumbList`.
+  - Hubs (mercados, temas, players, evergreen): `Organization` + `WebSite` + `CollectionPage` + `BreadcrumbList`.
+  - 404: `Organization` + `WebSite`.
+  - Bloques generados por `scripts/lib/seo.py`.
+- **Internal linking automático**: cada historia con `market`/`topic`/`player` mapeado a un hub conocido (`HUB_LINKS_BY_*` en `templating.py`) muestra al pie 1-3 enlaces internos a esos hubs.
+- **robots.txt** con whitelist explícita para crawlers de IA: GPTBot, ChatGPT-User, ClaudeBot, anthropic-ai, PerplexityBot, Google-Extended, Applebot-Extended, Meta-ExternalAgent, Cohere-AI, Bytespider, etc. Permite citación como fuente en LLMs.
+- **Meta tags ampliados** en todas las páginas:
+  - `meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"`.
+  - `og:image`, `og:image:width`, `og:image:height`, `og:locale`.
+  - `twitter:image`.
+- **Script idempotente** `scripts/inject_schema_static.py` para mantener páginas estáticas sincronizadas (re-ejecutable sin duplicar contenido).
+
 ### 8. Notify · `scripts/notify.py`
 - Postea a `SLACK_WEBHOOK_URL` el resumen Slack generado por compose.
 - Si secret no existe, salta silenciosamente.

@@ -12,9 +12,7 @@ como `[done]` con el commit/PR de aterrizaje.
 
 | ID | Idea | Estado | Notas |
 |---|---|---|---|
-| C-1 | Reparto editorial MX/ES dominante + cuotas USA/China/EU | PR abierto `claude/curation-usa-and-sources` | Reparto 12: 7-8 MX/ES, 2 USA, 1 China, 1-2 EU. Boost editorial a topics operativos. Pendiente merge. |
-| C-2 | Google News RSS por queries Pulpo-relevantes | PR abierto `claude/curation-usa-and-sources` (5º commit) | 10 queries MX/ES sobre telemática, fuel cards, electrificación, última milla, regulación, mantenimiento, vehículos. ~110-140 items extra/semana. Cero coste. |
-| C-3 | Filtro de competidores | PR abierto `claude/curation-usa-and-sources` (5º commit) | 17 nombres en blacklist (Mendel, Edenred, Repsol, Pluxee, Minu, Solred, Ticket Car, GoPass, Efecticard, Efectivale, Gosmo, Uvicuo, etc.) se excluyen del pool antes del scoring. |
+| C-4 | PR-SEO-1 · Fundamentos técnicos | PR abierto `claude/seo-1-foundations` | Schema.org JSON-LD en magazines + hubs + 404. robots.txt con whitelist LLM bots. Meta tags ampliados. Internal linking automático en cada story. |
 
 ## Backlog ordenado (alta prioridad → baja)
 
@@ -101,4 +99,5 @@ como `[done]` con el commit/PR de aterrizaje.
 | 2026-05-21 | Notificación Slack (deshabilitada hasta crear secret) | 642bf1e |
 | 2026-05-21 | QA no-bloqueante; siempre publica con avisos | 24be10c |
 | 2026-05-21 | Blindaje deploy: Vercel Deploy Hook + smoke test + canary martes | PR `claude/deploy-resilience` |
-| 2026-05-21 | Curación USA + fuentes RSS + reparto editorial MX/ES dominante | PR `claude/curation-usa-and-sources` (en curso) |
+| 2026-05-21 | Curación: 24 fuentes (14 RSS + 10 Google News) + classifier USA + reparto MX/ES + blacklist competidores | PR #26 `claude/curation-usa-and-sources` |
+| 2026-05-22 | PR-SEO-1: schema.org + robots.txt LLM bots + meta tags + internal linking | PR `claude/seo-1-foundations` |

@@ -1,3 +1,92 @@
+# The Fleet Radar · robots.txt
+#
+# Política: editorial público, indexable por todos. Permitimos explícitamente
+# crawlers de IA (LLMs) para que puedan citarnos como fuente. Si no se nombran
+# explícitamente, muchos respetan un default conservador o ignoran allow-all.
+
+# ─── Bots de búsqueda tradicionales ───
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# ─── Bots de IA / LLMs (para citación como fuente) ───
+# OpenAI · ChatGPT y crawler de entrenamiento/respuestas
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic · Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Google · Gemini y dataset
+User-agent: Google-Extended
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Cohere
+User-agent: Cohere-AI
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# Meta · Llama
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Apple · Apple Intelligence
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Otros
+User-agent: Bytespider
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: ImagesiftBot
+Allow: /
+
+# ─── Default: todo el resto ───
 User-agent: *
 Allow: /
 

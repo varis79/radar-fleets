@@ -32,6 +32,7 @@ HTML_HEAD = Template("""<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <title>$title</title>
 <meta name="description" content="$meta_description">
 <meta name="author" content="Pulpo — getpulpo.com">
@@ -41,18 +42,24 @@ HTML_HEAD = Template("""<!DOCTYPE html>
 <meta property="og:type" content="article">
 <meta property="og:url" content="$canonical_url">
 <meta property="og:site_name" content="The Fleet Radar · by Pulpo">
+<meta property="og:locale" content="es_ES">
+<meta property="og:image" content="https://thefleetradar.com/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="article:published_time" content="$iso_date">
 <meta property="article:author" content="Pulpo">
 <meta property="article:section" content="Fleet intelligence">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="$og_title">
 <meta name="twitter:description" content="$og_description">
+<meta name="twitter:image" content="https://thefleetradar.com/og-default.png">
 <link rel="canonical" href="$canonical_url">
 <link rel="alternate" type="application/rss+xml" title="The Fleet Radar · by Pulpo" href="/rss.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/radar.css">
+$schema_jsonld
 <style>
   /* Acento semanal · Edición Nº $number · $human_date
      Única variación permitida por edición (4 vars). */
@@ -163,11 +170,73 @@ HTML_STORY = Template("""
           <div class="why-box">
             <div class="why-item"><div class="why-label">Para quien opera</div><div class="why-text">$why_operator</div></div>
             <div class="why-item commercial"><div class="why-label">Para el negocio</div><div class="why-text">$why_business</div></div>
-          </div>
+          </div>$related_links
         </div>
       </div>
     </article>
 """)
+
+
+# ─── Mapping topic/market/player → hub URL existente ─────────────────────
+# Cuando una historia tiene asignado uno de estos identificadores, en el
+# render añadimos un enlace discreto al hub correspondiente. Mejora SEO
+# (internal linking) y experiencia del lector (profundizar en el tema).
+# Cuando lancemos PR-SEO-3 con más hubs, esta tabla crece.
+HUB_LINKS_BY_MARKET: dict[str, tuple[str, str]] = {
+    "mexico":  ("Más sobre flotas en México",   "/mercados/mexico/"),
+    "espana":  ("Más sobre flotas en España",   "/mercados/espana/"),
+    "latam":   ("Más sobre flotas en LatAm",    "/mercados/latam/"),
+}
+HUB_LINKS_BY_TOPIC: dict[str, tuple[str, str]] = {
+    "fuel-cards":              ("Hub · Tarjetas de flota",       "/temas/fuel-cards/"),
+    "electrificacion-flotas":  ("Hub · Electrificación de flotas", "/temas/electrificacion-flotas/"),
+    "compliance":              ("Hub · Compliance (depende del mercado)", "/temas/compliance-espana/"),
+}
+HUB_LINKS_BY_PLAYER: dict[str, tuple[str, str]] = {
+    "pulpo": ("Ficha de Pulpo", "/players/pulpo/"),
+}
+
+
+def build_related_links(story: dict) -> str:
+    """Devuelve un bloque HTML pequeño con 1-3 enlaces internos a hubs cuando
+    aplica. Si la historia no engancha con ningún hub conocido, devuelve
+    cadena vacía y no se inserta sección."""
+    links: list[tuple[str, str]] = []
+    seen_urls: set[str] = set()
+
+    market = story.get("market")
+    if market in HUB_LINKS_BY_MARKET:
+        label, url = HUB_LINKS_BY_MARKET[market]
+        if url not in seen_urls:
+            links.append((label, url))
+            seen_urls.add(url)
+
+    topic = story.get("topic")
+    if topic in HUB_LINKS_BY_TOPIC:
+        label, url = HUB_LINKS_BY_TOPIC[topic]
+        # Caso especial compliance: si el market es México, no enlazamos
+        # al hub compliance-espana (que es de España). Usamos regulacion-mexico.
+        if topic == "compliance" and market == "mexico":
+            label, url = "Hub · Regulación México", "/temas/regulacion-mexico/"
+        if url not in seen_urls:
+            links.append((label, url))
+            seen_urls.add(url)
+
+    # Players: solo Pulpo está como ficha. Si la historia menciona pulpo, link.
+    players = story.get("players") or []
+    for p in players:
+        if p in HUB_LINKS_BY_PLAYER:
+            label, url = HUB_LINKS_BY_PLAYER[p]
+            if url not in seen_urls:
+                links.append((label, url))
+                seen_urls.add(url)
+
+    if not links:
+        return ""
+
+    # Render discreto al final de la story
+    items = " · ".join(f'<a href="{url}" class="related-link">{label}</a>' for label, url in links[:3])
+    return f'\n          <div class="story-related">{items}</div>'
 
 
 HTML_OPINION = Template("""
@@ -274,19 +343,38 @@ def render_edition(data: dict) -> str:
       cta_headline: str
     """
     d = data["edition_date"]
+    canonical_url = f"https://thefleetradar.com/magazines/{d.isoformat()}-radar-fleet-by-pulpo.html"
+    headline_full = f"The Fleet Radar · by Pulpo · Nº {data['number']} · {data['cover_headline']} · {human_date_es(d)}"
+    # Schema.org JSON-LD: NewsArticle + Organization + WebSite + Breadcrumbs.
+    # Permite que Google News y LLMs (ChatGPT/Perplexity/Claude) citen la edición
+    # como fuente estructurada con autor, fecha, sección, organización.
+    from .seo import head_blocks_edition
+    schema_jsonld = head_blocks_edition(
+        headline=f"Nº {data['number']} · {data['cover_headline']}",
+        description=data["meta_description"],
+        url=canonical_url,
+        date_published=d.isoformat(),
+        keywords=[k.strip() for k in data.get("keywords", "").split(",") if k.strip()],
+        breadcrumbs=[
+            ("The Fleet Radar", "https://thefleetradar.com/"),
+            ("Ediciones", "https://thefleetradar.com/archive.html"),
+            (f"Nº {data['number']}", canonical_url),
+        ],
+    )
     parts = [
         HTML_HEAD.substitute(
-            title=f"The Fleet Radar · by Pulpo · Nº {data['number']} · {data['cover_headline']} · {human_date_es(d)}",
+            title=headline_full,
             meta_description=data["meta_description"],
             keywords=data.get("keywords", "gestión de flotas, fleet management, telemática"),
             og_title=f"The Fleet Radar · by Pulpo · Nº {data['number']}",
             og_description=data["meta_description"],
-            canonical_url=f"https://thefleetradar.com/magazines/{d.isoformat()}-radar-fleet-by-pulpo.html",
+            canonical_url=canonical_url,
             iso_date=d.isoformat(),
             number=data["number"],
             human_date=human_date_es(d),
             accent=data["accent"], accent_2=data["accent_2"],
             grad_a=data["grad_a"], grad_b=data["grad_b"],
+            schema_jsonld=schema_jsonld,
         ),
         HTML_HEADER_COVER.substitute(
             number=data["number"],
@@ -330,6 +418,7 @@ def render_edition(data: dict) -> str:
                 summary=s["summary"],
                 why_operator=s.get("why_operator", ""),
                 why_business=s.get("why_business", ""),
+                related_links=build_related_links(s),
             )
             for i, s in enumerate(data["stories"])
         ])
