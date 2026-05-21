@@ -30,24 +30,75 @@ como `[done]` con el commit/PR de aterrizaje.
 - Tras el merge semanal, los issues procesados se cierran automáticamente con un comentario "Incluido en N°X · ok / Descartado · razón".
 **Por qué crítica:** desbloquea cobertura Pulpo-céntrica (telco fleet, LCV, last-mile, mantenimiento) que las fuentes RSS actuales no entregan.
 
-### 2. SEO masivo + interlinking
-**Estado:** propuesto.
-**Problema:** editorial sin tráfico = activo sin ROI.
-**Pendiente cuando arranquemos:**
-- Auditar keywords actuales por página interna (`/mercados/`, `/temas/`, `/players/`).
-- Crear ~30 páginas pilar más sobre temas long-tail con volumen MX/ES/EN (peajes, ITV, fuel cards comparativa, telemática para flotas medianas, etc.).
-- Interlinking automático desde cada edición: si una historia menciona un topic/player, enlazar al hub correspondiente.
-- Schema.org `NewsArticle` por edición + breadcrumbs.
-- Ajustar `sitemap.xml` con cambios de frecuencia adecuados.
+### 2. SEO masivo + interlinking (NEXT — arrancamos en próxima sesión)
+
+**Estado:** plan confirmado 2026-05-21, pendiente ejecución.
+
+**Objetivo:** que The Fleet Radar (a) posicione bien en Google MX/ES (b) sea fuente citable en LLMs (ChatGPT, Perplexity, Claude, Gemini) (c) genere tráfico orgánico recurrente para Pulpo.
+
+**Plan en 3 sub-PRs:**
+
+#### PR-SEO-1 · Fundamentos técnicos (sesión 1, ~3h)
+- Auditoría meta tags página por página (title, description, OG, Twitter, canonical, hreflang).
+- Schema.org markup:
+  - `NewsArticle` por edición (autor, datePublished, dateModified, organización, sección, image).
+  - `Organization` (Pulpo + The Fleet Radar).
+  - `WebSite` con `SearchAction` (caja Google Sitelinks search box).
+  - `BreadcrumbList` en hubs y páginas internas.
+- robots.txt explícito permitiendo crawlers de IA: GPTBot, ClaudeBot, anthropic-ai, PerplexityBot, ChatGPT-User, Google-Extended, Cohere-AI, Bytespider.
+- Sitemap con changefreq/priority calibrados.
+- Internal linking automático en compose: cuando una historia menciona topic/market/player con hub, se enlaza al hub.
+
+#### PR-SEO-2 · Hubs enriquecidos con LLM (sesión 2, ~4h)
+- Cada hub (`/mercados/*`, `/temas/*`, `/players/*`, `/evergreen/*`) se enriquece:
+  - Síntesis temática generada por LLM (cada publish actualiza solo los hubs afectados).
+  - Listado autoactualizable de historias relacionadas con snippet + enlace.
+  - Datos clave / hitos en formato citable (listas, tablas).
+  - "Páginas relacionadas" hacia otros hubs cercanos.
+- Coste extra LLM: ~$0.10/semana.
+
+#### PR-SEO-3 · Saturación de páginas pilar con noindex + sistema de liberación gradual (sesión 3+, varios sprints)
+**Estrategia confirmada:** crear ~80-100 páginas iniciales, todas con `noindex, follow` por defecto, y liberar a `index` automáticamente cuando cumplen threshold de calidad.
+
+**Templates de páginas a generar** (cluster de keywords MX/ES):
+- Geo+Topic: "Telemática para flotas en México 2026", "Tarjetas de combustible España 2026", "Electrificación flotas en CDMX", "Última milla España", "ITV camiones 2026".
+- Vehicle-type+Geo: "Furgonetas eléctricas flota España", "Pickups flota México", "Vans last mile España".
+- Regulación específica: "DGT V-16 obligación 2026", "Tacógrafo G2V2 España", "SICT México telemática hidrocarburos", "ZBE Madrid flotas comerciales", "T-MEC autotransporte".
+- Comparativa marca-mercado: "Geotab vs Samsara vs Webfleet México", "Marcas telemática España" (sin competidores Pulpo).
+- Sectores verticales: "Flotas cementeras México", "Flotas mineras LatAm", "Flotas telco España", "Flotas utilities ibericas", "Flotas alimentación última milla".
+- Evergreen guías: "Cómo evaluar telemática 2026", "Peajes Europa 2026", "Renting vs leasing flota empresa".
+
+**Threshold de liberación (noindex → index, automático):**
+Una página se libera cuando cumple ≥1 de:
+- 3+ historias relacionadas en `editorial-memory.md` (acumulación natural con el tiempo).
+- Contenido propio editado manualmente >500 palabras.
+- Score mínimo de calidad evaluado por LLM (revisión trimestral).
+
+Páginas no liberadas no entran al sitemap. Las que ya están en sitemap se quedan; las nuevas se añaden a medida que se liberan.
+
+**Decisión multi-idioma confirmada:**
+- ES primero (todo el plan).
+- EN después, replicando estructura.
+- URLs separadas: `thefleetradar.com/...` (ES default) y `thefleetradar.com/en/...` (EN).
+- `hreflang` x-default + es + en por página.
+- Selector visual en header.
+- Sugerencia (no redirect forzado) por IP en primera visita; cookie de preferencia.
+
+**Outcome esperado:**
+- Mes 1-2: indexación inicial + 10-20 páginas liberadas.
+- Mes 3-4: ~40-60 páginas indexadas + primeras señales SEO.
+- Mes 6+: tráfico orgánico recurrente + citaciones en LLMs.
 
 ### 3. Versión en inglés (EN) para mercado US/Int
-**Estado:** propuesto.
-**Contexto:** Pulpo va a lanzar en inglés. El editorial debe generar tráfico EN simultáneo.
-**Idea:**
-- Cada edición se compone también en EN como `magazines/YYYY-MM-DD-the-fleet-radar.html`.
-- Un solo `compose` LLM con prompt que devuelve `{es: {...}, en: {...}}`.
-- `hreflang` x-default + es + en. Canónicos cruzados.
-- Subdirectorio `/en/` o subdominio `en.thefleetradar.com` (decidir cuando llegue).
+**Estado:** propuesto, vendrá DESPUÉS del SEO-3 inicial.
+**Contexto:** Pulpo va a lanzar en inglés. The Fleet Radar EN da tráfico simultáneo.
+**Decisión arquitectónica (alineada con SEO multi-idioma):**
+- Estructura URL: `thefleetradar.com/en/...` para EN; `thefleetradar.com/...` para ES (default).
+- Cada edición se compone también en EN como `magazines/YYYY-MM-DD-the-fleet-radar.html` (slug EN).
+- Un solo `compose` LLM con prompt que devuelve `{es: {...}, en: {...}}`. O dos calls separadas para mejor calidad por idioma; a decidir cuando arranquemos.
+- `hreflang` x-default + es + en por página.
+- Selector visual de idioma en topbar.
+- Sugerencia (no redirect) por IP en primera visita + cookie de preferencia.
 
 ### 4. Caja "Sabías qué" · facts históricos
 **Estado:** propuesto.
