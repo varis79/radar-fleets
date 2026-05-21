@@ -1,0 +1,158 @@
+# Mercados que la matriz long-tail considera.
+#
+# tier_default: cuando una página entra para este mercado y NO se reasigna por
+# topic, hereda este tier. Los tiers de combinaciones específicas (market+topic)
+# se calculan en scripts/lib/pillar.py con reglas explícitas.
+#
+# slug: usado para construir URLs (ej. /temas/telematica-flotas-MEXICO-2026/).
+# label: como se nombra en el título de página y en el cuerpo.
+# lang: el idioma del HTML que se genera (es-ES, es-419, en-US).
+# active: false saltará el mercado en la generación inicial. Útil para mercados
+#         futuros que queremos en la matriz pero sin crear pages aún.
+
+markets:
+  # ─── Tier 1: foco principal Pulpo ──────────
+  - code: mexico
+    slug: mexico
+    label: México
+    flag: 🇲🇽
+    lang: es-419
+    locale_iso: es_MX
+    tier_default: 1
+    active: true
+    notes: "Mercado prime Pulpo. Datos sólidos, cobertura editorial activa."
+
+  - code: espana
+    slug: espana
+    label: España
+    flag: 🇪🇸
+    lang: es-ES
+    locale_iso: es_ES
+    tier_default: 1
+    active: true
+    notes: "Mercado prime Pulpo. Datos sólidos, cobertura editorial activa."
+
+  # ─── Tier 2: mercados hispanos relevantes ──
+  - code: colombia
+    slug: colombia
+    label: Colombia
+    flag: 🇨🇴
+    lang: es-419
+    locale_iso: es_CO
+    tier_default: 2
+    active: true
+    notes: "Mercado interesante para Pulpo. Tier 2 inicial, sube a 1 cuando hay tracción."
+
+  - code: chile
+    slug: chile
+    label: Chile
+    flag: 🇨🇱
+    lang: es-419
+    locale_iso: es_CL
+    tier_default: 2
+    active: true
+    notes: "Telemática y minería activas. Topics electrificación + mantenimiento + telemática prioritarios."
+
+  - code: argentina
+    slug: argentina
+    label: Argentina
+    flag: 🇦🇷
+    lang: es-419
+    locale_iso: es_AR
+    tier_default: 2
+    active: true
+    notes: "Mercado grande pero macroeconomía vol. Topics telemática + control de gasto interesantes."
+
+  - code: peru
+    slug: peru
+    label: Perú
+    flag: 🇵🇪
+    lang: es-419
+    locale_iso: es_PE
+    tier_default: 2
+    active: true
+    notes: "Minería + transporte de carga. Topics mantenimiento + seguridad + telemática."
+
+  # ─── Tier 3: mercados hispanos secundarios ─
+  - code: ecuador
+    slug: ecuador
+    label: Ecuador
+    flag: 🇪🇨
+    lang: es-419
+    locale_iso: es_EC
+    tier_default: 3
+    active: true
+    notes: "Mercado pequeño. Páginas en noindex hasta justificar."
+
+  - code: uruguay
+    slug: uruguay
+    label: Uruguay
+    flag: 🇺🇾
+    lang: es-419
+    locale_iso: es_UY
+    tier_default: 3
+    active: true
+    notes: "Mercado pequeño pero estable. Topics electrificación + telemática."
+
+  - code: republica-dominicana
+    slug: republica-dominicana
+    label: República Dominicana
+    flag: 🇩🇴
+    lang: es-419
+    locale_iso: es_DO
+    tier_default: 3
+    active: true
+    notes: "Mercado pequeño. Cobertura mínima en noindex."
+
+  # ─── No activos aún (matriz preparada para futuro) ──
+  - code: paraguay
+    slug: paraguay
+    label: Paraguay
+    flag: 🇵🇾
+    lang: es-419
+    locale_iso: es_PY
+    tier_default: 3
+    active: false
+    notes: "Matriz preparada; activación cuando Pulpo justifique."
+
+  - code: venezuela
+    slug: venezuela
+    label: Venezuela
+    flag: 🇻🇪
+    lang: es-419
+    locale_iso: es_VE
+    tier_default: 3
+    active: false
+    notes: "Mercado bloqueado por entorno macro. No activar aún."
+
+  - code: bolivia
+    slug: bolivia
+    label: Bolivia
+    flag: 🇧🇴
+    lang: es-419
+    locale_iso: es_BO
+    tier_default: 3
+    active: false
+    notes: "Matriz preparada; activación futura."
+
+  # ─── Cross-market regional ──────────────────
+  - code: latam
+    slug: latam
+    label: LatAm
+    flag: 🌎
+    lang: es-419
+    locale_iso: es
+    tier_default: 2
+    active: true
+    notes: "Páginas regionales para combinaciones generales que aplican a varios países hispanos."
+
+  # ─── Estratégico (EN, futuro) ───────────────
+  - code: usa
+    slug: usa
+    label: USA
+    flag: 🇺🇸
+    lang: en-US
+    locale_iso: en_US
+    tier_default: 3
+    active: false
+    notes: "Versión EN. No crear aún. Cuando Pulpo lance en inglés, activar y todo el árbol pasa a EN."

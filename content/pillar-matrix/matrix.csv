@@ -1,0 +1,301 @@
+slug,label,market,topic,intent,tier,review_days,schema_type,pulpopay,url_path
+telematica-flotas-mexico-2026,Telemática para flotas en México 2026,mexico,telematica,informational,1,30,Article,False,/temas/telematica-flotas-mexico-2026/
+telematica-flotas-mexico-comparativa-2026,Telemática para flotas en México 2026 · comparativa,mexico,telematica,comparativo,1,30,Article,False,/temas/telematica-flotas-mexico-comparativa-2026/
+telematica-flotas-mexico-guia-2026,Telemática para flotas en México 2026 · guía,mexico,telematica,guia-practica,1,30,HowTo,False,/temas/telematica-flotas-mexico-guia-2026/
+video-telematica-flotas-mexico-2026,Video-telemática y ADAS para flotas en México 2026,mexico,video-telematica,informational,2,60,Article,False,/temas/video-telematica-flotas-mexico-2026/
+video-telematica-flotas-mexico-comparativa-2026,Video-telemática y ADAS para flotas en México 2026 · comparativa,mexico,video-telematica,comparativo,2,60,Article,False,/temas/video-telematica-flotas-mexico-comparativa-2026/
+tarjetas-flota-mexico-2026,Tarjetas de flota y combustible en México 2026,mexico,fuel-cards,informational,1,30,Article,True,/temas/tarjetas-flota-mexico-2026/
+tarjetas-flota-mexico-comparativa-2026,Tarjetas de flota y combustible en México 2026 · comparativa,mexico,fuel-cards,comparativo,1,30,Article,True,/temas/tarjetas-flota-mexico-comparativa-2026/
+tarjetas-flota-mexico-guia-2026,Tarjetas de flota y combustible en México 2026 · guía,mexico,fuel-cards,guia-practica,1,30,HowTo,True,/temas/tarjetas-flota-mexico-guia-2026/
+combustible-flota-mexico-2026,Combustible y diésel para flotas en México 2026,mexico,combustible,informational,2,60,Article,True,/temas/combustible-flota-mexico-2026/
+combustible-flota-mexico-guia-2026,Combustible y diésel para flotas en México 2026 · guía,mexico,combustible,guia-practica,2,60,HowTo,True,/temas/combustible-flota-mexico-guia-2026/
+electrificacion-flotas-mexico-2026,Electrificación de flotas en México 2026,mexico,electrificacion-flotas,informational,1,30,Article,False,/temas/electrificacion-flotas-mexico-2026/
+electrificacion-flotas-mexico-guia-2026,Electrificación de flotas en México 2026 · guía,mexico,electrificacion-flotas,guia-practica,1,30,HowTo,False,/temas/electrificacion-flotas-mexico-guia-2026/
+mantenimiento-flota-mexico-2026,Mantenimiento de flota en México 2026,mexico,mantenimiento,informational,1,30,Article,False,/temas/mantenimiento-flota-mexico-2026/
+mantenimiento-flota-mexico-guia-2026,Mantenimiento de flota en México 2026 · guía,mexico,mantenimiento,guia-practica,1,30,HowTo,False,/temas/mantenimiento-flota-mexico-guia-2026/
+seguridad-flota-mexico-2026,Seguridad vial y operativa de flotas en México 2026,mexico,seguridad,informational,2,60,Article,False,/temas/seguridad-flota-mexico-2026/
+control-gasto-flota-mexico-2026,Control de gasto en flotas en México 2026,mexico,control-gasto,informational,1,30,Article,True,/temas/control-gasto-flota-mexico-2026/
+control-gasto-flota-mexico-guia-2026,Control de gasto en flotas en México 2026 · guía,mexico,control-gasto,guia-practica,1,30,HowTo,True,/temas/control-gasto-flota-mexico-guia-2026/
+gestion-flota-mexico-2026,Gestión y operación de flotas en México 2026,mexico,operacion-flotas,informational,1,30,Article,False,/temas/gestion-flota-mexico-2026/
+ruteo-flota-mexico-2026,Ruteo y planificación de flota en México 2026,mexico,routing,informational,3,90,Article,False,/temas/ruteo-flota-mexico-2026/
+logistica-distribucion-mexico-2026,Logística y distribución en México 2026,mexico,logistica-distribucion,informational,2,60,Article,False,/temas/logistica-distribucion-mexico-2026/
+seguro-flota-mexico-2026,Seguros de flota en México 2026,mexico,insurance,informational,2,60,Article,False,/temas/seguro-flota-mexico-2026/
+fabricantes-camiones-mexico-2026,Fabricantes de camiones y comerciales en México 2026,mexico,truck-oem,informational,2,60,Article,False,/temas/fabricantes-camiones-mexico-2026/
+fabricantes-camiones-mexico-comparativa-2026,Fabricantes de camiones y comerciales en México 2026 · comparativa,mexico,truck-oem,comparativo,2,60,Article,False,/temas/fabricantes-camiones-mexico-comparativa-2026/
+robo-carga-mexico-2026,Robo de carga y seguridad de mercancías en México 2026,mexico,cargo-theft,informational,3,90,Article,False,/temas/robo-carga-mexico-2026/
+fraude-combustible-flota-mexico-2026,Fraude y robo de combustible en flotas en México 2026,mexico,fraude,informational,2,60,Article,True,/temas/fraude-combustible-flota-mexico-2026/
+movilidad-urbana-flotas-mexico-2026,Movilidad urbana y flotas comerciales en México 2026,mexico,movilidad-urbana,informational,3,90,Article,False,/temas/movilidad-urbana-flotas-mexico-2026/
+compliance-flotas-mexico-2026,Compliance y normativa de flotas en México 2026,mexico,compliance,informational,1,30,Article,False,/temas/compliance-flotas-mexico-2026/
+compliance-flotas-mexico-regulacion-2026,Compliance y normativa de flotas en México 2026 · regulación y obligaciones,mexico,compliance,regulatorio,1,30,Article,False,/temas/compliance-flotas-mexico-regulacion-2026/
+sict-autotransporte-2026,SICT y autotransporte mexicano 2026,mexico,sict,informational,1,30,Article,False,/temas/sict-autotransporte-2026/
+sict-autotransporte-regulacion-2026,SICT y autotransporte mexicano 2026 · regulación y obligaciones,mexico,sict,regulatorio,1,30,Article,False,/temas/sict-autotransporte-regulacion-2026/
+cne-telematica-hidrocarburos-2026,CNE y telemática para transporte de hidrocarburos 2026,mexico,cne,informational,1,30,Article,False,/temas/cne-telematica-hidrocarburos-2026/
+cne-telematica-hidrocarburos-regulacion-2026,CNE y telemática para transporte de hidrocarburos 2026 · regulación y obligaciones,mexico,cne,regulatorio,1,30,Article,False,/temas/cne-telematica-hidrocarburos-regulacion-2026/
+t-mec-autotransporte-mexico-2026,T-MEC y autotransporte transfronterizo 2026,mexico,t-mec,informational,1,30,Article,False,/temas/t-mec-autotransporte-mexico-2026/
+nearshoring-flotas-mexico-2026,Nearshoring y demanda de flotas en México 2026,mexico,nearshoring,informational,2,60,Article,False,/temas/nearshoring-flotas-mexico-2026/
+telematica-flotas-espana-2026,Telemática para flotas en España 2026,espana,telematica,informational,1,30,Article,False,/temas/telematica-flotas-espana-2026/
+telematica-flotas-espana-comparativa-2026,Telemática para flotas en España 2026 · comparativa,espana,telematica,comparativo,1,30,Article,False,/temas/telematica-flotas-espana-comparativa-2026/
+telematica-flotas-espana-guia-2026,Telemática para flotas en España 2026 · guía,espana,telematica,guia-practica,1,30,HowTo,False,/temas/telematica-flotas-espana-guia-2026/
+video-telematica-flotas-espana-2026,Video-telemática y ADAS para flotas en España 2026,espana,video-telematica,informational,2,60,Article,False,/temas/video-telematica-flotas-espana-2026/
+video-telematica-flotas-espana-comparativa-2026,Video-telemática y ADAS para flotas en España 2026 · comparativa,espana,video-telematica,comparativo,2,60,Article,False,/temas/video-telematica-flotas-espana-comparativa-2026/
+tarjetas-flota-espana-2026,Tarjetas de flota y combustible en España 2026,espana,fuel-cards,informational,1,30,Article,True,/temas/tarjetas-flota-espana-2026/
+tarjetas-flota-espana-comparativa-2026,Tarjetas de flota y combustible en España 2026 · comparativa,espana,fuel-cards,comparativo,1,30,Article,True,/temas/tarjetas-flota-espana-comparativa-2026/
+tarjetas-flota-espana-guia-2026,Tarjetas de flota y combustible en España 2026 · guía,espana,fuel-cards,guia-practica,1,30,HowTo,True,/temas/tarjetas-flota-espana-guia-2026/
+combustible-flota-espana-2026,Combustible y diésel para flotas en España 2026,espana,combustible,informational,2,60,Article,True,/temas/combustible-flota-espana-2026/
+combustible-flota-espana-guia-2026,Combustible y diésel para flotas en España 2026 · guía,espana,combustible,guia-practica,2,60,HowTo,True,/temas/combustible-flota-espana-guia-2026/
+electrificacion-flotas-espana-2026,Electrificación de flotas en España 2026,espana,electrificacion-flotas,informational,1,30,Article,False,/temas/electrificacion-flotas-espana-2026/
+electrificacion-flotas-espana-guia-2026,Electrificación de flotas en España 2026 · guía,espana,electrificacion-flotas,guia-practica,1,30,HowTo,False,/temas/electrificacion-flotas-espana-guia-2026/
+mantenimiento-flota-espana-2026,Mantenimiento de flota en España 2026,espana,mantenimiento,informational,1,30,Article,False,/temas/mantenimiento-flota-espana-2026/
+mantenimiento-flota-espana-guia-2026,Mantenimiento de flota en España 2026 · guía,espana,mantenimiento,guia-practica,1,30,HowTo,False,/temas/mantenimiento-flota-espana-guia-2026/
+seguridad-flota-espana-2026,Seguridad vial y operativa de flotas en España 2026,espana,seguridad,informational,2,60,Article,False,/temas/seguridad-flota-espana-2026/
+control-gasto-flota-espana-2026,Control de gasto en flotas en España 2026,espana,control-gasto,informational,1,30,Article,True,/temas/control-gasto-flota-espana-2026/
+control-gasto-flota-espana-guia-2026,Control de gasto en flotas en España 2026 · guía,espana,control-gasto,guia-practica,1,30,HowTo,True,/temas/control-gasto-flota-espana-guia-2026/
+gestion-flota-espana-2026,Gestión y operación de flotas en España 2026,espana,operacion-flotas,informational,1,30,Article,False,/temas/gestion-flota-espana-2026/
+ruteo-flota-espana-2026,Ruteo y planificación de flota en España 2026,espana,routing,informational,3,90,Article,False,/temas/ruteo-flota-espana-2026/
+logistica-distribucion-espana-2026,Logística y distribución en España 2026,espana,logistica-distribucion,informational,2,60,Article,False,/temas/logistica-distribucion-espana-2026/
+seguro-flota-espana-2026,Seguros de flota en España 2026,espana,insurance,informational,2,60,Article,False,/temas/seguro-flota-espana-2026/
+fabricantes-camiones-espana-2026,Fabricantes de camiones y comerciales en España 2026,espana,truck-oem,informational,2,60,Article,False,/temas/fabricantes-camiones-espana-2026/
+fabricantes-camiones-espana-comparativa-2026,Fabricantes de camiones y comerciales en España 2026 · comparativa,espana,truck-oem,comparativo,2,60,Article,False,/temas/fabricantes-camiones-espana-comparativa-2026/
+robo-carga-espana-2026,Robo de carga y seguridad de mercancías en España 2026,espana,cargo-theft,informational,3,90,Article,False,/temas/robo-carga-espana-2026/
+fraude-combustible-flota-espana-2026,Fraude y robo de combustible en flotas en España 2026,espana,fraude,informational,2,60,Article,True,/temas/fraude-combustible-flota-espana-2026/
+movilidad-urbana-flotas-espana-2026,Movilidad urbana y flotas comerciales en España 2026,espana,movilidad-urbana,informational,3,90,Article,False,/temas/movilidad-urbana-flotas-espana-2026/
+compliance-flotas-espana-2026,Compliance y normativa de flotas en España 2026,espana,compliance,informational,1,30,Article,False,/temas/compliance-flotas-espana-2026/
+compliance-flotas-espana-regulacion-2026,Compliance y normativa de flotas en España 2026 · regulación y obligaciones,espana,compliance,regulatorio,1,30,Article,False,/temas/compliance-flotas-espana-regulacion-2026/
+dgt-flotas-comerciales-2026,DGT y flotas comerciales en España 2026,espana,dgt,informational,1,30,Article,False,/temas/dgt-flotas-comerciales-2026/
+dgt-flotas-comerciales-regulacion-2026,DGT y flotas comerciales en España 2026 · regulación y obligaciones,espana,dgt,regulatorio,1,30,Article,False,/temas/dgt-flotas-comerciales-regulacion-2026/
+baliza-v16-flotas-2026,Baliza V-16 y flotas comerciales 2026,espana,v-16,informational,1,30,Article,False,/temas/baliza-v16-flotas-2026/
+baliza-v16-flotas-regulacion-2026,Baliza V-16 y flotas comerciales 2026 · regulación y obligaciones,espana,v-16,regulatorio,1,30,Article,False,/temas/baliza-v16-flotas-regulacion-2026/
+tacografo-flota-espana-2026,Tacógrafo G2V2 y flotas en España 2026,espana,tacografo,informational,1,30,Article,False,/temas/tacografo-flota-espana-2026/
+tacografo-flota-espana-regulacion-2026,Tacógrafo G2V2 y flotas en España 2026 · regulación y obligaciones,espana,tacografo,regulatorio,1,30,Article,False,/temas/tacografo-flota-espana-regulacion-2026/
+zbe-flotas-comerciales-espana-2026,ZBE y flotas comerciales en España 2026,espana,zbe,informational,1,30,Article,False,/temas/zbe-flotas-comerciales-espana-2026/
+zbe-flotas-comerciales-espana-regulacion-2026,ZBE y flotas comerciales en España 2026 · regulación y obligaciones,espana,zbe,regulatorio,1,30,Article,False,/temas/zbe-flotas-comerciales-espana-regulacion-2026/
+itv-flota-camiones-espana-2026,ITV camiones y furgonetas en España 2026,espana,itv,informational,1,30,Article,False,/temas/itv-flota-camiones-espana-2026/
+itv-flota-camiones-espana-regulacion-2026,ITV camiones y furgonetas en España 2026 · regulación y obligaciones,espana,itv,regulatorio,1,30,Article,False,/temas/itv-flota-camiones-espana-regulacion-2026/
+renting-leasing-flota-espana-2026,Renting y leasing de flotas en España 2026,espana,renting-leasing,informational,1,30,Article,False,/temas/renting-leasing-flota-espana-2026/
+renting-leasing-flota-espana-comparativa-2026,Renting y leasing de flotas en España 2026 · comparativa,espana,renting-leasing,comparativo,1,30,Article,False,/temas/renting-leasing-flota-espana-comparativa-2026/
+renting-leasing-flota-espana-guia-2026,Renting y leasing de flotas en España 2026 · guía,espana,renting-leasing,guia-practica,1,30,HowTo,False,/temas/renting-leasing-flota-espana-guia-2026/
+peaje-europa-flota-camiones-2026,Peajes en Europa para flotas de camiones 2026,espana,peaje-europa,informational,1,30,Article,True,/temas/peaje-europa-flota-camiones-2026/
+telematica-flotas-colombia-2026,Telemática para flotas en Colombia 2026,colombia,telematica,informational,2,60,Article,False,/temas/telematica-flotas-colombia-2026/
+telematica-flotas-colombia-comparativa-2026,Telemática para flotas en Colombia 2026 · comparativa,colombia,telematica,comparativo,2,60,Article,False,/temas/telematica-flotas-colombia-comparativa-2026/
+telematica-flotas-colombia-guia-2026,Telemática para flotas en Colombia 2026 · guía,colombia,telematica,guia-practica,2,60,HowTo,False,/temas/telematica-flotas-colombia-guia-2026/
+video-telematica-flotas-colombia-2026,Video-telemática y ADAS para flotas en Colombia 2026,colombia,video-telematica,informational,3,90,Article,False,/temas/video-telematica-flotas-colombia-2026/
+video-telematica-flotas-colombia-comparativa-2026,Video-telemática y ADAS para flotas en Colombia 2026 · comparativa,colombia,video-telematica,comparativo,3,90,Article,False,/temas/video-telematica-flotas-colombia-comparativa-2026/
+tarjetas-flota-colombia-2026,Tarjetas de flota y combustible en Colombia 2026,colombia,fuel-cards,informational,2,60,Article,True,/temas/tarjetas-flota-colombia-2026/
+tarjetas-flota-colombia-comparativa-2026,Tarjetas de flota y combustible en Colombia 2026 · comparativa,colombia,fuel-cards,comparativo,2,60,Article,True,/temas/tarjetas-flota-colombia-comparativa-2026/
+tarjetas-flota-colombia-guia-2026,Tarjetas de flota y combustible en Colombia 2026 · guía,colombia,fuel-cards,guia-practica,2,60,HowTo,True,/temas/tarjetas-flota-colombia-guia-2026/
+combustible-flota-colombia-2026,Combustible y diésel para flotas en Colombia 2026,colombia,combustible,informational,3,90,Article,True,/temas/combustible-flota-colombia-2026/
+combustible-flota-colombia-guia-2026,Combustible y diésel para flotas en Colombia 2026 · guía,colombia,combustible,guia-practica,3,90,HowTo,True,/temas/combustible-flota-colombia-guia-2026/
+electrificacion-flotas-colombia-2026,Electrificación de flotas en Colombia 2026,colombia,electrificacion-flotas,informational,2,60,Article,False,/temas/electrificacion-flotas-colombia-2026/
+electrificacion-flotas-colombia-guia-2026,Electrificación de flotas en Colombia 2026 · guía,colombia,electrificacion-flotas,guia-practica,2,60,HowTo,False,/temas/electrificacion-flotas-colombia-guia-2026/
+mantenimiento-flota-colombia-2026,Mantenimiento de flota en Colombia 2026,colombia,mantenimiento,informational,2,60,Article,False,/temas/mantenimiento-flota-colombia-2026/
+mantenimiento-flota-colombia-guia-2026,Mantenimiento de flota en Colombia 2026 · guía,colombia,mantenimiento,guia-practica,2,60,HowTo,False,/temas/mantenimiento-flota-colombia-guia-2026/
+seguridad-flota-colombia-2026,Seguridad vial y operativa de flotas en Colombia 2026,colombia,seguridad,informational,3,90,Article,False,/temas/seguridad-flota-colombia-2026/
+control-gasto-flota-colombia-2026,Control de gasto en flotas en Colombia 2026,colombia,control-gasto,informational,2,60,Article,True,/temas/control-gasto-flota-colombia-2026/
+control-gasto-flota-colombia-guia-2026,Control de gasto en flotas en Colombia 2026 · guía,colombia,control-gasto,guia-practica,2,60,HowTo,True,/temas/control-gasto-flota-colombia-guia-2026/
+gestion-flota-colombia-2026,Gestión y operación de flotas en Colombia 2026,colombia,operacion-flotas,informational,2,60,Article,False,/temas/gestion-flota-colombia-2026/
+ruteo-flota-colombia-2026,Ruteo y planificación de flota en Colombia 2026,colombia,routing,informational,3,90,Article,False,/temas/ruteo-flota-colombia-2026/
+logistica-distribucion-colombia-2026,Logística y distribución en Colombia 2026,colombia,logistica-distribucion,informational,3,90,Article,False,/temas/logistica-distribucion-colombia-2026/
+seguro-flota-colombia-2026,Seguros de flota en Colombia 2026,colombia,insurance,informational,3,90,Article,False,/temas/seguro-flota-colombia-2026/
+fabricantes-camiones-colombia-2026,Fabricantes de camiones y comerciales en Colombia 2026,colombia,truck-oem,informational,3,90,Article,False,/temas/fabricantes-camiones-colombia-2026/
+fabricantes-camiones-colombia-comparativa-2026,Fabricantes de camiones y comerciales en Colombia 2026 · comparativa,colombia,truck-oem,comparativo,3,90,Article,False,/temas/fabricantes-camiones-colombia-comparativa-2026/
+robo-carga-colombia-2026,Robo de carga y seguridad de mercancías en Colombia 2026,colombia,cargo-theft,informational,3,90,Article,False,/temas/robo-carga-colombia-2026/
+fraude-combustible-flota-colombia-2026,Fraude y robo de combustible en flotas en Colombia 2026,colombia,fraude,informational,3,90,Article,True,/temas/fraude-combustible-flota-colombia-2026/
+movilidad-urbana-flotas-colombia-2026,Movilidad urbana y flotas comerciales en Colombia 2026,colombia,movilidad-urbana,informational,3,90,Article,False,/temas/movilidad-urbana-flotas-colombia-2026/
+compliance-flotas-colombia-2026,Compliance y normativa de flotas en Colombia 2026,colombia,compliance,informational,2,60,Article,False,/temas/compliance-flotas-colombia-2026/
+compliance-flotas-colombia-regulacion-2026,Compliance y normativa de flotas en Colombia 2026 · regulación y obligaciones,colombia,compliance,regulatorio,2,30,Article,False,/temas/compliance-flotas-colombia-regulacion-2026/
+telematica-flotas-chile-2026,Telemática para flotas en Chile 2026,chile,telematica,informational,2,60,Article,False,/temas/telematica-flotas-chile-2026/
+telematica-flotas-chile-comparativa-2026,Telemática para flotas en Chile 2026 · comparativa,chile,telematica,comparativo,2,60,Article,False,/temas/telematica-flotas-chile-comparativa-2026/
+telematica-flotas-chile-guia-2026,Telemática para flotas en Chile 2026 · guía,chile,telematica,guia-practica,2,60,HowTo,False,/temas/telematica-flotas-chile-guia-2026/
+video-telematica-flotas-chile-2026,Video-telemática y ADAS para flotas en Chile 2026,chile,video-telematica,informational,3,90,Article,False,/temas/video-telematica-flotas-chile-2026/
+video-telematica-flotas-chile-comparativa-2026,Video-telemática y ADAS para flotas en Chile 2026 · comparativa,chile,video-telematica,comparativo,3,90,Article,False,/temas/video-telematica-flotas-chile-comparativa-2026/
+tarjetas-flota-chile-2026,Tarjetas de flota y combustible en Chile 2026,chile,fuel-cards,informational,2,60,Article,True,/temas/tarjetas-flota-chile-2026/
+tarjetas-flota-chile-comparativa-2026,Tarjetas de flota y combustible en Chile 2026 · comparativa,chile,fuel-cards,comparativo,2,60,Article,True,/temas/tarjetas-flota-chile-comparativa-2026/
+tarjetas-flota-chile-guia-2026,Tarjetas de flota y combustible en Chile 2026 · guía,chile,fuel-cards,guia-practica,2,60,HowTo,True,/temas/tarjetas-flota-chile-guia-2026/
+combustible-flota-chile-2026,Combustible y diésel para flotas en Chile 2026,chile,combustible,informational,3,90,Article,True,/temas/combustible-flota-chile-2026/
+combustible-flota-chile-guia-2026,Combustible y diésel para flotas en Chile 2026 · guía,chile,combustible,guia-practica,3,90,HowTo,True,/temas/combustible-flota-chile-guia-2026/
+electrificacion-flotas-chile-2026,Electrificación de flotas en Chile 2026,chile,electrificacion-flotas,informational,2,60,Article,False,/temas/electrificacion-flotas-chile-2026/
+electrificacion-flotas-chile-guia-2026,Electrificación de flotas en Chile 2026 · guía,chile,electrificacion-flotas,guia-practica,2,60,HowTo,False,/temas/electrificacion-flotas-chile-guia-2026/
+mantenimiento-flota-chile-2026,Mantenimiento de flota en Chile 2026,chile,mantenimiento,informational,2,60,Article,False,/temas/mantenimiento-flota-chile-2026/
+mantenimiento-flota-chile-guia-2026,Mantenimiento de flota en Chile 2026 · guía,chile,mantenimiento,guia-practica,2,60,HowTo,False,/temas/mantenimiento-flota-chile-guia-2026/
+seguridad-flota-chile-2026,Seguridad vial y operativa de flotas en Chile 2026,chile,seguridad,informational,3,90,Article,False,/temas/seguridad-flota-chile-2026/
+control-gasto-flota-chile-2026,Control de gasto en flotas en Chile 2026,chile,control-gasto,informational,2,60,Article,True,/temas/control-gasto-flota-chile-2026/
+control-gasto-flota-chile-guia-2026,Control de gasto en flotas en Chile 2026 · guía,chile,control-gasto,guia-practica,2,60,HowTo,True,/temas/control-gasto-flota-chile-guia-2026/
+gestion-flota-chile-2026,Gestión y operación de flotas en Chile 2026,chile,operacion-flotas,informational,2,60,Article,False,/temas/gestion-flota-chile-2026/
+ruteo-flota-chile-2026,Ruteo y planificación de flota en Chile 2026,chile,routing,informational,3,90,Article,False,/temas/ruteo-flota-chile-2026/
+logistica-distribucion-chile-2026,Logística y distribución en Chile 2026,chile,logistica-distribucion,informational,3,90,Article,False,/temas/logistica-distribucion-chile-2026/
+seguro-flota-chile-2026,Seguros de flota en Chile 2026,chile,insurance,informational,3,90,Article,False,/temas/seguro-flota-chile-2026/
+fabricantes-camiones-chile-2026,Fabricantes de camiones y comerciales en Chile 2026,chile,truck-oem,informational,3,90,Article,False,/temas/fabricantes-camiones-chile-2026/
+fabricantes-camiones-chile-comparativa-2026,Fabricantes de camiones y comerciales en Chile 2026 · comparativa,chile,truck-oem,comparativo,3,90,Article,False,/temas/fabricantes-camiones-chile-comparativa-2026/
+robo-carga-chile-2026,Robo de carga y seguridad de mercancías en Chile 2026,chile,cargo-theft,informational,3,90,Article,False,/temas/robo-carga-chile-2026/
+fraude-combustible-flota-chile-2026,Fraude y robo de combustible en flotas en Chile 2026,chile,fraude,informational,3,90,Article,True,/temas/fraude-combustible-flota-chile-2026/
+movilidad-urbana-flotas-chile-2026,Movilidad urbana y flotas comerciales en Chile 2026,chile,movilidad-urbana,informational,3,90,Article,False,/temas/movilidad-urbana-flotas-chile-2026/
+compliance-flotas-chile-2026,Compliance y normativa de flotas en Chile 2026,chile,compliance,informational,2,60,Article,False,/temas/compliance-flotas-chile-2026/
+compliance-flotas-chile-regulacion-2026,Compliance y normativa de flotas en Chile 2026 · regulación y obligaciones,chile,compliance,regulatorio,2,30,Article,False,/temas/compliance-flotas-chile-regulacion-2026/
+telematica-flotas-argentina-2026,Telemática para flotas en Argentina 2026,argentina,telematica,informational,2,60,Article,False,/temas/telematica-flotas-argentina-2026/
+telematica-flotas-argentina-comparativa-2026,Telemática para flotas en Argentina 2026 · comparativa,argentina,telematica,comparativo,2,60,Article,False,/temas/telematica-flotas-argentina-comparativa-2026/
+telematica-flotas-argentina-guia-2026,Telemática para flotas en Argentina 2026 · guía,argentina,telematica,guia-practica,2,60,HowTo,False,/temas/telematica-flotas-argentina-guia-2026/
+video-telematica-flotas-argentina-2026,Video-telemática y ADAS para flotas en Argentina 2026,argentina,video-telematica,informational,3,90,Article,False,/temas/video-telematica-flotas-argentina-2026/
+video-telematica-flotas-argentina-comparativa-2026,Video-telemática y ADAS para flotas en Argentina 2026 · comparativa,argentina,video-telematica,comparativo,3,90,Article,False,/temas/video-telematica-flotas-argentina-comparativa-2026/
+tarjetas-flota-argentina-2026,Tarjetas de flota y combustible en Argentina 2026,argentina,fuel-cards,informational,2,60,Article,True,/temas/tarjetas-flota-argentina-2026/
+tarjetas-flota-argentina-comparativa-2026,Tarjetas de flota y combustible en Argentina 2026 · comparativa,argentina,fuel-cards,comparativo,2,60,Article,True,/temas/tarjetas-flota-argentina-comparativa-2026/
+tarjetas-flota-argentina-guia-2026,Tarjetas de flota y combustible en Argentina 2026 · guía,argentina,fuel-cards,guia-practica,2,60,HowTo,True,/temas/tarjetas-flota-argentina-guia-2026/
+combustible-flota-argentina-2026,Combustible y diésel para flotas en Argentina 2026,argentina,combustible,informational,3,90,Article,True,/temas/combustible-flota-argentina-2026/
+combustible-flota-argentina-guia-2026,Combustible y diésel para flotas en Argentina 2026 · guía,argentina,combustible,guia-practica,3,90,HowTo,True,/temas/combustible-flota-argentina-guia-2026/
+electrificacion-flotas-argentina-2026,Electrificación de flotas en Argentina 2026,argentina,electrificacion-flotas,informational,2,60,Article,False,/temas/electrificacion-flotas-argentina-2026/
+electrificacion-flotas-argentina-guia-2026,Electrificación de flotas en Argentina 2026 · guía,argentina,electrificacion-flotas,guia-practica,2,60,HowTo,False,/temas/electrificacion-flotas-argentina-guia-2026/
+mantenimiento-flota-argentina-2026,Mantenimiento de flota en Argentina 2026,argentina,mantenimiento,informational,2,60,Article,False,/temas/mantenimiento-flota-argentina-2026/
+mantenimiento-flota-argentina-guia-2026,Mantenimiento de flota en Argentina 2026 · guía,argentina,mantenimiento,guia-practica,2,60,HowTo,False,/temas/mantenimiento-flota-argentina-guia-2026/
+seguridad-flota-argentina-2026,Seguridad vial y operativa de flotas en Argentina 2026,argentina,seguridad,informational,3,90,Article,False,/temas/seguridad-flota-argentina-2026/
+control-gasto-flota-argentina-2026,Control de gasto en flotas en Argentina 2026,argentina,control-gasto,informational,2,60,Article,True,/temas/control-gasto-flota-argentina-2026/
+control-gasto-flota-argentina-guia-2026,Control de gasto en flotas en Argentina 2026 · guía,argentina,control-gasto,guia-practica,2,60,HowTo,True,/temas/control-gasto-flota-argentina-guia-2026/
+gestion-flota-argentina-2026,Gestión y operación de flotas en Argentina 2026,argentina,operacion-flotas,informational,2,60,Article,False,/temas/gestion-flota-argentina-2026/
+ruteo-flota-argentina-2026,Ruteo y planificación de flota en Argentina 2026,argentina,routing,informational,3,90,Article,False,/temas/ruteo-flota-argentina-2026/
+logistica-distribucion-argentina-2026,Logística y distribución en Argentina 2026,argentina,logistica-distribucion,informational,3,90,Article,False,/temas/logistica-distribucion-argentina-2026/
+seguro-flota-argentina-2026,Seguros de flota en Argentina 2026,argentina,insurance,informational,3,90,Article,False,/temas/seguro-flota-argentina-2026/
+fabricantes-camiones-argentina-2026,Fabricantes de camiones y comerciales en Argentina 2026,argentina,truck-oem,informational,3,90,Article,False,/temas/fabricantes-camiones-argentina-2026/
+fabricantes-camiones-argentina-comparativa-2026,Fabricantes de camiones y comerciales en Argentina 2026 · comparativa,argentina,truck-oem,comparativo,3,90,Article,False,/temas/fabricantes-camiones-argentina-comparativa-2026/
+robo-carga-argentina-2026,Robo de carga y seguridad de mercancías en Argentina 2026,argentina,cargo-theft,informational,3,90,Article,False,/temas/robo-carga-argentina-2026/
+fraude-combustible-flota-argentina-2026,Fraude y robo de combustible en flotas en Argentina 2026,argentina,fraude,informational,3,90,Article,True,/temas/fraude-combustible-flota-argentina-2026/
+movilidad-urbana-flotas-argentina-2026,Movilidad urbana y flotas comerciales en Argentina 2026,argentina,movilidad-urbana,informational,3,90,Article,False,/temas/movilidad-urbana-flotas-argentina-2026/
+compliance-flotas-argentina-2026,Compliance y normativa de flotas en Argentina 2026,argentina,compliance,informational,2,60,Article,False,/temas/compliance-flotas-argentina-2026/
+compliance-flotas-argentina-regulacion-2026,Compliance y normativa de flotas en Argentina 2026 · regulación y obligaciones,argentina,compliance,regulatorio,2,30,Article,False,/temas/compliance-flotas-argentina-regulacion-2026/
+telematica-flotas-peru-2026,Telemática para flotas en Perú 2026,peru,telematica,informational,2,60,Article,False,/temas/telematica-flotas-peru-2026/
+telematica-flotas-peru-comparativa-2026,Telemática para flotas en Perú 2026 · comparativa,peru,telematica,comparativo,2,60,Article,False,/temas/telematica-flotas-peru-comparativa-2026/
+telematica-flotas-peru-guia-2026,Telemática para flotas en Perú 2026 · guía,peru,telematica,guia-practica,2,60,HowTo,False,/temas/telematica-flotas-peru-guia-2026/
+video-telematica-flotas-peru-2026,Video-telemática y ADAS para flotas en Perú 2026,peru,video-telematica,informational,3,90,Article,False,/temas/video-telematica-flotas-peru-2026/
+video-telematica-flotas-peru-comparativa-2026,Video-telemática y ADAS para flotas en Perú 2026 · comparativa,peru,video-telematica,comparativo,3,90,Article,False,/temas/video-telematica-flotas-peru-comparativa-2026/
+tarjetas-flota-peru-2026,Tarjetas de flota y combustible en Perú 2026,peru,fuel-cards,informational,2,60,Article,True,/temas/tarjetas-flota-peru-2026/
+tarjetas-flota-peru-comparativa-2026,Tarjetas de flota y combustible en Perú 2026 · comparativa,peru,fuel-cards,comparativo,2,60,Article,True,/temas/tarjetas-flota-peru-comparativa-2026/
+tarjetas-flota-peru-guia-2026,Tarjetas de flota y combustible en Perú 2026 · guía,peru,fuel-cards,guia-practica,2,60,HowTo,True,/temas/tarjetas-flota-peru-guia-2026/
+combustible-flota-peru-2026,Combustible y diésel para flotas en Perú 2026,peru,combustible,informational,3,90,Article,True,/temas/combustible-flota-peru-2026/
+combustible-flota-peru-guia-2026,Combustible y diésel para flotas en Perú 2026 · guía,peru,combustible,guia-practica,3,90,HowTo,True,/temas/combustible-flota-peru-guia-2026/
+electrificacion-flotas-peru-2026,Electrificación de flotas en Perú 2026,peru,electrificacion-flotas,informational,2,60,Article,False,/temas/electrificacion-flotas-peru-2026/
+electrificacion-flotas-peru-guia-2026,Electrificación de flotas en Perú 2026 · guía,peru,electrificacion-flotas,guia-practica,2,60,HowTo,False,/temas/electrificacion-flotas-peru-guia-2026/
+mantenimiento-flota-peru-2026,Mantenimiento de flota en Perú 2026,peru,mantenimiento,informational,2,60,Article,False,/temas/mantenimiento-flota-peru-2026/
+mantenimiento-flota-peru-guia-2026,Mantenimiento de flota en Perú 2026 · guía,peru,mantenimiento,guia-practica,2,60,HowTo,False,/temas/mantenimiento-flota-peru-guia-2026/
+seguridad-flota-peru-2026,Seguridad vial y operativa de flotas en Perú 2026,peru,seguridad,informational,3,90,Article,False,/temas/seguridad-flota-peru-2026/
+control-gasto-flota-peru-2026,Control de gasto en flotas en Perú 2026,peru,control-gasto,informational,2,60,Article,True,/temas/control-gasto-flota-peru-2026/
+control-gasto-flota-peru-guia-2026,Control de gasto en flotas en Perú 2026 · guía,peru,control-gasto,guia-practica,2,60,HowTo,True,/temas/control-gasto-flota-peru-guia-2026/
+gestion-flota-peru-2026,Gestión y operación de flotas en Perú 2026,peru,operacion-flotas,informational,2,60,Article,False,/temas/gestion-flota-peru-2026/
+ruteo-flota-peru-2026,Ruteo y planificación de flota en Perú 2026,peru,routing,informational,3,90,Article,False,/temas/ruteo-flota-peru-2026/
+logistica-distribucion-peru-2026,Logística y distribución en Perú 2026,peru,logistica-distribucion,informational,3,90,Article,False,/temas/logistica-distribucion-peru-2026/
+seguro-flota-peru-2026,Seguros de flota en Perú 2026,peru,insurance,informational,3,90,Article,False,/temas/seguro-flota-peru-2026/
+fabricantes-camiones-peru-2026,Fabricantes de camiones y comerciales en Perú 2026,peru,truck-oem,informational,3,90,Article,False,/temas/fabricantes-camiones-peru-2026/
+fabricantes-camiones-peru-comparativa-2026,Fabricantes de camiones y comerciales en Perú 2026 · comparativa,peru,truck-oem,comparativo,3,90,Article,False,/temas/fabricantes-camiones-peru-comparativa-2026/
+robo-carga-peru-2026,Robo de carga y seguridad de mercancías en Perú 2026,peru,cargo-theft,informational,3,90,Article,False,/temas/robo-carga-peru-2026/
+fraude-combustible-flota-peru-2026,Fraude y robo de combustible en flotas en Perú 2026,peru,fraude,informational,3,90,Article,True,/temas/fraude-combustible-flota-peru-2026/
+movilidad-urbana-flotas-peru-2026,Movilidad urbana y flotas comerciales en Perú 2026,peru,movilidad-urbana,informational,3,90,Article,False,/temas/movilidad-urbana-flotas-peru-2026/
+compliance-flotas-peru-2026,Compliance y normativa de flotas en Perú 2026,peru,compliance,informational,2,60,Article,False,/temas/compliance-flotas-peru-2026/
+compliance-flotas-peru-regulacion-2026,Compliance y normativa de flotas en Perú 2026 · regulación y obligaciones,peru,compliance,regulatorio,2,30,Article,False,/temas/compliance-flotas-peru-regulacion-2026/
+telematica-flotas-ecuador-2026,Telemática para flotas en Ecuador 2026,ecuador,telematica,informational,3,90,Article,False,/temas/telematica-flotas-ecuador-2026/
+telematica-flotas-ecuador-comparativa-2026,Telemática para flotas en Ecuador 2026 · comparativa,ecuador,telematica,comparativo,3,90,Article,False,/temas/telematica-flotas-ecuador-comparativa-2026/
+telematica-flotas-ecuador-guia-2026,Telemática para flotas en Ecuador 2026 · guía,ecuador,telematica,guia-practica,3,90,HowTo,False,/temas/telematica-flotas-ecuador-guia-2026/
+video-telematica-flotas-ecuador-2026,Video-telemática y ADAS para flotas en Ecuador 2026,ecuador,video-telematica,informational,3,90,Article,False,/temas/video-telematica-flotas-ecuador-2026/
+video-telematica-flotas-ecuador-comparativa-2026,Video-telemática y ADAS para flotas en Ecuador 2026 · comparativa,ecuador,video-telematica,comparativo,3,90,Article,False,/temas/video-telematica-flotas-ecuador-comparativa-2026/
+tarjetas-flota-ecuador-2026,Tarjetas de flota y combustible en Ecuador 2026,ecuador,fuel-cards,informational,3,90,Article,True,/temas/tarjetas-flota-ecuador-2026/
+tarjetas-flota-ecuador-comparativa-2026,Tarjetas de flota y combustible en Ecuador 2026 · comparativa,ecuador,fuel-cards,comparativo,3,90,Article,True,/temas/tarjetas-flota-ecuador-comparativa-2026/
+tarjetas-flota-ecuador-guia-2026,Tarjetas de flota y combustible en Ecuador 2026 · guía,ecuador,fuel-cards,guia-practica,3,90,HowTo,True,/temas/tarjetas-flota-ecuador-guia-2026/
+combustible-flota-ecuador-2026,Combustible y diésel para flotas en Ecuador 2026,ecuador,combustible,informational,3,90,Article,True,/temas/combustible-flota-ecuador-2026/
+combustible-flota-ecuador-guia-2026,Combustible y diésel para flotas en Ecuador 2026 · guía,ecuador,combustible,guia-practica,3,90,HowTo,True,/temas/combustible-flota-ecuador-guia-2026/
+electrificacion-flotas-ecuador-2026,Electrificación de flotas en Ecuador 2026,ecuador,electrificacion-flotas,informational,3,90,Article,False,/temas/electrificacion-flotas-ecuador-2026/
+electrificacion-flotas-ecuador-guia-2026,Electrificación de flotas en Ecuador 2026 · guía,ecuador,electrificacion-flotas,guia-practica,3,90,HowTo,False,/temas/electrificacion-flotas-ecuador-guia-2026/
+mantenimiento-flota-ecuador-2026,Mantenimiento de flota en Ecuador 2026,ecuador,mantenimiento,informational,3,90,Article,False,/temas/mantenimiento-flota-ecuador-2026/
+mantenimiento-flota-ecuador-guia-2026,Mantenimiento de flota en Ecuador 2026 · guía,ecuador,mantenimiento,guia-practica,3,90,HowTo,False,/temas/mantenimiento-flota-ecuador-guia-2026/
+seguridad-flota-ecuador-2026,Seguridad vial y operativa de flotas en Ecuador 2026,ecuador,seguridad,informational,3,90,Article,False,/temas/seguridad-flota-ecuador-2026/
+control-gasto-flota-ecuador-2026,Control de gasto en flotas en Ecuador 2026,ecuador,control-gasto,informational,3,90,Article,True,/temas/control-gasto-flota-ecuador-2026/
+control-gasto-flota-ecuador-guia-2026,Control de gasto en flotas en Ecuador 2026 · guía,ecuador,control-gasto,guia-practica,3,90,HowTo,True,/temas/control-gasto-flota-ecuador-guia-2026/
+gestion-flota-ecuador-2026,Gestión y operación de flotas en Ecuador 2026,ecuador,operacion-flotas,informational,3,90,Article,False,/temas/gestion-flota-ecuador-2026/
+ruteo-flota-ecuador-2026,Ruteo y planificación de flota en Ecuador 2026,ecuador,routing,informational,3,90,Article,False,/temas/ruteo-flota-ecuador-2026/
+logistica-distribucion-ecuador-2026,Logística y distribución en Ecuador 2026,ecuador,logistica-distribucion,informational,3,90,Article,False,/temas/logistica-distribucion-ecuador-2026/
+seguro-flota-ecuador-2026,Seguros de flota en Ecuador 2026,ecuador,insurance,informational,3,90,Article,False,/temas/seguro-flota-ecuador-2026/
+fabricantes-camiones-ecuador-2026,Fabricantes de camiones y comerciales en Ecuador 2026,ecuador,truck-oem,informational,3,90,Article,False,/temas/fabricantes-camiones-ecuador-2026/
+fabricantes-camiones-ecuador-comparativa-2026,Fabricantes de camiones y comerciales en Ecuador 2026 · comparativa,ecuador,truck-oem,comparativo,3,90,Article,False,/temas/fabricantes-camiones-ecuador-comparativa-2026/
+robo-carga-ecuador-2026,Robo de carga y seguridad de mercancías en Ecuador 2026,ecuador,cargo-theft,informational,3,90,Article,False,/temas/robo-carga-ecuador-2026/
+fraude-combustible-flota-ecuador-2026,Fraude y robo de combustible en flotas en Ecuador 2026,ecuador,fraude,informational,3,90,Article,True,/temas/fraude-combustible-flota-ecuador-2026/
+movilidad-urbana-flotas-ecuador-2026,Movilidad urbana y flotas comerciales en Ecuador 2026,ecuador,movilidad-urbana,informational,3,90,Article,False,/temas/movilidad-urbana-flotas-ecuador-2026/
+compliance-flotas-ecuador-2026,Compliance y normativa de flotas en Ecuador 2026,ecuador,compliance,informational,3,90,Article,False,/temas/compliance-flotas-ecuador-2026/
+compliance-flotas-ecuador-regulacion-2026,Compliance y normativa de flotas en Ecuador 2026 · regulación y obligaciones,ecuador,compliance,regulatorio,3,30,Article,False,/temas/compliance-flotas-ecuador-regulacion-2026/
+telematica-flotas-uruguay-2026,Telemática para flotas en Uruguay 2026,uruguay,telematica,informational,3,90,Article,False,/temas/telematica-flotas-uruguay-2026/
+telematica-flotas-uruguay-comparativa-2026,Telemática para flotas en Uruguay 2026 · comparativa,uruguay,telematica,comparativo,3,90,Article,False,/temas/telematica-flotas-uruguay-comparativa-2026/
+telematica-flotas-uruguay-guia-2026,Telemática para flotas en Uruguay 2026 · guía,uruguay,telematica,guia-practica,3,90,HowTo,False,/temas/telematica-flotas-uruguay-guia-2026/
+video-telematica-flotas-uruguay-2026,Video-telemática y ADAS para flotas en Uruguay 2026,uruguay,video-telematica,informational,3,90,Article,False,/temas/video-telematica-flotas-uruguay-2026/
+video-telematica-flotas-uruguay-comparativa-2026,Video-telemática y ADAS para flotas en Uruguay 2026 · comparativa,uruguay,video-telematica,comparativo,3,90,Article,False,/temas/video-telematica-flotas-uruguay-comparativa-2026/
+tarjetas-flota-uruguay-2026,Tarjetas de flota y combustible en Uruguay 2026,uruguay,fuel-cards,informational,3,90,Article,True,/temas/tarjetas-flota-uruguay-2026/
+tarjetas-flota-uruguay-comparativa-2026,Tarjetas de flota y combustible en Uruguay 2026 · comparativa,uruguay,fuel-cards,comparativo,3,90,Article,True,/temas/tarjetas-flota-uruguay-comparativa-2026/
+tarjetas-flota-uruguay-guia-2026,Tarjetas de flota y combustible en Uruguay 2026 · guía,uruguay,fuel-cards,guia-practica,3,90,HowTo,True,/temas/tarjetas-flota-uruguay-guia-2026/
+combustible-flota-uruguay-2026,Combustible y diésel para flotas en Uruguay 2026,uruguay,combustible,informational,3,90,Article,True,/temas/combustible-flota-uruguay-2026/
+combustible-flota-uruguay-guia-2026,Combustible y diésel para flotas en Uruguay 2026 · guía,uruguay,combustible,guia-practica,3,90,HowTo,True,/temas/combustible-flota-uruguay-guia-2026/
+electrificacion-flotas-uruguay-2026,Electrificación de flotas en Uruguay 2026,uruguay,electrificacion-flotas,informational,3,90,Article,False,/temas/electrificacion-flotas-uruguay-2026/
+electrificacion-flotas-uruguay-guia-2026,Electrificación de flotas en Uruguay 2026 · guía,uruguay,electrificacion-flotas,guia-practica,3,90,HowTo,False,/temas/electrificacion-flotas-uruguay-guia-2026/
+mantenimiento-flota-uruguay-2026,Mantenimiento de flota en Uruguay 2026,uruguay,mantenimiento,informational,3,90,Article,False,/temas/mantenimiento-flota-uruguay-2026/
+mantenimiento-flota-uruguay-guia-2026,Mantenimiento de flota en Uruguay 2026 · guía,uruguay,mantenimiento,guia-practica,3,90,HowTo,False,/temas/mantenimiento-flota-uruguay-guia-2026/
+seguridad-flota-uruguay-2026,Seguridad vial y operativa de flotas en Uruguay 2026,uruguay,seguridad,informational,3,90,Article,False,/temas/seguridad-flota-uruguay-2026/
+control-gasto-flota-uruguay-2026,Control de gasto en flotas en Uruguay 2026,uruguay,control-gasto,informational,3,90,Article,True,/temas/control-gasto-flota-uruguay-2026/
+control-gasto-flota-uruguay-guia-2026,Control de gasto en flotas en Uruguay 2026 · guía,uruguay,control-gasto,guia-practica,3,90,HowTo,True,/temas/control-gasto-flota-uruguay-guia-2026/
+gestion-flota-uruguay-2026,Gestión y operación de flotas en Uruguay 2026,uruguay,operacion-flotas,informational,3,90,Article,False,/temas/gestion-flota-uruguay-2026/
+ruteo-flota-uruguay-2026,Ruteo y planificación de flota en Uruguay 2026,uruguay,routing,informational,3,90,Article,False,/temas/ruteo-flota-uruguay-2026/
+logistica-distribucion-uruguay-2026,Logística y distribución en Uruguay 2026,uruguay,logistica-distribucion,informational,3,90,Article,False,/temas/logistica-distribucion-uruguay-2026/
+seguro-flota-uruguay-2026,Seguros de flota en Uruguay 2026,uruguay,insurance,informational,3,90,Article,False,/temas/seguro-flota-uruguay-2026/
+fabricantes-camiones-uruguay-2026,Fabricantes de camiones y comerciales en Uruguay 2026,uruguay,truck-oem,informational,3,90,Article,False,/temas/fabricantes-camiones-uruguay-2026/
+fabricantes-camiones-uruguay-comparativa-2026,Fabricantes de camiones y comerciales en Uruguay 2026 · comparativa,uruguay,truck-oem,comparativo,3,90,Article,False,/temas/fabricantes-camiones-uruguay-comparativa-2026/
+robo-carga-uruguay-2026,Robo de carga y seguridad de mercancías en Uruguay 2026,uruguay,cargo-theft,informational,3,90,Article,False,/temas/robo-carga-uruguay-2026/
+fraude-combustible-flota-uruguay-2026,Fraude y robo de combustible en flotas en Uruguay 2026,uruguay,fraude,informational,3,90,Article,True,/temas/fraude-combustible-flota-uruguay-2026/
+movilidad-urbana-flotas-uruguay-2026,Movilidad urbana y flotas comerciales en Uruguay 2026,uruguay,movilidad-urbana,informational,3,90,Article,False,/temas/movilidad-urbana-flotas-uruguay-2026/
+compliance-flotas-uruguay-2026,Compliance y normativa de flotas en Uruguay 2026,uruguay,compliance,informational,3,90,Article,False,/temas/compliance-flotas-uruguay-2026/
+compliance-flotas-uruguay-regulacion-2026,Compliance y normativa de flotas en Uruguay 2026 · regulación y obligaciones,uruguay,compliance,regulatorio,3,30,Article,False,/temas/compliance-flotas-uruguay-regulacion-2026/
+telematica-flotas-republica-dominicana-2026,Telemática para flotas en República Dominicana 2026,republica-dominicana,telematica,informational,3,90,Article,False,/temas/telematica-flotas-republica-dominicana-2026/
+telematica-flotas-republica-dominicana-comparativa-2026,Telemática para flotas en República Dominicana 2026 · comparativa,republica-dominicana,telematica,comparativo,3,90,Article,False,/temas/telematica-flotas-republica-dominicana-comparativa-2026/
+telematica-flotas-republica-dominicana-guia-2026,Telemática para flotas en República Dominicana 2026 · guía,republica-dominicana,telematica,guia-practica,3,90,HowTo,False,/temas/telematica-flotas-republica-dominicana-guia-2026/
+video-telematica-flotas-republica-dominicana-2026,Video-telemática y ADAS para flotas en República Dominicana 2026,republica-dominicana,video-telematica,informational,3,90,Article,False,/temas/video-telematica-flotas-republica-dominicana-2026/
+video-telematica-flotas-republica-dominicana-comparativa-2026,Video-telemática y ADAS para flotas en República Dominicana 2026 · comparativa,republica-dominicana,video-telematica,comparativo,3,90,Article,False,/temas/video-telematica-flotas-republica-dominicana-comparativa-2026/
+tarjetas-flota-republica-dominicana-2026,Tarjetas de flota y combustible en República Dominicana 2026,republica-dominicana,fuel-cards,informational,3,90,Article,True,/temas/tarjetas-flota-republica-dominicana-2026/
+tarjetas-flota-republica-dominicana-comparativa-2026,Tarjetas de flota y combustible en República Dominicana 2026 · comparativa,republica-dominicana,fuel-cards,comparativo,3,90,Article,True,/temas/tarjetas-flota-republica-dominicana-comparativa-2026/
+tarjetas-flota-republica-dominicana-guia-2026,Tarjetas de flota y combustible en República Dominicana 2026 · guía,republica-dominicana,fuel-cards,guia-practica,3,90,HowTo,True,/temas/tarjetas-flota-republica-dominicana-guia-2026/
+combustible-flota-republica-dominicana-2026,Combustible y diésel para flotas en República Dominicana 2026,republica-dominicana,combustible,informational,3,90,Article,True,/temas/combustible-flota-republica-dominicana-2026/
+combustible-flota-republica-dominicana-guia-2026,Combustible y diésel para flotas en República Dominicana 2026 · guía,republica-dominicana,combustible,guia-practica,3,90,HowTo,True,/temas/combustible-flota-republica-dominicana-guia-2026/
+electrificacion-flotas-republica-dominicana-2026,Electrificación de flotas en República Dominicana 2026,republica-dominicana,electrificacion-flotas,informational,3,90,Article,False,/temas/electrificacion-flotas-republica-dominicana-2026/
+electrificacion-flotas-republica-dominicana-guia-2026,Electrificación de flotas en República Dominicana 2026 · guía,republica-dominicana,electrificacion-flotas,guia-practica,3,90,HowTo,False,/temas/electrificacion-flotas-republica-dominicana-guia-2026/
+mantenimiento-flota-republica-dominicana-2026,Mantenimiento de flota en República Dominicana 2026,republica-dominicana,mantenimiento,informational,3,90,Article,False,/temas/mantenimiento-flota-republica-dominicana-2026/
+mantenimiento-flota-republica-dominicana-guia-2026,Mantenimiento de flota en República Dominicana 2026 · guía,republica-dominicana,mantenimiento,guia-practica,3,90,HowTo,False,/temas/mantenimiento-flota-republica-dominicana-guia-2026/
+seguridad-flota-republica-dominicana-2026,Seguridad vial y operativa de flotas en República Dominicana 2026,republica-dominicana,seguridad,informational,3,90,Article,False,/temas/seguridad-flota-republica-dominicana-2026/
+control-gasto-flota-republica-dominicana-2026,Control de gasto en flotas en República Dominicana 2026,republica-dominicana,control-gasto,informational,3,90,Article,True,/temas/control-gasto-flota-republica-dominicana-2026/
+control-gasto-flota-republica-dominicana-guia-2026,Control de gasto en flotas en República Dominicana 2026 · guía,republica-dominicana,control-gasto,guia-practica,3,90,HowTo,True,/temas/control-gasto-flota-republica-dominicana-guia-2026/
+gestion-flota-republica-dominicana-2026,Gestión y operación de flotas en República Dominicana 2026,republica-dominicana,operacion-flotas,informational,3,90,Article,False,/temas/gestion-flota-republica-dominicana-2026/
+ruteo-flota-republica-dominicana-2026,Ruteo y planificación de flota en República Dominicana 2026,republica-dominicana,routing,informational,3,90,Article,False,/temas/ruteo-flota-republica-dominicana-2026/
+logistica-distribucion-republica-dominicana-2026,Logística y distribución en República Dominicana 2026,republica-dominicana,logistica-distribucion,informational,3,90,Article,False,/temas/logistica-distribucion-republica-dominicana-2026/
+seguro-flota-republica-dominicana-2026,Seguros de flota en República Dominicana 2026,republica-dominicana,insurance,informational,3,90,Article,False,/temas/seguro-flota-republica-dominicana-2026/
+fabricantes-camiones-republica-dominicana-2026,Fabricantes de camiones y comerciales en República Dominicana 2026,republica-dominicana,truck-oem,informational,3,90,Article,False,/temas/fabricantes-camiones-republica-dominicana-2026/
+fabricantes-camiones-republica-dominicana-comparativa-2026,Fabricantes de camiones y comerciales en República Dominicana 2026 · comparativa,republica-dominicana,truck-oem,comparativo,3,90,Article,False,/temas/fabricantes-camiones-republica-dominicana-comparativa-2026/
+robo-carga-republica-dominicana-2026,Robo de carga y seguridad de mercancías en República Dominicana 2026,republica-dominicana,cargo-theft,informational,3,90,Article,False,/temas/robo-carga-republica-dominicana-2026/
+fraude-combustible-flota-republica-dominicana-2026,Fraude y robo de combustible en flotas en República Dominicana 2026,republica-dominicana,fraude,informational,3,90,Article,True,/temas/fraude-combustible-flota-republica-dominicana-2026/
+movilidad-urbana-flotas-republica-dominicana-2026,Movilidad urbana y flotas comerciales en República Dominicana 2026,republica-dominicana,movilidad-urbana,informational,3,90,Article,False,/temas/movilidad-urbana-flotas-republica-dominicana-2026/
+compliance-flotas-republica-dominicana-2026,Compliance y normativa de flotas en República Dominicana 2026,republica-dominicana,compliance,informational,3,90,Article,False,/temas/compliance-flotas-republica-dominicana-2026/
+compliance-flotas-republica-dominicana-regulacion-2026,Compliance y normativa de flotas en República Dominicana 2026 · regulación y obligaciones,republica-dominicana,compliance,regulatorio,3,30,Article,False,/temas/compliance-flotas-republica-dominicana-regulacion-2026/
+telematica-flotas-latam-2026,Telemática para flotas en LatAm 2026,latam,telematica,informational,2,60,Article,False,/temas/telematica-flotas-latam-2026/
+telematica-flotas-latam-comparativa-2026,Telemática para flotas en LatAm 2026 · comparativa,latam,telematica,comparativo,2,60,Article,False,/temas/telematica-flotas-latam-comparativa-2026/
+telematica-flotas-latam-guia-2026,Telemática para flotas en LatAm 2026 · guía,latam,telematica,guia-practica,2,60,HowTo,False,/temas/telematica-flotas-latam-guia-2026/
+video-telematica-flotas-latam-2026,Video-telemática y ADAS para flotas en LatAm 2026,latam,video-telematica,informational,3,90,Article,False,/temas/video-telematica-flotas-latam-2026/
+video-telematica-flotas-latam-comparativa-2026,Video-telemática y ADAS para flotas en LatAm 2026 · comparativa,latam,video-telematica,comparativo,3,90,Article,False,/temas/video-telematica-flotas-latam-comparativa-2026/
+tarjetas-flota-latam-2026,Tarjetas de flota y combustible en LatAm 2026,latam,fuel-cards,informational,2,60,Article,True,/temas/tarjetas-flota-latam-2026/
+tarjetas-flota-latam-comparativa-2026,Tarjetas de flota y combustible en LatAm 2026 · comparativa,latam,fuel-cards,comparativo,2,60,Article,True,/temas/tarjetas-flota-latam-comparativa-2026/
+tarjetas-flota-latam-guia-2026,Tarjetas de flota y combustible en LatAm 2026 · guía,latam,fuel-cards,guia-practica,2,60,HowTo,True,/temas/tarjetas-flota-latam-guia-2026/
+combustible-flota-latam-2026,Combustible y diésel para flotas en LatAm 2026,latam,combustible,informational,3,90,Article,True,/temas/combustible-flota-latam-2026/
+combustible-flota-latam-guia-2026,Combustible y diésel para flotas en LatAm 2026 · guía,latam,combustible,guia-practica,3,90,HowTo,True,/temas/combustible-flota-latam-guia-2026/
+electrificacion-flotas-latam-2026,Electrificación de flotas en LatAm 2026,latam,electrificacion-flotas,informational,2,60,Article,False,/temas/electrificacion-flotas-latam-2026/
+electrificacion-flotas-latam-guia-2026,Electrificación de flotas en LatAm 2026 · guía,latam,electrificacion-flotas,guia-practica,2,60,HowTo,False,/temas/electrificacion-flotas-latam-guia-2026/
+mantenimiento-flota-latam-2026,Mantenimiento de flota en LatAm 2026,latam,mantenimiento,informational,2,60,Article,False,/temas/mantenimiento-flota-latam-2026/
+mantenimiento-flota-latam-guia-2026,Mantenimiento de flota en LatAm 2026 · guía,latam,mantenimiento,guia-practica,2,60,HowTo,False,/temas/mantenimiento-flota-latam-guia-2026/
+seguridad-flota-latam-2026,Seguridad vial y operativa de flotas en LatAm 2026,latam,seguridad,informational,3,90,Article,False,/temas/seguridad-flota-latam-2026/
+control-gasto-flota-latam-2026,Control de gasto en flotas en LatAm 2026,latam,control-gasto,informational,2,60,Article,True,/temas/control-gasto-flota-latam-2026/
+control-gasto-flota-latam-guia-2026,Control de gasto en flotas en LatAm 2026 · guía,latam,control-gasto,guia-practica,2,60,HowTo,True,/temas/control-gasto-flota-latam-guia-2026/
+gestion-flota-latam-2026,Gestión y operación de flotas en LatAm 2026,latam,operacion-flotas,informational,2,60,Article,False,/temas/gestion-flota-latam-2026/
+ruteo-flota-latam-2026,Ruteo y planificación de flota en LatAm 2026,latam,routing,informational,3,90,Article,False,/temas/ruteo-flota-latam-2026/
+logistica-distribucion-latam-2026,Logística y distribución en LatAm 2026,latam,logistica-distribucion,informational,3,90,Article,False,/temas/logistica-distribucion-latam-2026/
+seguro-flota-latam-2026,Seguros de flota en LatAm 2026,latam,insurance,informational,3,90,Article,False,/temas/seguro-flota-latam-2026/
+fabricantes-camiones-latam-2026,Fabricantes de camiones y comerciales en LatAm 2026,latam,truck-oem,informational,3,90,Article,False,/temas/fabricantes-camiones-latam-2026/
+fabricantes-camiones-latam-comparativa-2026,Fabricantes de camiones y comerciales en LatAm 2026 · comparativa,latam,truck-oem,comparativo,3,90,Article,False,/temas/fabricantes-camiones-latam-comparativa-2026/
+robo-carga-latam-2026,Robo de carga y seguridad de mercancías en LatAm 2026,latam,cargo-theft,informational,3,90,Article,False,/temas/robo-carga-latam-2026/
+fraude-combustible-flota-latam-2026,Fraude y robo de combustible en flotas en LatAm 2026,latam,fraude,informational,3,90,Article,True,/temas/fraude-combustible-flota-latam-2026/
+movilidad-urbana-flotas-latam-2026,Movilidad urbana y flotas comerciales en LatAm 2026,latam,movilidad-urbana,informational,3,90,Article,False,/temas/movilidad-urbana-flotas-latam-2026/
+compliance-flotas-latam-2026,Compliance y normativa de flotas en LatAm 2026,latam,compliance,informational,2,60,Article,False,/temas/compliance-flotas-latam-2026/
+compliance-flotas-latam-regulacion-2026,Compliance y normativa de flotas en LatAm 2026 · regulación y obligaciones,latam,compliance,regulatorio,2,30,Article,False,/temas/compliance-flotas-latam-regulacion-2026/

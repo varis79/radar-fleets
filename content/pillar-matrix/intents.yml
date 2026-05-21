@@ -1,0 +1,76 @@
+# Intents que la matriz long-tail puede tener.
+#
+# Cada intent define:
+# - schema_type: tipo Schema.org a usar al generar la página.
+# - slug_suffix: sufijo de URL para diferenciar la misma combinación
+#   market+topic en distintos intents.
+#   Ejemplo: telematica-flotas-mexico-2026  → informational (sin sufijo)
+#            telematica-flotas-mexico-comparativa-2026 → comparativo
+#            telematica-flotas-mexico-guia-2026  → guia-practica
+# - section_template: qué secciones se generan para una página con este intent.
+#   Cada sección la rellena el LLM en SEO-3.2.
+# - review_days: cada cuántos días se revisa esta página (override del tier).
+#   Si null, hereda del tier.
+
+intents:
+  informational:
+    label: "Informational / panorama"
+    schema_type: Article
+    slug_suffix: ""                # sin sufijo, es el default
+    section_template:
+      - introduccion-tema-mercado
+      - estado-actual-mercado
+      - players-activos-mercado
+      - regulacion-aplicable
+      - cifras-clave
+      - historias-relacionadas      # auto-actualizable desde editorial-memory
+      - faq
+      - como-encaja-pulpo
+    review_days: null
+
+  comparativo:
+    label: "Comparativo entre opciones"
+    schema_type: Article
+    slug_suffix: "-comparativa"
+    section_template:
+      - introduccion-comparativa
+      - tabla-comparativa
+      - criterios-eleccion
+      - players-detalle
+      - recomendaciones-por-tamano-flota
+      - historias-relacionadas
+      - faq
+      - como-encaja-pulpo
+    review_days: null
+
+  regulatorio:
+    label: "Regulación y compliance"
+    schema_type: Article
+    slug_suffix: "-regulacion"
+    section_template:
+      - introduccion-norma
+      - alcance-quien-aplica
+      - obligaciones-clave
+      - plazos-y-fechas-importantes
+      - sanciones
+      - como-cumplir
+      - historias-relacionadas
+      - faq
+      - como-encaja-pulpo
+    review_days: 30                  # regulación cambia rápido, revisión mensual
+
+  guia-practica:
+    label: "Guía práctica / cómo elegir"
+    schema_type: HowTo
+    slug_suffix: "-guia"
+    section_template:
+      - introduccion-objetivo
+      - paso-1-evaluar-necesidades
+      - paso-2-criterios-de-eleccion
+      - paso-3-evaluar-players
+      - paso-4-implementacion
+      - errores-comunes
+      - historias-relacionadas
+      - faq
+      - como-encaja-pulpo
+    review_days: null
