@@ -155,7 +155,9 @@ classification:
     mantenimiento:
       ["maintenance", "mantenimiento", "predictive maintenance",
        "mantenimiento predictivo", "taller", "workshop", "uptime",
-       "downtime", "service interval", "parts shortage"]
+       "downtime", "service interval", "parts shortage",
+       "recambios", "spare parts", "aftermarket", "neumáticos", "neumaticos",
+       "tires", "tyres", "reparación", "reparacion", "ITV"]
     compliance:
       ["boe", "dof", "dgt", "fmcsa", "regulation", "regulación", "rulemaking",
        "v-16", "tacógrafo", "tachograph", "eld", "cne", "sict",
@@ -249,22 +251,34 @@ classification:
 
   fleet_types:
     transporte-pesado: ["heavy duty", "class 8", "tractocamión", "tractocamion",
-                        "pesado", "hdv", "tractor unit", "long-haul"]
-    vehiculos-comerciales-ligeros: ["van", "furgoneta", "lcv", "light commercial",
-                                    "transit", "sprinter", "master", "crafter",
-                                    "ducato", "boxer"]
+                        "pesado", "hdv", "tractor unit", "long-haul",
+                        "transporte de carga", "transportista de carga"]
+    vehiculos-comerciales-ligeros: ["van", "furgoneta", "vehículo comercial ligero",
+                                    "vehiculo comercial ligero", "lcv",
+                                    "light commercial", "transit", "sprinter",
+                                    "master", "crafter", "ducato", "boxer",
+                                    "vehículo industrial ligero", "comercial ligero"]
     pickups-utilitarios: ["pickup", "f-150", "f-250", "silverado", "ram 1500",
-                          "hilux", "ranger", "frontier", "tundra"]
-    reparto-ultima-milla: ["last mile", "última milla", "parcel delivery",
-                           "courier", "step van", "walk-in van"]
-    field-service: ["field service", "servicio técnico", "service fleet"]
+                          "hilux", "ranger", "frontier", "tundra",
+                          "camioneta", "camioneta de trabajo"]
+    reparto-ultima-milla: ["last mile", "última milla", "ultima milla",
+                           "parcel delivery", "paquetería", "paqueteria",
+                           "courier", "step van", "walk-in van",
+                           "reparto urbano", "mensajería", "mensajeria"]
+    field-service: ["field service", "servicio técnico", "servicio tecnico",
+                    "service fleet", "operación de campo", "operacion de campo",
+                    "flota de servicio", "telecom", "telecomunicaciones",
+                    "operador eléctrico", "utility fleet", "utilities",
+                    "instalación", "mantenimiento técnico", "técnicos de servicio"]
     ambulancias-emergencias: ["ambulance", "ambulancia", "emergency",
-                              "first responder", "patrulla", "police fleet"]
+                              "first responder", "patrulla", "police fleet",
+                              "bomberos", "cuerpos de emergencia"]
     construccion: ["construction", "construcción", "hormigonera", "vocational truck",
-                   "dump truck", "concrete mixer"]
-    mineria: ["mining", "minería", "haul truck", "open pit"]
+                   "dump truck", "concrete mixer", "obra civil", "edificación"]
+    mineria: ["mining", "minería", "haul truck", "open pit", "minera"]
     flotas-corporativas: ["corporate fleet", "flota corporativa", "renting",
-                          "leasing fleet", "company car"]
+                          "leasing fleet", "company car", "flota empresarial",
+                          "flota de empresa", "vehículo de empresa", "car-sharing corporativo"]
 
 # ─────────────────────────────────────────────
 # Dedupe
@@ -316,10 +330,15 @@ selection:
     recency_max: 2.0          # bonus máximo si publicación es hoy
     recency_decay_per_day: 0.2
     source_topic_hint_fallback: 0.5  # si no hay topic pero la fuente tiene hint
-    # Boost a topics editorialmente preferidos (vehículos, combustible,
-    # mantenimiento, seguridad, telemática, electrificación, fuel cards,
-    # geopolítica que afecta al sector). Bajamos perfil de freight forwarding
-    # puro USA-céntrico.
+    # Boost a topics editorialmente preferidos (operación de flota real, no
+    # freight forwarding USA-céntrico). Estos son los temas que Pulpo y sus
+    # clientes (flotillas medianas LCV/servicio/distribución) viven a diario.
+    #
+    # Quitados del boost (siguen como topics pero sin empuje extra):
+    #   - tariffs-trade        (1 noticia por edición sobra; no son temas operativos)
+    #   - autonomous-trucking  (muy USA, lejano del operador MX/ES medio)
+    #   - rail-freight         (no aplica al lector de Pulpo)
+    #   - freight-market       (idem, indicadores macro USA)
     topic_priority_boost: 0.5
     topic_priority_list:
       - "combustible"
@@ -330,13 +349,37 @@ selection:
       - "video-telematica"
       - "electrificacion-flotas"
       - "compliance"
-      - "tariffs-trade"
-      - "autonomous-trucking"
       - "truck-oem"
       - "cargo-theft"
       - "control-gasto"
       - "fraude"
       - "operacion-flotas"
+      - "routing"
+      - "insurance"
+      - "logistica-distribucion"
+    # Boost a fleet_types editorialmente preferidos. Refleja el universo
+    # operativo de Pulpo: flotas medianas de servicio, reparto, distribución
+    # y comerciales ligeras. Si una noticia tiene cualquiera de estos
+    # fleet_types asignados, gana puntos extra.
+    fleet_type_priority_boost: 0.5
+    fleet_type_priority_list:
+      - "vehiculos-comerciales-ligeros"
+      - "reparto-ultima-milla"
+      - "field-service"
+      - "flotas-corporativas"
+      - "ambulancias-emergencias"
+
+  # ───── Cuotas máximas por topic ─────
+  # Limita cuántas historias del mismo topic pueden coexistir en una edición.
+  # Útil para evitar saturación de temas específicos cuando dominan el feed
+  # (ej. semanas con muchas noticias arancelarias USMCA / Trump).
+  # Si un topic no aparece, no tiene límite.
+  topic_quotas:
+    tariffs-trade: 1
+    autonomous-trucking: 1
+    rail-freight: 0          # excluir del editorial: no aplica al lector Pulpo
+    freight-market: 0        # excluir: indicador macro USA sin valor operativo
+    labor-shortage: 1
 
   # ───── Cuotas por bucket geográfico ─────
   # El selector tras scoring redistribuye para respetar este reparto.

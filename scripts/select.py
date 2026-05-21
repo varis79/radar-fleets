@@ -128,6 +128,8 @@ def select(today: dt.date | None = None) -> dict:
     w_hint_fallback = float(scoring.get("source_topic_hint_fallback", 0.5))
     w_topic_boost = float(scoring.get("topic_priority_boost", 0.5))
     topic_priority_list = set(scoring.get("topic_priority_list", []))
+    w_fleet_boost = float(scoring.get("fleet_type_priority_boost", 0.5))
+    fleet_priority_list = set(scoring.get("fleet_type_priority_list", []))
 
     secondary_markets = {"usa"}
     china_markets = {"china"}
@@ -158,6 +160,8 @@ def select(today: dt.date | None = None) -> dict:
             s += w_player_base + w_player_each * min(len(it["players"]), 3)
         if it.get("fleet_type"):
             s += w_fleet
+            if it["fleet_type"] in fleet_priority_list:
+                s += w_fleet_boost
         if it.get("published_iso"):
             try:
                 age_days = (dt.datetime.now(dt.timezone.utc) - dt.datetime.fromisoformat(it["published_iso"])).total_seconds() / 86400
@@ -173,6 +177,25 @@ def select(today: dt.date | None = None) -> dict:
     min_pause = int(sel_cfg.get("min_stories_pause", 4))
     topic_min = int(sel_cfg.get("topic_min_diversity", 3))
     geo_min_ratio = float(sel_cfg.get("geo_min_primary_ratio", 0.55))
+
+    # ─── Filtro por topic_quotas (máximos por topic) ───
+    # Aplica ANTES del selector geográfico para que el ranking ya no incluya
+    # items que excederían su cuota de topic. Si quota=0, el topic se excluye
+    # totalmente (ej. rail-freight, freight-market no aplican a Pulpo).
+    topic_quotas = sel_cfg.get("topic_quotas", {}) or {}
+    if topic_quotas:
+        filtered: list[dict] = []
+        topic_count: dict[str, int] = {}
+        for it in kept_sorted:
+            t = it.get("topic")
+            if t and t in topic_quotas:
+                limit = int(topic_quotas[t])
+                used = topic_count.get(t, 0)
+                if used >= limit:
+                    continue
+                topic_count[t] = used + 1
+            filtered.append(it)
+        kept_sorted = filtered
 
     # ─── Selección por cuotas geográficas ───
     # Si geo_quotas está definido, agrupa items por bucket y respeta min/max
