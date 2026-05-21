@@ -50,6 +50,7 @@ Fuentes actuales (mayo 2026):
 - **España**: Fleet People ES, AECOC.
 - **México**: T21 MX, Mundo Logístico MX.
 - **Global EV**: Inside EVs, CleanTechnica · Clean Transport.
+- **Google News (queries activas)**: 10 búsquedas Pulpo-relevantes MX/ES sobre telemática, fuel cards, electrificación, última milla, regulación, mantenimiento, ITV, V-16, ZBE, renting, vehículos comerciales.
 
 ### 2. Classify · `scripts/classify.py`
 - Determinístico: keyword match con word-boundary Unicode (evita falsos positivos como 'epa' en 'preparación').
@@ -66,17 +67,18 @@ Fuentes actuales (mayo 2026):
 - Output: `content/raw/YYYY-WW-dedup.jsonl`.
 
 ### 4. Select · `scripts/select.py`
+- **Filtra competidores** (`competitor_blacklist`): cualquier item que mencione un competidor (Mendel, Edenred, Repsol, Pluxee, Minu, Solred, Ticket Car, GoPass, Efecticard, Efectivale, Gosmo, Uvicuo, etc.) se excluye antes del scoring. Word-boundary case-insensitive.
+- Filtra contra `editorial-memory.md` (8 ediciones recientes, umbral 0.85).
 - Scoring por item (pesos configurables en `selection.scoring`):
   - Topic match + boost si está en `topic_priority_list`.
   - Market: primary (MX/ES) 1.2, USA/China 0.4, Europa/Canada 0.3, otros 0.15.
   - Players: base 0.5 + 0.1 por cada jugador extra.
   - Fleet_type: 0.3 + boost si está en `fleet_type_priority_list`.
   - Recency: bonus máx 2.0 que decae 0.2/día.
-- Filtra contra `editorial-memory.md` (8 ediciones recientes, umbral 0.85).
 - Aplica `topic_quotas` (máximos por topic; tariffs-trade=1, rail-freight=0, etc.).
 - Aplica `geo_quotas` (buckets primary 7-10, secondary USA 1-2, china 1, other 0-2).
 - Modo `normal` (12 historias) / `short` (9) / `pause` (sin material suficiente).
-- Output: `content/decisions/YYYY-WW-selection.json`.
+- Output: `content/decisions/YYYY-WW-selection.json` (incluye `discarded_competitor` + `discarded_repetition` para auditoría).
 
 ### 5. Compose · `scripts/compose.py`
 - Una sola llamada al LLM con system prompt `prompts/radar-master-prompt.md` (la "constitución editorial").

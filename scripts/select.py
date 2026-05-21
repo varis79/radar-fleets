@@ -88,6 +88,30 @@ def select(today: dt.date | None = None) -> dict:
     # Filtra: requiere título no vacío y link válido
     items = [it for it in items if it.get("title") and it.get("link")]
 
+    # ─── Filtro de competidores ───
+    # Items que mencionan competidores se excluyen del pool. No damos
+    # visibilidad gratuita al competidor en nuestra propia revista.
+    competitor_blacklist = sel_cfg.get("competitor_blacklist", []) or []
+    competitor_filtered: list[dict] = []
+    if competitor_blacklist:
+        competitor_patterns = [
+            re.compile(rf"(?<![A-Za-zÁÉÍÓÚáéíóúÑñÜü0-9]){re.escape(c.lower())}(?![A-Za-zÁÉÍÓÚáéíóúÑñÜü0-9])")
+            for c in competitor_blacklist
+        ]
+        kept_after_competitors: list[dict] = []
+        for it in items:
+            hay = f"{it.get('title','')} {it.get('summary','')}".lower()
+            matched = False
+            for pat in competitor_patterns:
+                if pat.search(hay):
+                    matched = True
+                    break
+            if matched:
+                competitor_filtered.append({"id": it["id"], "title": it["title"][:120]})
+            else:
+                kept_after_competitors.append(it)
+        items = kept_after_competitors
+
     # Descarta repeticiones contra memoria editorial
     recent = recent_titles_from_memory(max_chunks=int(sel_cfg.get("recent_weeks_check", 8)))
     threshold = float(sel_cfg.get("dedup_title_overlap_max", 0.85))
@@ -303,6 +327,7 @@ def select(today: dt.date | None = None) -> dict:
         "total_chosen": len(chosen),
         "warnings": warnings,
         "chosen": chosen,
+        "discarded_competitor": competitor_filtered[:50],
         "discarded_repetition": [{"id": d["id"], "title": d["title"], "score": d["_score"]} for d in discarded_repetition][:50],
     }
 

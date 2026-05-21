@@ -13,6 +13,8 @@ como `[done]` con el commit/PR de aterrizaje.
 | ID | Idea | Estado | Notas |
 |---|---|---|---|
 | C-1 | Reparto editorial MX/ES dominante + cuotas USA/China/EU | PR abierto `claude/curation-usa-and-sources` | Reparto 12: 7-8 MX/ES, 2 USA, 1 China, 1-2 EU. Boost editorial a topics operativos. Pendiente merge. |
+| C-2 | Google News RSS por queries Pulpo-relevantes | PR abierto `claude/curation-usa-and-sources` (5º commit) | 10 queries MX/ES sobre telemática, fuel cards, electrificación, última milla, regulación, mantenimiento, vehículos. ~110-140 items extra/semana. Cero coste. |
+| C-3 | Filtro de competidores | PR abierto `claude/curation-usa-and-sources` (5º commit) | 17 nombres en blacklist (Mendel, Edenred, Repsol, Pluxee, Minu, Solred, Ticket Car, GoPass, Efecticard, Efectivale, Gosmo, Uvicuo, etc.) se excluyen del pool antes del scoring. |
 
 ## Backlog ordenado (alta prioridad → baja)
 

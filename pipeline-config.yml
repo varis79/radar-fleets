@@ -108,12 +108,71 @@ sources:
     lang: "en"
     topic_hint: "electrificacion-flotas"
 
+  # ── Google News · queries Pulpo-relevantes ─────
+  # Búsquedas activas que devuelven RSS estándar. Resuelven la escasez de
+  # cobertura MX/ES en fuentes nativas. Cada query está calibrada para temas
+  # operativos (telemática, fuel cards, electrificación, última milla,
+  # regulación, mantenimiento, vehículos comerciales). Items competidores
+  # se filtran en select.py vía `competitor_blacklist`.
+  - name: "GoogleNews · MX · telemática flotas"
+    url: "https://news.google.com/rss/search?q=telem%C3%A1tica+%22flotas%22+M%C3%A9xico&hl=es-419&gl=MX&ceid=MX:es-419"
+    geo: "mexico"
+    lang: "es"
+    topic_hint: "telematica"
+  - name: "GoogleNews · MX · combustible/control gasto"
+    url: "https://news.google.com/rss/search?q=tarjeta+combustible+flota+OR+control+gasto+flota+M%C3%A9xico&hl=es-419&gl=MX&ceid=MX:es-419"
+    geo: "mexico"
+    lang: "es"
+    topic_hint: "fuel-cards"
+  - name: "GoogleNews · MX · electrificación"
+    url: "https://news.google.com/rss/search?q=flota+el%C3%A9ctrica+M%C3%A9xico+OR+cami%C3%B3n+el%C3%A9ctrico+M%C3%A9xico&hl=es-419&gl=MX&ceid=MX:es-419"
+    geo: "mexico"
+    lang: "es"
+    topic_hint: "electrificacion-flotas"
+  - name: "GoogleNews · MX · última milla"
+    url: "https://news.google.com/rss/search?q=%C3%BAltima+milla+M%C3%A9xico+OR+paqueter%C3%ADa+log%C3%ADstica&hl=es-419&gl=MX&ceid=MX:es-419"
+    geo: "mexico"
+    lang: "es"
+    topic_hint: "logistica-distribucion"
+  - name: "GoogleNews · MX · regulación autotransporte"
+    url: "https://news.google.com/rss/search?q=SICT+OR+autotransporte+regulaci%C3%B3n+M%C3%A9xico&hl=es-419&gl=MX&ceid=MX:es-419"
+    geo: "mexico"
+    lang: "es"
+    topic_hint: "compliance"
+  - name: "GoogleNews · ES · vehículos comerciales"
+    url: "https://news.google.com/rss/search?q=furgonetas+flota+empresa+Espa%C3%B1a+OR+veh%C3%ADculos+comerciales+ligeros&hl=es-ES&gl=ES&ceid=ES:es"
+    geo: "espana"
+    lang: "es"
+    topic_hint: "operacion-flotas"
+  - name: "GoogleNews · ES · electrificación flotas"
+    url: "https://news.google.com/rss/search?q=electrificaci%C3%B3n+flotas+Espa%C3%B1a+OR+coche+el%C3%A9ctrico+empresa&hl=es-ES&gl=ES&ceid=ES:es"
+    geo: "espana"
+    lang: "es"
+    topic_hint: "electrificacion-flotas"
+  - name: "GoogleNews · ES · ITV/mantenimiento"
+    url: "https://news.google.com/rss/search?q=ITV+flota+Espa%C3%B1a+OR+mantenimiento+veh%C3%ADculos+industriales&hl=es-ES&gl=ES&ceid=ES:es"
+    geo: "espana"
+    lang: "es"
+    topic_hint: "mantenimiento"
+  - name: "GoogleNews · ES · DGT/V-16/ZBE"
+    url: "https://news.google.com/rss/search?q=DGT+V-16+OR+tac%C3%B3grafo+Espa%C3%B1a+OR+ZBE+flotas&hl=es-ES&gl=ES&ceid=ES:es"
+    geo: "espana"
+    lang: "es"
+    topic_hint: "compliance"
+  - name: "GoogleNews · ES · renting/leasing flotas"
+    url: "https://news.google.com/rss/search?q=%22renting%22+flota+OR+leasing+empresa+Espa%C3%B1a&hl=es-ES&gl=ES&ceid=ES:es"
+    geo: "espana"
+    lang: "es"
+    topic_hint: "operacion-flotas"
+
 # Ventana temporal considerada por ejecución (días hacia atrás)
 ingest:
   lookback_days: 8
   user_agent: "Mozilla/5.0 (compatible; TheFleetRadarBot/1.0; +https://thefleetradar.com)"
   timeout_seconds: 20
-  max_items_per_source: 30
+  # Bajado de 30 a 20 al añadir las 10 queries Google News: pasamos de 14 a
+  # 24 fuentes, conviene moderar el volumen por fuente para mantener calidad.
+  max_items_per_source: 20
 
 # Dominios en blocklist (no se ingesta nada desde aquí)
 blocklist_domains:
@@ -307,6 +366,30 @@ selection:
   geo_min_primary_ratio: 0.55 # MX+ES >= 55% del total (warning, no bloquea)
   recent_weeks_check: 8       # comparar contra las últimas N ediciones para evitar repetición
   dedup_title_overlap_max: 0.85
+  # ───── Blacklist de competidores ─────
+  # Cualquier item cuyo título o resumen contenga uno de estos términos se
+  # excluye del pool ANTES del scoring. No le damos visibilidad gratuita al
+  # competidor en nuestra propia revista. Match con word-boundary, case-
+  # insensitive. Si una palabra es muy genérica (ej. "Minu"), confiamos en
+  # word-boundary para evitar falsos positivos ("minuto", "diminuto").
+  competitor_blacklist:
+    - "Mendel"
+    - "Uvicuo"
+    - "Repsol Solred"
+    - "Solred"
+    - "Repsol Waylet"
+    - "Repsol"
+    - "Pluxee"
+    - "Minu"
+    - "Edenred"
+    - "Ticket Car"
+    - "TicketCar"
+    - "Ticket Restaurant"
+    - "GoPass"
+    - "Go Pass"
+    - "Efecticard"
+    - "Efectivale"
+    - "Gosmo"
   # Pesos del score (ajustables sin tocar select.py)
   #
   # Histórico:
