@@ -1,0 +1,159 @@
+name: Radar Fleet — Weekly deploy canary
+
+# Verifica que la edición del lunes esté efectivamente live en producción.
+#
+# Por qué existe:
+#   El workflow principal `weekly-edition.yml` puede:
+#     (1) no dispararse si GitHub Actions retrasa o omite el cron schedule
+#     (2) completar el pipeline y merge pero Vercel no rebuildear (pasó con N°8)
+#     (3) desplegar con un build roto sin que nadie lo detecte
+#
+#   Este canary corre 26h después del cron principal y confirma que la URL canónica
+#   de la edición de esta semana responde HTTP 200. Si no, abre un issue con label
+#   `deploy-down` y (opcionalmente) notifica a Slack alerts.
+
+on:
+  schedule:
+    - cron: '0 8 * * 2'
+  workflow_dispatch:
+    inputs:
+      target_date:
+        description: 'Fecha a verificar YYYY-MM-DD (default: lunes de esta semana ISO)'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: weekly-canary
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Compute target date (lunes de esta semana ISO)
+        id: date
+        run: |
+          if [ -n "${{ inputs.target_date }}" ]; then
+            TARGET="${{ inputs.target_date }}"
+          else
+            TARGET=$(python3 -c "import datetime as d; t=d.date.today(); print((t - d.timedelta(days=t.weekday())).isoformat())")
+          fi
+          echo "target=$TARGET" >> "$GITHUB_OUTPUT"
+          echo "URL objetivo: https://thefleetradar.com/magazines/${TARGET}-radar-fleet-by-pulpo.html"
+
+      - name: Check home is reachable
+        id: home
+        run: |
+          CODE=$(curl -sIL -o /dev/null -w "%{http_code}" "https://thefleetradar.com/" || echo "000")
+          echo "home_code=$CODE" >> "$GITHUB_OUTPUT"
+          echo "Home: HTTP $CODE"
+
+      - name: Check edition is live
+        id: edition
+        run: |
+          DATE="${{ steps.date.outputs.target }}"
+          URL="https://thefleetradar.com/magazines/${DATE}-radar-fleet-by-pulpo.html"
+          CODE=$(curl -sIL -o /dev/null -w "%{http_code}" "$URL" || echo "000")
+          echo "edition_code=$CODE" >> "$GITHUB_OUTPUT"
+          echo "edition_url=$URL" >> "$GITHUB_OUTPUT"
+          echo "Edición: HTTP $CODE"
+
+      - name: Decide status
+        id: status
+        run: |
+          HOME="${{ steps.home.outputs.home_code }}"
+          EDITION="${{ steps.edition.outputs.edition_code }}"
+          if [ "$HOME" = "200" ] && [ "$EDITION" = "200" ]; then
+            echo "status=ok" >> "$GITHUB_OUTPUT"
+          elif [ "$HOME" != "200" ]; then
+            echo "status=site-down" >> "$GITHUB_OUTPUT"
+          else
+            echo "status=edition-missing" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Ensure label exists
+        if: steps.status.outputs.status != 'ok'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh label create deploy-down \
+            --color "B60205" \
+            --description "Edición publicada en repo pero no visible en producción" \
+            --force || true
+
+      - name: Open issue on failure
+        if: steps.status.outputs.status != 'ok'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          STATUS: ${{ steps.status.outputs.status }}
+          HOME_CODE: ${{ steps.home.outputs.home_code }}
+          EDITION_CODE: ${{ steps.edition.outputs.edition_code }}
+          EDITION_URL: ${{ steps.edition.outputs.edition_url }}
+          TARGET: ${{ steps.date.outputs.target }}
+        run: |
+          if [ "$STATUS" = "site-down" ]; then
+            TITLE="🚨 The Fleet Radar caído · home no responde · semana $TARGET"
+          else
+            TITLE="⚠️ Edición $TARGET no visible en producción"
+          fi
+
+          BODY=$(cat <<EOF
+          **Detectado por canary** \`weekly-deploy-canary.yml\` el $(date -u +%Y-%m-%dT%H:%M:%SZ).
+
+          **Estado**
+          - Home \`https://thefleetradar.com/\`: HTTP \`$HOME_CODE\`
+          - Edición esperada \`$EDITION_URL\`: HTTP \`$EDITION_CODE\`
+          - Semana objetivo: \`$TARGET\`
+
+          **Diagnóstico probable**
+          - \`edition-missing\` (404 / 3xx → 404): el pipeline mergeó pero Vercel no desplegó, o desplegó un build que no incluye este archivo.
+          - \`site-down\` (home != 200): problema mayor de Vercel o DNS. Revisar status.vercel.com.
+
+          **Acción manual**
+          1. Comprueba en Vercel Dashboard si el último deploy de \`main\` es posterior al merge de la edición.
+          2. Si no, redeploy manual desde Vercel UI o \`curl -X POST \$VERCEL_DEPLOY_HOOK\`.
+          3. Si Vercel está caído, espera y vuelve a correr \`weekly-deploy-canary.yml\` con \`workflow_dispatch\`.
+
+          ---
+          _Generado por \`weekly-deploy-canary.yml\` · run \`${GITHUB_RUN_ID}\`._
+          EOF
+          )
+
+          gh issue create \
+            --title "$TITLE" \
+            --body "$BODY" \
+            --label "deploy-down"
+
+      - name: Notify Slack alerts (optional)
+        if: steps.status.outputs.status != 'ok'
+        env:
+          SLACK_ALERTS: ${{ secrets.SLACK_WEBHOOK_ALERTS_URL }}
+          STATUS: ${{ steps.status.outputs.status }}
+          EDITION_URL: ${{ steps.edition.outputs.edition_url }}
+          EDITION_CODE: ${{ steps.edition.outputs.edition_code }}
+          HOME_CODE: ${{ steps.home.outputs.home_code }}
+          TARGET: ${{ steps.date.outputs.target }}
+        run: |
+          if [ -z "$SLACK_ALERTS" ]; then
+            echo "::notice::SLACK_WEBHOOK_ALERTS_URL no configurado; alerta solo en GitHub Issue"
+            exit 0
+          fi
+          if [ "$STATUS" = "site-down" ]; then
+            MSG=":rotating_light: *The Fleet Radar caído* · home HTTP $HOME_CODE · semana $TARGET"
+          else
+            MSG=":warning: Edición $TARGET no visible en producción · $EDITION_URL responde HTTP $EDITION_CODE"
+          fi
+          PAYLOAD=$(printf '{"text":"%s\\n\\nIssue: https://github.com/%s/issues"}' "$MSG" "${GITHUB_REPOSITORY}")
+          curl -sS -X POST -H "Content-Type: application/json" --data "$PAYLOAD" "$SLACK_ALERTS" -o /dev/null -w "Slack HTTP %{http_code}\n"
+
+      - name: Report
+        run: |
+          echo "Status: ${{ steps.status.outputs.status }}"
+          echo "Home:    HTTP ${{ steps.home.outputs.home_code }}"
+          echo "Edition: HTTP ${{ steps.edition.outputs.edition_code }}"
