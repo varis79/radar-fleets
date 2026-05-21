@@ -57,15 +57,36 @@ def load_players(players_md: Path) -> list[tuple[str, str, re.Pattern]]:
     return out
 
 
+_KW_REGEX_CACHE: dict[str, re.Pattern] = {}
+
+
+def _kw_match(kw: str, hay: str) -> bool:
+    """Match con word boundary para evitar falsos positivos (e.g. 'epa' en
+    'preparación', 'wage' en 'volkswagen', 'adas' en 'vinculadas'). Acepta
+    keywords con espacios o puntuación; las trata como una unidad."""
+    pat = _KW_REGEX_CACHE.get(kw)
+    if pat is None:
+        # \b funciona bien con caracteres ASCII alfanuméricos. Para keywords con
+        # tildes (ej. 'méxico') usamos lookarounds que excluyen caracteres de
+        # palabra incluyendo letras Unicode comunes.
+        escaped = re.escape(kw.lower())
+        # Lookarounds que aceptan límites: principio/final de cadena o no-letra
+        pat = re.compile(rf"(?<![A-Za-zÁÉÍÓÚáéíóúÑñÜü0-9]){escaped}(?![A-Za-zÁÉÍÓÚáéíóúÑñÜü0-9])")
+        _KW_REGEX_CACHE[kw] = pat
+    return pat.search(hay) is not None
+
+
 def classify_one(item: dict, cfg: dict, players_db) -> dict:
-    hay = f"{item.get('title', '')} {item.get('summary', '')}".lower()
+    title_low = (item.get("title") or "").lower()
+    summary_low = (item.get("summary") or "").lower()
+    hay = f"{title_low} {summary_low}"
 
     # topic
     topic_match: str | None = None
     topic_alt: list[str] = []
     for topic_slug, keywords in cfg["classification"]["topics"].items():
         for kw in keywords:
-            if kw.lower() in hay:
+            if _kw_match(kw, hay):
                 if topic_match is None:
                     topic_match = topic_slug
                 elif topic_slug != topic_match and topic_slug not in topic_alt:
@@ -75,19 +96,31 @@ def classify_one(item: dict, cfg: dict, players_db) -> dict:
     if topic_match is None and item.get("source_topic_hint"):
         topic_match = item["source_topic_hint"]
 
-    # market: explícito por keywords, fallback source_geo
-    market_match: str = item.get("source_geo", "global")
+    # market: cuenta matches por mercado, prioriza título (×2) sobre summary (×1).
+    # Esto evita que menciones laterales pisen el market real. Ej: una noticia
+    # "Borderlands Mexico" con mención pasajera a 'chinese manufacturer' en el
+    # summary mantiene market=mexico/usa (lo del título), no china.
+    market_scores: dict[str, int] = {}
     for market_slug, keywords in cfg["classification"]["markets"].items():
+        score = 0
         for kw in keywords:
-            if kw.lower() in hay:
-                market_match = market_slug
-                break
+            if _kw_match(kw, title_low):
+                score += 2
+            elif _kw_match(kw, summary_low):
+                score += 1
+        if score > 0:
+            market_scores[market_slug] = score
+    if market_scores:
+        # gana el de mayor score; en empate, orden del config (estable)
+        market_match = max(market_scores, key=lambda m: market_scores[m])
+    else:
+        market_match = item.get("source_geo", "global")
 
     # fleet_type (opcional)
     fleet_type_match: str | None = None
     for ft_slug, keywords in cfg["classification"]["fleet_types"].items():
         for kw in keywords:
-            if kw.lower() in hay:
+            if _kw_match(kw, hay):
                 fleet_type_match = ft_slug
                 break
         if fleet_type_match:

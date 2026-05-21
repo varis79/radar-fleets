@@ -23,63 +23,156 @@ cadence:
 
 # ─────────────────────────────────────────────
 # Fuentes de ingesta
-# Lista conservadora: calidad sobre cantidad. Mezclar RSS/Atom fiables.
+# Mezcla USA / Europa / España / México / Global EV.
 # Cada fuente tiene geo principal y topic hint opcional.
+#
+# Histórico:
+#   2026-05-21 — auditoría: 6/10 fuentes RSS estaban rotas. Arreglamos FleetOwner
+#   y Electrek, eliminamos las que ya no exponen RSS (Trans.info, Transporte
+#   Profesional, TyT MX, Fleet News UK por Cloudflare) y ampliamos cobertura USA
+#   con Transport Topics, Trucking Dive, Supply Chain Dive, Smart Cities Dive,
+#   Inside EVs, CleanTechnica. Para España añadimos AECOC, para México
+#   Mundo Logístico.
 # ─────────────────────────────────────────────
 sources:
-  # USA + global
+  # ── USA + global ───────────────────────────
   - name: "FleetOwner"
-    url: "https://www.fleetowner.com/rss.xml"
+    url: "https://www.fleetowner.com/__rss/website-scheduled-content.xml?input=%7B%22sectionAlias%22%3A%22home%22%7D"
     geo: "usa"
     lang: "en"
   - name: "FreightWaves"
     url: "https://www.freightwaves.com/news/feed"
     geo: "usa"
     lang: "en"
-  - name: "Electrek · Transport"
-    url: "https://electrek.co/guides/transport/feed/"
+  - name: "Transport Topics"
+    url: "https://www.ttnews.com/rss.xml"
+    geo: "usa"
+    lang: "en"
+  - name: "Trucking Dive"
+    url: "https://www.truckingdive.com/feeds/news/"
+    geo: "usa"
+    lang: "en"
+  - name: "Supply Chain Dive"
+    url: "https://www.supplychaindive.com/feeds/news/"
+    geo: "usa"
+    lang: "en"
+  - name: "Smart Cities Dive"
+    url: "https://www.smartcitiesdive.com/feeds/news/"
+    geo: "usa"
+    lang: "en"
+    topic_hint: "movilidad-urbana"
+  - name: "Electrek"
+    url: "https://electrek.co/feed/"
     geo: "usa"
     lang: "en"
     topic_hint: "electrificacion-flotas"
-  # Europa
-  - name: "Fleet News UK"
-    url: "https://www.fleetnews.co.uk/rss/news.aspx"
-    geo: "europa"
-    lang: "en"
+
+  # ── Europa / EU ────────────────────────────
   - name: "Transport & Energy"
     url: "https://transportandenergy.com/feed/"
     geo: "europa"
     lang: "en"
     topic_hint: "electrificacion-flotas"
-  - name: "Trans.info"
-    url: "https://trans.info/en/feed"
-    geo: "europa"
-    lang: "en"
-  # España
-  - name: "Transporte Profesional"
-    url: "https://transporteprofesional.es/feed/"
-    geo: "espana"
-    lang: "es"
+
+  # ── España ────────────────────────────────
   - name: "Fleet People ES"
     url: "https://fleetpeople.es/feed/"
     geo: "espana"
     lang: "es"
-  # México / LatAm
-  - name: "Transportes y Turismo"
-    url: "https://www.tyt.com.mx/feed/"
-    geo: "mexico"
+  - name: "AECOC"
+    url: "https://www.aecoc.es/feed/"
+    geo: "espana"
     lang: "es"
+    topic_hint: "logistica-distribucion"
+
+  # ── México ────────────────────────────────
   - name: "T21 MX"
     url: "https://t21.com.mx/feed"
     geo: "mexico"
     lang: "es"
+  - name: "Mundo Logístico MX"
+    url: "https://www.mundologistico.net/feed/"
+    geo: "mexico"
+    lang: "es"
+    topic_hint: "logistica-distribucion"
+
+  # ── Global EV / movilidad limpia ─────────
+  - name: "Inside EVs"
+    url: "https://insideevs.com/rss/articles/all/"
+    geo: "global"
+    lang: "en"
+    topic_hint: "electrificacion-flotas"
+  - name: "CleanTechnica · Clean Transport"
+    url: "https://cleantechnica.com/category/clean-transport-2/feed/"
+    geo: "global"
+    lang: "en"
+    topic_hint: "electrificacion-flotas"
+
+  # ── Google News · queries Pulpo-relevantes ─────
+  # Búsquedas activas que devuelven RSS estándar. Resuelven la escasez de
+  # cobertura MX/ES en fuentes nativas. Cada query está calibrada para temas
+  # operativos (telemática, fuel cards, electrificación, última milla,
+  # regulación, mantenimiento, vehículos comerciales). Items competidores
+  # se filtran en select.py vía `competitor_blacklist`.
+  - name: "GoogleNews · MX · telemática flotas"
+    url: "https://news.google.com/rss/search?q=telem%C3%A1tica+%22flotas%22+M%C3%A9xico&hl=es-419&gl=MX&ceid=MX:es-419"
+    geo: "mexico"
+    lang: "es"
+    topic_hint: "telematica"
+  - name: "GoogleNews · MX · combustible/control gasto"
+    url: "https://news.google.com/rss/search?q=tarjeta+combustible+flota+OR+control+gasto+flota+M%C3%A9xico&hl=es-419&gl=MX&ceid=MX:es-419"
+    geo: "mexico"
+    lang: "es"
+    topic_hint: "fuel-cards"
+  - name: "GoogleNews · MX · electrificación"
+    url: "https://news.google.com/rss/search?q=flota+el%C3%A9ctrica+M%C3%A9xico+OR+cami%C3%B3n+el%C3%A9ctrico+M%C3%A9xico&hl=es-419&gl=MX&ceid=MX:es-419"
+    geo: "mexico"
+    lang: "es"
+    topic_hint: "electrificacion-flotas"
+  - name: "GoogleNews · MX · última milla"
+    url: "https://news.google.com/rss/search?q=%C3%BAltima+milla+M%C3%A9xico+OR+paqueter%C3%ADa+log%C3%ADstica&hl=es-419&gl=MX&ceid=MX:es-419"
+    geo: "mexico"
+    lang: "es"
+    topic_hint: "logistica-distribucion"
+  - name: "GoogleNews · MX · regulación autotransporte"
+    url: "https://news.google.com/rss/search?q=SICT+OR+autotransporte+regulaci%C3%B3n+M%C3%A9xico&hl=es-419&gl=MX&ceid=MX:es-419"
+    geo: "mexico"
+    lang: "es"
+    topic_hint: "compliance"
+  - name: "GoogleNews · ES · vehículos comerciales"
+    url: "https://news.google.com/rss/search?q=furgonetas+flota+empresa+Espa%C3%B1a+OR+veh%C3%ADculos+comerciales+ligeros&hl=es-ES&gl=ES&ceid=ES:es"
+    geo: "espana"
+    lang: "es"
+    topic_hint: "operacion-flotas"
+  - name: "GoogleNews · ES · electrificación flotas"
+    url: "https://news.google.com/rss/search?q=electrificaci%C3%B3n+flotas+Espa%C3%B1a+OR+coche+el%C3%A9ctrico+empresa&hl=es-ES&gl=ES&ceid=ES:es"
+    geo: "espana"
+    lang: "es"
+    topic_hint: "electrificacion-flotas"
+  - name: "GoogleNews · ES · ITV/mantenimiento"
+    url: "https://news.google.com/rss/search?q=ITV+flota+Espa%C3%B1a+OR+mantenimiento+veh%C3%ADculos+industriales&hl=es-ES&gl=ES&ceid=ES:es"
+    geo: "espana"
+    lang: "es"
+    topic_hint: "mantenimiento"
+  - name: "GoogleNews · ES · DGT/V-16/ZBE"
+    url: "https://news.google.com/rss/search?q=DGT+V-16+OR+tac%C3%B3grafo+Espa%C3%B1a+OR+ZBE+flotas&hl=es-ES&gl=ES&ceid=ES:es"
+    geo: "espana"
+    lang: "es"
+    topic_hint: "compliance"
+  - name: "GoogleNews · ES · renting/leasing flotas"
+    url: "https://news.google.com/rss/search?q=%22renting%22+flota+OR+leasing+empresa+Espa%C3%B1a&hl=es-ES&gl=ES&ceid=ES:es"
+    geo: "espana"
+    lang: "es"
+    topic_hint: "operacion-flotas"
 
 # Ventana temporal considerada por ejecución (días hacia atrás)
 ingest:
   lookback_days: 8
-  user_agent: "TheFleetRadarBot/1.0 (+https://thefleetradar.com)"
+  user_agent: "Mozilla/5.0 (compatible; TheFleetRadarBot/1.0; +https://thefleetradar.com)"
   timeout_seconds: 20
-  max_items_per_source: 30
+  # Bajado de 30 a 20 al añadir las 10 queries Google News: pasamos de 14 a
+  # 24 fuentes, conviene moderar el volumen por fuente para mantener calidad.
+  max_items_per_source: 20
 
 # Dominios en blocklist (no se ingesta nada desde aquí)
 blocklist_domains:
@@ -90,77 +183,309 @@ blocklist_domains:
 # Clasificación
 # Mapeo keyword -> {topic, market, fleet_type, micro_tags}
 # Determinístico. Reglas explícitas, sin LLM.
+#
+# Histórico:
+#   2026-05-21 — añadidos topics dominantes en USA (autonomous-trucking,
+#   freight-market, rail-freight, labor-shortage, tariffs-trade, truck-oem,
+#   cargo-theft, movilidad-urbana, logistica-distribucion) y ampliadas
+#   keywords EN en topics existentes.
 # ─────────────────────────────────────────────
 classification:
   topics:
     telematica:
-      ["telematic", "telemática", "gps fleet", "geotab", "samsara", "motive", "verizon connect", "webfleet", "fleetio"]
+      ["telematic", "telemática", "gps fleet", "fleet tracking", "vehicle tracking",
+       "geotab", "samsara", "motive", "verizon connect", "webfleet", "fleetio",
+       "platform science", "azuga", "fleet complete", "trimble transport"]
     video-telematica:
-      ["dashcam", "dash cam", "adas", "lytx", "netradyne", "nauto"]
+      ["dashcam", "dash cam", "in-cab camera", "video telematics",
+       "adas", "lytx", "netradyne", "nauto", "lidar"]
     fuel-cards:
-      ["fuel card", "tarjeta de combustible", "tarjeta de flota", "wex", "corpay", "edenred", "dkv mobility", "uta edenred", "solred", "cepsa flotas"]
+      ["fuel card", "tarjeta de combustible", "tarjeta de flota", "fleet card",
+       "wex", "corpay", "edenred", "dkv mobility", "uta edenred", "solred",
+       "cepsa flotas", "shell fleet", "bp fleet"]
     combustible:
-      ["diésel", "gasoil", "combustible", "diesel fuel", "fuel price", "consumo combustible"]
+      ["diésel", "gasoil", "combustible", "diesel fuel", "fuel price",
+       "gasoline price", "consumo combustible", "fuel consumption"]
     electrificacion-flotas:
-      ["ev fleet", "electric truck", "camión eléctrico", "mcs", "megawatt charging", "charging hub", "carga eléctrica", "voltempo", "vev", "scania ev", "byd truck"]
+      ["ev fleet", "electric fleet", "electric truck", "camión eléctrico",
+       "ev charging", "mcs", "megawatt charging", "charging hub", "ev hub",
+       "carga eléctrica", "voltempo", "vev", "scania ev", "byd truck",
+       "battery electric", "fcev", "hydrogen truck", "depot charging"]
     mantenimiento:
-      ["maintenance", "mantenimiento", "predictive maintenance", "mantenimiento predictivo", "taller", "workshop"]
+      ["maintenance", "mantenimiento", "predictive maintenance",
+       "mantenimiento predictivo", "taller", "workshop", "uptime",
+       "downtime", "service interval", "parts shortage",
+       "recambios", "spare parts", "aftermarket", "neumáticos", "neumaticos",
+       "tires", "tyres", "reparación", "reparacion", "ITV"]
     compliance:
-      ["boe", "dof", "dgt", "fmcsa", "regulation", "regulación", "v-16", "tacógrafo", "tachograph", "eld", "cne", "sict"]
+      ["boe", "dof", "dgt", "fmcsa", "regulation", "regulación", "rulemaking",
+       "v-16", "tacógrafo", "tachograph", "eld", "cne", "sict",
+       "english language proficiency", "elp rule", "hours of service",
+       "hos rule", "speed limiter", "epa truck", "carb"]
     routing:
-      ["routing", "last mile", "última milla", "dispatch", "onerail", "bringg", "onfleet"]
+      ["routing", "last mile", "última milla", "dispatch", "load planning",
+       "onerail", "bringg", "onfleet", "routific", "samsara routing"]
     seguridad:
-      ["driver safety", "siniestralidad", "seguridad vial", "scoring conductor", "road safety"]
+      ["driver safety", "siniestralidad", "seguridad vial", "scoring conductor",
+       "road safety", "crash", "accident reconstruction"]
     fraude:
-      ["fraud", "fraude", "fuel theft", "robo combustible"]
+      ["fraud", "fraude", "fuel theft", "robo combustible", "carrier fraud",
+       "double brokering"]
+    cargo-theft:
+      ["cargo theft", "robo de carga", "freight theft", "theft ring",
+       "stolen cargo", "asalto carretero"]
     control-gasto:
-      ["fleet spend", "control de gasto", "cost per mile", "coste por km", "tco"]
+      ["fleet spend", "control de gasto", "cost per mile", "cpm",
+       "coste por km", "tco", "operating cost"]
     operacion-flotas:
-      ["fleet management", "gestión de flota", "fleet operations"]
+      ["fleet management", "gestión de flota", "fleet operations",
+       "fleet sustainability", "fleet electrification strategy"]
+    autonomous-trucking:
+      ["autonomous truck", "autonomous trucking", "autonomous freight",
+       "self-driving truck", "av truck", "robotruck", "robo-truck",
+       "waabi", "aurora innovation", "kodiak robotics", "plus.ai", "torc robotics",
+       "volvo autonomous", "gatik", "embark", "tusimple"]
+    freight-market:
+      ["freight market", "freight rates", "spot rates", "tender rejection",
+       "freight recession", "ltl rates", "truckload demand", "outbound tender",
+       "carga seca", "tarifas de carga", "demanda de transporte"]
+    rail-freight:
+      ["rail freight", "carga ferroviaria", "ferrocarril de carga",
+       "bnsf", "union pacific", "csx", "norfolk southern", "canadian pacific",
+       "kansas city southern", "cpkc", "intermodal"]
+    labor-shortage:
+      ["driver shortage", "escasez de conductores", "driver pay", "wage",
+       "trucking layoffs", "freight layoffs", "driver retention",
+       "owner-operator", "teamsters", "driver training"]
+    tariffs-trade:
+      ["tariff", "arancel", "aranceles", "trade war", "trade policy",
+       "usmca", "t-mec", "nearshoring", "cross-border trade",
+       "customs broker", "section 232", "section 301"]
+    truck-oem:
+      ["daimler truck", "freightliner", "kenworth", "peterbilt", "paccar",
+       "international truck", "navistar", "mack truck", "volvo trucks",
+       "scania", "man truck", "iveco", "renault trucks", "byd truck",
+       "tesla semi", "nikola", "hino", "isuzu truck"]
+    movilidad-urbana:
+      ["smart city", "movilidad urbana", "ciudad 15 min", "low emission zone",
+       "zbe", "lez", "ulez", "congestion pricing", "curbside", "micro-mobility",
+       "shared mobility"]
+    logistica-distribucion:
+      ["logistics", "logística", "distribución", "supply chain",
+       "cadena de suministro", "warehouse", "almacén", "fulfillment",
+       "3pl", "4pl", "intralogistics"]
+    insurance:
+      ["fleet insurance", "seguro de flota", "cargo insurance",
+       "telematics insurance", "ubi", "usage-based insurance"]
 
   markets:
-    mexico: ["méxico", "mexico", "cdmx", "dof", "sict", "cne", "autotransporte mexicano"]
-    espana: ["españa", "spain", "madrid", "barcelona", "dgt", "boe", "cepsa", "repsol"]
-    usa: ["united states", "u.s.", "usa", "fmcsa", "california", "texas", "florida"]
-    colombia: ["colombia", "bogotá", "bogota", "medellín"]
-    brasil: ["brasil", "brazil", "são paulo", "sao paulo"]
-    chile: ["chile", "santiago de chile", "codelco"]
+    mexico: ["méxico", "mexico", "cdmx", "dof", "sict", "cne",
+             "autotransporte mexicano", "guadalajara", "monterrey",
+             "nuevo león", "estado de méxico", "manzanillo", "veracruz mx"]
+    espana: ["españa", "spain", "madrid", "barcelona", "dgt", "boe",
+             "cepsa", "repsol", "valencia", "sevilla", "bilbao", "zaragoza"]
+    usa: ["united states", "u.s.", "usa", "fmcsa", "epa truck", "carb",
+          "california", "texas", "florida", "new york", "illinois",
+          "washington state", "georgia", "ohio", "tennessee",
+          "department of transportation", "dot regulation",
+          "white house", "trump administration"]
+    colombia: ["colombia", "bogotá", "bogota", "medellín", "barranquilla"]
+    brasil: ["brasil", "brazil", "são paulo", "sao paulo", "rio de janeiro"]
+    chile: ["chile", "santiago de chile", "codelco", "antofagasta"]
     peru: ["perú", "peru", "lima"]
-    argentina: ["argentina", "buenos aires"]
-    latam: ["latinoamérica", "latinoamerica", "latin america", "latam"]
-    europa: ["europe", "europa", "eu ", "european union", "unión europea"]
-    global: ["global market"]
+    argentina: ["argentina", "buenos aires", "rosario"]
+    latam: ["latinoamérica", "latinoamerica", "latin america", "latam",
+            "central america", "centroamérica"]
+    europa: ["europe", "europa", "europea", "europeo", "european union",
+             "unión europea", "germany", "alemania", "france", "francia",
+             "italy", "italia", "united kingdom", "britain", "netherlands",
+             "países bajos", "poland", "polonia", "portugal",
+             "brussels", "bruselas"]
+    canada: ["canada", "canadá", "ontario", "quebec", "alberta"]
+    china: ["china", "chinese", "beijing", "shanghai", "shenzhen", "guangzhou",
+            "wuhan", "tianjin", "byd", "geely", "great wall motors", "saic",
+            "dongfeng motors", "faw group", "xpeng", "nio", "li auto",
+            "huawei automotive", "catl"]
+    global: ["global market", "worldwide", "international fleet"]
 
   fleet_types:
-    transporte-pesado: ["heavy duty", "class 8", "tractocamión", "tractocamion", "pesado", "hdv"]
-    vehiculos-comerciales-ligeros: ["van", "furgoneta", "lcv", "light commercial", "transit", "sprinter", "master", "crafter"]
-    pickups-utilitarios: ["pickup", "f-150", "hilux", "ranger", "frontier"]
-    reparto-ultima-milla: ["last mile", "última milla", "parcel delivery"]
-    field-service: ["field service", "servicio técnico"]
-    ambulancias-emergencias: ["ambulance", "ambulancia", "emergency"]
-    construccion: ["construction", "construcción", "hormigonera"]
-    mineria: ["mining", "minería"]
-    flotas-corporativas: ["corporate fleet", "flota corporativa", "renting"]
+    transporte-pesado: ["heavy duty", "class 8", "tractocamión", "tractocamion",
+                        "pesado", "hdv", "tractor unit", "long-haul",
+                        "transporte de carga", "transportista de carga"]
+    vehiculos-comerciales-ligeros: ["van", "furgoneta", "vehículo comercial ligero",
+                                    "vehiculo comercial ligero", "lcv",
+                                    "light commercial", "transit", "sprinter",
+                                    "master", "crafter", "ducato", "boxer",
+                                    "vehículo industrial ligero", "comercial ligero"]
+    pickups-utilitarios: ["pickup", "f-150", "f-250", "silverado", "ram 1500",
+                          "hilux", "ranger", "frontier", "tundra",
+                          "camioneta", "camioneta de trabajo"]
+    reparto-ultima-milla: ["last mile", "última milla", "ultima milla",
+                           "parcel delivery", "paquetería", "paqueteria",
+                           "courier", "step van", "walk-in van",
+                           "reparto urbano", "mensajería", "mensajeria"]
+    field-service: ["field service", "servicio técnico", "servicio tecnico",
+                    "service fleet", "operación de campo", "operacion de campo",
+                    "flota de servicio", "telecom", "telecomunicaciones",
+                    "operador eléctrico", "utility fleet", "utilities",
+                    "instalación", "mantenimiento técnico", "técnicos de servicio"]
+    ambulancias-emergencias: ["ambulance", "ambulancia", "emergency",
+                              "first responder", "patrulla", "police fleet",
+                              "bomberos", "cuerpos de emergencia"]
+    construccion: ["construction", "construcción", "hormigonera", "vocational truck",
+                   "dump truck", "concrete mixer", "obra civil", "edificación"]
+    mineria: ["mining", "minería", "haul truck", "open pit", "minera"]
+    flotas-corporativas: ["corporate fleet", "flota corporativa", "renting",
+                          "leasing fleet", "company car", "flota empresarial",
+                          "flota de empresa", "vehículo de empresa", "car-sharing corporativo"]
 
 # ─────────────────────────────────────────────
 # Dedupe
 # ─────────────────────────────────────────────
 dedupe:
   title_similarity_threshold: 0.82    # si supera este ratio, items son el mismo hecho
-  strip_from_title: ["- The Times", "| Reuters", "- FleetOwner", "| Bloomberg"]
+  strip_from_title: ["- The Times", "| Reuters", "- FleetOwner", "| Bloomberg",
+                     "| Transport Topics", "- Trucking Dive", "- Supply Chain Dive"]
 
 # ─────────────────────────────────────────────
 # Selección editorial
+#
+# Histórico:
+#   2026-05-21 — añadidos pesos por mercado en `scoring`. Antes el +1.0 era
+#   solo para MX/ES; ahora USA y Europa también puntúan (más bajo) para no
+#   quedar invisibles cuando un item carece de topic clasificado. Y añadida
+#   cuota mínima opcional `geo_secondary_quota` para garantizar presencia
+#   USA en la edición (default 2/10).
 # ─────────────────────────────────────────────
 selection:
-  target_stories_normal: 10
-  target_stories_short: 7
+  target_stories_normal: 12
+  target_stories_short: 9
   min_stories_pause: 4        # por debajo de esto, pausa editorial
   min_wm_cards: 6             # "Lo que importó"
   topic_min_diversity: 3      # al menos 3 topics distintos
-  geo_min_primary_ratio: 0.30 # MX+ES >= 30% del total
+  geo_min_primary_ratio: 0.55 # MX+ES >= 55% del total (warning, no bloquea)
   recent_weeks_check: 8       # comparar contra las últimas N ediciones para evitar repetición
   dedup_title_overlap_max: 0.85
+  # ───── Blacklist de competidores ─────
+  # Cualquier item cuyo título o resumen contenga uno de estos términos se
+  # excluye del pool ANTES del scoring. No le damos visibilidad gratuita al
+  # competidor en nuestra propia revista. Match con word-boundary, case-
+  # insensitive. Si una palabra es muy genérica (ej. "Minu"), confiamos en
+  # word-boundary para evitar falsos positivos ("minuto", "diminuto").
+  competitor_blacklist:
+    - "Mendel"
+    - "Uvicuo"
+    - "Repsol Solred"
+    - "Solred"
+    - "Repsol Waylet"
+    - "Repsol"
+    - "Pluxee"
+    - "Minu"
+    - "Edenred"
+    - "Ticket Car"
+    - "TicketCar"
+    - "Ticket Restaurant"
+    - "GoPass"
+    - "Go Pass"
+    - "Efecticard"
+    - "Efectivale"
+    - "Gosmo"
+  # Pesos del score (ajustables sin tocar select.py)
+  #
+  # Histórico:
+  #   2026-05-21 (v1): pesos por mercado (MX/ES = 0.7, USA = 0.45) para que USA
+  #     no quedase invisible. Resultado en simulación: 5 USA / 10 — demasiado.
+  #   2026-05-21 (v2): subido market_primary a 1.2 y bajado secondary a 0.4
+  #     para reflejar el foco editorial real (Pulpo MX+ES). USA solo entra por
+  #     cuota, no por score. Y añadido topic_priority_boost para empujar temas
+  #     editorialmente interesantes (vehículos, combustible, mantenimiento,
+  #     seguridad, telemática, electrificación, fuel cards, geopolítica).
+  scoring:
+    topic_match: 1.0
+    market_primary: 1.2       # MX, ES — manda en la curación
+    market_secondary: 0.4     # USA
+    market_china: 0.4         # China
+    market_tertiary: 0.3      # Europa, Canada
+    market_other: 0.15        # latam, global, etc.
+    player_base: 0.5
+    player_extra_each: 0.1    # +0.1 por cada player adicional, hasta 3
+    fleet_type: 0.3
+    recency_max: 2.0          # bonus máximo si publicación es hoy
+    recency_decay_per_day: 0.2
+    source_topic_hint_fallback: 0.5  # si no hay topic pero la fuente tiene hint
+    # Boost a topics editorialmente preferidos (operación de flota real, no
+    # freight forwarding USA-céntrico). Estos son los temas que Pulpo y sus
+    # clientes (flotillas medianas LCV/servicio/distribución) viven a diario.
+    #
+    # Quitados del boost (siguen como topics pero sin empuje extra):
+    #   - tariffs-trade        (1 noticia por edición sobra; no son temas operativos)
+    #   - autonomous-trucking  (muy USA, lejano del operador MX/ES medio)
+    #   - rail-freight         (no aplica al lector de Pulpo)
+    #   - freight-market       (idem, indicadores macro USA)
+    topic_priority_boost: 0.5
+    topic_priority_list:
+      - "combustible"
+      - "fuel-cards"
+      - "mantenimiento"
+      - "seguridad"
+      - "telematica"
+      - "video-telematica"
+      - "electrificacion-flotas"
+      - "compliance"
+      - "truck-oem"
+      - "cargo-theft"
+      - "control-gasto"
+      - "fraude"
+      - "operacion-flotas"
+      - "routing"
+      - "insurance"
+      - "logistica-distribucion"
+    # Boost a fleet_types editorialmente preferidos. Refleja el universo
+    # operativo de Pulpo: flotas medianas de servicio, reparto, distribución
+    # y comerciales ligeras. Si una noticia tiene cualquiera de estos
+    # fleet_types asignados, gana puntos extra.
+    fleet_type_priority_boost: 0.5
+    fleet_type_priority_list:
+      - "vehiculos-comerciales-ligeros"
+      - "reparto-ultima-milla"
+      - "field-service"
+      - "flotas-corporativas"
+      - "ambulancias-emergencias"
+
+  # ───── Cuotas máximas por topic ─────
+  # Limita cuántas historias del mismo topic pueden coexistir en una edición.
+  # Útil para evitar saturación de temas específicos cuando dominan el feed
+  # (ej. semanas con muchas noticias arancelarias USMCA / Trump).
+  # Si un topic no aparece, no tiene límite.
+  topic_quotas:
+    tariffs-trade: 1
+    autonomous-trucking: 1
+    rail-freight: 0          # excluir del editorial: no aplica al lector Pulpo
+    freight-market: 0        # excluir: indicador macro USA sin valor operativo
+    labor-shortage: 1
+
+  # ───── Cuotas por bucket geográfico ─────
+  # El selector tras scoring redistribuye para respetar este reparto.
+  # Cuando hay material suficiente:  8 MX/ES + 2 USA + 1 China + 1 resto = 12.
+  # Cuando hay poco material en algún bucket, no fuerza — completa con el siguiente
+  # mejor disponible respetando los máximos.
+  geo_quotas:
+    primary:                      # MX + ES
+      min: 7
+      max: 10
+      markets: ["mexico", "espana"]
+    secondary:                    # USA
+      min: 1
+      max: 2
+      markets: ["usa"]
+    china:
+      min: 1          # garantiza presencia china si hay material; si no, queda vacío
+      max: 1
+      markets: ["china"]
+    other:                        # Europa + Canada + Global + LatAm
+      min: 0
+      max: 2
+      markets: ["europa", "canada", "global", "latam", "colombia", "brasil", "chile", "peru", "argentina"]
 
 # ─────────────────────────────────────────────
 # Composición
