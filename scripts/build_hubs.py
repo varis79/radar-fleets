@@ -12,11 +12,12 @@ Crea/actualiza:
 Decisiones:
 - Los hubs muestran SOLO páginas que existen como HTML publicado (no enlazan
   a URLs muertas). Las páginas planeadas en la matriz pero aún no generadas
-  se cuentan en una métrica al pie pero no se listan.
+  no aparecen al visitante — no exponemos al público la estrategia interna
+  de SEO ("X planeadas, Y publicadas, Z en preparación"). Si no hay nada
+  publicado para una sección, mostramos un empty-state neutro y editorial.
 - Hub padre indexado (sin noindex). Las hijas heredan tier; ver pillar.py.
 - Diseño hereda assets/radar.css + paleta navy/cream/accent global.
 - Schema.org CollectionPage + ItemList para SEO.
-- Disclaimer editorial al pie: "Hub vivo que se actualiza con cada edición".
 
 Uso:
     python -m scripts.build_hubs           # genera todos los hubs
@@ -165,20 +166,15 @@ def jsonld_collection(name: str, description: str, url: str,
     return "\n".join(f'<script type="application/ld+json">{json.dumps(b, ensure_ascii=False, separators=(",", ":"))}</script>' for b in blocks)
 
 
-def hub_card_html(p: PillarPage, published: bool) -> str:
-    """Card individual de página dentro de un hub."""
-    if published:
-        return f"""
+def hub_card_html(p: PillarPage) -> str:
+    """Card individual clicable de una página publicada.
+    Solo se llama para páginas que ya existen como HTML (no leak de
+    estrategia SEO al visitante: las no publicadas simplemente no aparecen)."""
+    return f"""
     <a class="hub-card" href="{p.url_path()}">
       <div class="hub-card-label">{p.label}</div>
-      <div class="hub-card-meta"><span class="hub-card-market">{p.market_label}</span><span class="hub-card-dim">{p.dimension}</span></div>
+      <div class="hub-card-meta"><span class="hub-card-market">{p.market_label}</span></div>
     </a>"""
-    # No publicada: card no-clickable con etiqueta "en preparación"
-    return f"""
-    <div class="hub-card hub-card-pending" aria-disabled="true">
-      <div class="hub-card-label">{p.label}</div>
-      <div class="hub-card-meta"><span class="hub-card-market">{p.market_label}</span><span class="hub-card-state">En preparación</span></div>
-    </div>"""
 
 
 # ─────────── Builders ───────────
@@ -207,22 +203,28 @@ def build_dimension_hub(dimension: str, all_pages: list[PillarPage], dry: bool) 
     for p in dim_pages:
         by_market.setdefault(p.market_label, []).append(p)
 
+    # Solo páginas publicadas; las no-publicadas no se listan al visitante.
     cards_html_blocks = []
     for market_label, pages in sorted(by_market.items()):
         published_pages = [p for p in pages if page_exists(p)]
-        pending_pages = [p for p in pages if not page_exists(p)]
-        # Sample: mostramos hasta 20 publicadas + count de pendientes
-        cards = "\n".join(hub_card_html(p, True) for p in published_pages[:20])
-        pending_count = len(pending_pages) + max(0, len(published_pages) - 20)
-        pending_note = f'<div class="hub-pending-note">{pending_count} páginas en preparación para {market_label}</div>' if pending_count else ""
+        if not published_pages:
+            continue
+        cards = "\n".join(hub_card_html(p) for p in published_pages)
         cards_html_blocks.append(f"""
   <section class="hub-section">
     <h2 class="hub-section-title">{market_label}</h2>
     <div class="hub-grid">
-      {cards if cards else '<div class="hub-empty">Aún sin páginas publicadas en este mercado.</div>'}
+      {cards}
     </div>
-    {pending_note}
   </section>""")
+
+    # Si no hay nada publicado todavía, mostramos un estado neutro y editorial,
+    # sin revelar conteos internos.
+    if not cards_html_blocks:
+        empty_state = f'<div class="hub-empty-state"><p>Estamos preparando la cobertura de esta sección. Mientras tanto, puedes consultar las <a href="/archive.html">ediciones publicadas</a> de The Fleet Radar o explorar otros <a href="/mercados/mexico/">mercados</a>.</p></div>'
+        body_main = empty_state
+    else:
+        body_main = "".join(cards_html_blocks)
 
     canonical = f"{SITE_URL}/{cfg['prefix']}/"
     breadcrumbs = [("The Fleet Radar", SITE_URL + "/"), (cfg["name"], canonical)]
@@ -239,19 +241,11 @@ def build_dimension_hub(dimension: str, all_pages: list[PillarPage], dry: bool) 
     <span class="hub-eyebrow">Hub editorial</span>
     <h1 class="hub-title">{cfg['name']}</h1>
     <p class="hub-intro">{cfg['desc']}</p>
-    <div class="hub-stats">
-      <div class="hub-stat"><div class="hub-stat-num">{total}</div><div class="hub-stat-label">páginas planeadas</div></div>
-      <div class="hub-stat"><div class="hub-stat-num">{published_count}</div><div class="hub-stat-label">publicadas</div></div>
-      <div class="hub-stat"><div class="hub-stat-num">{total - published_count}</div><div class="hub-stat-label">en preparación</div></div>
-    </div>
   </div>
 </section>
 <main class="hub-main">
   <div class="container">
-    {"".join(cards_html_blocks)}
-    <div class="hub-disclaimer">
-      <strong>Hub vivo.</strong> Cada edición semanal añade páginas y enlaces a esta sección. Las páginas en preparación tienen su slug y metadata fijados; se publican cuando alcanzan suficiente densidad editorial.
-    </div>
+    {body_main}
   </div>
 </main>
 """ + CLOSING_BLOCK
@@ -293,26 +287,36 @@ def build_market_hub(market_code: str, all_pages: list[PillarPage], markets_dict
         "vertical": ("Sectores",     "/sectores/"),
         "subgeo":   ("Ciudades",     "/ciudades/"),
     }
+    # Solo dimensiones que tienen al menos 1 página publicada; sin estados
+    # internos visibles al lector.
     dim_blocks = []
     for dim, (label, parent) in dim_labels.items():
         ps = by_dim.get(dim, [])
         if not ps:
             continue
         published = [p for p in ps if page_exists(p)]
-        cards = "\n".join(hub_card_html(p, True) for p in published[:24])
-        pending = len(ps) - len(published)
-        pending_note = f'<div class="hub-pending-note">{pending} más en preparación.</div>' if pending else ""
+        if not published:
+            continue
+        cards = "\n".join(hub_card_html(p) for p in published[:24])
+        more_link = f'<a class="hub-section-link" href="{parent}">ver más →</a>' if len(published) > 24 else ""
         section = f"""
   <section class="hub-section">
-    <h3 class="hub-section-title">{label} en {market['label']}  <a class="hub-section-link" href="{parent}">ver todo →</a></h3>
-    <div class="hub-grid">{cards if cards else '<div class="hub-empty">Sin páginas publicadas aún.</div>'}</div>
-    {pending_note}
+    <h3 class="hub-section-title">{label} en {market['label']}  {more_link}</h3>
+    <div class="hub-grid">{cards}</div>
   </section>"""
         dim_blocks.append(section)
 
-    autogen_section = f"""{MARKER_START}
+    if not dim_blocks:
+        # Aún sin nada publicado para este mercado: estado neutro, sin conteos.
+        autogen_section = f"""{MARKER_START}
 <section class="hub-autogen container">
-  <h2 class="hub-section-supertitle">Páginas en {market['label']}</h2>
+  <p class="hub-empty-state">Estamos preparando la cobertura editorial sobre flotas en {market['label']}. Mientras tanto puedes explorar las <a href="/archive.html">ediciones publicadas</a> de The Fleet Radar.</p>
+</section>
+{MARKER_END}"""
+    else:
+        autogen_section = f"""{MARKER_START}
+<section class="hub-autogen container">
+  <h2 class="hub-section-supertitle">Más sobre flotas en {market['label']}</h2>
   {"".join(dim_blocks)}
 </section>
 {MARKER_END}"""
@@ -425,6 +429,7 @@ def main(argv=None):
     for market_code in markets:
         result = build_market_hub(market_code, all_pages, markets, args.dry_run)
         if result.get("path"):
+            # Logs internos sí muestran conteos (para nosotros); el HTML público no.
             print(f"  {result['path']:42s}  pages={result['pages_in_market']:>3}  publicadas={result['published']}")
 
     print("\n✅ Hubs " + ("simulados" if args.dry_run else "generados") + ".")
