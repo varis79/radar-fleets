@@ -1,0 +1,214 @@
+name: Generate · Pillar pages
+
+# Genera páginas pilar usando Claude Opus con el secret ANTHROPIC_API_KEY.
+# Se dispara manualmente desde la UI con workflow_dispatch.
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'single | tier | filter'
+        required: true
+        default: 'single'
+        type: choice
+        options:
+          - single
+          - tier
+          - filter
+      slug:
+        description: 'Slug (solo si mode=single). Ej: telematica-flotas-mexico-comparativa-2026'
+        required: false
+        default: ''
+      tier:
+        description: 'Tier (1, 2, 3) si mode=tier o filter'
+        required: false
+        default: '1'
+      dimension:
+        description: 'Dimensión (topic|use-case|vertical|subgeo) si mode=filter'
+        required: false
+        default: ''
+      market:
+        description: 'Mercado (mexico|espana|colombia|...) si mode=filter'
+        required: false
+        default: ''
+      limit:
+        description: 'Límite de páginas a generar (opcional, para tests)'
+        required: false
+        default: ''
+      indexed:
+        description: 'Publicar SIN noindex (no recomendado para bulk)'
+        required: false
+        default: 'false'
+        type: choice
+        options: ['false', 'true']
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: pillar-pages-generation
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: pip-${{ hashFiles('requirements.txt') }}
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Configure git identity
+        run: |
+          git config user.name "the-fleet-radar-bot"
+          git config user.email "bot@thefleetradar.com"
+
+      - name: Create working branch
+        id: branch
+        run: |
+          BRANCH="claude/pillar-pages-${GITHUB_RUN_ID}"
+          git checkout -b "$BRANCH"
+          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+
+      - name: Build CLI args
+        id: cli
+        run: |
+          MODE="${{ inputs.mode }}"
+          ARGS=""
+          case "$MODE" in
+            single)
+              if [ -z "${{ inputs.slug }}" ]; then
+                echo "::error::mode=single requiere input 'slug'"
+                exit 1
+              fi
+              ARGS="--slug ${{ inputs.slug }}"
+              ;;
+            tier)
+              ARGS="--tier ${{ inputs.tier }}"
+              ;;
+            filter)
+              if [ -n "${{ inputs.tier }}" ]; then ARGS="$ARGS --tier ${{ inputs.tier }}"; fi
+              if [ -n "${{ inputs.dimension }}" ]; then ARGS="$ARGS --dimension ${{ inputs.dimension }}"; fi
+              if [ -n "${{ inputs.market }}" ]; then ARGS="$ARGS --market ${{ inputs.market }}"; fi
+              ;;
+          esac
+          if [ -n "${{ inputs.limit }}" ]; then ARGS="$ARGS --limit ${{ inputs.limit }}"; fi
+          if [ "${{ inputs.indexed }}" = "true" ]; then ARGS="$ARGS --indexed"; fi
+          echo "args=$ARGS" >> "$GITHUB_OUTPUT"
+          echo "Ejecutando: python -m scripts.generate_pillar_page $ARGS"
+
+      - name: Generate pages
+        id: generate
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          set +e
+          python -m scripts.generate_pillar_page ${{ steps.cli.outputs.args }}
+          EXIT=$?
+          echo "exit_code=$EXIT" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            CHANGED=$(git status --porcelain | wc -l)
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+            echo "files_changed=$CHANGED" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Ensure label exists
+        if: steps.changes.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh label create pillar-pages-generated \
+            --color "5319e7" \
+            --description "Pillar pages generadas por LLM, revisar antes de mergear" \
+            --force || true
+
+      - name: Commit
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          git add -A
+          MODE="${{ inputs.mode }}"
+          git commit -m "feat(pillar): generación $MODE · run ${GITHUB_RUN_ID} · ${{ steps.changes.outputs.files_changed }} archivos"
+
+      - name: Push branch
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          git push origin "${{ steps.branch.outputs.branch }}"
+
+      - name: Create PR
+        if: steps.changes.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          MODE="${{ inputs.mode }}"
+          CHANGED="${{ steps.changes.outputs.files_changed }}"
+          BRANCH="${{ steps.branch.outputs.branch }}"
+
+          case "$MODE" in
+            single)  TITLE="Pillar page: ${{ inputs.slug }}" ;;
+            tier)    TITLE="Pillar pages · Tier ${{ inputs.tier }} ($CHANGED archivos)" ;;
+            filter)  TITLE="Pillar pages · filtro ($CHANGED archivos)" ;;
+          esac
+
+          BODY=$(cat <<EOF
+          **Generación automática de páginas pilar.**
+
+          - Modo: \`$MODE\`
+          - Slug: \`${{ inputs.slug }}\`
+          - Tier: \`${{ inputs.tier }}\`
+          - Dimension: \`${{ inputs.dimension }}\`
+          - Market: \`${{ inputs.market }}\`
+          - Indexed: \`${{ inputs.indexed }}\`
+          - Archivos modificados: $CHANGED
+
+          **Antes de mergear, revisa:**
+          - [ ] Voz editorial coherente (sin "competidor", "Para Pulpo", "argumento comercial")
+          - [ ] Datos plausibles (cifras con fuente o disclaimer)
+          - [ ] Slot Pulpo discreto, no spam
+          - [ ] Internal linking apunta a páginas reales
+          - [ ] Schema.org JSON-LD validable
+
+          ---
+          _Generado por \`generate-pillar-pages.yml\` · run \`${GITHUB_RUN_ID}\`._
+          EOF
+          )
+
+          gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "$TITLE" \
+            --body "$BODY" \
+            --label "pillar-pages-generated"
+
+      - name: Report
+        run: |
+          echo "Mode: ${{ inputs.mode }}"
+          echo "Exit code: ${{ steps.generate.outputs.exit_code }}"
+          echo "Has changes: ${{ steps.changes.outputs.has_changes }}"
+          echo "Files changed: ${{ steps.changes.outputs.files_changed }}"
