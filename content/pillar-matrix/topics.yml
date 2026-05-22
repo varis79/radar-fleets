@@ -1,0 +1,253 @@
+# Topics que la matriz cruza con mercados.
+#
+# applies_to_markets:
+#   "*"       → todos los mercados activos
+#   ["mexico"] → solo México
+#   ["mexico", "espana"] → solo MX y ES
+#   prefix "exclude:" → todos EXCEPTO los listados (ej. "exclude:usa")
+#
+# intents: qué intents se generan para este topic.
+#   Cada intent produce una página distinta. NO todas las combinaciones
+#   topic+intent tienen sentido (un topic regulatorio no admite "comparativo").
+#
+# tier_modifier: cuando una combinación market+topic se calcula, este modifier
+#   se suma al tier base del mercado. Positivo = degrada (T1→T2); 0 = neutro.
+#
+# pulpopay_relevant: true si el topic naturalmente conecta con PulpoPay
+#   (fuel-cards, control-gasto, combustible, pagos). El renderer añadirá un
+#   slot dedicado a PulpoPay en estas páginas.
+#
+# slug_template: cómo se nombra la URL para este topic.
+#   {market_slug}, {year} se sustituyen.
+
+topics:
+  # ─── Core operativo (aplica en todos los mercados) ──────────
+  - code: telematica
+    slug_template: "telematica-flotas-{market_slug}-{year}"
+    label_template: "Telemática para flotas en {market_label} {year}"
+    applies_to_markets: "*"
+    intents: [informational, comparativo, guia-practica]
+    tier_modifier: 0
+    pulpopay_relevant: false
+    notes: "Topic core. Aplica en todos los mercados con matices."
+
+  - code: video-telematica
+    slug_template: "video-telematica-flotas-{market_slug}-{year}"
+    label_template: "Video-telemática y ADAS para flotas en {market_label} {year}"
+    applies_to_markets: "*"
+    intents: [informational, comparativo]
+    tier_modifier: 1
+    pulpopay_relevant: false
+
+  - code: fuel-cards
+    slug_template: "tarjetas-flota-{market_slug}-{year}"
+    label_template: "Tarjetas de flota y combustible en {market_label} {year}"
+    applies_to_markets: "*"
+    intents: [informational, comparativo, guia-practica]
+    tier_modifier: 0
+    pulpopay_relevant: true
+    notes: "Core para PulpoPay."
+
+  - code: combustible
+    slug_template: "combustible-flota-{market_slug}-{year}"
+    label_template: "Combustible y diésel para flotas en {market_label} {year}"
+    applies_to_markets: "*"
+    intents: [informational, guia-practica]
+    tier_modifier: 1
+    pulpopay_relevant: true
+
+  - code: electrificacion-flotas
+    slug_template: "electrificacion-flotas-{market_slug}-{year}"
+    label_template: "Electrificación de flotas en {market_label} {year}"
+    applies_to_markets: "*"
+    intents: [informational, guia-practica]
+    tier_modifier: 0
+    pulpopay_relevant: false
+    notes: "Topic muy activo en mercados Pulpo."
+
+  - code: mantenimiento
+    slug_template: "mantenimiento-flota-{market_slug}-{year}"
+    label_template: "Mantenimiento de flota en {market_label} {year}"
+    applies_to_markets: "*"
+    intents: [informational, guia-practica]
+    tier_modifier: 0
+    pulpopay_relevant: false
+
+  - code: seguridad
+    slug_template: "seguridad-flota-{market_slug}-{year}"
+    label_template: "Seguridad vial y operativa de flotas en {market_label} {year}"
+    applies_to_markets: "*"
+    intents: [informational]
+    tier_modifier: 1
+    pulpopay_relevant: false
+
+  - code: control-gasto
+    slug_template: "control-gasto-flota-{market_slug}-{year}"
+    label_template: "Control de gasto en flotas en {market_label} {year}"
+    applies_to_markets: "*"
+    intents: [informational, guia-practica]
+    tier_modifier: 0
+    pulpopay_relevant: true
+
+  - code: operacion-flotas
+    slug_template: "gestion-flota-{market_slug}-{year}"
+    label_template: "Gestión y operación de flotas en {market_label} {year}"
+    applies_to_markets: "*"
+    intents: [informational]
+    tier_modifier: 0
+    pulpopay_relevant: false
+
+  - code: routing
+    slug_template: "ruteo-flota-{market_slug}-{year}"
+    label_template: "Ruteo y planificación de flota en {market_label} {year}"
+    applies_to_markets: "*"
+    intents: [informational]
+    tier_modifier: 2
+    pulpopay_relevant: false
+
+  - code: logistica-distribucion
+    slug_template: "logistica-distribucion-{market_slug}-{year}"
+    label_template: "Logística y distribución en {market_label} {year}"
+    applies_to_markets: "*"
+    intents: [informational]
+    tier_modifier: 1
+    pulpopay_relevant: false
+
+  - code: insurance
+    slug_template: "seguro-flota-{market_slug}-{year}"
+    label_template: "Seguros de flota en {market_label} {year}"
+    applies_to_markets: "*"
+    intents: [informational]
+    tier_modifier: 1
+    pulpopay_relevant: false
+
+  - code: truck-oem
+    slug_template: "fabricantes-camiones-{market_slug}-{year}"
+    label_template: "Fabricantes de camiones y comerciales en {market_label} {year}"
+    applies_to_markets: "*"
+    intents: [informational, comparativo]
+    tier_modifier: 1
+    pulpopay_relevant: false
+
+  - code: cargo-theft
+    slug_template: "robo-carga-{market_slug}-{year}"
+    label_template: "Robo de carga y seguridad de mercancías en {market_label} {year}"
+    applies_to_markets: "*"
+    intents: [informational]
+    tier_modifier: 2
+    pulpopay_relevant: false
+
+  - code: fraude
+    slug_template: "fraude-combustible-flota-{market_slug}-{year}"
+    label_template: "Fraude y robo de combustible en flotas en {market_label} {year}"
+    applies_to_markets: "*"
+    intents: [informational]
+    tier_modifier: 1
+    pulpopay_relevant: true
+
+  - code: movilidad-urbana
+    slug_template: "movilidad-urbana-flotas-{market_slug}-{year}"
+    label_template: "Movilidad urbana y flotas comerciales en {market_label} {year}"
+    applies_to_markets: "*"
+    intents: [informational]
+    tier_modifier: 2
+    pulpopay_relevant: false
+
+  - code: compliance
+    slug_template: "compliance-flotas-{market_slug}-{year}"
+    label_template: "Compliance y normativa de flotas en {market_label} {year}"
+    applies_to_markets: "*"
+    intents: [informational, regulatorio]
+    tier_modifier: 0
+    pulpopay_relevant: false
+    notes: "El contenido es ESPECÍFICO por mercado (regulación local)."
+
+  # ─── México-específicos ──────────────────────────────────────
+  - code: sict
+    slug_template: "sict-autotransporte-{year}"
+    label_template: "SICT y autotransporte mexicano {year}"
+    applies_to_markets: [mexico]
+    intents: [informational, regulatorio]
+    tier_modifier: 0
+    pulpopay_relevant: false
+
+  - code: cne
+    slug_template: "cne-telematica-hidrocarburos-{year}"
+    label_template: "CNE y telemática para transporte de hidrocarburos {year}"
+    applies_to_markets: [mexico]
+    intents: [informational, regulatorio]
+    tier_modifier: 0
+    pulpopay_relevant: false
+
+  - code: t-mec
+    slug_template: "t-mec-autotransporte-mexico-{year}"
+    label_template: "T-MEC y autotransporte transfronterizo {year}"
+    applies_to_markets: [mexico]
+    intents: [informational]
+    tier_modifier: 0
+    pulpopay_relevant: false
+
+  - code: nearshoring
+    slug_template: "nearshoring-flotas-mexico-{year}"
+    label_template: "Nearshoring y demanda de flotas en México {year}"
+    applies_to_markets: [mexico]
+    intents: [informational]
+    tier_modifier: 1
+    pulpopay_relevant: false
+
+  # ─── España-específicos ──────────────────────────────────────
+  - code: dgt
+    slug_template: "dgt-flotas-comerciales-{year}"
+    label_template: "DGT y flotas comerciales en España {year}"
+    applies_to_markets: [espana]
+    intents: [informational, regulatorio]
+    tier_modifier: 0
+    pulpopay_relevant: false
+
+  - code: v-16
+    slug_template: "baliza-v16-flotas-{year}"
+    label_template: "Baliza V-16 y flotas comerciales {year}"
+    applies_to_markets: [espana]
+    intents: [informational, regulatorio]
+    tier_modifier: 0
+    pulpopay_relevant: false
+
+  - code: tacografo
+    slug_template: "tacografo-flota-espana-{year}"
+    label_template: "Tacógrafo G2V2 y flotas en España {year}"
+    applies_to_markets: [espana]
+    intents: [informational, regulatorio]
+    tier_modifier: 0
+    pulpopay_relevant: false
+
+  - code: zbe
+    slug_template: "zbe-flotas-comerciales-espana-{year}"
+    label_template: "ZBE y flotas comerciales en España {year}"
+    applies_to_markets: [espana]
+    intents: [informational, regulatorio]
+    tier_modifier: 0
+    pulpopay_relevant: false
+
+  - code: itv
+    slug_template: "itv-flota-camiones-espana-{year}"
+    label_template: "ITV camiones y furgonetas en España {year}"
+    applies_to_markets: [espana]
+    intents: [informational, regulatorio]
+    tier_modifier: 0
+    pulpopay_relevant: false
+
+  - code: renting-leasing
+    slug_template: "renting-leasing-flota-espana-{year}"
+    label_template: "Renting y leasing de flotas en España {year}"
+    applies_to_markets: [espana]
+    intents: [informational, comparativo, guia-practica]
+    tier_modifier: 0
+    pulpopay_relevant: false
+
+  - code: peaje-europa
+    slug_template: "peaje-europa-flota-camiones-{year}"
+    label_template: "Peajes en Europa para flotas de camiones {year}"
+    applies_to_markets: [espana]
+    intents: [informational]
+    tier_modifier: 0
+    pulpopay_relevant: true

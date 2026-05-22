@@ -1,0 +1,98 @@
+# Sectores verticales (industria del cliente final de la flota).
+#
+# Diferente de "casos de uso": un caso de uso es CÓMO opera la flota
+# (ej. "reparto última milla"), un vertical es a QUÉ INDUSTRIA pertenece
+# (ej. "e-commerce", "alimentación", "telco").
+#
+# Una misma página puede cruzar caso de uso + vertical (un e-commerce y un
+# distribuidor regional ambos hacen reparto, pero su contexto industria es
+# distinto), pero para no inflar la matriz, ahora cruzamos solo
+# vertical × market generando páginas tipo "Flotas en telco en España",
+# "Flotas en alimentación en México".
+#
+# Cada vertical referencia los use-cases que típicamente lo cubren.
+
+verticals:
+  - code: alimentacion-bebidas
+    label: "Alimentación y bebidas"
+    icon: 🥫
+    typical_use_cases: [distribucion-regional, perecederos-cadena-frio, comercial-fuerza-ventas]
+    tier_modifier: 0
+
+  - code: ecommerce-paqueteria
+    label: "E-commerce y paquetería"
+    icon: 📦
+    typical_use_cases: [reparto-ultima-milla, distribucion-regional]
+    tier_modifier: 0
+
+  - code: retail
+    label: "Retail y distribución minorista"
+    icon: 🏪
+    typical_use_cases: [distribucion-regional, comercial-fuerza-ventas, reparto-ultima-milla]
+    tier_modifier: 0
+
+  - code: telecomunicaciones
+    label: "Telecomunicaciones"
+    icon: 📡
+    typical_use_cases: [servicios-tecnicos-urbanos]
+    tier_modifier: 0
+
+  - code: utilities-energia
+    label: "Utilities y energía"
+    icon: ⚡
+    typical_use_cases: [servicios-tecnicos-urbanos, mantenimiento-infraestructura]
+    tier_modifier: 0
+
+  - code: construccion-obra
+    label: "Construcción y obra civil"
+    icon: 🏗️
+    typical_use_cases: [pickups-obra-campo, maquinaria-pesada]
+    tier_modifier: 0
+
+  - code: mineria
+    label: "Minería"
+    icon: ⛏️
+    typical_use_cases: [pickups-obra-campo, maquinaria-pesada, transporte-pesado-larga-distancia]
+    tier_modifier: 1
+
+  - code: petroleo-gas
+    label: "Petróleo y gas"
+    icon: 🛢️
+    typical_use_cases: [maquinaria-pesada, materiales-peligrosos, transporte-pesado-larga-distancia]
+    tier_modifier: 1
+
+  - code: farmaceutica
+    label: "Farmacéutica"
+    icon: 💊
+    typical_use_cases: [comercial-fuerza-ventas, perecederos-cadena-frio]
+    tier_modifier: 0
+
+  - code: facility-management
+    label: "Facility management"
+    icon: 🏢
+    typical_use_cases: [mantenimiento-infraestructura, servicios-tecnicos-urbanos]
+    tier_modifier: 0
+
+  - code: salud-emergencias
+    label: "Salud y emergencias"
+    icon: 🚑
+    typical_use_cases: [comercial-fuerza-ventas, servicios-tecnicos-urbanos]
+    tier_modifier: 1
+
+  - code: gobierno-municipal
+    label: "Gobierno y municipal"
+    icon: 🏛️
+    typical_use_cases: [flotas-publicas-municipales, servicios-tecnicos-urbanos]
+    tier_modifier: 1
+
+  - code: seguridad-privada
+    label: "Seguridad privada"
+    icon: 🛡️
+    typical_use_cases: [servicios-tecnicos-urbanos, comercial-fuerza-ventas]
+    tier_modifier: 1
+
+  - code: logistica-3pl
+    label: "Logística y 3PL"
+    icon: 📋
+    typical_use_cases: [transporte-pesado-larga-distancia, distribucion-regional, reparto-ultima-milla]
+    tier_modifier: 0

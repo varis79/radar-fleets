@@ -1,0 +1,55 @@
+# Template para datos locales por mercado.
+#
+# Cada archivo data-overrides/<market_code>.yml sigue esta estructura.
+# LLM rellena en SEO-3.2; tú revisas y ajustas via PR.
+# Los campos vacíos NO bloquean generación (el LLM produce con lo que sepa).
+
+market_code: ""             # ej. mexico, espana, colombia
+market_label: ""
+
+# ─── Regulación y organismos ─────────────────────
+regulation:
+  organismos_clave: []      # ej. SICT, CNE, DOF (México) / DGT, BOE (España)
+  normativas_recientes: []  # con fecha y resumen breve
+  fuentes_oficiales: []     # URLs de boletines, organismos
+
+# ─── Players activos en el mercado ───────────────
+players:
+  telematica: []            # ej. ["Geotab México", "Samsara MX", "Mobilegate"]
+  fuel_cards: []            # ej. ["Visa Flota MX", "Mastercard Flota"]
+  oems_camiones: []         # ej. ["Kenworth Mexicana", "International MX"]
+  insurers: []              # ej. ["GNP Flotas", "Qualitas"]
+  routing_software: []      # ej. ["Locus México", "OneRail"]
+
+# ─── Cifras y datos del mercado ──────────────────
+cifras:
+  flota_total: null         # número aproximado de vehículos comerciales
+  penetracion_telematica_pct: null
+  flota_electrica_pct: null
+  ingresos_sector_anual_usd: null
+  fuentes_de_cifras: []     # URLs de informes/estudios usados
+
+# ─── Tipos de flota predominantes ────────────────
+fleet_types_relevant: []    # subset de fleet_types del classifier
+                            # ej. ["transporte-pesado", "ultima-milla", "field-service"]
+
+# ─── Pulpo en este mercado ───────────────────────
+pulpo:
+  operates: false           # ¿Pulpo opera aquí actualmente?
+  status_label: ""          # ej. "Operando desde 2018", "Pronto", "Pre-launch"
+  highlights: []            # 2-3 puntos para slot "Cómo opera Pulpo aquí"
+  cta_principal: ""         # frase específica del CTA (ej. "Ver Pulpo MX en acción")
+
+pulpopay:
+  operates: false           # ¿PulpoPay disponible en este mercado?
+  status_label: ""
+  context_use_case: ""      # caso de uso PulpoPay en este mercado
+  highlights: []
+
+# ─── Geografías sub-nacionales relevantes ────────
+# Solo para mercados grandes donde podemos hacer páginas tipo
+# "telematica en Madrid" o "flotas en CDMX" en futuro.
+subgeographies: []          # ej. España: ["madrid", "barcelona", "valencia"]
+
+# ─── Sectores verticales fuertes en este mercado ─
+verticals_fuertes: []       # ej. México: ["minería", "alimentación", "cementeras"]

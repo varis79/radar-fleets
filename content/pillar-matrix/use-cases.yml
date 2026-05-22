@@ -1,0 +1,423 @@
+# 14 casos de uso Pulpo / PulpoPay
+#
+# Fuente: documentación interna de Pulpo (varis@getpulpo.com, sesión 2026-05-22).
+# Cada caso define el segmento operativo de una flota; el sistema genera una
+# página pilar por caso × mercado activo, alimentada con clientes Pulpo reales
+# del mercado y referencias editoriales.
+#
+# Estructura por caso:
+#   code: slug del caso
+#   label: nombre humano (corto)
+#   icon: emoji semántico
+#   sectors: sectores típicos
+#   how_they_operate: descripción operativa breve
+#   pain_points: dolores que Pulpo resuelve
+#   pulpo_modules: módulos Pulpo (SaaS administración / mantenimiento)
+#   pulpopay_modules: módulos PulpoPay
+#   product_priority: pulpo | pulpopay | both
+#   demo_focus: enfoque editorial de la demo
+#   not_for_them: cosas que NO les interesan (para evitar confundir scope)
+#   client_references_mx: clientes Pulpo reales en MX (📒=admin, 🛠️=mantenimiento, 💳=PulpoPay)
+#   client_references_es: clientes Pulpo reales en ES
+#   tier_modifier: 0 si caso fundamental, 1+ si más nicho
+
+use_cases:
+  - code: vehiculos-directivos
+    label: "Vehículos directivos y ejecutivos"
+    icon: 🤵
+    sectors: ["multinacionales", "banca", "pharma", "consumo", "tecnología", "grandes corporativos"]
+    how_they_operate: "Bajo kilometraje, uso mixto profesional-personal, mayoritariamente renting o leasing."
+    pain_points:
+      - "Desorden administrativo"
+      - "Poca visibilidad del coste total por vehículo"
+      - "Dificultad para separar gasto personal y profesional"
+      - "Vencimientos olvidados"
+    pulpo_modules:
+      - "Gestión documental y vencimientos"
+      - "Control de contratos de renting/leasing"
+      - "Coste total por vehículo"
+    pulpopay_modules:
+      - "Cobertura total"
+      - "Límites suaves por categoría"
+      - "Separación clara de gasto"
+      - "Reporting automático a finanzas"
+    product_priority: pulpo
+    demo_focus: "Visibilidad financiera y orden sin fricción"
+    not_for_them: "Control de fraude, mantenimiento, controles exhaustivos"
+    client_references_mx:
+      - "Banorte (📒)"
+      - "Sherwin Williams (📒)"
+      - "Seguros Atlas (📒🛠️)"
+      - "Tip (📒💳)"
+    client_references_es:
+      - "Chubb (📒)"
+    tier_modifier: 0
+
+  - code: comercial-fuerza-ventas
+    label: "Comercial y fuerza de ventas"
+    icon: 💼
+    sectors: ["consumo masivo", "seguros", "banca", "retail", "farma", "tecnología", "distribución"]
+    how_they_operate: "Alta movilidad urbana, repostajes frecuentes, muchos tickets pequeños."
+    pain_points:
+      - "Tickets perdidos"
+      - "Fraude pequeño recurrente"
+      - "Mala disciplina de gastos"
+    pulpo_modules:
+      - "Gestión documental y vencimientos"
+      - "Coste por vehículo o comercial"
+      - "Asignación de tickets de gasto y conciliación"
+      - "Seguimiento de kilometraje"
+      - "Control básico de mantenimiento"
+    pulpopay_modules:
+      - "Límites por horario"
+      - "Captura de evidencias fotográficas"
+      - "Antifraude básico"
+    product_priority: pulpopay
+    demo_focus: "Control sin frenar al equipo comercial"
+    not_for_them: ""
+    client_references_mx:
+      - "APYMSA (📒💳)"
+      - "Sherwin Williams (📒💳)"
+      - "Seguros Atlas (📒🛠️)"
+      - "Farmacias Similares (📒)"
+      - "Lyncott (📒)"
+    client_references_es:
+      - "Isdin (📒)"
+      - "Laboratorios Salvat (📒)"
+      - "Calidad Pascual (📒)"
+    tier_modifier: 0
+
+  - code: servicios-tecnicos-urbanos
+    label: "Servicios técnicos urbanos"
+    icon: 🔧
+    sectors: ["telecomunicaciones", "utilities", "distribución de energía", "agua", "gas", "mantenimiento industrial"]
+    how_they_operate: "Furgonetas equipadas, muchas paradas, desgaste acelerado."
+    pain_points:
+      - "Falta de mantenimiento preventivo"
+      - "Daños no reportados"
+      - "Consumo irregular"
+    pulpo_modules:
+      - "Gestión documental y vencimientos"
+      - "Plan preventivo estructurado"
+      - "Checklists obligatorios"
+      - "Historial por unidad"
+    pulpopay_modules:
+      - "Control por vehículo"
+      - "Alertas de consumo anómalo"
+      - "Validación por ubicación"
+    product_priority: both
+    demo_focus: "Estructura operativa y disciplina"
+    not_for_them: ""
+    client_references_mx:
+      - "Enerclima (📒)"
+      - "Ingeteam – Res Energy (📒)"
+    client_references_es:
+      - "Iberdrola (📒)"
+      - "Avatel (📒)"
+      - "Tradivel (📒)"
+    tier_modifier: 0
+
+  - code: mantenimiento-infraestructura
+    label: "Mantenimiento de infraestructura e instalaciones"
+    icon: 🏭
+    sectors: ["facility management", "climatización", "fumigación", "ascensores", "instalaciones eléctricas", "industriales"]
+    how_they_operate: "Uso intensivo, paso frecuente por talleres. Furgonetas, pickups, vehículo ligero con herramientas."
+    pain_points:
+      - "Paradas imprevistas"
+      - "Costes elevados de reparación"
+    pulpo_modules:
+      - "Gestión documental y vencimientos"
+      - "Mantenimientos preventivos"
+      - "Control de conductores y turnos"
+      - "KPI de coste por vehículo"
+      - "Control de talleres e historial de reparaciones"
+    pulpopay_modules:
+      - "Pago trazable a talleres"
+      - "Control por proveedor"
+    product_priority: both
+    demo_focus: "Previsibilidad financiera"
+    not_for_them: ""
+    client_references_mx:
+      - "Traffic Light (📒🛠️)"
+      - "Vorsevi (📒🛠️)"
+      - "Rentokil (📒)"
+      - "Enerclima (📒)"
+      - "Green Protection (📒)"
+      - "Grupo Vysisa (📒)"
+    client_references_es:
+      - "Rentokil (📒)"
+      - "Serveo (📒)"
+      - "Securitas (📒)"
+      - "Fain (📒)"
+      - "Orona (📒)"
+    tier_modifier: 0
+
+  - code: pickups-obra-campo
+    label: "Pickups, obra y campo"
+    icon: 🚙
+    sectors: ["construcción", "obra civil", "minería ligera", "generación de energía", "servicios rurales"]
+    how_they_operate: "Zonas remotas, menor supervisión directa, desgaste alto. Pickups y 4x4."
+    pain_points:
+      - "Uso personal encubierto"
+      - "Combustible fuera de ruta"
+    pulpo_modules:
+      - "Gestión documental y vencimientos"
+      - "Control de kilometraje real"
+      - "Check-in digital"
+      - "Seguimiento de daños"
+    pulpopay_modules:
+      - "Problemas de cobertura (están lejos)"
+      - "Límites diarios"
+    product_priority: pulpopay
+    demo_focus: "Control en entornos difíciles"
+    not_for_them: ""
+    client_references_mx:
+      - "Hycsa (📒💳)"
+      - "Epiroc (📒💳)"
+      - "Tracsa (📒)"
+      - "Grupo SDG (📒💳)"
+      - "Energéticos Fusión (📒🛠️)"
+    client_references_es:
+      - "OHLA (📒)"
+      - "Magtel (📒)"
+    tier_modifier: 0
+
+  - code: reparto-ultima-milla
+    label: "Reparto urbano y última milla"
+    icon: 📦
+    sectors: ["e-commerce", "paquetería", "alimentos", "retail"]
+    how_they_operate: "Rutas cortas, muchas paradas, alto desgaste."
+    pain_points:
+      - "Margen bajo"
+      - "Consumo elevado"
+    pulpo_modules:
+      - "Gestión documental y vencimientos"
+      - "Vehículos listos para salir (mantenimiento en regla, documentación en regla)"
+      - "Control de conductores"
+    pulpopay_modules:
+      - "Antifraude"
+      - "Seguimiento de consumo"
+    product_priority: pulpopay
+    demo_focus: "Impacto directo en margen"
+    not_for_them: ""
+    client_references_mx:
+      - "DHL Express (📒🛠️)"
+      - "DHL LMD (📒🛠️)"
+      - "99 Minutos (📒)"
+      - "Envialo México (📒)"
+      - "Zoom (📒🛠️)"
+      - "Segmail (📒)"
+    client_references_es:
+      - "Mondial Relay (📒)"
+      - "CityLogin (📒)"
+    tier_modifier: 0
+
+  - code: distribucion-regional
+    label: "Distribución regional"
+    icon: 🚚
+    sectors: ["alimentos y bebidas", "mayoristas", "materiales"]
+    how_they_operate: "Trayectos interurbanos frecuentes."
+    pain_points:
+      - "Variabilidad de precios"
+      - "Poca visibilidad consolidada"
+    pulpo_modules:
+      - "Gestión documental y vencimientos"
+      - "Reportes consolidados"
+      - "Control de gastos"
+      - "Mantenimiento"
+    pulpopay_modules:
+      - "Cobertura completa"
+      - "Controles antifraude"
+    product_priority: pulpopay
+    demo_focus: "Ahorro por escala"
+    not_for_them: ""
+    client_references_mx:
+      - "Grupo SAR (📒)"
+      - "Lyncott (📒)"
+      - "Carnes Selectas El Ingrato (📒)"
+      - "La Rancherita (📒)"
+      - "Arabela (📒🛠️)"
+      - "Byal Logistics (📒🛠️)"
+      - "Dliver (📒💳)"
+    client_references_es:
+      - "Bonnysa (📒)"
+      - "Grupo Nabeiro (📒)"
+      - "Grupo Unide (📒)"
+    tier_modifier: 0
+
+  - code: transporte-pesado-larga-distancia
+    label: "Transporte pesado y larga distancia"
+    icon: 🚛
+    sectors: ["logística pesada", "transporte internacional"]
+    how_they_operate: "Tractos y trailers, alto volumen de combustible."
+    pain_points:
+      - "Fraude"
+      - "Diferencias de precio"
+      - "Desvíos"
+    pulpo_modules:
+      - "KPI consumo real vs esperado"
+      - "Integración telemetría"
+      - "Mantenimiento (profundidad limitada, pero puede servir)"
+    pulpopay_modules:
+      - "Cobertura completa"
+      - "Antifraude avanzado"
+      - "Controles por vehículo"
+    product_priority: pulpopay
+    demo_focus: "Ahorro directo en combustible"
+    not_for_them: "Suelen pedir horómetros (control de horas), que aún no tenemos disponible"
+    client_references_mx:
+      - "Transportes Monroy Schiavon (📒💳)"
+      - "Transportes STN (📒)"
+      - "Transportes Terrestres Puertas (📒)"
+      - "AGR Transportes (📒)"
+      - "Hycsa (📒)"
+    client_references_es: []
+    tier_modifier: 0
+
+  - code: perecederos-cadena-frio
+    label: "Perecederos y cadena de frío"
+    icon: 🧊
+    sectors: ["alimentos", "farmacéutica", "logística refrigerada"]
+    how_they_operate: "Tiempo crítico, alto impacto ante averías."
+    pain_points:
+      - "Avería = pérdida directa"
+    pulpo_modules:
+      - "Preventivo estricto"
+      - "Alertas anticipadas"
+    pulpopay_modules:
+      - "Cobertura amplia"
+      - "Controles antifraude"
+    product_priority: both
+    demo_focus: "Reducción de riesgo"
+    not_for_them: ""
+    client_references_mx:
+      - "Hielo Fiesta (📒)"
+      - "Carnes Selectas El Ingrato (📒)"
+      - "Lácteos La Quinta (📒)"
+    client_references_es:
+      - "Bofrost (📒)"
+      - "Transgourmet (📒)"
+    tier_modifier: 0
+
+  - code: materiales-peligrosos
+    label: "Materiales peligrosos y químicos"
+    icon: ☣️
+    sectors: ["química", "energía", "residuos peligrosos"]
+    how_they_operate: "Altamente regulado."
+    pain_points:
+      - "Auditorías"
+      - "Sanciones"
+    pulpo_modules:
+      - "Trazabilidad documental"
+      - "Historial completo de vehículos y conductores"
+    pulpopay_modules:
+      - "Restricción por zona"
+      - "Registro detallado"
+    product_priority: both
+    demo_focus: "Cumplimiento y control legal"
+    not_for_them: ""
+    client_references_mx:
+      - "Sherwin Williams (📒)"
+      - "Ravago (📒)"
+    client_references_es: []
+    tier_modifier: 1
+
+  - code: flotas-publicas-municipales
+    label: "Flotas públicas y municipales"
+    icon: 🏛️
+    sectors: ["gobierno", "ayuntamientos", "organismos públicos"]
+    how_they_operate: "Presupuesto cerrado, supervisión constante."
+    pain_points:
+      - "Auditorías"
+      - "Presión política"
+    pulpo_modules:
+      - "Reporting transparente"
+      - "Control presupuestario"
+    pulpopay_modules:
+      - "Límites estrictos"
+      - "Evidencias automáticas"
+    product_priority: pulpopay
+    demo_focus: "Transparencia y control"
+    not_for_them: ""
+    client_references_mx:
+      - "STN (📒)"
+    client_references_es: []
+    tier_modifier: 1
+
+  - code: renting-leasing-gestores
+    label: "Renting, leasing y gestores de flota"
+    icon: 📋
+    sectors: ["renting", "leasing", "gestores de flota"]
+    how_they_operate: "Alta rotación, múltiples contratos, multas y mantenimiento masivo."
+    pain_points:
+      - "Multas descontroladas"
+      - "Disputas"
+      - "Falta de trazabilidad"
+    pulpo_modules:
+      - "Gestión de contratos"
+      - "Gestión de multas"
+      - "Historial y SLAs"
+    pulpopay_modules:
+      - "Trazabilidad de pagos"
+      - "Reglas por contrato"
+    product_priority: pulpo
+    demo_focus: "Reducir burocracia y disputas"
+    not_for_them: ""
+    client_references_mx:
+      - "Element Fleet (📒)"
+      - "AZ Leasing (📒)"
+      - "Banorte (📒)"
+      - "Franlux (📒)"
+    client_references_es: []
+    tier_modifier: 0
+
+  - code: maquinaria-pesada
+    label: "Maquinaria pesada"
+    icon: 🏗️
+    sectors: ["construcción pesada", "minería", "petróleo y gas"]
+    how_they_operate: "Activos por horas de uso, consumo alto, entornos remotos."
+    pain_points:
+      - "Fuga de combustible"
+      - "Mantenimiento caro"
+    pulpo_modules:
+      - "Inventario de activos"
+      - "Mantenimiento por horas"
+      - "Historial por activo"
+    pulpopay_modules:
+      - "Control por activo"
+      - "Restricción por ubicación"
+      - "Límites por turno"
+    product_priority: both
+    demo_focus: "Control de activos críticos"
+    not_for_them: ""
+    client_references_mx:
+      - "Epiroc (📒💳)"
+      - "Tracsa (📒)"
+      - "BHP (📒🛠️)"
+    client_references_es: []
+    tier_modifier: 1
+
+  - code: taxis-vtc-movilidad
+    label: "Taxis, VTC y movilidad bajo demanda"
+    icon: 🚕
+    sectors: ["taxis", "VTC", "operadores de movilidad"]
+    how_they_operate: "Vehículos 24/7, varios conductores por unidad."
+    pain_points:
+      - "Consumo elevado"
+      - "Uso fuera de turno"
+      - "Desgaste extremo"
+    pulpo_modules:
+      - "Coste por vehículo"
+      - "Mantenimiento intensivo"
+      - "Asignación conductor-vehículo"
+    pulpopay_modules:
+      - "Límites por turno"
+      - "Antifraude avanzado"
+      - "Seguimiento de consumo"
+    product_priority: pulpopay
+    demo_focus: "Rentabilidad por vehículo"
+    not_for_them: ""
+    client_references_mx:
+      - "El Shaddai – taxis AIFA (📒)"
+    client_references_es: []
+    tier_modifier: 1
