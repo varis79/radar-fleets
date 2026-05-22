@@ -15,6 +15,90 @@ como `[done]` con el commit/PR de aterrizaje.
 | C-4 | PR-SEO-1 · Fundamentos técnicos | PR `claude/seo-1-foundations` | Schema.org, robots LLM bots, internal linking. |
 | C-5 | PR-SEO-3.1 · Matriz long-tail (estructura) | PR `claude/seo-3-1-matrix` | **~900 páginas planeadas** en 4 dimensiones: 300 topic + 280 use-case + 184 subgeo + 140 vertical. 14 casos de uso Pulpo con clientes reales (Banorte, DHL, Iberdrola, Bofrost...). 14 sectores. Ciudades MX/ES/AR/CO/CL/PE. Todo arranca en noindex; liberación gradual con threshold. CSV en `content/pillar-matrix/matrix.csv`. |
 | C-6 | PR-SEO-3.2 · Sistema interlinking + hubs índices | PR `claude/seo-3-1-matrix` (commit 3) | 4 hubs de dimensión (/temas/, /casos-uso/, /sectores/, /ciudades/) + 10 hubs de mercado dinámicos (México, España + 8 nuevos LatAm). Schema.org CollectionPage + ItemList por hub. Sitemap ampliado a 30 URLs. Diseño hereda radar.css. Helper `related_pages()` en pillar.py para cross-linking automático futuro. |
+| C-7 | PR-SEO-3.3 · Generador pillar pages + workflow | PR `claude/seo-3-3-content-t1` | Prompt maestro pillar, renderer HTML con schema.org, script generate_pillar_page.py, workflow GitHub Actions con 3 modos (single/tier/filter), 3 piloto stub generadas. Pendiente: instalar workflow yml desde UI (PAT sin workflow scope) y ejecutar piloto LLM real. |
+
+## Próxima ola SEO-3 (todavía sin implementar)
+
+### PR-SEO-3.4 · Cross-dimension filtrado con typical_use_cases
+
+Combinaciones que cruzan dimensiones (use_case × vertical, fleet_type × market)
+generadas solo cuando tiene sentido editorial. Filtro automático: solo se
+crean si el use_case está listado en `typical_use_cases` del vertical
+(ya definido en verticals.yml).
+
+Ejemplos:
+- ✅ `flota-reparto-ultima-milla-en-ecommerce-paqueteria-mexico-2026/` (e-commerce típicamente hace last-mile)
+- ✅ `flota-maquinaria-pesada-en-construccion-obra-mexico-2026/` (construcción típicamente usa maquinaria)
+- ❌ `flota-maquinaria-pesada-en-ecommerce-...` (ecommerce no usa maquinaria; no se genera)
+- ❌ `flota-vehiculos-directivos-en-construccion-...` (no es típico; no se genera)
+
+Volumen estimado: ~180-220 páginas extra (≠ 840 sin filtro).
+
+### PR-SEO-3.5 · Sistema vivo de matriz (auto-detección y expansión)
+
+**La matriz no es estática.** Cada N semanas, un job mensual:
+
+**A) Detecta clusters de historias sin página pilar**
+Analiza `editorial-memory.md` y `content/raw/*.jsonl` recientes (12 semanas).
+Si encuentra ≥3 historias sobre el mismo tema sin página, abre GitHub Issue:
+
+> Detectados 4 historias sobre ZBE Sevilla en últimas 6 ediciones. Propuesta:
+> - slug: `zbe-sevilla-flotas-comerciales`
+> - sub-topics propuestos: [...]
+> Responde con `/approve` para generar.
+
+**B) Detecta NUEVOS TOPICS emergentes (no en la matriz)**
+LLM agrupa headlines por similitud semántica. Si detecta un cluster que NO
+mapea a ningún topic existente en `topics.yml`, propone añadirlo:
+
+> Detectado cluster sobre "hidrógeno verde transporte" con 7 historias en
+> MX/ES/USA. No existe topic `hidrogeno-verde` en la matriz. Propuesta:
+> - Nuevo topic: `hidrogeno-verde`
+> - applies_to_markets: [mexico, espana, latam, usa]
+> - intents: [informational, guia-practica]
+> - tier_modifier: 1 (emergente, sin tracción mainstream aún)
+> - 4 nuevas páginas planeadas en T2
+> Responde `/approve` para añadir a topics.yml + matrix.csv.
+
+Al aprobar:
+- Edita `topics.yml` (commit + PR).
+- Las nuevas combinaciones aparecen en `matrix.csv`.
+- Disponibles para generación con `generate-pillar-pages.yml`.
+
+**C) Promoción de tier**
+Si un topic en T2 acumula ≥10 historias en un mercado → propone T2→T1.
+
+**D) Propuesta de subgeo / ciudad**
+Si un cluster menciona repetidamente una ciudad sin slot, propone añadirla
+a `subgeographies.yml`.
+
+**E) Propuesta de cross-border / regional**
+Detecta historias que cruzan mercados (USMCA, Mercosur, cross-border) y
+propone topic regional.
+
+**Ejemplos reales de temas que podrían emerger y necesitar página:**
+- Hidrógeno verde transporte
+- Baterías de segunda vida
+- Carga ultra-rápida MCS
+- Vehículos definidos por software (SDV)
+- Trazabilidad supply chain con blockchain
+- Carbon credits para flotas
+- Tarifas dinámicas de electricidad para depots
+- Robo de baterías (emergente en LatAm)
+- Insurance telematics (UBI)
+- Driver wellness / fatigue management
+
+Coste estimado: ~$0.20-0.50/mes (1 análisis LLM + clustering mensual).
+
+### PR-SEO-3.6 · Updates mensuales + threshold automático
+
+Cada N días, el sistema:
+- Refresca contenido de páginas pilar (LLM evalúa si cambió algo significativo).
+- Mueve páginas de noindex → index cuando cumplen threshold (3+ historias
+  relacionadas + score LLM publicable + no `paused: true` en .md).
+- Decrementa tier si una página deja de tener tracción.
+
+---
 
 ## Backlog ordenado (alta prioridad → baja)
 
