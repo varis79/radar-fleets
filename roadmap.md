@@ -220,3 +220,4 @@ Cada N días, el sistema:
 | 2026-05-22 | Fix geo LatAm: eliminado "Pulpo operativo desde sede en Bogotá" + CTA box corregido | commit `50a61ce` |
 | 2026-05-22 | A-1 PulpoPay disclaimers · A-2 hreflang todos los hubs y pillar pages · A-3 NewsArticle JSON-LD en 7 ediciones | commit `f5b6fc9` |
 | 2026-05-22 | A-4 verificado: CTA Pulpo en Nº8 está tras sección opinión, no adyacente al artículo sobre operador asesinado | verificación manual |
+| 2026-05-22 | Internal linking: PILLAR_INDEX (65 páginas) + build_tag_html + story tags clickables + inject retroactivo en 7 ediciones (45 bloques, 33 tags) | commit `a9f91cc` |
