@@ -82,6 +82,24 @@ específico, cita URLs concretas:
    3 ideas para diferenciar el medio (rankings propios, datos propios,
    formato único).
 
+9. CONOCIMIENTO PROFUNDO DE PULPO
+   Investiga lo que sepas (o puedas encontrar) sobre Pulpo y sus productos
+   más allá de lo que cuenta el sitio. Mantenimiento, pagos B2B, antifraude
+   en combustible, control documental, telemetría integrada, casos de
+   clientes públicos. ¿Hay capacidades de Pulpo / PulpoPay que NO están
+   reflejadas en el medio y deberían (de forma editorial, no marketing)?
+   ¿Hay cosas que SÍ menciona el medio pero NO son tan exactas como podrían?
+
+10. PROPUESTA DE COPYS MEJORADOS
+    Selecciona 5 fragmentos del sitio (intros, FAQs, slot Pulpo, descripciones
+    de pillar pages) que suenen demasiado a IA o demasiado genéricos. Para
+    cada uno:
+    - Cita el original literal.
+    - Reescríbelo con voz humana, sobria, profesional, sin clichés tipo "en
+      el cambiante mundo de…", "la transformación digital…", "es fundamental
+      entender…". Periodismo, no marketing.
+    - Explica brevemente qué cambiaste y por qué.
+
 Sé crítico. No me halagues. Si algo está mal o suena raro, dilo.
 ```
 
