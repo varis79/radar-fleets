@@ -101,4 +101,5 @@ como `[done]` con el commit/PR de aterrizaje.
 | 2026-05-21 | Notificación Slack (deshabilitada hasta crear secret) | 642bf1e |
 | 2026-05-21 | QA no-bloqueante; siempre publica con avisos | 24be10c |
 | 2026-05-21 | Blindaje deploy: Vercel Deploy Hook + smoke test + canary martes | PR `claude/deploy-resilience` |
-| 2026-05-21 | Curación USA + fuentes RSS + reparto editorial MX/ES dominante | PR `claude/curation-usa-and-sources` (en curso) |
+| 2026-05-21 | Curación: 24 fuentes (14 RSS + 10 Google News) + classifier USA + reparto MX/ES + blacklist competidores | PR #26 `claude/curation-usa-and-sources` |
+| 2026-05-22 | PR-SEO-1: schema.org + robots.txt LLM bots + meta tags + internal linking | PR `claude/seo-1-foundations` |
