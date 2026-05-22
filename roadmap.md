@@ -15,10 +15,10 @@ que NO estaban ya en el backlog o que necesitan entrada nueva.
 
 | ID | Tarea | Responsable | Estado |
 |---|---|---|---|
-| A-1 | Disclaimer PulpoPay en `/temas/fuel-cards/` y `/temas/electrificacion-flotas/` | Técnico (Claude) | **Pendiente** |
-| A-2 | Hreflang `es-MX` / `es-ES` en pillar pages y hubs de mercado | Técnico (Claude) | **Pendiente** |
-| A-3 | Schema.org `NewsArticle` en las 7 ediciones de `/magazines/` | Técnico (Claude) | **Pendiente** |
-| A-4 | Check: ¿aparece el Pulpo box tras artículo operador asesinado (Nº8)? | Técnico (Claude) | **Pendiente** |
+| A-1 | Disclaimer PulpoPay en `/temas/fuel-cards/` y `/temas/electrificacion-flotas/` | Técnico (Claude) | ✅ `f5b6fc9` |
+| A-2 | Hreflang `es-MX` / `es-ES` en pillar pages y hubs de mercado | Técnico (Claude) | ✅ `f5b6fc9` |
+| A-3 | Schema.org `NewsArticle` en las 7 ediciones de `/magazines/` | Técnico (Claude) | ✅ `f5b6fc9` |
+| A-4 | Check: ¿aparece el Pulpo box tras artículo operador asesinado (Nº8)? | Técnico (Claude) | ✅ OK — CTA band está tras la opinión editorial, no adyacente al artículo |
 | A-5 | Fuentes/citations visibles al pie de 20 páginas prioritarias | Editorial (Varis) | Backlog |
 | A-6 | Eliminación de clichés IA-sounding: lista negra en `docs/STYLE-FIXES.md` | Editorial (Varis) | Backlog |
 | A-7 | Lead magnets x3: checklist antifraude MX · plantilla coste/vehículo · matriz ZBE+ITV ES | Editorial (Varis) | Backlog |
@@ -218,3 +218,5 @@ Cada N días, el sistema:
 | 2026-05-22 | PR-SEO-1: schema.org + robots.txt LLM bots + meta tags + internal linking | PR `claude/seo-1-foundations` |
 | 2026-05-22 | Auditorías externas: Perplexity, DeepSeek, ChatGPT, Gemini → `docs/audits/` | commit `50a61ce` |
 | 2026-05-22 | Fix geo LatAm: eliminado "Pulpo operativo desde sede en Bogotá" + CTA box corregido | commit `50a61ce` |
+| 2026-05-22 | A-1 PulpoPay disclaimers · A-2 hreflang todos los hubs y pillar pages · A-3 NewsArticle JSON-LD en 7 ediciones | commit `f5b6fc9` |
+| 2026-05-22 | A-4 verificado: CTA Pulpo en Nº8 está tras sección opinión, no adyacente al artículo sobre operador asesinado | verificación manual |
