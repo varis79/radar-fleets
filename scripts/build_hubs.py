@@ -67,6 +67,7 @@ def head_block(
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="msvalidate.01" content="F76AFEB4A9F8059A6B4046015931CB70">
 <title>{title}</title>
 <meta name="description" content="{description}">
 <meta name="author" content="Pulpo — getpulpo.com">
@@ -91,6 +92,8 @@ def head_block(
 <link rel="stylesheet" href="/assets/radar.css">
 <style>:root{{ --accent:#c9a84c; --accent-2:#1e7fcb; }}</style>
 {schema_jsonld}
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
 </head>
 <body>
 <header class="topbar">
