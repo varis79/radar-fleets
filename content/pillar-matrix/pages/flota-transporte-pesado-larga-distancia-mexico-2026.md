@@ -1,8 +1,8 @@
 ---
-slug: flota-reparto-ultima-milla-mexico-2026
+slug: flota-transporte-pesado-larga-distancia-mexico-2026
 dimension: use-case
 market: mexico
-topic_code: reparto-ultima-milla
+topic_code: transporte-pesado-larga-distancia
 intent: informational
 tier: 1
 schema_type: Article
@@ -16,6 +16,6 @@ paused: false
 forced_index: false
 ---
 
-# Reparto urbano y última milla en México 2026
+# Transporte pesado y larga distancia en México 2026
 
-Metadata de tracking. El HTML vive en `/casos-uso/flota-reparto-ultima-milla-mexico-2026/`.
+Metadata de tracking. El HTML vive en `/casos-uso/flota-transporte-pesado-larga-distancia-mexico-2026/`.

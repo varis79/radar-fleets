@@ -1,8 +1,8 @@
 ---
-slug: flota-reparto-ultima-milla-mexico-2026
+slug: flota-comercial-fuerza-ventas-mexico-2026
 dimension: use-case
 market: mexico
-topic_code: reparto-ultima-milla
+topic_code: comercial-fuerza-ventas
 intent: informational
 tier: 1
 schema_type: Article
@@ -16,6 +16,6 @@ paused: false
 forced_index: false
 ---
 
-# Reparto urbano y última milla en México 2026
+# Comercial y fuerza de ventas en México 2026
 
-Metadata de tracking. El HTML vive en `/casos-uso/flota-reparto-ultima-milla-mexico-2026/`.
+Metadata de tracking. El HTML vive en `/casos-uso/flota-comercial-fuerza-ventas-mexico-2026/`.
