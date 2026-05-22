@@ -341,6 +341,75 @@ def enumerate_pages(only_active_markets: bool = True) -> list[PillarPage]:
 
 # ─────────── Resumen / reporting ───────────
 
+# ─────────── Helpers de relaciones (interlinking) ───────────
+
+def pages_by_market(pages: list[PillarPage], market_code: str) -> list[PillarPage]:
+    return [p for p in pages if p.market_code == market_code]
+
+
+def pages_by_dimension(pages: list[PillarPage], dimension: str) -> list[PillarPage]:
+    return [p for p in pages if p.dimension == dimension]
+
+
+def pages_by_topic_code(pages: list[PillarPage], topic_code: str) -> list[PillarPage]:
+    return [p for p in pages if p.topic_code == topic_code]
+
+
+def related_pages(page: PillarPage, all_pages: list[PillarPage], limit_per_group: int = 4) -> dict[str, list[PillarPage]]:
+    """Devuelve grupos de páginas relacionadas con `page`. Cada grupo es un
+    tipo distinto de relación: sibling (mismo concepto en otro mercado),
+    cross-dimension (mismo mercado, otra dimensión), topic-related (mismo
+    topic pero distinto mercado/dimensión).
+
+    Los grupos están vacíos si no hay matches. Las páginas devueltas son
+    candidatas para enlace; el renderer decide cuáles efectivamente
+    enlazar según si la página destino existe como HTML publicado.
+
+    Ejemplos para page = use-case "reparto-ultima-milla" en MX:
+      - sibling_same_use_case_other_markets: misma use_case en ES, CO, etc.
+      - same_market_other_dimensions: otras dimensiones (topic, vertical, subgeo) de MX
+      - related_by_topic_code: otras páginas con mismo topic_code (limitado)
+    """
+    out: dict[str, list[PillarPage]] = {
+        "sibling_same_topic_other_markets": [],
+        "same_market_other_dimensions": [],
+        "same_market_use_cases": [],
+        "same_market_verticals": [],
+        "same_market_subgeos": [],
+        "same_market_topics": [],
+    }
+
+    for other in all_pages:
+        if other.slug == page.slug:
+            continue
+
+        # 1. Mismo topic_code (≈ misma keyword principal) en otros mercados
+        if (other.topic_code == page.topic_code
+                and other.dimension == page.dimension
+                and other.market_code != page.market_code
+                and other.intent_code == page.intent_code):
+            out["sibling_same_topic_other_markets"].append(other)
+            continue
+
+        # 2. Mismo mercado, otras dimensiones (cross-dimension same market)
+        if other.market_code == page.market_code and other.dimension != page.dimension:
+            bucket = {
+                "use-case": "same_market_use_cases",
+                "vertical": "same_market_verticals",
+                "subgeo":   "same_market_subgeos",
+                "topic":    "same_market_topics",
+            }.get(other.dimension)
+            if bucket:
+                out[bucket].append(other)
+            out["same_market_other_dimensions"].append(other)
+
+    # Limitar grupos al `limit_per_group` para no inflar páginas con 50 enlaces
+    for key in out:
+        out[key] = out[key][:limit_per_group]
+
+    return out
+
+
 def summarize(pages: list[PillarPage]) -> dict[str, Any]:
     """Estadísticas sobre la matriz construida."""
     by_tier: dict[int, int] = {1: 0, 2: 0, 3: 0}

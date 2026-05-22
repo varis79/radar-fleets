@@ -14,6 +14,7 @@ como `[done]` con el commit/PR de aterrizaje.
 |---|---|---|---|
 | C-4 | PR-SEO-1 · Fundamentos técnicos | PR `claude/seo-1-foundations` | Schema.org, robots LLM bots, internal linking. |
 | C-5 | PR-SEO-3.1 · Matriz long-tail (estructura) | PR `claude/seo-3-1-matrix` | **~900 páginas planeadas** en 4 dimensiones: 300 topic + 280 use-case + 184 subgeo + 140 vertical. 14 casos de uso Pulpo con clientes reales (Banorte, DHL, Iberdrola, Bofrost...). 14 sectores. Ciudades MX/ES/AR/CO/CL/PE. Todo arranca en noindex; liberación gradual con threshold. CSV en `content/pillar-matrix/matrix.csv`. |
+| C-6 | PR-SEO-3.2 · Sistema interlinking + hubs índices | PR `claude/seo-3-1-matrix` (commit 3) | 4 hubs de dimensión (/temas/, /casos-uso/, /sectores/, /ciudades/) + 10 hubs de mercado dinámicos (México, España + 8 nuevos LatAm). Schema.org CollectionPage + ItemList por hub. Sitemap ampliado a 30 URLs. Diseño hereda radar.css. Helper `related_pages()` en pillar.py para cross-linking automático futuro. |
 
 ## Backlog ordenado (alta prioridad → baja)
 
