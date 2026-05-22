@@ -1,8 +1,8 @@
 ---
-slug: flota-reparto-ultima-milla-mexico-2026
-dimension: use-case
+slug: tarjetas-flota-mexico-2026
+dimension: topic
 market: mexico
-topic_code: reparto-ultima-milla
+topic_code: fuel-cards
 intent: informational
 tier: 1
 schema_type: Article
@@ -16,6 +16,6 @@ paused: false
 forced_index: false
 ---
 
-# Reparto urbano y última milla en México 2026
+# Tarjetas de flota y combustible en México 2026
 
-Metadata de tracking. El HTML vive en `/casos-uso/flota-reparto-ultima-milla-mexico-2026/`.
+Metadata de tracking. El HTML vive en `/temas/tarjetas-flota-mexico-2026/`.

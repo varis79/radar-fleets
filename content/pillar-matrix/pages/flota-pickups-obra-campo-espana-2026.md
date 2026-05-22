@@ -1,8 +1,8 @@
 ---
-slug: flota-reparto-ultima-milla-mexico-2026
+slug: flota-pickups-obra-campo-espana-2026
 dimension: use-case
-market: mexico
-topic_code: reparto-ultima-milla
+market: espana
+topic_code: pickups-obra-campo
 intent: informational
 tier: 1
 schema_type: Article
@@ -16,6 +16,6 @@ paused: false
 forced_index: false
 ---
 
-# Reparto urbano y última milla en México 2026
+# Pickups, obra y campo en España 2026
 
-Metadata de tracking. El HTML vive en `/casos-uso/flota-reparto-ultima-milla-mexico-2026/`.
+Metadata de tracking. El HTML vive en `/casos-uso/flota-pickups-obra-campo-espana-2026/`.

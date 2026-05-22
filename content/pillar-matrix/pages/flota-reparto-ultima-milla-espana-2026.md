@@ -1,7 +1,7 @@
 ---
-slug: flota-reparto-ultima-milla-mexico-2026
+slug: flota-reparto-ultima-milla-espana-2026
 dimension: use-case
-market: mexico
+market: espana
 topic_code: reparto-ultima-milla
 intent: informational
 tier: 1
@@ -16,6 +16,6 @@ paused: false
 forced_index: false
 ---
 
-# Reparto urbano y última milla en México 2026
+# Reparto urbano y última milla en España 2026
 
-Metadata de tracking. El HTML vive en `/casos-uso/flota-reparto-ultima-milla-mexico-2026/`.
+Metadata de tracking. El HTML vive en `/casos-uso/flota-reparto-ultima-milla-espana-2026/`.
