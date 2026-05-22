@@ -116,6 +116,7 @@ CLOSING_BLOCK = """<section class="closing">
     <a href="/casos-uso/">Casos de uso</a>
     <a href="/sectores/">Sectores</a>
     <a href="/ciudades/">Ciudades</a>
+    <a href="/about/">About</a>
     <a href="https://www.getpulpo.com/" target="_blank" rel="noopener">Pulpo</a>
   </div>
 </section>
@@ -126,44 +127,21 @@ CLOSING_BLOCK = """<section class="closing">
 
 def jsonld_collection(name: str, description: str, url: str,
                      items_count: int, breadcrumbs: list[tuple[str, str]]) -> str:
+    """Genera los bloques JSON-LD para un hub.
+
+    NewsMediaOrganization + WebSite vienen del helper centralizado en seo.py
+    (consistencia con páginas estáticas y pillar pages). Aquí solo añadimos
+    los específicos del hub: CollectionPage + BreadcrumbList.
+    """
     import json
-    blocks = []
-    # Organization
-    blocks.append({
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "@id": f"{SITE_URL}/#organization",
-        "name": SITE_NAME,
-        "url": SITE_URL,
-        "logo": SITE_LOGO,
-        "parentOrganization": {"@type": "Organization", "name": "Pulpo", "url": "https://getpulpo.com"},
-    })
-    # WebSite
-    blocks.append({
-        "@context": "https://schema.org", "@type": "WebSite",
-        "@id": f"{SITE_URL}/#website", "url": SITE_URL,
-        "name": SITE_NAME, "inLanguage": "es-ES",
-        "publisher": {"@id": f"{SITE_URL}/#organization"},
-    })
+    from scripts.lib.seo import organization, website
+    blocks_raw = [organization(), website()]
     # CollectionPage + ItemList
-    blocks.append({
-        "@context": "https://schema.org", "@type": "CollectionPage",
-        "name": name, "description": description, "url": url,
-        "isPartOf": {"@id": f"{SITE_URL}/#website"},
-        "publisher": {"@id": f"{SITE_URL}/#organization"},
-        "inLanguage": "es-ES",
-        "mainEntity": {"@type": "ItemList", "numberOfItems": items_count},
-    })
+    blocks_raw.append(f'<script type="application/ld+json">{json.dumps({"@context": "https://schema.org", "@type": "CollectionPage", "name": name, "description": description, "url": url, "isPartOf": {"@id": f"{SITE_URL}/#website"}, "publisher": {"@id": f"{SITE_URL}/#organization"}, "inLanguage": "es-ES", "mainEntity": {"@type": "ItemList", "numberOfItems": items_count}}, ensure_ascii=False, separators=(",", ":"))}</script>')
     # Breadcrumbs
     if breadcrumbs:
-        blocks.append({
-            "@context": "https://schema.org", "@type": "BreadcrumbList",
-            "itemListElement": [
-                {"@type": "ListItem", "position": i + 1, "name": n, "item": u}
-                for i, (n, u) in enumerate(breadcrumbs)
-            ],
-        })
-    return "\n".join(f'<script type="application/ld+json">{json.dumps(b, ensure_ascii=False, separators=(",", ":"))}</script>' for b in blocks)
+        blocks_raw.append(f'<script type="application/ld+json">{json.dumps({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": n, "item": u} for i, (n, u) in enumerate(breadcrumbs)]}, ensure_ascii=False, separators=(",", ":"))}</script>')
+    return "\n".join(blocks_raw)
 
 
 def hub_card_html(p: PillarPage) -> str:

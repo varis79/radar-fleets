@@ -28,20 +28,14 @@ def _jsonld(obj: dict) -> str:
 
 
 def _schema_blocks(page, editorial: dict, canonical: str, today_iso: str) -> str:
-    """Genera Schema.org blocks según el intent de la página."""
-    org = {
-        "@context": "https://schema.org", "@type": "Organization",
-        "@id": f"{SITE_URL}/#organization",
-        "name": SITE_NAME, "url": SITE_URL,
-        "logo": {"@type": "ImageObject", "url": SITE_LOGO, "width": 1200, "height": 630},
-        "parentOrganization": {"@type": "Organization", "name": "Pulpo", "url": "https://getpulpo.com"},
-    }
-    site = {
-        "@context": "https://schema.org", "@type": "WebSite",
-        "@id": f"{SITE_URL}/#website", "url": SITE_URL,
-        "name": SITE_NAME, "inLanguage": "es-ES",
-        "publisher": {"@id": f"{SITE_URL}/#organization"},
-    }
+    """Genera Schema.org blocks según el intent de la página.
+
+    NewsMediaOrganization + WebSite reusan el helper central en seo.py
+    (consistencia con hubs y páginas estáticas). Aquí añadimos los
+    específicos del pillar: Article/HowTo + BreadcrumbList + FAQPage.
+    """
+    # Import perezoso para evitar ciclos (seo.py no debe importar pillar_renderer)
+    from scripts.lib.seo import organization as _org_jsonld, website as _site_jsonld
     # Article o HowTo según intent
     main: dict = {
         "@context": "https://schema.org",
@@ -91,10 +85,12 @@ def _schema_blocks(page, editorial: dict, canonical: str, today_iso: str) -> str
         ],
     }
 
-    blocks = [org, site, main, breadcrumb_block]
+    # NewsMediaOrganization + WebSite van como strings ya serializados desde seo.py
+    pre = _org_jsonld() + "\n" + _site_jsonld()
+    blocks = [main, breadcrumb_block]
     if faq_block:
         blocks.append(faq_block)
-    return "\n".join(_jsonld(b) for b in blocks)
+    return pre + "\n" + "\n".join(_jsonld(b) for b in blocks)
 
 
 def _breadcrumbs_for(page, canonical: str) -> list[tuple[str, str]]:

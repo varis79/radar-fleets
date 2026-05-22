@@ -35,28 +35,51 @@ def _jsonld(obj: dict[str, Any]) -> str:
 # ──────────────── Bloques globales ────────────────
 
 def organization() -> str:
-    """Organization para The Fleet Radar. Publisher del editorial. Pulpo es
-    el parent organization (sameAs)."""
+    """NewsMediaOrganization para The Fleet Radar.
+
+    Por qué NewsMediaOrganization (no Organization genérico): es el tipo más
+    fuerte para que Google News, ChatGPT Search, Perplexity y LLMs en general
+    identifiquen el sitio como medio editorial. Estos modelos priorizan
+    fuentes marcadas explícitamente como medios.
+
+    Pulpo aparece como parent + en sameAs para asociación clara medio↔matriz.
+    """
     return _jsonld({
         "@context": "https://schema.org",
-        "@type": "Organization",
+        "@type": "NewsMediaOrganization",
         "@id": f"{SITE_URL}/#organization",
         "name": SITE_NAME,
         "alternateName": "The Fleet Radar",
         "url": SITE_URL,
+        "description": (
+            "Publicación editorial semanal de Pulpo sobre gestión de flotas, "
+            "combustible, pagos, telemática, logística, IA, electrificación y "
+            "regulación en México, España, Latinoamérica, Europa y Estados Unidos."
+        ),
         "logo": {
             "@type": "ImageObject",
             "url": SITE_LOGO,
             "width": 1200,
             "height": 630,
         },
+        "image": SITE_LOGO,
+        "foundingDate": "2026-04-14",     # fecha primera edición publicada (Nº 1)
+        "inLanguage": "es",
+        "areaServed": ["MX", "ES", "CO", "CL", "AR", "PE", "EC", "UY", "DO", "US"],
         "parentOrganization": {
+            "@type": "Organization",
+            "name": PUBLISHER_PARENT,
+            "url": PUBLISHER_PARENT_URL,
+            "sameAs": ["https://www.linkedin.com/company/getpulpo"],
+        },
+        "publisher": {
             "@type": "Organization",
             "name": PUBLISHER_PARENT,
             "url": PUBLISHER_PARENT_URL,
         },
         "sameAs": [
             PUBLISHER_PARENT_URL,
+            "https://www.linkedin.com/company/getpulpo",
         ],
     })
 
