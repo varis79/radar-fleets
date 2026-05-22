@@ -230,6 +230,8 @@ def render_pillar_page(page, editorial: dict, related: dict, indexed: bool = Fal
 <link rel="stylesheet" href="/assets/radar.css">
 <style>:root{{ --accent:#c9a84c; --accent-2:#1e7fcb; }}</style>
 {schema_jsonld}
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
 </head>
 <body>
 <header class="topbar">
