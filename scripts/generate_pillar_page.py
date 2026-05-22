@@ -343,6 +343,8 @@ def main(argv=None):
     p.add_argument("--dry-run", action="store_true", help="Usa stub fixture, sin LLM real")
     p.add_argument("--indexed", action="store_true", help="Publica sin noindex (default: noindex)")
     p.add_argument("--limit", type=int, help="Límite de páginas a generar (para tests)")
+    p.add_argument("--concurrency", type=int, default=5,
+                   help="Llamadas LLM en paralelo. Default 5 (anthropic acepta hasta 10 cómodo).")
     args = p.parse_args(argv)
 
     all_pages = enumerate_pages()
@@ -364,19 +366,47 @@ def main(argv=None):
     if args.limit:
         pages = pages[:args.limit]
 
-    print(f"Páginas a generar: {len(pages)}")
+    concurrency = max(1, int(args.concurrency))
+    print(f"Páginas a generar: {len(pages)} (concurrencia={concurrency})")
     if not pages:
         return 0
 
-    results = []
-    for i, p in enumerate(pages, 1):
-        print(f"  [{i:>3}/{len(pages)}] {p.slug} ({p.dimension} · {p.market_label}) …", end=" ", flush=True)
-        r = generate_one(p, dry_run=args.dry_run, indexed=args.indexed)
-        if r["status"] == "ok":
-            print(f"✅ {r['mode']} · {r.get('words', 0)}w")
-        else:
-            print(f"❌ {r.get('error', 'error')}")
-        results.append(r)
+    results: list[dict] = []
+
+    if concurrency == 1 or len(pages) == 1:
+        # Modo secuencial: útil para single slug, debug y dry-run.
+        for i, page in enumerate(pages, 1):
+            print(f"  [{i:>3}/{len(pages)}] {page.slug} ({page.dimension} · {page.market_label}) …", end=" ", flush=True)
+            r = generate_one(page, dry_run=args.dry_run, indexed=args.indexed)
+            results.append(r)
+            if r["status"] == "ok":
+                print(f"✅ {r['mode']} · {r.get('words', 0)}w")
+            else:
+                print(f"❌ {r.get('error', 'error')}")
+    else:
+        # Modo paralelo: hace N llamadas LLM en paralelo con un ThreadPoolExecutor.
+        # Las llamadas anthropic son I/O-bound; threads van perfectos. Cada hilo
+        # crea su propio cliente anthropic dentro de call_llm() (cliente es ligero).
+        import concurrent.futures as cf
+        total = len(pages)
+        done = 0
+        with cf.ThreadPoolExecutor(max_workers=concurrency) as pool:
+            futures = {
+                pool.submit(generate_one, page, args.dry_run, args.indexed): page
+                for page in pages
+            }
+            for fut in cf.as_completed(futures):
+                page = futures[fut]
+                done += 1
+                try:
+                    r = fut.result()
+                except Exception as e:
+                    r = {"slug": page.slug, "status": "error", "error": f"{type(e).__name__}: {e}"}
+                results.append(r)
+                if r["status"] == "ok":
+                    print(f"  [{done:>3}/{total}] ✅ {r.get('slug', page.slug)} · {r['mode']} · {r.get('words', 0)}w", flush=True)
+                else:
+                    print(f"  [{done:>3}/{total}] ❌ {r.get('slug', page.slug)} · {r.get('error', 'error')}", flush=True)
 
     ok = sum(1 for r in results if r["status"] == "ok")
     err = len(results) - ok
