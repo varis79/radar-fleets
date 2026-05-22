@@ -85,6 +85,10 @@ def head_block(
 <meta name="twitter:description" content="{description}">
 <meta name="twitter:image" content="{SITE_LOGO}">
 <link rel="canonical" href="{canonical}">
+<link rel="icon" type="image/svg+xml" href="/assets/brand/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/brand/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/brand/apple-touch-icon.png">
 <link rel="alternate" type="application/rss+xml" title="{SITE_NAME}" href="/rss.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
