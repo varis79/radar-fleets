@@ -184,12 +184,23 @@ META_ROBOTS_RE = re.compile(r'<meta[^>]*name="robots"[^>]*>', re.IGNORECASE)
 OG_IMAGE_RE = re.compile(r'<meta[^>]*property="og:image"[^>]*>', re.IGNORECASE)
 TWITTER_IMAGE_RE = re.compile(r'<meta[^>]*name="twitter:image"[^>]*>', re.IGNORECASE)
 VIEWPORT_RE = re.compile(r'(<meta[^>]*name="viewport"[^>]*/?>)', re.IGNORECASE)
+BING_VERIFY_RE = re.compile(r'<meta[^>]*name="msvalidate\.01"[^>]*>', re.IGNORECASE)
 
 
 def inject_meta_robots(html: str) -> tuple[str, bool]:
     if META_ROBOTS_RE.search(html):
         return html, False
     tag = '<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">'
+    return VIEWPORT_RE.sub(r'\1\n' + tag, html, count=1), True
+
+
+def inject_bing_verify(html: str) -> tuple[str, bool]:
+    """Bing Webmaster Tools verification. Bing busca este meta en cualquier
+    URL del sitio, así que lo metemos en todas las páginas para máxima
+    cobertura. Idempotente."""
+    if BING_VERIFY_RE.search(html):
+        return html, False
+    tag = '<meta name="msvalidate.01" content="F76AFEB4A9F8059A6B4046015931CB70">'
     return VIEWPORT_RE.sub(r'\1\n' + tag, html, count=1), True
 
 
@@ -255,7 +266,9 @@ def process(page: dict, dry: bool) -> dict:
     html, changed_og = inject_og_image(html)
     # 3. twitter:image
     html, changed_tw = inject_twitter_image(html)
-    # 4. schema.org JSON-LD
+    # 4. Bing Webmaster verification
+    html, changed_bing = inject_bing_verify(html)
+    # 5. schema.org JSON-LD
     schema_block = schema_for_page(page)
     html, schema_action = inject_schema(html, schema_block)
 
@@ -263,6 +276,7 @@ def process(page: dict, dry: bool) -> dict:
     if changed_robots: actions.append("+robots")
     if changed_og:     actions.append("+og:image")
     if changed_tw:     actions.append("+twitter:image")
+    if changed_bing:   actions.append("+bing-verify")
     actions.append(f"schema: {schema_action}")
 
     if html != original and not dry:
