@@ -4,7 +4,28 @@ Documento vivo. Va por delante del repo: aquí van ideas antes de tener PR.
 Cuando una idea llega a producción, se mueve a `docs/SYSTEM.md` y se marca aquí
 como `[done]` con el commit/PR de aterrizaje.
 
-Última revisión: 2026-05-21 (post-N°8).
+Última revisión: 2026-05-22 (post-auditoría externa: Perplexity · DeepSeek · ChatGPT · Gemini).
+
+---
+
+## Post-auditoría 2026-05-22 · Señales fuertes (4/4 IAs)
+
+Origen: `docs/audits/2026-05-22-summary.md`. Solo se listan aquí los ítems
+que NO estaban ya en el backlog o que necesitan entrada nueva.
+
+| ID | Tarea | Responsable | Estado |
+|---|---|---|---|
+| A-1 | Disclaimer PulpoPay en `/temas/fuel-cards/` y `/temas/electrificacion-flotas/` | Técnico (Claude) | **Pendiente** |
+| A-2 | Hreflang `es-MX` / `es-ES` en pillar pages y hubs de mercado | Técnico (Claude) | **Pendiente** |
+| A-3 | Schema.org `NewsArticle` en las 7 ediciones de `/magazines/` | Técnico (Claude) | **Pendiente** |
+| A-4 | Check: ¿aparece el Pulpo box tras artículo operador asesinado (Nº8)? | Técnico (Claude) | **Pendiente** |
+| A-5 | Fuentes/citations visibles al pie de 20 páginas prioritarias | Editorial (Varis) | Backlog |
+| A-6 | Eliminación de clichés IA-sounding: lista negra en `docs/STYLE-FIXES.md` | Editorial (Varis) | Backlog |
+| A-7 | Lead magnets x3: checklist antifraude MX · plantilla coste/vehículo · matriz ZBE+ITV ES | Editorial (Varis) | Backlog |
+| A-8 | Enriquecer country briefs CO, CL, AR, PE con regulación local y players | Editorial (Varis) | Backlog |
+| A-9 | **Fleet Fuel Index MX 2026** — reporte con datos anonimizados de los 200k vehículos | Editorial + Datos Pulpo | Exploración |
+| A-10 | Rankings de proveedores telemática MX y ES (ventaja: The Fleet Radar no necesita anunciantes) | Editorial | Exploración |
+| A-11 | Fleet Operating Benchmarks — publicación anual de benchmarks agregados (coste/vehículo, mantenimiento, combustible por sector) | Editorial + Datos Pulpo | Exploración estratégica |
 
 ---
 
@@ -133,6 +154,14 @@ Cada N días, el sistema:
 - `hreflang` x-default + es + en. Canónicos cruzados.
 - Subdirectorio `/en/` o subdominio `en.thefleetradar.com` (decidir cuando llegue).
 
+### 3b. Sección "Movimientos" semanal
+**Estado:** propuesto. Señal fuerte de auditoría (ChatGPT + Gemini).
+**Diseño:**
+- Bloque fijo en cada edición: contrataciones senior, M&A, rondas de financiación en el sector fleet MX/ES/LatAm.
+- Fuentes: press releases, LinkedIn, T21, Fleet News, AEGFA.
+- Formato: 3-4 bullets cortos con nombre + empresa + movimiento + fecha.
+- Integración: campo nuevo `movimientos` en el compose JSON → renderizado en el template.
+
 ### 4. Caja "Sabías qué" · facts históricos
 **Estado:** propuesto.
 **Diseño:**
@@ -173,7 +202,7 @@ Cada N días, el sistema:
 - Búsquedas activas Google News con queries específicas (autoamplía cobertura MX/ES sin depender de RSS).
 - Scraping ligero de 2-3 sitios sin RSS (Transport Topics, Heavy Duty Trucking, Trans.info).
 - API pública `/api/latest.json` para que terceros consuman.
-- Sección "Movimientos" semanal: contrataciones senior, inversiones, M&A en el sector.
+- ~~Sección "Movimientos" semanal~~ → movido a backlog como ítem 3b.
 
 ---
 
@@ -187,3 +216,5 @@ Cada N días, el sistema:
 | 2026-05-21 | Blindaje deploy: Vercel Deploy Hook + smoke test + canary martes | PR `claude/deploy-resilience` |
 | 2026-05-21 | Curación: 24 fuentes (14 RSS + 10 Google News) + classifier USA + reparto MX/ES + blacklist competidores | PR #26 `claude/curation-usa-and-sources` |
 | 2026-05-22 | PR-SEO-1: schema.org + robots.txt LLM bots + meta tags + internal linking | PR `claude/seo-1-foundations` |
+| 2026-05-22 | Auditorías externas: Perplexity, DeepSeek, ChatGPT, Gemini → `docs/audits/` | commit `50a61ce` |
+| 2026-05-22 | Fix geo LatAm: eliminado "Pulpo operativo desde sede en Bogotá" + CTA box corregido | commit `50a61ce` |

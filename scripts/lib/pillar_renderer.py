@@ -160,6 +160,25 @@ def render_pillar_page(page, editorial: dict, related: dict, indexed: bool = Fal
     # Robots: noindex hasta liberación
     robots = "index, follow, max-snippet:-1, max-image-preview:large" if indexed else "noindex, follow"
 
+    # hreflang según mercado de la página
+    _hreflang_map = {
+        "mexico":               "es-MX",
+        "espana":               "es-ES",
+        "latam":                "es-419",
+        "colombia":             "es-419",
+        "chile":                "es-419",
+        "argentina":            "es-419",
+        "peru":                 "es-419",
+        "ecuador":              "es-419",
+        "uruguay":              "es-419",
+        "republica-dominicana": "es-419",
+    }
+    _lang = _hreflang_map.get(page.market_slug, "es")
+    hreflang_tags = (
+        f'<link rel="alternate" hreflang="{_lang}" href="{canonical}">\n'
+        f'<link rel="alternate" hreflang="x-default" href="{SITE}/">'
+    )
+
     schema_jsonld = _schema_blocks(page, editorial, canonical, today)
     eyebrow_dim_label, eyebrow_dim_link = _dimension_eyebrow_link(page)
     intent_eyebrow = _intent_eyebrow(page)
@@ -223,6 +242,7 @@ def render_pillar_page(page, editorial: dict, related: dict, indexed: bool = Fal
 <meta name="twitter:description" content="{desc}">
 <meta name="twitter:image" content="{SITE_LOGO}">
 <link rel="canonical" href="{canonical}">
+{hreflang_tags}
 <link rel="icon" type="image/svg+xml" href="/assets/brand/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/brand/favicon-16.png">
