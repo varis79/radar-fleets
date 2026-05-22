@@ -191,8 +191,96 @@ SECTION_HINTS = {
 }
 
 
+def _extract_json_object(text: str) -> dict:
+    """Intenta extraer un JSON object de la respuesta del LLM.
+    Estrategia en cascada:
+      1. Bloque ```json { ... } ``` cerrado correctamente.
+      2. Bloque ```json { ... ``` sin cierre (truncado): toma desde `{` y
+         balancea llaves hasta el último `}` válido.
+      3. Texto plano que empieza con `{`.
+    """
+    # 1. Bloque ```json cerrado
+    m = re.search(r"```json\s*(\{.+?\})\s*```", text, flags=re.DOTALL)
+    if m:
+        return json.loads(m.group(1))
+
+    # 2. Bloque ```json sin cierre o JSON pelado: encontrar el { inicial
+    start_idx = text.find("{")
+    if start_idx == -1:
+        raise ValueError(f"No se encontró JSON en la respuesta:\n{text[:500]}")
+
+    # Balancear llaves para extraer el objeto completo, respetando strings
+    depth = 0
+    in_str = False
+    escape = False
+    last_close = -1
+    for i in range(start_idx, len(text)):
+        ch = text[i]
+        if escape:
+            escape = False
+            continue
+        if ch == "\\":
+            escape = True
+            continue
+        if ch == '"':
+            in_str = not in_str
+            continue
+        if in_str:
+            continue
+        if ch == "{":
+            depth += 1
+        elif ch == "}":
+            depth -= 1
+            if depth == 0:
+                last_close = i
+                break
+
+    if last_close != -1:
+        candidate = text[start_idx:last_close + 1]
+        return json.loads(candidate)
+
+    # 3. Truncado: el JSON no se cerró. Intentar reparar cerrando llaves.
+    candidate = text[start_idx:]
+    # Quitar cualquier ```  trailing
+    candidate = re.sub(r"```\s*$", "", candidate.rstrip()).rstrip()
+    # Si la respuesta termina en medio de un string, cortar hasta la última coma
+    # y cerrar el objeto. Es un parche pragmático: mejor algo parcial que nada.
+    # Buscar última coma fuera de string.
+    depth = 0
+    in_str = False
+    escape = False
+    last_safe = -1
+    for i, ch in enumerate(candidate):
+        if escape:
+            escape = False
+            continue
+        if ch == "\\":
+            escape = True
+            continue
+        if ch == '"':
+            in_str = not in_str
+            continue
+        if in_str:
+            continue
+        if ch == "{":
+            depth += 1
+        elif ch == "}":
+            depth -= 1
+        elif ch == "," and depth == 1:
+            last_safe = i
+    if last_safe != -1:
+        repaired = candidate[:last_safe] + "}" * max(depth, 1)
+        try:
+            return json.loads(repaired)
+        except Exception:
+            pass
+    raise ValueError(f"JSON inválido o muy truncado:\n{text[:500]}")
+
+
 def call_llm(system_prompt: str, user_prompt: str) -> dict:
-    """Llama a Claude Opus. Devuelve el JSON parsed del editorial."""
+    """Llama a Claude Opus. Devuelve el JSON parsed del editorial.
+    max_tokens=8000 para evitar truncamiento en páginas de 1200-1500 palabras
+    (la generación previa con 4000 fallaba en el 50% por truncamiento)."""
     try:
         import anthropic
     except ImportError:
@@ -208,22 +296,13 @@ def call_llm(system_prompt: str, user_prompt: str) -> dict:
 
     resp = client.messages.create(
         model=model,
-        max_tokens=4000,
+        max_tokens=8000,
         temperature=0.4,
         system=system_prompt,
         messages=[{"role": "user", "content": user_prompt}],
     )
     text = resp.content[0].text
-
-    # Extraer JSON del bloque markdown
-    m = re.search(r"```json\s*(\{.+?\})\s*```", text, flags=re.DOTALL)
-    if not m:
-        # Tal vez el modelo devolvió JSON pelado
-        text = text.strip()
-        if text.startswith("{"):
-            return json.loads(text)
-        raise ValueError(f"No se encontró bloque JSON en la respuesta:\n{text[:500]}")
-    return json.loads(m.group(1))
+    return _extract_json_object(text)
 
 
 def stub_editorial(page: PillarPage) -> dict:
@@ -280,8 +359,26 @@ def write_tracking_md(page: PillarPage, indexed: bool, llm_meta: dict) -> Path:
     return md_path
 
 
-def generate_one(page: PillarPage, dry_run: bool = False, indexed: bool = False) -> dict:
-    """Genera UNA pillar page. Devuelve resumen."""
+def generate_one(page: PillarPage, dry_run: bool = False, indexed: bool = False,
+                 force: bool = False) -> dict:
+    """Genera UNA pillar page. Devuelve resumen.
+
+    Si la página HTML ya existe en disco y NO se pasa force=True, salta la
+    regeneración. Esto hace el bulk idempotente: si fallaron N páginas en
+    el primer run, relanzar solo regenera esas N (las OK no se vuelven a
+    pedir al LLM, ahorrando tokens y tiempo).
+    """
+    rel_path = page.url_path().strip("/").rstrip("/")
+    html_path = ROOT / rel_path / "index.html"
+    if html_path.exists() and not force:
+        return {
+            "slug": page.slug,
+            "status": "ok",
+            "mode": "skipped-existing",
+            "html": str(html_path.relative_to(ROOT)),
+            "words": 0,
+        }
+
     system_prompt = PROMPT_PATH.read_text(encoding="utf-8")
     user_prompt = build_user_prompt(page)
 
@@ -345,6 +442,8 @@ def main(argv=None):
     p.add_argument("--limit", type=int, help="Límite de páginas a generar (para tests)")
     p.add_argument("--concurrency", type=int, default=5,
                    help="Llamadas LLM en paralelo. Default 5 (anthropic acepta hasta 10 cómodo).")
+    p.add_argument("--force", action="store_true",
+                   help="Sobreescribir páginas existentes (default: salta las que ya hay).")
     args = p.parse_args(argv)
 
     all_pages = enumerate_pages()
@@ -377,7 +476,7 @@ def main(argv=None):
         # Modo secuencial: útil para single slug, debug y dry-run.
         for i, page in enumerate(pages, 1):
             print(f"  [{i:>3}/{len(pages)}] {page.slug} ({page.dimension} · {page.market_label}) …", end=" ", flush=True)
-            r = generate_one(page, dry_run=args.dry_run, indexed=args.indexed)
+            r = generate_one(page, dry_run=args.dry_run, indexed=args.indexed, force=args.force)
             results.append(r)
             if r["status"] == "ok":
                 print(f"✅ {r['mode']} · {r.get('words', 0)}w")
@@ -392,7 +491,7 @@ def main(argv=None):
         done = 0
         with cf.ThreadPoolExecutor(max_workers=concurrency) as pool:
             futures = {
-                pool.submit(generate_one, page, args.dry_run, args.indexed): page
+                pool.submit(generate_one, page, args.dry_run, args.indexed, args.force): page
                 for page in pages
             }
             for fut in cf.as_completed(futures):
