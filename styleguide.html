@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, follow">
+<meta name="msvalidate.01" content="F76AFEB4A9F8059A6B4046015931CB70">
+<title>Styleguide · The Fleet Radar</title>
+<meta name="description" content="Sistema de diseño, tipografía, paleta de color, componentes y recursos descargables de The Fleet Radar by Pulpo. Documentación interna y referencia de marca.">
+<link rel="canonical" href="https://thefleetradar.com/styleguide.html">
+<link rel="icon" type="image/svg+xml" href="/assets/brand/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/brand/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/brand/apple-touch-icon.png">
+<link rel="alternate" type="application/rss+xml" title="The Fleet Radar · by Pulpo" href="/rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/radar.css">
+<style>
+  :root{ --accent:#c9a84c; --accent-2:#1e7fcb; }
+  /* Estilos específicos del styleguide */
+  .sg-body{background:var(--off-white);padding:0;}
+  .sg-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--near-black) 100%);color:#fff;padding:80px 40px 64px;border-bottom:2px solid var(--accent);}
+  .sg-hero h1{font-family:'Fraunces',serif;font-size:clamp(36px,5vw,56px);font-weight:800;letter-spacing:-1px;margin-bottom:16px;}
+  .sg-hero p{font-size:17px;line-height:1.7;color:rgba(255,255,255,.7);max-width:680px;}
+  .sg-eyebrow{font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;display:block;}
+  .sg-wrap{max-width:1100px;margin:0 auto;padding:64px 40px;}
+  .sg-section{margin-bottom:88px;}
+  .sg-section-title{font-family:'Fraunces',serif;font-size:32px;font-weight:700;margin-bottom:8px;border-bottom:2px solid var(--accent);padding-bottom:10px;display:inline-block;}
+  .sg-section-sub{font-size:14px;color:var(--text-light);margin-bottom:32px;}
+  .sg-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+  .sg-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .sg-grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  @media (max-width: 720px){
+    .sg-grid-2, .sg-grid-3, .sg-grid-4 { grid-template-columns: 1fr; }
+  }
+  /* Paleta */
+  .sg-color{padding:20px 18px;border-radius:6px;color:#fff;}
+  .sg-color-name{font-family:'Fraunces',serif;font-weight:600;font-size:16px;margin-bottom:4px;}
+  .sg-color-hex{font-family:'Inter',sans-serif;font-size:12px;letter-spacing:.05em;opacity:.8;}
+  .sg-color-var{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.05em;opacity:.6;margin-top:8px;}
+  /* Tipografía sample */
+  .sg-type-sample{margin-bottom:24px;padding:20px 0;border-bottom:1px solid var(--border-dark);}
+  .sg-type-meta{font-size:11px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--text-light);margin-bottom:8px;}
+  /* Card descargables */
+  .sg-download{display:flex;align-items:center;gap:14px;padding:14px 16px;background:#fff;border:1px solid var(--border-dark);border-radius:4px;text-decoration:none;color:var(--text-dark);transition:all .15s;}
+  .sg-download:hover{box-shadow:0 4px 14px rgba(0,0,0,.06);border-color:var(--accent);}
+  .sg-download-icon{font-size:24px;}
+  .sg-download-meta{flex:1;}
+  .sg-download-name{font-weight:600;font-size:14px;}
+  .sg-download-size{font-size:11px;color:var(--text-light);}
+  /* Tooltip */
+  .sg-tooltip{position:relative;cursor:help;border-bottom:1px dotted var(--accent-2);}
+  .sg-tooltip[data-tip]:hover::after{
+    content:attr(data-tip);
+    position:absolute;
+    bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);
+    background:var(--navy);color:#fff;padding:8px 12px;border-radius:4px;
+    font-size:12px;white-space:nowrap;font-weight:400;letter-spacing:0;
+    box-shadow:0 4px 14px rgba(0,0,0,.15);z-index:10;
+  }
+  .sg-tooltip[data-tip]:hover::before{
+    content:"";position:absolute;bottom:100%;left:50%;transform:translateX(-50%);
+    border:5px solid transparent;border-top-color:var(--navy);z-index:11;
+  }
+  /* Botones */
+  .sg-btn{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;font-family:'Inter',sans-serif;font-weight:600;font-size:13px;letter-spacing:.05em;text-decoration:none;border-radius:3px;transition:all .15s;border:1px solid transparent;cursor:pointer;}
+  .sg-btn-primary{background:var(--accent);color:var(--navy);}
+  .sg-btn-primary:hover{background:#b8932f;transform:translateY(-1px);}
+  .sg-btn-secondary{background:transparent;color:var(--navy);border-color:var(--navy);}
+  .sg-btn-secondary:hover{background:var(--navy);color:#fff;}
+  .sg-btn-ghost{background:transparent;color:var(--accent-2);}
+  .sg-btn-ghost:hover{color:var(--accent);}
+  /* Badges */
+  .sg-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;padding:4px 10px;border-radius:2px;}
+  .sg-badge-accent{background:rgba(201,168,76,.12);color:#8a6e1f;}
+  .sg-badge-blue{background:rgba(30,127,203,.12);color:#0e5a96;}
+  .sg-badge-success{background:rgba(74,222,128,.12);color:#15803d;}
+  .sg-badge-warn{background:rgba(252,165,121,.18);color:#9a3412;}
+  /* Logo previews */
+  .sg-logo-preview{background:var(--cream);padding:32px;border-radius:6px;border:1px solid var(--border-dark);display:flex;align-items:center;justify-content:center;min-height:200px;}
+  .sg-logo-preview.dark{background:var(--navy);}
+  .sg-logo-preview img{max-width:100%;height:auto;}
+  /* Info boxes */
+  .sg-callout{padding:18px 22px;border-left:3px solid var(--accent);background:var(--cream);border-radius:0 4px 4px 0;margin:20px 0;font-size:14px;line-height:1.7;}
+  .sg-callout strong{color:var(--text-dark);}
+  /* Code */
+  .sg-code{background:#1a1c22;color:#e7e7e7;padding:14px 18px;border-radius:4px;font-family:'SF Mono','Monaco',monospace;font-size:12px;line-height:1.7;overflow-x:auto;}
+  .sg-code .key{color:#79b8ff;}
+  .sg-code .str{color:#a5d6a7;}
+  /* Story preview (reuso del componente real) */
+  .sg-story-preview{background:#fff;padding:24px;border:1px solid var(--border-dark);border-radius:4px;}
+  /* Nav */
+  .sg-nav{position:sticky;top:0;background:var(--near-black);padding:14px 40px;color:#fff;display:flex;gap:24px;align-items:center;z-index:100;}
+  .sg-nav a{color:rgba(255,255,255,.6);text-decoration:none;font-size:12px;font-weight:500;letter-spacing:.05em;}
+  .sg-nav a:hover{color:var(--accent);}
+  .sg-nav .brand{font-weight:700;color:#fff;flex:1;}
+</style>
+</head>
+<body class="sg-body">
+
+<nav class="sg-nav">
+  <span class="brand">Styleguide · The Fleet Radar</span>
+  <a href="#brand">Marca</a>
+  <a href="#color">Color</a>
+  <a href="#type">Tipografía</a>
+  <a href="#components">Componentes</a>
+  <a href="#downloads">Descargas</a>
+  <a href="/">← Volver al sitio</a>
+</nav>
+
+<section class="sg-hero">
+  <span class="sg-eyebrow">Sistema de diseño · v1.0 · 2026-05</span>
+  <h1>Sistema de marca de The Fleet Radar</h1>
+  <p>Documentación interna del lenguaje visual, tipografía, paleta, componentes editoriales y recursos descargables. Para mantener consistencia entre ediciones semanales, hubs SEO y comunicación externa (LinkedIn, prensa, partners).</p>
+</section>
+
+<div class="sg-wrap">
+
+  <!-- ─────────── MARCA ─────────── -->
+  <section class="sg-section" id="brand">
+    <h2 class="sg-section-title">Marca</h2>
+    <p class="sg-section-sub">Variantes principales del logo. Pulpo aparece como publisher en todas las versiones; nunca esconder la relación.</p>
+
+    <div class="sg-grid-2" style="margin-bottom:32px;">
+      <div>
+        <div class="sg-logo-preview dark">
+          <img src="/assets/brand/logo-square.svg" alt="Logo cuadrado" style="max-width:300px;">
+        </div>
+        <p class="sg-type-meta" style="margin-top:12px;">Logo cuadrado · LinkedIn / avatar</p>
+      </div>
+      <div>
+        <div class="sg-logo-preview">
+          <img src="/assets/brand/logo-horizontal.svg" alt="Logo horizontal" style="max-width:520px;">
+        </div>
+        <p class="sg-type-meta" style="margin-top:12px;">Logo horizontal · header / email / firmas</p>
+      </div>
+    </div>
+
+    <div class="sg-grid-4">
+      <div>
+        <div class="sg-logo-preview" style="min-height:128px;">
+          <img src="/assets/brand/favicon.svg" alt="Favicon" style="width:96px;height:96px;">
+        </div>
+        <p class="sg-type-meta" style="margin-top:8px;">Favicon SVG (escalable)</p>
+      </div>
+      <div>
+        <div class="sg-logo-preview" style="min-height:128px;">
+          <img src="/assets/brand/favicon-48.png" alt="Favicon 48" style="width:48px;height:48px;">
+        </div>
+        <p class="sg-type-meta" style="margin-top:8px;">Favicon PNG 48×48</p>
+      </div>
+      <div>
+        <div class="sg-logo-preview" style="min-height:128px;">
+          <img src="/assets/brand/favicon-32.png" alt="Favicon 32" style="width:32px;height:32px;">
+        </div>
+        <p class="sg-type-meta" style="margin-top:8px;">Favicon PNG 32×32</p>
+      </div>
+      <div>
+        <div class="sg-logo-preview" style="min-height:128px;">
+          <img src="/assets/brand/favicon-16.png" alt="Favicon 16" style="width:16px;height:16px;">
+        </div>
+        <p class="sg-type-meta" style="margin-top:8px;">Favicon PNG 16×16</p>
+      </div>
+    </div>
+
+    <div class="sg-callout">
+      <strong>Concepto.</strong> La letra <em>F</em> en Fraunces Bold sobre cuadrado navy es el monograma principal. El radar dorado concéntrico en la esquina inferior derecha evoca la idea de inteligencia editorial: vigilar el sector, captar señales. Sutil cuando se reduce a favicon, presente cuando hay espacio.
+    </div>
+  </section>
+
+  <!-- ─────────── COLOR ─────────── -->
+  <section class="sg-section" id="color">
+    <h2 class="sg-section-title">Paleta de color</h2>
+    <p class="sg-section-sub">Sistema bicromático con acentos. Navy como fondo principal en headers; cream como fondo de cuerpo; dorado y azul como acentos.</p>
+
+    <h3 style="font-family:'Fraunces',serif;font-size:18px;margin:32px 0 14px;">Base</h3>
+    <div class="sg-grid-4">
+      <div class="sg-color" style="background:#0d1b2e;">
+        <div class="sg-color-name">Navy</div>
+        <div class="sg-color-hex">#0d1b2e</div>
+        <div class="sg-color-var">--navy</div>
+      </div>
+      <div class="sg-color" style="background:#162540;">
+        <div class="sg-color-name">Navy mid</div>
+        <div class="sg-color-hex">#162540</div>
+        <div class="sg-color-var">--navy-mid</div>
+      </div>
+      <div class="sg-color" style="background:#111318;">
+        <div class="sg-color-name">Near-black</div>
+        <div class="sg-color-hex">#111318</div>
+        <div class="sg-color-var">--near-black</div>
+      </div>
+      <div class="sg-color" style="background:#2a2f3a;">
+        <div class="sg-color-name">Graphite</div>
+        <div class="sg-color-hex">#2a2f3a</div>
+        <div class="sg-color-var">--graphite</div>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Fraunces',serif;font-size:18px;margin:32px 0 14px;">Fondos claros</h3>
+    <div class="sg-grid-4">
+      <div class="sg-color" style="background:#faf8f4;color:#0d1b2e;">
+        <div class="sg-color-name">Cream</div>
+        <div class="sg-color-hex">#faf8f4</div>
+        <div class="sg-color-var">--cream</div>
+      </div>
+      <div class="sg-color" style="background:#f7f4ef;color:#0d1b2e;">
+        <div class="sg-color-name">Off-white</div>
+        <div class="sg-color-hex">#f7f4ef</div>
+        <div class="sg-color-var">--off-white</div>
+      </div>
+      <div class="sg-color" style="background:#ede8e0;color:#0d1b2e;">
+        <div class="sg-color-name">Warm sand</div>
+        <div class="sg-color-hex">#ede8e0</div>
+        <div class="sg-color-var">--warm-sand</div>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Fraunces',serif;font-size:18px;margin:32px 0 14px;">Acentos</h3>
+    <div class="sg-grid-4">
+      <div class="sg-color" style="background:#c9a84c;color:#0d1b2e;">
+        <div class="sg-color-name">Gold</div>
+        <div class="sg-color-hex">#c9a84c</div>
+        <div class="sg-color-var">--accent</div>
+      </div>
+      <div class="sg-color" style="background:#1e7fcb;">
+        <div class="sg-color-name">Blue</div>
+        <div class="sg-color-hex">#1e7fcb</div>
+        <div class="sg-color-var">--accent-2</div>
+      </div>
+      <div class="sg-color" style="background:#b84c3a;">
+        <div class="sg-color-name">Terracotta</div>
+        <div class="sg-color-hex">#b84c3a</div>
+        <div class="sg-color-var">--terracotta</div>
+      </div>
+      <div class="sg-color" style="background:#0f3d2e;">
+        <div class="sg-color-name">Deep green</div>
+        <div class="sg-color-hex">#0f3d2e</div>
+        <div class="sg-color-var">--deep-green</div>
+      </div>
+    </div>
+
+    <div class="sg-callout" style="margin-top:24px;">
+      <strong>Variación semanal.</strong> Cada edición sobreescribe <em>solo</em> 4 variables CSS (<code>--accent</code>, <code>--accent-2</code>, <code>--cover-grad-a</code>, <code>--cover-grad-b</code>) desde una paleta rotativa de 6 combinaciones. Esto da identidad editorial consistente con variación visual entre semanas.
+    </div>
+  </section>
+
+  <!-- ─────────── TIPOGRAFÍA ─────────── -->
+  <section class="sg-section" id="type">
+    <h2 class="sg-section-title">Tipografía</h2>
+    <p class="sg-section-sub">Dos familias. Fraunces para titulares y voz editorial; Inter para cuerpo, metadatos y UI.</p>
+
+    <div class="sg-grid-2">
+      <div>
+        <div class="sg-type-meta">Fraunces · Serif · Display</div>
+        <div style="font-family:'Fraunces',serif;font-weight:900;font-size:48px;line-height:1;letter-spacing:-1px;">Fraunces Black</div>
+        <div style="font-family:'Fraunces',serif;font-weight:700;font-size:36px;line-height:1.05;letter-spacing:-0.5px;margin-top:14px;">Fraunces Bold</div>
+        <div style="font-family:'Fraunces',serif;font-weight:600;font-size:28px;line-height:1.15;margin-top:14px;">Fraunces Semibold</div>
+        <div style="font-family:'Fraunces',serif;font-weight:400;font-style:italic;font-size:22px;line-height:1.4;margin-top:14px;">Fraunces Italic — citas y notas</div>
+      </div>
+      <div>
+        <div class="sg-type-meta">Inter · Sans · UI / Body</div>
+        <div style="font-family:'Inter',sans-serif;font-weight:700;font-size:24px;">Inter Bold</div>
+        <div style="font-family:'Inter',sans-serif;font-weight:600;font-size:20px;margin-top:12px;">Inter Semibold</div>
+        <div style="font-family:'Inter',sans-serif;font-weight:500;font-size:16px;line-height:1.7;margin-top:12px;">Inter Medium — para meta y bloques de UI con cierta presencia.</div>
+        <div style="font-family:'Inter',sans-serif;font-weight:400;font-size:14px;line-height:1.7;margin-top:12px;color:var(--text-mid);">Inter Regular — cuerpo de párrafos en cards, FAQs y descripciones secundarias del sitio.</div>
+        <div style="font-family:'Inter',sans-serif;font-weight:300;font-size:13px;line-height:1.6;margin-top:12px;color:var(--text-light);">Inter Light — usos discretos: footers, captions, disclaimers.</div>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Fraunces',serif;font-size:18px;margin:40px 0 14px;">Jerarquía editorial</h3>
+    <div class="sg-type-sample">
+      <div class="sg-type-meta">H1 · Cover de edición</div>
+      <div style="font-family:'Fraunces',serif;font-weight:900;font-size:clamp(32px,5vw,72px);line-height:1.02;letter-spacing:-1.2px;">Cuando el peaje cobra por kilómetro y la flota responde con telemática</div>
+    </div>
+    <div class="sg-type-sample">
+      <div class="sg-type-meta">H2 · Section title</div>
+      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:36px;letter-spacing:-0.5px;">Lo que importó esta semana</div>
+    </div>
+    <div class="sg-type-sample">
+      <div class="sg-type-meta">H3 · Story headline</div>
+      <div style="font-family:'Fraunces',serif;font-weight:700;font-size:22px;line-height:1.3;">El SICT publica el reglamento de telemática para transporte de hidrocarburos</div>
+    </div>
+    <div class="sg-type-sample">
+      <div class="sg-type-meta">Body · Inter 15px line-height 1.75</div>
+      <div style="font-family:'Inter',sans-serif;font-weight:400;font-size:15px;line-height:1.75;color:var(--text-mid);">El sector mexicano de transporte de hidrocarburos vive un punto de inflexión. Con la entrada en vigor de la nueva regulación, las flotas deberán acreditar telemática certificada en cada unidad operativa. Cumplirlo es operativo, costoso y mensurable.</div>
+    </div>
+  </section>
+
+  <!-- ─────────── COMPONENTES ─────────── -->
+  <section class="sg-section" id="components">
+    <h2 class="sg-section-title">Componentes</h2>
+    <p class="sg-section-sub">Bloques reutilizables del sistema editorial. Algunos vienen de <code>assets/radar.css</code>, otros son específicos del styleguide.</p>
+
+    <!-- Botones -->
+    <h3 style="font-family:'Fraunces',serif;font-size:22px;margin:24px 0 12px;">Botones</h3>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:24px;">
+      <a class="sg-btn sg-btn-primary" href="#">Ver Pulpo en acción</a>
+      <a class="sg-btn sg-btn-secondary" href="#">Leer más →</a>
+      <a class="sg-btn sg-btn-ghost" href="#">Cancelar</a>
+    </div>
+
+    <!-- Badges -->
+    <h3 style="font-family:'Fraunces',serif;font-size:22px;margin:24px 0 12px;">Etiquetas / Badges</h3>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px;">
+      <span class="sg-badge sg-badge-accent">Telemática</span>
+      <span class="sg-badge sg-badge-blue">Electrificación</span>
+      <span class="sg-badge sg-badge-success">Mantenimiento</span>
+      <span class="sg-badge sg-badge-warn">Regulación</span>
+    </div>
+
+    <!-- Tooltips -->
+    <h3 style="font-family:'Fraunces',serif;font-size:22px;margin:24px 0 12px;">Tooltips</h3>
+    <p style="font-family:'Inter',sans-serif;font-size:15px;line-height:1.7;margin-bottom:24px;">
+      Las siglas regulatorias del sector pueden incomodar al lector general. Pasa el ratón sobre
+      <span class="sg-tooltip" data-tip="Secretaría de Infraestructura, Comunicaciones y Transportes (México)">SICT</span>,
+      <span class="sg-tooltip" data-tip="Dirección General de Tráfico (España)">DGT</span> o
+      <span class="sg-tooltip" data-tip="Tratado entre México, Estados Unidos y Canadá">T-MEC</span>
+      para ver la definición sin abandonar el contexto.
+    </p>
+
+    <!-- Cajas / Callouts -->
+    <h3 style="font-family:'Fraunces',serif;font-size:22px;margin:24px 0 12px;">Cajas de aviso</h3>
+    <div class="sg-callout">
+      <strong>Callout dorado.</strong> Para destacar información clave sin romper el ritmo de lectura. Borde izquierdo en acento, fondo cream sutil.
+    </div>
+    <div class="sg-callout" style="border-left-color:var(--accent-2);background:rgba(30,127,203,.04);">
+      <strong>Callout azul.</strong> Para nota técnica o de método, no para alerta. Cambia solo color de borde.
+    </div>
+    <div class="sg-callout" style="border-left-color:var(--terracotta);background:rgba(184,76,58,.05);">
+      <strong>Callout terracota.</strong> Para precaución / riesgo / regla anti-X. Usar con moderación.
+    </div>
+
+    <!-- Story preview (componente real del editorial) -->
+    <h3 style="font-family:'Fraunces',serif;font-size:22px;margin:32px 0 12px;">Tarjeta de historia editorial</h3>
+    <article class="story" style="background:#fff;padding:36px;border-radius:6px;border:1px solid var(--border-dark);">
+      <div class="story-grid">
+        <div class="story-left">
+          <div class="story-number">01</div>
+          <span class="story-tag tag-market">Movimiento de mercado</span>
+          <div class="story-meta"><span>🇲🇽 México</span><span>20 may 2026</span></div>
+        </div>
+        <div>
+          <h3 class="story-headline">El SICT publica el reglamento de telemática obligatoria para transporte de hidrocarburos</h3>
+          <p class="story-summary">Tras dos años de consultas públicas, la Secretaría de Infraestructura, Comunicaciones y Transportes publicó el reglamento que obliga a todas las flotas de transporte de hidrocarburos a operar con sistemas de telemática certificados. Plazo de cumplimiento: 18 meses.</p>
+          <div class="why-box">
+            <div class="why-item"><div class="why-label">Para quien opera</div><div class="why-text">Auditoría de proveedores telemáticos certificables y migración progresiva en 18 meses.</div></div>
+            <div class="why-item commercial"><div class="why-label">Para el negocio</div><div class="why-text">Inversión inicial significativa, pero abre integraciones con CRE y reduce riesgo regulatorio.</div></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Pulpo box (componente editorial) -->
+    <h3 style="font-family:'Fraunces',serif;font-size:22px;margin:32px 0 12px;">Caja "Cómo encaja Pulpo aquí"</h3>
+    <aside class="pillar-pulpo-box">
+      <div class="pillar-pulpo-icon">🐙</div>
+      <div class="pillar-pulpo-content">
+        <h3>Cómo encaja Pulpo aquí</h3>
+        <div>
+          <p>Pulpo trabaja con flotas mexicanas que necesitan compliance regulatorio sin fricción operativa. Operadores con flotas medianas centralizan en la plataforma la gestión documental y la trazabilidad de telemática. Más información en <a href="https://www.getpulpo.com/">getpulpo.com</a>.</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- FAQ -->
+    <h3 style="font-family:'Fraunces',serif;font-size:22px;margin:32px 0 12px;">Preguntas frecuentes (FAQ)</h3>
+    <div class="pillar-faq-list">
+      <details class="pillar-faq-item">
+        <summary>¿Cómo se integran las cuotas geográficas con la edición semanal?</summary>
+        <div class="pillar-faq-a">El selector editorial respeta cuotas mínimas y máximas por mercado (MX/ES primarios, USA/China secundarios). La composición LLM recibe la lista ya equilibrada.</div>
+      </details>
+      <details class="pillar-faq-item">
+        <summary>¿Por qué la voz evita em-dashes en prosa?</summary>
+        <div class="pillar-faq-a">El em-dash se ha vuelto marcador de texto generado por IA. La voz editorial los limita a citas literales y nunca como sustituto retórico de comas o paréntesis.</div>
+      </details>
+      <details class="pillar-faq-item">
+        <summary>¿Pulpo paga por aparecer en historias?</summary>
+        <div class="pillar-faq-a">No. Pulpo publisher es transparente en cada edición pero el contenido editorial responde a criterio periodístico. Existe blacklist de competidores que se filtra del pool, no para favorecer a Pulpo sino para evitar publicidad indirecta cruzada.</div>
+      </details>
+    </div>
+
+    <!-- Código -->
+    <h3 style="font-family:'Fraunces',serif;font-size:22px;margin:32px 0 12px;">Bloque de código</h3>
+    <pre class="sg-code"><span class="key">"acento"</span>: <span class="str">"#c9a84c"</span>,
+<span class="key">"acento_2"</span>: <span class="str">"#1e7fcb"</span>,
+<span class="key">"cover_gradient_a"</span>: <span class="str">"rgba(201,168,76,0.22)"</span>,
+<span class="key">"cover_gradient_b"</span>: <span class="str">"rgba(30,127,203,0.18)"</span></pre>
+
+  </section>
+
+  <!-- ─────────── VOZ EDITORIAL ─────────── -->
+  <section class="sg-section" id="voice">
+    <h2 class="sg-section-title">Voz editorial</h2>
+    <p class="sg-section-sub">Reglas duras de redacción. Estas no se negocian.</p>
+
+    <div class="sg-grid-2">
+      <div>
+        <h3 style="font-family:'Fraunces',serif;font-size:20px;margin-bottom:12px;color:#15803d;">✓ Sí se usa</h3>
+        <ul style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.9;color:var(--text-mid);padding-left:20px;">
+          <li>Datos antes que adjetivos ("crece 23%" antes que "crece rápido").</li>
+          <li>Citas literales con atribución ("según cubrió The Fleet Radar...").</li>
+          <li>Cifras con fuente o disclaimer ("según fuentes públicas").</li>
+          <li>Verbos directos (publica, ordena, exige, prepara).</li>
+          <li>Estructura corta. Frases que pueda leer un gerente entre reuniones.</li>
+          <li>Pulpo mencionado con sobriedad cuando aplica.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-family:'Fraunces',serif;font-size:20px;margin-bottom:12px;color:#9a3412;">✗ NO se usa</h3>
+        <ul style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.9;color:var(--text-mid);padding-left:20px;">
+          <li>"Competidor", "Para Pulpo", "argumento comercial", "oportunidad partner".</li>
+          <li>Construcciones "no es X, es Y" (cliché de marketing).</li>
+          <li>Em-dashes en prosa (—) salvo en citas literales.</li>
+          <li>Adverbios vacíos: "claramente", "obviamente", "fundamentalmente".</li>
+          <li>"En el cambiante mundo de…", "transformación digital".</li>
+          <li>CTAs imperativos tipo "Descubre", "Contrata ya".</li>
+          <li>Mención de competidores en blacklist (Mendel, Edenred, etc.).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────── DESCARGAS ─────────── -->
+  <section class="sg-section" id="downloads">
+    <h2 class="sg-section-title">Recursos descargables</h2>
+    <p class="sg-section-sub">Archivos de marca listos para usar en redes, prensa, partners y comunicaciones internas.</p>
+
+    <div class="sg-grid-2">
+      <a class="sg-download" href="/assets/brand/favicon.svg" download>
+        <span class="sg-download-icon">🎯</span>
+        <div class="sg-download-meta">
+          <div class="sg-download-name">Favicon SVG</div>
+          <div class="sg-download-size">Vectorial · ideal web</div>
+        </div>
+      </a>
+      <a class="sg-download" href="/assets/brand/logo-square.svg" download>
+        <span class="sg-download-icon">⬜</span>
+        <div class="sg-download-meta">
+          <div class="sg-download-name">Logo cuadrado SVG</div>
+          <div class="sg-download-size">Vectorial · uso en redes</div>
+        </div>
+      </a>
+      <a class="sg-download" href="/assets/brand/logo-horizontal.svg" download>
+        <span class="sg-download-icon">▭</span>
+        <div class="sg-download-meta">
+          <div class="sg-download-name">Logo horizontal SVG</div>
+          <div class="sg-download-size">Vectorial · headers / firmas</div>
+        </div>
+      </a>
+      <a class="sg-download" href="/assets/brand/logo-square.png" download>
+        <span class="sg-download-icon">📱</span>
+        <div class="sg-download-meta">
+          <div class="sg-download-name">Logo cuadrado PNG 400×400</div>
+          <div class="sg-download-size">Para LinkedIn profile</div>
+        </div>
+      </a>
+      <a class="sg-download" href="/assets/brand/apple-touch-icon.png" download>
+        <span class="sg-download-icon">🍎</span>
+        <div class="sg-download-meta">
+          <div class="sg-download-name">Apple touch icon PNG 180×180</div>
+          <div class="sg-download-size">Para iOS home screen</div>
+        </div>
+      </a>
+      <a class="sg-download" href="/assets/brand/og-default.png" download>
+        <span class="sg-download-icon">🖼️</span>
+        <div class="sg-download-meta">
+          <div class="sg-download-name">Open Graph PNG 1200×630</div>
+          <div class="sg-download-size">Share image redes</div>
+        </div>
+      </a>
+      <a class="sg-download" href="/assets/brand/favicon-32.png" download>
+        <span class="sg-download-icon">🔲</span>
+        <div class="sg-download-meta">
+          <div class="sg-download-name">Favicon PNG 32×32</div>
+          <div class="sg-download-size">Fallback navegadores antiguos</div>
+        </div>
+      </a>
+      <a class="sg-download" href="/favicon.ico" download>
+        <span class="sg-download-icon">📎</span>
+        <div class="sg-download-meta">
+          <div class="sg-download-name">favicon.ico</div>
+          <div class="sg-download-size">Multi-resolution 16/32/48</div>
+        </div>
+      </a>
+    </div>
+
+    <div class="sg-callout" style="margin-top:32px;">
+      <strong>Uso de marca con terceros.</strong> Cuando un partner, cliente o medio quiera referenciar The Fleet Radar, usar siempre la versión completa: <em>"The Fleet Radar by Pulpo"</em>. Pulpo nunca se omite. El logo nunca se altera de color ni se aplica sobre fondos que comprometan el contraste.
+    </div>
+  </section>
+
+  <!-- ─────────── METADATOS ─────────── -->
+  <section class="sg-section" id="meta" style="margin-bottom:40px;">
+    <h2 class="sg-section-title">Metadatos del sistema</h2>
+    <p class="sg-section-sub">Detalles operativos del sistema editorial. Útil para handoff con nuevos colaboradores.</p>
+
+    <div class="sg-grid-2">
+      <div>
+        <div class="sg-type-meta">Cadencia editorial</div>
+        <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.7;color:var(--text-mid);">Cada lunes a las 07:00 hora Madrid. 10-12 historias por edición + nota editorial + opinión + Pulpo box opcional.</p>
+      </div>
+      <div>
+        <div class="sg-type-meta">Voz</div>
+        <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.7;color:var(--text-mid);">Periodismo sobrio. Datos antes que adjetivos. Ver sección Voz editorial arriba.</p>
+      </div>
+      <div>
+        <div class="sg-type-meta">Cobertura geográfica</div>
+        <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.7;color:var(--text-mid);">Foco MX + ES. Secundaria LatAm. Selectiva USA, Europa, China.</p>
+      </div>
+      <div>
+        <div class="sg-type-meta">Publisher</div>
+        <p style="font-family:'Inter',sans-serif;font-size:14px;line-height:1.7;color:var(--text-mid);">Pulpo (<a href="https://getpulpo.com">getpulpo.com</a>). Relación medio↔matriz transparente en /about/ y en schema NewsMediaOrganization.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<section class="closing">
+  <div class="closing-logo">The Fleet Radar <span>by Pulpo</span></div>
+  <div class="closing-tagline">Inteligencia semanal para el sector de gestión de flotas</div>
+  <div class="closing-divider"></div>
+  <p style="font-size:13px;color:rgba(255,255,255,0.42);max-width:520px;margin:0 auto 32px;line-height:1.7;">Documento interno de marca · versión 1.0 · mayo 2026. Para preguntas o solicitudes de uso de marca, abre un issue en <a href="https://github.com/varis79/radar-fleets/issues/new" style="color:rgba(255,255,255,.7);">GitHub</a>.</p>
+  <div class="closing-links" style="margin-top:24px;border-top:none;padding-top:0;">
+    <a href="/">Última edición</a>
+    <a href="/archive.html">Archivo</a>
+    <a href="/about/">About</a>
+    <a href="https://www.getpulpo.com/" target="_blank" rel="noopener">Pulpo</a>
+  </div>
+</section>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="The Fleet Radar · by Pulpo">
+  <!-- Fondo navy -->
+  <rect width="400" height="400" fill="#0d1b2e"/>
+  <!-- Grid sutil de fondo (decorativo, opcional) -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" stroke="rgba(255,255,255,0.025)" stroke-width="0.5" fill="none"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="400" fill="url(#grid)"/>
+
+  <!-- Letra F gigante -->
+  <text x="200" y="240"
+        font-family="Fraunces, Georgia, serif"
+        font-weight="900"
+        font-size="280"
+        fill="#faf8f4"
+        text-anchor="middle"
+        letter-spacing="-6">F</text>
+
+  <!-- Radar concentrico, esquina inferior derecha -->
+  <g stroke="#c9a84c" stroke-width="2.2" fill="none" stroke-linecap="round">
+    <circle cx="310" cy="310" r="14"/>
+    <circle cx="310" cy="310" r="28"/>
+    <circle cx="310" cy="310" r="42" opacity="0.55"/>
+  </g>
+  <circle cx="310" cy="310" r="4.5" fill="#c9a84c"/>
+
+  <!-- Wordmark inferior -->
+  <text x="200" y="338"
+        font-family="Fraunces, Georgia, serif"
+        font-weight="700"
+        font-size="22"
+        fill="#faf8f4"
+        text-anchor="middle"
+        letter-spacing="0.5">The Fleet Radar</text>
+  <text x="200" y="362"
+        font-family="Inter, sans-serif"
+        font-weight="500"
+        font-size="11"
+        fill="#c9a84c"
+        text-anchor="middle"
+        letter-spacing="3"
+        text-transform="uppercase">B Y · P U L P O</text>
+</svg>

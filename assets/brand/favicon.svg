@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="The Fleet Radar">
+  <!-- Cuadrado navy con esquinas suavemente redondeadas -->
+  <rect width="64" height="64" rx="10" ry="10" fill="#0d1b2e"/>
+  <!-- Letra F en Fraunces Bold, color cream -->
+  <text x="32" y="46"
+        font-family="Fraunces, Georgia, serif"
+        font-weight="800"
+        font-size="44"
+        fill="#faf8f4"
+        text-anchor="middle">F</text>
+  <!-- Arco radar sutil dorado (esquina inferior derecha) -->
+  <g stroke="#c9a84c" stroke-width="1.6" fill="none" stroke-linecap="round" opacity="0.85">
+    <circle cx="50" cy="50" r="4"/>
+    <circle cx="50" cy="50" r="8"/>
+  </g>
+  <circle cx="50" cy="50" r="1.6" fill="#c9a84c"/>
+</svg>

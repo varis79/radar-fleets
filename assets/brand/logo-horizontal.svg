@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 160" role="img" aria-label="The Fleet Radar · by Pulpo">
+  <!-- Bloque cuadrado a la izquierda con la F -->
+  <rect x="0" y="0" width="160" height="160" rx="14" ry="14" fill="#0d1b2e"/>
+  <text x="80" y="118"
+        font-family="Fraunces, Georgia, serif"
+        font-weight="900"
+        font-size="110"
+        fill="#faf8f4"
+        text-anchor="middle"
+        letter-spacing="-3">F</text>
+  <!-- Mini radar dorado en esquina -->
+  <g stroke="#c9a84c" stroke-width="2" fill="none" stroke-linecap="round">
+    <circle cx="128" cy="128" r="9"/>
+    <circle cx="128" cy="128" r="17"/>
+  </g>
+  <circle cx="128" cy="128" r="3" fill="#c9a84c"/>
+
+  <!-- Wordmark a la derecha sobre fondo cream -->
+  <text x="186" y="76"
+        font-family="Fraunces, Georgia, serif"
+        font-weight="800"
+        font-size="44"
+        fill="#0d1b2e"
+        letter-spacing="-0.5">The Fleet Radar</text>
+  <text x="188" y="108"
+        font-family="Inter, sans-serif"
+        font-weight="500"
+        font-size="14"
+        fill="#3d4351"
+        letter-spacing="0.6">Inteligencia semanal de gestión de flotas</text>
+  <text x="188" y="132"
+        font-family="Inter, sans-serif"
+        font-weight="600"
+        font-size="11"
+        fill="#c9a84c"
+        letter-spacing="3"
+        text-transform="uppercase">B Y · P U L P O</text>
+</svg>
