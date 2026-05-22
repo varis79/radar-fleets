@@ -18,9 +18,44 @@ from __future__ import annotations
 from pathlib import Path
 from string import Template
 from typing import Any
+import csv
 import datetime as dt
 
 from .paths import ROOT
+
+
+def _build_pillar_index() -> dict[tuple[str, str], tuple[str, str]]:
+    """Builds (topic_code, market) → (short_label, url_path) from matrix.csv.
+    Prefers intent=informational, then lowest tier. Only indexes pages that
+    physically exist on disk (only links to published pillar pages)."""
+    csv_path = ROOT / "content/pillar-matrix/matrix.csv"
+    if not csv_path.exists():
+        return {}
+    index: dict[tuple[str, str], tuple[str, str]] = {}
+    priority: dict[tuple[str, str], tuple[int, int]] = {}
+    intent_rank = {"informational": 0, "guia-practica": 1, "comparativo": 2, "regulatorio": 3}
+    with csv_path.open(encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            tc = row.get("topic_code", "").strip()
+            mkt = row.get("market", "").strip()
+            url = row.get("url_path", "").strip()
+            if not tc or not mkt or not url:
+                continue
+            # Only link to pages that physically exist
+            page_dir = ROOT / url.strip("/")
+            if not (page_dir / "index.html").exists():
+                continue
+            label = row.get("label", "").split(" · ")[0].replace(" 2026", "").strip()
+            ir = intent_rank.get(row.get("intent", ""), 9)
+            tr = int(row.get("tier", 9))
+            key = (tc, mkt)
+            if key not in priority or (ir, tr) < priority[key]:
+                index[key] = (label, url)
+                priority[key] = (ir, tr)
+    return index
+
+
+PILLAR_INDEX: dict[tuple[str, str], tuple[str, str]] = _build_pillar_index()
 
 
 # Ruta de referencia para inspeccionar el sistema visual canónico.
@@ -168,7 +203,7 @@ HTML_STORY = Template("""
       <div class="story-grid">
         <div class="story-left">
           <div class="story-number">$num</div>
-          <span class="story-tag $tag_class">$tag_label</span>
+          $story_tag_html
           <div class="story-meta"><span>$flag $market_label</span><span>$date_label</span></div>
         </div>
         <div>
@@ -185,19 +220,27 @@ HTML_STORY = Template("""
 
 
 # ─── Mapping topic/market/player → hub URL existente ─────────────────────
-# Cuando una historia tiene asignado uno de estos identificadores, en el
-# render añadimos un enlace discreto al hub correspondiente. Mejora SEO
-# (internal linking) y experiencia del lector (profundizar en el tema).
-# Cuando lancemos PR-SEO-3 con más hubs, esta tabla crece.
+# PILLAR_INDEX (arriba) cubre todas las páginas pilar publicadas con lookup
+# específico (topic_code, market). Las tablas siguientes son complementarias:
+# HUB_LINKS_BY_MARKET → hub de mercado (siempre añadido si el mercado existe)
+# LEGACY_TOPIC_HUBS → fallback genérico cuando PILLAR_INDEX no tiene match
+# HUB_LINKS_BY_PLAYER → fichas de players mencionados en la historia
 HUB_LINKS_BY_MARKET: dict[str, tuple[str, str]] = {
-    "mexico":  ("Más sobre flotas en México",   "/mercados/mexico/"),
-    "espana":  ("Más sobre flotas en España",   "/mercados/espana/"),
-    "latam":   ("Más sobre flotas en LatAm",    "/mercados/latam/"),
+    "mexico":               ("Flotas en México",         "/mercados/mexico/"),
+    "espana":               ("Flotas en España",         "/mercados/espana/"),
+    "latam":                ("Flotas en LatAm",          "/mercados/latam/"),
+    "argentina":            ("Flotas en Argentina",      "/mercados/argentina/"),
+    "chile":                ("Flotas en Chile",          "/mercados/chile/"),
+    "colombia":             ("Flotas en Colombia",       "/mercados/colombia/"),
+    "ecuador":              ("Flotas en Ecuador",        "/mercados/ecuador/"),
+    "peru":                 ("Flotas en Perú",           "/mercados/peru/"),
+    "republica-dominicana": ("Flotas en R. Dominicana",  "/mercados/republica-dominicana/"),
+    "uruguay":              ("Flotas en Uruguay",        "/mercados/uruguay/"),
 }
-HUB_LINKS_BY_TOPIC: dict[str, tuple[str, str]] = {
-    "fuel-cards":              ("Hub · Tarjetas de flota",       "/temas/fuel-cards/"),
-    "electrificacion-flotas":  ("Hub · Electrificación de flotas", "/temas/electrificacion-flotas/"),
-    "compliance":              ("Hub · Compliance (depende del mercado)", "/temas/compliance-espana/"),
+LEGACY_TOPIC_HUBS: dict[str, tuple[str, str]] = {
+    "fuel-cards":             ("Hub · Tarjetas de flota",          "/temas/fuel-cards/"),
+    "electrificacion-flotas": ("Hub · Electrificación de flotas",  "/temas/electrificacion-flotas/"),
+    "compliance":             ("Hub · Compliance",                 "/temas/compliance-espana/"),
 }
 HUB_LINKS_BY_PLAYER: dict[str, tuple[str, str]] = {
     "pulpo": ("Ficha de Pulpo", "/players/pulpo/"),
@@ -205,45 +248,75 @@ HUB_LINKS_BY_PLAYER: dict[str, tuple[str, str]] = {
 
 
 def build_related_links(story: dict) -> str:
-    """Devuelve un bloque HTML pequeño con 1-3 enlaces internos a hubs cuando
-    aplica. Si la historia no engancha con ningún hub conocido, devuelve
-    cadena vacía y no se inserta sección."""
+    """Devuelve un bloque HTML con 1-3 enlaces internos al pie de la story.
+    Prioridad:
+      1. Página pilar específica (topic_code × market) desde PILLAR_INDEX
+      2. Hub genérico legacy (LEGACY_TOPIC_HUBS) si 1 no encontró nada
+      3. Hub de mercado (siempre, si el mercado está en HUB_LINKS_BY_MARKET)
+      4. Ficha de player mencionado
+    Si no hay ningún enlace aplicable, devuelve cadena vacía."""
     links: list[tuple[str, str]] = []
-    seen_urls: set[str] = set()
+    seen: set[str] = set()
+    topic  = story.get("topic") or ""
+    market = story.get("market") or ""
 
-    market = story.get("market")
-    if market in HUB_LINKS_BY_MARKET:
-        label, url = HUB_LINKS_BY_MARKET[market]
-        if url not in seen_urls:
+    def _add(label: str, url: str) -> None:
+        if url not in seen:
             links.append((label, url))
-            seen_urls.add(url)
+            seen.add(url)
 
-    topic = story.get("topic")
-    if topic in HUB_LINKS_BY_TOPIC:
-        label, url = HUB_LINKS_BY_TOPIC[topic]
-        # Caso especial compliance: si el market es México, no enlazamos
-        # al hub compliance-espana (que es de España). Usamos regulacion-mexico.
+    # 1. Pillar específico (topic × market)
+    if topic and market:
+        hit = PILLAR_INDEX.get((topic, market))
+        if hit:
+            _add(*hit)
+
+    # 2. Fallback hub genérico legacy
+    if not links and topic in LEGACY_TOPIC_HUBS:
+        lbl, url = LEGACY_TOPIC_HUBS[topic]
         if topic == "compliance" and market == "mexico":
-            label, url = "Hub · Regulación México", "/temas/regulacion-mexico/"
-        if url not in seen_urls:
-            links.append((label, url))
-            seen_urls.add(url)
+            lbl, url = "Regulación México", "/temas/regulacion-mexico/"
+        _add(lbl, url)
 
-    # Players: solo Pulpo está como ficha. Si la historia menciona pulpo, link.
-    players = story.get("players") or []
-    for p in players:
+    # 3. Hub de mercado
+    if market in HUB_LINKS_BY_MARKET:
+        _add(*HUB_LINKS_BY_MARKET[market])
+
+    # 4. Player pages
+    for p in (story.get("players") or []):
         if p in HUB_LINKS_BY_PLAYER:
-            label, url = HUB_LINKS_BY_PLAYER[p]
-            if url not in seen_urls:
-                links.append((label, url))
-                seen_urls.add(url)
+            _add(*HUB_LINKS_BY_PLAYER[p])
 
     if not links:
         return ""
 
-    # Render discreto al final de la story
-    items = " · ".join(f'<a href="{url}" class="related-link">{label}</a>' for label, url in links[:3])
+    items = " · ".join(
+        f'<a href="{u}" class="related-link">{l}</a>'
+        for l, u in links[:3]
+    )
     return f'\n          <div class="story-related">{items}</div>'
+
+
+def build_tag_html(story: dict) -> str:
+    """Devuelve el elemento tag de la story: <a> si hay URL interna aplicable,
+    <span> en caso contrario. El <a> hereda todos los estilos del <span>
+    gracias a la regla a.story-tag en radar.css."""
+    tc  = story.get("tag_class", "tag-market")
+    lbl = story.get("tag_label", "")
+    topic  = story.get("topic") or ""
+    market = story.get("market") or ""
+    url: str | None = None
+    # Primero: página pilar específica
+    if topic and market:
+        hit = PILLAR_INDEX.get((topic, market))
+        if hit:
+            url = hit[1]
+    # Fallback: hub de mercado
+    if url is None and market in HUB_LINKS_BY_MARKET:
+        url = HUB_LINKS_BY_MARKET[market][1]
+    if url:
+        return f'<a href="{url}" class="story-tag {tc}">{lbl}</a>'
+    return f'<span class="story-tag {tc}">{lbl}</span>'
 
 
 HTML_OPINION = Template("""
@@ -416,8 +489,7 @@ def render_edition(data: dict) -> str:
         stories_html = "\n".join([
             HTML_STORY.substitute(
                 num=f"{i + 1:02d}",
-                tag_class=s.get("tag_class", "tag-market"),
-                tag_label=s.get("tag_label", "Movimiento de mercado"),
+                story_tag_html=build_tag_html(s),
                 flag=FLAGS.get(s.get("market", "global"), "🌐"),
                 market_label=MARKET_LABELS.get(s.get("market", "global"), "Global"),
                 date_label=s.get("date_label", ""),

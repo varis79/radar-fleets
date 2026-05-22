@@ -214,6 +214,8 @@ a{color:inherit}
   display:inline-block;font-size:10px;font-weight:700;letter-spacing:.15em;
   text-transform:uppercase;padding:5px 12px;border-radius:2px;margin-bottom:14px;
 }
+a.story-tag{text-decoration:none;color:inherit}
+a.story-tag:hover{opacity:.82}
 .tag-market{background:#ffe4cc;color:#8b3a0a}
 .tag-reg{background:#e9d5ff;color:#4c1d95}
 .tag-tech{background:#d4f0e8;color:#0a5c3c}
