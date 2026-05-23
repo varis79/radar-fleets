@@ -21,8 +21,8 @@ que NO estaban ya en el backlog o que necesitan entrada nueva.
 | A-4 | Check: ¿aparece el Pulpo box tras artículo operador asesinado (Nº8)? | Técnico (Claude) | ✅ OK — CTA band está tras la opinión editorial, no adyacente al artículo |
 | A-5 | Fuentes/citations visibles al pie de 20 páginas prioritarias | Editorial (Varis) | ✅ 5 páginas prioritarias · `e3bd0b0` · expandir a 20 en backlog |
 | A-6 | Eliminación de clichés IA-sounding: lista negra en `docs/STYLE-FIXES.md` | Editorial (Varis) | ✅ Doc creado + prompt actualizado · limpieza manual pendiente |
-| A-7 | Lead magnets x3: checklist antifraude MX · plantilla coste/vehículo · matriz ZBE+ITV ES | Editorial (Varis) | 🟡 Checklist antifraude MX publicado · `e3bd0b0` · pendiente: plantilla coste/vehículo + matriz ZBE+ITV ES |
-| A-8 | Enriquecer country briefs CO, CL, AR, PE con regulación local y players | Editorial (Varis) | Backlog |
+| A-7 | Lead magnets x3: checklist antifraude MX · plantilla coste/vehículo · matriz ZBE+ITV ES | Editorial (Varis) | ✅ Los 3 publicados · antifraude `e3bd0b0` · plantilla TCO + matriz ZBE `feat/movimientos-a7` |
+| A-8 | Enriquecer country briefs CO, CL, AR, PE con regulación local y players | Editorial (Varis) | ✅ `c41e308` |
 | A-9 | **Fleet Fuel Index MX 2026** — reporte con datos anonimizados de los 200k vehículos | Editorial + Datos Pulpo | Exploración |
 | A-10 | Rankings de proveedores telemática MX y ES (ventaja: The Fleet Radar no necesita anunciantes) | Editorial | Exploración |
 | A-11 | Fleet Operating Benchmarks — publicación anual de benchmarks agregados (coste/vehículo, mantenimiento, combustible por sector) | Editorial + Datos Pulpo | Exploración estratégica |
@@ -229,3 +229,6 @@ Cada N días, el sistema:
 | 2026-05-23 | Fix ecosistema (A-6 limpieza): 42 reemplazos en 35 páginas de temas/ y mercados/ | commit `e3bd0b0` |
 | 2026-05-23 | Lead magnet checklist antifraude combustible MX (A-7 parcial): 12 controles · /evergreen/checklists/antifraude-combustible-mx-2026/ | commit `e3bd0b0` |
 | 2026-05-23 | Brand links: HUB_LINKS_BY_PLAYER expandido (Samsara, Geotab, WEX, Tesla…) + linkify_brands.py para magazines existentes | commit `e3bd0b0` |
+| 2026-05-23 | A-8 country briefs CO, CL, AR, PE: regulación local, players, cifras, fuentes institucionales | commit `c41e308` |
+| 2026-05-23 | Sección "Movimientos" en magazine: templates + render + CSS + prompt LLM | feat/movimientos-a7 |
+| 2026-05-23 | A-7 lead magnets: plantilla TCO por vehículo MX + matriz ZBE+ITV España | feat/movimientos-a7 |

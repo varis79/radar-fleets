@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<title>Plantilla coste total por vehículo para flotas en México 2026 — The Fleet Radar · by Pulpo</title>
+<meta name="description" content="Modelo de coste total por vehículo (TCO) para flotas en México: 8 categorías de gasto, benchmarks por tipo de unidad, señales de alerta y fórmulas de cálculo.">
+<meta name="author" content="Pulpo — getpulpo.com">
+<meta name="keywords" content="coste total vehículo flota Mexico, TCO flota, costo por kilómetro flotilla, benchmark flota Mexico, coste operación flota, gestión costos flota">
+<meta property="og:title" content="Plantilla coste total por vehículo (TCO) para flotas en México 2026 — The Fleet Radar · by Pulpo">
+<meta property="og:description" content="8 categorías de gasto, benchmarks orientativos y señales de alerta para calcular el coste real de cada unidad en tu flota.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://thefleetradar.com/evergreen/checklists/plantilla-coste-vehiculo-mx-2026/">
+<meta property="og:site_name" content="The Fleet Radar · by Pulpo">
+<meta property="og:image" content="https://thefleetradar.com/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Plantilla TCO por vehículo · flotas México 2026">
+<meta name="twitter:description" content="8 categorías de gasto y benchmarks para calcular el coste real de cada unidad en tu flota mexicana.">
+<meta name="twitter:image" content="https://thefleetradar.com/og-default.png">
+<link rel="canonical" href="https://thefleetradar.com/evergreen/checklists/plantilla-coste-vehiculo-mx-2026/">
+<link rel="alternate" type="application/rss+xml" title="The Fleet Radar · by Pulpo" href="/rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/radar.css">
+<style>
+  :root{
+    --accent:#1e7fcb;
+    --accent-2:#c9a84c;
+    --cover-grad-a:rgba(30,127,203,0.18);
+    --cover-grad-b:rgba(201,168,76,0.14);
+  }
+  .e-hero{background:var(--near-black);background-image:
+      radial-gradient(ellipse 70% 50% at 20% 80%, var(--cover-grad-a) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 80% 20%, var(--cover-grad-b) 0%, transparent 55%),
+      radial-gradient(ellipse 100% 100% at 50% 50%, #0d1521 0%, #060a10 100%);
+      padding:72px 32px 56px;border-bottom:1px solid rgba(255,255,255,.06);}
+  .e-hero-inner{max-width:1040px;margin:0 auto}
+  .e-kicker{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;display:block}
+  .e-title{font-family:'Fraunces',serif;font-size:clamp(30px,4.5vw,52px);font-weight:900;line-height:1.05;letter-spacing:-1px;color:#fff;margin-bottom:22px}
+  .e-title span{color:var(--accent-2)}
+  .e-deck{font-size:16px;color:rgba(255,255,255,.68);max-width:680px;line-height:1.75;border-left:2px solid var(--accent);padding-left:20px}
+  .e-updated{margin-top:24px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+  .e-main{max-width:1040px;margin:0 auto;padding:64px 32px 100px}
+  .e-body p{font-size:16px;line-height:1.85;color:var(--text-mid);margin-bottom:18px}
+  .e-body h2{font-family:'Fraunces',serif;font-size:26px;font-weight:700;color:var(--text-dark);margin-top:48px;margin-bottom:18px;letter-spacing:-.3px;line-height:1.15}
+  .e-body strong{color:var(--text-dark)}
+  .e-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+  .e-body a:hover{opacity:.8}
+
+  /* Tabla de categorías TCO */
+  .tco-table{width:100%;border-collapse:collapse;margin-top:24px;font-size:14px}
+  .tco-table th{background:var(--navy);color:#fff;padding:12px 16px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+  .tco-table td{padding:16px;border-bottom:1px solid var(--border-dark);vertical-align:top;color:var(--text-mid)}
+  .tco-table tr:last-child td{border-bottom:none}
+  .tco-table tr:nth-child(even) td{background:rgba(0,0,0,.02)}
+  .tco-cat{font-family:'Fraunces',serif;font-weight:700;color:var(--text-dark);font-size:15px;display:block;margin-bottom:4px}
+  .tco-pct{font-family:'Fraunces',serif;font-size:22px;font-weight:900;color:var(--accent);line-height:1;display:block}
+  .tco-pct-label{font-size:10px;color:var(--text-light);letter-spacing:.1em;text-transform:uppercase}
+  .tco-alert{font-size:12px;color:var(--accent-2);font-weight:600;margin-top:6px;display:block}
+  .tco-formula{font-size:12px;font-family:monospace;background:#f0f2f5;padding:4px 8px;border-radius:2px;color:#374151;margin-top:6px;display:inline-block}
+
+  /* Cifras clave */
+  .figures-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+  .figure-card{padding:22px;background:var(--navy);color:#fff;border-left:3px solid var(--accent)}
+  .figure-num{font-family:'Fraunces',serif;font-size:34px;font-weight:900;line-height:1;color:#fff;margin-bottom:6px;letter-spacing:-.5px}
+  .figure-caption{font-size:13px;line-height:1.55;color:rgba(255,255,255,.72)}
+  .figure-source{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-top:10px}
+
+  /* Checklist de implementación */
+  .check-list{list-style:none;margin:24px 0 0;counter-reset:chk;padding:0}
+  .check-list li{padding:22px 24px 22px 80px;background:#fff;border:1px solid var(--border-dark);border-left:3px solid var(--accent);margin-bottom:10px;position:relative;counter-increment:chk}
+  .check-list li::before{content:counter(chk,decimal-leading-zero);position:absolute;left:22px;top:20px;font-family:'Fraunces',serif;font-size:30px;font-weight:900;color:var(--accent);line-height:1}
+  .check-list li strong{display:block;font-family:'Fraunces',serif;font-size:16px;font-weight:700;color:var(--text-dark);margin-bottom:6px}
+  .check-list li p{font-size:15px;line-height:1.7;color:var(--text-mid);margin:0}
+
+  /* Alert */
+  .alert-box{padding:22px 26px;background:rgba(30,127,203,.05);border-left:3px solid var(--accent);margin-top:24px;margin-bottom:24px}
+  .alert-box h4{font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:var(--text-dark);margin-bottom:10px}
+  .alert-box ul{margin:0 0 0 22px;padding:0}
+  .alert-box li{font-size:15px;line-height:1.7;color:var(--text-mid);margin-bottom:6px}
+
+  /* Related / CTA */
+  .related-block{background:var(--warm-sand);padding:32px;margin-top:32px;border-radius:4px}
+  .related-block h3{font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin:0 0 12px 0;color:var(--text-dark)}
+  .related-block ul{margin:0;padding:0 0 0 20px}
+  .related-block li{font-size:15px;line-height:1.7;color:var(--text-mid);margin-bottom:6px}
+  .related-block a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+  .cta-evergreen{background:var(--navy);padding:32px;margin-top:24px;border-radius:4px;color:#fff}
+  .cta-evergreen h3{font-family:'Fraunces',serif;font-size:20px;font-weight:700;margin:0 0 10px 0;color:#fff}
+  .cta-evergreen p{font-size:15px;color:rgba(255,255,255,.72);margin:0 0 18px 0;line-height:1.65}
+  .cta-btn{display:inline-block;padding:12px 28px;background:var(--accent);color:#fff;text-decoration:none;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border-radius:2px}
+  .cta-btn:hover{opacity:.88}
+  @media(max-width:700px){.figures-grid{grid-template-columns:1fr}.tco-table{font-size:13px}}
+</style>
+</head>
+<body>
+<nav class="topbar">
+  <div class="topbar-inner">
+    <a class="topbar-logo" href="/">The Fleet Radar <span>· by Pulpo</span></a>
+    <div class="topbar-links">
+      <a href="/temas/">Temas</a>
+      <a href="/mercados/">Mercados</a>
+      <a href="/archive.html">Ediciones</a>
+      <a href="https://www.getpulpo.com/" target="_blank" rel="noopener">Pulpo →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="e-hero">
+  <div class="e-hero-inner">
+    <span class="e-kicker">🇲🇽 Herramienta · Gestión de costes</span>
+    <h1 class="e-title">Plantilla coste total<br>por vehículo <span>(TCO) · México 2026</span></h1>
+    <p class="e-deck">8 categorías de gasto, benchmarks orientativos por tipo de unidad, fórmulas de cálculo y señales de alerta. Para flotas de 10 a 5.000 unidades que quieren saber el coste real de cada vehículo, no solo el gasolinazo.</p>
+    <span class="e-updated">Actualizado: 23 de mayo de 2026 · The Fleet Radar by Pulpo</span>
+  </div>
+</div>
+
+<div class="e-main">
+  <div class="e-body">
+
+    <p>El coste visible de una flota es el combustible. El coste real es entre 3 y 5 veces mayor cuando se suman mantenimiento, neumáticos, seguros, infracciones, salarios y depreciación. Muchas flotillas mexicanas operan sin saber cuánto les cuesta realmente cada kilómetro. Esta plantilla es el punto de partida para saberlo.</p>
+
+    <div class="figures-grid">
+      <div class="figure-card">
+        <div class="figure-num">$4.80</div>
+        <div class="figure-caption">Costo por km promedio en carga ligera urbana MX 2025 (diesel, incluyendo todo el TCO)</div>
+        <div class="figure-source">Referencia operativa · Pulpo + T21</div>
+      </div>
+      <div class="figure-card">
+        <div class="figure-num">38–45%</div>
+        <div class="figure-caption">Proporción del combustible sobre el TCO total en vehículo de carga media (camión 3.5T)</div>
+        <div class="figure-source">Benchmarks flotas MX 2025</div>
+      </div>
+      <div class="figure-card">
+        <div class="figure-num">12–18%</div>
+        <div class="figure-caption">Ahorro típico en TCO con gestión digital (control combustible + mantenimiento preventivo)</div>
+        <div class="figure-source">Casos de uso Pulpo · flotas 50-500 unidades</div>
+      </div>
+    </div>
+
+    <h2>Las 8 categorías del TCO para flotas en México</h2>
+
+    <p>La tabla siguiente desglosa cada categoría con su peso típico sobre el coste total, la fórmula base y la señal de alerta que indica que ese rubro está fuera de control.</p>
+
+    <table class="tco-table">
+      <thead>
+        <tr>
+          <th style="width:22%">Categoría</th>
+          <th style="width:14%">% TCO típico</th>
+          <th style="width:32%">Qué incluye / Cómo calcular</th>
+          <th style="width:32%">Señal de alerta</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <span class="tco-cat">🔴 Combustible</span>
+            <code class="tco-formula">litros × precio/litro</code>
+          </td>
+          <td><span class="tco-pct">38–45%</span><span class="tco-pct-label">carga media</span></td>
+          <td>Gasolina, diesel, GNC o GLP. Incluye consumos en inactividad (motor encendido parado). Referencia: camión 3.5T consume 12-16 L/100 km en ruta urbana-regional MX.</td>
+          <td><span class="tco-alert">⚠ Consumo &gt;15% por encima de la media del parque sin causa climática o de carga → fraude o falla mecánica.</span></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="tco-cat">🟠 Mantenimiento preventivo</span>
+            <code class="tco-formula">coste servicio / km entre servicios</code>
+          </td>
+          <td><span class="tco-pct">10–16%</span><span class="tco-pct-label">promedio parque</span></td>
+          <td>Cambios de aceite, filtros, revisiones periódicas según plan del fabricante. En vehículos diesel pesados: cada 10.000-15.000 km. Incluye mano de obra del taller.</td>
+          <td><span class="tco-alert">⚠ Unidades con más de 20% de sobrepaso de intervalo → riesgo de averías evitables y pérdida de garantía.</span></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="tco-cat">🔴 Mantenimiento correctivo</span>
+            <code class="tco-formula">coste reparación + tiempo parado × coste/hora</code>
+          </td>
+          <td><span class="tco-pct">8–14%</span><span class="tco-pct-label">muy variable</span></td>
+          <td>Averías no planificadas: motor, transmisión, sistema de frenos, eléctrico. Incluir costo del inmovilizado (coste por hora de vehículo parado) y remolque si aplica.</td>
+          <td><span class="tco-alert">⚠ Correctivo &gt; preventivo en valor anual → el parque opera reactivo. Benchmark sano: correctivo &lt;40% del preventivo.</span></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="tco-cat">🟡 Neumáticos</span>
+            <code class="tco-formula">(coste neumático × cant.) / km de vida útil</code>
+          </td>
+          <td><span class="tco-pct">6–10%</span><span class="tco-pct-label">carga media/pesada</span></td>
+          <td>Compra, montaje, balanceo, rotación y desecho. Vida útil típica MX: 80.000-120.000 km en ruta mixta. Los neumáticos retreaded reducen coste ~30% en eje trasero trasero de tractocamión.</td>
+          <td><span class="tco-alert">⚠ Vida útil real &lt;60.000 km sin causa de ruta → exceso de velocidad, sobrecarga o presión incorrecta.</span></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="tco-cat">🟡 Seguros</span>
+            <code class="tco-formula">prima anual / 12 / unidad</code>
+          </td>
+          <td><span class="tco-pct">5–9%</span><span class="tco-pct-label">según cobertura</span></td>
+          <td>Seguro de responsabilidad civil vehicular (obligatorio), daños propios, carga transportada, responsabilidad civil por carga. En unidades de carga especial o materiales peligrosos, el costo es significativamente mayor.</td>
+          <td><span class="tco-alert">⚠ Prima &gt;3× la prima de mercado para el tipo de vehículo → historial de siniestros elevado o scoring de conductor deficiente.</span></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="tco-cat">🟢 Infracciones y multas</span>
+            <code class="tco-formula">suma total multas / unidades / año</code>
+          </td>
+          <td><span class="tco-pct">1–4%</span><span class="tco-pct-label">muy variable</span></td>
+          <td>Infracciones de tránsito, multas de peso y dimensiones en puntos de balanza, incumplimientos de horas de servicio (NOM-087), infracciones ambientales (verificación vehicular).</td>
+          <td><span class="tco-alert">⚠ Una sola unidad concentra &gt;30% de las multas del parque → patrón de conducción o ruta específica a revisar.</span></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="tco-cat">🟢 Personal de conducción</span>
+            <code class="tco-formula">(salario + IMSS + bonos) / km recorrido</code>
+          </td>
+          <td><span class="tco-pct">15–25%</span><span class="tco-pct-label">carga regional</span></td>
+          <td>Salario base, cuotas IMSS-INFONAVIT, horas extra, bonos de productividad y puntualidad, viáticos en ruta larga. En flotas con conductor dedicado por unidad, es la segunda o tercera partida mayor.</td>
+          <td><span class="tco-alert">⚠ Ratio km/conductor &lt;2.000 km/mes en ruta regional → utilización baja o planificación de rutas deficiente.</span></td>
+        </tr>
+        <tr>
+          <td>
+            <span class="tco-cat">🟢 Depreciación y financiación</span>
+            <code class="tco-formula">(valor compra − valor residual) / años de vida útil</code>
+          </td>
+          <td><span class="tco-pct">10–18%</span><span class="tco-pct-label">propiedad directa</span></td>
+          <td>Para unidades en propiedad: depreciación lineal o acelerada (fiscalmente deducible según SAT). Para arrendamiento puro o renting: incluir la cuota mensual completa. Considerar tipo de cambio para unidades importadas financiadas en USD.</td>
+          <td><span class="tco-alert">⚠ Valor residual &lt;20% del precio de compra a 5 años → marca o configuración con depreciación acelerada; reconsiderar al próximo ciclo de reposición.</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Cómo usar esta plantilla paso a paso</h2>
+
+    <ul class="check-list">
+      <li>
+        <strong>Define el período de análisis</strong>
+        <p>Elige 12 meses completos (año fiscal o año natural). Periodos menores distorsionan mantenimiento y seguros, que son costes concentrados. Si tu flota es muy estacional, analiza también el coste por temporada alta.</p>
+      </li>
+      <li>
+        <strong>Descarga los datos por categoría</strong>
+        <p>Extrae de tu sistema de gestión, ERP o estado de cuenta bancario los gastos reales de cada categoría. Si no tienes sistema, el estado de cuenta de la tarjeta de combustible y las facturas del taller son el punto de partida mínimo.</p>
+      </li>
+      <li>
+        <strong>Agrupa por unidad, no solo por parque</strong>
+        <p>El TCO promedio del parque oculta unidades problemáticas. Calcula el coste por vehículo individualmente y ordena de mayor a menor coste/km. Las 10% de unidades más caras suelen explicar el 30-40% del sobregasto total.</p>
+      </li>
+      <li>
+        <strong>Calcula el coste por kilómetro</strong>
+        <p>Divide el TCO total de cada unidad entre los kilómetros recorridos en el período. Este KPI ($/km) es la métrica de comparación más útil entre unidades, rutas y tipos de vehículo. Referencia: carga ligera urbana MX 2025 ≈ $4.50–5.20/km todo incluido.</p>
+      </li>
+      <li>
+        <strong>Identifica los outliers y establece umbrales</strong>
+        <p>Con los datos agrupados, establece umbrales de alerta por categoría (ver tabla arriba). Configura alertas automáticas en tu sistema de gestión o en una hoja de seguimiento mensual. Lo que no se mide, no se controla.</p>
+      </li>
+      <li>
+        <strong>Proyecta el impacto de reducir cada categoría</strong>
+        <p>Simula: ¿qué pasa si el combustible baja 5% por optimización de rutas? ¿Si el correctivo baja 20% con mejor preventivo? Este ejercicio revela dónde está el mayor ROI de invertir en gestión digital. Para una flota de 50 unidades, 1 peso/km de mejora equivale a ~$1.2M MXN anuales recuperados (asumiendo 100 km/día promedio por unidad).</p>
+      </li>
+    </ul>
+
+    <div class="alert-box">
+      <h4>Señales de que tu TCO está fuera de control</h4>
+      <ul>
+        <li>No sabes el coste por kilómetro de cada unidad (solo el del parque agregado)</li>
+        <li>El mantenimiento correctivo supera al preventivo en valor monetario</li>
+        <li>Las multas se pagan pero nadie sabe qué conductor o ruta las genera</li>
+        <li>El combustible no se cruza contra kilómetros recorridos mensualmente</li>
+        <li>Los seguros no se renegocian al vencimiento con datos de siniestralidad propios</li>
+        <li>La depreciación no entra en el cálculo de reposición (se renueva "cuando el vehículo ya no aguanta más")</li>
+      </ul>
+    </div>
+
+    <h2>Benchmarks orientativos por tipo de vehículo (México 2025–2026)</h2>
+
+    <p>Los siguientes rangos son orientativos para flotas mixtas en operación urbana-regional en México. Varían significativamente por zona, tipo de carga y antigüedad del parque.</p>
+
+    <table class="tco-table">
+      <thead>
+        <tr>
+          <th>Tipo de vehículo</th>
+          <th>Coste/km estimado</th>
+          <th>Combustible principal</th>
+          <th>Mayor rubro de TCO</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Auto corporativo / directivos (hasta 1.5T)</strong></td>
+          <td>$2.80–4.20/km</td>
+          <td>Gasolina magna/premium</td>
+          <td>Depreciación (25-35%)</td>
+        </tr>
+        <tr>
+          <td><strong>Carga ligera / van urbana (hasta 3.5T)</strong></td>
+          <td>$4.50–6.00/km</td>
+          <td>Diesel / GNC</td>
+          <td>Combustible (40-48%)</td>
+        </tr>
+        <tr>
+          <td><strong>Camión reparto medio (3.5T–8T)</strong></td>
+          <td>$5.80–8.50/km</td>
+          <td>Diesel</td>
+          <td>Combustible (38-45%)</td>
+        </tr>
+        <tr>
+          <td><strong>Camión pesado / tractocamión (&gt;8T)</strong></td>
+          <td>$9.00–14.00/km</td>
+          <td>Diesel</td>
+          <td>Combustible (40-50%) + Neumáticos (12-18%)</td>
+        </tr>
+        <tr>
+          <td><strong>Maquinaria / fuera de ruta</strong></td>
+          <td>Variable (calcular por hora)</td>
+          <td>Diesel industrial</td>
+          <td>Mantenimiento (30-45%)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="related-block">
+      <h3>Recursos relacionados</h3>
+      <ul>
+        <li><a href="/temas/tarjetas-flota-mexico-2026/">Tarjetas de flota en México — control de combustible y pagos</a></li>
+        <li><a href="/temas/gestion-flota-mexico-2026/">Guía completa gestión de flotas en México 2026</a></li>
+        <li><a href="/temas/mantenimiento-flotas-mexico-2026/">Mantenimiento de flotas en México</a></li>
+        <li><a href="/evergreen/checklists/antifraude-combustible-mx-2026/">Checklist antifraude combustible (12 controles)</a></li>
+        <li><a href="/mercados/mexico/">Panorama del mercado de flotas en México</a></li>
+      </ul>
+    </div>
+
+    <div class="cta-evergreen">
+      <h3>Pulpo calcula este TCO automáticamente para cada unidad de tu flota</h3>
+      <p>Pulpo integra combustible (tarjeta + factura CFDI), mantenimiento, telemetría y gestión documental para que el coste por kilómetro por unidad sea visible en tiempo real. +200.000 vehículos gestionados en México, España y LatAm.</p>
+      <a href="https://www.getpulpo.com/" target="_blank" rel="noopener" class="cta-btn">Ver Pulpo en acción</a>
+    </div>
+
+  </div><!-- e-body -->
+</div><!-- e-main -->
+
+<footer class="closing">
+  <div class="closing-inner">
+    <div class="closing-brand">The Fleet Radar <span class="closing-by">· by Pulpo</span></div>
+    <div class="closing-links">
+      <a href="/">Inicio</a>
+      <a href="/archive.html">Todas las ediciones</a>
+      <a href="/temas/">Temas</a>
+      <a href="/mercados/">Mercados</a>
+      <a href="https://www.getpulpo.com/" target="_blank" rel="noopener">Pulpo</a>
+    </div>
+    <div class="closing-legal">The Fleet Radar es una publicación editorial de Pulpo (getpulpo.com). El contenido es de carácter informativo y no constituye asesoramiento legal ni financiero.</div>
+  </div>
+</footer>
+</body>
+</html>

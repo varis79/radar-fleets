@@ -186,6 +186,31 @@ HTML_WM_CARD = Template("""      <div class="wm-card $tone">
       </div>""")
 
 
+HTML_MOVEMENTS_WRAP = Template("""
+<section class="section section-sand">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Movimientos</span>
+      <h2 class="section-title">En el tablero esta semana</h2>
+      <div class="section-divider"></div>
+      <p class="movements-sub">Contrataciones, M&amp;A, rondas y expansiones en el sector flota.</p>
+    </div>
+    <ul class="movements-list">
+$movements
+    </ul>
+  </div>
+</section>
+""")
+
+HTML_MOVEMENT_ITEM = Template("""      <li class="movement-item">
+        <span class="mv-type mv-type-$type">$type_label</span>
+        <span class="mv-market">$flag</span>
+        <div class="mv-content">
+          <strong class="mv-headline">$headline</strong>
+          <span class="mv-detail">$detail</span>
+        </div>
+      </li>""")
+
 HTML_STORIES_WRAP = Template("""
 <section class="section section-cream">
   <div class="container">
@@ -518,6 +543,29 @@ def render_edition(data: dict) -> str:
             stories_title=data.get("stories_title", f"{len(data['stories'])} historias clave"),
             stories=stories_html,
         ))
+
+    # Sección de movimientos (M&A, rondas, contrataciones, nombramientos).
+    # Opcional: se omite si el campo está vacío o ausente.
+    _MV_TYPE_LABELS = {
+        "ma":            "M&amp;A",
+        "ronda":         "Ronda",
+        "contratacion":  "Contratación",
+        "expansion":     "Expansión",
+        "nombramiento":  "Nombramiento",
+    }
+    movimientos = data.get("movimientos") or []
+    if movimientos:
+        mv_items = []
+        for m in movimientos:
+            mv_type = m.get("type", "expansion")
+            mv_items.append(HTML_MOVEMENT_ITEM.substitute(
+                type=mv_type,
+                type_label=_MV_TYPE_LABELS.get(mv_type, mv_type.capitalize()),
+                flag=FLAGS.get(m.get("market", "global"), "🌐"),
+                headline=m["headline"],
+                detail=m.get("detail", ""),
+            ))
+        parts.append(HTML_MOVEMENTS_WRAP.substitute(movements="\n".join(mv_items)))
 
     # Sección de opinión editorial. Se renderiza solo si el compose produce
     # quote + body con contenido real. Si alguno falta o está vacío, se omite

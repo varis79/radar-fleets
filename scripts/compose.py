@@ -95,6 +95,15 @@ def build_user_prompt(selection: dict, edition_date: dt.date, number: int, mode:
     lines.append("")
     lines.append("Total acumulado esperado: 10 stories × ~175 palabras + wm_cards + editors + opinion + cover_deck supera holgadamente 2.200 palabras (umbral QA). Si una historia tiene poco material fuente, prefiere quitarla antes que inflarla.")
     lines.append("")
+    lines.append("### movimientos (sección opcional)")
+    lines.append("")
+    lines.append("Recoge 2-4 movimientos corporativos en el sector flota (M&A, rondas de financiación, contrataciones senior, expansión a nuevos mercados, nombramientos directivos). Solo incluye movimientos con impacto directo en gestión de flotas en MX/ES/LatAm o en players del sector. Si no hay material relevante en la selección, devuelve array vacío `[]`.")
+    lines.append("")
+    lines.append("- `type`: uno de `ma` | `ronda` | `contratacion` | `expansion` | `nombramiento`.")
+    lines.append("- `market`: mercado principal del movimiento.")
+    lines.append("- `headline`: 8-14 palabras, periodístico: quién + qué + magnitud. Ej: 'Samsara adquiere startup de mantenimiento predictivo por 85M USD'.")
+    lines.append("- `detail`: 25-40 palabras con contexto operativo: qué cambia para una flota, qué implica para el mercado.")
+    lines.append("")
     lines.append("### slack_summary")
     lines.append("")
     lines.append("Texto plano para el canal de Slack del equipo. Formato exacto:")
@@ -144,6 +153,14 @@ def build_user_prompt(selection: dict, edition_date: dt.date, number: int, mode:
     ...
   ],
   "slack_summary": "...",               // Resumen para Slack (ver instrucciones abajo)
+  "movimientos": [
+    {
+      "type": "ma|ronda|contratacion|expansion|nombramiento",
+      "market": "mexico|espana|usa|latam|global|...",
+      "headline": "...",   // 8-14 palabras: empresa + acción + contexto
+      "detail": "..."      // 25-40 palabras: cifra o detalle operativo relevante para flotas
+    }
+  ],
   "stories": [
     {
       "ref_id": "<id del item seleccionado>",  // obligatorio
