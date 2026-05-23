@@ -774,3 +774,31 @@ a.story-tag:hover{opacity:.82}
   .footer-brand{grid-column:span 1}
   .footer-bottom{flex-direction:column;text-align:left}
 }
+
+/* ── Page freshness indicator ─────────────────────────────────────── */
+.page-updated{
+  display:inline-block;margin-top:14px;
+  font-size:12px;color:var(--text-mid,#6b7280);
+  letter-spacing:.06em;text-transform:uppercase;
+  font-weight:500;font-family:'Inter',sans-serif;
+  opacity:.75;
+}
+.page-updated::before{content:"✓ ";color:#3a8c5f;font-weight:700}
+
+/* ── "Sabías qué" box (rotatorio semanal) ─────────────────────────── */
+.did-you-know{
+  display:block;max-width:780px;margin:32px auto 0;
+  padding:20px 24px;
+  background:linear-gradient(135deg, rgba(201,168,76,.08), rgba(30,127,203,.06));
+  border-left:3px solid var(--accent,#c9a84c);
+  border-radius:4px;
+  font-family:'Inter',sans-serif;
+}
+.dyk-eyebrow{
+  display:block;font-size:11px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--text-mid,#475569);
+  margin-bottom:8px;
+}
+.dyk-body{
+  margin:0;font-size:15px;line-height:1.6;color:var(--text-dark,#0f1419);
+}
