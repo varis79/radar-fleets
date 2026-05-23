@@ -802,3 +802,14 @@ a.story-tag:hover{opacity:.82}
 .dyk-body{
   margin:0;font-size:15px;line-height:1.6;color:var(--text-dark,#0f1419);
 }
+
+/* ── Topbar responsive (8 links handling) ─────────────────────────── */
+@media(max-width:900px){
+  .topbar-nav{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+  .topbar-nav::-webkit-scrollbar{display:none}
+}
+@media(max-width:640px){
+  /* En móvil: solo lo esencial en topbar. El resto vive en footer. */
+  .topbar-nav a:not(:first-child):not(:last-child):not([href="/archive.html"]){display:none}
+  .topbar-nav{justify-self:end;gap:14px}
+}
