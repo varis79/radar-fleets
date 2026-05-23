@@ -25,6 +25,24 @@ NUNCA uses estas expresiones (vienen del prompt master de la revista):
 - Adverbios vacíos: "claramente", "obviamente", "fundamentalmente"
 - "En el competitivo mercado..." (cliché abierto)
 
+### Lista negra adicional (clichés detectados en auditoría 2026-05-22)
+
+PALABRAS PROHIBIDAS — no las uses nunca en ninguna forma:
+- **`ecosistema`** → usa "mercado de proveedores", "conjunto de herramientas", "plataforma", "sector"
+- **`transformación digital`** → usa "digitalización operativa", "adopción de telemática", "gestión con datos"
+- **`solución integral`** → nombra qué hace exactamente: "software de gestión de flotas", "plataforma de control"
+- **`valor añadido`** → di qué ventaja concreta: "reduce el fraude", "acorta los tiempos de respuesta"
+- **`hoja de ruta`** → usa "plan de implementación", "pasos a seguir", "calendario"
+
+FRASES PROHIBIDAS:
+- "cada vez más X" → sustituye por el dato o afirma en positivo concreto
+- "es clave para" → di por qué es importante sin el cliché
+- "es fundamental" → reemplaza por el verbo de acción
+- "sin precedentes" → especifica qué es diferente y desde cuándo
+- "en un contexto de" → empieza la frase por el sujeto real
+- "permite optimizar" → di qué reduce o mejora y cuánto
+- "gestión eficiente" → especifica: gestión en tiempo real, gestión con alertas automáticas
+
 ## Reglas anti-saturación (críticas para SEO)
 
 - **Contenido genuinamente único** por página. Si la página es de México,

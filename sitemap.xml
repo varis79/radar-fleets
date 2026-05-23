@@ -27,6 +27,12 @@
 
   <!-- Markets -->
   <url>
+    <loc>https://thefleetradar.com/mercados/</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://thefleetradar.com/mercados/mexico/</loc>
     <lastmod>2026-05-22</lastmod>
     <changefreq>monthly</changefreq>
