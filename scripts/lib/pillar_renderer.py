@@ -264,6 +264,8 @@ def render_pillar_page(page, editorial: dict, related: dict, indexed: bool = Fal
   <nav class="topbar-nav">
     <a href="/">Última edición</a>
     <a href="/archive.html">Archivo</a>
+    <a href="/temas/">Temas</a>
+    <a href="/mercados/">Mercados</a>
     <a href="https://www.getpulpo.com/" class="cta" target="_blank" rel="noopener">Pulpo ↗</a>
   </nav>
 </header>
