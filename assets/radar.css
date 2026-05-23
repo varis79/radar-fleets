@@ -729,3 +729,7 @@ a.story-tag:hover{opacity:.82}
 /* ── External institution links ─────────────────────────────────── */
 .ext-link{color:inherit;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px;text-decoration-color:rgba(45,55,70,.28)}
 .ext-link:hover{text-decoration-color:var(--accent)}
+
+/* ── Internal topic links ───────────────────────────────────────── */
+.int-link{color:inherit;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px;text-decoration-color:rgba(45,105,180,.30)}
+.int-link:hover{text-decoration-color:var(--accent)}
