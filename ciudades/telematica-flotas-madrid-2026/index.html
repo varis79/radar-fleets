@@ -40,6 +40,24 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/brand/favicon-16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/brand/apple-touch-icon.png">
+<style id="newsletter-css">
+.newsletter-band{background:#0d1521;padding:56px 32px;border-top:1px solid rgba(255,255,255,.08)}
+.newsletter-inner{max-width:900px;margin:0 auto;display:flex;gap:48px;align-items:center;flex-wrap:wrap}
+.newsletter-copy{flex:1;min-width:260px}
+.newsletter-title{font-family:'Fraunces',serif;font-size:22px;font-weight:700;color:#fff;margin:0 0 8px;line-height:1.2}
+.newsletter-sub{font-size:14px;color:rgba(255,255,255,.52);margin:0;line-height:1.6}
+.newsletter-form{display:flex;gap:10px;flex-wrap:wrap;flex-shrink:0}
+.newsletter-input{padding:12px 16px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#fff;border-radius:4px;font-size:14px;width:240px;outline:none}
+.newsletter-input::placeholder{color:rgba(255,255,255,.35)}
+.newsletter-input:focus{border-color:rgba(201,168,76,.6)}
+.newsletter-btn{padding:12px 22px;background:#c9a84c;color:#0d1521;border:none;border-radius:4px;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap;letter-spacing:.02em}
+.newsletter-btn:hover{background:#d4b562}
+.newsletter-btn:disabled{opacity:.6;cursor:not-allowed}
+.newsletter-msg{font-size:14px;margin:0;padding:10px 0}
+.newsletter-ok{color:#4ade80}
+.newsletter-err{color:#f87171}
+@media(max-width:640px){.newsletter-inner{flex-direction:column;gap:24px}.newsletter-input{width:100%}.newsletter-form{width:100%}}
+</style>
 </head>
 <body>
 <header class="topbar">
@@ -79,6 +97,45 @@
 
 <section class="pillar-related"><div class="container"><h2 class="pillar-related-title">Más sobre esto en The Fleet Radar</h2><div class="related-grid"><div class="related-group"><h3 class="related-group-title">Mismo tema en otros mercados</h3><ul class="related-list"><li><a href="/ciudades/telematica-flotas-cdmx-2026/">Telemática para flotas en Ciudad de México (México) 2026</a></li><li><a href="/ciudades/telematica-flotas-guadalajara-2026/">Telemática para flotas en Guadalajara (México) 2026</a></li><li><a href="/ciudades/telematica-flotas-monterrey-2026/">Telemática para flotas en Monterrey (México) 2026</a></li><li><a href="/ciudades/telematica-flotas-queretaro-2026/">Telemática para flotas en Querétaro (México) 2026</a></li></ul></div><div class="related-group"><h3 class="related-group-title">Casos de uso relacionados</h3><ul class="related-list"><li><a href="/casos-uso/flota-vehiculos-directivos-espana-2026/">Vehículos directivos y ejecutivos en España 2026</a></li><li><a href="/casos-uso/flota-vehiculos-directivos-espana-guia-2026/">Vehículos directivos y ejecutivos en España 2026 · guía</a></li><li><a href="/casos-uso/flota-comercial-fuerza-ventas-espana-2026/">Comercial y fuerza de ventas en España 2026</a></li><li><a href="/casos-uso/flota-comercial-fuerza-ventas-espana-guia-2026/">Comercial y fuerza de ventas en España 2026 · guía</a></li></ul></div><div class="related-group"><h3 class="related-group-title">Sectores donde aplica</h3><ul class="related-list"><li><a href="/sectores/flotas-alimentacion-bebidas-espana-2026/">Flotas en Alimentación y bebidas en España 2026</a></li><li><a href="/sectores/flotas-ecommerce-paqueteria-espana-2026/">Flotas en E-commerce y paquetería en España 2026</a></li><li><a href="/sectores/flotas-retail-espana-2026/">Flotas en Retail y distribución minorista en España 2026</a></li><li><a href="/sectores/flotas-telecomunicaciones-espana-2026/">Flotas en Telecomunicaciones en España 2026</a></li></ul></div><div class="related-group"><h3 class="related-group-title">Temas relacionados</h3><ul class="related-list"><li><a href="/temas/telematica-flotas-espana-2026/">Telemática para flotas en España 2026</a></li><li><a href="/temas/telematica-flotas-espana-comparativa-2026/">Telemática para flotas en España 2026 · comparativa</a></li><li><a href="/temas/telematica-flotas-espana-guia-2026/">Telemática para flotas en España 2026 · guía</a></li><li><a href="/temas/video-telematica-flotas-espana-2026/">Video-telemática y ADAS para flotas en España 2026</a></li></ul></div></div></div></section>
 
+<section class="newsletter-band">
+  <div class="newsletter-inner">
+    <div class="newsletter-copy">
+      <h2 class="newsletter-title">The Fleet Radar · cada lunes a las 7:00</h2>
+      <p class="newsletter-sub">Inteligencia semanal para el sector de gestión de flotas. Sin spam. Cancela cuando quieras.</p>
+    </div>
+    <form class="newsletter-form" id="nr-form" onsubmit="nrSubmit(event)">
+      <input class="newsletter-input" type="email" name="email" placeholder="tu@empresa.com" required autocomplete="email">
+      <button class="newsletter-btn" type="submit">Suscribirme</button>
+    </form>
+    <p class="newsletter-msg" id="nr-msg" style="display:none"></p>
+  </div>
+</section>
+<script>
+async function nrSubmit(e){
+  e.preventDefault();
+  const btn=e.target.querySelector('button');
+  const msg=document.getElementById('nr-msg');
+  const email=e.target.email.value.trim();
+  btn.disabled=true; btn.textContent='Enviando…';
+  try{
+    const r=await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email})});
+    if(r.ok){
+      e.target.style.display='none';
+      msg.textContent='✓ Apuntado. Te llegará cada lunes.';
+      msg.style.display='block'; msg.className='newsletter-msg newsletter-ok';
+    } else {
+      const d=await r.json().catch(()=>({}));
+      btn.disabled=false; btn.textContent='Suscribirme';
+      msg.textContent=d.error||'Algo fue mal. Inténtalo de nuevo.';
+      msg.style.display='block'; msg.className='newsletter-msg newsletter-err';
+    }
+  } catch {
+    btn.disabled=false; btn.textContent='Suscribirme';
+    msg.textContent='Error de conexión. Inténtalo de nuevo.';
+    msg.style.display='block'; msg.className='newsletter-msg newsletter-err';
+  }
+}
+</script>
 <section class="closing">
   <div class="closing-logo">The Fleet Radar <span>by Pulpo</span></div>
   <div class="closing-tagline">Inteligencia semanal para el sector de gestión de flotas</div>
