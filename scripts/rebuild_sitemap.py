@@ -67,6 +67,7 @@ def _meta_for(path: Path) -> tuple[str, float, str]:
             "sectores":   0.75,
             "ciudades":   0.7,
             "about":      0.6,
+            "legal":      0.3,
         }.get(section, 0.6)
         changefreq = "weekly" if section == "mercados" else "monthly"
         return (url, priority, changefreq)
@@ -97,7 +98,7 @@ def _collect() -> list[tuple[str, dt.date, float, str]]:
         out.append((loc, dt.date.fromtimestamp(p.stat().st_mtime), prio, freq))
 
     # Subdir sections
-    for section in ("temas", "mercados", "casos-uso", "sectores", "ciudades"):
+    for section in ("temas", "mercados", "casos-uso", "sectores", "ciudades", "legal"):
         d = ROOT / section
         if not d.exists():
             continue
