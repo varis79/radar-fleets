@@ -27,7 +27,78 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/radar.css">
-<style>:root{ --accent:#c9a84c; --accent-2:#1e7fcb; }</style>
+<style>
+  :root{
+    --accent:#1e7fcb;
+    --accent-2:#c9a84c;
+    --cover-grad-a:rgba(30,127,203,0.18);
+    --cover-grad-b:rgba(201,168,76,0.14);
+  }
+  .mkt-hero{
+    background:var(--near-black);
+    background-image:
+      radial-gradient(ellipse 70% 50% at 20% 80%, var(--cover-grad-a) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 80% 20%, var(--cover-grad-b) 0%, transparent 55%),
+      radial-gradient(ellipse 100% 100% at 50% 50%, #0d1521 0%, #060a10 100%);
+    padding:80px 32px 64px;border-bottom:1px solid rgba(255,255,255,.06);
+  }
+  .mkt-hero-inner{max-width:1100px;margin:0 auto}
+  .mkt-flag{font-size:56px;line-height:1;margin-bottom:16px}
+  .mkt-kicker{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-2);margin-bottom:18px;display:block}
+  .mkt-title{font-family:'Fraunces',serif;font-size:clamp(40px,6vw,72px);font-weight:900;line-height:.98;letter-spacing:-1.2px;color:#fff;margin-bottom:22px}
+  .mkt-title span{color:var(--accent-2)}
+  .mkt-deck{font-size:16px;color:rgba(255,255,255,.68);max-width:680px;line-height:1.75;border-left:2px solid var(--accent-2);padding-left:20px}
+  .mkt-updated{margin-top:24px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+  .mkt-main{max-width:1100px;margin:0 auto;padding:72px 32px 100px}
+  .mkt-body p{font-size:16px;line-height:1.8;color:var(--text-mid);margin-bottom:18px}
+  .mkt-body h2{font-family:'Fraunces',serif;font-size:30px;font-weight:700;color:var(--text-dark);margin-top:56px;margin-bottom:20px;letter-spacing:-.3px;line-height:1.15}
+  .mkt-body h3{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:var(--text-dark);margin-top:28px;margin-bottom:12px}
+  .mkt-body strong{color:var(--text-dark)}
+  .mkt-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+  .mkt-body a:hover{color:var(--accent-2)}
+  .rule-list{list-style:none;margin:20px 0 0;padding:0}
+  .rule-list li{padding:18px 22px;background:var(--cream);border-left:3px solid var(--accent);margin-bottom:10px}
+  .rule-list li strong{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  .rule-list li.soon{border-left-color:var(--accent-2)}
+  .rule-list li.soon strong{color:var(--accent-2)}
+  .rule-list li.opportunity{border-left-color:var(--burgundy)}
+  .rule-list li.opportunity strong{color:var(--burgundy)}
+  .players-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:20px}
+  .player-cat{padding:22px 24px;background:#fff;border:1px solid var(--border-dark);border-left:3px solid var(--accent)}
+  .player-cat h4{font-family:'Fraunces',serif;font-size:16px;font-weight:700;color:var(--text-dark);margin-bottom:10px}
+  .player-cat ul{list-style:none;margin:0;padding:0}
+  .player-cat li{font-size:13px;color:var(--text-mid);padding:4px 0;line-height:1.5}
+  .figures-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px}
+  .figure-card{padding:22px;background:var(--navy);color:#fff;border-left:3px solid var(--accent-2)}
+  .figure-num{font-family:'Fraunces',serif;font-size:36px;font-weight:900;line-height:1;color:#fff;margin-bottom:6px;letter-spacing:-.5px}
+  .figure-caption{font-size:13px;line-height:1.55;color:rgba(255,255,255,.72)}
+  .figure-source{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-top:10px}
+  .related-block{background:var(--warm-sand);padding:32px;margin-top:32px;border-radius:4px}
+  .related-block h3{font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin:0 0 12px 0;color:var(--text-dark)}
+  .related-block a{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--border-dark);text-decoration:none;color:inherit}
+  .related-block a:last-child{border-bottom:none}
+  .related-block a:hover .ed-title{color:var(--navy)}
+  .ed-title{font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:var(--text-dark)}
+  .ed-date{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);white-space:nowrap;align-self:center}
+  .linked-topics{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:20px}
+  .linked-topic{display:block;padding:20px 22px;background:#fff;border:1px solid var(--border-dark);border-left:3px solid var(--accent);text-decoration:none;color:inherit}
+  .linked-topic:hover{border-left-color:var(--accent-2)}
+  .linked-topic .lt-kicker{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:6px}
+  .linked-topic .lt-title{font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:var(--text-dark);line-height:1.25;margin-bottom:4px}
+  .linked-topic .lt-body{font-size:13px;color:var(--text-mid);line-height:1.55}
+  .mkt-cta{background:var(--warm-sand);padding:56px 32px;text-align:center;margin-top:56px;border-radius:4px}
+  .mkt-cta h3{font-family:'Fraunces',serif;font-size:24px;font-weight:700;color:var(--text-dark);margin-bottom:14px;letter-spacing:-.2px;line-height:1.3}
+  .mkt-cta p{font-size:15px;color:var(--text-mid);line-height:1.7;max-width:560px;margin:0 auto 24px}
+  .mkt-cta a{display:inline-block;padding:12px 28px;background:var(--navy);color:#fff;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border-radius:2px}
+  .mkt-body > p,.mkt-body > h2,.mkt-body > h3,.mkt-body > ul,.mkt-body > ol{max-width:820px}
+  @media (max-width:720px){
+    .mkt-hero{padding:56px 20px 48px}
+    .mkt-main{padding:48px 20px 80px}
+    .figures-grid{grid-template-columns:1fr}
+    .related-block a{flex-direction:column;gap:4px}
+    .ed-date{align-self:flex-start}
+  }
+</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsMediaOrganization","@id":"https://thefleetradar.com/#organization","name":"The Fleet Radar · by Pulpo","alternateName":"The Fleet Radar","url":"https://thefleetradar.com","description":"Publicación editorial semanal de Pulpo sobre gestión de flotas, combustible, pagos, telemática, logística, IA, electrificación y regulación en México, España, Latinoamérica, Europa y Estados Unidos.","logo":{"@type":"ImageObject","url":"https://thefleetradar.com/og-default.png","width":1200,"height":630},"image":"https://thefleetradar.com/og-default.png","foundingDate":"2026-04-14","inLanguage":"es","areaServed":["MX","ES","CO","CL","AR","PE","EC","UY","DO","US"],"parentOrganization":{"@type":"Organization","name":"Pulpo","url":"https://getpulpo.com","sameAs":["https://www.linkedin.com/company/getpulpo"]},"publisher":{"@type":"Organization","name":"Pulpo","url":"https://getpulpo.com"},"sameAs":["https://getpulpo.com","https://www.linkedin.com/company/getpulpo"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://thefleetradar.com/#website","url":"https://thefleetradar.com","name":"The Fleet Radar · by Pulpo","description":"Inteligencia semanal de mercado para el sector de gestión de flotas.","publisher":{"@id":"https://thefleetradar.com/#organization"},"inLanguage":"es-ES"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Flotas en Argentina · The Fleet Radar","description":"Análisis de gestión de flotas en Argentina: temas, casos de uso, sectores y ciudades cubiertos por The Fleet Radar.","url":"https://thefleetradar.com/mercados/argentina/","isPartOf":{"@id":"https://thefleetradar.com/#website"},"publisher":{"@id":"https://thefleetradar.com/#organization"},"inLanguage":"es-ES","mainEntity":{"@type":"ItemList","numberOfItems":86}}</script>
@@ -69,18 +140,176 @@
     <a href="https://www.getpulpo.com/" class="cta" target="_blank" rel="noopener">Pulpo ↗</a>
   </nav>
 </header>
-<section class="hub-hero">
-  <div class="container">
-    <span class="hub-eyebrow">Mercado · 🇦🇷</span>
-    <h1 class="hub-title">Flotas en Argentina</h1>
-    <p class="hub-intro">Análisis de gestión de flotas en Argentina: temas, casos de uso, sectores y ciudades cubiertos por The Fleet Radar.</p>
+<section class="mkt-hero">
+  <div class="mkt-hero-inner">
+    <div class="mkt-flag">🇦🇷</div>
+    <span class="mkt-kicker">Mercado · Argentina · 2026</span>
+    <h1 class="mkt-title">Flotas en <span>Argentina</span> 2026</h1>
+    <p class="mkt-deck">Argentina tiene la mayor flota de vehículos de GNC (gas natural comprimido) del mundo en términos relativos: más de 2 millones de unidades convertidas. La presión inflacionaria hace que el control de gasto en combustible, mantenimiento y operación sea una prioridad operativa de primera línea para los gestores de flota. El peso desafía la planificación a largo plazo.</p>
+    <div class="mkt-updated">Actualizado · 23 de mayo de 2026</div>
   </div>
 </section>
-<!-- AUTOGEN: pillar-pages-list START -->
-<section class="hub-autogen container">
-  <p class="hub-empty-state">Estamos preparando la cobertura editorial sobre flotas en Argentina. Mientras tanto puedes explorar las <a href="/archive.html">ediciones publicadas</a> de The Fleet Radar.</p>
+
+<main class="mkt-main">
+  <div class="mkt-body">
+
+<p>Argentina combina una infraestructura de GNC sin par en el mundo con una inflación que convierte el control de gasto en flota en una variable operativa crítica, no en un plus. En un contexto donde los precios de combustible, neumáticos y repuestos suben semana a semana, los gestores de flota que no tienen sistemas de control en tiempo real pierden visibilidad sobre sus costos antes de que el mes cierre.</p>
+    <p>YPF domina el mercado de combustible con una red que cubre el 60% del territorio. La red de estaciones GNC —unas 1.800 en todo el país— hace que el gas natural vehicular sea una alternativa real para flotas de distribución urbana e intercity. En empresas de transporte de pasajeros, la conversión a GNC es casi universal.</p>
+    <p>La CNRT (Comisión Nacional de Regulación del Transporte) regula el autotransporte de carga y pasajeros a nivel federal. ARCA (ex-AFIP) gestiona la facturación electrónica obligatoria, que en Argentina está entre las más avanzadas de LatAm.</p>
+
+    <h2>Regulación viva</h2>
+      <ul class="rule-list">
+      <li>
+        <strong>Activo · CNRT — Comisión Nacional de Regulación del Transporte</strong>
+        Regula habilitaciones, condiciones técnicas, seguros y operación del autotransporte de carga y pasajeros interjurisdiccional. Las flotas de más de 5 unidades en transporte federal deben estar habilitadas ante la CNRT con documentación al día: VTV, seguros, licencias profesionales y fichas de control.
+      </li>
+      <li>
+        <strong>Activo · VTV — Verificación Técnica Vehicular obligatoria</strong>
+        Cadencia anual para vehículos de carga y semestral para transporte de pasajeros. Los certificados de VTV son requisito para la habilitación ante la CNRT. Su vencimiento genera paralización inmediata de la unidad en controles de ruta.
+      </li>
+      <li>
+        <strong>Activo · ARCA (ex-AFIP) — Facturación electrónica y trazabilidad fiscal</strong>
+        Argentina tiene uno de los sistemas de facturación electrónica más desarrollados de LatAm. Las flotas deben emitir comprobantes electrónicos para todos los servicios de transporte, combustible y mantenimiento deducibles. La integración con los sistemas de gestión es crítica para el cumplimiento.
+      </li>
+      <li>
+        <strong>Activo · Ley 24.449 — Ley de Tránsito y normativa de conductores</strong>
+        Establece licencias profesionales por categoría, horas de conducción máximas (10 horas diarias) y obligación de descanso. Los sistemas de bitácora de conductor son obligatorios para el transporte de carga federal, aunque la tecnología de tacógrafos digitales tiene penetración baja en el segmento PYME.
+      </li>
+      <li>
+        <strong>opportunity · Estímulo — Programa de renovación de flota de transporte de pasajeros</strong>
+        El gobierno nacional impulsa líneas de crédito subsidiado para renovación de unidades de transporte de pasajeros de media distancia. El eje es la reducción de emisiones y mejora de seguridad en rutas interurbanas de alta demanda.
+      </li>
+      </ul>
+
+    <h2>Players activos por categoría</h2>
+    <p>Empresas con presencia relevante en el mercado de Argentina. El listado se amplía según cobertura editorial.</p>
+      <div class="players-grid">
+        <div class="player-cat">
+          <h4>Combustible y GNC</h4>
+          <ul>
+          <li>YPF · domina ~60% del mercado de combustible con tarjeta YPF empresarial</li>
+          <li>Shell · red B2B con tarjeta flota en grandes centros urbanos</li>
+          <li>Axion / ENAP · presencia en Patagonia y corredor Rosario-Córdoba</li>
+          <li>GNC: ~1.800 estaciones · mayor infraestructura del mundo en términos relativos</li>
+          </ul>
+        </div>
+        <div class="player-cat">
+          <h4>Telemática y GPS</h4>
+          <ul>
+          <li>Track Group · proveedor local con fuerte cobertura en flotas medianas</li>
+          <li>Geotab · distribuidores locales para el segmento enterprise</li>
+          <li>TelTrak · solución argentina con foco en transporte de pasajeros</li>
+          <li>ControlFleet · plataforma PYME con fuerte presencia en Buenos Aires</li>
+          </ul>
+        </div>
+        <div class="player-cat">
+          <h4>Renting y servicios</h4>
+          <ul>
+          <li>LeasePlan · renting corporativo multinacional</li>
+          <li>GMAC / GM Financial · financiamiento de flota corporativa</li>
+          <li>Patagonia Leasing · renting regional</li>
+          </ul>
+        </div>
+        <div class="player-cat">
+          <h4>Fabricantes relevantes</h4>
+          <ul>
+          <li>Ford · Ranger y Transit, dominantes en pick-up y LCV</li>
+          <li>Toyota · Hilux, la pick-up más vendida en flotas argentinas</li>
+          <li>Mercedes-Benz · Sprinter y Actros, muy presentes en distribución y pesado</li>
+          <li>Volkswagen · Crafter y camiones de distribución</li>
+          <li>Iveco · presencia en transporte de pasajeros y carga media</li>
+          </ul>
+        </div>
+      </div>
+
+    <h2>Tipos de flota dominantes</h2>
+      <ul>
+        <li><strong>Transporte de pasajeros interurbano</strong> — Alta concentración en rutas Buenos Aires-Rosario-Córdoba-Mendoza. Flotas de hasta 80 unidades por empresa. GNC y diesel, con incipiente entrada de híbridos.</li>
+        <li><strong>Distribución urbana</strong> — Buenos Aires, Rosario y Córdoba como mercados principales. Cadenas de supermercados, consumo masivo y bebidas con flotas propias de 20-200 unidades.</li>
+        <li><strong>Flota corporativa y LCV</strong> — Sector agropecuario, minería en Neuquén (Vaca Muerta) y Patagonia con flota pick-up. Altas tasas de informalidad en el segmento de menos de 5 unidades.</li>
+        <li><strong>Transporte agrícola</strong> — Corredor sojero Santa Fe-Buenos Aires-Entre Ríos. Camiones graneleros de alta capacidad. Fuerte estacionalidad en la gestión de la flota según campaña agrícola.</li>
+        <li><strong>Vaca Muerta — oil & gas</strong> — Neuquén concentra operaciones de extracción de hidrocarburos no convencionales. Flotas de servicio de pozos con alta exigencia operativa y gestión de activos en condiciones remotas.</li>
+      </ul>
+
+    <h2>Cifras útiles</h2>
+      <div class="figures-grid">
+        <div class="figure-card">
+          <div class="figure-num">>2M</div>
+          <div class="figure-caption">vehículos con sistema GNC en Argentina · la mayor flota relativa del mundo</div>
+          <div class="figure-source">ENARGAS · 2025</div>
+        </div>
+        <div class="figure-card">
+          <div class="figure-num">~1.800</div>
+          <div class="figure-caption">estaciones de GNC en todo el país · la mayor red de LatAm</div>
+          <div class="figure-source">ENARGAS · 2025</div>
+        </div>
+        <div class="figure-card">
+          <div class="figure-num">~60%</div>
+          <div class="figure-caption">cuota de mercado de YPF en combustible para transporte</div>
+          <div class="figure-source">SURTAX / análisis sectorial 2025</div>
+        </div>
+        <div class="figure-card">
+          <div class="figure-num">~250%</div>
+          <div class="figure-caption">de inflación acumulada en 3 años que presiona el gasto operativo de flotas y exige control en tiempo real</div>
+          <div class="figure-source">INDEC · 2024-2025</div>
+        </div>
+      </div>
+
+    <h2>Temas relacionados</h2>
+      <div class="linked-topics">
+        <a href="/temas/control-gasto-flota-mexico-2026/" class="linked-topic">
+          <div class="lt-kicker">Tema · Referencia</div>
+          <div class="lt-title">Control de gasto en flota</div>
+          <div class="lt-body">Sistemas y estrategias de control de costos aplicables en mercados con alta inflación.</div>
+        </a>
+        <a href="/mercados/latam/" class="linked-topic">
+          <div class="lt-kicker">Mercado · Regional</div>
+          <div class="lt-title">Flotas en LatAm · Panorama 2026</div>
+          <div class="lt-body">Tendencias transversales que impactan a Argentina.</div>
+        </a>
+        <a href="/temas/tarjetas-flota-mexico-2026/" class="linked-topic">
+          <div class="lt-kicker">Tema · Combustible</div>
+          <div class="lt-title">Tarjetas de flota y combustible</div>
+          <div class="lt-body">Control de gasto en combustible: metodologías aplicables en Argentina.</div>
+        </a>
+      </div>
+
+    <h2>Ediciones con material de Argentina</h2>
+      <div class="related-block">
+        <h3>The Fleet Radar · by Pulpo</h3>
+        <a href="/magazines/2026-04-20-radar-fleet-by-pulpo.html">
+          <span class="ed-title">Nº 3 · Flota pesada y tendencias LatAm</span>
+          <span class="ed-date">20 abril 2026</span>
+        </a>
+        <a href="/magazines/2026-05-04-radar-fleet-by-pulpo.html">
+          <span class="ed-title">Nº 5 · Regulación, electrificación y gestión</span>
+          <span class="ed-date">4 mayo 2026</span>
+        </a>
+      </div>
+
+    <div class="mkt-cta">
+      <h3>Pulpo Hub — control de gasto para flotas en mercados exigentes</h3>
+      <p>La plataforma de Pulpo permite controlar gasto de combustible, mantenimiento y operación en tiempo real. En mercados de alta inflación, la visibilidad diaria sobre costos es la diferencia entre rentabilidad y pérdida.</p>
+      <a href="https://www.getpulpo.com/" target="_blank" rel="noopener">Ver Pulpo en acción</a>
+    </div>
+
+  </div>
+</main>
+
+<section class="pillar-sources">
+  <div class="container">
+    <h2 class="pillar-sources-title">Fuentes y referencias</h2>
+    <ul class="sources-list">
+      <li class="source-item"><a href="https://www.cnrt.gob.ar/" class="source-link" target="_blank" rel="noopener nofollow">CNRT — Comisión Nacional de Regulación del Transporte</a><span class="source-note"> — Marco normativo del autotransporte federal, habilitaciones y control</span></li>
+      <li class="source-item"><a href="https://www.enargas.gov.ar/" class="source-link" target="_blank" rel="noopener nofollow">ENARGAS — Ente Nacional Regulador del Gas</a><span class="source-note"> — Datos del mercado de GNC y regulación de distribución de gas natural</span></li>
+      <li class="source-item"><a href="https://www.afip.gob.ar/" class="source-link" target="_blank" rel="noopener nofollow">ARCA — Agencia de Recaudación y Control Aduanero (ex-AFIP)</a><span class="source-note"> — Facturación electrónica, normativa fiscal y cumplimiento tributario en transporte</span></li>
+      <li class="source-item"><a href="https://www.indec.gob.ar/" class="source-link" target="_blank" rel="noopener nofollow">INDEC — Instituto Nacional de Estadística y Censos</a><span class="source-note"> — Estadísticas económicas: inflación, actividad del sector transporte</span></li>
+      <li class="source-item"><a href="https://www.ypf.com/" class="source-link" target="_blank" rel="noopener nofollow">YPF — Yacimientos Petrolíferos Fiscales</a><span class="source-note"> — Principal proveedor de combustible para flotas en Argentina</span></li>
+      <li class="source-item"><a href="https://www.fadeeac.org.ar/" class="source-link" target="_blank" rel="noopener nofollow">FADEEAC — Federación Argentina de Entidades Empresarias del Autotransporte de Cargas</a><span class="source-note"> — Datos del sector autotransporte de cargas: parque, costos operativos</span></li>
+    </ul>
+    <p class="sources-note">Datos cuantitativos sin fuente específica provienen de análisis editorial basado en fuentes del sector.</p>
+  </div>
 </section>
-<!-- AUTOGEN: pillar-pages-list END -->
 <section class="newsletter-band">
   <div class="newsletter-inner">
     <div class="newsletter-copy">
