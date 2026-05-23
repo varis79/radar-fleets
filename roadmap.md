@@ -20,7 +20,7 @@ que NO estaban ya en el backlog o que necesitan entrada nueva.
 | A-3 | Schema.org `NewsArticle` en las 7 ediciones de `/magazines/` | Técnico (Claude) | ✅ `f5b6fc9` |
 | A-4 | Check: ¿aparece el Pulpo box tras artículo operador asesinado (Nº8)? | Técnico (Claude) | ✅ OK — CTA band está tras la opinión editorial, no adyacente al artículo |
 | A-5 | Fuentes/citations visibles al pie de 20 páginas prioritarias | Editorial (Varis) | Backlog |
-| A-6 | Eliminación de clichés IA-sounding: lista negra en `docs/STYLE-FIXES.md` | Editorial (Varis) | Backlog |
+| A-6 | Eliminación de clichés IA-sounding: lista negra en `docs/STYLE-FIXES.md` | Editorial (Varis) | ✅ Doc creado + prompt actualizado · limpieza manual pendiente |
 | A-7 | Lead magnets x3: checklist antifraude MX · plantilla coste/vehículo · matriz ZBE+ITV ES | Editorial (Varis) | Backlog |
 | A-8 | Enriquecer country briefs CO, CL, AR, PE con regulación local y players | Editorial (Varis) | Backlog |
 | A-9 | **Fleet Fuel Index MX 2026** — reporte con datos anonimizados de los 200k vehículos | Editorial + Datos Pulpo | Exploración |
@@ -221,3 +221,6 @@ Cada N días, el sistema:
 | 2026-05-22 | A-1 PulpoPay disclaimers · A-2 hreflang todos los hubs y pillar pages · A-3 NewsArticle JSON-LD en 7 ediciones | commit `f5b6fc9` |
 | 2026-05-22 | A-4 verificado: CTA Pulpo en Nº8 está tras sección opinión, no adyacente al artículo sobre operador asesinado | verificación manual |
 | 2026-05-22 | Internal linking: PILLAR_INDEX (65 páginas) + build_tag_html + story tags clickables + inject retroactivo en 7 ediciones (45 bloques, 33 tags) | commit `a9f91cc` |
+| 2026-05-22 | Newsletter signup en 153 páginas (pillar pages, hubs, index, about) | commit `8b4761e` |
+| 2026-05-22 | Topbar global: Temas + Mercados en 108 ficheros + nueva /mercados/index.html | commit `16fdb37` |
+| 2026-05-22 | Sitemap: añadida /mercados/ (33 URLs) · STYLE-FIXES.md con análisis de clichés · lista negra en pillar-page-prompt.md | commit `fd38aec` |
