@@ -228,6 +228,28 @@ def publish(today: dt.date | None = None) -> dict:
     update_sitemap(edition_date)
     update_rss(compose_info["number"], edition_date, cover_headline, cover_deck, permalink_full)
 
+    # SEO polish post-publish: og:image en magazine nuevo + sitemap completo
+    try:
+        import importlib
+        sys.path.insert(0, str(ROOT / "scripts"))
+        for mod_name in ("patch_home_magazine_seo", "rebuild_sitemap", "seo_polish"):
+            try:
+                mod = importlib.import_module(mod_name)
+                if mod_name == "rebuild_sitemap":
+                    entries = mod._collect()
+                    SITEMAP_XML.write_text(mod._serialize(entries), encoding="utf-8")
+                elif mod_name == "patch_home_magazine_seo":
+                    for p, is_home in [(INDEX_HTML, True)] + [(m, False) for m in (ROOT / "magazines").glob("*.html")]:
+                        mod.patch_file(p, is_home)
+                elif mod_name == "seo_polish":
+                    mod.process_home()
+                    for m in (ROOT / "magazines").glob("*.html"):
+                        mod.process_magazine(m)
+            except Exception as e:
+                print(f"  ⚠ post-publish SEO hook '{mod_name}' falló: {e}")
+    except Exception as e:
+        print(f"  ⚠ post-publish SEO bloque falló: {e}")
+
     # memoria editorial
     # Recuperamos los stories estructurados del HTML (topic del selection)
     sel_path = DECISIONS_DIR / f"{week}-selection.json"

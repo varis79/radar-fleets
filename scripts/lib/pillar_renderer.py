@@ -148,7 +148,7 @@ def _dimension_eyebrow_link(page) -> tuple[str, str]:
     }.get(page.dimension, ("Temas", "/temas/"))
 
 
-def render_pillar_page(page, editorial: dict, related: dict, indexed: bool = False) -> str:
+def render_pillar_page(page, editorial: dict, related: dict, indexed: bool = True) -> str:
     """Renderiza HTML completo de una página pilar."""
     today = dt.date.today().isoformat()
     canonical = SITE_URL + page.url_path()

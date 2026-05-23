@@ -359,7 +359,7 @@ def write_tracking_md(page: PillarPage, indexed: bool, llm_meta: dict) -> Path:
     return md_path
 
 
-def generate_one(page: PillarPage, dry_run: bool = False, indexed: bool = False,
+def generate_one(page: PillarPage, dry_run: bool = False, indexed: bool = True,
                  force: bool = False) -> dict:
     """Genera UNA pillar page. Devuelve resumen.
 
@@ -438,7 +438,10 @@ def main(argv=None):
     p.add_argument("--dimension", choices=["topic", "use-case", "vertical", "subgeo"])
     p.add_argument("--market")
     p.add_argument("--dry-run", action="store_true", help="Usa stub fixture, sin LLM real")
-    p.add_argument("--indexed", action="store_true", help="Publica sin noindex (default: noindex)")
+    p.add_argument("--indexed", action="store_true", default=True,
+                   help="Publica con index,follow (default). Usa --no-indexed para forzar noindex.")
+    p.add_argument("--no-indexed", dest="indexed", action="store_false",
+                   help="Genera la página como stub noindex (para drafts).")
     p.add_argument("--limit", type=int, help="Límite de páginas a generar (para tests)")
     p.add_argument("--concurrency", type=int, default=5,
                    help="Llamadas LLM en paralelo. Default 5 (anthropic acepta hasta 10 cómodo).")
