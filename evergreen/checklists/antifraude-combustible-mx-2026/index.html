@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<title>Checklist antifraude combustible para flotas en México 2026 — The Fleet Radar · by Pulpo</title>
+<meta name="description" content="12 controles concretos para detectar y eliminar el fraude en combustible en flotas mexicanas: límites por unidad, CFDI, geovallas, anomalías y auditoría de proveedor.">
+<meta name="author" content="Pulpo — getpulpo.com">
+<meta name="keywords" content="antifraude combustible flota, robo combustible flotillas, control gasolina flota Mexico, fraude tarjeta combustible, CFDI combustibles SAT, checklist flota Mexico">
+<meta property="og:title" content="Checklist antifraude combustible para flotas en México 2026 — The Fleet Radar · by Pulpo">
+<meta property="og:description" content="12 controles para cerrar las fugas de combustible en tu flota: geovallas, CFDI, límites parametrizados, cruce con telemetría y auditoría de proveedor.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://thefleetradar.com/evergreen/checklists/antifraude-combustible-mx-2026/">
+<meta property="og:site_name" content="The Fleet Radar · by Pulpo">
+<meta property="og:image" content="https://thefleetradar.com/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Checklist antifraude combustible · flotas México 2026">
+<meta name="twitter:description" content="12 controles concretos para detectar y cerrar fugas de combustible en flotas mexicanas.">
+<meta name="twitter:image" content="https://thefleetradar.com/og-default.png">
+<link rel="canonical" href="https://thefleetradar.com/evergreen/checklists/antifraude-combustible-mx-2026/">
+<link rel="alternate" type="application/rss+xml" title="The Fleet Radar · by Pulpo" href="/rss.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/radar.css">
+<style>
+  :root{
+    --accent:#c9a84c;
+    --accent-2:#b8463a;
+    --cover-grad-a:rgba(201,168,76,0.18);
+    --cover-grad-b:rgba(184,70,58,0.14);
+  }
+  .e-hero{background:var(--near-black);background-image:
+      radial-gradient(ellipse 70% 50% at 20% 80%, var(--cover-grad-a) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 80% 20%, var(--cover-grad-b) 0%, transparent 55%),
+      radial-gradient(ellipse 100% 100% at 50% 50%, #0d1521 0%, #060a10 100%);
+      padding:72px 32px 56px;border-bottom:1px solid rgba(255,255,255,.06);}
+  .e-hero-inner{max-width:1040px;margin:0 auto}
+  .e-kicker{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;display:block}
+  .e-title{font-family:'Fraunces',serif;font-size:clamp(30px,4.5vw,52px);font-weight:900;line-height:1.05;letter-spacing:-1px;color:#fff;margin-bottom:22px}
+  .e-title span{color:var(--accent)}
+  .e-deck{font-size:16px;color:rgba(255,255,255,.68);max-width:680px;line-height:1.75;border-left:2px solid var(--accent);padding-left:20px}
+  .e-updated{margin-top:24px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+  .e-main{max-width:1040px;margin:0 auto;padding:64px 32px 100px}
+  .e-body p{font-size:16px;line-height:1.85;color:var(--text-mid);margin-bottom:18px}
+  .e-body h2{font-family:'Fraunces',serif;font-size:26px;font-weight:700;color:var(--text-dark);margin-top:48px;margin-bottom:18px;letter-spacing:-.3px;line-height:1.15}
+  .e-body strong{color:var(--text-dark)}
+  .e-body a{color:var(--accent-2);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+  .e-body a:hover{opacity:.8}
+
+  /* Checklist */
+  .check-list{list-style:none;margin:24px 0 0;counter-reset:chk;padding:0}
+  .check-list li{padding:22px 24px 22px 80px;background:#fff;border:1px solid var(--border-dark);border-left:3px solid var(--accent);margin-bottom:12px;position:relative;counter-increment:chk}
+  .check-list li::before{content:counter(chk,decimal-leading-zero);position:absolute;left:22px;top:20px;font-family:'Fraunces',serif;font-size:32px;font-weight:900;color:var(--accent);line-height:1}
+  .check-list li strong{display:block;font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:var(--text-dark);margin-bottom:8px}
+  .check-list li p{font-size:15px;line-height:1.7;color:var(--text-mid);margin:0}
+  .check-list li .check-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 8px;margin-bottom:8px;border-radius:2px}
+  .badge-critico{background:rgba(184,70,58,.1);color:var(--accent-2)}
+  .badge-operativo{background:rgba(30,127,203,.08);color:#1e7fcb}
+  .badge-auditoria{background:rgba(201,168,76,.12);color:#8a6f1e}
+
+  /* Cifras clave */
+  .figures-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
+  .figure-card{padding:22px;background:var(--navy);color:#fff;border-left:3px solid var(--accent)}
+  .figure-num{font-family:'Fraunces',serif;font-size:34px;font-weight:900;line-height:1;color:#fff;margin-bottom:6px;letter-spacing:-.5px}
+  .figure-caption{font-size:13px;line-height:1.55;color:rgba(255,255,255,.72)}
+  .figure-source{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-top:10px}
+
+  /* Alert */
+  .alert-box{padding:22px 26px;background:rgba(184,76,58,.06);border-left:3px solid var(--burgundy);margin-top:24px;margin-bottom:24px}
+  .alert-box h4{font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:var(--text-dark);margin-bottom:10px}
+  .alert-box ul{margin:0 0 0 22px;padding:0}
+  .alert-box li{font-size:15px;line-height:1.7;color:var(--text-mid);margin-bottom:6px}
+
+  /* Related / CTA */
+  .related-block{background:var(--warm-sand);padding:32px;margin-top:32px;border-radius:4px}
+  .related-block h3{font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin:0 0 12px 0;color:var(--text-dark)}
+  .related-block a{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--border-dark);text-decoration:none;color:inherit}
+  .related-block a:last-child{border-bottom:none}
+  .related-block a:hover .ed-title{color:var(--navy)}
+  .ed-title{font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:var(--text-dark)}
+  .ed-date{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);white-space:nowrap;align-self:center}
+  .linked-topics{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:20px}
+  .linked-topic{display:block;padding:20px 22px;background:#fff;border:1px solid var(--border-dark);border-left:3px solid var(--accent);text-decoration:none;color:inherit}
+  .linked-topic:hover{border-left-color:var(--accent-2)}
+  .linked-topic .lt-kicker{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:6px}
+  .linked-topic .lt-title{font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:var(--text-dark);line-height:1.25;margin-bottom:4px}
+  .linked-topic .lt-body{font-size:13px;color:var(--text-mid);line-height:1.55}
+  .e-cta{background:var(--warm-sand);padding:48px 32px;text-align:center;margin-top:48px;border-radius:4px}
+  .e-cta h3{font-family:'Fraunces',serif;font-size:22px;font-weight:700;color:var(--text-dark);margin-bottom:14px;letter-spacing:-.2px;line-height:1.3}
+  .e-cta p{font-size:15px;color:var(--text-mid);line-height:1.7;max-width:540px;margin:0 auto 24px}
+  .e-cta a{display:inline-block;padding:12px 28px;background:var(--navy);color:#fff;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border-radius:2px}
+  .e-body > p,.e-body > h2,.e-body > ul:not(.check-list){max-width:820px}
+  @media (max-width:720px){
+    .e-hero{padding:56px 20px 48px}
+    .e-main{padding:48px 20px 80px}
+    .figures-grid{grid-template-columns:1fr}
+    .related-block a{flex-direction:column;gap:4px}
+    .ed-date{align-self:flex-start}
+    .check-list li{padding:20px 20px 20px 72px}
+    .check-list li::before{font-size:28px;left:20px}
+  }
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsMediaOrganization","@id":"https://thefleetradar.com/#organization","name":"The Fleet Radar · by Pulpo","alternateName":"The Fleet Radar","url":"https://thefleetradar.com","description":"Publicación editorial semanal de Pulpo sobre gestión de flotas, combustible, pagos, telemática, logística, IA, electrificación y regulación en México, España, Latinoamérica, Europa y Estados Unidos.","logo":{"@type":"ImageObject","url":"https://thefleetradar.com/og-default.png","width":1200,"height":630},"image":"https://thefleetradar.com/og-default.png","foundingDate":"2026-04-14","inLanguage":"es","areaServed":["MX","ES","CO","CL","AR","PE","EC","UY","DO","US"],"parentOrganization":{"@type":"Organization","name":"Pulpo","url":"https://getpulpo.com","sameAs":["https://www.linkedin.com/company/getpulpo"]},"publisher":{"@type":"Organization","name":"Pulpo","url":"https://getpulpo.com"},"sameAs":["https://getpulpo.com","https://www.linkedin.com/company/getpulpo"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Checklist antifraude combustible para flotas en México 2026","description":"12 controles concretos para detectar y eliminar el fraude en combustible en flotas mexicanas.","url":"https://thefleetradar.com/evergreen/checklists/antifraude-combustible-mx-2026/","datePublished":"2026-05-23","dateModified":"2026-05-23","author":{"@type":"Organization","name":"The Fleet Radar · by Pulpo","url":"https://thefleetradar.com"},"publisher":{"@id":"https://thefleetradar.com/#organization"},"inLanguage":"es-MX","image":{"@type":"ImageObject","url":"https://thefleetradar.com/og-default.png","width":1200,"height":630}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"The Fleet Radar","item":"https://thefleetradar.com/"},{"@type":"ListItem","position":2,"name":"Temas","item":"https://thefleetradar.com/temas/"},{"@type":"ListItem","position":3,"name":"Tarjetas de flota en México","item":"https://thefleetradar.com/temas/tarjetas-flota-mexico-2026/"},{"@type":"ListItem","position":4,"name":"Checklist antifraude combustible MX 2026","item":"https://thefleetradar.com/evergreen/checklists/antifraude-combustible-mx-2026/"}]}</script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
+<link rel="icon" type="image/svg+xml" href="/assets/brand/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/brand/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/brand/apple-touch-icon.png">
+</head>
+<body>
+
+<header class="topbar">
+  <a href="/" class="topbar-brand">The Fleet Radar <span>by Pulpo</span></a>
+  <div class="topbar-meta">Checklist · Antifraude Combustible · México 2026</div>
+  <nav class="topbar-nav">
+    <a href="/" class="nav-extra">Última</a>
+    <a href="/archive.html">Archivo</a>
+    <a href="/temas/">Temas</a>
+    <a href="/mercados/">Mercados</a>
+    <a href="https://www.getpulpo.com/" class="cta" target="_blank" rel="noopener">Pulpo ↗</a>
+  </nav>
+</header>
+
+<section class="e-hero">
+  <div class="e-hero-inner">
+    <span class="e-kicker">Checklist · Combustible · México 2026</span>
+    <h1 class="e-title">12 controles para cerrar las fugas de <span>combustible</span> en tu flota</h1>
+    <p class="e-deck">El robo de combustible en flotas mexicanas ronda el 3–7% del gasto total, según estimaciones del sector. No es un problema de confianza: es un problema de ausencia de controles. Esta checklist reúne los doce puntos concretos que separan las flotas que lo controlan de las que no.</p>
+    <div class="e-updated">Publicado · 23 de mayo de 2026 · The Fleet Radar</div>
+  </div>
+</section>
+
+<main class="e-main">
+  <div class="e-body">
+
+    <p>Una flota de 50 tractocamiones gasta, según datos del sector, entre 3.5 y 5 millones de pesos mensuales en combustible. Si el 5% de ese gasto se pierde por fraude o merma no controlada, son entre 175,000 y 250,000 pesos al mes — más de 2 millones de pesos anuales. El dinero existe; el problema es que no hay controles que lo hagan visible.</p>
+
+    <p>Las soluciones tecnológicas disponibles en México en 2026 —tarjetas de combustible con CFDI automático, telemetría con cruce de odómetro, geovallas de estación validada— resuelven técnicamente la mayoría de estos vectores. El reto no es tecnológico; es operativo: implementar y mantener activos los controles adecuados.</p>
+
+    <div class="figures-grid">
+      <div class="figure-card">
+        <div class="figure-num">3–7%</div>
+        <div class="figure-caption">del gasto mensual en combustible que se pierde por fraude o merma sin controles digitales</div>
+        <div class="figure-source">Estimación del sector · análisis editorial</div>
+      </div>
+      <div class="figure-card">
+        <div class="figure-num">15,000 M</div>
+        <div class="figure-caption">de pesos anuales en robo de combustible en México, según AMEG (Asociación Mexicana de Empresarios Gasolineros)</div>
+        <div class="figure-source">AMEG · datos 2025</div>
+      </div>
+      <div class="figure-card">
+        <div class="figure-num">8–15%</div>
+        <div class="figure-caption">de ahorro en gasto de combustible que reportan flotas medianas y grandes tras implementar controles digitales</div>
+        <div class="figure-source">Benchmark sector · análisis editorial</div>
+      </div>
+    </div>
+
+    <h2>Los 12 controles</h2>
+
+    <ul class="check-list">
+
+      <li>
+        <span class="check-badge badge-critico">Crítico</span>
+        <strong>Tarjeta de combustible por unidad — no tarjeta corporativa compartida</strong>
+        <p>Cada vehículo debe tener su propio instrumento de pago vinculado al número de unidad, conductor asignado y límite de consumo parametrizado. Una tarjeta corporativa compartida entre varios conductores elimina la trazabilidad y hace imposible la auditoría. Si el sistema no permite asignar límites por vehículo (litros, pesos, frecuencia de carga), no es suficiente para control antifraude.</p>
+      </li>
+
+      <li>
+        <span class="check-badge badge-critico">Crítico</span>
+        <strong>Límite de litros por carga consistente con la capacidad del tanque</strong>
+        <p>El parámetro más básico: si una unidad tiene tanque de 600 litros, ninguna transacción debería superar ese volumen. Muchos fraudes simples consisten en cargar más litros de los que el tanque admite — litros que se venden por fuera. El sistema debe bloquear automáticamente transacciones que excedan la capacidad nominal del tipo de unidad asociada a la tarjeta.</p>
+      </li>
+
+      <li>
+        <span class="check-badge badge-critico">Crítico</span>
+        <strong>Geovalla de estaciones autorizadas — no aceptación universal</strong>
+        <p>Define un listado o radio de estaciones de servicio donde puede operar cada tarjeta. Si el vehículo opera la ruta CDMX-Monterrey, las cargas válidas deben ocurrir en ese corredor. Una carga en Cancún cuando la unidad opera al norte genera alerta inmediata. La geovalla no elimina el fraude, pero lo hace visible y documentado para acción correctiva.</p>
+      </li>
+
+      <li>
+        <span class="check-badge badge-critico">Crítico</span>
+        <strong>Cruce automático consumo vs. kilómetros recorridos</strong>
+        <p>El indicador km/litro (o litros/100 km) es el detector de fraude más confiable. Si la telemetría reporta que la unidad recorrió 400 km y la tarjeta registra una carga de 200 litros cuando el consumo teórico debería ser 120 litros, hay una anomalía que exige revisión. Este cruce requiere integrar el proveedor de tarjeta con el proveedor de telemática — confirma que ambos sistemas comparten datos en tiempo real o en batch diario.</p>
+      </li>
+
+      <li>
+        <span class="check-badge badge-operativo">Operativo</span>
+        <strong>Frecuencia máxima de carga por unidad en 24 y 72 horas</strong>
+        <p>Más allá del límite por evento, establece límites de frecuencia: por ejemplo, máximo 2 cargas en 24 horas, máximo 4 en 72 horas para unidades de largo recorrido. Las cargas múltiples en el mismo día suelen ser señal de operación de reventa (el conductor o un tercero carga, vende el combustible y regresa a cargar de nuevo). Este parámetro se configura en el sistema de tarjetas y no requiere integración adicional.</p>
+      </li>
+
+      <li>
+        <span class="check-badge badge-operativo">Operativo</span>
+        <strong>PIN por conductor — no solo tarjeta física</strong>
+        <p>La tarjeta física puede prestarse o robarse. El PIN vinculado al conductor añade una segunda capa de autenticación. Algunos proveedores van más allá con autenticación biométrica en la bomba (huella, reconocimiento facial). En cualquier caso, el sistema debe registrar qué conductor validó la transacción, no solo qué vehículo. Esto es especialmente relevante cuando múltiples conductores operan el mismo vehículo en turnos.</p>
+      </li>
+
+      <li>
+        <span class="check-badge badge-operativo">Operativo</span>
+        <strong>Odómetro obligatorio en cada transacción</strong>
+        <p>En el momento de la carga, el conductor debe registrar el odómetro actual. Muchos sistemas de tarjeta ya lo solicitan como campo obligatorio para completar la transacción. Este dato, cruzado con el odómetro de telemetría, permite detectar manipulación: si el conductor declara un odómetro distinto al que reporta el GPS, es señal de alerta. Configura el campo como obligatorio y valida que la variación sea coherente con la ruta.</p>
+      </li>
+
+      <li>
+        <span class="check-badge badge-operativo">Operativo</span>
+        <strong>Alertas en tiempo real para el supervisor — no solo reporte semanal</strong>
+        <p>Un fraude detectado el martes siguiente no evita el lunes. El sistema debe enviar alertas inmediatas (WhatsApp, email, app) cuando una transacción supere un umbral, se realice fuera de geovalla, o el conductor sea distinto al asignado. El supervisor debe recibir la alerta antes de que la unidad abandone la estación. Confirma que el proveedor tiene canal de alertas configurable, no solo reportería.</p>
+      </li>
+
+      <li>
+        <span class="check-badge badge-auditoria">Auditoría</span>
+        <strong>CFDI con complemento de combustibles para cada transacción</strong>
+        <p>La regla 2.7.1.8 de la Resolución Miscelánea Fiscal del SAT exige CFDI con complemento de combustibles para la deducibilidad. El complemento debe incluir identificación vehicular, número de odómetro, litros cargados y número de estación de servicio. Verifica mensualmente que el 100% de las transacciones tiene CFDI completo antes de su declaración. El proveedor de tarjeta debe entregar este CFDI de forma automática, no bajo petición.</p>
+      </li>
+
+      <li>
+        <span class="check-badge badge-auditoria">Auditoría</span>
+        <strong>Conciliación mensual tarjeta vs. factura de estación vs. telemetría</strong>
+        <p>Tres fuentes, tres cifras que deben cuadrar: (a) el cargo en la tarjeta de combustible, (b) el CFDI emitido por la estación de servicio, y (c) el consumo calculado por telemetría. Cuando los tres coinciden, el proceso está bajo control. Cuando divergen, hay un vector de fraude activo o un error operativo que corregir. Esta conciliación no ocurre sola: requiere proceso, responsable y periodicidad definida (semanal o mensual según el volumen de flota).</p>
+      </li>
+
+      <li>
+        <span class="check-badge badge-auditoria">Auditoría</span>
+        <strong>Revisión trimestral de estaciones de servicio frecuentes</strong>
+        <p>El fraude también puede venir del lado del proveedor: estaciones que marcan más litros de los que salen de la bomba (adulteración de medidores). El PROFECO y la CRE realizan verificaciones periódicas, pero no son suficientes. Las flotas grandes hacen auditorías propias: controla que las estaciones donde carga tu flota estén al corriente con la CRE, revisa su historial de sanciones y detecta si hay concentración sospechosa de transacciones en una sola estación que no corresponde a tu ruta.</p>
+      </li>
+
+      <li>
+        <span class="check-badge badge-auditoria">Auditoría</span>
+        <strong>Política de consecuencias documentada y conocida por todos los conductores</strong>
+        <p>El control técnico funciona mejor cuando los conductores saben que existe y conocen las consecuencias de un fraude detectado. Una política escrita (parte del contrato o reglamento interno), firmada y comunicada, tiene efecto disuasorio más allá de los controles. Incluye: qué constituye infracción, qué proceso se sigue al detectarla, y qué consecuencias aplican. Sin política documentada, el fraude detectado genera conflictos laborales difíciles de resolver.</p>
+      </li>
+
+    </ul>
+
+    <div class="alert-box">
+      <h4>Señales de alerta que requieren revisión inmediata</h4>
+      <ul>
+        <li>Carga superior a la capacidad del tanque nominal de la unidad</li>
+        <li>Dos o más cargas en menos de 4 horas en la misma unidad</li>
+        <li>Carga en estación fuera del corredor habitual de la ruta sin autorización previa</li>
+        <li>Ratio litros/km que supera el 150% del consumo histórico de esa unidad en condiciones similares</li>
+        <li>Transacciones los domingos o festivos cuando la unidad no está programada para operar</li>
+        <li>Conductor distinto al asignado registrando la transacción (cuando el sistema captura PIN por conductor)</li>
+        <li>Discrepancia mayor al 10% entre odómetro declarado por el conductor y odómetro de telemetría</li>
+      </ul>
+    </div>
+
+    <h2>Con qué frecuencia revisar</h2>
+
+    <p>No todos los controles tienen la misma cadencia. Un esquema práctico por tamaño de flota:</p>
+
+    <ul>
+      <li><strong>Diario (automatizado):</strong> Alertas de transacciones fuera de parámetro. El sistema genera la alerta; el supervisor la revisa.</li>
+      <li><strong>Semanal:</strong> Ranking de unidades con mayor consumo anómalo. Identificar el 5% superior de consumo/km y revisar si hay causa operativa (carga pesada, sierra, tráfico) o anomalía.</li>
+      <li><strong>Mensual:</strong> Conciliación completa tarjeta–CFDI–telemetría. Confirmar que el 100% de las transacciones tiene CFDI. Revisar estaciones de servicio con alta concentración de cargas.</li>
+      <li><strong>Trimestral:</strong> Auditoría de estaciones proveedoras frecuentes. Actualización de geovallas si cambian rutas. Revisión de conductores con historial de alertas acumuladas.</li>
+    </ul>
+
+    <div class="related-block">
+      <h3>Lecturas relacionadas en The Fleet Radar</h3>
+      <a href="/temas/tarjetas-flota-mexico-2026/">
+        <div>
+          <div class="ed-title">Tarjetas de flota y combustible en México 2026</div>
+          <div style="font-size:13px;color:var(--text-mid);margin-top:4px">Estado del mercado, players activos, regulación SAT y cifras del sector</div>
+        </div>
+        <span class="ed-date">Pilar · MX</span>
+      </a>
+      <a href="/magazines/2026-05-18-radar-fleet-by-pulpo.html">
+        <div>
+          <div class="ed-title">The Fleet Radar Nº8 · 18 mayo 2026</div>
+          <div style="font-size:13px;color:var(--text-mid);margin-top:4px">Cobertura de fraude en combustible y seguridad en el autotransporte mexicano</div>
+        </div>
+        <span class="ed-date">Edición · MX</span>
+      </a>
+      <a href="/temas/telematica-flotas-mexico-2026/">
+        <div>
+          <div class="ed-title">Telemática para flotas en México 2026</div>
+          <div style="font-size:13px;color:var(--text-mid);margin-top:4px">El mercado de GPS y plataformas de monitoreo: Samsara, Geotab, Motive y players locales</div>
+        </div>
+        <span class="ed-date">Pilar · MX</span>
+      </a>
+    </div>
+
+    <div class="linked-topics">
+      <a href="/temas/compliance-flotas-mexico-2026/" class="linked-topic">
+        <div class="lt-kicker">Tema relacionado</div>
+        <div class="lt-title">Cumplimiento normativo en flotas mexicanas</div>
+        <div class="lt-body">SICT, SAT, Carta Porte y regulación vigente para el autotransporte federal.</div>
+      </a>
+      <a href="/mercados/mexico/" class="linked-topic">
+        <div class="lt-kicker">Mercado</div>
+        <div class="lt-title">Flotas en México · Panorama 2026</div>
+        <div class="lt-body">Contexto regulatorio, players clave y tendencias del sector de gestión de flotas en México.</div>
+      </a>
+    </div>
+
+    <div class="e-cta">
+      <h3>Control de combustible con PulpoPay</h3>
+      <p>PulpoPay opera en México integrando tarjetas de combustible con gestión documental, telemetría y mantenimiento en una sola plataforma. Flotas como Grupo TMM y empresas de última milla usan PulpoPay para automatizar el cruce consumo-kilometraje y generar los CFDI con complemento de combustibles de forma automática.</p>
+      <a href="https://www.getpulpo.com/" target="_blank" rel="noopener">Más información en getpulpo.com →</a>
+    </div>
+
+  </div>
+</main>
+
+<section class="newsletter-band">
+  <div class="container" style="max-width:680px;margin:0 auto;text-align:center;padding:64px 32px">
+    <div class="newsletter-eyebrow">The Fleet Radar · by Pulpo</div>
+    <h2 class="newsletter-title">Inteligencia de flota cada semana</h2>
+    <p class="newsletter-body">Análisis editorial sobre gestión de flotas, combustible, telemática y regulación en México y España. Sin spam.</p>
+    <form class="newsletter-form" action="/api/subscribe" method="POST">
+      <input type="email" name="email" placeholder="tu@empresa.com" required class="newsletter-input">
+      <button type="submit" class="newsletter-btn">Suscribirse</button>
+    </form>
+  </div>
+</section>
+
+<footer class="closing" style="padding:48px 32px 40px;">
+  <div class="closing-logo">The Fleet Radar <span>by Pulpo</span></div>
+  <div class="closing-tagline">Inteligencia semanal para el sector de gestión de flotas</div>
+  <div class="closing-links" style="margin-top:24px;border-top:none;padding-top:0;">
+    <a href="/">Última edición</a>
+    <a href="/archive.html">Archivo</a>
+    <a href="/temas/">Temas</a>
+    <a href="/mercados/">Mercados</a>
+    <a href="https://www.getpulpo.com/" target="_blank" rel="noopener">Pulpo</a>
+  </div>
+  <div style="margin-top:24px;font-size:12px;color:rgba(255,255,255,.3);">
+    <span class="closing-pulpo">Editado por <a href="https://www.getpulpo.com" target="_blank" rel="noopener" style="color:rgba(255,255,255,.5)">Pulpo</a></span>
+    · <a href="/temas/tarjetas-flota-mexico-2026/" style="color:rgba(255,255,255,.3)">Tarjetas de flota MX</a>
+    · <a href="/temas/telematica-flotas-mexico-2026/" style="color:rgba(255,255,255,.3)">Telemática MX</a>
+  </div>
+</footer>
+
+</body>
+</html>

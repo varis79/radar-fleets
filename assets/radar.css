@@ -681,3 +681,17 @@ a.story-tag:hover{opacity:.82}
 .related-list li{margin-bottom:8px;font-size:13px;line-height:1.5;}
 .related-list a{color:rgba(255,255,255,.75);text-decoration:none;border-bottom:1px dotted rgba(255,255,255,.25);}
 .related-list a:hover{color:var(--accent);border-bottom-color:var(--accent);}
+
+/* ── Pillar sources section ────────────────────────────────────── */
+.pillar-sources{background:#f7f8fa;border-top:1px solid rgba(45,55,70,.08);padding:40px 0 36px}
+.pillar-sources-title{font-family:'Fraunces',serif;font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9aa0b0;margin:0 0 18px}
+.sources-list{list-style:none;margin:0 0 16px;padding:0;display:flex;flex-direction:column;gap:8px}
+.source-item{font-size:13px;line-height:1.5;color:#5a6072}
+.source-link{color:#1e7fcb;text-decoration:none;font-weight:500}
+.source-link:hover{text-decoration:underline}
+.source-note{color:#9aa0b0}
+.sources-note{font-size:12px;color:#9aa0b0;font-style:italic;margin:0}
+
+/* ── Brand links (in-body player mentions) ──────────────────────────── */
+.brand-link{color:inherit;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px;text-decoration-color:rgba(45,55,70,.28)}
+.brand-link:hover{text-decoration-color:var(--accent)}

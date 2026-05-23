@@ -245,7 +245,18 @@ LEGACY_TOPIC_HUBS: dict[str, tuple[str, str]] = {
     "compliance":             ("Hub · Compliance",                 "/temas/compliance-espana/"),
 }
 HUB_LINKS_BY_PLAYER: dict[str, tuple[str, str]] = {
-    "pulpo": ("Ficha de Pulpo", "/players/pulpo/"),
+    "pulpo":    ("Ficha de Pulpo",               "/players/pulpo/"),
+    "samsara":  ("Telemática de flotas",          "/temas/telematica-flotas-mexico-2026/"),
+    "geotab":   ("Telemática de flotas",          "/temas/telematica-flotas-mexico-2026/"),
+    "motive":   ("Telemática de flotas",          "/temas/telematica-flotas-mexico-2026/"),
+    "webfleet": ("Telemática de flotas",          "/temas/telematica-flotas-espana-2026/"),
+    "fleetio":  ("Telemática de flotas",          "/temas/telematica-flotas-mexico-2026/"),
+    "lytx":     ("Telemática de flotas",          "/temas/telematica-flotas-mexico-2026/"),
+    "wex":      ("Tarjetas de combustible",       "/temas/tarjetas-flota-mexico-2026/"),
+    "coast":    ("Tarjetas de combustible",       "/temas/tarjetas-flota-mexico-2026/"),
+    "ayvens":   ("Renting y leasing de flotas",  "/temas/gestion-flota-espana-2026/"),
+    "tesla":    ("Electrificación de flotas",     "/temas/electrificacion-flotas-mexico-2026/"),
+    "byd":      ("Electrificación de flotas",     "/temas/electrificacion-flotas-mexico-2026/"),
 }
 
 
