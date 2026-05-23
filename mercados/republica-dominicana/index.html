@@ -1,45 +1,117 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-<meta name="msvalidate.01" content="F76AFEB4A9F8059A6B4046015931CB70">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="F76AFEB4A9F8059A6B4046015931CB70" name="msvalidate.01"/>
 <title>Flotas en República Dominicana · The Fleet Radar</title>
-<meta name="description" content="Análisis de gestión de flotas en República Dominicana: temas, casos de uso, sectores y ciudades cubiertos por The Fleet Radar.">
-<meta name="author" content="Pulpo — getpulpo.com">
-<meta property="og:title" content="Flotas en República Dominicana · The Fleet Radar">
-<meta property="og:description" content="Análisis de gestión de flotas en República Dominicana: temas, casos de uso, sectores y ciudades cubiertos por The Fleet Radar.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://thefleetradar.com/mercados/republica-dominicana/">
-<meta property="og:site_name" content="The Fleet Radar · by Pulpo">
-<meta property="og:locale" content="es_ES">
-<meta property="og:image" content="https://thefleetradar.com/og-default.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Flotas en República Dominicana · The Fleet Radar">
-<meta name="twitter:description" content="Análisis de gestión de flotas en República Dominicana: temas, casos de uso, sectores y ciudades cubiertos por The Fleet Radar.">
-<meta name="twitter:image" content="https://thefleetradar.com/og-default.png">
-<link rel="canonical" href="https://thefleetradar.com/mercados/republica-dominicana/">
-<link rel="alternate" type="application/rss+xml" title="The Fleet Radar · by Pulpo" href="/rss.xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/radar.css">
-<style>:root{ --accent:#c9a84c; --accent-2:#1e7fcb; }</style>
+<meta content="Análisis de gestión de flotas en República Dominicana: temas, casos de uso, sectores y ciudades cubiertos por The Fleet Radar." name="description"/>
+<meta content="Pulpo — getpulpo.com" name="author"/>
+<meta content="Flotas en República Dominicana · The Fleet Radar" property="og:title"/>
+<meta content="Análisis de gestión de flotas en República Dominicana: temas, casos de uso, sectores y ciudades cubiertos por The Fleet Radar." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://thefleetradar.com/mercados/republica-dominicana/" property="og:url"/>
+<meta content="The Fleet Radar · by Pulpo" property="og:site_name"/>
+<meta content="es_ES" property="og:locale"/>
+<meta content="https://thefleetradar.com/og-default.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Flotas en República Dominicana · The Fleet Radar" name="twitter:title"/>
+<meta content="Análisis de gestión de flotas en República Dominicana: temas, casos de uso, sectores y ciudades cubiertos por The Fleet Radar." name="twitter:description"/>
+<meta content="https://thefleetradar.com/og-default.png" name="twitter:image"/>
+<link href="https://thefleetradar.com/mercados/republica-dominicana/" rel="canonical"/>
+<link href="/rss.xml" rel="alternate" title="The Fleet Radar · by Pulpo" type="application/rss+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="/assets/radar.css" rel="stylesheet"/>
+<style>
+  :root{
+    --accent:#ce1126;
+    --accent-2:#002d62;
+    --cover-grad-a:rgba(206,17,38,0.18);
+    --cover-grad-b:rgba(0,45,98,0.14);
+  }
+  .mkt-hero{
+    background:var(--near-black);
+    background-image:
+      radial-gradient(ellipse 70% 50% at 20% 80%, var(--cover-grad-a) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 80% 20%, var(--cover-grad-b) 0%, transparent 55%),
+      radial-gradient(ellipse 100% 100% at 50% 50%, #0d1521 0%, #060a10 100%);
+    padding:80px 32px 64px;border-bottom:1px solid rgba(255,255,255,.06);
+  }
+  .mkt-hero-inner{max-width:1100px;margin:0 auto}
+  .mkt-flag{font-size:56px;line-height:1;margin-bottom:16px}
+  .mkt-kicker{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-2);margin-bottom:18px;display:block}
+  .mkt-title{font-family:'Fraunces',serif;font-size:clamp(40px,6vw,72px);font-weight:900;line-height:.98;letter-spacing:-1.2px;color:#fff;margin-bottom:22px}
+  .mkt-title span{color:var(--accent-2)}
+  .mkt-deck{font-size:16px;color:rgba(255,255,255,.68);max-width:680px;line-height:1.75;border-left:2px solid var(--accent-2);padding-left:20px}
+  .mkt-updated{margin-top:24px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+  .mkt-main{max-width:1100px;margin:0 auto;padding:72px 32px 100px}
+  .mkt-body p{font-size:16px;line-height:1.8;color:var(--text-mid);margin-bottom:18px}
+  .mkt-body h2{font-family:'Fraunces',serif;font-size:30px;font-weight:700;color:var(--text-dark);margin-top:56px;margin-bottom:20px;letter-spacing:-.3px;line-height:1.15}
+  .mkt-body h3{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:var(--text-dark);margin-top:28px;margin-bottom:12px}
+  .mkt-body strong{color:var(--text-dark)}
+  .mkt-body a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+  .mkt-body a:hover{color:var(--accent-2)}
+  .rule-list{list-style:none;margin:20px 0 0;padding:0}
+  .rule-list li{padding:18px 22px;background:var(--cream);border-left:3px solid var(--accent);margin-bottom:10px}
+  .rule-list li strong{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  .rule-list li.soon{border-left-color:var(--accent-2)}
+  .rule-list li.soon strong{color:var(--accent-2)}
+  .rule-list li.opportunity{border-left-color:var(--burgundy)}
+  .rule-list li.opportunity strong{color:var(--burgundy)}
+  .players-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:20px}
+  .player-cat{padding:22px 24px;background:#fff;border:1px solid var(--border-dark);border-left:3px solid var(--accent)}
+  .player-cat h4{font-family:'Fraunces',serif;font-size:16px;font-weight:700;color:var(--text-dark);margin-bottom:10px}
+  .player-cat ul{list-style:none;margin:0;padding:0}
+  .player-cat li{font-size:13px;color:var(--text-mid);padding:4px 0;line-height:1.5}
+  .figures-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px}
+  .figure-card{padding:22px;background:var(--navy);color:#fff;border-left:3px solid var(--accent-2)}
+  .figure-num{font-family:'Fraunces',serif;font-size:36px;font-weight:900;line-height:1;color:#fff;margin-bottom:6px;letter-spacing:-.5px}
+  .figure-caption{font-size:13px;line-height:1.55;color:rgba(255,255,255,.72)}
+  .figure-source{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-top:10px}
+  .related-block{background:var(--warm-sand);padding:32px;margin-top:32px;border-radius:4px}
+  .related-block h3{font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin:0 0 12px 0;color:var(--text-dark)}
+  .related-block a{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--border-dark);text-decoration:none;color:inherit}
+  .related-block a:last-child{border-bottom:none}
+  .related-block a:hover .ed-title{color:var(--navy)}
+  .ed-title{font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:var(--text-dark)}
+  .ed-date{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-light);white-space:nowrap;align-self:center}
+  .linked-topics{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:20px}
+  .linked-topic{display:block;padding:20px 22px;background:#fff;border:1px solid var(--border-dark);border-left:3px solid var(--accent);text-decoration:none;color:inherit}
+  .linked-topic:hover{border-left-color:var(--accent-2)}
+  .linked-topic .lt-kicker{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:6px}
+  .linked-topic .lt-title{font-family:'Fraunces',serif;font-size:17px;font-weight:700;color:var(--text-dark);line-height:1.25;margin-bottom:4px}
+  .linked-topic .lt-body{font-size:13px;color:var(--text-mid);line-height:1.55}
+  .mkt-cta{background:var(--warm-sand);padding:56px 32px;text-align:center;margin-top:56px;border-radius:4px}
+  .mkt-cta h3{font-family:'Fraunces',serif;font-size:24px;font-weight:700;color:var(--text-dark);margin-bottom:14px;letter-spacing:-.2px;line-height:1.3}
+  .mkt-cta p{font-size:15px;color:var(--text-mid);line-height:1.7;max-width:560px;margin:0 auto 24px}
+  .mkt-cta a{display:inline-block;padding:12px 28px;background:var(--navy);color:#fff;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border-radius:2px}
+  .mkt-body > p,.mkt-body > h2,.mkt-body > h3,.mkt-body > ul,.mkt-body > ol{max-width:820px}
+  @media (max-width:720px){
+    .mkt-hero{padding:56px 20px 48px}
+    .mkt-main{padding:48px 20px 80px}
+    .figures-grid{grid-template-columns:1fr}
+    .related-block a{flex-direction:column;gap:4px}
+    .ed-date{align-self:flex-start}
+  }
+</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsMediaOrganization","@id":"https://thefleetradar.com/#organization","name":"The Fleet Radar · by Pulpo","alternateName":"The Fleet Radar","url":"https://thefleetradar.com","description":"Publicación editorial semanal de Pulpo sobre gestión de flotas, combustible, pagos, telemática, logística, IA, electrificación y regulación en México, España, Latinoamérica, Europa y Estados Unidos.","logo":{"@type":"ImageObject","url":"https://thefleetradar.com/og-default.png","width":1200,"height":630},"image":"https://thefleetradar.com/og-default.png","foundingDate":"2026-04-14","inLanguage":"es","areaServed":["MX","ES","CO","CL","AR","PE","EC","UY","DO","US"],"parentOrganization":{"@type":"Organization","name":"Pulpo","url":"https://getpulpo.com","sameAs":["https://www.linkedin.com/company/getpulpo"]},"publisher":{"@type":"Organization","name":"Pulpo","url":"https://getpulpo.com"},"sameAs":["https://getpulpo.com","https://www.linkedin.com/company/getpulpo"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://thefleetradar.com/#website","url":"https://thefleetradar.com","name":"The Fleet Radar · by Pulpo","description":"Inteligencia semanal de mercado para el sector de gestión de flotas.","publisher":{"@id":"https://thefleetradar.com/#organization"},"inLanguage":"es-ES"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Flotas en República Dominicana · The Fleet Radar","description":"Análisis de gestión de flotas en República Dominicana: temas, casos de uso, sectores y ciudades cubiertos por The Fleet Radar.","url":"https://thefleetradar.com/mercados/republica-dominicana/","isPartOf":{"@id":"https://thefleetradar.com/#website"},"publisher":{"@id":"https://thefleetradar.com/#organization"},"inLanguage":"es-ES","mainEntity":{"@type":"ItemList","numberOfItems":70}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"The Fleet Radar","item":"https://thefleetradar.com/"},{"@type":"ListItem","position":2,"name":"República Dominicana","item":"https://thefleetradar.com/mercados/republica-dominicana/"}]}</script>
-<script defer src="/_vercel/insights/script.js"></script>
-<script defer src="/_vercel/speed-insights/script.js"></script>
-<link rel="icon" type="image/svg+xml" href="/assets/brand/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/brand/favicon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/brand/apple-touch-icon.png">
-<link rel="alternate" hreflang="es-419" href="https://thefleetradar.com/mercados/republica-dominicana/">
-<link rel="alternate" hreflang="x-default" href="https://thefleetradar.com/">
+<script defer="" src="/_vercel/insights/script.js"></script>
+<script defer="" src="/_vercel/speed-insights/script.js"></script>
+<link href="/assets/brand/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/assets/brand/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="/assets/brand/favicon-16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="/assets/brand/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="https://thefleetradar.com/mercados/republica-dominicana/" hreflang="es-419" rel="alternate"/>
+<link href="https://thefleetradar.com/" hreflang="x-default" rel="alternate"/>
 <style id="newsletter-css">
 .newsletter-band{background:#0d1521;padding:56px 32px;border-top:1px solid rgba(255,255,255,.08)}
 .newsletter-inner{max-width:900px;margin:0 auto;display:flex;gap:48px;align-items:center;flex-wrap:wrap}
@@ -61,38 +133,185 @@
 </head>
 <body>
 <header class="topbar">
-  <a href="/" class="topbar-brand">The Fleet Radar <span>by Pulpo</span></a>
-  <div class="topbar-meta">Hub editorial</div>
-  <nav class="topbar-nav">
-    <a href="/" class="nav-extra">Última edición</a>
-    <a href="/archive.html">Archivo</a>
-    <a href="https://www.getpulpo.com/" class="cta" target="_blank" rel="noopener">Pulpo ↗</a>
-  </nav>
+<a class="topbar-brand" href="/">The Fleet Radar <span>by Pulpo</span></a>
+<div class="topbar-meta">Hub editorial</div>
+<nav class="topbar-nav">
+<a class="nav-extra" href="/">Última edición</a>
+<a href="/archive.html">Archivo</a>
+<a class="cta" href="https://www.getpulpo.com/" rel="noopener" target="_blank">Pulpo ↗</a>
+</nav>
 </header>
-<section class="hub-hero">
-  <div class="container">
-    <span class="hub-eyebrow">Mercado · 🇩🇴</span>
-    <h1 class="hub-title">Flotas en República Dominicana</h1>
-    <p class="hub-intro">Análisis de gestión de flotas en República Dominicana: temas, casos de uso, sectores y ciudades cubiertos por The Fleet Radar.</p>
-  </div>
+<section class="mkt-hero">
+<div class="mkt-hero-inner">
+<div class="mkt-flag">🇩🇴</div>
+<span class="mkt-kicker">Mercado · República Dominicana · 2026</span>
+<h1 class="mkt-title">Flotas en <span>República Dominicana</span> 2026</h1>
+<p class="mkt-deck">República Dominicana tiene una de las tasas de motorización más altas del Caribe, con cerca de 5 millones de vehículos en un país de 11 millones de habitantes. La Ley 63-17 de Movilidad, Transporte Terrestre, Tránsito y Seguridad Vial creó el INTRANT en 2017 y modernizó el marco regulatorio. El turismo —aeropuertos a resorts— y la construcción son los sectores tractores de la flota.</p>
+<div class="mkt-updated">Actualizado · 24 de mayo de 2026</div>
+</div>
 </section>
-<!-- AUTOGEN: pillar-pages-list START -->
-<section class="hub-autogen container">
-  <p class="hub-empty-state">Estamos preparando la cobertura editorial sobre flotas en República Dominicana. Mientras tanto puedes explorar las <a href="/archive.html">ediciones publicadas</a> de The Fleet Radar.</p>
+<main class="mkt-main">
+<div class="mkt-body">
+<p>República Dominicana ha vivido una reforma regulatoria reciente en transporte: la Ley 63-17 de Movilidad, Transporte Terrestre, Tránsito y Seguridad Vial, aprobada en 2017, creó el INTRANT (Instituto Nacional de Tránsito y Transporte Terrestre) como autoridad unificada y reordenó las competencias antes dispersas entre múltiples instituciones. El proceso de implementación sigue en curso.</p>
+<p>El parque vehicular ronda los 5 millones de unidades, con una tasa de motorización entre las más altas del Caribe. La concentración urbana en el Gran Santo Domingo y Santiago de los Caballeros, sumada al corredor turístico Punta Cana / Bávaro, define la geografía de la flota: turismo (transporte aeropuerto-resort), distribución urbana, construcción y zonas francas.</p>
+<p>El sector construcción —con Cemex y Domicem como cementeras principales— y las zonas francas (textil, dispositivos médicos, electrónica) generan demanda sostenida de flota pesada y de distribución. La industria del ron y tabaco mantienen un componente exportador relevante.</p>
+<h2>Regulación viva</h2>
+<ul class="rule-list">
+<li>
+<strong>Activo · INTRANT — Instituto Nacional de Tránsito y Transporte Terrestre</strong>
+        Creado por la Ley 63-17 (2017) como autoridad rectora de transporte terrestre, tránsito y seguridad vial. Asumió competencias antes dispersas entre la AMET, la Oficina Técnica de Transporte Terrestre y otros entes. Define normativa, otorga concesiones y regula el sector.
+      </li>
+<li>
+<strong>Activo · Ley 63-17 — Movilidad, Transporte Terrestre, Tránsito y Seguridad Vial</strong>
+        Marco normativo unificado vigente desde 2017. Establece categorías de licencia, requisitos de empresas de transporte, normas técnicas vehiculares e infracciones. La implementación operativa avanza por fases, con énfasis en seguridad vial y formalización del transporte público.
+      </li>
+<li>
+<strong>Activo · DGII — Dirección General de Impuestos Internos</strong>
+        Gestiona el régimen tributario incluyendo el ITBIS (impuesto a la transferencia de bienes y servicios) sobre combustibles y servicios de transporte. La factura electrónica (e-CF) avanza en implementación obligatoria por fases para grandes y medianos contribuyentes.
+      </li>
+<li>
+<strong>Activo · Refidomsa PDV — Refinería Dominicana de Petróleo</strong>
+        Refinería estatal que abastece parte de la demanda nacional de derivados del petróleo. La política de precios de combustibles es revisada semanalmente por el Ministerio de Industria, Comercio y MiPymes (MICM), referencia clave para la planificación de costos de flota.
+      </li>
+<li>
+<strong>soon · En desarrollo — Reglamentos secundarios de la Ley 63-17</strong>
+        El INTRANT continúa desarrollando reglamentos específicos para transporte de carga, materiales peligrosos y movilidad urbana. La adopción de telemetría sigue siendo voluntaria y concentrada en flotas formales medianas y grandes.
+      </li>
+</ul>
+<h2>Players activos por categoría</h2>
+<p>Empresas con presencia relevante en el mercado de República Dominicana. El listado se amplía según cobertura editorial.</p>
+<div class="players-grid">
+<div class="player-cat">
+<h4>Combustible y energía</h4>
+<ul>
+<li>Sunix · operador local con presencia destacada en red minorista</li>
+<li>Texaco · presencia tradicional con red en corredores principales</li>
+<li>Shell · red B2B con tarjeta flota</li>
+<li>Refidomsa PDV · refinería estatal abastecedora del mercado</li>
+</ul>
+</div>
+<div class="player-cat">
+<h4><a class="int-link" href="/temas/telematica-flotas-mexico-2026/">Telemática</a> y GPS</h4>
+<ul>
+<li>Geotab · entrada gradual vía distribuidores caribeños</li>
+<li>Movitel · proveedor local con cobertura nacional</li>
+<li>Track Solutions · solución dominicana para flotas medianas</li>
+<li>Samsara · entrada en flotas enterprise</li>
+</ul>
+</div>
+<div class="player-cat">
+<h4><a class="int-link" href="/temas/renting-leasing-flota-espana-2026/">Renting</a> y servicios</h4>
+<ul>
+<li>Magna Motors · concesionario Toyota con servicios de flota</li>
+<li>Santo Domingo Motors · BMW y renting corporativo</li>
+<li>Avelino Abreu · concesionarios multimarca con postventa de flota</li>
+</ul>
+</div>
+<div class="player-cat">
+<h4>Fabricantes relevantes</h4>
+<ul>
+<li>Toyota · Hilux y Hiace como vehículos dominantes en flota corporativa y turismo</li>
+<li>Hyundai · H1 y camiones HD en distribución urbana</li>
+<li>Mitsubishi · L200 y Fuso en carga media</li>
+<li>Mercedes-Benz · Sprinter en turismo aeropuerto-resort</li>
+<li>Foton y JAC · entrada china en carga media y distribución</li>
+</ul>
+</div>
+</div>
+<h2>Tipos de flota dominantes</h2>
+<ul>
+<li><strong>Turismo aeropuerto-resort</strong> — Punta Cana, Bávaro, La Romana y Puerto Plata como principales polos turísticos. Flotas de Sprinter, Hiace y autobuses operan traslados entre los aeropuertos internacionales (Punta Cana, Las Américas) y los resorts. Operación de altísima estacionalidad.</li>
+<li><strong>Cemento y construcción</strong> — Cemex, Domicem y Cementos Cibao operan flotas de mixers, volquetes y tractores. Demanda sostenida por inversión hotelera y obra pública. Concentración en el Gran Santo Domingo y zonas turísticas en expansión.</li>
+<li><strong>Zonas francas y exportación</strong> — El régimen de zonas francas concentra industrias de textil, dispositivos médicos y electrónica. Flotas de distribución entre parques industriales y puertos (Caucedo, Haina). Conexión crítica con la cadena de exportación a EE.UU.</li>
+<li><strong>Corredor Santo Domingo-Santiago</strong> — Eje logístico principal del país por la Autopista Duarte. Tractocamiones de larga distancia entre la capital y el Cibao. Densidad alta de tráfico mixto carga-pasajeros.</li>
+<li><strong>Distribución urbana y consumo</strong> — Cadenas de supermercados (Jumbo, La Sirena, Bravo), bebidas (Cervecería Nacional Dominicana) y telecomunicaciones con flotas propias de distribución en Santo Domingo y Santiago. Crecimiento en operadores de delivery y e-commerce.</li>
+</ul>
+<h2>Cifras útiles</h2>
+<div class="figures-grid">
+<div class="figure-card">
+<div class="figure-num">~5M</div>
+<div class="figure-caption">vehículos en el parque automotor dominicano, con alta tasa de motorización para la región caribeña</div>
+<div class="figure-source">INTRANT · 2025</div>
+</div>
+<div class="figure-card">
+<div class="figure-num">~16%</div>
+<div class="figure-caption">participación estimada del sector transporte y logística en el PIB de República Dominicana</div>
+<div class="figure-source">Banco Central · análisis sectorial</div>
+</div>
+<div class="figure-card">
+<div class="figure-num">#1 Caribe</div>
+<div class="figure-caption">Punta Cana es el principal aeropuerto turístico del Caribe por volumen de pasajeros, eje de demanda de flotas de traslado</div>
+<div class="figure-source">JAC / DGAC · 2025</div>
+</div>
+<div class="figure-card">
+<div class="figure-num">2017</div>
+<div class="figure-caption">año de creación del INTRANT bajo la Ley 63-17, que unificó el marco regulatorio del transporte terrestre</div>
+<div class="figure-source">INTRANT · 2017</div>
+</div>
+</div>
+<h2>Temas relacionados</h2>
+<div class="linked-topics">
+<a class="linked-topic" href="/temas/telematica-flotas-mexico-2026/">
+<div class="lt-kicker">Tema · Referencia</div>
+<div class="lt-title">Telemática para flotas · Referencia LatAm</div>
+<div class="lt-body">Players y benchmarks del sector de telemática aplicables al Caribe.</div>
+</a>
+<a class="linked-topic" href="/mercados/latam/">
+<div class="lt-kicker">Mercado · Regional</div>
+<div class="lt-title">Flotas en LatAm · Panorama 2026</div>
+<div class="lt-body">Tendencias transversales que impactan al Caribe y Centroamérica.</div>
+</a>
+<a class="linked-topic" href="/temas/compliance-flotas-mexico-2026/">
+<div class="lt-kicker">Tema · Regulación</div>
+<div class="lt-title">Cumplimiento normativo en flotas</div>
+<div class="lt-body">Metodologías de compliance aplicables al marco de la Ley 63-17.</div>
+</a>
+</div>
+<h2>Ediciones con material de República Dominicana</h2>
+<div class="related-block">
+<h3>The Fleet Radar · by Pulpo</h3>
+<a href="/magazines/2026-04-20-radar-fleet-by-pulpo.html">
+<span class="ed-title">Nº 3 · Flota pesada y tendencias LatAm</span>
+<span class="ed-date">20 abril 2026</span>
+</a>
+<a href="/magazines/2026-05-11-radar-fleet-by-pulpo.html">
+<span class="ed-title">Nº 7 · Tendencias de gestión de flotas</span>
+<span class="ed-date">11 mayo 2026</span>
+</a>
+</div>
+<div class="mkt-cta">
+<h3>Pulpo Hub — plataforma con foco en mercados en formalización</h3>
+<p>República Dominicana avanza en formalizar su sector flotero bajo la Ley 63-17. Pulpo Hub se integra con esquemas de facturación electrónica y control operativo. El equipo puede evaluar adaptación para flotas dominicanas en turismo, construcción y zonas francas.</p>
+<a href="https://www.getpulpo.com/" rel="noopener" target="_blank">Ver Pulpo en acción</a>
+</div>
+</div>
+</main>
+<section class="pillar-sources">
+<div class="container">
+<h2 class="pillar-sources-title">Fuentes y referencias</h2>
+<ul class="sources-list">
+<li class="source-item"><a class="source-link" href="https://www.intrant.gob.do/" rel="noopener nofollow" target="_blank">INTRANT — Instituto Nacional de Tránsito y Transporte Terrestre</a><span class="source-note"> — Autoridad rectora del transporte terrestre y tránsito bajo la Ley 63-17</span></li>
+<li class="source-item"><a class="source-link" href="https://dgii.gov.do/" rel="noopener nofollow" target="_blank">DGII — Dirección General de Impuestos Internos</a><span class="source-note"> — Régimen tributario, ITBIS sobre combustibles y facturación electrónica (e-CF)</span></li>
+<li class="source-item"><a class="source-link" href="https://www.micm.gob.do/" rel="noopener nofollow" target="_blank">MICM — Ministerio de Industria, Comercio y MiPymes</a><span class="source-note"> — Política de precios de combustibles y regulación del comercio interno</span></li>
+<li class="source-item"><a class="source-link" href="https://www.refidomsa.com.do/" rel="noopener nofollow" target="_blank">Refidomsa PDV — Refinería Dominicana de Petróleo</a><span class="source-note"> — Refinería estatal y abastecedora del mercado de derivados del petróleo</span></li>
+<li class="source-item"><a class="source-link" href="https://www.bancentral.gov.do/" rel="noopener nofollow" target="_blank">Banco Central de la República Dominicana</a><span class="source-note"> — Estadísticas económicas, participación sectorial en el PIB y comercio exterior</span></li>
+<li class="source-item"><a class="source-link" href="https://www.one.gob.do/" rel="noopener nofollow" target="_blank">ONE — Oficina Nacional de Estadística</a><span class="source-note"> — Datos del parque vehicular, movilidad y demografía dominicana</span></li>
+</ul>
+<p class="sources-note">Datos cuantitativos sin fuente específica provienen de análisis editorial basado en fuentes del sector.</p>
+</div>
 </section>
-<!-- AUTOGEN: pillar-pages-list END -->
 <section class="newsletter-band">
-  <div class="newsletter-inner">
-    <div class="newsletter-copy">
-      <h2 class="newsletter-title">The Fleet Radar · cada lunes a las 7:00</h2>
-      <p class="newsletter-sub">Inteligencia semanal para el sector de gestión de flotas. Sin spam. Cancela cuando quieras.</p>
-    </div>
-    <form class="newsletter-form" id="nr-form" onsubmit="nrSubmit(event)">
-      <input class="newsletter-input" type="email" name="email" placeholder="tu@empresa.com" required autocomplete="email">
-      <button class="newsletter-btn" type="submit">Suscribirme</button>
-    </form>
-    <p class="newsletter-msg" id="nr-msg" style="display:none"></p>
-  </div>
+<div class="newsletter-inner">
+<div class="newsletter-copy">
+<h2 class="newsletter-title">The Fleet Radar · cada lunes a las 7:00</h2>
+<p class="newsletter-sub">Inteligencia semanal para el sector de gestión de flotas. Sin spam. Cancela cuando quieras.</p>
+</div>
+<form class="newsletter-form" id="nr-form" onsubmit="nrSubmit(event)">
+<input autocomplete="email" class="newsletter-input" name="email" placeholder="tu@empresa.com" required="" type="email"/>
+<button class="newsletter-btn" type="submit">Suscribirme</button>
+</form>
+<p class="newsletter-msg" id="nr-msg" style="display:none"></p>
+</div>
 </section>
 <script>
 async function nrSubmit(e){
@@ -121,20 +340,20 @@ async function nrSubmit(e){
 }
 </script>
 <section class="closing">
-  <div class="closing-logo">The Fleet Radar <span>by Pulpo</span></div>
-  <div class="closing-tagline">Inteligencia semanal para el sector de gestión de flotas</div>
-  <div class="closing-divider"></div>
-  <p style="font-size:13px;color:rgba(255,255,255,0.42);max-width:520px;margin:0 auto 32px;line-height:1.7;">Este hub forma parte de The Fleet Radar, publicación editorial dentro del plataforma de Pulpo. Cada edición semanal añade nuevas referencias y enlaces a este índice.</p>
-  <div class="closing-links" style="margin-top:24px;border-top:none;padding-top:0;">
-    <a href="/">Última edición</a>
-    <a href="/archive.html">Archivo</a>
-    <a href="/temas/">Temas</a>
-    <a href="/casos-uso/">Casos de uso</a>
-    <a href="/sectores/">Sectores</a>
-    <a href="/ciudades/">Ciudades</a>
-    <a href="/about/">About</a>
-    <a href="https://www.getpulpo.com/" target="_blank" rel="noopener">Pulpo</a>
-  </div>
+<div class="closing-logo">The Fleet Radar <span>by Pulpo</span></div>
+<div class="closing-tagline">Inteligencia semanal para el sector de gestión de flotas</div>
+<div class="closing-divider"></div>
+<p style="font-size:13px;color:rgba(255,255,255,0.42);max-width:520px;margin:0 auto 32px;line-height:1.7;">Este hub forma parte de The Fleet Radar, publicación editorial dentro del plataforma de Pulpo. Cada edición semanal añade nuevas referencias y enlaces a este índice.</p>
+<div class="closing-links" style="margin-top:24px;border-top:none;padding-top:0;">
+<a href="/">Última edición</a>
+<a href="/archive.html">Archivo</a>
+<a href="/temas/">Temas</a>
+<a href="/casos-uso/">Casos de uso</a>
+<a href="/sectores/">Sectores</a>
+<a href="/ciudades/">Ciudades</a>
+<a href="/about/">About</a>
+<a href="https://www.getpulpo.com/" rel="noopener" target="_blank">Pulpo</a>
+</div>
 </section>
 </body>
 </html>
