@@ -725,3 +725,7 @@ a.story-tag:hover{opacity:.82}
 /* ── Brand links (in-body player mentions) ──────────────────────────── */
 .brand-link{color:inherit;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px;text-decoration-color:rgba(45,55,70,.28)}
 .brand-link:hover{text-decoration-color:var(--accent)}
+
+/* ── External institution links ─────────────────────────────────── */
+.ext-link{color:inherit;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px;text-decoration-color:rgba(45,55,70,.28)}
+.ext-link:hover{text-decoration-color:var(--accent)}
