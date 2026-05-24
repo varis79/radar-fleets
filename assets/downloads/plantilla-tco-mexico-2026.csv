@@ -1,0 +1,54 @@
+﻿Plantilla TCO por vehículo · México 2026 · The Fleet Radar by Pulpo
+Versión 2026.05 · https://thefleetradar.com/evergreen/checklists/plantilla-coste-vehiculo-mx-2026/
+
+INSTRUCCIONES
+1) Rellena los campos en azul con tus datos reales por unidad o promedio de flota
+2) Las celdas grises se calculan automáticamente (fórmulas Excel/Sheets)
+3) Compara tu % contra el benchmark del sector (columna H)
+4) Las alertas amarillas indican señales de gasto descontrolado
+
+DATOS BASE
+Tipo de vehículo,Auto corporativo / Carga ligera / Camión medio / Tractocamión,
+Año modelo,2024,
+Kilómetros anuales,60000,
+Días operativos/año,260,
+
+CATEGORÍAS DE COSTE (MXN anuales)
+Categoría,Fórmula,Tu cifra,Coste/km,% del total,Benchmark sector %,Alerta,Notas
+🟢 Combustible,litros consumidos × precio/litro,,=C18/$C$13,=C18/$C$31,38-45%,⚠ >50% indica fraude o ineficiencia,"Usa promedio del año, no precio puntual"
+🟢 Mantenimiento preventivo,horas × tarifa + insumos,,=C19/$C$13,=C19/$C$31,10-16%,Si está <8% el preventivo no se hace,Incluye 10k/20k/40k km programados
+🔴 Mantenimiento correctivo,reparaciones no planificadas + inmovilizado,,=C20/$C$13,=C20/$C$31,8-14%,⚠ Si correctivo > preventivo → reactivo,"Incluye remolque, gasto por hora parada"
+🟡 Neumáticos,(coste × cantidad) / vida útil km,,=C21/$C$13,=C21/$C$31,6-10%,⚠ Vida útil <60k km sin causa de ruta,Retreaded reduce ~30% eje trasero
+🟡 Seguros,prima anual,,=C22/$C$13,=C22/$C$31,5-9%,⚠ >12% revisar deducible / siniestralidad,Comparar 3 aseguradoras anualmente
+🔴 Infracciones,multas + recursos,,=C23/$C$13,=C23/$C$31,1-4%,⚠ >5% problema serio de conductores,Tracking por unidad y conductor
+🟢 Personal asignado,salario + bonos + prestaciones,,=C24/$C$13,=C24/$C$31,15-25%,Variable según uso (un conductor / unidad),Distribuir si conductor opera varias
+🟢 Depreciación,(precio compra - valor residual) / años útiles,,=C25/$C$13,=C25/$C$31,10-18%,Calcular sobre valor neto en libros,Estimado: 5 años / 60% residual nuevo
+
+TOTAL COSTE ANUAL,,=SUM(C18:C25),=C27/$C$13,100%,,,
+
+"BENCHMARKS POR TIPO DE UNIDAD (MXN/km, mercado MX 2026)"
+Tipo,Rango bajo,Promedio,Rango alto
+Auto corporativo (sedán/compact),2.80,3.40,4.20
+Carga ligera (van/Sprinter/NPR),4.50,5.20,6.00
+Camión medio (clase 5/6),5.80,6.90,8.50
+Tractocamión (clase 8),9.00,11.20,14.00
+
+SEÑALES DE ALERTA — REVISIÓN INMEDIATA
+1. Correctivo > Preventivo en valor anual → operación reactiva
+2. Combustible >50% del total → posible fraude o ineficiencia ruta
+3. Vida útil neumáticos <60.000 km sin causa de ruta → sobrecarga/velocidad
+4. Infracciones >5% → tracking de conductor / bonos por seguridad
+5. TCO unitario >120% del benchmark sector → revisar todas las categorías
+6. Sin tracking de combustible por unidad → habilitar PulpoPay o similar
+
+FUENTES Y REFERENCIAS
+The Fleet Radar — Plantilla TCO MX 2026
+https://thefleetradar.com/evergreen/checklists/plantilla-coste-vehiculo-mx-2026/
+
+SAT — Combustible y deducciones https://www.sat.gob.mx/
+IMSS — Personal de operación https://www.imss.gob.mx/
+INFONAVIT — Aportes https://portalmx.infonavit.org.mx/
+NAFIN — Financiamiento de unidades https://www.nafin.com.mx/
+
+¿Necesitas centralizar TCO de toda tu flota?
+"Pulpo (getpulpo.com) calcula TCO en tiempo real con datos de combustible, mantenimiento y siniestros agregados por unidad y conductor."

@@ -28,8 +28,15 @@ Exit codes:
   0 — OK (ninguna página falla)
   1 — Al menos una página falla (R1 o R2 ≥ 6)
 """
-import re
 import sys
+# Python añade scripts/ a sys.path[0] al ejecutar este file; eso hace que
+# `import select` resuelva nuestro scripts/select.py en vez del stdlib.
+# Limpiamos antes de cualquier import que pueda llevar a `select`.
+if sys.path and sys.path[0].endswith("/scripts"):
+    sys.path.pop(0)
+
+import os
+import re
 import argparse
 from pathlib import Path
 from bs4 import BeautifulSoup
@@ -158,14 +165,16 @@ def assess(issues: dict) -> tuple[str, str]:
 
 
 def changed_files() -> list[Path]:
-    """Files modified vs origin/main, pillars only."""
-    import subprocess  # lazy import (evita conflicto con scripts/select.py)
-    result = subprocess.run(
-        ["git", "diff", "--name-only", "origin/main"],
-        capture_output=True, text=True, cwd=ROOT,
-    )
+    """Files modified vs origin/main, pillars only.
+
+    Usamos os.popen para evitar el conflicto entre `subprocess`→`select`
+    y nuestro scripts/select.py.
+    """
+    cmd = "git diff --name-only origin/main"
+    with os.popen(f"cd '{ROOT}' && {cmd}") as p:
+        output = p.read()
     paths = []
-    for line in result.stdout.splitlines():
+    for line in output.splitlines():
         p = ROOT / line
         if p.exists() and p.name == "index.html" and any(
             seg in line for seg in ("temas/", "mercados/", "casos-uso/",

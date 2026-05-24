@@ -79,6 +79,12 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://thefleetradar.com/mercados/europa/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://thefleetradar.com/mercados/</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -109,7 +115,19 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://thefleetradar.com/mercados/uk/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://thefleetradar.com/mercados/uruguay/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://thefleetradar.com/mercados/usa/</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
@@ -206,6 +224,12 @@
   </url>
   <url>
     <loc>https://thefleetradar.com/temas/dgt-flotas-comerciales-regulacion-2026/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://thefleetradar.com/temas/distribucion-regional-espana-2026/</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
@@ -446,6 +470,24 @@
   </url>
   <url>
     <loc>https://thefleetradar.com/temas/telematica-flotas-mexico-guia-2026/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://thefleetradar.com/temas/transporte-larga-distancia-mexico-2026/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://thefleetradar.com/temas/ultima-milla-electrica-espana-2026/</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://thefleetradar.com/temas/ultima-milla-electrica-mexico-2026/</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>

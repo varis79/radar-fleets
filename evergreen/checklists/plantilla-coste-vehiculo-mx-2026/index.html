@@ -84,6 +84,28 @@
   .alert-box ul{margin:0 0 0 22px;padding:0}
   .alert-box li{font-size:15px;line-height:1.7;color:var(--text-mid);margin-bottom:6px}
 
+  /* Download CTA box */
+  .download-cta{
+    background:linear-gradient(135deg, var(--navy), #0d1f33);color:#fff;
+    padding:36px 32px;margin:48px 0;border-radius:6px;
+    display:grid;grid-template-columns:1fr 1.2fr;gap:32px;align-items:center;
+  }
+  .download-cta h3{font-family:'Fraunces',serif;font-size:22px;font-weight:700;color:#fff;margin:0 0 10px}
+  .download-cta p{color:rgba(255,255,255,.72);font-size:14px;line-height:1.6;margin:0 0 16px}
+  .download-btn{display:inline-block;background:var(--accent);color:#0d1521;padding:14px 24px;border-radius:4px;text-decoration:none;font-weight:700;font-size:14px;letter-spacing:.02em}
+  .download-btn:hover{background:#d4b562}
+  .download-form{display:flex;flex-direction:column;gap:10px}
+  .download-form label{font-size:11px;color:rgba(255,255,255,.55);letter-spacing:.1em;text-transform:uppercase;font-weight:600}
+  .download-form input{padding:12px 14px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#fff;border-radius:4px;font-size:14px;outline:none}
+  .download-form input:focus{border-color:rgba(201,168,76,.6)}
+  .download-form button{padding:12px 20px;background:var(--accent);color:#0d1521;border:none;border-radius:4px;font-weight:700;cursor:pointer;font-size:14px}
+  .download-form button:hover{background:#d4b562}
+  .download-form .dl-direct{font-size:12px;color:rgba(255,255,255,.45);text-align:center;margin-top:4px}
+  .download-form .dl-direct a{color:rgba(255,255,255,.7)}
+  .download-form .dl-msg{font-size:13px;margin:0;padding:8px 0;display:none}
+  .download-form .dl-ok{color:#4ade80;display:block}
+  @media(max-width:720px){.download-cta{grid-template-columns:1fr;gap:20px}}
+
   /* Related / CTA */
   .related-block{background:var(--warm-sand);padding:32px;margin-top:32px;border-radius:4px}
   .related-block h3{font-family:'Fraunces',serif;font-size:17px;font-weight:700;margin:0 0 12px 0;color:var(--text-dark)}
@@ -224,6 +246,47 @@
 </tr>
 </tbody>
 </table>
+
+<div class="download-cta">
+  <div>
+    <h3>Llévate la plantilla a tu hoja de cálculo</h3>
+    <p>Descarga el archivo CSV con las 8 categorías, fórmulas, benchmarks por tipo de unidad y señales de alerta. Ábrelo directamente en Excel o Google Sheets.</p>
+    <a class="download-btn" href="/assets/downloads/plantilla-tco-mexico-2026.csv" download>↓ Descargar CSV</a>
+  </div>
+  <form class="download-form" id="tco-form" onsubmit="tcoSubmit(event)">
+    <label for="tco-email">Avísame de actualizaciones de la plantilla</label>
+    <input id="tco-email" type="email" name="email" placeholder="tu@empresa.com" autocomplete="email" required>
+    <button type="submit">Enviarme la siguiente versión</button>
+    <p class="dl-direct">Recibirás la edición semanal de The Fleet Radar. Sin spam, baja en 1 clic.</p>
+    <p class="dl-msg" id="tco-msg"></p>
+  </form>
+</div>
+<script>
+async function tcoSubmit(e){
+  e.preventDefault();
+  const btn=e.target.querySelector('button');
+  const msg=document.getElementById('tco-msg');
+  const email=e.target.email.value.trim();
+  btn.disabled=true; btn.textContent='Enviando…';
+  try{
+    const r=await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email,source:'tco-mexico-2026'})});
+    if(r.ok){
+      e.target.style.display='none';
+      msg.textContent='✓ Hecho. Te enviaremos la siguiente versión de la plantilla.';
+      msg.className='dl-msg dl-ok';
+    } else {
+      btn.disabled=false; btn.textContent='Enviarme la siguiente versión';
+      msg.textContent='Algo fue mal. Inténtalo de nuevo.';
+      msg.className='dl-msg'; msg.style.color='#fca5a5'; msg.style.display='block';
+    }
+  } catch {
+    btn.disabled=false; btn.textContent='Enviarme la siguiente versión';
+    msg.textContent='Error de conexión.';
+    msg.className='dl-msg'; msg.style.color='#fca5a5'; msg.style.display='block';
+  }
+}
+</script>
+
 <h2>Cómo usar esta plantilla paso a paso</h2>
 <ul class="check-list">
 <li>
