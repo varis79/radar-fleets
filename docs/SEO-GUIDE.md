@@ -80,8 +80,16 @@ publicidad programática, trackers de terceros.
 /sectores/                                 # Verticales industria (19)
   flotas-<sector>-<market>-2026/
 
-/ciudades/                                 # Por ciudad (33)
-  <tema>-flotas-<ciudad>-2026/
+/ciudades/                                 # Por ciudad (51 incl. stubs)
+  <tema>-flotas-<ciudad>-2026/             # Cruces topic×ciudad (32 full)
+  <ciudad>-2026/                           # Stub por ciudad (19, noindex/follow)
+                                           # Auto-creados por discover_entities.py
+
+/corredores/                               # Corredores logísticos (5+)
+  <slug>-2026/                             # T-MEC, California-Baja, etc.
+
+/players/                                  # Páginas marca/empresa (21+)
+  <slug>/                                  # Pulpo + telemáticas + fuel cards + OEMs
 
 /evergreen/                                # Recursos atemporales
   /index.html                              # Listado
@@ -92,14 +100,48 @@ publicidad programática, trackers de terceros.
   /privacidad/                             # Política privacidad
   /terminos/                               # Términos uso
 
-/players/                                  # Stub - hub de marcas (no expuesto aún)
 /assets/
   radar.css                                # CSS único
   brand/                                   # Logo, favicons
   downloads/                               # Plantillas descargables (CSV)
 ```
 
-**Conteos a 2026-05-24**: 189 páginas indexables, 185 URLs en sitemap.
+**Conteos a 2026-05-24** (tras sprint linking):
+- 220+ páginas en disco
+- 201+ URLs en sitemap (stubs noindex/follow excluidos)
+- 51 ciudades (32 full + 19 stubs auto)
+- 5 corredores logísticos (nueva dimensión)
+- 21 players (Pulpo + 10 telemáticas/fuel + 10 OEMs)
+
+### Nueva dimensión: `/corredores/`
+
+Para rutas logísticas estratégicas que generan búsqueda B2B:
+- `california-baja-california-2026` — Cross-border MX-USA Pacífico
+- `nuevo-laredo-laredo-2026` — Cruce fronterizo #1 Norteamérica
+- `t-mec-2026` — Tratado USMCA aplicado al autotransporte
+- `bogota-buenaventura-2026` — Eje logístico colombiano
+- `mexico-queretaro-2026` — Eje industrial automotriz
+
+Cada corredor: full pillar 1.300-1.500 palabras, indexable, JSON-LD Article,
+topbar-meta="Corredor · {nombre}".
+
+### Dimensión `/players/`
+
+Páginas individuales por empresa/marca. Pulpo NO compite con estas — son
+plataformas complementarias (telemáticas, fuel cards) o fabricantes.
+Geotab y Webfleet son PARTNERS oficiales de Pulpo.
+
+Categorías:
+- **Telemática**: samsara, geotab (partner), webfleet (partner), motive,
+  lytx, omnitracs, verizon-connect, trimble
+- **Fuel cards**: wex, edenred
+- **OEMs**: volvo-trucks, scania, man-trucks, iveco-group, daf-trucks,
+  mercedes-benz, kenworth, freightliner, byd, foton (FASE E)
+
+Cada player page: full pillar 1.300-2.000 palabras, indexable, JSON-LD
+Article+Organization, topbar-meta="Plataforma · {Categoría}" o
+"Fabricante · {Categoría}". Mencionan partnership/integración con Pulpo
+donde aplique (sin ser promocional).
 
 ---
 
@@ -210,6 +252,9 @@ Toda WebSite ref usa `@id: https://thefleetradar.com/#website`.
 | Casos de uso | `Caso de uso · {mercado}` |
 | Sectores | `Sector · {mercado}` |
 | Ciudades | `Ciudad · {nombre ciudad}` |
+| Corredores | `Corredor · {nombre}` |
+| Players (telemática) | `Plataforma · {Categoría}` |
+| Players (fabricante) | `Fabricante · {Categoría}` |
 | Evergreen checklist | `Checklist · {mercado}` |
 | Evergreen guía | `Guía · {mercado}` |
 | Legal | `Legal · {tipo}` |
@@ -377,16 +422,19 @@ Cada página pillar tiene además:
 
 | Script | Cuándo correr | Función |
 |---|---|---|
-| `linkify_institutions.py` | Tras gen. pillar | 107+ ext-links a SAT/DGT/ANFAC/etc. |
-| `linkify_topics.py` | Tras gen. pillar | Interlinking entre pillars (topic terms) |
-| `linkify_brands.py` | Tras gen. pillar | Brand mentions a páginas pillar |
-| `inject_story_links.py` | Manual | Magazine stories → pillars/hubs |
+| **`linkify_master.py`** | **Tras cualquier change** | **Sistema unificado: ciudades, marcas, OEMs, corredores, telemáticas, fuel cards, términos genéricos editoriales. Reemplaza progresivamente los linkify_* específicos** |
+| `linkify_institutions.py` | (Legacy, reemplazado por master) | 107+ ext-links a SAT/DGT/ANFAC/etc. |
+| `linkify_topics.py` | (Legacy, reemplazado por master) | Interlinking entre pillars (topic terms) |
+| `linkify_brands.py` | (Legacy, reemplazado por master) | Brand mentions a páginas pillar |
+| **`inject_magazine_tags.py`** | **Tras nueva magazine** | **Convierte `<span class="cover-tag/story-tag">` en `<a>` clickables. TAG_MAPPING ~80 entradas. Cubre 95%+ tags** |
+| `inject_story_links.py` | Manual | Magazine stories → pillars/hubs (legacy parcialmente reemplazado por master) |
 | `inject_edition_backlinks.py` | Manual | Pillars ← magazines que las cubren |
 | `inject_schema_static.py` | Manual | Inyecta JSON-LD missing |
 | `inject_sources.py` | Manual | Añade bloque fuentes al pie |
 | `seo_polish.py` | Tras cualquier change | og:title sync, breadcrumbs, hreflang, ItemList |
 | `patch_home_magazine_seo.py` | Tras nueva edition | og:image, JSON-LD Org+WebSite en home |
 | `rebuild_sitemap.py` | Tras cualquier change | Sitemap completo con lastmod real |
+| **`discover_entities.py`** | **Cron jueves** | **Recorre contenido últimos 14 días, detecta entidades sin página, auto-crea STUBS (ciudades) y reporta candidates (brands/corredores). Genera docs/discovery-log.md** |
 
 ### Quality & maintenance
 
