@@ -79,7 +79,7 @@
 <span class="cover-tag">Infraestructura</span>
 <a class="cover-tag" href="/temas/electrificacion-flotas-mexico-2026/">Electrificación</a>
 </div>
-</section><aside class="did-you-know"><span class="dyk-eyebrow">💡 Sabías qué · ⚖️ Regulación España</span><p class="dyk-body">Un sobrepeso del 5% en eje multiplica por aproximadamente 1,4 el deterioro del pavimento (efecto cuarta potencia documentado por AASHTO y recogido en normativa española). La multa por exceso de peso supera los 4.000 € en infracciones graves de la LOTT.</p></aside>
+</section><aside class="did-you-know dyk-dynamic" data-dyk-loading="" data-dyk-slot="primary"><span class="dyk-eyebrow">💡 Sabías qué</span><p class="dyk-body">Cargando dato del sector…</p></aside>
 <section class="editors-note">
 <div class="container">
 <div class="editors-note-inner">
@@ -333,7 +333,7 @@ Los 1,59 millones de vehículos sin ITV en España no son solo un problema de cu
 <a class="cta-secondary" href="https://www.getpulpo.com/" rel="noopener" target="_blank">Hablar con el equipo →</a>
 </div>
 </section>
-<section class="newsletter-band">
+<aside class="did-you-know dyk-dynamic dyk-secondary" data-dyk-loading="" data-dyk-slot="secondary"><span class="dyk-eyebrow">💡 Otro dato</span><p class="dyk-body">Cargando…</p></aside><section class="newsletter-band">
 <div class="newsletter-inner">
 <div class="newsletter-copy">
 <h2 class="newsletter-title">The Fleet Radar · cada lunes a las 7:00</h2>
@@ -443,5 +443,34 @@ async function nrSubmit(e){
 <span class="footer-meta">Publicación editorial independiente. Análisis no constituye asesoría.</span>
 </div>
 </footer>
-</body>
+<script id="dyk-loader">
+(async function(){
+  try {
+    const r = await fetch('/assets/sabias-que.json', {cache:'force-cache'});
+    if(!r.ok) return;
+    const data = await r.json();
+    const facts = data.facts || [];
+    if(!facts.length) return;
+    const slots = document.querySelectorAll('[data-dyk-slot]');
+    if(!slots.length) return;
+    const used = new Set();
+    function pick(){
+      for(let i=0;i<25;i++){
+        const f = facts[Math.floor(Math.random()*facts.length)];
+        if(!used.has(f.text)){ used.add(f.text); return f; }
+      }
+      return facts[Math.floor(Math.random()*facts.length)];
+    }
+    slots.forEach((slot, i)=>{
+      const f = pick();
+      const eyebrow = slot.querySelector('.dyk-eyebrow');
+      const body = slot.querySelector('.dyk-body');
+      const label = (i===0) ? '💡 Sabías qué' : '💡 Otro dato';
+      if(eyebrow) eyebrow.textContent = label + ' · ' + (f.emoji||'💡') + ' ' + (f.category||'Fleet Radar');
+      if(body) body.textContent = f.text;
+      slot.removeAttribute('data-dyk-loading');
+    });
+  } catch(e){ /* silent */ }
+})();
+</script></body>
 </html>

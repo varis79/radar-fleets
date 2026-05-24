@@ -870,3 +870,45 @@ body > .did-you-know .dyk-body strong{color:#fff}
 
 /* Wider in magazine sections */
 .section .did-you-know{max-width:920px;margin:48px auto}
+
+/* ── DYK secondary box (compacta, accent invertido azul) ────────────── */
+.did-you-know.dyk-secondary{
+  max-width:780px;
+  padding:22px 28px 22px 32px;
+  background:
+    radial-gradient(ellipse at top right, rgba(30,127,203,.18), transparent 55%),
+    radial-gradient(ellipse at bottom left, rgba(201,168,76,.12), transparent 60%),
+    linear-gradient(135deg, #f5f8fb 0%, #fbfaf6 100%);
+  border-color:rgba(30,127,203,.22);
+}
+.did-you-know.dyk-secondary::before{
+  background:linear-gradient(180deg, var(--accent-2,#1e7fcb) 0%, var(--accent,#c9a84c) 100%);
+}
+.did-you-know.dyk-secondary .dyk-eyebrow{
+  color:var(--accent-2,#1e7fcb);
+  background:rgba(30,127,203,.10);
+  border-color:rgba(30,127,203,.22);
+}
+.did-you-know.dyk-secondary .dyk-body{font-size:15px}
+
+/* Loading state — placeholder antes de JS */
+.did-you-know.dyk-dynamic[data-dyk-loading] .dyk-body{
+  opacity:.4;font-style:italic;
+}
+.did-you-know.dyk-dynamic[data-dyk-loading] .dyk-eyebrow{opacity:.6}
+
+/* Dark variant secondary (home cover, magazines) */
+.cover .did-you-know.dyk-secondary,
+body > .did-you-know.dyk-secondary{
+  background:
+    radial-gradient(ellipse at top right, rgba(30,127,203,.22), transparent 55%),
+    radial-gradient(ellipse at bottom left, rgba(201,168,76,.16), transparent 60%),
+    linear-gradient(135deg, #0d1521 0%, #15202b 100%);
+  border-color:rgba(30,127,203,.30);
+}
+.cover .did-you-know.dyk-secondary .dyk-eyebrow,
+body > .did-you-know.dyk-secondary .dyk-eyebrow{
+  color:#7cc4ff;
+  background:rgba(30,127,203,.18);
+  border-color:rgba(30,127,203,.30);
+}

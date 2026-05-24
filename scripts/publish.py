@@ -229,10 +229,12 @@ def publish(today: dt.date | None = None) -> dict:
     update_rss(compose_info["number"], edition_date, cover_headline, cover_deck, permalink_full)
 
     # SEO polish post-publish: og:image en magazine nuevo + sitemap completo
+    # + inyección de cajas DYK dinámicas en la nueva magazine
     try:
         import importlib
         sys.path.insert(0, str(ROOT / "scripts"))
-        for mod_name in ("patch_home_magazine_seo", "rebuild_sitemap", "seo_polish"):
+        for mod_name in ("patch_home_magazine_seo", "rebuild_sitemap",
+                         "seo_polish", "build_facts_json", "inject_dynamic_dyk"):
             try:
                 mod = importlib.import_module(mod_name)
                 if mod_name == "rebuild_sitemap":
@@ -245,6 +247,13 @@ def publish(today: dt.date | None = None) -> dict:
                     mod.process_home()
                     for m in (ROOT / "magazines").glob("*.html"):
                         mod.process_magazine(m)
+                elif mod_name == "build_facts_json":
+                    # Regenera pool JSON + assets/sabias-que.json
+                    mod.main()
+                elif mod_name == "inject_dynamic_dyk":
+                    # Inyecta cajas DYK dinámicas en la nueva magazine
+                    for p in [INDEX_HTML, ROOT / "archive.html"] + list((ROOT / "magazines").glob("*.html")):
+                        mod.inject_home(p)
             except Exception as e:
                 print(f"  ⚠ post-publish SEO hook '{mod_name}' falló: {e}")
     except Exception as e:

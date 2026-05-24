@@ -196,6 +196,27 @@ def main():
             encoding="utf-8",
         )
         print(f"\n  ✅ {JSON_PATH.relative_to(ROOT)} regenerado")
+
+        # Versión PÚBLICA reducida para JS dinámico (home/archive/magazines)
+        public_path = ROOT / "assets/sabias-que.json"
+        public_facts = []
+        for f in facts:
+            cat = f.get("categoria", "💡 Fleet Radar")
+            # Separar emoji del nombre
+            parts = cat.split(" ", 1)
+            emoji = parts[0] if parts and len(parts[0]) <= 4 else "💡"
+            cat_name = parts[1] if len(parts) > 1 else "Fleet Radar"
+            public_facts.append({
+                "emoji": emoji,
+                "category": cat_name,
+                "text": f["fact"],
+                "markets": f.get("markets", []),
+            })
+        public_path.write_text(
+            json.dumps({"facts": public_facts}, ensure_ascii=False, separators=(",", ":")),
+            encoding="utf-8",
+        )
+        print(f"  ✅ {public_path.relative_to(ROOT)} regenerado (versión pública JS)")
     else:
         print(f"\n  [DRY-RUN] No se escribió JSON")
 

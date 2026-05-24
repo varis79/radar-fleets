@@ -221,20 +221,19 @@ def main():
     print(f"  Pool de facts: {len(facts)}")
 
     files = []
-    # Pillars y hubs editoriales
+    # Pillars y hubs editoriales — caja ESTÁTICA semanal (señal SEO de freshness)
     for section in ("temas", "mercados", "casos-uso", "sectores", "ciudades",
                     "corredores", "players", "evergreen"):
         d = ROOT / section
         if d.exists():
             files.extend(sorted(d.rglob("index.html")))
-    # Home + archive + about
-    for top in ("index.html", "archive.html", "about/index.html",
-                "evergreen/index.html"):
-        p = ROOT / top
-        if p.exists() and p not in files:
-            files.append(p)
-    # Magazines
-    files.extend(sorted((ROOT / "magazines").glob("*.html")))
+    # about también recibe caja estática
+    p = ROOT / "about/index.html"
+    if p.exists() and p not in files:
+        files.append(p)
+    # NOTA: home, archive, magazines NO entran aquí. Reciben 2 cajas
+    # DINÁMICAS (cargan facts random en cada recarga vía JS desde
+    # /assets/sabias-que.json). Ver scripts/inject_dynamic_dyk.py.
 
     touched = 0
     by_cat = {}

@@ -9,10 +9,10 @@
 <title>Archivo — The Fleet Radar · by Pulpo</title>
 <meta content="Todas las ediciones de The Fleet Radar · by Pulpo. Inteligencia semanal de mercado para el sector de gestión de flotas. Telemática, pagos, electrificación, regulación." name="description"/>
 <meta content="Pulpo — getpulpo.com" name="author"/>
-<meta content="Archivo — The Fleet Radar · by Pulpo" property="og:title">
-<meta content="Todas las ediciones de The Fleet Radar · by Pulpo. Inteligencia semanal para gestión de flotas." property="og:description">
-<meta content="website" property="og:type"/>
-<meta content="https://thefleetradar.com/archive.html" property="og:url"/>
+<meta content="Archivo — The Fleet Radar · by Pulpo" property="og:title"/>
+<meta content="Todas las ediciones de The Fleet Radar · by Pulpo. Inteligencia semanal para gestión de flotas." property="og:description"/>
+<meta content="website" property="og:type">
+<meta content="https://thefleetradar.com/archive.html" property="og:url">
 <link href="https://thefleetradar.com/archive.html" rel="canonical"/>
 <link href="/rss.xml" rel="alternate" title="The Fleet Radar · by Pulpo" type="application/rss+xml"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -128,7 +128,7 @@
 </a>
 </div>
 </div>
-</main><aside class="did-you-know"><span class="dyk-eyebrow">💡 Sabías qué · 📡 Telemática</span><p class="dyk-body">La FMCSA estimó que el mandato ELD (Electronic Logging Devices) redujo las violaciones por horas de servicio en más del 50% en Estados Unidos, gracias al registro automático y la auditoría en tiempo real. La digitalización del cumplimiento se traduce en menos sanciones y menos accidentes por fatiga.</p></aside>
+</main><aside class="did-you-know dyk-dynamic" data-dyk-loading="" data-dyk-slot="primary"><span class="dyk-eyebrow">💡 Sabías qué</span><p class="dyk-body">Cargando dato del sector…</p></aside>
 <footer class="closing" style="padding:48px 32px 40px;">
 <div class="closing-logo">The Fleet Radar <span>by Pulpo</span></div>
 <div class="closing-tagline">Inteligencia semanal para el sector de gestión de flotas · Cada lunes</div>
@@ -145,7 +145,7 @@
 </div>
 </footer>
 <script defer="" src="/_vercel/insights/script.js"></script>
-<footer class="site-footer">
+<aside class="did-you-know dyk-dynamic dyk-secondary" data-dyk-loading="" data-dyk-slot="secondary"><span class="dyk-eyebrow">💡 Otro dato</span><p class="dyk-body">Cargando…</p></aside><footer class="site-footer">
 <div class="footer-grid">
 <div class="footer-brand">
 <a class="footer-brand-link" href="/">The Fleet Radar <span>by Pulpo</span></a>
@@ -191,5 +191,34 @@
 <span class="footer-meta">Publicación editorial independiente. Análisis no constituye asesoría.</span>
 </div>
 </footer>
-</body>
+<script id="dyk-loader">
+(async function(){
+  try {
+    const r = await fetch('/assets/sabias-que.json', {cache:'force-cache'});
+    if(!r.ok) return;
+    const data = await r.json();
+    const facts = data.facts || [];
+    if(!facts.length) return;
+    const slots = document.querySelectorAll('[data-dyk-slot]');
+    if(!slots.length) return;
+    const used = new Set();
+    function pick(){
+      for(let i=0;i<25;i++){
+        const f = facts[Math.floor(Math.random()*facts.length)];
+        if(!used.has(f.text)){ used.add(f.text); return f; }
+      }
+      return facts[Math.floor(Math.random()*facts.length)];
+    }
+    slots.forEach((slot, i)=>{
+      const f = pick();
+      const eyebrow = slot.querySelector('.dyk-eyebrow');
+      const body = slot.querySelector('.dyk-body');
+      const label = (i===0) ? '💡 Sabías qué' : '💡 Otro dato';
+      if(eyebrow) eyebrow.textContent = label + ' · ' + (f.emoji||'💡') + ' ' + (f.category||'Fleet Radar');
+      if(body) body.textContent = f.text;
+      slot.removeAttribute('data-dyk-loading');
+    });
+  } catch(e){ /* silent */ }
+})();
+</script></body>
 </html>
