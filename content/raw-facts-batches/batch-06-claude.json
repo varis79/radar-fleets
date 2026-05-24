@@ -1,0 +1,2971 @@
+{
+  "metadata": {
+    "generated_for": "The Fleet Radar",
+    "mode": "fact_generation_batch",
+    "date_generated": "2026-05-24",
+    "categories_generated": [
+      "combustible",
+      "telematica",
+      "seguridad",
+      "ultima_milla"
+    ],
+    "total_facts": 85,
+    "coverage_note": "Distribución geográfica equilibrada entre España (28%), México (25%), USA/Internacional (30%), Europa (12%), LatAm (5%). Las categorías combustible y seguridad tienen mayor cobertura de mercados. Última milla prioriza Europa y España por mayor disponibilidad de datos verificables. Telemática predomina en USA y Europa con extrapolaciones justificadas a LatAm.",
+    "limitations": "LatAm fuera de México tiene cobertura limitada por escasez de fuentes verificables en inglés y español con cifras publicadas. Algunos facts de última milla en LatAm se mueven a high_value_unverified_claims por ausencia de fuente primaria local. Los datos de redes abiertas vs cerradas de fuel cards tienen escasa fuente primaria pública: el claim del 1% de ahorro no se incluye como fact. Facts de fraude de combustible en México se apoyan en datos de ASF disponibles públicamente aunque sin URL directa en algunos casos."
+  },
+  "high_value_unverified_claims": [
+    {
+      "claim": "Repostar en una red abierta de tarjetas de combustible puede ahorrar aproximadamente un 1% del gasto total en combustible frente a una red cerrada.",
+      "why_it_would_be_valuable": "Es el fact más accionable de toda la categoría de fuel cards. Conecta la decisión de compra de tarjeta con el TCO sin sonar a proveedor.",
+      "status": "No incluir. No se ha localizado fuente primaria con metodología verificable que cifre exactamente este ahorro. Los datos disponibles provienen de materiales comerciales de emisores de tarjetas.",
+      "suggested_queries": [
+        "open-loop fuel card savings vs closed-loop fleet peer-reviewed study",
+        "merchant acceptance universal fleet card cost benefit analysis",
+        "fuel card network restriction cost fleet operations benchmark NPTC"
+      ],
+      "possible_sources_to_check": [
+        "NPTC Private Fleet studies",
+        "ACFO UK fleet surveys",
+        "ATA fuel procurement report",
+        "Aberdeen Group fleet management"
+      ]
+    },
+    {
+      "claim": "La conciliación manual del gasto en combustible puede consumir entre 5 y 15 horas administrativas al mes en una flota mediana de 50 a 200 vehículos.",
+      "why_it_would_be_valuable": "Convierte un problema de gestión en un coste cuantificable. Muy útil para justificar digitalización ante un CFO.",
+      "status": "No incluir. El rango existe en materiales de consultoras y vendors, pero no se ha localizado estudio metodológicamente independiente que lo respalde con muestra verificable.",
+      "suggested_queries": [
+        "fleet fuel reconciliation manual process hours cost independent study",
+        "fuel expense management labor cost fleet benchmark Aberdeen"
+      ],
+      "possible_sources_to_check": [
+        "Aberdeen Group fleet management benchmark",
+        "Deloitte CFO fleet digitalization",
+        "Fleet Advantage ROI studies"
+      ]
+    },
+    {
+      "claim": "Las estaciones de servicio en autopistas de España pueden cobrar hasta un 15% más por litro que estaciones urbanas en el mismo tramo.",
+      "why_it_would_be_valuable": "Muy accionable para responsables de compras de combustible. Conecta dispersión de precios con decisión de repostaje.",
+      "status": "El diferencial existe y está parcialmente documentado por CNMC. Pero el 15% específico no tiene fuente con fecha verificable reciente. Verificar en informes CNMC 2023-2024 antes de publicar.",
+      "suggested_queries": [
+        "CNMC informe precios carburantes autopista vs urbano diferencial España 2024",
+        "Geoportal carburantes MITECO diferencia autopista ciudad"
+      ],
+      "possible_sources_to_check": [
+        "CNMC informes carburantes",
+        "Geoportal MITECO",
+        "OCU precios gasolina España"
+      ]
+    },
+    {
+      "claim": "El fraude con tarjetas de combustible en flotas públicas mexicanas supera los 100 millones de pesos anuales.",
+      "why_it_would_be_valuable": "Si está documentado en una auditoría de la ASF, es un fact de alto impacto para flotas privadas.",
+      "status": "No incluir como cifra agregada. La ASF ha documentado casos individuales de fraude en dependencias específicas, pero no publica una cifra nacional consolidada de fraude de combustible. Usar casos individuales verificados en su lugar.",
+      "suggested_queries": [
+        "ASF auditoría combustible flota gobierno federal México cifra total",
+        "SFP informe fraude gasolina dependencias federales"
+      ],
+      "possible_sources_to_check": [
+        "Auditoría Superior de la Federación México - informes sectoriales",
+        "Transparencia Presupuestaria México"
+      ]
+    },
+    {
+      "claim": "Una flota de reparto en última milla en ciudad latinoamericana tiene tasas de entrega fallida superiores al 25% en primer intento.",
+      "why_it_would_be_valuable": "Muy relevante para ecommerce en LatAm si está documentado con metodología clara.",
+      "status": "Datos de primer intento fallido en LatAm son escasos y provienen en su mayoría de materiales de operadores privados. No incluir sin fuente verificable regional.",
+      "suggested_queries": [
+        "last mile first attempt delivery failure rate Latin America study",
+        "failed delivery rate ecommerce Mexico Colombia 2023 2024"
+      ],
+      "possible_sources_to_check": [
+        "Capgemini last mile report LatAm",
+        "AMVO ecommerce Mexico logística"
+      ]
+    }
+  ],
+  "coverage_gaps": [
+    {
+      "gap": "Datos de dispersión de precios de combustible entre estaciones de una misma ciudad en México con fuente primaria reciente.",
+      "recommendation": "Consultar el Geoportal de la CRE y los reportes mensuales de Profeco para extraer diferencias de precio entre estaciones en CDMX, Monterrey y Guadalajara. La CRE publica precios por estación y entidad federativa en datos.gob.mx."
+    },
+    {
+      "gap": "Estudios de adopción de telemática en flotas de LatAm fuera de México con cifras de penetración verificables.",
+      "recommendation": "Usar datos de Berg Insight o Ptolemus Consulting para mercados latinoamericanos, marcándolos como consultancy con confidence medium. Alternativamente, usar datos de asociaciones locales como ANDEMOS o RUNT para Colombia."
+    },
+    {
+      "gap": "Coste verificable de entrega fallida en España con metodología publicada.",
+      "recommendation": "UNO Logística España publica informes anuales de última milla. Capgemini tiene estudios europeos. Revisar el Observatorio de Transporte del MITMS para datos de reparto urbano antes de cifrar el coste por entrega fallida."
+    },
+    {
+      "gap": "Datos de robo de carga en Colombia, Chile y Perú con cifras anuales verificables de organismos públicos.",
+      "recommendation": "Para Colombia, consultar RNDC y Ministerio de Transporte. Para Chile, MTT. Para Perú, SUTRAN. TT Club y BSI publican reportes regionales que pueden complementar datos oficiales escasos."
+    }
+  ],
+  "combustible": [
+    {
+      "id": "combustible_001",
+      "fact": "El combustible representa entre el 25% y el 35% del coste operativo total de un camión de carga pesada en España, según el Observatorio de Costes del Transporte de Mercancías por Carretera. En periodos de precio alto del diésel, esa proporción puede superar el 40%, convirtiéndolo en la partida más volátil y difícil de presupuestar.",
+      "source": "Observatorio de Costes del Transporte de Mercancías por Carretera, Ministerio de Transportes y Movilidad Sostenible de España",
+      "source_year": 2024,
+      "source_type": "public_body",
+      "url": null,
+      "markets": [
+        "espana"
+      ],
+      "topics": [
+        "combustible",
+        "coste operativo",
+        "transporte pesado"
+      ],
+      "vehicle_type": [
+        "pesados"
+      ],
+      "tag": "⛽ Combustible",
+      "confidence": "high",
+      "evergreen_score": 4,
+      "strategic_value": "high",
+      "strategic_bucket": [
+        "price_per_liter_visibility",
+        "benchmark",
+        "hidden_cost"
+      ],
+      "fact_style": "cost_benchmark",
+      "why_interesting": "El combustible es la partida más volátil del coste de una flota pesada, pero rara vez se gestiona con la misma granularidad que otros gastos fijos.",
+      "fleet_lesson": "Si el combustible puede representar más del 40% del coste operativo en ciclos de precio alto, no gestionarlo por vehículo y por ruta equivale a presupuestar a ciegas.",
+      "commercial_angle": "Justifica la necesidad de seguimiento por vehículo, ruta y conductor sin mencionar ninguna herramienta específica.",
+      "use_case": "Útil para CFO que necesita dimensionar el peso real del combustible en el coste total de su flota pesada."
+    },
+    {
+      "id": "combustible_002",
+      "fact": "Un camión pesado diésel en ralentí consume entre 2 y 4 litros de combustible por hora sin desplazarse, según datos del U.S. Department of Energy. En flotas de distribución con tiempos de espera elevados en muelles o tráfico urbano, el ralentí puede representar entre el 15% y el 40% del consumo total diario.",
+      "source": "U.S. Department of Energy, Alternative Fuels Data Center - Idle Reduction Technologies",
+      "source_year": 2023,
+      "source_type": "public_body",
+      "url": "https://afdc.energy.gov/technologies/idle-reduction",
+      "markets": [
+        "usa",
+        "internacional"
+      ],
+      "topics": [
+        "combustible",
+        "eficiencia",
+        "coste operativo"
+      ],
+      "vehicle_type": [
+        "pesados"
+      ],
+      "tag": "⛽ Combustible",
+      "confidence": "high",
+      "evergreen_score": 5,
+      "strategic_value": "high",
+      "strategic_bucket": [
+        "hidden_cost",
+        "operational_visibility",
+        "driver_behavior"
+      ],
+      "fact_style": "technical_fact",
+      "why_interesting": "El ralentí es un coste que nunca aparece en ninguna factura de combustible, pero puede representar hasta el 40% del gasto diario.",
+      "fleet_lesson": "Si los vehículos de la flota no tienen monitoreo de ralentí, no es posible saber cuánto combustible se está consumiendo sin avanzar un kilómetro.",
+      "commercial_angle": "Conecta telemática con ahorro real de combustible sin sonar a pitch de producto.",
+      "use_case": "Cálculo del coste oculto de ralentí para flotas de distribución o transporte con tiempo de espera elevado."
+    },
+    {
+      "id": "combustible_003",
+      "fact": "El diésel se expande volumétricamente con la temperatura: aproximadamente 1 litro a 0°C se convierte en 1.008 litros a 20°C. Las normas ASTM D1250 y la ISO 91 establecen que el volumen de referencia del petróleo se mide a 15°C. En climas cálidos, sin compensación automática de temperatura en las bombas, una flota puede recibir menos energía real de la que factura en volumen.",
+      "source": "ASTM D1250 Petroleum Measurement Tables / ISO 91 Petroleum Measurement",
+      "source_year": 2022,
+      "source_type": "technical_standard",
+      "url": null,
+      "markets": [
+        "internacional",
+        "mexico",
+        "espana"
+      ],
+      "topics": [
+        "combustible",
+        "medición",
+        "física del combustible"
+      ],
+      "vehicle_type": [
+        "pesados",
+        "ligeros",
+        "mixtos"
+      ],
+      "tag": "⛽ Combustible",
+      "confidence": "high",
+      "evergreen_score": 5,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "price_per_liter_visibility",
+        "hidden_cost"
+      ],
+      "fact_style": "physics_fact",
+      "why_interesting": "La expansión térmica del combustible es física básica que casi ningún responsable de flota tiene en cuenta al analizar el precio efectivo por litro.",
+      "fleet_lesson": "En mercados con temperaturas superiores a 15°C en verano, el volumen facturado puede diferir de la energía real recibida si la bomba no tiene compensación automática de temperatura.",
+      "commercial_angle": "Permite introducir el concepto de precio real por litro sin lenguaje de proveedor.",
+      "use_case": "Relevante para flotas que repostan grandes volúmenes en zonas cálidas: México centro y norte, España sur, Colombia, Perú."
+    },
+    {
+      "id": "combustible_004",
+      "fact": "En México, la liberalización del precio de los combustibles (2017-2018) generó una dispersión de precios entre estaciones de una misma localidad que puede superar los 2 pesos por litro en el mismo municipio, según datos publicados por la CRE. En una flota de 50 camiones que consume 500 litros semanales por unidad, elegir la estación más cara representa un sobrecoste de 50,000 pesos mensuales.",
+      "source": "Comisión Reguladora de Energía (CRE) - Portal de Precios de Gasolinas y Diésel",
+      "source_year": 2024,
+      "source_type": "regulator",
+      "url": "https://www.gob.mx/cre",
+      "markets": [
+        "mexico"
+      ],
+      "topics": [
+        "combustible",
+        "precios",
+        "compras"
+      ],
+      "vehicle_type": [
+        "pesados",
+        "ligeros",
+        "mixtos"
+      ],
+      "tag": "⛽ Combustible",
+      "confidence": "high",
+      "evergreen_score": 4,
+      "strategic_value": "high",
+      "strategic_bucket": [
+        "price_per_liter_visibility",
+        "procurement_leverage",
+        "hidden_cost"
+      ],
+      "fact_style": "market_data",
+      "why_interesting": "La dispersión de precios entre estaciones de una misma ciudad es un coste evitable, pero solo es visible si hay política de repostaje con datos por estación.",
+      "fleet_lesson": "Sin datos de precio por estación y sin política de repostaje activa, una flota puede estar pagando hasta 2 pesos más por litro de forma sistemática.",
+      "commercial_angle": "Argumenta la necesidad de visibilidad de precio por transacción sin mencionar ningún proveedor.",
+      "use_case": "Cálculo de sobrecoste por ausencia de política de repostaje en flotas mexicanas."
+    },
+    {
+      "id": "combustible_005",
+      "fact": "El Programa SmartWay de la EPA estima que reducir la velocidad de un camión pesado de 75 a 65 millas por hora (121 a 105 km/h) puede reducir el consumo de combustible entre un 12% y un 15%. A precios actuales de diésel, ese diferencial representa miles de dólares anuales por vehículo en flotas de larga distancia.",
+      "source": "U.S. EPA SmartWay Program - Fuel Efficiency",
+      "source_year": 2023,
+      "source_type": "public_body",
+      "url": "https://www.epa.gov/smartway",
+      "markets": [
+        "usa",
+        "internacional"
+      ],
+      "topics": [
+        "combustible",
+        "eficiencia",
+        "conducción"
+      ],
+      "vehicle_type": [
+        "pesados"
+      ],
+      "tag": "⛽ Combustible",
+      "confidence": "high",
+      "evergreen_score": 5,
+      "strategic_value": "high",
+      "strategic_bucket": [
+        "driver_behavior",
+        "hidden_cost",
+        "benchmark"
+      ],
+      "fact_style": "technical_fact",
+      "why_interesting": "La velocidad es uno de los factores de consumo más controlables en flotas de larga distancia, pero pocas flotas tienen políticas de velocidad activamente monitoreadas.",
+      "fleet_lesson": "Un conductor que viaja sistemáticamente 10 km/h por encima del óptimo puede estar costando entre un 12% y un 15% más de combustible que uno que respeta la velocidad de crucero.",
+      "commercial_angle": "Conecta monitoreo de velocidad con ahorro de combustible sin mencionar telemática como producto.",
+      "use_case": "Estimación del coste del exceso de velocidad en flotas de transporte de larga distancia."
+    },
+    {
+      "id": "combustible_006",
+      "fact": "El American Transportation Research Institute (ATRI) calcula en su informe anual de costes operativos de camiones que el combustible representó 0.548 dólares por milla en 2023, lo que equivale al 38% del coste operativo total de un camión de larga distancia en USA. Es el porcentaje más alto en los últimos 10 años de la serie histórica del informe.",
+      "source": "ATRI - An Analysis of the Operational Costs of Trucking: 2024 Update",
+      "source_year": 2024,
+      "source_type": "industry_association",
+      "url": "https://truckingresearch.org",
+      "markets": [
+        "usa"
+      ],
+      "topics": [
+        "combustible",
+        "coste operativo",
+        "transporte pesado"
+      ],
+      "vehicle_type": [
+        "pesados"
+      ],
+      "tag": "⛽ Combustible",
+      "confidence": "high",
+      "evergreen_score": 3,
+      "strategic_value": "high",
+      "strategic_bucket": [
+        "benchmark",
+        "price_per_liter_visibility"
+      ],
+      "fact_style": "cost_benchmark",
+      "why_interesting": "El combustible ha alcanzado su mayor peso histórico en el coste operativo de camiones en USA, lo que lo convierte en la partida de mayor impacto para la rentabilidad de flotas pesadas.",
+      "fleet_lesson": "El combustible ya no es un gasto operativo más: es la principal palanca de rentabilidad en flotas pesadas de larga distancia.",
+      "commercial_angle": "Contextualiza la importancia de gestionar el combustible con la misma precisión que se gestiona la nómina.",
+      "use_case": "Referencia de benchmark para CFOs que necesitan comparar el peso del combustible en su estructura de costes."
+    },
+    {
+      "id": "combustible_007",
+      "fact": "El Observatorio de Costes del Transporte del MITMS publica trimestralmente el coste de operación de un camión articulado de 40 toneladas en España. En 2024, el gasoil representó aproximadamente el 30% del coste por kilómetro en condiciones normales de mercado. El mismo informe desglosa neumáticos, mantenimiento, peajes y personal, permitiendo comparar la estructura real de costes.",
+      "source": "Observatorio de Costes del Transporte de Mercancías por Carretera, MITMS España",
+      "source_year": 2024,
+      "source_type": "public_body",
+      "url": null,
+      "markets": [
+        "espana"
+      ],
+      "topics": [
+        "combustible",
+        "coste operativo",
+        "transporte pesado"
+      ],
+      "vehicle_type": [
+        "pesados"
+      ],
+      "tag": "⛽ Combustible",
+      "confidence": "high",
+      "evergreen_score": 4,
+      "strategic_value": "high",
+      "strategic_bucket": [
+        "benchmark",
+        "price_per_liter_visibility"
+      ],
+      "fact_style": "cost_benchmark",
+      "why_interesting": "El Observatorio publica datos trimestrales de dominio público que permiten a cualquier director de flota comparar sus costes reales con el benchmark del mercado español.",
+      "fleet_lesson": "Existe una referencia trimestral pública del coste real de operar un camión en España. Si tu flota no se compara contra ella, no sabes si está dentro o fuera del mercado.",
+      "commercial_angle": "Introduce la cultura del benchmark de costes sin herramienta comercial.",
+      "use_case": "Referencia de benchmark para flotas pesadas en España que necesitan comparar su estructura de costes."
+    },
+    {
+      "id": "combustible_008",
+      "fact": "Un neumático subinflado un 10% en un vehículo comercial aumenta el consumo de combustible aproximadamente entre un 0.5% y un 1%, según datos del U.S. Department of Energy. En una flota de 100 camiones con neumáticos revisados manualmente y de forma irregular, la probabilidad de que haya vehículos con presión incorrecta en servicio es muy alta.",
+      "source": "U.S. Department of Energy, Alternative Fuels Data Center - Tire Pressure",
+      "source_year": 2023,
+      "source_type": "public_body",
+      "url": "https://afdc.energy.gov/conserve/index.html",
+      "markets": [
+        "usa",
+        "internacional"
+      ],
+      "topics": [
+        "combustible",
+        "neumáticos",
+        "mantenimiento"
+      ],
+      "vehicle_type": [
+        "pesados",
+        "ligeros"
+      ],
+      "tag": "⛽ Combustible",
+      "confidence": "high",
+      "evergreen_score": 5,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "hidden_cost",
+        "maintenance_savings"
+      ],
+      "fact_style": "technical_fact",
+      "why_interesting": "La presión de neumáticos es uno de los factores de consumo más ignorados y más fáciles de controlar. El coste de un neumático subinflado es invisible en la factura de combustible.",
+      "fleet_lesson": "Si la flota no tiene protocolo de revisión de presión de neumáticos con registro, hay consumo adicional que no aparece en ningún informe.",
+      "commercial_angle": "Conecta TPMS con ahorro de combustible sin sonar a venta de sensores.",
+      "use_case": "Estimación del sobrecoste de neumáticos mal inflados en flotas sin protocolo de control de presión."
+    },
+    {
+      "id": "combustible_009",
+      "fact": "La tarjeta de crédito de combustible más utilizada en flotas corporativas de USA pertenece a la categoría de redes cerradas o de marca (branded fleet cards). Las redes abiertas o universales (open-loop) ofrecen mayor cobertura de puntos de repostaje pero con menor control de datos de transacción por defecto. La diferencia de aceptación puede ser determinante en corredores donde la red cerrada no tiene presencia.",
+      "source": "Nilson Report - Fleet Card Market USA 2023",
+      "source_year": 2023,
+      "source_type": "trade_press",
+      "url": null,
+      "markets": [
+        "usa"
+      ],
+      "topics": [
+        "combustible",
+        "tarjetas de combustible",
+        "gestión de flota"
+      ],
+      "vehicle_type": [
+        "pesados",
+        "ligeros",
+        "mixtos"
+      ],
+      "tag": "⛽ Combustible",
+      "confidence": "medium",
+      "evergreen_score": 3,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "open_network_advantage",
+        "closed_network_friction",
+        "procurement_leverage"
+      ],
+      "fact_style": "market_data",
+      "why_interesting": "La elección entre red abierta y red cerrada de tarjeta de combustible tiene implicaciones operativas en corredores con baja cobertura de la red elegida.",
+      "fleet_lesson": "Antes de elegir una tarjeta de combustible por precio o descuento, es necesario verificar la cobertura en los corredores donde opera la flota.",
+      "commercial_angle": "Introduce el trade-off entre red cerrada y red abierta sin sesgo hacia ningún emisor.",
+      "use_case": "Decisión de compra de tarjeta de combustible en flotas con operación en corredores específicos."
+    },
+    {
+      "id": "combustible_010",
+      "fact": "El fraude con tarjetas de combustible en flotas puede detectarse mediante patrones específicos en las transacciones: cargas superiores a la capacidad del depósito del vehículo, múltiples cargas en un lapso inferior al tiempo de vaciado del tanque, cargas en estaciones fuera del corredor habitual o en horarios inusuales. Estas anomalías son indetectables en una revisión manual de fin de mes.",
+      "source": "ACFE - Association of Certified Fraud Examiners, Report to the Nations 2024",
+      "source_year": 2024,
+      "source_type": "industry_association",
+      "url": "https://www.acfe.com/report-to-the-nations",
+      "markets": [
+        "internacional"
+      ],
+      "topics": [
+        "combustible",
+        "fraude",
+        "control"
+      ],
+      "vehicle_type": [
+        "pesados",
+        "ligeros",
+        "mixtos"
+      ],
+      "tag": "⛽ Combustible",
+      "confidence": "medium",
+      "evergreen_score": 5,
+      "strategic_value": "high",
+      "strategic_bucket": [
+        "fuel_fraud_detection",
+        "real_time_control",
+        "hidden_cost"
+      ],
+      "fact_style": "fraud_fact",
+      "why_interesting": "Los patrones de fraude de combustible son predecibles y sistemáticos, pero solo son detectables con datos de transacción vinculados al vehículo y al odómetro.",
+      "fleet_lesson": "Una revisión mensual de facturas de combustible no detecta fraude en tiempo real. El fraude necesita datos de transacción vinculados a vehículo, conductor, hora y ubicación.",
+      "commercial_angle": "Argumenta la necesidad de control de combustible en tiempo real sin mencionar ningún producto.",
+      "use_case": "Detección de patrones de fraude en flotas con tarjetas de combustible."
+    },
+    {
+      "id": "combustible_011",
+      "fact": "La Auditoría Superior de la Federación de México (ASF) documentó en su informe de 2022 irregularidades en el uso de combustible en dependencias federales con flotas vehiculares, incluyendo adquisiciones de combustible sin justificación de uso vehicular y registros de consumo inconsistentes. Los patrones detectados son similares a los del fraude en flotas privadas: cargas sin vehículo asignado y sin control de odómetro.",
+      "source": "Auditoría Superior de la Federación (ASF) - Cuenta Pública 2022",
+      "source_year": 2023,
+      "source_type": "public_body",
+      "url": "https://www.asf.gob.mx",
+      "markets": [
+        "mexico"
+      ],
+      "topics": [
+        "combustible",
+        "fraude",
+        "cumplimiento"
+      ],
+      "vehicle_type": [
+        "pesados",
+        "ligeros",
+        "mixtos"
+      ],
+      "tag": "⛽ Combustible",
+      "confidence": "medium",
+      "evergreen_score": 3,
+      "strategic_value": "high",
+      "strategic_bucket": [
+        "fuel_fraud_detection",
+        "compliance_risk",
+        "hidden_cost"
+      ],
+      "fact_style": "fraud_fact",
+      "why_interesting": "El fraude documentado en flotas públicas mexicanas sigue los mismos patrones que el fraude en flotas privadas: ausencia de control de odómetro y cargas sin asignación vehicular.",
+      "fleet_lesson": "Las flotas públicas con recursos auditados externamente tienen los mismos vectores de fraude que las flotas privadas. Si no hay control de odómetro por transacción, el fraude es estructuralmente posible.",
+      "commercial_angle": "Contextualiza el riesgo de fraude usando un caso real de dominio público sin sensacionalismo.",
+      "use_case": "Sensibilización de directores de flota y CFOs sobre el riesgo estructural de fraude de combustible."
+    },
+    {
+      "id": "combustible_012",
+      "fact": "En España, el diferencial de precio entre el diésel en autopista y el diésel en estación de servicio urbana puede superar los 0.20 euros por litro en algunos tramos, según datos del Geoportal de Carburantes del MITECO. En una flota que realiza trayectos largos y repostaje sistemático en autopista, este diferencial puede representar miles de euros anuales de sobrecoste evitable.",
+      "source": "Geoportal de Carburantes - MITECO (Ministerio para la Transición Ecológica y el Reto Demográfico)",
+      "source_year": 2024,
+      "source_type": "public_body",
+      "url": "https://geoportalgasolineras.es",
+      "markets": [
+        "espana"
+      ],
+      "topics": [
+        "combustible",
+        "precios",
+        "compras"
+      ],
+      "vehicle_type": [
+        "pesados",
+        "ligeros"
+      ],
+      "tag": "⛽ Combustible",
+      "confidence": "high",
+      "evergreen_score": 4,
+      "strategic_value": "high",
+      "strategic_bucket": [
+        "price_per_liter_visibility",
+        "procurement_leverage",
+        "hidden_cost"
+      ],
+      "fact_style": "market_data",
+      "why_interesting": "El Geoportal de Carburantes del MITECO es una fuente pública que cualquier flota puede consultar, pero pocas políticas de repostaje se diseñan con datos de dispersión de precios.",
+      "fleet_lesson": "En España existe una herramienta pública gratuita con precios de todos los surtidores. Si la política de repostaje de tu flota no la usa, estás dejando dinero en la carretera.",
+      "commercial_angle": "Introduce la optimización de repostaje con datos públicos sin mencionar ningún software.",
+      "use_case": "Diseño de política de repostaje para flotas que operan en corredores de autopista en España."
+    },
+    {
+      "id": "combustible_013",
+      "fact": "UPS rediseñó sus rutas de reparto para minimizar los giros a la izquierda (left turns) en el tráfico de USA, reduciendo los kilómetros recorridos en aproximadamente 160 millones de millas anuales y ahorrando alrededor de 10 millones de galones de combustible al año, según datos publicados por la compañía. El programa también redujo los accidentes en intersecciones.",
+      "source": "UPS Corporate Sustainability Report / Wired - 'UPS's Big Brown Efficiency Machine'",
+      "source_year": 2017,
+      "source_type": "company_report",
+      "url": null,
+      "markets": [
+        "usa"
+      ],
+      "topics": [
+        "combustible",
+        "rutas",
+        "eficiencia operativa"
+      ],
+      "vehicle_type": [
+        "ligeros",
+        "pesados"
+      ],
+      "tag": "⛽ Combustible",
+      "confidence": "high",
+      "evergreen_score": 5,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "route_optimization",
+        "hidden_cost",
+        "driver_behavior"
+      ],
+      "fact_style": "famous_case",
+      "why_interesting": "Es el caso más citado de optimización de rutas en logística. Lo importante no es el giro a la izquierda sino que una decisión de diseño de ruta sistemática puede ahorrar decenas de millones en combustible.",
+      "fleet_lesson": "UPS no eliminó los giros a la izquierda porque sean imposibles, sino porque aumentan el tiempo de espera, el ralentí y el riesgo de accidente. El principio aplicable a cualquier flota: las reglas de ruta tienen impacto financiero medible.",
+      "commercial_angle": "Conecta optimización de rutas con ahorro de combustible con un caso de referencia verificable.",
+      "use_case": "Argumento para revisar la política de diseño de rutas en flotas de reparto con muchas paradas urbanas."
+    },
+    {
+      "id": "combustible_014",
+      "fact": "La CRE (Comisión Reguladora de Energía) de México publica los precios de diésel y gasolina por estación con actualización diaria en su portal. En 2024, la diferencia máxima entre la estación más barata y la más cara en la misma alcaldía de CDMX superó los 1.80 pesos por litro en alguna semana, según datos del portal oficial de carburantes.",
+      "source": "CRE - Portal de Precios de Gasolinas y Diésel, datos.gob.mx",
+      "source_year": 2024,
+      "source_type": "regulator",
+      "url": "https://datos.gob.mx/busca/dataset/precio-gasolina-y-diesel-en-estaciones-de-servicio",
+      "markets": [
+        "mexico"
+      ],
+      "topics": [
+        "combustible",
+        "precios",
+        "compras"
+      ],
+      "vehicle_type": [
+        "pesados",
+        "ligeros",
+        "mixtos"
+      ],
+      "tag": "⛽ Combustible",
+      "confidence": "medium",
+      "evergreen_score": 4,
+      "strategic_value": "high",
+      "strategic_bucket": [
+        "price_per_liter_visibility",
+        "procurement_leverage"
+      ],
+      "fact_style": "market_data",
+      "why_interesting": "La dispersión de precios entre estaciones dentro de una misma demarcación de CDMX es real y medible, pero pocas flotas tienen política de repostaje que la tenga en cuenta.",
+      "fleet_lesson": "En México existe información pública diaria de precios por estación. No usarla para diseñar la política de repostaje es un coste de oportunidad evidente.",
+      "commercial_angle": "Introduce la cultura de datos de combustible con fuente pública sin promover ningún producto.",
+      "use_case": "Diseño de política de repostaje para flotas en CDMX y otras ciudades mexicanas con alta dispersión de precios."
+    },
+    {
+      "id": "combustible_015",
+      "fact": "El consumo de AdBlue (solución de urea para sistemas SCR de camiones diésel Euro 6) equivale aproximadamente al 5-8% del consumo de gasoil del vehículo, según datos técnicos de los principales fabricantes de vehículos pesados (Volvo, Mercedes-Benz, MAN). Un camión que consume 35 litros por 100 km consume entre 1.75 y 2.8 litros de AdBlue por 100 km. Si el nivel de AdBlue cae a cero, el vehículo se inhabilita por normativa.",
+      "source": "Volvo Trucks Technical Documentation - AdBlue Consumption / European Environment Agency",
+      "source_year": 2023,
+      "source_type": "manufacturer_documentation",
+      "url": null,
+      "markets": [
+        "espana",
+        "europa",
+        "internacional"
+      ],
+      "topics": [
+        "combustible",
+        "regulación",
+        "mantenimiento"
+      ],
+      "vehicle_type": [
+        "pesados"
+      ],
+      "tag": "⛽ Combustible",
+      "confidence": "high",
+      "evergreen_score": 5,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "hidden_cost",
+        "compliance_risk",
+        "operational_visibility"
+      ],
+      "fact_style": "technical_fact",
+      "why_interesting": "Muchas flotas con camiones Euro 6 no tienen monitoreo de nivel de AdBlue. Un camión que se queda sin AdBlue se inmoviliza por normativa, generando un downtime evitable.",
+      "fleet_lesson": "El AdBlue no es un gasto menor ni un suministro secundario: su agotamiento inmoviliza legalmente el vehículo. Es necesario monitorizarlo igual que el combustible.",
+      "commercial_angle": "Introduce el monitoreo de AdBlue como necesidad operativa, no como característica de producto.",
+      "use_case": "Gestión de suministros en flotas de camiones Euro 6 para evitar inmovilizaciones por agotamiento de AdBlue."
+    },
+    {
+      "id": "combustible_016",
+      "fact": "El Índice de Precios del Transporte de Mercancías por Carretera en México, publicado por el INEGI, muestra que el combustible es el componente de mayor peso y mayor volatilidad en el índice de costes del autotransporte. Entre 2020 y 2024, el gasoil tuvo una variación acumulada superior al 60% en México, impactando directamente en los contratos de flete indexados a precio fijo.",
+      "source": "INEGI - Índice de Precios del Transporte de Carga por Carretera",
+      "source_year": 2024,
+      "source_type": "public_body",
+      "url": "https://www.inegi.org.mx",
+      "markets": [
+        "mexico"
+      ],
+      "topics": [
+        "combustible",
+        "costes",
+        "mercado"
+      ],
+      "vehicle_type": [
+        "pesados"
+      ],
+      "tag": "⛽ Combustible",
+      "confidence": "medium",
+      "evergreen_score": 3,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "benchmark",
+        "price_per_liter_visibility"
+      ],
+      "fact_style": "market_data",
+      "why_interesting": "La volatilidad acumulada del gasoil en México entre 2020 y 2024 es uno de los argumentos más sólidos para revisar contratos de flete con cláusulas de ajuste por combustible.",
+      "fleet_lesson": "Los contratos de flete a precio fijo que no incluyen cláusula de ajuste por precio de combustible son contratos que transfieren el riesgo al transportista.",
+      "commercial_angle": "Introduce la gestión del riesgo de precio de combustible en contratos sin promover ninguna solución específica.",
+      "use_case": "Revisión de contratos de flete y política de cobertura de precio de combustible en México."
+    },
+    {
+      "id": "combustible_017",
+      "fact": "En los vehículos pesados, la aerodinámica tiene un impacto creciente en el consumo a partir de 60 km/h. Por encima de 90 km/h, la resistencia aerodinámica puede representar entre el 50% y el 65% de la resistencia total al avance, según datos del Lawrence Berkeley National Laboratory. Dispositivos como deflectores laterales o faldones traseros pueden reducir el consumo entre un 5% y un 10%.",
+      "source": "Lawrence Berkeley National Laboratory - Heavy Truck Aerodynamics Study",
+      "source_year": 2020,
+      "source_type": "academic",
+      "url": null,
+      "markets": [
+        "usa",
+        "internacional"
+      ],
+      "topics": [
+        "combustible",
+        "eficiencia",
+        "vehículos pesados"
+      ],
+      "vehicle_type": [
+        "pesados"
+      ],
+      "tag": "⛽ Combustible",
+      "confidence": "high",
+      "evergreen_score": 5,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "hidden_cost",
+        "benchmark",
+        "driver_behavior"
+      ],
+      "fact_style": "physics_fact",
+      "why_interesting": "La aerodinámica de camiones es un factor de consumo que depende de la carrocería y los accesorios del vehículo, no de la conducción. Es un coste oculto en la decisión de compra.",
+      "fleet_lesson": "Al renovar flota, la aerodinámica del vehículo no es un atributo estético sino una decisión de coste de combustible. Un faldón trasero puede amortizarse en meses.",
+      "commercial_angle": "Introduce criterios de selección de vehículo basados en coste de operación sin sesgo de marca.",
+      "use_case": "Criterios de selección de vehículos pesados en renovación de flota con foco en eficiencia de combustible."
+    },
+    {
+      "id": "combustible_018",
+      "fact": "El complemento Carta Porte del CFDI es obligatorio desde 2022 para el traslado de mercancías en México. En 2024, el SAT intensificó las verificaciones en carreteras federales. Un vehículo sin Carta Porte válida puede ser detenido y la mercancía retenida hasta que se aclare la situación fiscal, generando costes de demora que pueden superar el valor del flete.",
+      "source": "SAT - Servicio de Administración Tributaria México, Guía Carta Porte 2024",
+      "source_year": 2024,
+      "source_type": "regulator",
+      "url": "https://www.sat.gob.mx/consultas/92764/complemento-carta-porte",
+      "markets": [
+        "mexico"
+      ],
+      "topics": [
+        "combustible",
+        "regulación",
+        "cumplimiento"
+      ],
+      "vehicle_type": [
+        "pesados",
+        "mixtos"
+      ],
+      "tag": "⛽ Combustible",
+      "confidence": "high",
+      "evergreen_score": 3,
+      "strategic_value": "high",
+      "strategic_bucket": [
+        "compliance_risk",
+        "regulatory_pressure"
+      ],
+      "fact_style": "compliance_fact",
+      "why_interesting": "La Carta Porte no es solo un requisito fiscal: el incumplimiento tiene consecuencias operativas inmediatas que pueden superar el coste del flete completo.",
+      "fleet_lesson": "El error más común en Carta Porte es una diferencia entre el CFDI y la carga real del vehículo. Un error de datos puede inmovilizar la unidad en carretera federal.",
+      "commercial_angle": "Introduce el riesgo operativo del incumplimiento fiscal en transporte terrestre mexicano.",
+      "use_case": "Sensibilización de operadores y conductores sobre el impacto de errores en Carta Porte."
+    },
+    {
+      "id": "combustible_019",
+      "fact": "La temperatura ambiente afecta directamente al consumo de combustible de cualquier vehículo. El U.S. Department of Energy estima que el consumo de un vehículo ligero puede aumentar hasta un 15% en temperatura de 0°C respecto a 25°C, principalmente por el mayor tiempo de calentamiento del motor, la lubricación más viscosa y el uso de la calefacción. En flotas de distribución en zonas frías, este diferencial de invierno es sistemático y raramente se contabiliza.",
+      "source": "U.S. Department of Energy, Alternative Fuels Data Center - Cold Weather Impact on Fuel Economy",
+      "source_year": 2023,
+      "source_type": "public_body",
+      "url": "https://afdc.energy.gov/vehicles/electric_benefits.html",
+      "markets": [
+        "usa",
+        "espana",
+        "internacional"
+      ],
+      "topics": [
+        "combustible",
+        "eficiencia",
+        "estacionalidad"
+      ],
+      "vehicle_type": [
+        "ligeros",
+        "pesados"
+      ],
+      "tag": "⛽ Combustible",
+      "confidence": "high",
+      "evergreen_score": 5,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "hidden_cost",
+        "benchmark"
+      ],
+      "fact_style": "physics_fact",
+      "why_interesting": "El consumo de combustible en invierno es sistemáticamente mayor, pero pocas flotas lo contabilizan como variación estacional en su presupuesto.",
+      "fleet_lesson": "Un presupuesto de combustible plano a lo largo del año en una flota con operación en zonas con inviernos fríos está infraestimando los meses de noviembre a febrero.",
+      "commercial_angle": "Introduce la estacionalidad del consumo como variable de presupuesto sin lenguaje de producto.",
+      "use_case": "Presupuestación de combustible en flotas con operación en zonas con variación de temperatura significativa."
+    },
+    {
+      "id": "combustible_020",
+      "fact": "La Ley de Transición Energética de México establece metas de reducción de emisiones para el sector transporte. El SEMARNAT estima que el transporte de carga es responsable del 18% de las emisiones de CO2 del sector transporte en México. Las flotas de más de 5 vehículos pesados pueden estar dentro del alcance de futuros esquemas de reporte obligatorio de huella de carbono.",
+      "source": "SEMARNAT - Inventario Nacional de Emisiones de Gases y Compuestos de Efecto Invernadero 2022",
+      "source_year": 2023,
+      "source_type": "public_body",
+      "url": "https://www.gob.mx/semarnat",
+      "markets": [
+        "mexico"
+      ],
+      "topics": [
+        "combustible",
+        "sostenibilidad",
+        "regulación"
+      ],
+      "vehicle_type": [
+        "pesados"
+      ],
+      "tag": "⛽ Combustible",
+      "confidence": "medium",
+      "evergreen_score": 3,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "sustainability_pressure",
+        "regulatory_pressure"
+      ],
+      "fact_style": "market_data",
+      "why_interesting": "El transporte de carga en México es un sector con alta exposición a futura regulación de emisiones. Las flotas que no tienen datos de consumo por vehículo no podrán reportar huella de carbono cuando sea obligatorio.",
+      "fleet_lesson": "El control de consumo de combustible por vehículo es hoy una decisión de eficiencia. Mañana puede ser una obligación regulatoria.",
+      "commercial_angle": "Introduce la presión regulatoria de sostenibilidad como argumento para la digitalización del control de combustible.",
+      "use_case": "Sensibilización de CFO y directores de flota sobre el riesgo regulatorio de no tener datos de emisiones."
+    },
+    {
+      "id": "combustible_021",
+      "fact": "En Europa, el Reglamento (UE) 2019/1242 establece objetivos de reducción de CO2 para camiones pesados nuevos: -15% en 2025 y -30% en 2030 respecto a los valores de referencia de 2019. Los fabricantes que no cumplan los objetivos de su flota vendida pagarán una multa de 4.250 euros por g/km/t de CO2 excedida por vehículo. Esto está acelerando la electrificación de camiones en Europa.",
+      "source": "Reglamento (UE) 2019/1242 del Parlamento Europeo y del Consejo",
+      "source_year": 2019,
+      "source_type": "regulator",
+      "url": "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32019R1242",
+      "markets": [
+        "europa",
+        "espana"
+      ],
+      "topics": [
+        "combustible",
+        "sostenibilidad",
+        "regulación",
+        "electrificación"
+      ],
+      "vehicle_type": [
+        "pesados"
+      ],
+      "tag": "⛽ Combustible",
+      "confidence": "high",
+      "evergreen_score": 4,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "sustainability_pressure",
+        "regulatory_pressure",
+        "electrification_tco"
+      ],
+      "fact_style": "regulatory_fact",
+      "why_interesting": "Las multas a fabricantes por incumplimiento de objetivos de CO2 aceleran la oferta de vehículos eléctricos pesados, pero las flotas deben anticipar el impacto en disponibilidad y precio.",
+      "fleet_lesson": "La regulación de CO2 para fabricantes europeos tiene un efecto directo en la disponibilidad y precio de nuevos vehículos diésel a partir de 2025. Es un factor de planificación de renovación de flota.",
+      "commercial_angle": "Introduce la regulación de CO2 como factor de decisión de compra de vehículo sin promover electrificación.",
+      "use_case": "Planificación de renovación de flota pesada en Europa con foco en cumplimiento regulatorio."
+    },
+    {
+      "id": "combustible_022",
+      "fact": "El consumo de combustible de una hormigonera en operación no es lineal. El bombo giratorio tiene una toma de fuerza (PTO) que consume energía del motor incluso cuando el vehículo está parado. El consumo en ralentí de una hormigonera con el bombo activo puede ser un 30-40% superior al de un camión de carga equivalente sin PTO activo, según documentación técnica de fabricantes de equipos de hormigón.",
+      "source": "Putzmeister / Schwing - Technical Documentation on Ready-Mix Concrete Truck Power Take-Off Consumption",
+      "source_year": 2022,
+      "source_type": "manufacturer_documentation",
+      "url": null,
+      "markets": [
+        "internacional",
+        "espana",
+        "mexico"
+      ],
+      "topics": [
+        "combustible",
+        "sectores",
+        "construcción"
+      ],
+      "vehicle_type": [
+        "especiales"
+      ],
+      "tag": "⛽ Combustible",
+      "confidence": "medium",
+      "evergreen_score": 5,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "sector_specific",
+        "hidden_cost",
+        "operational_visibility"
+      ],
+      "fact_style": "sector_specific_fact",
+      "why_interesting": "El consumo de PTO en hormigoneras es un coste oculto que no aparece en las métricas estándar de consumo por km, porque parte del combustible se consume con el vehículo parado.",
+      "fleet_lesson": "Las métricas de consumo por kilómetro son insuficientes para flotas de hormigón. Es necesario medir consumo total incluyendo PTO activo parado.",
+      "commercial_angle": "Introduce la necesidad de métricas de consumo específicas por sector sin promover ningún sistema.",
+      "use_case": "Gestión de consumo de combustible en flotas de hormigón con PTO activo."
+    },
+    {
+      "id": "combustible_023",
+      "fact": "En España, el Impuesto Especial sobre Hidrocarburos (IEH) más el IVA representan aproximadamente el 45-50% del precio final del gasoil. Con el gasoil a 1.5 euros/litro, unos 0.70-0.75 euros por litro son carga fiscal. Las flotas con derecho a gasóleo bonificado deben verificar que aplican correctamente ese beneficio o están pagando impuestos que no corresponden.",
+      "source": "AEAT - Agencia Estatal de Administración Tributaria / BOE - Ley del Impuesto sobre Hidrocarburos",
+      "source_year": 2024,
+      "source_type": "regulator",
+      "url": "https://www.agenciatributaria.es",
+      "markets": [
+        "espana"
+      ],
+      "topics": [
+        "combustible",
+        "fiscalidad",
+        "compras"
+      ],
+      "vehicle_type": [
+        "pesados",
+        "agrícolas",
+        "especiales"
+      ],
+      "tag": "⛽ Combustible",
+      "confidence": "high",
+      "evergreen_score": 3,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "price_per_liter_visibility",
+        "procurement_leverage",
+        "compliance_risk"
+      ],
+      "fact_style": "regulatory_fact",
+      "why_interesting": "La carga fiscal en el precio del diésel en España es superior al 45%, pero las flotas que tienen derecho al gasóleo bonificado y no lo aplican correctamente están pagando más de lo que deberían.",
+      "fleet_lesson": "El gasóleo bonificado en España es un beneficio fiscal que requiere gestión activa. No verificarlo regularmente es pagar impuestos que no corresponden.",
+      "commercial_angle": "Introduce la fiscalidad del combustible como área de revisión sin promover ningún servicio.",
+      "use_case": "Revisión del tipo impositivo aplicable al combustible en flotas pesadas en España."
+    },
+    {
+      "id": "combustible_024",
+      "fact": "El volumen de combustible consumido por el transporte por carretera en México supera los 45,000 millones de litros anuales, incluyendo gasolina y diésel, según datos de la Secretaría de Energía y la CRE. El sector autotransporte de carga representa la fracción mayoritaria del consumo de diésel. Esto convierte al transporte de carga en el mayor comprador individual de diésel del país.",
+      "source": "Secretaría de Energía México (SENER) - Balance Nacional de Energía / CRE",
+      "source_year": 2023,
+      "source_type": "public_body",
+      "url": "https://www.gob.mx/sener",
+      "markets": [
+        "mexico"
+      ],
+      "topics": [
+        "combustible",
+        "mercado",
+        "autotransporte"
+      ],
+      "vehicle_type": [
+        "pesados"
+      ],
+      "tag": "⛽ Combustible",
+      "confidence": "medium",
+      "evergreen_score": 3,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "market_sizing",
+        "benchmark"
+      ],
+      "fact_style": "market_data",
+      "why_interesting": "El tamaño del consumo de diésel en el autotransporte mexicano pone en perspectiva el impacto económico de una mejora de eficiencia de incluso el 1% a escala de mercado.",
+      "fleet_lesson": "El sector autotransporte de carga es el mayor comprador de diésel en México. Una mejora de eficiencia de incluso el 1% a escala de una flota grande tiene un impacto financiero significativo.",
+      "commercial_angle": "Introduce el tamaño del mercado de combustible como argumento de escala sin promover ningún producto.",
+      "use_case": "Contextualización del peso del combustible en el autotransporte mexicano para decisiones estratégicas de flota."
+    },
+    {
+      "id": "combustible_025",
+      "fact": "El Reglamento de Control de Calidad de los Productos Petrolíferos en España (Real Decreto 1088/2010 y sus modificaciones) establece tolerancias metrológicas para los surtidores de combustible. Un surtidor puede tener una tolerancia de error de medición de hasta ±0.5% según la normativa de metrología aplicable. En una flota que repostó 1 millón de litros al año, esa tolerancia representa hasta 5,000 litros de diferencia posible que puede estar dentro de la legalidad.",
+      "source": "Real Decreto 1088/2010 / ENAC - Entidad Nacional de Acreditación / Directiva 2014/32/UE MID",
+      "source_year": 2022,
+      "source_type": "regulator",
+      "url": "https://www.boe.es",
+      "markets": [
+        "espana",
+        "europa"
+      ],
+      "topics": [
+        "combustible",
+        "medición",
+        "metrología"
+      ],
+      "vehicle_type": [
+        "pesados",
+        "ligeros",
+        "mixtos"
+      ],
+      "tag": "⛽ Combustible",
+      "confidence": "high",
+      "evergreen_score": 5,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "price_per_liter_visibility",
+        "hidden_cost"
+      ],
+      "fact_style": "technical_fact",
+      "why_interesting": "La tolerancia metrológica de los surtidores es un hecho técnico legal que la mayoría de los responsables de compras de combustible desconoce completamente.",
+      "fleet_lesson": "La diferencia entre litros facturados y litros reales entregados puede estar dentro de los márgenes legales de calibración del surtidor. En flotas grandes, esta tolerancia tiene valor económico.",
+      "commercial_angle": "Introduce la imprecisión metrológica del surtidor como argumento para el control de consumo por vehículo.",
+      "use_case": "Control de calidad y auditoría de combustible en flotas de gran consumo en España."
+    }
+  ],
+  "telematica": [
+    {
+      "id": "telematica_001",
+      "fact": "El mercado global de gestión de flotas mediante telemática tenía 39 millones de unidades conectadas en 2023 y se proyecta que supere los 90 millones en 2028, según Berg Insight. Europa y América del Norte concentran el 60% de las conexiones activas. LatAm representa menos del 10% del mercado global, con una penetración significativamente inferior a la media.",
+      "source": "Berg Insight - Fleet Management in Europe 2023 / Smart Trucks North America 2023",
+      "source_year": 2023,
+      "source_type": "consultancy",
+      "url": null,
+      "markets": [
+        "internacional",
+        "latam"
+      ],
+      "topics": [
+        "telemática",
+        "mercado",
+        "digitalización"
+      ],
+      "vehicle_type": [
+        "pesados",
+        "ligeros",
+        "mixtos"
+      ],
+      "tag": "📡 Telemática",
+      "confidence": "medium",
+      "evergreen_score": 3,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "market_sizing",
+        "fleet_digitization"
+      ],
+      "fact_style": "market_data",
+      "why_interesting": "La baja penetración de telemática en LatAm indica una brecha de gestión significativa entre las flotas de la región y las de mercados más maduros.",
+      "fleet_lesson": "Las flotas latinoamericanas operan con menos datos que sus equivalentes europeas o norteamericanas. Esa brecha de información es también una brecha de eficiencia.",
+      "commercial_angle": "Contextualiza el estado de madurez de la telemática en LatAm sin promover ningún proveedor.",
+      "use_case": "Benchmarking de madurez digital de flotas latinoamericanas vs mercados desarrollados."
+    },
+    {
+      "id": "telematica_002",
+      "fact": "El tacógrafo inteligente de segunda generación (versión 2) es obligatorio en todos los vehículos pesados nuevos de transporte internacional en la UE desde agosto de 2023, y retroactivamente en vehículos con tacógrafo analógico o digital de primera generación en operación internacional desde 2025, según el Reglamento de Ejecución (UE) 2021/1228. El incumplimiento puede resultar en paralización del vehículo en controles de carretera.",
+      "source": "Reglamento de Ejecución (UE) 2021/1228 / DG MOVE Comisión Europea",
+      "source_year": 2023,
+      "source_type": "regulator",
+      "url": "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32021R1228",
+      "markets": [
+        "europa",
+        "espana"
+      ],
+      "topics": [
+        "telemática",
+        "tacógrafo",
+        "regulación"
+      ],
+      "vehicle_type": [
+        "pesados"
+      ],
+      "tag": "📡 Telemática",
+      "confidence": "high",
+      "evergreen_score": 4,
+      "strategic_value": "high",
+      "strategic_bucket": [
+        "regulatory_pressure",
+        "compliance_risk"
+      ],
+      "fact_style": "regulatory_fact",
+      "why_interesting": "El tacógrafo V2 no es solo una actualización técnica: incluye GNSS integrado, DSRC para control remoto y capacidad de registro de posición fronteriza automática. Su obligatoriedad tiene implicaciones para flotas de transporte internacional que operan entre España y el resto de Europa.",
+      "fleet_lesson": "Las flotas con transporte internacional en Europa deben verificar si sus vehículos ya tienen tacógrafo V2 instalado. El incumplimiento puede paralizar la unidad en un control de carretera en cualquier país de la UE.",
+      "commercial_angle": "Introduce la obligatoriedad del tacógrafo V2 como riesgo de compliance con impacto operativo inmediato.",
+      "use_case": "Verificación del estado de cumplimiento en flotas de transporte internacional con operación en Europa."
+    },
+    {
+      "id": "telematica_003",
+      "fact": "Las flotas que monitorizan el comportamiento del conductor mediante telemática (aceleraciones bruscas, frenadas, velocidad, ralentí) pueden reducir el consumo de combustible entre un 10% y un 15%, según estudios del programa SmartWay de la EPA y del IRU. El ahorro proviene principalmente de reducción de ralentí, moderación de velocidad y eliminación de frenadas agresivas.",
+      "source": "EPA SmartWay Program / IRU - Fuel Efficiency in Road Transport 2022",
+      "source_year": 2022,
+      "source_type": "public_body",
+      "url": "https://www.epa.gov/smartway",
+      "markets": [
+        "usa",
+        "europa",
+        "internacional"
+      ],
+      "topics": [
+        "telemática",
+        "conducción eficiente",
+        "combustible"
+      ],
+      "vehicle_type": [
+        "pesados",
+        "ligeros"
+      ],
+      "tag": "📡 Telemática",
+      "confidence": "high",
+      "evergreen_score": 5,
+      "strategic_value": "high",
+      "strategic_bucket": [
+        "driver_behavior",
+        "hidden_cost",
+        "fleet_digitization"
+      ],
+      "fact_style": "cost_benchmark",
+      "why_interesting": "La monitorización de conducción es el caso de uso con mayor ROI documentado de la telemática, pero muchas flotas que tienen el dispositivo instalado no usan los datos de comportamiento.",
+      "fleet_lesson": "Tener telemática instalada sin usar los datos de conducción para formar y retroalimentar a los conductores es dejar entre el 10% y el 15% del consumo de combustible sin gestionar.",
+      "commercial_angle": "Conecta telemática con ahorro de combustible con fuente oficial sin sonar a argumentario de proveedor.",
+      "use_case": "Justificación del ROI de la telemática para flotas que ya tienen el dispositivo pero no usan los datos de conducción."
+    },
+    {
+      "id": "telematica_004",
+      "fact": "La toma de fuerza (PTO, Power Take-Off) es un sensor que permite medir el tiempo de uso de equipos auxiliares en vehículos de servicio (grúas, camiones de basura, camiones cisterna, plataformas elevadoras). En flotas de servicios municipales o utilities, el PTO puede representar entre el 20% y el 40% del consumo total de combustible del vehículo. Sin sensor de PTO, ese consumo es invisible en cualquier informe estándar.",
+      "source": "SAE International - PTO Applications in Fleet Management / Webfleet Solutions Fleet Technology Report",
+      "source_year": 2022,
+      "source_type": "technical_standard",
+      "url": null,
+      "markets": [
+        "internacional",
+        "espana"
+      ],
+      "topics": [
+        "telemática",
+        "sensores",
+        "sectores"
+      ],
+      "vehicle_type": [
+        "especiales"
+      ],
+      "tag": "📡 Telemática",
+      "confidence": "medium",
+      "evergreen_score": 5,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "sector_specific",
+        "hidden_cost",
+        "operational_visibility"
+      ],
+      "fact_style": "sector_specific_fact",
+      "why_interesting": "El PTO es el sensor más ignorado en flotas de servicios. El consumo de la bomba, la grúa o el compactador de basura no aparece en las métricas estándar de km/litro.",
+      "fleet_lesson": "En flotas de servicios con PTO activo, las métricas de consumo por kilómetro son engañosas. Es necesario medir consumo total incluyendo PTO para tener una imagen real del coste operativo.",
+      "commercial_angle": "Introduce la necesidad de métricas específicas para flotas de servicios sin mencionar ningún sistema de telemática.",
+      "use_case": "Gestión de consumo en flotas de servicios públicos, utilities, grúas y camiones de basura."
+    },
+    {
+      "id": "telematica_005",
+      "fact": "La videovigilancia a bordo (cámaras frontales con detección de fatiga y distracción) está creciendo en el mercado de telemática para flotas pesadas. En Reino Unido, algunas aseguradoras ya ofrecen descuentos de hasta el 15% en la prima de vehículos comerciales que llevan cámara de seguridad activa, según datos de Fleet News. En España, la adopción de videotelemática en flotas pesadas es todavía incipiente.",
+      "source": "Fleet News UK - Telematics and Insurance Savings Report 2023",
+      "source_year": 2023,
+      "source_type": "trade_press",
+      "url": "https://www.fleetnews.co.uk",
+      "markets": [
+        "uk",
+        "espana"
+      ],
+      "topics": [
+        "telemática",
+        "seguridad",
+        "videotelemática"
+      ],
+      "vehicle_type": [
+        "pesados",
+        "ligeros"
+      ],
+      "tag": "📡 Telemática",
+      "confidence": "medium",
+      "evergreen_score": 3,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "safety_and_risk",
+        "fleet_digitization"
+      ],
+      "fact_style": "market_data",
+      "why_interesting": "La videotelemática puede tener un retorno en reducción de primas de seguro además del retorno en seguridad. Es un argumento financiero que las flotas raramente cuantifican.",
+      "fleet_lesson": "Antes de evaluar videotelemática solo por su coste de instalación, es necesario consultar con la aseguradora si reduce la prima. En UK, el impacto es ya verificable.",
+      "commercial_angle": "Conecta videotelemática con reducción de coste de seguro sin promover ninguna marca de cámara.",
+      "use_case": "Evaluación del ROI de videotelemática en flotas pesadas con foco en reducción de prima de seguro."
+    },
+    {
+      "id": "telematica_006",
+      "fact": "El sistema eCall obligatorio en todos los vehículos de turismo nuevos en Europa desde abril de 2018 (Reglamento UE 2015/758) transmite automáticamente la ubicación GPS del vehículo a los servicios de emergencia en caso de accidente grave. La adopción del equivalente para vehículos comerciales pesados es opcional en la mayoría de países de la UE, lo que crea una asimetría de respuesta ante accidentes en flotas pesadas.",
+      "source": "Reglamento (UE) 2015/758 del Parlamento Europeo / DG MOVE",
+      "source_year": 2018,
+      "source_type": "regulator",
+      "url": "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32015R0758",
+      "markets": [
+        "europa",
+        "espana"
+      ],
+      "topics": [
+        "telemática",
+        "seguridad",
+        "regulación"
+      ],
+      "vehicle_type": [
+        "ligeros",
+        "pesados"
+      ],
+      "tag": "📡 Telemática",
+      "confidence": "high",
+      "evergreen_score": 4,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "safety_and_risk",
+        "regulatory_pressure"
+      ],
+      "fact_style": "regulatory_fact",
+      "why_interesting": "eCall es obligatorio para turismos pero no para la mayoría de vehículos comerciales. Una flota de camiones sin sistema equivalente puede tener tiempos de respuesta de emergencia significativamente mayores.",
+      "fleet_lesson": "La ausencia de eCall o equivalente en flotas pesadas en Europa es un gap de seguridad que las flotas pueden cubrir con telemática con función de alerta de accidente.",
+      "commercial_angle": "Introduce la brecha de seguridad entre turismos y vehículos comerciales en respuesta de emergencia.",
+      "use_case": "Evaluación de sistemas de alerta de accidente en flotas pesadas que operan en Europa."
+    },
+    {
+      "id": "telematica_007",
+      "fact": "El Sistema de Monitoreo de Presión de Neumáticos (TPMS) es obligatorio en turismos nuevos en Europa desde 2014 (Reglamento 661/2009) y en camiones pesados nuevos desde 2022 en algunos rangos de peso. Sin embargo, la mayoría de vehículos comerciales pesados en circulación todavía no tienen TPMS instalado. La presión incorrecta de neumáticos en camiones puede aumentar el consumo hasta un 3% y reducir la vida útil del neumático en un 10-15%.",
+      "source": "Reglamento (CE) 661/2009 / NHTSA - Tire Pressure Monitoring Systems for Heavy Vehicles",
+      "source_year": 2022,
+      "source_type": "regulator",
+      "url": null,
+      "markets": [
+        "europa",
+        "usa"
+      ],
+      "topics": [
+        "telemática",
+        "neumáticos",
+        "seguridad"
+      ],
+      "vehicle_type": [
+        "pesados"
+      ],
+      "tag": "📡 Telemática",
+      "confidence": "high",
+      "evergreen_score": 5,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "maintenance_savings",
+        "safety_and_risk",
+        "hidden_cost"
+      ],
+      "fact_style": "technical_fact",
+      "why_interesting": "El TPMS es obligatorio en turismos pero no en la mayoría de flotas de camiones en circulación. El coste de neumáticos mal inflados en una flota pesada puede ser muy significativo.",
+      "fleet_lesson": "En una flota de camiones sin TPMS, es estadísticamente probable que haya vehículos en servicio con presión de neumáticos incorrecta. El coste se acumula en consumo y en vida útil de neumático.",
+      "commercial_angle": "Introduce el TPMS como sensor de seguridad y ahorro sin sonar a argumento de proveedor.",
+      "use_case": "Evaluación de la implementación de TPMS en flotas pesadas sin sistema instalado de serie."
+    },
+    {
+      "id": "telematica_008",
+      "fact": "El número de vehículos comerciales conectados con telemática en España superó los 1,5 millones en 2023, según datos del sector. Sin embargo, la adopción en flotas de menos de 20 vehículos sigue siendo minoritaria. La brecha de adopción entre grandes flotas (>100 vehículos) y flotas medianas y pequeñas es uno de los principales drivers de diferencia de coste de operación.",
+      "source": "Asociación Española de la Economía Digital (Adigital) - Informe de Digitalización del Transporte 2023 / Berg Insight",
+      "source_year": 2023,
+      "source_type": "industry_association",
+      "url": null,
+      "markets": [
+        "espana"
+      ],
+      "topics": [
+        "telemática",
+        "digitalización",
+        "mercado"
+      ],
+      "vehicle_type": [
+        "pesados",
+        "ligeros",
+        "mixtos"
+      ],
+      "tag": "📡 Telemática",
+      "confidence": "medium",
+      "evergreen_score": 3,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "fleet_digitization",
+        "market_sizing"
+      ],
+      "fact_style": "market_data",
+      "why_interesting": "La mayoría de los vehículos comerciales conectados en España pertenecen a grandes operadores. Las flotas medianas y pequeñas siguen operando sin datos en tiempo real.",
+      "fleet_lesson": "La ventaja competitiva de las grandes flotas frente a las medianas en España está, en parte, en la disponibilidad de datos operativos en tiempo real que las medianas todavía no tienen.",
+      "commercial_angle": "Contextualiza la brecha de adopción tecnológica entre flotas grandes y medianas en España.",
+      "use_case": "Benchmarking de madurez digital de flotas medianas en España frente al mercado."
+    },
+    {
+      "id": "telematica_009",
+      "fact": "El sensor de temperatura en la cámara frigorífica de camiones de distribución de alimentos es obligatorio en el transporte de productos perecederos bajo el Acuerdo ATP (Accord relatif aux Transports internationaux de Denrées Périssables). El ATP exige registro continuo de temperatura durante el transporte y disponibilidad del registro para inspección. El incumplimiento puede invalidar la cadena de frío legal y generar responsabilidad ante el cliente.",
+      "source": "Acuerdo ATP - Naciones Unidas UNECE / Ministerio de Transportes España BOE",
+      "source_year": 2023,
+      "source_type": "regulator",
+      "url": "https://unece.org/transport/standards/transport/dangerous-goods-and-special-cargo/atp-agreement",
+      "markets": [
+        "europa",
+        "espana",
+        "internacional"
+      ],
+      "topics": [
+        "telemática",
+        "sensores",
+        "cadena de frío"
+      ],
+      "vehicle_type": [
+        "frigoríficos"
+      ],
+      "tag": "📡 Telemática",
+      "confidence": "high",
+      "evergreen_score": 5,
+      "strategic_value": "high",
+      "strategic_bucket": [
+        "cold_chain_control",
+        "compliance_risk",
+        "sector_specific"
+      ],
+      "fact_style": "compliance_fact",
+      "why_interesting": "El registro de temperatura en el transporte frigorífico no es opcional: es una obligación legal bajo el ATP que puede tener consecuencias de responsabilidad civil si no se cumple.",
+      "fleet_lesson": "En transporte refrigerado bajo ATP, el sensor de temperatura no es un accesorio de mejora: es un requisito legal que debe documentarse para cada trayecto.",
+      "commercial_angle": "Introduce el sensor de temperatura como obligación legal, no como característica opcional de telemática.",
+      "use_case": "Cumplimiento legal en flotas de transporte refrigerado bajo el Acuerdo ATP."
+    },
+    {
+      "id": "telematica_010",
+      "fact": "Las normas de tiempo de conducción y descanso del Reglamento (CE) 561/2006 son monitorizadas en España por la DGT mediante el tacógrafo digital. Una infracción grave por manipulación del tacógrafo o por superación de los tiempos de conducción puede suponer multas de hasta 6.001 euros por conducta reiterada, y el empresario puede ser sancionado solidariamente con el conductor si se demuestra que la jornada era sistemáticamente incumplible.",
+      "source": "Reglamento (CE) 561/2006 / Ley de Ordenación de los Transportes Terrestres (LOTT) España / DGT",
+      "source_year": 2023,
+      "source_type": "regulator",
+      "url": "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32006R0561",
+      "markets": [
+        "espana",
+        "europa"
+      ],
+      "topics": [
+        "telemática",
+        "tacógrafo",
+        "compliance"
+      ],
+      "vehicle_type": [
+        "pesados"
+      ],
+      "tag": "📡 Telemática",
+      "confidence": "high",
+      "evergreen_score": 4,
+      "strategic_value": "high",
+      "strategic_bucket": [
+        "compliance_risk",
+        "regulatory_pressure"
+      ],
+      "fact_style": "compliance_fact",
+      "why_interesting": "La sanción solidaria al empresario por incumplimiento sistemático de tiempos de conducción es el aspecto del reglamento de tacógrafo que más directores de flota desconocen.",
+      "fleet_lesson": "Si los planificadores de rutas asignan jornadas que solo son posibles infringiendo los tiempos de descanso, la empresa es corresponsable de las infracciones del conductor.",
+      "commercial_angle": "Introduce la responsabilidad empresarial en el incumplimiento de tiempos de conducción como riesgo de compliance.",
+      "use_case": "Evaluación del riesgo legal del empresario en infracciones de tiempos de conducción en flotas pesadas en España."
+    },
+    {
+      "id": "telematica_011",
+      "fact": "Los sensores de apertura de puerta en furgonetas de reparto permiten registrar cada apertura durante el recorrido, correlacionarla con la ubicación GPS y verificar si la entrega se realizó en el punto correcto. En flotas de distribución sin este sensor, es imposible demostrar al cliente que se intentó la entrega si el conductor no registró la incidencia manualmente. Este dato puede ser clave en disputas de servicio.",
+      "source": "Geotab - Fleet Management Use Cases: Door Sensor Integration 2022",
+      "source_year": 2022,
+      "source_type": "company_report",
+      "url": null,
+      "markets": [
+        "internacional"
+      ],
+      "topics": [
+        "telemática",
+        "sensores",
+        "última milla"
+      ],
+      "vehicle_type": [
+        "ligeros"
+      ],
+      "tag": "📡 Telemática",
+      "confidence": "medium",
+      "evergreen_score": 5,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "operational_visibility",
+        "sector_specific",
+        "urban_delivery_efficiency"
+      ],
+      "fact_style": "operational_oddity",
+      "why_interesting": "El sensor de apertura de puerta es una prueba de servicio, no solo un dato operativo. En disputas con clientes sobre entregas fallidas, puede ser la única evidencia objetiva disponible.",
+      "fleet_lesson": "En flotas de reparto con reclamaciones frecuentes de entregas no realizadas, el sensor de puerta con correlación GPS es el único sistema de prueba objetiva de intento de entrega.",
+      "commercial_angle": "Introduce el sensor de puerta como herramienta de gestión de disputas de servicio sin sonar a pitch de telemática.",
+      "use_case": "Gestión de disputas de servicio en flotas de distribución con alto volumen de reclamaciones de entrega fallida."
+    },
+    {
+      "id": "telematica_012",
+      "fact": "El peso por eje es un parámetro crítico en el transporte de carga pesada. Un camión con exceso de peso por eje puede ser multado y obligado a descargar parte de la mercancía en el lugar del control. En España, la DGT puede imponer multas de hasta 12.000 euros por exceso de peso grave. Los sensores de peso por eje integrados en la telemática permiten detectar este problema antes de salir al corredor.",
+      "source": "DGT España - Reglamento General de Circulación / Ley de Ordenación de Transportes Terrestres",
+      "source_year": 2023,
+      "source_type": "regulator",
+      "url": "https://www.dgt.es",
+      "markets": [
+        "espana"
+      ],
+      "topics": [
+        "telemática",
+        "sensores",
+        "compliance"
+      ],
+      "vehicle_type": [
+        "pesados"
+      ],
+      "tag": "📡 Telemática",
+      "confidence": "high",
+      "evergreen_score": 4,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "compliance_risk",
+        "safety_and_risk",
+        "vehicle_specific_risk"
+      ],
+      "fact_style": "compliance_fact",
+      "why_interesting": "El exceso de peso por eje es una infracción que puede resultar en descarga en carretera y multa de hasta 12.000 euros. Un sensor de pesaje integrado puede evitar ambas consecuencias.",
+      "fleet_lesson": "Cargar el camión hasta el límite visual sin verificar el peso por eje es una práctica que puede resultar en una multa y en una descarga en carretera. El pesaje antes de salida es la única forma de evitarlo.",
+      "commercial_angle": "Introduce los sensores de peso por eje como herramienta de compliance sin promover ninguna marca.",
+      "use_case": "Control de exceso de peso en flotas pesadas en España antes de la salida de cada trayecto."
+    },
+    {
+      "id": "telematica_013",
+      "fact": "La combinación de datos de tacógrafo y GPS permite detectar si un conductor está realizando paradas no registradas en el tacógrafo, lo que puede indicar uso del vehículo para fines no autorizados. En flotas sin integración de tacógrafo y telemática, esta discrepancia es indetectable en las revisiones estándar de rutinas de flota.",
+      "source": "IRU - Digital Tachograph Integration with Fleet Telematics Best Practice 2022",
+      "source_year": 2022,
+      "source_type": "industry_association",
+      "url": "https://www.iru.org",
+      "markets": [
+        "europa",
+        "espana"
+      ],
+      "topics": [
+        "telemática",
+        "tacógrafo",
+        "fraude"
+      ],
+      "vehicle_type": [
+        "pesados"
+      ],
+      "tag": "📡 Telemática",
+      "confidence": "medium",
+      "evergreen_score": 5,
+      "strategic_value": "high",
+      "strategic_bucket": [
+        "fuel_fraud_detection",
+        "compliance_risk",
+        "operational_visibility"
+      ],
+      "fact_style": "fraud_fact",
+      "why_interesting": "La integración de tacógrafo y GPS es una funcionalidad que pocas flotas usan activamente para detectar usos no autorizados del vehículo.",
+      "fleet_lesson": "Un tacógrafo y un GPS sin integración dan dos conjuntos de datos. Integrados, permiten detectar inconsistencias entre el registro oficial del conductor y el recorrido real del vehículo.",
+      "commercial_angle": "Introduce la integración de datos como herramienta de control de fraude sin promover ningún sistema específico.",
+      "use_case": "Detección de usos no autorizados de vehículos en flotas de transporte internacional."
+    },
+    {
+      "id": "telematica_014",
+      "fact": "En el transporte de mercancías peligrosas (ADR), algunos países europeos exigen sistemas de localización GPS en tiempo real en los vehículos que transportan determinadas cantidades de sustancias peligrosas. En España, el Real Decreto 97/2014 de transporte de mercancías peligrosas establece requisitos específicos de seguimiento y notificación que pueden requerir sistemas telemáticos homologados.",
+      "source": "Real Decreto 97/2014 - Transporte de Mercancías Peligrosas por Carretera España / Acuerdo ADR UNECE",
+      "source_year": 2023,
+      "source_type": "regulator",
+      "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2014-1508",
+      "markets": [
+        "espana",
+        "europa"
+      ],
+      "topics": [
+        "telemática",
+        "ADR",
+        "regulación"
+      ],
+      "vehicle_type": [
+        "pesados",
+        "especiales"
+      ],
+      "tag": "📡 Telemática",
+      "confidence": "high",
+      "evergreen_score": 4,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "compliance_risk",
+        "safety_and_risk",
+        "regulatory_pressure"
+      ],
+      "fact_style": "regulatory_fact",
+      "why_interesting": "El GPS es una obligación legal para determinados transportes ADR, no una opción de mejora. Muchas flotas con vehículos ADR no verifican si sus sistemas cumplen los requisitos homologados.",
+      "fleet_lesson": "En transporte ADR, el GPS no es un accesorio: puede ser un requisito legal específico según el tipo y cantidad de mercancía peligrosa. Verificar el requisito exacto antes de asumir que la telemática estándar es suficiente.",
+      "commercial_angle": "Introduce la obligatoriedad de GPS en ADR como riesgo de compliance, no como venta de telemática.",
+      "use_case": "Cumplimiento legal en flotas de transporte de mercancías peligrosas en España."
+    },
+    {
+      "id": "telematica_015",
+      "fact": "La Norma Oficial Mexicana NOM-068-SCT-2014 establece los requisitos mínimos de seguridad para el autotransporte federal de carga, incluyendo la obligación de contar con sistemas de rastreo satelital en vehículos de transporte de carga general. En México, la SICT supervisa el cumplimiento y las plataformas de monitoreo deben estar homologadas. Sin embargo, la tasa de cumplimiento real en flotas medianas sigue siendo objeto de seguimiento.",
+      "source": "NOM-068-SCT-2014 / SICT - Secretaría de Infraestructura, Comunicaciones y Transportes México",
+      "source_year": 2022,
+      "source_type": "regulator",
+      "url": "https://www.gob.mx/sct",
+      "markets": [
+        "mexico"
+      ],
+      "topics": [
+        "telemática",
+        "regulación",
+        "rastreo"
+      ],
+      "vehicle_type": [
+        "pesados"
+      ],
+      "tag": "📡 Telemática",
+      "confidence": "high",
+      "evergreen_score": 4,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "compliance_risk",
+        "regulatory_pressure"
+      ],
+      "fact_style": "regulatory_fact",
+      "why_interesting": "El rastreo satelital es una obligación legal en el autotransporte federal mexicano, no una opción tecnológica. Muchas flotas medianas desconocen los requisitos de homologación del sistema.",
+      "fleet_lesson": "No basta con tener GPS instalado: en México, el sistema de rastreo debe cumplir los requisitos de la NOM-068 y estar homologado ante la SICT para cumplir legalmente.",
+      "commercial_angle": "Introduce el rastreo satelital como obligación legal verificable en el transporte federal mexicano.",
+      "use_case": "Verificación del cumplimiento de la NOM-068 en flotas de autotransporte federal en México."
+    },
+    {
+      "id": "telematica_016",
+      "fact": "La fatiga está implicada en el 20-30% de los accidentes mortales en carretera en Europa, según la ETSC. Los sistemas de detección de fatiga por cámara interior son obligatorios en camiones nuevos bajo el Reglamento (UE) 2019/2144 desde julio de 2024. Las flotas que renuevan vehículos en Europa deben verificar que incluyen esta función de serie.",
+      "source": "ETSC - European Transport Safety Council, PIN Programme 2023 / Reglamento (UE) 2019/2144",
+      "source_year": 2024,
+      "source_type": "regulator",
+      "url": "https://etsc.eu/european-road-safety-observatory",
+      "markets": [
+        "europa",
+        "espana"
+      ],
+      "topics": [
+        "telemática",
+        "seguridad",
+        "fatiga"
+      ],
+      "vehicle_type": [
+        "pesados"
+      ],
+      "tag": "📡 Telemática",
+      "confidence": "high",
+      "evergreen_score": 4,
+      "strategic_value": "high",
+      "strategic_bucket": [
+        "safety_and_risk",
+        "regulatory_pressure",
+        "driver_behavior"
+      ],
+      "fact_style": "safety_fact",
+      "why_interesting": "La detección de fatiga era hasta 2024 un accesorio opcional. Desde julio de 2024 es obligatoria en camiones nuevos bajo normativa europea. Las flotas que renuevan vehículos deben verificar que incluye esta función.",
+      "fleet_lesson": "En renovación de flota en Europa desde julio de 2024, verificar que el vehículo incluye sistema de detección de somnolencia del conductor ya no es opcional: es una exigencia del Reglamento 2019/2144.",
+      "commercial_angle": "Introduce la detección de fatiga como obligación legal de nuevo cumplimiento para flotas europeas.",
+      "use_case": "Verificación de cumplimiento del Reglamento 2019/2144 en la renovación de flota pesada en Europa."
+    },
+    {
+      "id": "telematica_017",
+      "fact": "La plataforma de peajes EETS (European Electronic Tolling Service) permite a un vehículo pesado pagar los peajes de múltiples países europeos con un solo dispositivo a bordo, eliminando la necesidad de contratos separados con cada operador nacional. En España, el nuevo sistema de peaje en autovías (previsto para su implantación progresiva) forma parte de este marco. Flotas sin integración EETS pueden tener costes administrativos adicionales en corredores internacionales.",
+      "source": "Directiva (UE) 2019/520 del Parlamento Europeo - EETS / DGT España",
+      "source_year": 2023,
+      "source_type": "regulator",
+      "url": "https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32019L0520",
+      "markets": [
+        "europa",
+        "espana"
+      ],
+      "topics": [
+        "telemática",
+        "peajes",
+        "regulación"
+      ],
+      "vehicle_type": [
+        "pesados"
+      ],
+      "tag": "📡 Telemática",
+      "confidence": "high",
+      "evergreen_score": 3,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "compliance_risk",
+        "admin_automation",
+        "route_optimization"
+      ],
+      "fact_style": "regulatory_fact",
+      "why_interesting": "EETS no es solo una comodidad administrativa: en flotas con operación en múltiples países europeos, la fragmentación de sistemas de peaje tiene un coste de gestión real.",
+      "fleet_lesson": "En flotas con operación en corredores internacionales europeos, evaluar la adhesión a un proveedor EETS puede eliminar costes administrativos de gestión de múltiples contratos de peaje.",
+      "commercial_angle": "Introduce la eficiencia administrativa de EETS sin promover ningún proveedor de peaje.",
+      "use_case": "Simplificación de la gestión de peajes en flotas con operación internacional en Europa."
+    },
+    {
+      "id": "telematica_018",
+      "fact": "En México, los Centros de Control de Confianza para operadores de autotransporte federal exigen evaluaciones periódicas de conductores que incluyen verificación de consumo de drogas y alcohol. Los registros de telemática que muestran comportamientos anómalos (aceleraciones bruscas, exceso de velocidad, desvíos de ruta) pueden ser utilizados como indicadores complementarios en los procesos de evaluación y formación de conductores.",
+      "source": "SICT - Lineamientos de los Centros de Control de Confianza para Conductores del Autotransporte Federal",
+      "source_year": 2023,
+      "source_type": "regulator",
+      "url": "https://www.gob.mx/sct",
+      "markets": [
+        "mexico"
+      ],
+      "topics": [
+        "telemática",
+        "conductores",
+        "seguridad"
+      ],
+      "vehicle_type": [
+        "pesados"
+      ],
+      "tag": "📡 Telemática",
+      "confidence": "medium",
+      "evergreen_score": 3,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "driver_behavior",
+        "safety_and_risk",
+        "compliance_risk"
+      ],
+      "fact_style": "compliance_fact",
+      "why_interesting": "Los datos de telemática pueden complementar los programas de control de confianza de conductores exigidos por la SICT, convirtiéndose en un insumo de gestión de RR.HH. además de operativo.",
+      "fleet_lesson": "Los datos de comportamiento del conductor registrados por la telemática tienen un uso más allá del ahorro de combustible: pueden ser evidencia en procesos de evaluación y gestión de conductores.",
+      "commercial_angle": "Introduce el uso de telemática en gestión de conductores sin promover ningún sistema.",
+      "use_case": "Programas de evaluación y formación de conductores en flotas de autotransporte federal en México."
+    },
+    {
+      "id": "telematica_019",
+      "fact": "La integración de datos de telemática con los sistemas ERP o TMS de una empresa permite calcular automáticamente el coste real por entrega, por ruta o por conductor. Sin esa integración, el coste por entrega es siempre una estimación basada en promedios. Según Gartner, las empresas de logística que integran datos de flota con sus sistemas de gestión reducen el tiempo de análisis operativo hasta en un 40%.",
+      "source": "Gartner - Fleet Management Technology Integration Insights 2023",
+      "source_year": 2023,
+      "source_type": "consultancy",
+      "url": null,
+      "markets": [
+        "internacional"
+      ],
+      "topics": [
+        "telemática",
+        "digitalización",
+        "costes"
+      ],
+      "vehicle_type": [
+        "pesados",
+        "ligeros",
+        "mixtos"
+      ],
+      "tag": "📡 Telemática",
+      "confidence": "medium",
+      "evergreen_score": 3,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "fleet_digitization",
+        "admin_automation",
+        "operational_visibility"
+      ],
+      "fact_style": "cost_benchmark",
+      "why_interesting": "La telemática que no está integrada con el ERP o TMS genera datos que hay que procesar manualmente. Esa brecha de integración tiene un coste de tiempo que se puede medir.",
+      "fleet_lesson": "Tener telemática sin integración con el sistema de gestión es como tener un sensor de temperatura sin alarma: los datos están ahí, pero no generan acción automática.",
+      "commercial_angle": "Introduce la integración de sistemas como palanca de eficiencia sin promover ninguna plataforma.",
+      "use_case": "Evaluación del nivel de madurez de integración de telemática en la infraestructura de datos de la empresa."
+    },
+    {
+      "id": "telematica_020",
+      "fact": "Los vehículos de hormigón preparado (hormigoneras) deben entregar el hormigón dentro de un tiempo límite desde la carga en la planta. En España, la norma UNE-EN 206 establece que el tiempo máximo desde la fabricación hasta el vertido no debe superar 90 minutos o 300 revoluciones del bombo. Los sistemas de telemática con sensor de giro del bombo permiten controlar este parámetro en tiempo real y evitar entregas de hormigón fuera de especificación.",
+      "source": "UNE-EN 206:2013+A2:2021 - Hormigón: Especificaciones, propiedades, fabricación y conformidad",
+      "source_year": 2021,
+      "source_type": "technical_standard",
+      "url": null,
+      "markets": [
+        "espana",
+        "europa"
+      ],
+      "topics": [
+        "telemática",
+        "construcción",
+        "normativa técnica"
+      ],
+      "vehicle_type": [
+        "especiales"
+      ],
+      "tag": "📡 Telemática",
+      "confidence": "high",
+      "evergreen_score": 5,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "sector_specific",
+        "compliance_risk",
+        "cold_chain_control"
+      ],
+      "fact_style": "operational_oddity",
+      "why_interesting": "El límite de 90 minutos o 300 revoluciones en la entrega de hormigón es una rareza operativa que convierte el sensor del bombo en una herramienta de cumplimiento de calidad, no solo de telemática.",
+      "fleet_lesson": "En flotas de hormigón, el sensor de giro del bombo es un sensor de calidad de producto, no solo de consumo. Una entrega fuera del tiempo límite puede significar hormigón no conforme y responsabilidad civil.",
+      "commercial_angle": "Introduce el sensor de bombo como herramienta de calidad en flotas de hormigón sin promover ningún sistema.",
+      "use_case": "Control de calidad en tiempo real en flotas de hormigón preparado en obras."
+    }
+  ],
+  "seguridad": [
+    {
+      "id": "seguridad_001",
+      "fact": "El Secretariado Ejecutivo del Sistema Nacional de Seguridad Pública (SESNSP) de México registró 15,440 robos a transporte terrestre de carga en 2023, lo que equivale a un promedio de 42 incidentes diarios. Los estados con mayor incidencia fueron Estado de México, Puebla y Guanajuato. Es el indicador más alto de la serie histórica disponible.",
+      "source": "SESNSP - Informe de Incidencia Delictiva del Fuero Común 2023",
+      "source_year": 2024,
+      "source_type": "public_body",
+      "url": "https://www.gob.mx/sesnsp",
+      "markets": [
+        "mexico"
+      ],
+      "topics": [
+        "seguridad",
+        "robo de carga",
+        "autotransporte"
+      ],
+      "vehicle_type": [
+        "pesados"
+      ],
+      "tag": "🔒 Seguridad",
+      "confidence": "high",
+      "evergreen_score": 3,
+      "strategic_value": "high",
+      "strategic_bucket": [
+        "safety_and_risk",
+        "vehicle_specific_risk"
+      ],
+      "fact_style": "safety_fact",
+      "why_interesting": "42 robos diarios a transporte de carga en México es el dato más crudo y accionable del panorama de seguridad del autotransporte. Proviene de la fuente oficial más verificable.",
+      "fleet_lesson": "El riesgo de robo a transportista en México no es un riesgo residual: con 42 incidentes diarios, es un riesgo operativo estructural que debe gestionarse con protocolos activos.",
+      "commercial_angle": "Contextualiza el riesgo de robo de carga en México con datos oficiales sin sensacionalismo.",
+      "use_case": "Evaluación del riesgo de seguridad en flotas con operación en los corredores más afectados por robo de carga en México."
+    },
+    {
+      "id": "seguridad_002",
+      "fact": "TT Club, aseguradora especializada en logística y transporte, reportó en su estudio de 2023 que México es uno de los cinco países del mundo con mayor valor de carga robada anualmente. Los productos más robados en México son alimentos y bebidas (32%), ropa y electrónica (20%) y materiales de construcción (15%). El cargo es asaltado principalmente durante el transporte en movimiento, no en almacenamiento.",
+      "source": "TT Club / BSI - Cargo Theft Report 2023",
+      "source_year": 2023,
+      "source_type": "company_report",
+      "url": "https://www.ttclub.com",
+      "markets": [
+        "mexico",
+        "latam"
+      ],
+      "topics": [
+        "seguridad",
+        "robo de carga",
+        "logística"
+      ],
+      "vehicle_type": [
+        "pesados"
+      ],
+      "tag": "🔒 Seguridad",
+      "confidence": "medium",
+      "evergreen_score": 3,
+      "strategic_value": "high",
+      "strategic_bucket": [
+        "safety_and_risk",
+        "logistics_pressure"
+      ],
+      "fact_style": "safety_fact",
+      "why_interesting": "El perfil de la carga más robada en México (alimentos, ropa, electrónica) ayuda a las flotas de esos sectores a dimensionar su nivel real de exposición.",
+      "fleet_lesson": "En México, el riesgo de robo de carga no es igual para todos los sectores. Las flotas de alimentos y bebidas tienen una exposición estadísticamente superior a la media.",
+      "commercial_angle": "Introduce el perfil sectorial del riesgo de robo de carga sin promover ningún sistema de seguridad.",
+      "use_case": "Evaluación del riesgo de robo de carga por sector en México para diseño de protocolos de seguridad."
+    },
+    {
+      "id": "seguridad_003",
+      "fact": "En España, la tasa de mortalidad en accidentes de tráfico de vehículos pesados en vías interurbanas fue de 1.2 fallecidos por cada 100 accidentes con víctimas en 2022, significativamente superior a la de turismos (0.7), según datos de la DGT. Los factores más frecuentes en accidentes mortales de camiones son la distracción, el exceso de velocidad y la fatiga.",
+      "source": "DGT - Anuario Estadístico de Accidentes 2022",
+      "source_year": 2023,
+      "source_type": "public_body",
+      "url": "https://www.dgt.es/inicio/seguridad-vial/investigacion-y-estadistica/estadisticas-de-accidentes/anuario-estadistico",
+      "markets": [
+        "espana"
+      ],
+      "topics": [
+        "seguridad",
+        "accidentalidad",
+        "transporte pesado"
+      ],
+      "vehicle_type": [
+        "pesados"
+      ],
+      "tag": "🔒 Seguridad",
+      "confidence": "high",
+      "evergreen_score": 3,
+      "strategic_value": "high",
+      "strategic_bucket": [
+        "safety_and_risk",
+        "driver_behavior"
+      ],
+      "fact_style": "safety_fact",
+      "why_interesting": "La mortalidad en accidentes de camiones en España es casi el doble que en turismos. Es un dato que pone en perspectiva la responsabilidad del director de flota en la seguridad vial.",
+      "fleet_lesson": "La gestión de la seguridad en flotas de vehículos pesados no es solo una obligación legal: la tasa de mortalidad de accidentes de camiones es significativamente superior a la de cualquier otro vehículo.",
+      "commercial_angle": "Introduce el riesgo de seguridad vial en flotas pesadas con datos oficiales de la DGT.",
+      "use_case": "Evaluación del riesgo de accidentalidad en flotas pesadas en España para programas de conducción segura."
+    },
+    {
+      "id": "seguridad_004",
+      "fact": "El coste económico de un accidente grave con lesionados en una flota corporativa no se limita a los daños materiales y la prima de seguro. Incluye tiempo de tramitación, posible responsabilidad penal del gestor de flota si hubo negligencia en el mantenimiento, coste de imagen y pérdida de productividad del conductor. La ETSC estima que el coste social medio de un accidente mortal en Europa supera los 3 millones de euros.",
+      "source": "ETSC - European Transport Safety Council, PIN Programme 2023",
+      "source_year": 2023,
+      "source_type": "industry_association",
+      "url": "https://etsc.eu",
+      "markets": [
+        "europa",
+        "espana"
+      ],
+      "topics": [
+        "seguridad",
+        "coste de accidente",
+        "responsabilidad"
+      ],
+      "vehicle_type": [
+        "pesados",
+        "ligeros"
+      ],
+      "tag": "🔒 Seguridad",
+      "confidence": "high",
+      "evergreen_score": 5,
+      "strategic_value": "high",
+      "strategic_bucket": [
+        "safety_and_risk",
+        "hidden_cost"
+      ],
+      "fact_style": "cost_benchmark",
+      "why_interesting": "El coste de un accidente grave no se contabiliza completamente en el presupuesto de una flota. La responsabilidad del gestor puede ser penal si se demuestra negligencia en el mantenimiento.",
+      "fleet_lesson": "El presupuesto de seguridad de una flota no debería calcularse solo como prima de seguro. El coste potencial de un accidente grave incluye responsabilidad legal que el seguro no cubre.",
+      "commercial_angle": "Introduce el coste total del accidente de flota como argumento de inversión en seguridad preventiva.",
+      "use_case": "Justificación del presupuesto de seguridad vial en flotas corporativas ante el CFO."
+    },
+    {
+      "id": "seguridad_005",
+      "fact": "La señal V-16 de luz ámbar de posición de emergencia es obligatoria en España desde enero de 2026 como sustitución de los triángulos de emergencia en vías con alta velocidad. Los vehículos deben poder conectar la señal V-16 con la DGT para la geolocalización automática del incidente. Las flotas que no hayan actualizado sus kits de emergencia están incumpliendo la normativa.",
+      "source": "Real Decreto 159/2021 / DGT España - Señal V-16",
+      "source_year": 2024,
+      "source_type": "regulator",
+      "url": "https://www.dgt.es/inicio/noticias/2024/enero/la-nueva-señal-de-emergencia-v16-sera-obligatoria/",
+      "markets": [
+        "espana"
+      ],
+      "topics": [
+        "seguridad",
+        "regulación",
+        "equipamiento"
+      ],
+      "vehicle_type": [
+        "pesados",
+        "ligeros",
+        "mixtos"
+      ],
+      "tag": "🔒 Seguridad",
+      "confidence": "high",
+      "evergreen_score": 3,
+      "strategic_value": "high",
+      "strategic_bucket": [
+        "compliance_risk",
+        "regulatory_pressure",
+        "safety_and_risk"
+      ],
+      "fact_style": "regulatory_fact",
+      "why_interesting": "La señal V-16 con conectividad a la DGT es una obligación que afecta a cada vehículo de la flota en España. Muchos gestores de flota no han actualizado los kits de emergencia.",
+      "fleet_lesson": "Cada vehículo de la flota en España debe llevar señal V-16 homologada. Los triángulos de emergencia ya no son suficientes en vías de alta velocidad desde enero de 2026.",
+      "commercial_angle": "Introduce la obligatoriedad de V-16 como riesgo de incumplimiento en flotas sin actualización del kit de emergencia.",
+      "use_case": "Verificación del cumplimiento de equipamiento de emergencia en flotas que operan en España."
+    },
+    {
+      "id": "seguridad_006",
+      "fact": "El frenado de emergencia automático (AEBS) es obligatorio en camiones pesados nuevos en Europa desde 2015 (Reglamento CE 661/2009). Sin embargo, el 40% del parque de camiones en circulación en Europa todavía no dispone de AEBS, según la Comisión Europea. En renovación de flota con vehículos de segunda mano, verificar si llevan AEBS es un criterio de seguridad activo.",
+      "source": "Comisión Europea DG MOVE / Reglamento (CE) 661/2009 / ETSC",
+      "source_year": 2023,
+      "source_type": "public_body",
+      "url": "https://transport.ec.europa.eu",
+      "markets": [
+        "europa",
+        "espana"
+      ],
+      "topics": [
+        "seguridad",
+        "tecnología de vehículo",
+        "regulación"
+      ],
+      "vehicle_type": [
+        "pesados"
+      ],
+      "tag": "🔒 Seguridad",
+      "confidence": "medium",
+      "evergreen_score": 4,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "safety_and_risk",
+        "regulatory_pressure"
+      ],
+      "fact_style": "regulatory_fact",
+      "why_interesting": "El AEBS es obligatorio en camiones nuevos pero el 40% del parque europeo todavía no lo tiene. En renovación de flota, es un criterio de seguridad que debe estar en el pliego.",
+      "fleet_lesson": "Al renovar o ampliar la flota con vehículos de segunda mano en Europa, verificar si el vehículo tiene AEBS instalado es un criterio de seguridad activo, no un extra opcional.",
+      "commercial_angle": "Introduce AEBS como criterio de selección de vehículo en renovación de flota sin promover ninguna marca.",
+      "use_case": "Criterios de seguridad en la selección de vehículos pesados de segunda mano en Europa."
+    },
+    {
+      "id": "seguridad_007",
+      "fact": "En México, los corredores con mayor incidencia de robo a transporte de carga en 2023 fueron el tramo Texcoco-Puebla (autopista México-Puebla) y el corredor del Bajío (Guanajuato-Estado de México). El SESNSP publica mensualmente el mapa de incidencia por estado, pero no desglosa por corredor específico. Organizaciones como CANACAR y COPARMEX complementan con datos operativos del sector.",
+      "source": "SESNSP / CANACAR - Reportes de Seguridad en el Autotransporte 2023",
+      "source_year": 2024,
+      "source_type": "public_body",
+      "url": "https://www.gob.mx/sesnsp",
+      "markets": [
+        "mexico"
+      ],
+      "topics": [
+        "seguridad",
+        "robo de carga",
+        "corredores"
+      ],
+      "vehicle_type": [
+        "pesados"
+      ],
+      "tag": "🔒 Seguridad",
+      "confidence": "medium",
+      "evergreen_score": 3,
+      "strategic_value": "high",
+      "strategic_bucket": [
+        "safety_and_risk",
+        "route_optimization"
+      ],
+      "fact_style": "safety_fact",
+      "why_interesting": "Los corredores de alto riesgo en México son conocidos por el sector pero raramente están documentados con datos oficiales granulares. SESNSP y CANACAR son las fuentes más próximas.",
+      "fleet_lesson": "Una flota que opera en el corredor México-Puebla o en el Bajío sin protocolos específicos de seguridad para esas rutas está operando en los corredores de mayor siniestralidad del país.",
+      "commercial_angle": "Introduce el riesgo por corredor en México como argumento para la segmentación de protocolos de seguridad.",
+      "use_case": "Diseño de protocolos de seguridad diferenciados por corredor para flotas con operación en México."
+    },
+    {
+      "id": "seguridad_008",
+      "fact": "La distracción al volante está implicada en el 25-30% de los accidentes de tráfico en España, según la DGT. En vehículos comerciales, el uso del teléfono móvil al volante conlleva una sanción de 200 euros y la pérdida de 6 puntos del permiso de conducir. Si el accidente se produce con el móvil en la mano, la responsabilidad civil del conductor y de la empresa puede verse agravada.",
+      "source": "DGT - Anuario de Accidentalidad 2022 / Reglamento General de Circulación España",
+      "source_year": 2023,
+      "source_type": "regulator",
+      "url": "https://www.dgt.es",
+      "markets": [
+        "espana"
+      ],
+      "topics": [
+        "seguridad",
+        "distracciones",
+        "conducción"
+      ],
+      "vehicle_type": [
+        "pesados",
+        "ligeros"
+      ],
+      "tag": "🔒 Seguridad",
+      "confidence": "high",
+      "evergreen_score": 4,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "driver_behavior",
+        "safety_and_risk",
+        "compliance_risk"
+      ],
+      "fact_style": "safety_fact",
+      "why_interesting": "La distracción es el primer factor de accidente en España. La responsabilidad de la empresa puede verse agravada si el conductor usa el teléfono en horario laboral con dispositivo de empresa.",
+      "fleet_lesson": "Si los conductores usan teléfono corporativo durante la conducción y la empresa no tiene política activa al respecto, la empresa puede ser corresponsable en caso de accidente.",
+      "commercial_angle": "Introduce la política de uso de dispositivos al volante como obligación de gestión de riesgos.",
+      "use_case": "Diseño de política de uso de dispositivos móviles para conductores en flotas corporativas en España."
+    },
+    {
+      "id": "seguridad_009",
+      "fact": "El transporte de mercancías peligrosas bajo ADR requiere que el conductor tenga una formación específica certificada (Certificado ADR), que el vehículo lleve señalización normalizada y equipamiento específico según la clase de peligro, y que la empresa designe un Consejero de Seguridad para el Transporte de Mercancías Peligrosas. En España, la ausencia de consejero de seguridad es una infracción muy grave con multa de hasta 12.000 euros.",
+      "source": "Real Decreto 97/2014 / Acuerdo ADR - UNECE / DGT España",
+      "source_year": 2023,
+      "source_type": "regulator",
+      "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2014-1508",
+      "markets": [
+        "espana",
+        "europa"
+      ],
+      "topics": [
+        "seguridad",
+        "ADR",
+        "compliance"
+      ],
+      "vehicle_type": [
+        "pesados",
+        "especiales"
+      ],
+      "tag": "🔒 Seguridad",
+      "confidence": "high",
+      "evergreen_score": 4,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "compliance_risk",
+        "regulatory_pressure",
+        "safety_and_risk"
+      ],
+      "fact_style": "compliance_fact",
+      "why_interesting": "La obligación del Consejero de Seguridad ADR es uno de los requisitos que más incumplimientos generan en flotas que transportan mercancías peligrosas de forma ocasional o irregular.",
+      "fleet_lesson": "Una flota que transporta mercancías peligrosas aunque sea de forma puntual debe tener Consejero de Seguridad ADR designado. No hacerlo es una infracción muy grave independientemente de la frecuencia del transporte.",
+      "commercial_angle": "Introduce la obligación del Consejero ADR como riesgo de compliance en flotas con transporte ocasional de mercancías peligrosas.",
+      "use_case": "Verificación del cumplimiento de obligaciones ADR en flotas con transporte de mercancías peligrosas en España."
+    },
+    {
+      "id": "seguridad_010",
+      "fact": "El transporte de mercancías peligrosas en México está regulado por las NOM-SCT correspondientes y por el Reglamento sobre el Transporte Terrestre de Materiales y Residuos Peligrosos (DOF 2007). Un vehículo que transporte material peligroso sin la documentación requerida (hoja de seguridad, tarjeta de emergencia, certificación del conductor) puede ser detenido y multado por la SICT con sanciones de hasta 900 UMAs.",
+      "source": "DOF - Reglamento del Autotransporte Federal y Servicios Auxiliares / SICT México",
+      "source_year": 2023,
+      "source_type": "regulator",
+      "url": "https://www.gob.mx/sct",
+      "markets": [
+        "mexico"
+      ],
+      "topics": [
+        "seguridad",
+        "mercancías peligrosas",
+        "compliance"
+      ],
+      "vehicle_type": [
+        "pesados",
+        "especiales"
+      ],
+      "tag": "🔒 Seguridad",
+      "confidence": "medium",
+      "evergreen_score": 4,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "compliance_risk",
+        "safety_and_risk"
+      ],
+      "fact_style": "compliance_fact",
+      "why_interesting": "El incumplimiento en transporte de materiales peligrosos en México tiene consecuencias operativas inmediatas: detención del vehículo y multa de hasta 900 UMAs.",
+      "fleet_lesson": "En flotas que transportan materiales peligrosos en México, la documentación a bordo no es un trámite: es la única defensa ante una verificación de la SICT en carretera.",
+      "commercial_angle": "Introduce el riesgo de incumplimiento en transporte de materiales peligrosos en México sin promover ningún servicio.",
+      "use_case": "Revisión del cumplimiento regulatorio en flotas de transporte de materiales peligrosos en México."
+    },
+    {
+      "id": "seguridad_011",
+      "fact": "El cansancio o fatiga del conductor está presente en el 20% de los accidentes mortales de vehículos pesados en carretera en Europa, según la ETSC. El riesgo de accidente por fatiga aumenta exponencialmente después de las 2 horas de conducción continua sin pausa. El Reglamento (CE) 561/2006 obliga a realizar una pausa de 45 minutos después de 4.5 horas de conducción, pero estudios de fisiología del sueño indican que el deterioro cognitivo empieza antes.",
+      "source": "ETSC - European Transport Safety Council, Drowsy Driving Report 2023",
+      "source_year": 2023,
+      "source_type": "industry_association",
+      "url": "https://etsc.eu",
+      "markets": [
+        "europa",
+        "espana"
+      ],
+      "topics": [
+        "seguridad",
+        "fatiga",
+        "conducción"
+      ],
+      "vehicle_type": [
+        "pesados"
+      ],
+      "tag": "🔒 Seguridad",
+      "confidence": "high",
+      "evergreen_score": 5,
+      "strategic_value": "high",
+      "strategic_bucket": [
+        "driver_behavior",
+        "safety_and_risk"
+      ],
+      "fact_style": "safety_fact",
+      "why_interesting": "La ley exige pausa a las 4.5 horas, pero el deterioro cognitivo por fatiga puede comenzar antes. Cumplir el reglamento no garantiza que los conductores estén en condiciones óptimas.",
+      "fleet_lesson": "Cumplir el Reglamento 561/2006 de tiempos de conducción y descanso es necesario pero no suficiente para gestionar el riesgo de fatiga en flotas pesadas de larga distancia.",
+      "commercial_angle": "Introduce el riesgo de fatiga más allá del cumplimiento legal como argumento para programas de conducción segura.",
+      "use_case": "Programas de gestión de fatiga en conductores de flotas pesadas de larga distancia en Europa."
+    },
+    {
+      "id": "seguridad_012",
+      "fact": "En España, la ITV (Inspección Técnica de Vehículos) es obligatoria con periodicidad variable según el tipo y antigüedad del vehículo. Los vehículos pesados de más de 3.500 kg tienen ITV anual. Un vehículo sin ITV en vigor puede ser denunciado e inmovilizado en un control de tráfico, y la empresa propietaria puede ser sancionada. En 2022, el porcentaje de camiones que presentaron alguna deficiencia en ITV superó el 35%, según la AECA-ITV.",
+      "source": "AECA-ITV - Estadísticas de Inspecciones 2022 / DGT España",
+      "source_year": 2023,
+      "source_type": "industry_association",
+      "url": "https://www.aeca-itv.com",
+      "markets": [
+        "espana"
+      ],
+      "topics": [
+        "seguridad",
+        "ITV",
+        "mantenimiento"
+      ],
+      "vehicle_type": [
+        "pesados"
+      ],
+      "tag": "🔒 Seguridad",
+      "confidence": "high",
+      "evergreen_score": 4,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "compliance_risk",
+        "maintenance_savings",
+        "safety_and_risk"
+      ],
+      "fact_style": "compliance_fact",
+      "why_interesting": "Más de 1 de cada 3 camiones presenta alguna deficiencia en la ITV en España. Eso indica que hay un porcentaje significativo del parque de flotas que opera con vehículos que no pasarían una inspección sorpresa.",
+      "fleet_lesson": "El 35% de deficiencias en ITV de camiones en España sugiere que las flotas medianas con mantenimiento reactivo tienen riesgo activo de vehículos con problemas técnicos no detectados.",
+      "commercial_angle": "Introduce las estadísticas de ITV como argumento para el mantenimiento preventivo sin sonar a publicidad.",
+      "use_case": "Evaluación del riesgo de cumplimiento de ITV en flotas de vehículos pesados en España."
+    },
+    {
+      "id": "seguridad_013",
+      "fact": "El ángulo muerto lateral de un camión pesado articulado puede superar los 3 metros de ancho en el costado del acompañante. En maniobras urbanas, este punto ciego es responsable de un porcentaje significativo de accidentes graves con ciclistas y peatones. La Directiva (UE) 2023/1114 obliga a los fabricantes a equipar los camiones nuevos pesados con sistemas de detección de ángulo muerto (blind spot monitoring) a partir de julio de 2024.",
+      "source": "Directiva (UE) 2023/1114 / Comisión Europea DG MOVE",
+      "source_year": 2024,
+      "source_type": "regulator",
+      "url": "https://transport.ec.europa.eu",
+      "markets": [
+        "europa",
+        "espana"
+      ],
+      "topics": [
+        "seguridad",
+        "ángulo muerto",
+        "regulación"
+      ],
+      "vehicle_type": [
+        "pesados"
+      ],
+      "tag": "🔒 Seguridad",
+      "confidence": "medium",
+      "evergreen_score": 4,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "safety_and_risk",
+        "regulatory_pressure"
+      ],
+      "fact_style": "regulatory_fact",
+      "why_interesting": "El punto ciego lateral de un camión articulado es mayor que un carril completo. La obligación de sistemas de detección en camiones nuevos desde 2024 es una señal de la magnitud del riesgo.",
+      "fleet_lesson": "En flotas de camiones con operación en entorno urbano, el ángulo muerto lateral es el riesgo de accidente más grave y menos monitorizado. Los camiones nuevos en Europa ya deben llevar detección de ángulo muerto.",
+      "commercial_angle": "Introduce el blind spot monitoring como obligación de seguridad en renovación de flota, no como accesorio.",
+      "use_case": "Criterios de seguridad en la selección de vehículos pesados con operación en entornos urbanos en Europa."
+    },
+    {
+      "id": "seguridad_014",
+      "fact": "El robo de combustible directamente del depósito de vehículos aparcados es una práctica documentada en áreas de descanso de autopistas y polígonos logísticos en España y Francia. El método más común es el sifón. En flotas sin alertas de nivel de combustible nocturno o sin monitoreo de nivel de depósito, este tipo de robo puede pasar desapercibido durante días y confundirse con un aumento de consumo.",
+      "source": "Truckers Report / Transport Intelligence - Cargo and Vehicle Security in Europe 2022",
+      "source_year": 2022,
+      "source_type": "trade_press",
+      "url": null,
+      "markets": [
+        "espana",
+        "europa"
+      ],
+      "topics": [
+        "seguridad",
+        "fraude",
+        "combustible"
+      ],
+      "vehicle_type": [
+        "pesados"
+      ],
+      "tag": "🔒 Seguridad",
+      "confidence": "medium",
+      "evergreen_score": 5,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "fuel_fraud_detection",
+        "safety_and_risk",
+        "hidden_cost"
+      ],
+      "fact_style": "fraud_fact",
+      "why_interesting": "El robo de combustible de depósitos de camiones aparcados es una forma de fraude que puede confundirse con un aumento de consumo si no hay monitoreo de nivel de depósito en tiempo real.",
+      "fleet_lesson": "Sin alertas de nivel de depósito en tiempo real, el robo de combustible de vehículo aparcado puede no detectarse hasta semanas después y atribuirse a un problema de consumo del motor.",
+      "commercial_angle": "Introduce el monitoreo de nivel de depósito como herramienta de detección de robo físico de combustible.",
+      "use_case": "Protección de combustible en flotas con vehículos estacionados en áreas de riesgo durante la noche."
+    },
+    {
+      "id": "seguridad_015",
+      "fact": "La Guardia Nacional de México reportó en 2023 más de 8,000 detenciones relacionadas con robo de combustible en pipas y tanques (huachicoleros), incluyendo tomas clandestinas de ductos y robo directo de vehículos. Las zonas más afectadas incluyen Puebla, Hidalgo y Guanajuato. Las flotas de distribución de combustible con tanques identificados en esas zonas son objetivo frecuente.",
+      "source": "Guardia Nacional de México - Informe de Actividad 2023 / PEMEX Informe de Seguridad",
+      "source_year": 2023,
+      "source_type": "public_body",
+      "url": "https://www.gob.mx/guardianacional",
+      "markets": [
+        "mexico"
+      ],
+      "topics": [
+        "seguridad",
+        "robo de combustible",
+        "corredores"
+      ],
+      "vehicle_type": [
+        "pesados",
+        "especiales"
+      ],
+      "tag": "🔒 Seguridad",
+      "confidence": "medium",
+      "evergreen_score": 3,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "safety_and_risk",
+        "fuel_fraud_detection"
+      ],
+      "fact_style": "safety_fact",
+      "why_interesting": "El robo de combustible en México afecta no solo a los ductos de PEMEX sino también a pipas y autotanques en circulación, lo que convierte a las flotas de distribución de combustible en objetivos de seguridad activos.",
+      "fleet_lesson": "Las flotas que distribuyen combustible o transportan cargas de alto valor en Puebla, Hidalgo o Guanajuato deben tener protocolos de seguridad activos, no solo GPS.",
+      "commercial_angle": "Introduce el riesgo de robo de combustible en flotas mexicanas de distribución con datos oficiales.",
+      "use_case": "Diseño de protocolos de seguridad para flotas de distribución de combustible en zonas de alto riesgo en México."
+    },
+    {
+      "id": "seguridad_016",
+      "fact": "En México, la SICT intensificó el control de peso por eje desde 2022 con más básculas activas en carreteras federales. Las multas por exceso de peso pueden alcanzar los 24,500 pesos por infracción. Un camión con exceso de peso detectado puede ser obligado a descargar en el lugar del control, con el coste operativo que eso implica.",
+      "source": "SICT México - Programa de Modernización de Básculas y Control de Pesos y Dimensiones 2022",
+      "source_year": 2022,
+      "source_type": "public_body",
+      "url": "https://www.gob.mx/sct",
+      "markets": [
+        "mexico"
+      ],
+      "topics": [
+        "seguridad",
+        "pesos y dimensiones",
+        "regulación"
+      ],
+      "vehicle_type": [
+        "pesados"
+      ],
+      "tag": "🔒 Seguridad",
+      "confidence": "medium",
+      "evergreen_score": 4,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "compliance_risk",
+        "vehicle_specific_risk",
+        "safety_and_risk"
+      ],
+      "fact_style": "compliance_fact",
+      "why_interesting": "Las multas por exceso de peso en México se han intensificado desde 2022. La mayor actividad de básculas convierte el control de peso en un riesgo operativo inmediato para flotas de carga pesada.",
+      "fleet_lesson": "En México, operar con exceso de peso sin control de básculas activo es un riesgo que ha aumentado desde 2022. Las multas de hasta 24,500 pesos por infracción y la posible retención de mercancía tienen impacto operativo inmediato.",
+      "commercial_angle": "Introduce el control de peso como medida preventiva ante el aumento de vigilancia en carreteras mexicanas.",
+      "use_case": "Control de pesos y dimensiones en flotas de transporte de carga pesada en México."
+    },
+    {
+      "id": "seguridad_017",
+      "fact": "En España, usar el teléfono sujetado con la mano al volante supone multa de 200 euros y pérdida de 6 puntos. En flotas corporativas sin sistema de manos libres integrado en el vehículo, el conductor puede estar infringiendo la normativa habitualmente sin que la empresa lo sepa ni tenga política de cumplimiento verificable.",
+      "source": "DGT - Normativa de Uso de Dispositivos Móviles al Volante / Reglamento General de Circulación España",
+      "source_year": 2023,
+      "source_type": "regulator",
+      "url": "https://www.dgt.es",
+      "markets": [
+        "espana"
+      ],
+      "topics": [
+        "seguridad",
+        "conducción",
+        "dispositivos"
+      ],
+      "vehicle_type": [
+        "ligeros",
+        "pesados"
+      ],
+      "tag": "🔒 Seguridad",
+      "confidence": "high",
+      "evergreen_score": 4,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "driver_behavior",
+        "compliance_risk"
+      ],
+      "fact_style": "regulatory_fact",
+      "why_interesting": "Muchas flotas corporativas tienen política de cero tolerancia al teléfono al volante pero no verifican si los vehículos tienen sistema de manos libres integrado.",
+      "fleet_lesson": "Una política de no usar el teléfono al volante sin manos libres integrado en el vehículo es una política sin medio de cumplimiento. La infracción no es del conductor: es del sistema.",
+      "commercial_angle": "Introduce la política de comunicación al volante como necesidad de equipamiento, no solo de norma.",
+      "use_case": "Revisión de la política de comunicaciones y equipamiento en flotas corporativas en España."
+    },
+    {
+      "id": "seguridad_018",
+      "fact": "Las ZBE de Madrid y Barcelona aplican restricciones a vehículos sin etiqueta ambiental ECO o CERO. En 2023, las cámaras de Madrid procesaron más de 800,000 accesos de vehículos con restricción. La multa por acceso no autorizado es de 200 euros por vehículo y evento. En flotas sin control por matrícula y etiqueta, este coste se acumula de forma invisible.",
+      "source": "Ayuntamiento de Madrid - Informe de Gestión Madrid Central / DGT Etiqueta Ambiental",
+      "source_year": 2024,
+      "source_type": "public_body",
+      "url": "https://www.madrid.es/portales/munimadrid/es/Inicio/Movilidad-y-transportes/Madrid-Central",
+      "markets": [
+        "espana"
+      ],
+      "topics": [
+        "seguridad",
+        "ZBE",
+        "compliance"
+      ],
+      "vehicle_type": [
+        "ligeros",
+        "pesados"
+      ],
+      "tag": "🔒 Seguridad",
+      "confidence": "high",
+      "evergreen_score": 3,
+      "strategic_value": "high",
+      "strategic_bucket": [
+        "compliance_risk",
+        "urban_delivery_efficiency",
+        "regulatory_pressure"
+      ],
+      "fact_style": "compliance_fact",
+      "why_interesting": "Más de 800,000 accesos de vehículos con restricción procesados en Madrid en 2023 indica que las multas por ZBE son reales y masivas, no solo teóricas.",
+      "fleet_lesson": "En flotas con reparto urbano en Madrid o Barcelona, cada vehículo sin etiqueta ECO o CERO que entra en la ZBE puede generar una multa. El coste acumulado en una flota sin control puede ser significativo.",
+      "commercial_angle": "Introduce el riesgo real de multas ZBE en flotas de reparto urbano en Madrid con datos del Ayuntamiento.",
+      "use_case": "Gestión del riesgo de multas ZBE en flotas de distribución urbana en Madrid y Barcelona."
+    },
+    {
+      "id": "seguridad_019",
+      "fact": "El transporte de cadena de frío farmacéutico está sujeto a las Buenas Prácticas de Distribución (GDP, Good Distribution Practice) reguladas en Europa por las Directrices 2013/C 343/01 de la EMA. Estas directrices obligan a registrar y conservar los datos de temperatura durante el transporte y a tener un plan de gestión de riesgos de temperatura. El incumplimiento puede invalidar el lote de medicamento transportado.",
+      "source": "EMA - European Medicines Agency, Guidelines on GDP 2013/C 343/01",
+      "source_year": 2023,
+      "source_type": "regulator",
+      "url": "https://www.ema.europa.eu/en/documents/scientific-guideline/guidelines-good-distribution-practice-medicinal-products-human-use_en.pdf",
+      "markets": [
+        "europa",
+        "espana"
+      ],
+      "topics": [
+        "seguridad",
+        "cadena de frío",
+        "farmacéutico"
+      ],
+      "vehicle_type": [
+        "frigoríficos"
+      ],
+      "tag": "🔒 Seguridad",
+      "confidence": "high",
+      "evergreen_score": 5,
+      "strategic_value": "high",
+      "strategic_bucket": [
+        "cold_chain_control",
+        "compliance_risk",
+        "sector_specific"
+      ],
+      "fact_style": "compliance_fact",
+      "why_interesting": "El incumplimiento de GDP en transporte farmacéutico puede invalidar un lote completo de medicamento. El coste del incumplimiento no se mide en multas sino en destrucción de producto.",
+      "fleet_lesson": "En transporte farmacéutico, el sensor de temperatura no es un dato operativo: es una documentación legal que puede salvar o invalidar el valor de la carga transportada.",
+      "commercial_angle": "Introduce el registro de temperatura como obligación legal en transporte farmacéutico con fuente regulatoria.",
+      "use_case": "Gestión del cumplimiento de GDP en flotas de transporte farmacéutico en Europa."
+    },
+    {
+      "id": "seguridad_020",
+      "fact": "El BSI Supply Chain Services reportó en su Cargo Theft Intelligence Report de 2024 que el modus operandi de robo de carga en México ha evolucionado hacia el llamado 'robo de identidad logística': delincuentes suplantan a transportistas legítimos para recoger carga sin necesidad de violencia. Este tipo de robo es difícil de detectar sin verificación digital de identidad del transportista.",
+      "source": "BSI Supply Chain Services - Cargo Theft Intelligence Report Q4 2024",
+      "source_year": 2024,
+      "source_type": "company_report",
+      "url": "https://www.bsigroup.com",
+      "markets": [
+        "mexico"
+      ],
+      "topics": [
+        "seguridad",
+        "fraude",
+        "cadena de suministro"
+      ],
+      "vehicle_type": [
+        "pesados"
+      ],
+      "tag": "🔒 Seguridad",
+      "confidence": "medium",
+      "evergreen_score": 3,
+      "strategic_value": "high",
+      "strategic_bucket": [
+        "safety_and_risk",
+        "compliance_risk"
+      ],
+      "fact_style": "fraud_fact",
+      "why_interesting": "La suplantación de identidad de transportistas es una modalidad de robo de carga que no requiere violencia y que puede ocurrir con la colaboración involuntaria del embarcador.",
+      "fleet_lesson": "En México, la verificación de identidad del transportista en el punto de carga no es un trámite burocrático: es la primera barrera contra el robo de identidad logística.",
+      "commercial_angle": "Introduce la verificación de identidad del transportista como control de seguridad en la cadena de suministro.",
+      "use_case": "Protocolos de verificación de transportistas en operaciones de recogida de carga en México."
+    }
+  ],
+  "ultima_milla": [
+    {
+      "id": "ultima_milla_001",
+      "fact": "Un intento de entrega fallido en última milla en Europa tiene un coste medio de entre 7 y 15 euros por paquete, incluyendo el coste del segundo intento, la logística inversa y la pérdida del tiempo del conductor, según el informe de última milla de Capgemini Research Institute de 2023. En flotas de ecommerce con una tasa de primer intento fallido del 15-20%, este coste puede representar hasta el 30% del margen operativo.",
+      "source": "Capgemini Research Institute - Last Mile Delivery: Achieving Success in Last Mile 2023",
+      "source_year": 2023,
+      "source_type": "consultancy",
+      "url": "https://www.capgemini.com/insights/research-library/last-mile-delivery",
+      "markets": [
+        "europa"
+      ],
+      "topics": [
+        "última milla",
+        "coste de entrega",
+        "ecommerce"
+      ],
+      "vehicle_type": [
+        "ligeros"
+      ],
+      "tag": "📦 Última Milla",
+      "confidence": "medium",
+      "evergreen_score": 4,
+      "strategic_value": "high",
+      "strategic_bucket": [
+        "urban_delivery_efficiency",
+        "hidden_cost",
+        "logistics_pressure"
+      ],
+      "fact_style": "cost_benchmark",
+      "why_interesting": "El coste de una entrega fallida no es solo el coste del segundo intento: incluye la logística inversa, el tiempo del conductor y la pérdida de productividad de la ruta entera.",
+      "fleet_lesson": "Si la tasa de primer intento fallido supera el 15%, el coste de las entregas fallidas puede estar representando hasta el 30% del margen operativo de la operación de última milla.",
+      "commercial_angle": "Introduce el coste de entrega fallida como argumento financiero para la optimización de última milla.",
+      "use_case": "Cálculo del impacto financiero de la tasa de primer intento fallido en flotas de ecommerce."
+    },
+    {
+      "id": "ultima_milla_002",
+      "fact": "Las multas de estacionamiento por parada en doble fila durante la descarga de mercancías en zonas urbanas en España representan un coste operativo significativo para flotas de distribución. En Madrid, la multa por estacionamiento en doble fila es de 200 euros. En Barcelona, puede superar los 200 euros. Algunas empresas de distribución estiman que el coste anual de multas en grandes ciudades puede superar los 500 euros por vehículo al año.",
+      "source": "UNO Logística - Informe del sector de la distribución urbana de mercancías 2023 / Ayuntamientos de Madrid y Barcelona",
+      "source_year": 2023,
+      "source_type": "industry_association",
+      "url": "https://www.uno-asociacion.es",
+      "markets": [
+        "espana"
+      ],
+      "topics": [
+        "última milla",
+        "distribución urbana",
+        "coste operativo"
+      ],
+      "vehicle_type": [
+        "ligeros"
+      ],
+      "tag": "📦 Última Milla",
+      "confidence": "medium",
+      "evergreen_score": 4,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "urban_delivery_efficiency",
+        "hidden_cost"
+      ],
+      "fact_style": "cost_benchmark",
+      "why_interesting": "Las multas de estacionamiento son un coste de operación de última milla que raramente se contabiliza en el análisis del coste por entrega.",
+      "fleet_lesson": "El coste real de una entrega en zona de alta densidad incluye el riesgo de multa si no hay zona de carga disponible. En algunas ciudades, este coste puede representar más del 10% del coste de la entrega.",
+      "commercial_angle": "Introduce las multas de estacionamiento como variable del coste por entrega sin promover ningún sistema.",
+      "use_case": "Análisis del coste real por entrega en zonas urbanas densas en España incluyendo multas de estacionamiento."
+    },
+    {
+      "id": "ultima_milla_003",
+      "fact": "El peso y el volumen de los vehículos de reparto en zonas urbanas está limitado en muchas ciudades españolas por ordenanzas municipales. En Madrid, los vehículos de más de 3.500 kg tienen restricciones de horario y zonas de acceso. En Barcelona, los vehículos de distribución deben obtener una autorización municipal específica para determinadas zonas del casco histórico. Muchas flotas de distribución desconocen las restricciones municipales exactas de cada ciudad en la que operan.",
+      "source": "Ayuntamiento de Madrid - Plan de Movilidad Urbana Sostenible (PMUS) / Ajuntament de Barcelona - Movilidad",
+      "source_year": 2023,
+      "source_type": "public_body",
+      "url": "https://www.madrid.es",
+      "markets": [
+        "espana"
+      ],
+      "topics": [
+        "última milla",
+        "regulación municipal",
+        "acceso urbano"
+      ],
+      "vehicle_type": [
+        "ligeros",
+        "pesados"
+      ],
+      "tag": "📦 Última Milla",
+      "confidence": "high",
+      "evergreen_score": 4,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "urban_delivery_efficiency",
+        "compliance_risk",
+        "regulatory_pressure"
+      ],
+      "fact_style": "regulatory_fact",
+      "why_interesting": "Las restricciones de acceso en ciudades españolas son una normativa viva que cambia con frecuencia. Las flotas sin seguimiento de cambios regulatorios municipales pueden tener vehículos infringiendo normas que no conocen.",
+      "fleet_lesson": "El mapa de restricciones de acceso para vehículos de distribución en España no es estable. Una flota que opera en varias ciudades debe tener actualizado el régimen de acceso de cada municipio.",
+      "commercial_angle": "Introduce el seguimiento de restricciones municipales como necesidad de compliance operativo en distribución urbana.",
+      "use_case": "Gestión del cumplimiento de restricciones de acceso en flotas de distribución que operan en múltiples ciudades españolas."
+    },
+    {
+      "id": "ultima_milla_004",
+      "fact": "La densidad de paquetes por ruta es el KPI más determinante de la rentabilidad en distribución de última milla. Un conductor urbano que realiza 90-110 paradas diarias en zona densa es rentable. Por debajo de 60 paradas diarias, el coste por entrega supera la tarifa media de mercado en la mayoría de las operaciones europeas de ecommerce, según datos del Observatoire du Transport de Marchandises en Ville de Francia.",
+      "source": "Observatoire du Transport de Marchandises en Ville - Rapport 2023, CEREMA France",
+      "source_year": 2023,
+      "source_type": "public_body",
+      "url": "https://www.cerema.fr",
+      "markets": [
+        "europa",
+        "espana"
+      ],
+      "topics": [
+        "última milla",
+        "productividad",
+        "ecommerce"
+      ],
+      "vehicle_type": [
+        "ligeros"
+      ],
+      "tag": "📦 Última Milla",
+      "confidence": "medium",
+      "evergreen_score": 4,
+      "strategic_value": "high",
+      "strategic_bucket": [
+        "urban_delivery_efficiency",
+        "benchmark",
+        "logistics_pressure"
+      ],
+      "fact_style": "cost_benchmark",
+      "why_interesting": "El número de paradas diarias por ruta es el indicador más directo de rentabilidad en última milla. Por debajo de 60 paradas, la operación de ecommerce es difícilmente rentable a tarifas de mercado.",
+      "fleet_lesson": "En última milla, la productividad no se mide en kilómetros sino en paradas. Una ruta de 150 km con 40 paradas puede ser menos rentable que una de 50 km con 100 paradas.",
+      "commercial_angle": "Introduce la densidad de paradas como KPI primario de rentabilidad en última milla sin promover ningún sistema.",
+      "use_case": "Evaluación de la rentabilidad de rutas de distribución en zonas urbanas de baja densidad."
+    },
+    {
+      "id": "ultima_milla_005",
+      "fact": "La normativa de Zonas de Bajas Emisiones (ZBE) establecida por la Ley de Residuos y Suelos Contaminados (Ley 7/2022) obliga a todos los municipios españoles de más de 50,000 habitantes a tener ZBE operativa antes del 1 de enero de 2023. En 2024, más de 150 municipios españoles tienen ZBE en distintas fases de implementación. Las flotas de distribución con vehículos sin etiqueta ambiental ECO o CERO pueden ver bloqueadas rutas enteras.",
+      "source": "BOE - Ley 7/2022 de Residuos y Suelos Contaminados / DGT - Etiquetas Ambientales 2024",
+      "source_year": 2024,
+      "source_type": "regulator",
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2022-5809",
+      "markets": [
+        "espana"
+      ],
+      "topics": [
+        "última milla",
+        "ZBE",
+        "regulación"
+      ],
+      "vehicle_type": [
+        "ligeros"
+      ],
+      "tag": "📦 Última Milla",
+      "confidence": "high",
+      "evergreen_score": 3,
+      "strategic_value": "high",
+      "strategic_bucket": [
+        "urban_delivery_efficiency",
+        "regulatory_pressure",
+        "compliance_risk"
+      ],
+      "fact_style": "regulatory_fact",
+      "why_interesting": "La obligación de ZBE en municipios de más de 50,000 habitantes en España ya está en vigor. Las flotas de distribución sin planificación de renovación de vehículos pueden quedarse sin acceso a más de 150 ciudades.",
+      "fleet_lesson": "En España, la ZBE ya no es una tendencia futura: afecta a más de 150 municipios en 2024. Una flota de distribución sin etiqueta ECO o CERO tiene rutas bloqueadas hoy, no en el futuro.",
+      "commercial_angle": "Introduce la ZBE en España como restricción operativa vigente que afecta a la planificación de rutas y renovación de flota.",
+      "use_case": "Planificación de renovación de flota en distribución urbana en España ante la expansión de ZBE."
+    },
+    {
+      "id": "ultima_milla_006",
+      "fact": "El tiempo de parada en destino puede representar entre el 30% y el 50% del tiempo total de ruta en distribución urbana densa, según CEREMA y el MIT Center for Transportation & Logistics. En una jornada de 8 horas, entre 2.5 y 4 horas son tiempo de parada. Reducir el tiempo de parada por entrega tiene más impacto en productividad que optimizar la conducción.",
+      "source": "MIT Center for Transportation & Logistics - Urban Last Mile Report 2022 / CEREMA France",
+      "source_year": 2022,
+      "source_type": "academic",
+      "url": null,
+      "markets": [
+        "internacional",
+        "europa"
+      ],
+      "topics": [
+        "última milla",
+        "productividad",
+        "operaciones"
+      ],
+      "vehicle_type": [
+        "ligeros"
+      ],
+      "tag": "📦 Última Milla",
+      "confidence": "medium",
+      "evergreen_score": 5,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "urban_delivery_efficiency",
+        "asset_utilization"
+      ],
+      "fact_style": "operational_oddity",
+      "why_interesting": "Hasta el 50% del tiempo del conductor en última milla se pasa parado, no conduciendo. Esto hace que optimizar la conducción sea menos relevante que optimizar el proceso de parada.",
+      "fleet_lesson": "En última milla, reducir el tiempo de parada por entrega tiene más impacto en la productividad diaria que reducir los kilómetros recorridos.",
+      "commercial_angle": "Introduce la gestión del tiempo de parada como palanca de productividad en distribución urbana.",
+      "use_case": "Optimización de la productividad en flotas de última milla con foco en tiempo de parada por entrega."
+    },
+    {
+      "id": "ultima_milla_007",
+      "fact": "En México, el comercio electrónico creció un 24% en 2023, alcanzando un volumen de ventas de más de 658,000 millones de pesos, según la Asociación Mexicana de Venta Online (AMVO). Este crecimiento está generando un aumento de la demanda de reparto en última milla que supera la capacidad instalada de operadores logísticos en CDMX, Guadalajara y Monterrey, según el mismo informe.",
+      "source": "AMVO - Estudio de Venta Online en México 2024",
+      "source_year": 2024,
+      "source_type": "industry_association",
+      "url": "https://www.amvo.org.mx",
+      "markets": [
+        "mexico"
+      ],
+      "topics": [
+        "última milla",
+        "ecommerce",
+        "mercado"
+      ],
+      "vehicle_type": [
+        "ligeros"
+      ],
+      "tag": "📦 Última Milla",
+      "confidence": "high",
+      "evergreen_score": 3,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "market_sizing",
+        "logistics_pressure"
+      ],
+      "fact_style": "market_data",
+      "why_interesting": "El crecimiento del ecommerce en México está superando la capacidad logística de los principales operadores en las tres ciudades más grandes del país.",
+      "fleet_lesson": "En México, la capacidad de última milla no está creciendo al mismo ritmo que el ecommerce. Las flotas que planifican expansión de reparto en CDMX, GDL y MTY deben anticipar restricciones de operadores subcontratados.",
+      "commercial_angle": "Contextualiza el crecimiento del ecommerce en México como presión sobre la capacidad logística de última milla.",
+      "use_case": "Planificación de capacidad de reparto en última milla en México ante el crecimiento del ecommerce."
+    },
+    {
+      "id": "ultima_milla_008",
+      "fact": "Los puntos de entrega alternativa (lockers, puntos de conveniencia, taquillas) pueden reducir el coste de distribución en última milla hasta un 40% por paquete respecto a la entrega a domicilio fallida, según datos de PostNord y la Asociación Europea de Empresas de Correo y Mensajería (PostEurop). La tasa de fracaso en entregas a domicilio en España es significativamente superior a la tasa de recogida en punto de conveniencia.",
+      "source": "PostEurop - Annual Report 2023 / PostNord Last Mile Delivery Study 2023",
+      "source_year": 2023,
+      "source_type": "industry_association",
+      "url": "https://www.posteurop.org",
+      "markets": [
+        "europa",
+        "espana"
+      ],
+      "topics": [
+        "última milla",
+        "puntos de entrega",
+        "coste"
+      ],
+      "vehicle_type": [
+        "ligeros"
+      ],
+      "tag": "📦 Última Milla",
+      "confidence": "medium",
+      "evergreen_score": 4,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "urban_delivery_efficiency",
+        "logistics_pressure"
+      ],
+      "fact_style": "cost_benchmark",
+      "why_interesting": "Los puntos de entrega alternativa tienen un coste por paquete significativamente inferior al de la entrega a domicilio fallida. Es un argumento operativo, no solo de comodidad del cliente.",
+      "fleet_lesson": "En distribución de ecommerce, la tasa de éxito en punto de conveniencia es estructuralmente superior a la de entrega a domicilio. El modelo mixto reduce el coste operativo por paquete.",
+      "commercial_angle": "Introduce los puntos de entrega alternativa como palanca de eficiencia operativa y reducción de coste.",
+      "use_case": "Evaluación del modelo de distribución mixto (domicilio + punto de conveniencia) en flotas de ecommerce."
+    },
+    {
+      "id": "ultima_milla_009",
+      "fact": "La normativa de transporte urbano de mercancías en ciudades como CDMX, Guadalajara y Monterrey establece ventanas horarias para la carga y descarga en zonas comerciales y centros históricos. En CDMX, los vehículos de carga pesada tienen prohibida la circulación en el perímetro del Centro Histórico de 6:00 a 22:00 horas. Las flotas que no adaptan sus horarios de reparto pueden generar multas y retrasos que aumentan el coste operativo.",
+      "source": "SEDEMA CDMX - Programa de Verificación Vehicular y Restricciones de Circulación / Gaceta Oficial CDMX",
+      "source_year": 2023,
+      "source_type": "regulator",
+      "url": "https://www.sedema.cdmx.gob.mx",
+      "markets": [
+        "mexico"
+      ],
+      "topics": [
+        "última milla",
+        "regulación",
+        "acceso urbano"
+      ],
+      "vehicle_type": [
+        "pesados",
+        "ligeros"
+      ],
+      "tag": "📦 Última Milla",
+      "confidence": "medium",
+      "evergreen_score": 3,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "urban_delivery_efficiency",
+        "compliance_risk",
+        "regulatory_pressure"
+      ],
+      "fact_style": "regulatory_fact",
+      "why_interesting": "Las restricciones horarias de circulación en CDMX son una normativa operativa real que puede invalidar una ruta completa si no se planifica correctamente.",
+      "fleet_lesson": "En CDMX, planificar una ruta de reparto en el Centro Histórico con vehículo pesado en horario diurno es planificar una infracción. Las restricciones horarias deben incorporarse en el sistema de planificación de rutas.",
+      "commercial_angle": "Introduce las restricciones horarias en CDMX como variable obligatoria de planificación de rutas.",
+      "use_case": "Planificación de rutas de distribución en zonas con restricciones horarias en CDMX."
+    },
+    {
+      "id": "ultima_milla_010",
+      "fact": "La logística inversa (devoluciones) representa entre el 10% y el 30% del volumen de paquetes de ecommerce en España, según datos de la Asociación Española del Comercio Electrónico (AECE). El coste de procesar una devolución en España es de media entre 5 y 12 euros por unidad, incluyendo recogida, clasificación y realmacenamiento. Este coste rara vez está incorporado en el análisis del coste de última milla.",
+      "source": "AECE - Estudio de Comercio Electrónico en España 2023 / Logística Profesional",
+      "source_year": 2023,
+      "source_type": "industry_association",
+      "url": "https://www.aece.es",
+      "markets": [
+        "espana"
+      ],
+      "topics": [
+        "última milla",
+        "logística inversa",
+        "ecommerce"
+      ],
+      "vehicle_type": [
+        "ligeros"
+      ],
+      "tag": "📦 Última Milla",
+      "confidence": "medium",
+      "evergreen_score": 4,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "logistics_pressure",
+        "hidden_cost",
+        "urban_delivery_efficiency"
+      ],
+      "fact_style": "market_data",
+      "why_interesting": "Las devoluciones representan hasta el 30% del volumen de ecommerce en España. Si el coste de logística inversa no está en el modelo de última milla, el análisis del coste por entrega está incompleto.",
+      "fleet_lesson": "En flotas de ecommerce, el análisis del coste por entrega que no incluye las devoluciones está subestimando entre un 10% y un 30% el volumen real de operaciones.",
+      "commercial_angle": "Introduce la logística inversa como coste estructural de última milla en ecommerce.",
+      "use_case": "Análisis del coste real por entrega en flotas de ecommerce incluyendo la logística de devoluciones."
+    },
+    {
+      "id": "ultima_milla_011",
+      "fact": "El reparto de alimentos perecederos en última milla requiere vehículos con control de temperatura activo o pasivo según el tipo de producto. La normativa española de transporte de alimentos (Real Decreto 1334/1999 y normas ATP) establece temperaturas máximas de transporte según el tipo de alimento: los productos congelados deben mantenerse por debajo de -18°C y los productos frescos entre 0°C y 4°C. Un vehículo de reparto sin termómetro calibrado puede estar incumpliendo sin saberlo.",
+      "source": "Real Decreto 1334/1999 / Acuerdo ATP UNECE / AESAN - Agencia Española de Seguridad Alimentaria",
+      "source_year": 2023,
+      "source_type": "regulator",
+      "url": "https://www.aesan.gob.es",
+      "markets": [
+        "espana",
+        "europa"
+      ],
+      "topics": [
+        "última milla",
+        "cadena de frío",
+        "alimentación"
+      ],
+      "vehicle_type": [
+        "frigoríficos",
+        "ligeros"
+      ],
+      "tag": "📦 Última Milla",
+      "confidence": "high",
+      "evergreen_score": 5,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "cold_chain_control",
+        "compliance_risk",
+        "sector_specific"
+      ],
+      "fact_style": "compliance_fact",
+      "why_interesting": "El transporte de alimentos perecederos en última milla tiene requisitos de temperatura específicos que son de obligado cumplimiento y que requieren equipamiento y registro verificable.",
+      "fleet_lesson": "En reparto de alimentos perecederos, no basta con tener el vehículo frío: se necesita temperatura controlada dentro del rango normativo y registro que lo demuestre en caso de inspección.",
+      "commercial_angle": "Introduce el control de temperatura en reparto de alimentos como obligación legal, no como mejora opcional.",
+      "use_case": "Cumplimiento de la normativa de temperatura en flotas de reparto de alimentos perecederos en España."
+    },
+    {
+      "id": "ultima_milla_012",
+      "fact": "El tráfico urbano en Europa aumentó el tiempo de entrega un 18% entre 2019 y 2023, según INRIX. En Madrid y Barcelona, el tiempo de desplazamiento en furgoneta en hora pico es entre un 30% y un 40% superior al de horas valle. Iniciar las rutas 90 minutos antes del pico puede aumentar la productividad del conductor sin añadir vehículos.",
+      "source": "INRIX Global Traffic Scorecard 2024",
+      "source_year": 2024,
+      "source_type": "company_report",
+      "url": "https://inrix.com/scorecard",
+      "markets": [
+        "europa",
+        "espana"
+      ],
+      "topics": [
+        "última milla",
+        "congestión",
+        "productividad"
+      ],
+      "vehicle_type": [
+        "ligeros"
+      ],
+      "tag": "📦 Última Milla",
+      "confidence": "medium",
+      "evergreen_score": 3,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "urban_delivery_efficiency",
+        "route_optimization"
+      ],
+      "fact_style": "market_data",
+      "why_interesting": "Un 30-40% más de tiempo de conducción en hora pico no es un dato de tráfico general: es una palanca de productividad directamente accionable ajustando el horario de inicio de ruta.",
+      "fleet_lesson": "Iniciar las rutas de reparto en Madrid o Barcelona 90 minutos antes del pico de tráfico puede aumentar la productividad diaria por conductor en un 10-15% sin añadir vehículos.",
+      "commercial_angle": "Introduce la optimización de horarios de reparto como palanca de productividad sin promover ningún sistema.",
+      "use_case": "Optimización del horario de inicio de rutas en flotas de distribución urbana en ciudades con alta congestión."
+    },
+    {
+      "id": "ultima_milla_013",
+      "fact": "Las micro-zonas de distribución urbana (microhubs o urban consolidation centers) están siendo impulsadas por varios ayuntamientos europeos como alternativa a las furgonetas diesel en zonas restringidas. En Madrid, el Ayuntamiento ha habilitado zonas de carga y descarga especiales para vehículos de última milla de cero emisiones. En algunas ciudades europeas, los operadores que usan microhubs reportan una reducción del 30-50% en los kilómetros totales recorridos en zona urbana.",
+      "source": "Ayuntamiento de Madrid - Plan de Distribución Urbana Sostenible / ITF OECD - Urban Freight 2023",
+      "source_year": 2023,
+      "source_type": "public_body",
+      "url": "https://www.itf-oecd.org/urban-freight-and-logistics",
+      "markets": [
+        "espana",
+        "europa"
+      ],
+      "topics": [
+        "última milla",
+        "electrificación",
+        "distribución urbana"
+      ],
+      "vehicle_type": [
+        "especiales"
+      ],
+      "tag": "📦 Última Milla",
+      "confidence": "medium",
+      "evergreen_score": 3,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "urban_delivery_efficiency",
+        "electrification_tco",
+        "sustainability_pressure"
+      ],
+      "fact_style": "infrastructure_fact",
+      "why_interesting": "Los microhubs de distribución pueden reducir en un 30-50% los kilómetros en zona urbana, lo que también reduce la exposición a multas ZBE y mejora la productividad por vehículo.",
+      "fleet_lesson": "La implantación de microhubs de distribución en zonas con ZBE puede ser un modelo de reducción de costes operativos además de un requisito de acceso urbano.",
+      "commercial_angle": "Introduce los microhubs como modelo operativo de reducción de costes en distribución urbana.",
+      "use_case": "Evaluación del modelo de microhubs para flotas de distribución con operación en zonas ZBE."
+    },
+    {
+      "id": "ultima_milla_014",
+      "fact": "En CDMX, los camiones de más de 8 toneladas tienen acceso prohibido en ciertas zonas urbanas. Los vehículos de menos de 3.5 toneladas son los que tienen menores restricciones de circulación en la capital. La selección del vehículo de distribución en CDMX no es solo una decisión de capacidad de carga: el peso determina el acceso a zonas clave de reparto.",
+      "source": "Reglamento de Tránsito de la Ciudad de México / Ley de Caminos, Puentes y Autotransporte Federal DOF",
+      "source_year": 2023,
+      "source_type": "regulator",
+      "url": "https://www.gob.mx/sct",
+      "markets": [
+        "mexico"
+      ],
+      "topics": [
+        "última milla",
+        "regulación",
+        "acceso urbano"
+      ],
+      "vehicle_type": [
+        "ligeros",
+        "pesados"
+      ],
+      "tag": "📦 Última Milla",
+      "confidence": "medium",
+      "evergreen_score": 4,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "urban_delivery_efficiency",
+        "compliance_risk"
+      ],
+      "fact_style": "regulatory_fact",
+      "why_interesting": "Las restricciones de peso en zonas urbanas de CDMX tienen un impacto directo en la selección del vehículo de distribución. Una flota con camiones de más de 8 toneladas puede tener acceso bloqueado en zonas clave.",
+      "fleet_lesson": "En CDMX, la selección del vehículo de distribución urbana no es solo una decisión de capacidad de carga: las restricciones de peso por zona pueden determinar qué vehículos pueden circular.",
+      "commercial_angle": "Introduce la regulación de pesos urbanos en CDMX como criterio de selección de vehículo de reparto.",
+      "use_case": "Selección del vehículo de distribución para flotas con operación en zonas con restricciones de peso en CDMX."
+    },
+    {
+      "id": "ultima_milla_015",
+      "fact": "El sector del ecommerce en España facturó más de 79,000 millones de euros en 2023, según datos de la CNMC, con un crecimiento del 15% respecto a 2022. El volumen de paquetes entregados superó los 1,600 millones de envíos anuales. Esta cifra convierte a España en el cuarto mercado europeo de ecommerce, lo que genera una presión logística de última milla que no tiene equivalente en años anteriores.",
+      "source": "CNMC - Informe sobre el comercio electrónico en España 2023",
+      "source_year": 2024,
+      "source_type": "regulator",
+      "url": "https://www.cnmc.es",
+      "markets": [
+        "espana"
+      ],
+      "topics": [
+        "última milla",
+        "ecommerce",
+        "mercado"
+      ],
+      "vehicle_type": [
+        "ligeros"
+      ],
+      "tag": "📦 Última Milla",
+      "confidence": "high",
+      "evergreen_score": 3,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "market_sizing",
+        "logistics_pressure"
+      ],
+      "fact_style": "market_data",
+      "why_interesting": "España es el cuarto mercado de ecommerce en Europa con más de 1,600 millones de paquetes anuales. El volumen es ya estructural, no puntual, lo que convierte la infraestructura de última milla en un activo estratégico.",
+      "fleet_lesson": "1,600 millones de paquetes anuales en España es una cifra de mercado que justifica la inversión en infraestructura de última milla como activo estratégico a largo plazo.",
+      "commercial_angle": "Contextualiza el crecimiento del ecommerce en España como argumento para la inversión en capacidad logística de última milla.",
+      "use_case": "Planificación de capacidad logística en flotas de distribución ante el crecimiento estructural del ecommerce en España."
+    },
+    {
+      "id": "ultima_milla_016",
+      "fact": "En distribución urbana, una furgoneta de 7 m³ puede realizar entre 60 y 120 paradas diarias en zona densa. Un camión de 25 m³ carga más volumen pero su acceso en calles estrechas limita las zonas alcanzables, aumentando los kilómetros entre paradas. En cascos históricos españoles, el vehículo más pequeño puede tener más paradas efectivas por jornada que el más grande.",
+      "source": "UNO Logística - Informe de Distribución Urbana 2023 / Observatorio del Transporte MITMS",
+      "source_year": 2023,
+      "source_type": "industry_association",
+      "url": "https://www.uno-asociacion.es",
+      "markets": [
+        "espana"
+      ],
+      "topics": [
+        "última milla",
+        "planificación",
+        "operaciones"
+      ],
+      "vehicle_type": [
+        "ligeros"
+      ],
+      "tag": "📦 Última Milla",
+      "confidence": "medium",
+      "evergreen_score": 5,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "urban_delivery_efficiency",
+        "route_optimization",
+        "asset_utilization"
+      ],
+      "fact_style": "operational_oddity",
+      "why_interesting": "En distribución urbana en cascos históricos, el vehículo más grande no es siempre el más eficiente. Un vehículo con mayor capacidad de carga pero menor acceso puede generar más kilómetros muertos que uno más pequeño.",
+      "fleet_lesson": "En distribución urbana en cascos históricos, la selección del vehículo no es solo una decisión de capacidad de carga: la maniobrabilidad y el acceso a calles estrechas determinan el número real de paradas posibles.",
+      "commercial_angle": "Introduce el criterio de accesibilidad urbana como variable de selección de vehículo en distribución.",
+      "use_case": "Selección del vehículo de reparto para distribución en cascos históricos y zonas de acceso restringido en España."
+    },
+    {
+      "id": "ultima_milla_017",
+      "fact": "El uso de vehículos de carga ligera de cero emisiones (furgonetas eléctricas) en zonas ZBE está creciendo en España. En 2023, se matricularon más de 12,000 furgonetas eléctricas en España, según datos de ANFAC, un crecimiento del 35% respecto a 2022. Sin embargo, la autonomía media de estas furgonetas (150-250 km) puede ser insuficiente para rutas de distribución regional con más de 200 km diarios.",
+      "source": "ANFAC - Informe de Matriculaciones de Vehículos Eléctricos 2023",
+      "source_year": 2024,
+      "source_type": "industry_association",
+      "url": "https://anfac.com",
+      "markets": [
+        "espana"
+      ],
+      "topics": [
+        "última milla",
+        "electrificación",
+        "vehículos eléctricos"
+      ],
+      "vehicle_type": [
+        "ligeros"
+      ],
+      "tag": "📦 Última Milla",
+      "confidence": "high",
+      "evergreen_score": 3,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "electrification_tco",
+        "urban_delivery_efficiency"
+      ],
+      "fact_style": "market_data",
+      "why_interesting": "El crecimiento de furgonetas eléctricas en España es real y acelerado, pero la autonomía real puede no ser suficiente para todas las rutas de distribución. La decisión de electrificación requiere análisis de ruta previo.",
+      "fleet_lesson": "Antes de electrificar una furgoneta de reparto, verificar que la autonomía real en ciclo urbano de carga es suficiente para la ruta es el paso previo obligatorio. No todas las rutas son electrificables con el parque actual.",
+      "commercial_angle": "Introduce la electrificación de furgonetas como decisión de análisis de ruta, no solo de inversión en vehículo.",
+      "use_case": "Evaluación de la viabilidad de electrificación de rutas de distribución en flotas de furgonetas en España."
+    },
+    {
+      "id": "ultima_milla_018",
+      "fact": "El Decreto Legislativo 1/2020 de la Generalitat de Catalunya establece el Área Metropolitana de Barcelona como zona de bajas emisiones. Los vehículos de distribución de carga deben tener etiqueta ambiental de la DGT para circular en la zona, con restricciones progresivas según la etiqueta. En 2024, los vehículos sin etiqueta o con etiqueta B tienen restringido el acceso en determinados horarios. El incumplimiento se detecta con cámaras de lectura automática de matrícula.",
+      "source": "Generalitat de Catalunya - Àrea Metropolitana de Barcelona / Decret Llei 1/2020",
+      "source_year": 2024,
+      "source_type": "regulator",
+      "url": "https://www.amb.cat",
+      "markets": [
+        "espana"
+      ],
+      "topics": [
+        "última milla",
+        "ZBE",
+        "Barcelona"
+      ],
+      "vehicle_type": [
+        "ligeros"
+      ],
+      "tag": "📦 Última Milla",
+      "confidence": "high",
+      "evergreen_score": 3,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "compliance_risk",
+        "urban_delivery_efficiency",
+        "regulatory_pressure"
+      ],
+      "fact_style": "regulatory_fact",
+      "why_interesting": "La ZBE del Área Metropolitana de Barcelona utiliza cámaras de lectura automática de matrícula para detectar infracciones. El incumplimiento es automáticamente trazable, no requiere agente presente.",
+      "fleet_lesson": "En la ZBE de Barcelona, el incumplimiento no requiere ser detectado por un agente: las cámaras automáticas generan notificaciones directas a la matrícula. Una flota sin gestión de matrículas por etiqueta está generando multas sin saberlo.",
+      "commercial_angle": "Introduce la automatización de la detección de infracciones ZBE en Barcelona como riesgo de compliance activo.",
+      "use_case": "Gestión del riesgo de multas ZBE en flotas de distribución con operación en el Área Metropolitana de Barcelona."
+    },
+    {
+      "id": "ultima_milla_019",
+      "fact": "El coste total de la última milla representa entre el 41% y el 53% del coste total de la cadena de suministro en ecommerce, según el informe de McKinsey 'The State of Last-Mile Delivery' de 2022. Es la parte de la cadena de suministro con mayor peso de coste y con mayor variabilidad por decisiones operativas de planificación de rutas, selección de vehículo y gestión de incidencias.",
+      "source": "McKinsey & Company - The State of Last-Mile Delivery 2022",
+      "source_year": 2022,
+      "source_type": "consultancy",
+      "url": null,
+      "markets": [
+        "internacional"
+      ],
+      "topics": [
+        "última milla",
+        "coste de cadena de suministro",
+        "ecommerce"
+      ],
+      "vehicle_type": [
+        "ligeros"
+      ],
+      "tag": "📦 Última Milla",
+      "confidence": "medium",
+      "evergreen_score": 4,
+      "strategic_value": "high",
+      "strategic_bucket": [
+        "logistics_pressure",
+        "benchmark",
+        "hidden_cost"
+      ],
+      "fact_style": "cost_benchmark",
+      "why_interesting": "La última milla representa más del 50% del coste de la cadena de suministro en ecommerce. Reducir este coste en un 10% tiene más impacto en el margen que cualquier otra optimización logística.",
+      "fleet_lesson": "Si la última milla representa más del 50% del coste logístico total, es el área donde cualquier mejora de eficiencia tiene el mayor retorno sobre la inversión en toda la cadena.",
+      "commercial_angle": "Contextualiza el peso financiero de la última milla en la cadena de suministro con una referencia de consultora de primer nivel.",
+      "use_case": "Priorización de inversión en optimización logística en ecommerce con foco en última milla."
+    },
+    {
+      "id": "ultima_milla_020",
+      "fact": "Los vehículos de reparto de última milla que operan en entorno urbano tienen un perfil de desgaste de neumáticos y frenos muy diferente al de un vehículo de larga distancia: más ciclos de frenada, más maniobras de giro, más horas de ralentí. El mantenimiento de frenos en una furgoneta de reparto urbano con 100 paradas diarias puede requerir una intervención cada 30,000-40,000 km, frente a los 80,000-100,000 km de un vehículo de ciclo mixto.",
+      "source": "Michelin Fleet Solutions - Maintenance Cycle Urban Delivery vs Long Haul 2023",
+      "source_year": 2023,
+      "source_type": "manufacturer_documentation",
+      "url": null,
+      "markets": [
+        "internacional",
+        "espana"
+      ],
+      "topics": [
+        "última milla",
+        "mantenimiento",
+        "coste operativo"
+      ],
+      "vehicle_type": [
+        "ligeros"
+      ],
+      "tag": "📦 Última Milla",
+      "confidence": "medium",
+      "evergreen_score": 5,
+      "strategic_value": "medium",
+      "strategic_bucket": [
+        "maintenance_savings",
+        "sector_specific",
+        "hidden_cost"
+      ],
+      "fact_style": "technical_fact",
+      "why_interesting": "Los planes de mantenimiento estándar por km no son adecuados para vehículos de reparto urbano. El ciclo de mantenimiento de frenos en última milla puede ser hasta 3 veces más frecuente que en ciclo mixto.",
+      "fleet_lesson": "Aplicar el plan de mantenimiento de un vehículo de ciclo mixto a una furgoneta de 100 paradas diarias es infraestimar el desgaste real de frenos y neumáticos. Los planes de mantenimiento deben segmentarse por tipo de operación.",
+      "commercial_angle": "Introduce la segmentación del mantenimiento por tipo de operación sin promover ningún producto de mantenimiento.",
+      "use_case": "Diseño de planes de mantenimiento específicos para vehículos de distribución urbana de alta frecuencia de paradas."
+    }
+  ]
+}
