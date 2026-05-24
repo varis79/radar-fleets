@@ -4,7 +4,142 @@ Documento vivo. Va por delante del repo: aquí van ideas antes de tener PR.
 Cuando una idea llega a producción, se mueve a `docs/SYSTEM.md` y se marca aquí
 como `[done]` con el commit/PR de aterrizaje.
 
-Última revisión: 2026-05-22 (post-auditoría externa: Perplexity · DeepSeek · ChatGPT · Gemini).
+Última revisión: **2026-05-24** (post-sprint linking + Sabías qué v2 con 6 LLMs).
+
+---
+
+## 🎯 TODO inmediato (priorizado)
+
+### TIER 1 · Bloquea features ya construidas
+
+| # | Tarea | Quién | ETA | Bloquea |
+|---|---|---|---|---|
+| T1-1 | **Push `weekly-freshness.yml`** — actualizar PAT con scope `workflow` o crear via GitHub UI | Varis | 5 min | Cron miércoles de freshness + rotación facts NO corre |
+| T1-2 | **Activar Resend** — `RESEND_API_KEY` + `RESEND_AUDIENCE_ID` en Vercel env | Varis | 15 min | Newsletter form devuelve 500 |
+| T1-3 | **Submitir sitemap a Search Console** — `https://thefleetradar.com/sitemap.xml` (211 URLs) | Varis | 10 min | Indexación más rápida |
+
+### TIER 2 · Segundo batch de facts "Sabías qué" (categorías débiles)
+
+Pool actual: **137 facts** producción-ready repartidos en 12 categorías. Las
+8 categorías con cobertura baja necesitan otro batch dirigido a los 6 LLMs:
+
+| Categoría | Facts actuales | Target | Ideas y ángulos |
+|---|---|---|---|
+| 🚛 Renting & Leasing | **0** | 15-20 | Cuotas ALD/Arval/Alphabet UE+ES, % residual, mercado secundario, evolución renting 2020-2025, alianzas BBVA/Santander fleet financing |
+| 💼 Operadores 3PL | **0** | 15-20 | DHL/FedEx/UPS perfiles públicos, top 10 3PL Europa según T&L, top 10 LatAm, volumen TEUs Maersk/MSC, M&A logístico 2023-25 |
+| 🌎 Geopolítica & Comercio | **0** | 15-20 | T-MEC datos comercio MX-USA, nearshoring impacto en flotas norte de México, Brexit logística UK-EU, ETS2 carbono pesados, Mobility Package EU |
+| 🏭 Sectores verticales | **3** | 15-20 | Datos por sector: cemento (Cemex/Domicem), gas (Natural/Gas), retail (Walmart/Carrefour cifras públicas), tabaco/cerveza distribución, agro |
+| 🏢 Gestión de flotas | **2** | 10-15 | Datos genéricos del software fleet (Berg Insight, Ptolemus, Gartner), mercado SaaS gestión flotas, índice digitalización |
+| 🚢 Logística & Corredores | **2** | 15-20 | **Corredores con récords** (Suez Canal 12% comercio mundo, Panamá 40 buques/día, Hormuz 20% petróleo, top 10 puertos mundo), Felixstowe-Madrid, Houston-Veracruz |
+| ⚡ Electrificación | **3** | 15-20 | Más datos MOVES III importes, Olinia avance, ANFAC matriculaciones EV mensuales, ChargePoint/Iberdrola/Enel X cuotas, Tesla Semi flotas pilotos públicos |
+| 🔧 Mantenimiento | **1** | 10-15 | Vida útil componentes (frenos/neumáticos/embrague), MTBF camiones, costes correctivo vs preventivo por marca, programas Iveco/Volvo/Scania |
+
+### TIER 2b · Ideas que pidió el usuario (nuevos ejes de facts)
+
+**🏆 Corredores con números récord** — datos espectaculares y memorables:
+- Suez Canal: 12% comercio global pasa por aquí
+- Panamá Canal: 40 buques/día capacidad, restricciones por sequía 2024
+- Strait of Hormuz: 20% petróleo mundial transita
+- Estrecho de Malaca: 25% comercio marítimo global
+- Eurotunnel: 4M camiones/año entre UK y FR
+- Rotterdam: puerto #1 Europa, 470M toneladas/año
+- Top 10 puertos mundo (Shanghai, Singapore, Ningbo, Shenzhen, etc.)
+- Corredor T-MEC: 80% comercio terrestre Norteamérica
+- Madrid-Barcelona AP-2: corredor logístico interior #1 España
+
+**📜 Históricos y curiosidades del sector flotas** — facts memorables:
+- 1956: Malcom McLean inventa el contenedor ISO — el cambio que redefinió la logística
+- 1953: Volvo lanza el primer cinturón de seguridad de 3 puntos en vehículo comercial
+- USPS: la flota más grande del mundo con ~220.000 vehículos
+- 1985: el primer tacógrafo digital aparece en Europa
+- Tesla Semi: primera entrega comercial PepsiCo, dic 2022, 100 unidades Modesto CA
+- Mercedes Actros récord eficiencia: 19,4 L/100km en condiciones de prueba
+- Récord histórico distancia un solo viaje cargo: container Shanghai→Hamburg 19.000 km
+- 1907: primer camión de bomberos motorizado en USA (Knox Automobile)
+- 1937: Diesel-electric truck (KW-Cummins) marca arquitectura moderna
+
+**🌟 Récords mundiales operación de flota**:
+- Walmart: ~12.000 tractocamiones propios (la flota privada más grande USA)
+- Amazon Air: 100+ aviones, 50+ centros de procesamiento
+- Maersk: 700+ buques, primera carrier en orderar metanol verde
+- Ferrocarril norteamericano: BNSF + Union Pacific mueven ~30% del PIB USA en carga
+
+**🔬 Curiosidades técnicas**:
+- Volvo VNL Aero: -7% consumo vs versión estándar gracias a sólo cambios aerodinámicos
+- Scania R Super: motor 13L de 560CV mantiene torque desde 850 RPM
+- Mercedes eActros: 600 km autonomía con megacharging 1MW
+- Cummins X15N: primer motor pesado natural gas con prestaciones de diésel
+
+### TIER 3 · Mejoras de UI/UX
+
+| # | Tarea | ETA |
+|---|---|---|
+| T3-1 | **Caja "Sabías qué" rediseñada** — degradado moderno, más visual | ✅ done 2026-05-24 |
+| T3-2 | Mobile: revisar topbar con 8 links — confirmar scroll horizontal en móvil real | review |
+| T3-3 | Lighthouse audit — score actual desconocido | 1h |
+| T3-4 | Imagen OG por mercado (en lugar de la genérica) | 2h |
+| T3-5 | Pulpo box rediseño visual (alinear con DYK v2) | 1h |
+
+### TIER 4 · Distribución (no técnico)
+
+| # | Tarea | Notas |
+|---|---|---|
+| T4-1 | LinkedIn — página corporativa "The Fleet Radar" + post auto tras edición | requiere LinkedIn API |
+| T4-2 | Newsletter — broadcast semanal vía Resend (cron lunes tras edición) | post T1-2 |
+| T4-3 | RSS submitted a Feedly + agregadores sectoriales | manual |
+
+---
+
+## 📋 Sprint 2026-05-24 · Linking masivo + Sabías qué v2
+
+**Resumen ejecutivo**: 2 mega-sesiones consecutivas. Sitio pasó de 174 URLs
+a 211 indexables, de 158 páginas con DYK a 230 (100% editorial), de 30
+facts hardcoded a 137 dinámicos con filtrado por mercado+categoría.
+6 LLMs aportaron facts vía megaprompt común.
+
+### Sub-sprint A: Infraestructura de linking (commits `378300b` → `8d03876`)
+
+| ID | Tarea | Commit |
+|---|---|---|
+| L-1 | `linkify_master.py` — sistema unificado entity dictionary | `378300b` |
+| L-2 | `discover_entities.py` — cron jueves auto-detecta entidades nuevas | `378300b` |
+| L-3 | `inject_magazine_tags.py` — 73 spans cover/story-tag → `<a>` | `378300b` |
+| L-4 | `fix_hreflang.py` — completa hreflang reciprocity en 92 pages | `4987953` |
+| L-5 | 19 stubs ciudades (8 MX + 6 LatAm + 5 ES) noindex/follow | `378300b` |
+| L-6 | 5 corredores logísticos nueva dimensión `/corredores/` | `378300b` |
+| L-7 | 10 brand pages telematics + fuel cards | `378300b` |
+| L-8 | 10 OEM brand pages | `8d03876` |
+| L-9 | 4 segment panorama pages | `8c1954f` |
+| L-10 | Reorganización 6 hubs | `8d03876` |
+
+### Sub-sprint B: Sistema "Sabías qué" v2 (commits `e127859` → `739f1c0`)
+
+| ID | Tarea | Commit |
+|---|---|---|
+| F-1 | `content/sabias-que-pool.md` source of truth | `e127859`, `fceed3f` |
+| F-2 | 6 LLMs procesados: Perplexity (12) + Grok (16) + Gemini (64) + DeepSeek (84) + ChatGPT (60) + Claude (85) = 321 crudos | `fceed3f` |
+| F-3 | 137 facts producción-ready, 41 cross-validated (2+ LLMs coinciden), 7 conflictos resueltos | `fceed3f` |
+| F-4 | `build_facts_json.py` compila MD → JSON parseable | `739f1c0` |
+| F-5 | `rotate_facts.py` v2 con scoring inteligente por mercado+categoría+confidence+evergreen | `739f1c0` |
+| F-6 | Caja DYK en 230 páginas (100% corpus editorial) | `739f1c0` |
+| F-7 | Raw audit trail en `content/raw-facts-batches/` (6 LLMs JSON crudos preservados) | `e127859`, `fceed3f` |
+| F-8 | Rediseño visual caja DYK con degradado moderno | (pendiente este commit) |
+
+### Stats post-sprint
+
+| Métrica | Pre-sprint | Post-sprint |
+|---|---|---|
+| URLs indexables | 174 | **211** |
+| Links rotos internos | 16 | **0** |
+| Magazine tags clickables | 33/112 (29%) | **106/112 (95%)** |
+| Auto-links añadidos | — | **700+ en cascada** |
+| Ciudades cubiertas | 32 | **51** (32 full + 19 stubs auto) |
+| Corredores cubiertos | 0 | **5** (nueva dimensión) |
+| Players cubiertos | 1 | **21** (Pulpo + 10 telematics/fuel + 10 OEMs) |
+| Pool DYK | 30 hardcoded | **137 dinámicos** filtrados |
+| Páginas con DYK | 158 | **230** |
+| LLMs aportando facts | 0 | **6** |
+| qa_pillars | 175 OK | **194 OK · 0 WARN · 0 FAIL** |
 
 ---
 
@@ -232,3 +367,21 @@ Cada N días, el sistema:
 | 2026-05-23 | A-8 country briefs CO, CL, AR, PE: regulación local, players, cifras, fuentes institucionales | commit `c41e308` |
 | 2026-05-23 | Sección "Movimientos" en magazine: templates + render + CSS + prompt LLM | feat/movimientos-a7 |
 | 2026-05-23 | A-7 lead magnets: plantilla TCO por vehículo MX + matriz ZBE+ITV España | feat/movimientos-a7 |
+| 2026-05-23 | Outbound institution links (107 ext-links a SAT/DGT/CNBV/etc.) + disclaimer mailto en 139 pillars | `1ab6ad6` |
+| 2026-05-23 | Interlinking interno entre pillar pages (157 int-links auto) | `43b8f5e` |
+| 2026-05-24 | FASE 1 SEO: liberar 137 pillars de noindex + purgar 407 links rotos + sitemap completo 36→171 URLs + 3 hubs LatAm engordados | `a8eab69` |
+| 2026-05-24 | FASE 2 nav: header global + footer canónico + páginas legales (privacidad, términos) + evergreen index | `c625d45` |
+| 2026-05-24 | FASE 3 frescura: refresh_freshness.py + rotate_facts.py + cron weekly-freshness.yml (pendiente push por PAT scope) | `40db0d8` |
+| 2026-05-24 | FASE 4 polish: og:image+JSON-LD home, reconciliación cifras telemática MX, typo TCO, deduplicación titles | `e12654a` |
+| 2026-05-24 | Polish final: 41 disclaimers GitHub eliminados, 88 hreflang MX↔ES, 10 BreadcrumbList magazines/evergreens, ItemList home | `19fdb97` |
+| 2026-05-24 | Topbar móvil con 8 links (scroll horizontal + filtrado <640px) | `95f3e01` |
+| 2026-05-24 | FASE 4 calidad editorial: cleanup cifras inventadas 33 archivos (DHL/Amazon/Bimbo/MeLi → cualitativo, Aralo+Samsara neutralizado) | `e5a8079` |
+| 2026-05-24 | docs/SEO-GUIDE.md (canon) + docs/AUDIT-PROMPT-V3.md (audit interno reusable) | `dd1a535` |
+| 2026-05-24 | hreflang completo (self+x-default) + qa_pillars bug fixes (whitelist ANT word-boundary, regex europeo, source detection) + cleanup pass 4 (14 archivos) | `4987953` |
+| 2026-05-24 | 4 brand pillars fabricantes (camiones MX/ES + EV MX + furgonetas EV ES) | `1be6587` |
+| 2026-05-24 | docs SEO-GUIDE corredores + players | `78e74b8` |
+| 2026-05-24 | **Sprint linking masivo**: linkify_master.py + discover_entities.py + 19 stubs ciudades + 5 corredores + 10 brand telematics/fuel + 73 magazine tags clickables | `378300b` |
+| 2026-05-24 | FASES D+E: reorganización 6 hubs + 10 OEM brand pages | `8d03876` |
+| 2026-05-24 | Pool "Sabías qué" v1 inicial Perplexity batch | `e127859` |
+| 2026-05-24 | Pool "Sabías qué" v2: 6 LLMs procesados (Perplexity+Grok+Gemini+DeepSeek+ChatGPT+Claude), 137 facts producción-ready, 41 cross-validated, 7 conflictos resueltos | `fceed3f` |
+| 2026-05-24 | Sistema "Sabías qué" v2 live: build_facts_json.py + rotate_facts.py v2 con scoring + DYK en 230 páginas (100% editorial) | `739f1c0` |

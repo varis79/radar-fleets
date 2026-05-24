@@ -340,11 +340,41 @@ en 90 días.
 
 ### Sistema implementado (cron miércoles 06:00 UTC)
 
-**`scripts/rotate_facts.py`** — caja "💡 Sabías qué" rotatoria:
-- Pool de 30 facts editoriales sobre el sector
-- Cada página recibe: `pool[(isoweek + sha1(page_url)) % 30]`
-- 158 páginas con caja semanal-rotatoria
-- Cycle: cada página recibe ~17 facts distintos al año
+**`scripts/rotate_facts.py` v2** — caja "💡 Sabías qué" rotatoria con
+filtrado inteligente por mercado + categoría:
+
+- **Pool**: 137 facts editoriales en `content/sabias-que-pool.json`
+  (compilado desde `content/sabias-que-pool.md` por `build_facts_json.py`)
+- **Source of truth**: editorial humano en MD. JSON es artefacto compilado.
+- **Origen**: 6 LLMs procesados vía megaprompt (Perplexity + Grok + Gemini +
+  DeepSeek + ChatGPT + Claude). 41 facts cross-validated por ≥2 fuentes.
+- **Cobertura**: 230 páginas (100% del corpus editorial — pillars + home +
+  archive + magazines + about + evergreen + corredores + players)
+- **Filtrado inteligente** (scoring):
+  - `+3` si fact.categoria coincide con categoría detectada en la página
+    (por slug + h1 + title, 12 buckets: ⛽📡⚖️⚡🔧🛡️🚨📦🚛🏭🌎🚢💼🏢)
+  - `+2` si fact.markets incluye el mercado detectado de la página
+  - `+1` si fact.markets incluye "global" (fallback)
+  - `+1` si confidence == high-cross
+  - `+0.1 × evergreen_score`
+- **Rotación**: dentro de candidatos relevantes, `(isoweek + sha1(page_url)) % len(candidatos)`
+  → mismo fact toda la semana en una página, distinto entre páginas, cambia
+  cada semana
+- **Anti-spam**: idempotente si el fact ya es el correcto
+
+**`scripts/build_facts_json.py`** — compilador MD → JSON:
+- Parsea `content/sabias-que-pool.md` por estructura `### {id} · {title}`
+- Extrae metadata (source, markets, topics, vehicle_type, categoria,
+  confidence, evergreen_score, origin)
+- Filtra automáticamente confidence == pending/conflict (no producción)
+- Output: `content/sabias-que-pool.json` con `{meta, facts: [...]}`
+- Regenerable con `python3 scripts/build_facts_json.py`
+
+**`scripts/discover_entities.py`** — cron jueves auto-detecta entidades:
+- Escanea magazines + pillars de últimos N días
+- Detecta entidades mencionadas ≥2 veces sin página destino
+- Crea STUBS automáticos (ciudades, con noindex/follow) en `/ciudades/`
+- Reporta candidatos brand/corredor en `docs/discovery-log.md`
 
 **`scripts/refresh_freshness.py`** — meta freshness:
 - Inyecta `<meta property="article:modified_time">` y visible `<time>`
