@@ -813,3 +813,13 @@ a.story-tag:hover{opacity:.82}
   .topbar-nav a:not(:first-child):not(:last-child):not([href="/archive.html"]){display:none}
   .topbar-nav{justify-self:end;gap:14px}
 }
+
+/* ── DYK box dark variant (home, archive, magazines) ─────────────── */
+.cover .did-you-know,
+.section-section-sand .did-you-know,
+body > .did-you-know{
+  background:linear-gradient(135deg, rgba(201,168,76,.14), rgba(30,127,203,.10));
+  border-left-color:var(--accent,#c9a84c);
+}
+/* Make DYK box wider inside magazine sections */
+.section .did-you-know{max-width:920px;margin:40px auto}
