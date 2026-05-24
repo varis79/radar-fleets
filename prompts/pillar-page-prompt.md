@@ -53,6 +53,41 @@ FRASES PROHIBIDAS:
 - **Datos reales o "según fuentes públicas"**. Si das un % o una cifra, di
   de dónde viene o aclara "datos del sector según análisis editorial". Mejor
   decir "ronda el 20%" que inventarte "exactamente 23,4%".
+
+### REGLA CRÍTICA — cifras atribuidas a empresas privadas
+
+**PROHIBIDO** publicar cifras específicas atribuidas a empresas privadas SIN
+fuente verificable. Esto incluye:
+
+- ❌ "DHL redujo costes 18%" (sin link a comunicación oficial de DHL o medio)
+- ❌ "Amazon opera 2.800 furgonetas en España" (sin fuente)
+- ❌ "Bimbo gestiona 3.200 unidades" (sin reporte público citable)
+- ❌ "Mercado Libre 28% del volumen" (sin estudio/medio)
+- ❌ "Samsara, Geotab y Webfleet concentran 55%" (sin Gartner/IDC/Forrester)
+- ❌ "[Cliente real con Pulpo/PulpoPay] redujo X%" (datos de cliente NO se
+  publican sin permiso explícito)
+
+**PERMITIDO**:
+- ✅ Cifras de empresas/instituciones PÚBLICAS (CFE, Pemex, SAT, DGT, IMSS,
+  CANACAR, AMEG, ANFAC, INEGI, ANT, MTOP) con su fuente
+- ✅ Cifras de mercado AGREGADAS atribuidas a fuente nombrada
+  ("según AMVO, el e-commerce mueve X paquetes/día")
+- ✅ Cifras del propio Pulpo verificables (+200.000 vehículos gestionados)
+- ✅ Datos PÚBLICOS de empresas (declaraciones de resultados, comunicados
+  oficiales) con link al documento original
+- ✅ Lenguaje cualitativo cuando no hay fuente:
+  "líderes del sector como X, Y, Z operan flotas de gran escala"
+  "operadores internacionales como DHL han desplegado iniciativas eléctricas"
+
+Si dudas si una cifra es verificable, NO la publiques. Mejor un párrafo
+cualitativo correcto que uno cuantitativo inventado.
+
+### REGLA — consistencia interna entre páginas
+
+Si una cifra ya aparece en otra página del sitio (mismo player, mismo
+mercado), DEBE coincidir. Ejemplo del audit 2026-05-24: "Amazon Madrid"
+apareció como 850, 400 y 1.400 vehículos en 3 páginas distintas — síntoma
+claro de invención. Si no tienes cifra única defendible, usa cualitativo.
 - **Sin frases vacías**: cada párrafo debe transmitir información operativa
   o de mercado, no relleno.
 
