@@ -7,10 +7,10 @@
 <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
 <meta content="F76AFEB4A9F8059A6B4046015931CB70" name="msvalidate.01"/>
 <title>Flotas por ciudad · The Fleet Radar</title>
-<meta content="Análisis por ciudad: Madrid, Barcelona, CDMX, Guadalajara, Buenos Aires, Bogotá, Santiago, Lima y más, con foco en topics core (telemática, fuel cards, electrificación, mantenimiento, ZBE, robo de carga)." name="description"/>
+<meta content="Análisis editorial por ciudad. España: Madrid y Barcelona con cobertura plena, más 5 ciudades en cobertura inicial. México: CDMX, Guadalajara, Monterrey con cobertura plena, más 8 ciudades logísticas. LatAm: Bogotá, Medellín, Cali, Santiago, Buenos Aires y Lima en cobertura inicial." name="description"/>
 <meta content="Pulpo — getpulpo.com" name="author"/>
 <meta content="Flotas por ciudad · The Fleet Radar" property="og:title"/>
-<meta content="Análisis por ciudad: Madrid, Barcelona, CDMX, Guadalajara, Buenos Aires, Bogotá, Santiago, Lima y más, con foco en topics core (telemática, fuel cards, electrificación, mantenimiento, ZBE, robo de carga)." property="og:description"/>
+<meta content="Análisis editorial por ciudad. España: Madrid, Barcelona y 5 ciudades en cobertura inicial. México: CDMX, Guadalajara, Monterrey y 8 ciudades logísticas. LatAm: Bogotá, Medellín, Cali, Santiago, Buenos Aires, Lima en cobertura inicial." property="og:description"/>
 <meta content="website" property="og:type"/>
 <meta content="https://thefleetradar.com/ciudades/" property="og:url"/>
 <meta content="The Fleet Radar · by Pulpo" property="og:site_name"/>
@@ -20,7 +20,7 @@
 <meta content="630" property="og:image:height"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="Flotas por ciudad · The Fleet Radar" name="twitter:title"/>
-<meta content="Análisis por ciudad: Madrid, Barcelona, CDMX, Guadalajara, Buenos Aires, Bogotá, Santiago, Lima y más, con foco en topics core (telemática, fuel cards, electrificación, mantenimiento, ZBE, robo de carga)." name="twitter:description"/>
+<meta content="Análisis editorial por ciudad. España: Madrid, Barcelona y 5 ciudades en cobertura inicial. México: CDMX, Guadalajara, Monterrey y 8 ciudades logísticas. LatAm: Bogotá, Medellín, Cali, Santiago, Buenos Aires, Lima en cobertura inicial." name="twitter:description"/>
 <meta content="https://thefleetradar.com/og-default.png" name="twitter:image"/>
 <link href="https://thefleetradar.com/ciudades/" rel="canonical"/>
 <link href="/assets/brand/favicon.svg" rel="icon" type="image/svg+xml"/>
@@ -32,10 +32,26 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="/assets/radar.css" rel="stylesheet"/>
-<style>:root{ --accent:#c9a84c; --accent-2:#1e7fcb; }</style>
+<style>
+:root{ --accent:#c9a84c; --accent-2:#1e7fcb; }
+.city-block{margin-bottom:36px}
+.city-block-head{display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid var(--border-dark);padding-bottom:8px;margin-bottom:14px;gap:12px;flex-wrap:wrap}
+.city-block-title{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:var(--text-dark);margin:0}
+.city-block-title a{color:inherit;text-decoration:none;border-bottom:1px dashed transparent}
+.city-block-title a:hover{border-bottom-color:var(--accent-2)}
+.city-block-count{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-light);font-weight:600}
+.city-stub-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.city-stub-chip{display:inline-flex;align-items:center;padding:8px 14px;background:#fff;border:1px solid var(--border-dark);border-left:3px solid var(--accent);border-radius:4px;font-size:13px;font-weight:500;color:var(--text-dark);text-decoration:none;transition:all .15s}
+.city-stub-chip:hover{border-left-color:var(--accent-2);transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.06)}
+.city-stub-section-note{font-size:13px;color:var(--text-mid);margin:0 0 12px;font-style:italic}
+@media(max-width:640px){
+  .hub-grid{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+  .city-block-head{flex-direction:column;align-items:flex-start;gap:4px}
+}
+</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsMediaOrganization","@id":"https://thefleetradar.com/#organization","name":"The Fleet Radar · by Pulpo","alternateName":"The Fleet Radar","url":"https://thefleetradar.com","description":"Publicación editorial semanal de Pulpo sobre gestión de flotas, combustible, pagos, telemática, logística, IA, electrificación y regulación en México, España, Latinoamérica, Europa y Estados Unidos.","logo":{"@type":"ImageObject","url":"https://thefleetradar.com/og-default.png","width":1200,"height":630},"image":"https://thefleetradar.com/og-default.png","foundingDate":"2026-04-14","inLanguage":"es","areaServed":["MX","ES","CO","CL","AR","PE","EC","UY","DO","US"],"parentOrganization":{"@type":"Organization","name":"Pulpo","url":"https://getpulpo.com","sameAs":["https://www.linkedin.com/company/getpulpo"]},"publisher":{"@type":"Organization","name":"Pulpo","url":"https://getpulpo.com"},"sameAs":["https://getpulpo.com","https://www.linkedin.com/company/getpulpo"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://thefleetradar.com/#website","url":"https://thefleetradar.com","name":"The Fleet Radar · by Pulpo","description":"Inteligencia semanal de mercado para el sector de gestión de flotas.","publisher":{"@id":"https://thefleetradar.com/#organization"},"inLanguage":"es-ES"}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Flotas por ciudad","description":"Análisis por ciudad: Madrid, Barcelona, CDMX, Guadalajara, Buenos Aires, Bogotá, Santiago, Lima y más, con foco en topics core (telemática, fuel cards, electrificación, mantenimiento, ZBE, robo de carga).","url":"https://thefleetradar.com/ciudades/","isPartOf":{"@id":"https://thefleetradar.com/#website"},"publisher":{"@id":"https://thefleetradar.com/#organization"},"inLanguage":"es-ES","mainEntity":{"@type":"ItemList","numberOfItems":32},"dateModified":"2026-05-24","datePublished":"2026-05-24"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Flotas por ciudad","description":"Análisis editorial por ciudad. España: Madrid, Barcelona y 5 ciudades en cobertura inicial. México: CDMX, Guadalajara, Monterrey y 8 ciudades logísticas. LatAm: Bogotá, Medellín, Cali, Santiago, Buenos Aires, Lima en cobertura inicial.","url":"https://thefleetradar.com/ciudades/","isPartOf":{"@id":"https://thefleetradar.com/#website"},"publisher":{"@id":"https://thefleetradar.com/#organization"},"inLanguage":"es-ES","mainEntity":{"@type":"ItemList","numberOfItems":51},"dateModified":"2026-05-24","datePublished":"2026-05-24"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"The Fleet Radar","item":"https://thefleetradar.com/"},{"@type":"ListItem","position":2,"name":"Flotas por ciudad","item":"https://thefleetradar.com/ciudades/"}]}</script>
 <script defer="" src="/_vercel/insights/script.js"></script>
 <script defer="" src="/_vercel/speed-insights/script.js"></script>
@@ -61,154 +77,249 @@
 </style>
 <meta content="2026-05-24" property="article:modified_time"/><meta content="2026-05-24" property="article:published_time"/></head>
 <body>
-<header class="topbar"><a class="topbar-brand" href="/">The Fleet Radar <span>by Pulpo</span></a><div class="topbar-meta">Hub editorial</div><nav class="topbar-nav"><a href="/">Última</a><a href="/archive.html">Archivo</a><a href="/mercados/">Mercados</a><a href="/temas/">Temas</a><a href="/casos-uso/">Casos de uso</a><a href="/sectores/">Sectores</a><a href="/evergreen/">Recursos</a><a class="cta" href="https://www.getpulpo.com/" rel="noopener" target="_blank">Pulpo ↗</a></nav></header>
+<header class="topbar"><a class="topbar-brand" href="/">The Fleet Radar <span>by Pulpo</span></a><div class="topbar-meta">Hub editorial · Ciudades</div><nav class="topbar-nav"><a href="/">Última</a><a href="/archive.html">Archivo</a><a href="/mercados/">Mercados</a><a href="/temas/">Temas</a><a href="/casos-uso/">Casos de uso</a><a href="/sectores/">Sectores</a><a href="/evergreen/">Recursos</a><a class="cta" href="https://www.getpulpo.com/" rel="noopener" target="_blank">Pulpo ↗</a></nav></header>
 <section class="hub-hero">
 <div class="container">
-<span class="hub-eyebrow">Hub editorial</span>
+<span class="hub-eyebrow">Hub editorial · Por ciudad</span>
 <h1 class="hub-title">Flotas por ciudad</h1>
-<p class="hub-intro">Análisis por ciudad: Madrid, Barcelona, CDMX, Guadalajara, <a class="city-link int-link" href="/ciudades/buenos-aires-2026/">Buenos Aires</a>, <a class="city-link int-link" href="/ciudades/bogota-2026/">Bogotá</a>, <a class="city-link int-link" href="/ciudades/santiago-2026/">Santiago</a>, <a class="city-link int-link" href="/ciudades/lima-2026/">Lima</a> y más, con foco en topics core (telemática, fuel cards, electrificación, mantenimiento, ZBE, robo de carga).</p>
+<p class="hub-intro">Análisis editorial agrupado por ciudad. <strong>España</strong>: Madrid y Barcelona con 7 análisis temáticos cada una, más 5 ciudades (Bilbao, Valencia, Sevilla, Zaragoza, Málaga) en cobertura inicial. <strong>México</strong>: CDMX, Guadalajara y Monterrey con 5 análisis cada una, más 8 ciudades logísticas clave (Manzanillo, Cuautitlán Izcalli, Veracruz, Nuevo Laredo, Altamira, Lázaro Cárdenas, Toluca, Cuautitlán) en cobertura inicial. <strong>LatAm</strong>: Bogotá, Medellín, Cali, Santiago, Buenos Aires y Lima en cobertura inicial.</p>
 </div>
 </section><aside class="did-you-know"><span class="dyk-eyebrow">💡 Sabías qué · ⚡ Electrificación</span><p class="dyk-body">Las matriculaciones de vehículos comerciales eléctricos en España crecieron 34% en 2025 según ANFAC. Madrid y Barcelona concentran el 58% del parque.</p></aside>
 <main class="hub-main">
 <div class="container">
+
 <section class="hub-section">
-<h2 class="hub-section-title">España</h2>
+<h2 class="hub-section-supertitle">España 🇪🇸</h2>
+
+<div class="city-block">
+<div class="city-block-head">
+<h3 class="city-block-title">Madrid</h3>
+<span class="city-block-count">7 análisis</span>
+</div>
 <div class="hub-grid">
-<a class="hub-card" href="/ciudades/electrificacion-flotas-madrid-2026/">
-<div class="hub-card-label">Electrificación de flotas para flotas en Madrid (España) 2026</div>
-<div class="hub-card-meta"><span class="hub-card-market">España</span></div>
-</a>
-<a class="hub-card" href="/ciudades/electrificacion-flotas-barcelona-2026/">
-<div class="hub-card-label">Electrificación de flotas para flotas en Barcelona (España) 2026</div>
-<div class="hub-card-meta"><span class="hub-card-market">España</span></div>
-</a>
-<a class="hub-card" href="/ciudades/fuel-cards-flotas-madrid-2026/">
-<div class="hub-card-label">Tarjetas de flota y combustible para flotas en Madrid (España) 2026</div>
-<div class="hub-card-meta"><span class="hub-card-market">España</span></div>
-</a>
-<a class="hub-card" href="/ciudades/fuel-cards-flotas-barcelona-2026/">
-<div class="hub-card-label">Tarjetas de flota y combustible para flotas en Barcelona (España) 2026</div>
-<div class="hub-card-meta"><span class="hub-card-market">España</span></div>
-</a>
-<a class="hub-card" href="/ciudades/logistica-distribucion-flotas-madrid-2026/">
-<div class="hub-card-label">Logística y distribución para flotas en Madrid (España) 2026</div>
-<div class="hub-card-meta"><span class="hub-card-market">España</span></div>
-</a>
-<a class="hub-card" href="/ciudades/logistica-distribucion-flotas-barcelona-2026/">
-<div class="hub-card-label">Logística y distribución para flotas en Barcelona (España) 2026</div>
-<div class="hub-card-meta"><span class="hub-card-market">España</span></div>
-</a>
-<a class="hub-card" href="/ciudades/mantenimiento-flotas-madrid-2026/">
-<div class="hub-card-label">Mantenimiento de flota para flotas en Madrid (España) 2026</div>
-<div class="hub-card-meta"><span class="hub-card-market">España</span></div>
-</a>
-<a class="hub-card" href="/ciudades/mantenimiento-flotas-barcelona-2026/">
-<div class="hub-card-label">Mantenimiento de flota para flotas en Barcelona (España) 2026</div>
-<div class="hub-card-meta"><span class="hub-card-market">España</span></div>
-</a>
-<a class="hub-card" href="/ciudades/renting-leasing-flotas-madrid-2026/">
-<div class="hub-card-label">Renting y leasing de flotas para flotas en Madrid (España) 2026</div>
-<div class="hub-card-meta"><span class="hub-card-market">España</span></div>
-</a>
-<a class="hub-card" href="/ciudades/renting-leasing-flotas-barcelona-2026/">
-<div class="hub-card-label">Renting y leasing de flotas para flotas en Barcelona (España) 2026</div>
-<div class="hub-card-meta"><span class="hub-card-market">España</span></div>
-</a>
 <a class="hub-card" href="/ciudades/telematica-flotas-madrid-2026/">
-<div class="hub-card-label">Telemática para flotas en Madrid (España) 2026</div>
-<div class="hub-card-meta"><span class="hub-card-market">España</span></div>
+<div class="hub-card-label">Telemática para flotas en Madrid</div>
+<div class="hub-card-meta"><span class="hub-card-market">Tecnología</span></div>
 </a>
-<a class="hub-card" href="/ciudades/telematica-flotas-barcelona-2026/">
-<div class="hub-card-label">Telemática para flotas en Barcelona (España) 2026</div>
-<div class="hub-card-meta"><span class="hub-card-market">España</span></div>
+<a class="hub-card" href="/ciudades/electrificacion-flotas-madrid-2026/">
+<div class="hub-card-label">Electrificación de flotas en Madrid</div>
+<div class="hub-card-meta"><span class="hub-card-market">Energía</span></div>
 </a>
 <a class="hub-card" href="/ciudades/zbe-flotas-madrid-2026/">
-<div class="hub-card-label">ZBE y flotas comerciales para flotas en Madrid (España) 2026</div>
-<div class="hub-card-meta"><span class="hub-card-market">España</span></div>
+<div class="hub-card-label">ZBE y flotas comerciales en Madrid</div>
+<div class="hub-card-meta"><span class="hub-card-market">Regulación</span></div>
+</a>
+<a class="hub-card" href="/ciudades/fuel-cards-flotas-madrid-2026/">
+<div class="hub-card-label">Tarjetas de flota y combustible en Madrid</div>
+<div class="hub-card-meta"><span class="hub-card-market">Costes</span></div>
+</a>
+<a class="hub-card" href="/ciudades/renting-leasing-flotas-madrid-2026/">
+<div class="hub-card-label">Renting y leasing en Madrid</div>
+<div class="hub-card-meta"><span class="hub-card-market">Costes</span></div>
+</a>
+<a class="hub-card" href="/ciudades/mantenimiento-flotas-madrid-2026/">
+<div class="hub-card-label">Mantenimiento de flota en Madrid</div>
+<div class="hub-card-meta"><span class="hub-card-market">Operación</span></div>
+</a>
+<a class="hub-card" href="/ciudades/logistica-distribucion-flotas-madrid-2026/">
+<div class="hub-card-label">Logística y distribución en Madrid</div>
+<div class="hub-card-meta"><span class="hub-card-market">Operación</span></div>
+</a>
+</div>
+</div>
+
+<div class="city-block"><div class="city-block-head">
+<h3 class="city-block-title">Barcelona</h3>
+<span class="city-block-count">7 análisis</span>
+</div>
+<div class="hub-grid">
+<a class="hub-card" href="/ciudades/telematica-flotas-barcelona-2026/">
+<div class="hub-card-label">Telemática para flotas en Barcelona</div>
+<div class="hub-card-meta"><span class="hub-card-market">Tecnología</span></div>
+</a>
+<a class="hub-card" href="/ciudades/electrificacion-flotas-barcelona-2026/">
+<div class="hub-card-label">Electrificación de flotas en Barcelona</div>
+<div class="hub-card-meta"><span class="hub-card-market">Energía</span></div>
 </a>
 <a class="hub-card" href="/ciudades/zbe-flotas-barcelona-2026/">
-<div class="hub-card-label">ZBE y flotas comerciales para flotas en Barcelona (España) 2026</div>
-<div class="hub-card-meta"><span class="hub-card-market">España</span></div>
+<div class="hub-card-label">ZBE y flotas comerciales en Barcelona</div>
+<div class="hub-card-meta"><span class="hub-card-market">Regulación</span></div>
+</a>
+<a class="hub-card" href="/ciudades/fuel-cards-flotas-barcelona-2026/">
+<div class="hub-card-label">Tarjetas de flota y combustible en Barcelona</div>
+<div class="hub-card-meta"><span class="hub-card-market">Costes</span></div>
+</a>
+<a class="hub-card" href="/ciudades/renting-leasing-flotas-barcelona-2026/">
+<div class="hub-card-label">Renting y leasing en Barcelona</div>
+<div class="hub-card-meta"><span class="hub-card-market">Costes</span></div>
+</a>
+<a class="hub-card" href="/ciudades/mantenimiento-flotas-barcelona-2026/">
+<div class="hub-card-label">Mantenimiento de flota en Barcelona</div>
+<div class="hub-card-meta"><span class="hub-card-market">Operación</span></div>
+</a>
+<a class="hub-card" href="/ciudades/logistica-distribucion-flotas-barcelona-2026/">
+<div class="hub-card-label">Logística y distribución en Barcelona</div>
+<div class="hub-card-meta"><span class="hub-card-market">Operación</span></div>
 </a>
 </div>
+</div>
+
+<div class="city-block">
+<div class="city-block-head">
+<h3 class="city-block-title">Otras ciudades en España</h3>
+<span class="city-block-count">Cobertura inicial</span>
+</div>
+<p class="city-stub-section-note">Brief editorial introductorio. Análisis temáticos en cola para próximas ediciones.</p>
+<div class="city-stub-row">
+<a class="city-stub-chip" href="/ciudades/bilbao-2026/">Bilbao</a>
+<a class="city-stub-chip" href="/ciudades/valencia-2026/">Valencia</a>
+<a class="city-stub-chip" href="/ciudades/sevilla-2026/">Sevilla</a>
+<a class="city-stub-chip" href="/ciudades/zaragoza-2026/">Zaragoza</a>
+<a class="city-stub-chip" href="/ciudades/malaga-2026/">Málaga</a>
+</div>
+</div>
 </section>
+
 <section class="hub-section">
-<h2 class="hub-section-title">México</h2>
+<h2 class="hub-section-supertitle">México 🇲🇽</h2>
+
+<div class="city-block">
+<div class="city-block-head">
+<h3 class="city-block-title">Ciudad de México (CDMX)</h3>
+<span class="city-block-count">5 análisis</span>
+</div>
 <div class="hub-grid">
-<a class="hub-card" href="/ciudades/cargo-theft-flotas-cdmx-2026/">
-<div class="hub-card-label">Robo de carga y seguridad de mercancías para flotas en Ciudad de México (México) 2026</div>
-<div class="hub-card-meta"><span class="hub-card-market">México</span></div>
-</a>
-<a class="hub-card" href="/ciudades/cargo-theft-flotas-guadalajara-2026/">
-<div class="hub-card-label">Robo de carga y seguridad de mercancías para flotas en Guadalajara (México) 2026</div>
-<div class="hub-card-meta"><span class="hub-card-market">México</span></div>
-</a>
-<a class="hub-card" href="/ciudades/cargo-theft-flotas-monterrey-2026/">
-<div class="hub-card-label">Robo de carga y seguridad de mercancías para flotas en Monterrey (México) 2026</div>
-<div class="hub-card-meta"><span class="hub-card-market">México</span></div>
+<a class="hub-card" href="/ciudades/telematica-flotas-cdmx-2026/">
+<div class="hub-card-label">Telemática para flotas en CDMX</div>
+<div class="hub-card-meta"><span class="hub-card-market">Tecnología</span></div>
 </a>
 <a class="hub-card" href="/ciudades/electrificacion-flotas-cdmx-2026/">
-<div class="hub-card-label">Electrificación de flotas para flotas en Ciudad de México (México) 2026</div>
-<div class="hub-card-meta"><span class="hub-card-market">México</span></div>
+<div class="hub-card-label">Electrificación de flotas en CDMX</div>
+<div class="hub-card-meta"><span class="hub-card-market">Energía</span></div>
 </a>
-<a class="hub-card" href="/ciudades/electrificacion-flotas-guadalajara-2026/">
-<div class="hub-card-label">Electrificación de flotas para flotas en Guadalajara (México) 2026</div>
-<div class="hub-card-meta"><span class="hub-card-market">México</span></div>
-</a>
-<a class="hub-card" href="/ciudades/electrificacion-flotas-monterrey-2026/">
-<div class="hub-card-label">Electrificación de flotas para flotas en Monterrey (México) 2026</div>
-<div class="hub-card-meta"><span class="hub-card-market">México</span></div>
+<a class="hub-card" href="/ciudades/cargo-theft-flotas-cdmx-2026/">
+<div class="hub-card-label">Robo de carga en CDMX</div>
+<div class="hub-card-meta"><span class="hub-card-market">Seguridad</span></div>
 </a>
 <a class="hub-card" href="/ciudades/fuel-cards-flotas-cdmx-2026/">
-<div class="hub-card-label">Tarjetas de flota y combustible para flotas en Ciudad de México (México) 2026</div>
-<div class="hub-card-meta"><span class="hub-card-market">México</span></div>
-</a>
-<a class="hub-card" href="/ciudades/fuel-cards-flotas-guadalajara-2026/">
-<div class="hub-card-label">Tarjetas de flota y combustible para flotas en Guadalajara (México) 2026</div>
-<div class="hub-card-meta"><span class="hub-card-market">México</span></div>
-</a>
-<a class="hub-card" href="/ciudades/fuel-cards-flotas-monterrey-2026/">
-<div class="hub-card-label">Tarjetas de flota y combustible para flotas en Monterrey (México) 2026</div>
-<div class="hub-card-meta"><span class="hub-card-market">México</span></div>
-</a>
-<a class="hub-card" href="/ciudades/logistica-distribucion-flotas-cdmx-2026/">
-<div class="hub-card-label">Logística y distribución para flotas en Ciudad de México (México) 2026</div>
-<div class="hub-card-meta"><span class="hub-card-market">México</span></div>
-</a>
-<a class="hub-card" href="/ciudades/logistica-distribucion-flotas-guadalajara-2026/">
-<div class="hub-card-label">Logística y distribución para flotas en Guadalajara (México) 2026</div>
-<div class="hub-card-meta"><span class="hub-card-market">México</span></div>
-</a>
-<a class="hub-card" href="/ciudades/logistica-distribucion-flotas-monterrey-2026/">
-<div class="hub-card-label">Logística y distribución para flotas en Monterrey (México) 2026</div>
-<div class="hub-card-meta"><span class="hub-card-market">México</span></div>
+<div class="hub-card-label">Tarjetas de flota y combustible en CDMX</div>
+<div class="hub-card-meta"><span class="hub-card-market">Costes</span></div>
 </a>
 <a class="hub-card" href="/ciudades/mantenimiento-flotas-cdmx-2026/">
-<div class="hub-card-label">Mantenimiento de flota para flotas en Ciudad de México (México) 2026</div>
-<div class="hub-card-meta"><span class="hub-card-market">México</span></div>
+<div class="hub-card-label">Mantenimiento de flota en CDMX</div>
+<div class="hub-card-meta"><span class="hub-card-market">Operación</span></div>
 </a>
-<a class="hub-card" href="/ciudades/mantenimiento-flotas-guadalajara-2026/">
-<div class="hub-card-label">Mantenimiento de flota para flotas en Guadalajara (México) 2026</div>
-<div class="hub-card-meta"><span class="hub-card-market">México</span></div>
-</a>
-<a class="hub-card" href="/ciudades/mantenimiento-flotas-monterrey-2026/">
-<div class="hub-card-label">Mantenimiento de flota para flotas en Monterrey (México) 2026</div>
-<div class="hub-card-meta"><span class="hub-card-market">México</span></div>
-</a>
-<a class="hub-card" href="/ciudades/telematica-flotas-cdmx-2026/">
-<div class="hub-card-label">Telemática para flotas en Ciudad de México (México) 2026</div>
-<div class="hub-card-meta"><span class="hub-card-market">México</span></div>
-</a>
-<a class="hub-card" href="/ciudades/telematica-flotas-guadalajara-2026/">
-<div class="hub-card-label">Telemática para flotas en Guadalajara (México) 2026</div>
-<div class="hub-card-meta"><span class="hub-card-market">México</span></div>
-</a>
-<a class="hub-card" href="/ciudades/telematica-flotas-monterrey-2026/">
-<div class="hub-card-label">Telemática para flotas en Monterrey (México) 2026</div>
-<div class="hub-card-meta"><span class="hub-card-market">México</span></div>
+<a class="hub-card" href="/ciudades/logistica-distribucion-flotas-cdmx-2026/">
+<div class="hub-card-label">Logística y distribución en CDMX</div>
+<div class="hub-card-meta"><span class="hub-card-market">Operación</span></div>
 </a>
 </div>
+</div>
+
+<div class="city-block">
+<div class="city-block-head">
+<h3 class="city-block-title">Guadalajara</h3>
+<span class="city-block-count">5 análisis</span>
+</div>
+<div class="hub-grid">
+<a class="hub-card" href="/ciudades/telematica-flotas-guadalajara-2026/">
+<div class="hub-card-label">Telemática para flotas en Guadalajara</div>
+<div class="hub-card-meta"><span class="hub-card-market">Tecnología</span></div>
+</a>
+<a class="hub-card" href="/ciudades/electrificacion-flotas-guadalajara-2026/">
+<div class="hub-card-label">Electrificación de flotas en Guadalajara</div>
+<div class="hub-card-meta"><span class="hub-card-market">Energía</span></div>
+</a>
+<a class="hub-card" href="/ciudades/cargo-theft-flotas-guadalajara-2026/">
+<div class="hub-card-label">Robo de carga en Guadalajara</div>
+<div class="hub-card-meta"><span class="hub-card-market">Seguridad</span></div>
+</a>
+<a class="hub-card" href="/ciudades/fuel-cards-flotas-guadalajara-2026/">
+<div class="hub-card-label">Tarjetas de flota y combustible en Guadalajara</div>
+<div class="hub-card-meta"><span class="hub-card-market">Costes</span></div>
+</a>
+<a class="hub-card" href="/ciudades/mantenimiento-flotas-guadalajara-2026/">
+<div class="hub-card-label">Mantenimiento de flota en Guadalajara</div>
+<div class="hub-card-meta"><span class="hub-card-market">Operación</span></div>
+</a>
+<a class="hub-card" href="/ciudades/logistica-distribucion-flotas-guadalajara-2026/">
+<div class="hub-card-label">Logística y distribución en Guadalajara</div>
+<div class="hub-card-meta"><span class="hub-card-market">Operación</span></div>
+</a>
+</div>
+</div>
+
+<div class="city-block">
+<div class="city-block-head">
+<h3 class="city-block-title">Monterrey</h3>
+<span class="city-block-count">5 análisis</span>
+</div>
+<div class="hub-grid">
+<a class="hub-card" href="/ciudades/telematica-flotas-monterrey-2026/">
+<div class="hub-card-label">Telemática para flotas en Monterrey</div>
+<div class="hub-card-meta"><span class="hub-card-market">Tecnología</span></div>
+</a>
+<a class="hub-card" href="/ciudades/electrificacion-flotas-monterrey-2026/">
+<div class="hub-card-label">Electrificación de flotas en Monterrey</div>
+<div class="hub-card-meta"><span class="hub-card-market">Energía</span></div>
+</a>
+<a class="hub-card" href="/ciudades/cargo-theft-flotas-monterrey-2026/">
+<div class="hub-card-label">Robo de carga en Monterrey</div>
+<div class="hub-card-meta"><span class="hub-card-market">Seguridad</span></div>
+</a>
+<a class="hub-card" href="/ciudades/fuel-cards-flotas-monterrey-2026/">
+<div class="hub-card-label">Tarjetas de flota y combustible en Monterrey</div>
+<div class="hub-card-meta"><span class="hub-card-market">Costes</span></div>
+</a>
+<a class="hub-card" href="/ciudades/mantenimiento-flotas-monterrey-2026/">
+<div class="hub-card-label">Mantenimiento de flota en Monterrey</div>
+<div class="hub-card-meta"><span class="hub-card-market">Operación</span></div>
+</a>
+<a class="hub-card" href="/ciudades/logistica-distribucion-flotas-monterrey-2026/">
+<div class="hub-card-label">Logística y distribución en Monterrey</div>
+<div class="hub-card-meta"><span class="hub-card-market">Operación</span></div>
+</a>
+</div>
+</div>
+
+<div class="city-block">
+<div class="city-block-head">
+<h3 class="city-block-title">Otras ciudades logísticas en México</h3>
+<span class="city-block-count">Cobertura inicial</span>
+</div>
+<p class="city-stub-section-note">Hubs portuarios, nodos de manufactura y corredores fronterizos clave. Brief editorial; análisis temáticos en cola.</p>
+<div class="city-stub-row">
+<a class="city-stub-chip" href="/ciudades/manzanillo-2026/">Manzanillo</a>
+<a class="city-stub-chip" href="/ciudades/cuautitlan-izcalli-2026/">Cuautitlán Izcalli</a>
+<a class="city-stub-chip" href="/ciudades/cuautitlan-2026/">Cuautitlán</a>
+<a class="city-stub-chip" href="/ciudades/veracruz-2026/">Veracruz</a>
+<a class="city-stub-chip" href="/ciudades/nuevo-laredo-2026/">Nuevo Laredo</a>
+<a class="city-stub-chip" href="/ciudades/altamira-2026/">Altamira</a>
+<a class="city-stub-chip" href="/ciudades/lazaro-cardenas-2026/">Lázaro Cárdenas</a>
+<a class="city-stub-chip" href="/ciudades/toluca-2026/">Toluca</a>
+</div>
+</div>
 </section>
+
+<section class="hub-section">
+<h2 class="hub-section-supertitle">LatAm 🌎</h2>
+<div class="city-block">
+<div class="city-block-head">
+<h3 class="city-block-title">Ciudades en cobertura inicial</h3>
+<span class="city-block-count">Brief editorial</span>
+</div>
+<p class="city-stub-section-note">Briefs introductorios por capital y nodo logístico de la región. Análisis temáticos profundos en cola; consulta también los <a class="int-link" href="/mercados/">hubs por mercado</a>.</p>
+<div class="city-stub-row">
+<a class="city-stub-chip" href="/ciudades/bogota-2026/">Bogotá 🇨🇴</a>
+<a class="city-stub-chip" href="/ciudades/medellin-2026/">Medellín 🇨🇴</a>
+<a class="city-stub-chip" href="/ciudades/cali-2026/">Cali 🇨🇴</a>
+<a class="city-stub-chip" href="/ciudades/santiago-2026/">Santiago 🇨🇱</a>
+<a class="city-stub-chip" href="/ciudades/buenos-aires-2026/">Buenos Aires 🇦🇷</a>
+<a class="city-stub-chip" href="/ciudades/lima-2026/">Lima 🇵🇪</a>
+</div>
+</div>
+</section>
+
 </div>
 </main>
 <section class="newsletter-band">
