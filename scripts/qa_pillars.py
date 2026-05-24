@@ -50,7 +50,7 @@ PRIVATE_BRANDS = [
     "Redpack", "Bimbo", "Coca-Cola", "FEMSA", "Sigma", "Lala", "OXXO",
     "Walmart", "Soriana", "Chedraui", "Liverpool", "El Palacio",
     "Mercadona", "Inditex", "Zara", "El Corte Inglés", "Carrefour",
-    "Iberia", "Repsol", "Cepsa", "BP", "Shell", "Total", "Mobil",
+    "Iberia", "Repsol", "Cepsa", "BP", "Shell", "TotalEnergies", "Mobil",
     "BYD", "Tesla", "Volvo", "Mercedes", "Scania", "MAN", "Iveco",
     "Renault", "Ford", "Chevrolet", "Kenworth", "Freightliner",
     "International", "Hino", "Foton", "JAC", "Toyota", "Nissan",
@@ -81,15 +81,23 @@ PUBLIC_INSTITUTIONS = [
 
 
 def _has_nearby_source(text: str, position: int, window: int = 200) -> bool:
-    """¿Hay una fuente citada cerca de esta posición? Busca <a href, 'según', 'fuente:' o nombre de institución."""
+    """¿Hay una fuente EXTERNA citada cerca? Solo links externos cuentan
+    como source (link interno = no source). Frases de atribución + nombres
+    de instituciones públicas también cuentan.
+    """
     nearby = text[max(0, position - window):position + window]
-    if re.search(r'<a\s+[^>]*href=', nearby, re.IGNORECASE):
-        return True
+    # Link EXTERNO (no a thefleetradar.com, no relativo)
+    for m in re.finditer(r'<a\s+[^>]*href=["\']([^"\']+)', nearby, re.IGNORECASE):
+        href = m.group(1)
+        if href.startswith("http") and "thefleetradar.com" not in href:
+            return True
     if re.search(r'\b(según|fuente|reportó|publicó|comunicado|informe|estudio|cita)\b',
                  nearby, re.IGNORECASE):
         return True
+    # Match institution con word boundaries (evita falsos positivos:
+    # "ANT" no debe matchear "mANTenimiento", "BCE" no "compraBCE")
     for inst in PUBLIC_INSTITUTIONS:
-        if inst.lower() in nearby.lower():
+        if re.search(rf'\b{re.escape(inst)}\b', nearby):
             return True
     return False
 
@@ -125,23 +133,29 @@ def check_page(path: Path) -> dict:
                 issues["r1_pct"].append((brand, m.group(1), snippet[:120]))
 
     # R2: [Brand] + número 3+ dígitos sin fuente
+    # Incluye formatos: 1234, 1.234, 1,234, 1.234.567 (miles europeos)
     for brand in PRIVATE_BRANDS:
         pattern = re.compile(
-            rf'\b{re.escape(brand)}\b[^.]{{0,80}}\b(\d{{3,}}(?:[.,]\d+)?)\b',
+            rf'\b{re.escape(brand)}\b[^.]{{0,80}}\b(\d{{1,3}}(?:[.,]\d{{3}})+|\d{{3,}})\b',
             re.IGNORECASE,
         )
         for m in pattern.finditer(body_html):
             if not _has_nearby_source(body_html, m.start()):
-                num = m.group(1)
-                # Filtros para evitar falsos positivos
-                if int(num.replace(".","").replace(",","")) < 100:
+                num_raw = m.group(1)
+                num_clean = num_raw.replace(".", "").replace(",", "")
+                try:
+                    num_int = int(num_clean)
+                except ValueError:
                     continue
-                # Si el número es claramente un año (2020-2030) o un teléfono, skip
-                if 2020 <= int(num.split(".")[0].split(",")[0]) <= 2030:
+                # Filtros para evitar falsos positivos
+                if num_int < 100:
+                    continue
+                # Año aislado (2020-2030)
+                if 2020 <= num_int <= 2030 and "." not in num_raw and "," not in num_raw:
                     continue
                 snippet = body_html[max(0,m.start()-30):min(len(body_html),m.end()+30)]
                 snippet = re.sub(r'<[^>]+>', '', snippet).strip()
-                issues["r2_abs"].append((brand, num, snippet[:120]))
+                issues["r2_abs"].append((brand, num_raw, snippet[:120]))
 
     # R3: cuota de mercado sin fuente
     for m in re.finditer(r'(\d+(?:[.,]\d+)?)\s*%\s*(?:del\s+)?mercado',
