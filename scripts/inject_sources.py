@@ -213,6 +213,234 @@ SOURCES_BY_PAGE = {
             },
         ],
     },
+
+    "temas/electrificacion-flotas-mexico-2026/index.html": {
+        "title": "Fuentes y referencias",
+        "sources": [
+            {
+                "label": "SENER — Secretaría de Energía, Programa de Transición Energética",
+                "url": "https://www.gob.mx/sener",
+                "note": "Política de electrificación vehicular y metas de transición energética en México",
+            },
+            {
+                "label": "CRE — Comisión Reguladora de Energía, normativa de carga eléctrica",
+                "url": "https://www.gob.mx/cre",
+                "note": "Regulación de infraestructura de recarga y tarifas eléctricas para vehículos",
+            },
+            {
+                "label": "AMIA — Asociación Mexicana de la Industria Automotriz",
+                "url": "https://www.amia.com.mx/",
+                "note": "Cifras de ventas de vehículos eléctricos e híbridos en México",
+            },
+            {
+                "label": "INEGI — Estadísticas de unidades de transporte por tipo de combustible",
+                "url": "https://www.inegi.org.mx/temas/transporte/",
+                "note": "Composición del parque vehicular y adopción de tecnologías limpias",
+            },
+            {
+                "label": "T21 MX — BYD avanza en México con modelos para flotas comerciales",
+                "url": "https://t21.com.mx/",
+                "note": "Oferta de fabricantes asiáticos de VE para flotas en México, 2026",
+            },
+        ],
+    },
+
+    "temas/electrificacion-flotas-espana-2026/index.html": {
+        "title": "Fuentes y referencias",
+        "sources": [
+            {
+                "label": "IDAE — Plan MOVES III, ayudas a la electrificación de flotas",
+                "url": "https://www.idae.es/",
+                "note": "Incentivos económicos para la adquisición de vehículos eléctricos en España",
+            },
+            {
+                "label": "MITMA — Estadísticas de transporte de mercancías y flota comercial",
+                "url": "https://www.mitma.gob.es/",
+                "note": "Datos del parque de vehículos comerciales y política de movilidad sostenible",
+            },
+            {
+                "label": "ANFAC — Matriculaciones de vehículos eléctricos e híbridos comerciales",
+                "url": "https://anfac.com/",
+                "note": "Evolución del mercado de VE para flotas en España",
+            },
+            {
+                "label": "DGT — Registro de vehículos y normativa de ZBE para flotas",
+                "url": "https://www.dgt.es/",
+                "note": "Regulación de acceso a zonas de bajas emisiones y requisitos de etiquetado",
+            },
+            {
+                "label": "BOE — Ley de Residuos y Suelos Contaminados, Real Decreto VE",
+                "url": "https://www.boe.es/",
+                "note": "Marco legal de electrificación del transporte y obligaciones de infraestructura",
+            },
+        ],
+    },
+
+    "temas/gestion-flota-mexico-2026/index.html": {
+        "title": "Fuentes y referencias",
+        "sources": [
+            {
+                "label": "SICT — Regulación del autotransporte federal de carga y pasaje",
+                "url": "https://www.sict.gob.mx/",
+                "note": "Marco normativo de la gestión operativa de flotas en México",
+            },
+            {
+                "label": "INEGI — Encuesta Nacional de Transporte, indicadores de flota",
+                "url": "https://www.inegi.org.mx/programas/ent/",
+                "note": "Datos de productividad, km recorridos y composición del parque vehicular",
+            },
+            {
+                "label": "ANTP — Asociación Nacional de Transporte Privado",
+                "url": "https://www.antp.org.mx/",
+                "note": "Estándares de gestión de flota privada y mejores prácticas del sector",
+            },
+            {
+                "label": "CANACAR — Cámara Nacional del Autotransporte de Carga",
+                "url": "https://canacar.com.mx/",
+                "note": "Estadísticas del autotransporte de carga federal y representación gremial",
+            },
+            {
+                "label": "SAT — Carta Porte: complemento CFDI para transporte de mercancías",
+                "url": "https://www.sat.gob.mx/consulta/92764/complemento-carta-porte",
+                "note": "Obligaciones fiscales y de trazabilidad en el transporte de mercancías",
+            },
+        ],
+    },
+
+    "temas/gestion-flota-espana-2026/index.html": {
+        "title": "Fuentes y referencias",
+        "sources": [
+            {
+                "label": "DGT — Estadísticas del parque de vehículos y normativa de flotas",
+                "url": "https://www.dgt.es/",
+                "note": "Datos oficiales del parque de vehículos industriales y regulación de conductores",
+            },
+            {
+                "label": "BOE — Ley de Ordenación del Transporte Terrestre (LOTT) y reglamentos",
+                "url": "https://www.boe.es/",
+                "note": "Marco legal de la gestión de flotas de transporte en España",
+            },
+            {
+                "label": "MITMA — Observatorio del Transporte y la Logística en España (OTLE)",
+                "url": "https://www.mitma.gob.es/transporte-terrestre/observatorio-del-transporte-y-la-logistica-en-espana",
+                "note": "Indicadores de rendimiento y estadísticas del sector transporte",
+            },
+            {
+                "label": "ANECAT — Gestión de flotas, centros de asistencia y ITV en España",
+                "url": "https://anecat.org/",
+                "note": "Estándares de mantenimiento y gestión operativa de flotas",
+            },
+            {
+                "label": "ATA — Federación Nacional de Asociaciones de Transportistas de España",
+                "url": "https://www.ata.es/",
+                "note": "Representación del transporte autónomo y pymes del sector en España",
+            },
+        ],
+    },
+
+    "temas/mantenimiento-flota-mexico-2026/index.html": {
+        "title": "Fuentes y referencias",
+        "sources": [
+            {
+                "label": "SICT — NOM aplicables al mantenimiento de unidades de autotransporte",
+                "url": "https://www.sict.gob.mx/",
+                "note": "Regulación técnica de revisiones y mantenimiento de unidades federales",
+            },
+            {
+                "label": "DOF — NOM-068-SCT-2-2014: Mantenimiento preventivo y correctivo de vehículos",
+                "url": "https://www.dof.gob.mx/",
+                "note": "Norma Oficial Mexicana de mantenimiento para autotransporte federal de carga",
+            },
+            {
+                "label": "CANACAR — Programas de mantenimiento y seguridad vehicular en carga federal",
+                "url": "https://canacar.com.mx/",
+                "note": "Guías y estándares de mantenimiento de flota del autotransporte de carga",
+            },
+            {
+                "label": "INEGI — Costos operativos del autotransporte de carga en México",
+                "url": "https://www.inegi.org.mx/temas/transporte/",
+                "note": "Estadísticas de estructura de costos y mantenimiento en el sector",
+            },
+        ],
+    },
+
+    "temas/mantenimiento-flota-espana-2026/index.html": {
+        "title": "Fuentes y referencias",
+        "sources": [
+            {
+                "label": "DGT — Inspección Técnica de Vehículos (ITV) y normativa de mantenimiento",
+                "url": "https://www.dgt.es/",
+                "note": "Regulación de la ITV, periodicidad y requisitos técnicos para flotas",
+            },
+            {
+                "label": "BOE — Real Decreto 920/2017 de Inspección Técnica de Vehículos",
+                "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2017-11362",
+                "note": "Marco legal de la ITV y obligaciones de mantenimiento en España",
+            },
+            {
+                "label": "ANFAC — Estadísticas del mercado de recambios y servicios postventa",
+                "url": "https://anfac.com/",
+                "note": "Datos del mercado de mantenimiento de vehículos comerciales en España",
+            },
+            {
+                "label": "MITMA — Seguridad vial y mantenimiento de vehículos de transporte",
+                "url": "https://www.mitma.gob.es/",
+                "note": "Normativa de seguridad y estándares técnicos para flotas de transporte",
+            },
+        ],
+    },
+
+    "temas/control-gasto-flota-mexico-2026/index.html": {
+        "title": "Fuentes y referencias",
+        "sources": [
+            {
+                "label": "SAT — Deducibilidad de gastos de flota y facturación electrónica (CFDI)",
+                "url": "https://www.sat.gob.mx/",
+                "note": "Reglas fiscales para la deducción de gastos de vehículos y combustible",
+            },
+            {
+                "label": "IMSS — Obligaciones patronales en flotas con conductores asalariados",
+                "url": "https://www.imss.gob.mx/",
+                "note": "Cuotas patronales y obligaciones de seguridad social en el transporte",
+            },
+            {
+                "label": "SICT — Tarifas y costos del autotransporte federal de carga",
+                "url": "https://www.sict.gob.mx/",
+                "note": "Estructura de costos regulada del autotransporte y referencia tarifaria",
+            },
+            {
+                "label": "INEGI — Índice de Precios de Insumos del Autotransporte de Carga (IPIAC)",
+                "url": "https://www.inegi.org.mx/app/indicesdeprecios/Estructura.aspx?idEstructura=112001100010",
+                "note": "Evolución de costos operativos: combustible, llantas, mantenimiento y mano de obra",
+            },
+        ],
+    },
+
+    "temas/control-gasto-flota-espana-2026/index.html": {
+        "title": "Fuentes y referencias",
+        "sources": [
+            {
+                "label": "AEAT — Agencia Tributaria: deducción de gastos de vehículos y flota",
+                "url": "https://www.aeat.es/",
+                "note": "Normativa fiscal de deducción del IVA y IRPF/IS para gastos de flota",
+            },
+            {
+                "label": "DGT — Costes del transporte y vehículos de empresa en España",
+                "url": "https://www.dgt.es/",
+                "note": "Estadísticas de costos operativos y tributación de flotas de empresa",
+            },
+            {
+                "label": "BOE — Ley del Impuesto sobre Sociedades y deducción de vehículos",
+                "url": "https://www.boe.es/",
+                "note": "Marco legal de la fiscalidad de los vehículos de empresa en España",
+            },
+            {
+                "label": "MITMA — Observatorio de costes del transporte de mercancías por carretera",
+                "url": "https://www.mitma.gob.es/transporte-terrestre/transporte-de-mercancias",
+                "note": "Índice trimestral de costes del transporte por carretera en España",
+            },
+        ],
+    },
 }
 
 # ---------------------------------------------------------------------------
