@@ -96,8 +96,6 @@ topic,gestion-flota-colombia-2026,Gestión y operación de flotas en Colombia 20
 topic,ruteo-flota-colombia-2026,Ruteo y planificación de flota en Colombia 2026,colombia,routing,informational,3,90,Article,False,/temas/ruteo-flota-colombia-2026/
 topic,logistica-distribucion-colombia-2026,Logística y distribución en Colombia 2026,colombia,logistica-distribucion,informational,3,90,Article,False,/temas/logistica-distribucion-colombia-2026/
 topic,seguro-flota-colombia-2026,Seguros de flota en Colombia 2026,colombia,insurance,informational,3,90,Article,False,/temas/seguro-flota-colombia-2026/
-topic,fabricantes-camiones-colombia-2026,Fabricantes de camiones y comerciales en Colombia 2026,colombia,truck-oem,informational,3,90,Article,False,/temas/fabricantes-camiones-colombia-2026/
-topic,fabricantes-camiones-colombia-comparativa-2026,Fabricantes de camiones y comerciales en Colombia 2026 · comparativa,colombia,truck-oem,comparativo,3,90,Article,False,/temas/fabricantes-camiones-colombia-comparativa-2026/
 topic,robo-carga-colombia-2026,Robo de carga y seguridad de mercancías en Colombia 2026,colombia,cargo-theft,informational,3,90,Article,False,/temas/robo-carga-colombia-2026/
 topic,fraude-combustible-flota-colombia-2026,Fraude y robo de combustible en flotas en Colombia 2026,colombia,fraude,informational,3,90,Article,True,/temas/fraude-combustible-flota-colombia-2026/
 topic,movilidad-urbana-flotas-colombia-2026,Movilidad urbana y flotas comerciales en Colombia 2026,colombia,movilidad-urbana,informational,3,90,Article,False,/temas/movilidad-urbana-flotas-colombia-2026/
@@ -124,8 +122,6 @@ topic,gestion-flota-chile-2026,Gestión y operación de flotas en Chile 2026,chi
 topic,ruteo-flota-chile-2026,Ruteo y planificación de flota en Chile 2026,chile,routing,informational,3,90,Article,False,/temas/ruteo-flota-chile-2026/
 topic,logistica-distribucion-chile-2026,Logística y distribución en Chile 2026,chile,logistica-distribucion,informational,3,90,Article,False,/temas/logistica-distribucion-chile-2026/
 topic,seguro-flota-chile-2026,Seguros de flota en Chile 2026,chile,insurance,informational,3,90,Article,False,/temas/seguro-flota-chile-2026/
-topic,fabricantes-camiones-chile-2026,Fabricantes de camiones y comerciales en Chile 2026,chile,truck-oem,informational,3,90,Article,False,/temas/fabricantes-camiones-chile-2026/
-topic,fabricantes-camiones-chile-comparativa-2026,Fabricantes de camiones y comerciales en Chile 2026 · comparativa,chile,truck-oem,comparativo,3,90,Article,False,/temas/fabricantes-camiones-chile-comparativa-2026/
 topic,robo-carga-chile-2026,Robo de carga y seguridad de mercancías en Chile 2026,chile,cargo-theft,informational,3,90,Article,False,/temas/robo-carga-chile-2026/
 topic,fraude-combustible-flota-chile-2026,Fraude y robo de combustible en flotas en Chile 2026,chile,fraude,informational,3,90,Article,True,/temas/fraude-combustible-flota-chile-2026/
 topic,movilidad-urbana-flotas-chile-2026,Movilidad urbana y flotas comerciales en Chile 2026,chile,movilidad-urbana,informational,3,90,Article,False,/temas/movilidad-urbana-flotas-chile-2026/
@@ -152,8 +148,6 @@ topic,gestion-flota-argentina-2026,Gestión y operación de flotas en Argentina 
 topic,ruteo-flota-argentina-2026,Ruteo y planificación de flota en Argentina 2026,argentina,routing,informational,3,90,Article,False,/temas/ruteo-flota-argentina-2026/
 topic,logistica-distribucion-argentina-2026,Logística y distribución en Argentina 2026,argentina,logistica-distribucion,informational,3,90,Article,False,/temas/logistica-distribucion-argentina-2026/
 topic,seguro-flota-argentina-2026,Seguros de flota en Argentina 2026,argentina,insurance,informational,3,90,Article,False,/temas/seguro-flota-argentina-2026/
-topic,fabricantes-camiones-argentina-2026,Fabricantes de camiones y comerciales en Argentina 2026,argentina,truck-oem,informational,3,90,Article,False,/temas/fabricantes-camiones-argentina-2026/
-topic,fabricantes-camiones-argentina-comparativa-2026,Fabricantes de camiones y comerciales en Argentina 2026 · comparativa,argentina,truck-oem,comparativo,3,90,Article,False,/temas/fabricantes-camiones-argentina-comparativa-2026/
 topic,robo-carga-argentina-2026,Robo de carga y seguridad de mercancías en Argentina 2026,argentina,cargo-theft,informational,3,90,Article,False,/temas/robo-carga-argentina-2026/
 topic,fraude-combustible-flota-argentina-2026,Fraude y robo de combustible en flotas en Argentina 2026,argentina,fraude,informational,3,90,Article,True,/temas/fraude-combustible-flota-argentina-2026/
 topic,movilidad-urbana-flotas-argentina-2026,Movilidad urbana y flotas comerciales en Argentina 2026,argentina,movilidad-urbana,informational,3,90,Article,False,/temas/movilidad-urbana-flotas-argentina-2026/
@@ -180,8 +174,6 @@ topic,gestion-flota-peru-2026,Gestión y operación de flotas en Perú 2026,peru
 topic,ruteo-flota-peru-2026,Ruteo y planificación de flota en Perú 2026,peru,routing,informational,3,90,Article,False,/temas/ruteo-flota-peru-2026/
 topic,logistica-distribucion-peru-2026,Logística y distribución en Perú 2026,peru,logistica-distribucion,informational,3,90,Article,False,/temas/logistica-distribucion-peru-2026/
 topic,seguro-flota-peru-2026,Seguros de flota en Perú 2026,peru,insurance,informational,3,90,Article,False,/temas/seguro-flota-peru-2026/
-topic,fabricantes-camiones-peru-2026,Fabricantes de camiones y comerciales en Perú 2026,peru,truck-oem,informational,3,90,Article,False,/temas/fabricantes-camiones-peru-2026/
-topic,fabricantes-camiones-peru-comparativa-2026,Fabricantes de camiones y comerciales en Perú 2026 · comparativa,peru,truck-oem,comparativo,3,90,Article,False,/temas/fabricantes-camiones-peru-comparativa-2026/
 topic,robo-carga-peru-2026,Robo de carga y seguridad de mercancías en Perú 2026,peru,cargo-theft,informational,3,90,Article,False,/temas/robo-carga-peru-2026/
 topic,fraude-combustible-flota-peru-2026,Fraude y robo de combustible en flotas en Perú 2026,peru,fraude,informational,3,90,Article,True,/temas/fraude-combustible-flota-peru-2026/
 topic,movilidad-urbana-flotas-peru-2026,Movilidad urbana y flotas comerciales en Perú 2026,peru,movilidad-urbana,informational,3,90,Article,False,/temas/movilidad-urbana-flotas-peru-2026/
@@ -208,8 +200,6 @@ topic,gestion-flota-ecuador-2026,Gestión y operación de flotas en Ecuador 2026
 topic,ruteo-flota-ecuador-2026,Ruteo y planificación de flota en Ecuador 2026,ecuador,routing,informational,3,90,Article,False,/temas/ruteo-flota-ecuador-2026/
 topic,logistica-distribucion-ecuador-2026,Logística y distribución en Ecuador 2026,ecuador,logistica-distribucion,informational,3,90,Article,False,/temas/logistica-distribucion-ecuador-2026/
 topic,seguro-flota-ecuador-2026,Seguros de flota en Ecuador 2026,ecuador,insurance,informational,3,90,Article,False,/temas/seguro-flota-ecuador-2026/
-topic,fabricantes-camiones-ecuador-2026,Fabricantes de camiones y comerciales en Ecuador 2026,ecuador,truck-oem,informational,3,90,Article,False,/temas/fabricantes-camiones-ecuador-2026/
-topic,fabricantes-camiones-ecuador-comparativa-2026,Fabricantes de camiones y comerciales en Ecuador 2026 · comparativa,ecuador,truck-oem,comparativo,3,90,Article,False,/temas/fabricantes-camiones-ecuador-comparativa-2026/
 topic,robo-carga-ecuador-2026,Robo de carga y seguridad de mercancías en Ecuador 2026,ecuador,cargo-theft,informational,3,90,Article,False,/temas/robo-carga-ecuador-2026/
 topic,fraude-combustible-flota-ecuador-2026,Fraude y robo de combustible en flotas en Ecuador 2026,ecuador,fraude,informational,3,90,Article,True,/temas/fraude-combustible-flota-ecuador-2026/
 topic,movilidad-urbana-flotas-ecuador-2026,Movilidad urbana y flotas comerciales en Ecuador 2026,ecuador,movilidad-urbana,informational,3,90,Article,False,/temas/movilidad-urbana-flotas-ecuador-2026/
@@ -236,8 +226,6 @@ topic,gestion-flota-uruguay-2026,Gestión y operación de flotas en Uruguay 2026
 topic,ruteo-flota-uruguay-2026,Ruteo y planificación de flota en Uruguay 2026,uruguay,routing,informational,3,90,Article,False,/temas/ruteo-flota-uruguay-2026/
 topic,logistica-distribucion-uruguay-2026,Logística y distribución en Uruguay 2026,uruguay,logistica-distribucion,informational,3,90,Article,False,/temas/logistica-distribucion-uruguay-2026/
 topic,seguro-flota-uruguay-2026,Seguros de flota en Uruguay 2026,uruguay,insurance,informational,3,90,Article,False,/temas/seguro-flota-uruguay-2026/
-topic,fabricantes-camiones-uruguay-2026,Fabricantes de camiones y comerciales en Uruguay 2026,uruguay,truck-oem,informational,3,90,Article,False,/temas/fabricantes-camiones-uruguay-2026/
-topic,fabricantes-camiones-uruguay-comparativa-2026,Fabricantes de camiones y comerciales en Uruguay 2026 · comparativa,uruguay,truck-oem,comparativo,3,90,Article,False,/temas/fabricantes-camiones-uruguay-comparativa-2026/
 topic,robo-carga-uruguay-2026,Robo de carga y seguridad de mercancías en Uruguay 2026,uruguay,cargo-theft,informational,3,90,Article,False,/temas/robo-carga-uruguay-2026/
 topic,fraude-combustible-flota-uruguay-2026,Fraude y robo de combustible en flotas en Uruguay 2026,uruguay,fraude,informational,3,90,Article,True,/temas/fraude-combustible-flota-uruguay-2026/
 topic,movilidad-urbana-flotas-uruguay-2026,Movilidad urbana y flotas comerciales en Uruguay 2026,uruguay,movilidad-urbana,informational,3,90,Article,False,/temas/movilidad-urbana-flotas-uruguay-2026/
@@ -264,8 +252,6 @@ topic,gestion-flota-republica-dominicana-2026,Gestión y operación de flotas en
 topic,ruteo-flota-republica-dominicana-2026,Ruteo y planificación de flota en República Dominicana 2026,republica-dominicana,routing,informational,3,90,Article,False,/temas/ruteo-flota-republica-dominicana-2026/
 topic,logistica-distribucion-republica-dominicana-2026,Logística y distribución en República Dominicana 2026,republica-dominicana,logistica-distribucion,informational,3,90,Article,False,/temas/logistica-distribucion-republica-dominicana-2026/
 topic,seguro-flota-republica-dominicana-2026,Seguros de flota en República Dominicana 2026,republica-dominicana,insurance,informational,3,90,Article,False,/temas/seguro-flota-republica-dominicana-2026/
-topic,fabricantes-camiones-republica-dominicana-2026,Fabricantes de camiones y comerciales en República Dominicana 2026,republica-dominicana,truck-oem,informational,3,90,Article,False,/temas/fabricantes-camiones-republica-dominicana-2026/
-topic,fabricantes-camiones-republica-dominicana-comparativa-2026,Fabricantes de camiones y comerciales en República Dominicana 2026 · comparativa,republica-dominicana,truck-oem,comparativo,3,90,Article,False,/temas/fabricantes-camiones-republica-dominicana-comparativa-2026/
 topic,robo-carga-republica-dominicana-2026,Robo de carga y seguridad de mercancías en República Dominicana 2026,republica-dominicana,cargo-theft,informational,3,90,Article,False,/temas/robo-carga-republica-dominicana-2026/
 topic,fraude-combustible-flota-republica-dominicana-2026,Fraude y robo de combustible en flotas en República Dominicana 2026,republica-dominicana,fraude,informational,3,90,Article,True,/temas/fraude-combustible-flota-republica-dominicana-2026/
 topic,movilidad-urbana-flotas-republica-dominicana-2026,Movilidad urbana y flotas comerciales en República Dominicana 2026,republica-dominicana,movilidad-urbana,informational,3,90,Article,False,/temas/movilidad-urbana-flotas-republica-dominicana-2026/
@@ -292,8 +278,6 @@ topic,gestion-flota-latam-2026,Gestión y operación de flotas en LatAm 2026,lat
 topic,ruteo-flota-latam-2026,Ruteo y planificación de flota en LatAm 2026,latam,routing,informational,3,90,Article,False,/temas/ruteo-flota-latam-2026/
 topic,logistica-distribucion-latam-2026,Logística y distribución en LatAm 2026,latam,logistica-distribucion,informational,3,90,Article,False,/temas/logistica-distribucion-latam-2026/
 topic,seguro-flota-latam-2026,Seguros de flota en LatAm 2026,latam,insurance,informational,3,90,Article,False,/temas/seguro-flota-latam-2026/
-topic,fabricantes-camiones-latam-2026,Fabricantes de camiones y comerciales en LatAm 2026,latam,truck-oem,informational,3,90,Article,False,/temas/fabricantes-camiones-latam-2026/
-topic,fabricantes-camiones-latam-comparativa-2026,Fabricantes de camiones y comerciales en LatAm 2026 · comparativa,latam,truck-oem,comparativo,3,90,Article,False,/temas/fabricantes-camiones-latam-comparativa-2026/
 topic,robo-carga-latam-2026,Robo de carga y seguridad de mercancías en LatAm 2026,latam,cargo-theft,informational,3,90,Article,False,/temas/robo-carga-latam-2026/
 topic,fraude-combustible-flota-latam-2026,Fraude y robo de combustible en flotas en LatAm 2026,latam,fraude,informational,3,90,Article,True,/temas/fraude-combustible-flota-latam-2026/
 topic,movilidad-urbana-flotas-latam-2026,Movilidad urbana y flotas comerciales en LatAm 2026,latam,movilidad-urbana,informational,3,90,Article,False,/temas/movilidad-urbana-flotas-latam-2026/
