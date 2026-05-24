@@ -28,11 +28,13 @@ from lib.paths import ROOT, MAGAZINES_DIR
 # None value means: known tag but no destination page yet → reported as GAP
 TAG_MAPPING: dict[str, str | None] = {
     # ── Topics / Themes ─────────────────────────────────────────────
-    # cargo-theft-flotas-mexico-2026 page does not exist yet → fallback to /mercados/mexico/
-    "seguridad": "/mercados/mexico/",
+    # Cargo theft pillar creada 2026-05-24 — esta clave se updatea aunque ya sea <a>
+    "seguridad": "/temas/cargo-theft-flotas-mexico-2026/",
     "seguridad vial": "/temas/dgt-flotas-comerciales-2026/",
-    "cargo theft": "/mercados/mexico/",
-    "fraude": "/mercados/mexico/",
+    "cargo theft": "/temas/cargo-theft-flotas-mexico-2026/",
+    "robo de carga": "/temas/cargo-theft-flotas-mexico-2026/",
+    "robo al transporte": "/temas/cargo-theft-flotas-mexico-2026/",
+    "fraude": "/temas/cargo-theft-flotas-mexico-2026/",
 
     "telematica": "/temas/telematica-flotas-mexico-2026/",
     "telemática": "/temas/telematica-flotas-mexico-2026/",
@@ -125,9 +127,12 @@ TAG_MAPPING: dict[str, str | None] = {
     "samsara": "/mercados/",   # no /players/samsara yet → fallback to /mercados/
 
     # ── GAPs (known tag, no page exists) ────────────────────────────
-    "ferrocarril": None,
-    "componentes": None,
-    "recambios": None,
+    "ferrocarril": "/corredores/t-mec-2026/",
+    "intermodal": "/corredores/t-mec-2026/",
+    "componentes": "/temas/fabricantes-camiones-mexico-2026/",
+    "recambios": "/temas/fabricantes-camiones-mexico-2026/",
+    "supply chain": "/temas/fabricantes-camiones-mexico-2026/",
+    "componentes automotrices": "/temas/fabricantes-camiones-mexico-2026/",
     "china": None,
     "global": None,
     "licitaciones": None,
