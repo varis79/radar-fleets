@@ -1,13 +1,8 @@
 #!/usr/bin/env python3
 """
 unify_magazine_footer.py — Elimina <section class="closing"> redundante
-de los magazines. Esa sección era el "footer del magazine" legacy con
-info duplicada que ahora cubre el <footer class="site-footer"> global.
-
-Se preserva la metadata útil ("Próxima edición: ..." y la frase de
-contexto editorial) movida a un párrafo discreto antes del footer global
-si así se desea — por ahora simplemente eliminamos el bloque y dejamos
-que el footer global haga su trabajo.
+de TODAS las páginas HTML del sitio. Esa sección era el "footer legacy"
+con info duplicada que ahora cubre el <footer class="site-footer"> global.
 
 Idempotente.
 
@@ -21,30 +16,48 @@ from bs4 import BeautifulSoup
 DRY_RUN = "--dry-run" in sys.argv
 ROOT = Path(__file__).parent.parent
 
+# Excluir páginas que conviene mantener el closing (ej: styleguide para mostrar todos los componentes)
+SKIP_FILES = {"styleguide.html"}
+
 
 def process(path: Path) -> bool:
     text = path.read_text(encoding="utf-8")
     soup = BeautifulSoup(text, "html.parser")
-    closing = soup.find("section", class_="closing")
-    if closing is None:
-        return False
-    closing.decompose()
-    if not DRY_RUN:
+    changed = False
+    # Puede haber más de un closing (defensivo)
+    for closing in soup.find_all("section", class_="closing"):
+        closing.decompose()
+        changed = True
+    if changed and not DRY_RUN:
         path.write_text(str(soup), encoding="utf-8")
-    return True
+    return changed
 
 
 def main():
     mode = "[DRY-RUN]" if DRY_RUN else "[LIVE]"
     print(f"\nunify_magazine_footer.py {mode}\n")
-    files = sorted((ROOT / "magazines").glob("*.html"))
+
+    # Recorrer TODAS las páginas HTML del sitio
+    files = []
+    for sub in ("temas", "mercados", "casos-uso", "sectores", "ciudades",
+                "evergreen", "corredores", "players", "about", "legal"):
+        d = ROOT / sub
+        if d.exists():
+            files.extend(d.rglob("index.html"))
+    files.extend((ROOT / "magazines").glob("*.html"))
+    files.extend([ROOT / "index.html", ROOT / "archive.html",
+                  ROOT / "404.html"])
+
     n = 0
-    for p in files:
+    for p in sorted(set(files)):
+        if not p.exists() or p.name in SKIP_FILES:
+            continue
         if process(p):
             n += 1
+            rel = p.relative_to(ROOT)
             marker = "[DRY]" if DRY_RUN else "  ✅"
-            print(f"  {marker} {p.relative_to(ROOT)}: closing eliminado")
-    print(f"\n  Total magazines limpiados: {n} / {len(files)}")
+            print(f"  {marker} {rel}: closing eliminado")
+    print(f"\n  Total páginas limpiadas: {n}")
 
 
 if __name__ == "__main__":
