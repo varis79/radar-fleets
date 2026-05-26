@@ -230,34 +230,42 @@ def publish(today: dt.date | None = None) -> dict:
 
     # SEO polish post-publish: og:image en magazine nuevo + sitemap completo
     # + inyección de cajas DYK dinámicas en la nueva magazine
+    #
+    # IMPORTANTE: el publish.py imprime un JSON al stdout. Los hooks NO deben
+    # imprimir al stdout o corrompen el parse. Usamos contextlib.redirect_stdout
+    # para silenciarlos. Los errores graves van a stderr.
+    import io, contextlib
+    hook_log_buffer = io.StringIO()
     try:
         import importlib
         sys.path.insert(0, str(ROOT / "scripts"))
-        for mod_name in ("patch_home_magazine_seo", "rebuild_sitemap",
-                         "seo_polish", "build_facts_json", "inject_dynamic_dyk"):
-            try:
-                mod = importlib.import_module(mod_name)
-                if mod_name == "rebuild_sitemap":
-                    entries = mod._collect()
-                    SITEMAP_XML.write_text(mod._serialize(entries), encoding="utf-8")
-                elif mod_name == "patch_home_magazine_seo":
-                    for p, is_home in [(INDEX_HTML, True)] + [(m, False) for m in (ROOT / "magazines").glob("*.html")]:
-                        mod.patch_file(p, is_home)
-                elif mod_name == "seo_polish":
-                    mod.process_home()
-                    for m in (ROOT / "magazines").glob("*.html"):
-                        mod.process_magazine(m)
-                elif mod_name == "build_facts_json":
-                    # Regenera pool JSON + assets/sabias-que.json
-                    mod.main()
-                elif mod_name == "inject_dynamic_dyk":
-                    # Inyecta cajas DYK dinámicas en la nueva magazine
-                    for p in [INDEX_HTML, ROOT / "archive.html"] + list((ROOT / "magazines").glob("*.html")):
-                        mod.inject_home(p)
-            except Exception as e:
-                print(f"  ⚠ post-publish SEO hook '{mod_name}' falló: {e}")
+        with contextlib.redirect_stdout(hook_log_buffer):
+            for mod_name in ("patch_home_magazine_seo", "rebuild_sitemap",
+                             "seo_polish", "build_facts_json", "inject_dynamic_dyk"):
+                try:
+                    mod = importlib.import_module(mod_name)
+                    if mod_name == "rebuild_sitemap":
+                        entries = mod._collect()
+                        SITEMAP_XML.write_text(mod._serialize(entries), encoding="utf-8")
+                    elif mod_name == "patch_home_magazine_seo":
+                        for p, is_home in [(INDEX_HTML, True)] + [(m, False) for m in (ROOT / "magazines").glob("*.html")]:
+                            mod.patch_file(p, is_home)
+                    elif mod_name == "seo_polish":
+                        mod.process_home()
+                        for m in (ROOT / "magazines").glob("*.html"):
+                            mod.process_magazine(m)
+                    elif mod_name == "build_facts_json":
+                        # Regenera pool JSON + assets/sabias-que.json
+                        mod.main()
+                    elif mod_name == "inject_dynamic_dyk":
+                        # Inyecta cajas DYK dinámicas en la nueva magazine
+                        for p in [INDEX_HTML, ROOT / "archive.html"] + list((ROOT / "magazines").glob("*.html")):
+                            mod.inject_home(p)
+                except Exception as e:
+                    # Errores a STDERR (no contamina stdout JSON)
+                    print(f"  ⚠ post-publish SEO hook '{mod_name}' falló: {e}", file=sys.stderr)
     except Exception as e:
-        print(f"  ⚠ post-publish SEO bloque falló: {e}")
+        print(f"  ⚠ post-publish SEO bloque falló: {e}", file=sys.stderr)
 
     # memoria editorial
     # Recuperamos los stories estructurados del HTML (topic del selection)
