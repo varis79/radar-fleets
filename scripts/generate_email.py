@@ -338,21 +338,77 @@ def generate_text(compose_info: dict) -> str:
     return "\n".join(lines)
 
 
+_FLAG_TO_MARKET = {
+    "🇲🇽": "mexico", "🇪🇸": "espana", "🇺🇸": "usa",
+    "🌎": "latam", "🌍": "global", "🌐": "global", "🇪🇺": "europa",
+    "🇨🇴": "colombia", "🇨🇱": "chile", "🇦🇷": "argentina",
+    "🇵🇪": "peru", "🇪🇨": "ecuador", "🇺🇾": "uruguay",
+}
+
+
+def _enrich_from_html(compose_meta: dict) -> dict:
+    """Lee el HTML de la revista y extrae los datos editoriales para el email."""
+    from bs4 import BeautifulSoup  # local import — ya en requirements.txt
+    html_path = ROOT / compose_meta.get("html_path", "")
+    if not html_path.exists():
+        return compose_meta  # fallback sin datos ricos
+
+    soup = BeautifulSoup(html_path.read_text(encoding="utf-8"), "html.parser")
+
+    # Cover
+    cover_h1 = soup.select_one(".cover-issue")
+    cover_headline = cover_h1.get_text(" ", strip=True) if cover_h1 else ""
+    deck_el = soup.select_one(".cover-deck")
+    cover_deck = deck_el.get_text(" ", strip=True) if deck_el else ""
+    overline_el = soup.select_one(".cover-overline")
+    overline = overline_el.get_text(" ", strip=True) if overline_el else ""
+
+    # Stories: headline + summary + market (from flag emoji in story-meta)
+    stories = []
+    for article in soup.select("article.story"):
+        head_el = article.select_one(".story-headline")
+        summ_el = article.select_one(".story-summary")
+        if not head_el:
+            continue
+        headline = head_el.get_text(" ", strip=True)
+        summary = summ_el.get_text(" ", strip=True) if summ_el else ""
+
+        # Detect market from flag in story-meta
+        market = "global"
+        meta = article.select_one(".story-meta")
+        if meta:
+            text = meta.get_text()
+            for flag, mkt in _FLAG_TO_MARKET.items():
+                if flag in text:
+                    market = mkt
+                    break
+
+        stories.append({"headline": headline, "summary": summary, "market": market})
+
+    enriched = dict(compose_meta)
+    enriched["cover_headline"] = cover_headline
+    enriched["cover_deck"] = cover_deck
+    enriched["overline"] = overline
+    enriched["stories"] = stories
+    return enriched
+
+
 def load_compose_info(date: dt.date | None = None) -> dict | None:
-    """Carga el compose-info JSON de la edición más reciente o de la fecha dada."""
+    """Carga el compose-info JSON y lo enriquece con datos del HTML de la edición."""
     if date:
         week = iso_week_key(date)
         path = DECISIONS_DIR / f"{week}-compose.json"
         if path.exists():
-            return json.loads(path.read_text(encoding="utf-8"))
+            meta = json.loads(path.read_text(encoding="utf-8"))
+            return _enrich_from_html(meta)
         return None
 
-    # Sin fecha: busca el más reciente
+    # Sin fecha: busca el más reciente con status != pause
     candidates = sorted(DECISIONS_DIR.glob("*-compose.json"), reverse=True)
     for c in candidates:
-        data = json.loads(c.read_text(encoding="utf-8"))
-        if data.get("status") not in ("pause",):
-            return data
+        meta = json.loads(c.read_text(encoding="utf-8"))
+        if meta.get("status") not in ("pause",):
+            return _enrich_from_html(meta)
     return None
 
 
