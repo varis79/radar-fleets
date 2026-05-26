@@ -1,42 +1,41 @@
 {
-  "week": "2026-W21",
+  "week": "2026-W23",
   "steps": [
     {
       "name": "ingest",
       "result": {
-        "week": "2026-W21",
-        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W21-raw.jsonl",
-        "total_items": 50,
+        "week": "2026-W23",
+        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W23-raw.jsonl",
+        "total_items": 153,
         "per_source": {
-          "FreightWaves": 24,
+          "FleetOwner": 5,
+          "FreightWaves": 14,
+          "Transport Topics": 20,
+          "Trucking Dive": 10,
+          "Supply Chain Dive": 10,
+          "Smart Cities Dive": 10,
+          "Electrek": 20,
           "Transport & Energy": 10,
-          "Fleet People ES": 6,
-          "T21 MX": 10
+          "AECOC": 0,
+          "T21 MX": 10,
+          "Mundo Logístico MX": 0,
+          "Inside EVs": 19,
+          "CleanTechnica · Clean Transport": 20,
+          "GoogleNews · MX · telemática flotas": 0,
+          "GoogleNews · MX · combustible/control gasto": 0,
+          "GoogleNews · MX · electrificación": 0,
+          "GoogleNews · MX · última milla": 4,
+          "GoogleNews · MX · regulación autotransporte": 0,
+          "GoogleNews · ES · vehículos comerciales": 0,
+          "GoogleNews · ES · electrificación flotas": 0,
+          "GoogleNews · ES · ITV/mantenimiento": 1,
+          "GoogleNews · ES · DGT/V-16/ZBE": 0,
+          "GoogleNews · ES · renting/leasing flotas": 0
         },
         "errors": [
           {
-            "source": "FleetOwner",
-            "error": "feed-bozo: <unknown>:116:15371: not well-formed (invalid token)"
-          },
-          {
-            "source": "Electrek · Transport",
-            "error": "feed-bozo: <unknown>:19:45: not well-formed (invalid token)"
-          },
-          {
-            "source": "Fleet News UK",
-            "error": "feed-bozo: <unknown>:23:48: not well-formed (invalid token)"
-          },
-          {
-            "source": "Trans.info",
-            "error": "feed-bozo: text/html; charset=utf-8 is not an XML media type"
-          },
-          {
-            "source": "Transporte Profesional",
-            "error": "feed-bozo: <unknown>:22:108: not well-formed (invalid token)"
-          },
-          {
-            "source": "Transportes y Turismo",
-            "error": "feed-bozo: <unknown>:3:212: not well-formed (invalid token)"
+            "source": "Fleet People ES",
+            "error": "feed-bozo: <unknown>:7:2: mismatched tag"
           }
         ]
       }
@@ -44,58 +43,59 @@
     {
       "name": "classify",
       "result": {
-        "week": "2026-W21",
-        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W21-classified.jsonl",
-        "total": 50,
-        "with_topic": 12,
-        "with_fleet_type": 6,
-        "with_players": 2,
+        "week": "2026-W23",
+        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W23-classified.jsonl",
+        "total": 153,
+        "with_topic": 102,
+        "with_fleet_type": 9,
+        "with_players": 4,
         "by_market": {
-          "usa": 24,
-          "mexico": 9,
-          "europa": 10,
-          "peru": 1,
-          "espana": 5,
-          "latam": 1
+          "usa": 83,
+          "mexico": 16,
+          "china": 9,
+          "canada": 2,
+          "europa": 15,
+          "brasil": 1,
+          "global": 26,
+          "espana": 1
         }
       }
     },
     {
       "name": "dedupe",
       "result": {
-        "week": "2026-W21",
-        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W21-dedup.jsonl",
-        "in": 50,
-        "after_url_dedup": 50,
-        "after_title_dedup": 50
+        "week": "2026-W23",
+        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W23-dedup.jsonl",
+        "in": 153,
+        "after_url_dedup": 153,
+        "after_title_dedup": 153
       }
     },
     {
       "name": "select",
       "result": {
-        "week": "2026-W21",
+        "week": "2026-W23",
         "mode": "normal",
-        "total_candidates": 50,
-        "total_after_memory_dedup": 50,
-        "total_chosen": 10,
-        "warnings": [
-          "topic-diversity-low:1<3"
-        ],
+        "total_candidates": 153,
+        "total_after_memory_dedup": 153,
+        "total_chosen": 12,
+        "warnings": [],
+        "discarded_competitor": [],
         "discarded_repetition": [],
-        "path": "/home/runner/work/radar-fleets/radar-fleets/content/decisions/2026-W21-selection.json"
+        "path": "/home/runner/work/radar-fleets/radar-fleets/content/decisions/2026-W23-selection.json"
       }
     },
     {
       "name": "compose",
       "result": {
         "status": "composed",
-        "week": "2026-W21",
+        "week": "2026-W23",
         "mode": "normal",
         "number": 8,
-        "edition_date": "2026-05-18",
-        "html_path": "magazines/2026-05-18-radar-fleet-by-pulpo.html",
-        "summary_path": "magazines/2026-05-18-radar-fleet-by-pulpo-summary.txt",
-        "slack_path": "content/decisions/2026-W21-slack.txt",
+        "edition_date": "2026-06-01",
+        "html_path": "magazines/2026-06-01-radar-fleet-by-pulpo.html",
+        "summary_path": "magazines/2026-06-01-radar-fleet-by-pulpo-summary.txt",
+        "slack_path": "content/decisions/2026-W23-slack.txt",
         "llm": {
           "mode": "llm",
           "model": "claude-opus-4-1-20250805"
@@ -108,61 +108,16 @@
     {
       "name": "qa",
       "result": {
-        "status": "fail",
-        "week": "2026-W21",
-        "blockers": 9,
+        "status": "ok",
+        "week": "2026-W23",
+        "blockers": 0,
         "warnings": 1,
         "issues": [
           {
-            "check": "C2-thin",
-            "severity": "block",
-            "message": "Story corta: 'Tráfico ferroviario norteamericano sube 2% con 12 millones d' tiene 112 palabras (mínimo 120)"
-          },
-          {
-            "check": "C2-thin",
-            "severity": "block",
-            "message": "Story corta: 'China controla 60 empresas de autopartes en EEUU y participa' tiene 108 palabras (mínimo 120)"
-          },
-          {
-            "check": "C2-thin",
-            "severity": "block",
-            "message": "Story corta: 'Mutua Madrileña adquiere 100% de distribuidora de recambios ' tiene 109 palabras (mínimo 120)"
-          },
-          {
-            "check": "C2-thin",
-            "severity": "block",
-            "message": "Story corta: 'Corredor Cali-Baja enfrenta nuevas regulaciones y competenci' tiene 110 palabras (mínimo 120)"
-          },
-          {
-            "check": "C2-thin",
-            "severity": "block",
-            "message": "Story corta: 'Logtech Day marca urgencia de transformación digital en logí' tiene 109 palabras (mínimo 120)"
-          },
-          {
-            "check": "C2-thin",
-            "severity": "block",
-            "message": "Story corta: 'Puerto de Manzanillo refuerza protocolos para materiales pel' tiene 106 palabras (mínimo 120)"
-          },
-          {
-            "check": "C2-thin",
-            "severity": "block",
-            "message": "Story corta: 'Volkswagen lanza ID. Polo GTI eléctrico con 226CV y 424km de' tiene 104 palabras (mínimo 120)"
-          },
-          {
-            "check": "C2-thin",
-            "severity": "block",
-            "message": "Story corta: 'Bolt y Dongfeng despliegan flota eléctrica compartida en Sud' tiene 104 palabras (mínimo 120)"
-          },
-          {
-            "check": "C3-voice",
-            "severity": "block",
-            "message": "Estructura 'no es X, es Y' detectada",
-            "sample": "no es casualidad. Es l"
-          },
-          {
-            "check": "A2-topic",
+            "check": "C8-claim",
             "severity": "warn",
-            "message": "Pocos topics distintos (1). Esperado ≥ 3"
+            "message": "porcentaje sin fuente explícita: 30% más (revisar que la cifra tenga contexto)",
+            "sample": "portistas implementan rutas seguras con 30% más kilometraje. El seguro de carga sube 22"
           }
         ]
       }
@@ -171,12 +126,12 @@
       "name": "publish",
       "result": {
         "status": "published",
-        "week": "2026-W21",
-        "edition_date": "2026-05-18",
+        "week": "2026-W23",
+        "edition_date": "2026-06-01",
         "number": 8,
         "files_touched": [
-          "magazines/2026-05-18-radar-fleet-by-pulpo.html",
-          "magazines/2026-05-18-radar-fleet-by-pulpo-summary.txt",
+          "magazines/2026-06-01-radar-fleet-by-pulpo.html",
+          "magazines/2026-06-01-radar-fleet-by-pulpo-summary.txt",
           "index.html",
           "archive.html",
           "sitemap.xml",
@@ -193,5 +148,5 @@
       }
     }
   ],
-  "status": "ok-qa-warn"
+  "status": "ok"
 }

@@ -244,3 +244,21 @@ Modo: normal
 - [?] Volkswagen lanza ID. Polo GTI eléctrico con 226CV y 424km de autonomía · mexico
 - [?] Bolt y Dongfeng despliegan flota eléctrica compartida en Sudáfrica · espana
 
+
+## Nº 8 · 2026-06-01 · "Taquillas inteligentes, robo de combustible y mil millones para camiones eléctricos"
+Acento semanal: #0f3d2e, #d4891a
+Permalink: /magazines/2026-06-01-radar-fleet-by-pulpo.html
+Modo: normal
+
+### Historias cubiertas
+- [routing] Taquillas inteligentes eliminan 40% de entregas fallidas en última milla · mexico
+- [logistica-distribucion] Robo de combustible añade 18% a costos operativos de flotas mexicanas · mexico
+- [combustible] California lanza programa de mil millones para electrificar transporte pesado · mexico
+- [logistica-distribucion] Robinson Fresh abre hub fronterizo de 120,000 ft² anticipando Mundial 2026 · mexico
+- [electrificacion-flotas] Hot Sale y Mundial disparan 40% los robos a flotas de última milla · europa
+- [electrificacion-flotas] Cerveceras mexicanas proyectan déficit logístico de 30% para Mundial 2026 · usa
+- [electrificacion-flotas] Optimización de última milla en México requiere inversión de 3,500 dólares por vehículo · china
+- [routing] Logística mexicana abandona modelo lineal por redes distribuidas adaptativas · mexico
+- [logistica-distribucion] VW lanza ID. Polo GTI eléctrico apuntando a flotas comerciales ligeras · mexico
+- [logistica-distribucion] BYD valida carga ultrarrápida con Denza Z9 GT de 800,000 dólares · mexico
+
