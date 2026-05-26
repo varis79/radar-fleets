@@ -242,6 +242,20 @@ jobs:
           echo "::error::La edición $DATE NO responde 200 tras 160s. Vercel no terminó el deploy o falló el build."
           exit 1
 
+      - name: Send newsletter
+        if: steps.changes.outputs.has_changes == 'true' && (steps.pipeline.outputs.status == 'ok' || steps.pipeline.outputs.status == 'ok-qa-warn')
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_AUDIENCE_ID: ${{ secrets.RESEND_AUDIENCE_ID }}
+        run: |
+          if [ -z "$RESEND_API_KEY" ] || [ -z "$RESEND_AUDIENCE_ID" ]; then
+            echo "::warning::RESEND_API_KEY o RESEND_AUDIENCE_ID no configurados; saltando newsletter"
+            exit 0
+          fi
+          echo "Enviando newsletter Nº … · edición ${{ steps.date.outputs.edition_date }}"
+          python -m scripts.send_newsletter --date "${{ steps.date.outputs.edition_date }}" \
+            || echo "::warning::send_newsletter terminó con error (no bloquea publicación)"
+
       - name: Report
         run: |
           echo "Status: ${{ steps.pipeline.outputs.status }}"

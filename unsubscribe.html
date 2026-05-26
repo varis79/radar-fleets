@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Cancelar suscripción · The Fleet Radar</title>
+<link rel="icon" type="image/svg+xml" href="/assets/brand/favicon.svg">
+<link rel="stylesheet" href="/assets/radar.css">
+<style>
+  .unsub-main{min-height:70vh;display:flex;align-items:center;justify-content:center;padding:64px 24px}
+  .unsub-box{max-width:480px;width:100%;text-align:center}
+  .unsub-logo{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:#0d1521;margin-bottom:40px;letter-spacing:-0.01em}
+  .unsub-logo span{font-weight:400;color:rgba(0,0,0,0.4)}
+  .unsub-icon{font-size:48px;margin-bottom:24px;line-height:1}
+  .unsub-title{font-family:'Fraunces',serif;font-size:26px;font-weight:700;color:#0d1521;margin:0 0 12px;line-height:1.2}
+  .unsub-sub{font-size:15px;color:rgba(0,0,0,0.55);margin:0 0 32px;line-height:1.7}
+  .unsub-email{font-size:14px;color:rgba(0,0,0,0.35);margin-bottom:32px;word-break:break-all}
+  .unsub-btn{display:inline-block;padding:13px 28px;background:#0d1521;color:#fff;border:none;border-radius:4px;font-size:14px;font-weight:700;cursor:pointer;text-decoration:none;letter-spacing:.02em;transition:opacity .2s}
+  .unsub-btn:hover{opacity:.85}
+  .unsub-btn:disabled{opacity:.5;cursor:not-allowed}
+  .unsub-btn.secondary{background:transparent;color:#0d1521;border:2px solid #0d1521;margin-left:12px}
+  .unsub-btn.secondary:hover{background:rgba(0,0,0,.04)}
+  .unsub-ok{color:#15803d;font-size:15px;margin-top:24px;display:none}
+  .unsub-err{color:#b91c1c;font-size:14px;margin-top:24px;display:none}
+  .unsub-spinner{display:none;font-size:14px;color:rgba(0,0,0,0.45);margin-top:24px}
+  .unsub-done{display:none}
+  .unsub-back{margin-top:40px}
+  .unsub-back a{font-size:13px;color:rgba(0,0,0,0.4);text-decoration:none}
+  .unsub-back a:hover{color:#0d1521}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="topbar-brand" href="/">The Fleet Radar <span>by Pulpo</span></a>
+  <nav class="topbar-nav">
+    <a href="/">Última edición</a>
+    <a href="/archive.html">Archivo</a>
+  </nav>
+</header>
+
+<main class="unsub-main">
+  <div class="unsub-box" id="box-confirm">
+    <div class="unsub-icon">📬</div>
+    <h1 class="unsub-title">¿Cancelar suscripción?</h1>
+    <p class="unsub-sub">Dejarás de recibir The Fleet Radar cada lunes.<br>Puedes volver a suscribirte en cualquier momento.</p>
+    <div class="unsub-email" id="email-display"></div>
+    <div>
+      <button class="unsub-btn" id="btn-confirm" onclick="doUnsubscribe()">Sí, cancelar suscripción</button>
+      <a class="unsub-btn secondary" href="/">No, volver</a>
+    </div>
+    <p class="unsub-spinner" id="spinner">Procesando…</p>
+    <p class="unsub-err" id="err-msg">Algo fue mal. <a href="mailto:hola@getpulpo.com">Escríbenos</a> si el problema persiste.</p>
+    <div class="unsub-back">
+      <a href="/">← Volver a thefleetradar.com</a>
+    </div>
+  </div>
+
+  <div class="unsub-box unsub-done" id="box-done">
+    <div class="unsub-icon">✅</div>
+    <h1 class="unsub-title">Suscripción cancelada</h1>
+    <p class="unsub-sub">Ya no recibirás The Fleet Radar. Si fue un error, puedes suscribirte de nuevo en la home.</p>
+    <a class="unsub-btn" href="/">Volver al inicio</a>
+    <div class="unsub-back">
+      <a href="/archive.html">Ver ediciones anteriores</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="footer-brand-link" href="/">The Fleet Radar <span>by Pulpo</span></a>
+      <p class="footer-tagline">Inteligencia semanal de mercado para el sector de gestión de flotas en México, España y LatAm.</p>
+    </div>
+    <div class="footer-col"><h4>Ediciones</h4><ul><li><a href="/">Última edición</a></li><li><a href="/archive.html">Archivo</a></li><li><a href="/rss.xml">RSS</a></li></ul></div>
+    <div class="footer-col"><h4>Legal</h4><ul><li><a href="/legal/privacidad/">Privacidad</a></li><li><a href="/legal/terminos/">Términos</a></li><li><a href="mailto:hola@getpulpo.com">Contacto</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Pulpo · The Fleet Radar</span>
+    <span class="footer-meta">Publicación editorial independiente.</span>
+  </div>
+</footer>
+
+<script>
+  // Leer email de la URL ?email=xxx
+  const params = new URLSearchParams(window.location.search);
+  const email = params.get("email") || "";
+  const display = document.getElementById("email-display");
+  if (email) {
+    display.textContent = email;
+  } else {
+    display.textContent = "(email no especificado)";
+  }
+
+  async function doUnsubscribe() {
+    const btn = document.getElementById("btn-confirm");
+    const spinner = document.getElementById("spinner");
+    const errMsg = document.getElementById("err-msg");
+
+    if (!email) {
+      errMsg.style.display = "block";
+      errMsg.textContent = "No se encontró la dirección de email. Escríbenos a hola@getpulpo.com.";
+      return;
+    }
+
+    btn.disabled = true;
+    spinner.style.display = "block";
+    errMsg.style.display = "none";
+
+    try {
+      const r = await fetch(`/api/unsubscribe?email=${encodeURIComponent(email)}`);
+      if (r.ok) {
+        document.getElementById("box-confirm").style.display = "none";
+        document.getElementById("box-done").style.display = "block";
+      } else {
+        const d = await r.json().catch(() => ({}));
+        btn.disabled = false;
+        spinner.style.display = "none";
+        errMsg.textContent = d.error || "Algo fue mal. Inténtalo de nuevo o escríbenos a hola@getpulpo.com.";
+        errMsg.style.display = "block";
+      }
+    } catch {
+      btn.disabled = false;
+      spinner.style.display = "none";
+      errMsg.style.display = "block";
+    }
+  }
+</script>
+</body>
+</html>
