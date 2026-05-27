@@ -60,7 +60,15 @@
 </style>
 </meta><meta content="2026-05-24" property="article:modified_time"/><link href="https://thefleetradar.com/temas/compliance-flotas-espana-regulacion-2026/" hreflang="es-ES" rel="alternate"/><link href="https://thefleetradar.com/temas/compliance-flotas-mexico-regulacion-2026/" hreflang="es-MX" rel="alternate"/><link href="https://thefleetradar.com/temas/compliance-flotas-mexico-regulacion-2026/" hreflang="x-default" rel="alternate"/></head>
 <body>
-<header class="topbar"><a class="topbar-brand" href="/">The Fleet Radar <span>by Pulpo</span></a><div class="topbar-meta">Página pilar · México</div><nav class="topbar-nav"><a href="/">Última</a><a href="/archive.html">Archivo</a><a href="/mercados/">Mercados</a><a href="/temas/">Temas</a><a href="/casos-uso/">Casos de uso</a><a href="/sectores/">Sectores</a><a href="/evergreen/">Recursos</a><a class="cta" href="https://www.getpulpo.com/" rel="noopener" target="_blank">Pulpo ↗</a></nav></header>
+<header class="topbar"><a class="topbar-brand" href="/">The Fleet Radar <span>by Pulpo</span></a><div class="topbar-meta">Página pilar · México</div><nav class="topbar-nav"><a href="/">Última</a><a href="/archive.html">Archivo</a><a href="/mercados/">Mercados</a><a href="/temas/">Temas</a><a href="/casos-uso/">Casos de uso</a><a href="/sectores/">Sectores</a><a href="/evergreen/">Recursos</a><a class="cta" href="https://www.getpulpo.com/" rel="noopener" target="_blank">Pulpo ↗</a></nav></header><div class="nl-bar" id="nl-bar">
+<span class="nl-bar-text">📬 <strong>The Fleet Radar</strong> — inteligencia semanal para gestores de flota. Gratis.</span>
+<form class="nl-bar-form" onsubmit="nlBarSubmit(event)">
+<input autocomplete="email" class="nl-bar-input" placeholder="tu@empresa.com" required="" type="email"/>
+<button class="nl-bar-btn" type="submit">Suscribirme gratis →</button>
+</form>
+<p class="nl-bar-ok" id="nl-bar-ok">✓ Apuntado. Llega cada lunes.</p>
+<button aria-label="Cerrar" class="nl-bar-close" onclick="nlBarClose()">✕</button>
+</div>
 <section class="pillar-hero">
 <div class="container">
 <div class="pillar-breadcrumbs">
@@ -171,5 +179,25 @@ async function nrSubmit(e){
 <span class="footer-meta">Publicación editorial independiente. Análisis no constituye asesoría.</span>
 </div>
 </footer>
-</body>
+<script>
+(function(){try{if(sessionStorage.getItem('nla_ok'))document.getElementById('nl-bar').remove();}catch(e){}}());
+function nlBarClose(){var b=document.getElementById('nl-bar');if(b)b.remove();try{sessionStorage.setItem('nla_ok','1');}catch(e){}}
+async function nlBarSubmit(e){
+  e.preventDefault();
+  var btn=e.target.querySelector('button'),inp=e.target.querySelector('input');
+  var email=inp.value.trim();
+  btn.disabled=true;btn.textContent='…';
+  try{
+    var r=await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email})});
+    if(r.ok){
+      e.target.style.display='none';
+      document.querySelector('.nl-bar-text') && (document.querySelector('.nl-bar-text').textContent='');
+      var ok=document.getElementById('nl-bar-ok');
+      ok.style.display='block';
+      setTimeout(nlBarClose,4000);
+      try{sessionStorage.setItem('nla_ok','1');}catch(ex){}
+    } else {btn.disabled=false;btn.textContent='Suscribirme gratis →';}
+  } catch{btn.disabled=false;btn.textContent='Suscribirme gratis →';}
+}
+</script></body>
 </html>

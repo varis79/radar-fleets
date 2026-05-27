@@ -33,7 +33,15 @@
 <nav class="topbar-nav">
 <a href="/">Última</a><a href="/archive.html">Archivo</a><a href="/mercados/">Mercados</a><a href="/temas/">Temas</a><a href="/casos-uso/">Casos de uso</a><a href="/sectores/">Sectores</a><a href="/evergreen/">Recursos</a><a class="cta" href="https://www.getpulpo.com/" rel="noopener" target="_blank">Pulpo ↗</a>
 </nav>
-</header>
+</header><div class="nl-bar" id="nl-bar">
+<span class="nl-bar-text">📬 <strong>The Fleet Radar</strong> — inteligencia semanal para gestores de flota. Gratis.</span>
+<form class="nl-bar-form" onsubmit="nlBarSubmit(event)">
+<input autocomplete="email" class="nl-bar-input" placeholder="tu@empresa.com" required="" type="email"/>
+<button class="nl-bar-btn" type="submit">Suscribirme gratis →</button>
+</form>
+<p class="nl-bar-ok" id="nl-bar-ok">✓ Apuntado. Llega cada lunes.</p>
+<button aria-label="Cerrar" class="nl-bar-close" onclick="nlBarClose()">✕</button>
+</div>
 <main class="pillar-main" style="max-width:780px;margin:0 auto;padding:48px 24px">
 <header class="pillar-hero">
 <span class="pillar-eyebrow">Página pilar · México</span>
@@ -43,7 +51,21 @@
 </header>
 <section class="pillar-body">
 <h2>Por qué importa</h2>
-<p>El robo al autotransporte mexicano es uno de los factores operativos más relevantes para flotas que mueven carga por carretera, especialmente en corredores como México-Puebla, Querétaro-León y el cinturón industrial del Bajío. La SESNSP reporta cifras anuales y CANACAR documenta patrones de violencia, horarios críticos y mercancías objetivo.</p>
+<p>El robo al autotransporte mexicano es uno de los factores operativos más relevantes para flotas que mueven carga por carretera, especialmente en corredores como México-Puebla, Querétaro-León y el cinturón industrial del Bajío. La SESNSP reporta cifras anuales y CANACAR documenta patrones de violencia, horarios críticos y mercancías objetivo.</p><div class="nl-mid">
+<span aria-hidden="true" class="nl-mid-icon">📬</span>
+<div class="nl-mid-body">
+<p class="nl-mid-eyebrow">Gratis · cada lunes a las 7:00</p>
+<h3 class="nl-mid-title">¿Te está siendo útil? Llega a tu bandeja cada semana.</h3>
+<p class="nl-mid-desc">Regulación, telemática, financiación y mercado — lo que realmente mueve los números de una flota. Sin spam. Sin comunicaciones comerciales. Solo señal.</p>
+<form class="nl-mid-form" onsubmit="nlMidSubmit(this,event)">
+<input autocomplete="email" class="nl-mid-input" placeholder="tu@empresa.com" required="" type="email"/>
+<button class="nl-mid-btn" type="submit">Suscribirme gratis</button>
+</form>
+<p class="nl-mid-ok" id="nl-mid-ok"></p>
+<p class="nl-mid-err" id="nl-mid-err"></p>
+<p class="nl-mid-note">✓ Sin spam  ·  ✓ Sin ventas  ·  ✓ Cancela cuando quieras</p>
+</div>
+</div>
 <h2>Cobertura editorial en The Fleet Radar</h2>
 <p>Esta página crece con cada nueva cobertura. The Fleet Radar ha tratado robo de carga, violencia contra operadores y respuesta tecnológica (telemática, video, escoltas) en varias ediciones. Si trabajas en seguridad de flota y quieres que cubramos un ángulo específico, <a href="mailto:hola@getpulpo.com">escríbenos</a>.</p>
 <h2>Páginas relacionadas</h2>
@@ -57,7 +79,7 @@
 <li><a href="/ciudades/cargo-theft-flotas-monterrey-2026/">Robo de carga · Monterrey</a></li>
 </ul>
 <p><em>Stub editorial — pasará a página completa cuando alcance umbral de cobertura.</em></p>
-</section><aside class="did-you-know"><span class="dyk-eyebrow">💡 Sabías qué · 📡 Telemática</span><p class="dyk-body">Geotab cuantifica en flotas reales hasta un 35% más de consumo en perfiles de conducción agresiva frente a conductores eficientes operando el mismo modelo. Programas de coaching con datos individuales devuelven retorno medible en pocos meses sobre la factura de combustible.</p></aside>
+</section>
 </main>
 <footer class="site-footer">
 <div class="footer-grid">
@@ -75,5 +97,49 @@
 <span class="footer-meta">Publicación editorial independiente. Análisis no constituye asesoría.</span>
 </div>
 </footer>
-</body>
+<script>
+(function(){try{if(sessionStorage.getItem('nla_ok'))document.getElementById('nl-bar').remove();}catch(e){}}());
+function nlBarClose(){var b=document.getElementById('nl-bar');if(b)b.remove();try{sessionStorage.setItem('nla_ok','1');}catch(e){}}
+async function nlBarSubmit(e){
+  e.preventDefault();
+  var btn=e.target.querySelector('button'),inp=e.target.querySelector('input');
+  var email=inp.value.trim();
+  btn.disabled=true;btn.textContent='…';
+  try{
+    var r=await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email})});
+    if(r.ok){
+      e.target.style.display='none';
+      document.querySelector('.nl-bar-text') && (document.querySelector('.nl-bar-text').textContent='');
+      var ok=document.getElementById('nl-bar-ok');
+      ok.style.display='block';
+      setTimeout(nlBarClose,4000);
+      try{sessionStorage.setItem('nla_ok','1');}catch(ex){}
+    } else {btn.disabled=false;btn.textContent='Suscribirme gratis →';}
+  } catch{btn.disabled=false;btn.textContent='Suscribirme gratis →';}
+}
+</script><script>
+async function nlMidSubmit(form,e){
+  e.preventDefault();
+  var btn=form.querySelector('button'),email=form.querySelector('input').value.trim();
+  var ok=document.getElementById('nl-mid-ok'),err=document.getElementById('nl-mid-err');
+  btn.disabled=true;btn.textContent='Enviando…';err.style.display='none';
+  try{
+    var r=await fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email})});
+    if(r.ok){
+      form.style.display='none';
+      form.closest('.nl-mid').querySelector('.nl-mid-note').style.display='none';
+      ok.textContent='✓ Apuntado. Te llegará cada lunes a las 7:00.';
+      ok.style.display='block';
+    } else {
+      var d=await r.json().catch(()=>({}));
+      btn.disabled=false;btn.textContent='Suscribirme gratis';
+      err.textContent=d.error||'Algo fue mal. Inténtalo de nuevo.';
+      err.style.display='block';
+    }
+  } catch{
+    btn.disabled=false;btn.textContent='Suscribirme gratis';
+    err.style.display='block';err.textContent='Error de conexión.';
+  }
+}
+</script></body>
 </html>

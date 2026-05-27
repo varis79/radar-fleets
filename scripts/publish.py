@@ -241,7 +241,8 @@ def publish(today: dt.date | None = None) -> dict:
         sys.path.insert(0, str(ROOT / "scripts"))
         with contextlib.redirect_stdout(hook_log_buffer):
             for mod_name in ("patch_home_magazine_seo", "rebuild_sitemap",
-                             "seo_polish", "build_facts_json", "inject_dynamic_dyk"):
+                             "seo_polish", "build_facts_json", "inject_dynamic_dyk",
+                             "inject_newsletter_ctas"):
                 try:
                     mod = importlib.import_module(mod_name)
                     if mod_name == "rebuild_sitemap":
@@ -261,6 +262,12 @@ def publish(today: dt.date | None = None) -> dict:
                         # Inyecta cajas DYK dinámicas en la nueva magazine
                         for p in [INDEX_HTML, ROOT / "archive.html"] + list((ROOT / "magazines").glob("*.html")):
                             mod.inject_home(p)
+                    elif mod_name == "inject_newsletter_ctas":
+                        # Inyecta nl-bar (top) + nl-mid (mid-content) en páginas nuevas
+                        targets_nl = [INDEX_HTML, ROOT / "archive.html"] + list((ROOT / "magazines").glob("*.html"))
+                        for p in targets_nl:
+                            if p.exists():
+                                mod.process(p)
                 except Exception as e:
                     # Errores a STDERR (no contamina stdout JSON)
                     print(f"  ⚠ post-publish SEO hook '{mod_name}' falló: {e}", file=sys.stderr)
