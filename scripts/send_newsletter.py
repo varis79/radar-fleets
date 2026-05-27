@@ -32,9 +32,9 @@ import datetime as dt
 import json
 import os
 import sys
-import urllib.request
-import urllib.error
 from pathlib import Path
+
+import requests
 
 # Make scripts/ importable
 sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -48,27 +48,18 @@ DEFAULT_FROM = "The Fleet Radar <team@thefleetradar.com>"
 
 
 def _post(url: str, payload: dict, api_key: str) -> tuple[int, dict]:
-    """Simple HTTP POST usando urllib (sin dependencias extra)."""
-    data = json.dumps(payload).encode("utf-8")
-    req = urllib.request.Request(
+    """HTTP POST a la API de Resend usando requests (maneja SSL correctamente en macOS)."""
+    resp = requests.post(
         url,
-        data=data,
-        headers={
-            "Authorization": f"Bearer {api_key}",
-            "Content-Type": "application/json",
-        },
-        method="POST",
+        json=payload,
+        headers={"Authorization": f"Bearer {api_key}"},
+        timeout=30,
     )
     try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            return resp.status, json.loads(resp.read().decode("utf-8"))
-    except urllib.error.HTTPError as e:
+        body = resp.json()
+    except Exception:
         body = {}
-        try:
-            body = json.loads(e.read().decode("utf-8"))
-        except Exception:
-            pass
-        return e.code, body
+    return resp.status_code, body
 
 
 def send_newsletter(
