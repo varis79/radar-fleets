@@ -247,6 +247,7 @@ jobs:
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           RESEND_AUDIENCE_ID: ${{ secrets.RESEND_AUDIENCE_ID }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           if [ -z "$RESEND_API_KEY" ] || [ -z "$RESEND_AUDIENCE_ID" ]; then
             echo "::warning::RESEND_API_KEY o RESEND_AUDIENCE_ID no configurados; saltando newsletter"
