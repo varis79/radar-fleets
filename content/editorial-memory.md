@@ -262,3 +262,21 @@ Modo: normal
 - [logistica-distribucion] VW lanza ID. Polo GTI eléctrico apuntando a flotas comerciales ligeras · mexico
 - [logistica-distribucion] BYD valida carga ultrarrápida con Denza Z9 GT de 800,000 dólares · mexico
 
+
+## Nº 9 · 2026-06-01 · "Hot Sale presiona última milla y Visa entra a gestión de flotas"
+Acento semanal: #0f3d2e, #d4891a
+Permalink: /magazines/2026-06-01-radar-fleet-by-pulpo.html
+Modo: normal
+
+### Historias cubiertas
+- [routing] Hot Sale 2026 expone crisis estructural en última milla mexicana · mexico
+- [routing] Visa lanza plataforma integral de gestión de flotas con IA en México · mexico
+- [fuel-cards] UPS invierte 50M USD en servicios time-definite México-USA · mexico
+- [electrificacion-flotas] Scania demuestra V2G funcional para camiones eléctricos pesados · espana
+- [electrificacion-flotas] España mantiene impuestos bajos a flotas corporativas con combustión · china
+- [electrificacion-flotas] BYD asume responsabilidad financiera total por su sistema autónomo · europa
+- [routing] DHL terceriza última milla a USPS en contrato de 10 mil millones · mexico
+- [logistica-distribucion] Talento especializado: el cuello de botella crítico de la logística mexicana · mexico
+- [logistica-distribucion] Ford Mustang Mach-E supera a Escape en costo total a 5 años · mexico
+- [logistica-distribucion] Reconversión urbana emerge como solución para crisis de última milla · mexico
+
