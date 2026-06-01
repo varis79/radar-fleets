@@ -6,9 +6,9 @@
       "result": {
         "week": "2026-W23",
         "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W23-raw.jsonl",
-        "total_items": 153,
+        "total_items": 157,
         "per_source": {
-          "FleetOwner": 5,
+          "FleetOwner": 3,
           "FreightWaves": 14,
           "Transport Topics": 20,
           "Trucking Dive": 10,
@@ -16,28 +16,24 @@
           "Smart Cities Dive": 10,
           "Electrek": 20,
           "Transport & Energy": 10,
+          "Fleet People ES": 3,
           "AECOC": 0,
           "T21 MX": 10,
           "Mundo Logístico MX": 0,
-          "Inside EVs": 19,
+          "Inside EVs": 20,
           "CleanTechnica · Clean Transport": 20,
           "GoogleNews · MX · telemática flotas": 0,
-          "GoogleNews · MX · combustible/control gasto": 0,
+          "GoogleNews · MX · combustible/control gasto": 2,
           "GoogleNews · MX · electrificación": 0,
           "GoogleNews · MX · última milla": 4,
           "GoogleNews · MX · regulación autotransporte": 0,
           "GoogleNews · ES · vehículos comerciales": 0,
-          "GoogleNews · ES · electrificación flotas": 0,
-          "GoogleNews · ES · ITV/mantenimiento": 1,
+          "GoogleNews · ES · electrificación flotas": 1,
+          "GoogleNews · ES · ITV/mantenimiento": 0,
           "GoogleNews · ES · DGT/V-16/ZBE": 0,
           "GoogleNews · ES · renting/leasing flotas": 0
         },
-        "errors": [
-          {
-            "source": "Fleet People ES",
-            "error": "feed-bozo: <unknown>:7:2: mismatched tag"
-          }
-        ]
+        "errors": []
       }
     },
     {
@@ -45,19 +41,20 @@
       "result": {
         "week": "2026-W23",
         "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W23-classified.jsonl",
-        "total": 153,
-        "with_topic": 102,
-        "with_fleet_type": 9,
-        "with_players": 4,
+        "total": 157,
+        "with_topic": 113,
+        "with_fleet_type": 13,
+        "with_players": 10,
         "by_market": {
-          "usa": 83,
-          "mexico": 16,
-          "china": 9,
-          "canada": 2,
-          "europa": 15,
-          "brasil": 1,
-          "global": 26,
-          "espana": 1
+          "usa": 84,
+          "mexico": 18,
+          "china": 13,
+          "canada": 1,
+          "europa": 11,
+          "espana": 4,
+          "global": 24,
+          "chile": 1,
+          "latam": 1
         }
       }
     },
@@ -66,9 +63,9 @@
       "result": {
         "week": "2026-W23",
         "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W23-dedup.jsonl",
-        "in": 153,
-        "after_url_dedup": 153,
-        "after_title_dedup": 153
+        "in": 157,
+        "after_url_dedup": 157,
+        "after_title_dedup": 157
       }
     },
     {
@@ -76,11 +73,16 @@
       "result": {
         "week": "2026-W23",
         "mode": "normal",
-        "total_candidates": 153,
-        "total_after_memory_dedup": 153,
+        "total_candidates": 156,
+        "total_after_memory_dedup": 156,
         "total_chosen": 12,
         "warnings": [],
-        "discarded_competitor": [],
+        "discarded_competitor": [
+          {
+            "id": "d966bed7af593be6",
+            "title": "Impulsando el Futuro: Visa y Mendel Presentan una Solución de Flotas - Revista Movilidad3"
+          }
+        ],
         "discarded_repetition": [],
         "path": "/home/runner/work/radar-fleets/radar-fleets/content/decisions/2026-W23-selection.json"
       }
@@ -91,7 +93,7 @@
         "status": "composed",
         "week": "2026-W23",
         "mode": "normal",
-        "number": 8,
+        "number": 9,
         "edition_date": "2026-06-01",
         "html_path": "magazines/2026-06-01-radar-fleet-by-pulpo.html",
         "summary_path": "magazines/2026-06-01-radar-fleet-by-pulpo-summary.txt",
@@ -108,16 +110,22 @@
     {
       "name": "qa",
       "result": {
-        "status": "ok",
+        "status": "fail",
         "week": "2026-W23",
-        "blockers": 0,
+        "blockers": 1,
         "warnings": 1,
         "issues": [
           {
+            "check": "C3-voice",
+            "severity": "block",
+            "message": "Estructura 'no es X, es Y' detectada",
+            "sample": "No es una tarjeta de combustible más. Es u"
+          },
+          {
             "check": "C8-claim",
             "severity": "warn",
-            "message": "porcentaje sin fuente explícita: 30% más (revisar que la cifra tenga contexto)",
-            "sample": "portistas implementan rutas seguras con 30% más kilometraje. El seguro de carga sube 22"
+            "message": "porcentaje sin fuente explícita: 25% más (revisar que la cifra tenga contexto)",
+            "sample": "dinámico bien entrenado puede optimizar 25% más rutas que un operador tradicional, just"
           }
         ]
       }
@@ -128,7 +136,7 @@
         "status": "published",
         "week": "2026-W23",
         "edition_date": "2026-06-01",
-        "number": 8,
+        "number": 9,
         "files_touched": [
           "magazines/2026-06-01-radar-fleet-by-pulpo.html",
           "magazines/2026-06-01-radar-fleet-by-pulpo-summary.txt",
@@ -148,5 +156,5 @@
       }
     }
   ],
-  "status": "ok"
+  "status": "ok-qa-warn"
 }
