@@ -280,3 +280,21 @@ Modo: normal
 - [logistica-distribucion] Ford Mustang Mach-E supera a Escape en costo total a 5 años · mexico
 - [logistica-distribucion] Reconversión urbana emerge como solución para crisis de última milla · mexico
 
+
+## Nº 10 · 2026-06-08 · "Tacógrafos, carga eléctrica y el pulso México-USA"
+Acento semanal: #155e75, #d4891a
+Permalink: /magazines/2026-06-08-radar-fleet-by-pulpo.html
+Modo: normal
+
+### Historias cubiertas
+- [electrificacion-flotas] Menos de 30 días para tacógrafo obligatorio en furgonetas españolas · espana
+- [compliance] Uber Freight anticipa temporada alta con demanda México sostenida · espana
+- [logistica-distribucion] Wallbox instala primeros cargadores de 360kW en puerto mediterráneo · mexico
+- [electrificacion-flotas] Volkswagen produce primeros EVs asequibles en planta española · china
+- [operacion-flotas] Fruehauf mantiene liderazgo con 35% del mercado de semirremolques · espana
+- [compliance] V-16 conectada será obligatoria desde enero 2027 · mexico
+- [mantenimiento] SICT otorga concesión del tren Lechería-AIFA a Banobras · espana
+- [electrificacion-flotas] Tecnología VEXA de Mobius gana premio a innovación en leasing · espana
+- [compliance] Danfoss aumenta 50% autonomía de maquinaria eléctrica pesada · mexico
+- [electrificacion-flotas] BYD aumenta exportaciones 80% con foco en vehículos comerciales · usa
+
