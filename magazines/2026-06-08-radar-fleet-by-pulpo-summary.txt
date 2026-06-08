@@ -1,0 +1,62 @@
+THE FLEET RADAR · BY PULPO — EDICIÓN Nº 10
+8 de junio de 2026
+"Tacógrafos, carga eléctrica y el pulso México-USA"
+════════════════════════════════════════════════════════════════
+
+RESUMEN EJECUTIVO
+─────────────────
+España enfrenta deadline crítico de tacógrafos en furgonetas. México muestra fortaleza logística con demanda anticipada. Wallbox y Volkswagen aceleran infraestructura EV en España. BYD aumenta exportaciones 80% interanual.
+
+════════════════════════════════════════════════════════════════
+
+HISTORIAS
+─────────
+1. 🇪🇸 Menos de 30 días para tacógrafo obligatorio en furgonetas españolas
+   El sector del transporte ligero enfrenta una cuenta regresiva crítica. A partir de julio, todas las furgonetas de más de 2.5 toneladas deberán llevar tacógrafo digital instalado y operativo. Sin embargo, datos del sector indican que miles de vehículos aún no han iniciado el proceso. Los talleres autorizados reportan sa
+
+2. 🇲🇽 Uber Freight anticipa temporada alta con demanda México sostenida
+   La plataforma de carga digital detecta un adelanto significativo en la temporada alta de transporte entre Estados Unidos y México. Tradicionalmente concentrada en septiembre-octubre, la demanda elevada comenzó en mayo y se proyecta estable hasta fin de año. El sector de transporte mexicano creció 4.2% en el primer trim
+
+3. 🇪🇸 Wallbox instala primeros cargadores de 360kW en puerto mediterráneo
+   Wallbox desplegó sus primeros cargadores públicos Supernova PowerRing DC en el Port de Sitges, Barcelona. Los equipos ofrecen 360kW de potencia con capacidad para cargar simultáneamente cuatro vehículos comerciales. El tiempo de carga completa para una furgoneta eléctrica se reduce a 18 minutos. La instalación forma pa
+
+4. 🇪🇸 Volkswagen produce primeros EVs asequibles en planta española
+   La planta de Volkswagen en Martorell, Barcelona, inició la producción de los primeros ID.Polo y Cupra Raval, marcando el arranque de la estrategia de EVs asequibles del grupo. Ambos modelos apuntan a un precio final por debajo de 25.000 euros, compitiendo directamente con vehículos de combustión en el segmento B. La ca
+
+5. 🇲🇽 Fruehauf mantiene liderazgo con 35% del mercado de semirremolques
+   Fruehauf consolidó su posición como líder del mercado mexicano de semirremolques durante el primer trimestre de 2026, según datos de la Secretaría de Infraestructura, Comunicaciones y Transportes (SICT). La compañía alcanzó 10.68% de participación en el mercado nacional total y 35% específicamente en el segmento de pla
+
+6. 🇪🇸 V-16 conectada será obligatoria desde enero 2027
+   La Dirección General de Tráfico (DGT) confirmó que las balizas V-16 sin conectividad dejarán de ser válidas a partir del 1 de enero de 2027. Solo se permitirán dispositivos con geolocalización que envíen automáticamente la posición a la plataforma DGT 3.0. El precio actual de una V-16 conectada oscila entre 45 y 80 eur
+
+7. 🇲🇽 SICT otorga concesión del tren Lechería-AIFA a Banobras
+   La Secretaría de Infraestructura, Comunicaciones y Transportes (SICT) formalizó la asignación del ramal ferroviario Lechería-AIFA al Banco Nacional de Obras y Servicios Públicos (Banobras). El título incluye construcción, operación y explotación de la vía, así como la prestación del servicio de pasajeros del suburbano 
+
+8. 🇪🇸 Tecnología VEXA de Mobius gana premio a innovación en leasing
+   La Asociación Española de Leasing y Renting reconoció a la tecnología VEXA de Mobius como 'producto más innovador del año'. El sistema utiliza inteligencia artificial para valoración y peritación automatizada de vehículos, procesando imágenes y datos de mercado en tiempo real. VEXA reduce el tiempo de tasación de 48 ho
+
+9. 🌐 Danfoss aumenta 50% autonomía de maquinaria eléctrica pesada
+   Danfoss desarrolló un sistema hidráulico digital específico para equipos de construcción eléctricos que reduce el consumo energético y aumenta el tiempo de operación en 50%. La nueva bomba hidráulica ajusta presión y flujo en tiempo real según demanda, eliminando pérdidas por sobrepresión. El sistema ya está en pruebas
+
+10. 🌐 BYD aumenta exportaciones 80% con foco en vehículos comerciales
+   BYD reportó un crecimiento del 80% interanual en sus exportaciones durante mayo, alcanzando 42.000 unidades con predominio de vehículos comerciales ligeros. Europa representa el 45% del volumen total, seguida por Latinoamérica con 30% y el resto de Asia con 25%. El precio promedio de exportación se mantiene en 28.000 U
+
+════════════════════════════════════════════════════════════════
+
+ETIQUETAS POR HISTORIA
+──────────────────────
+1. topic:compliance, market:espana, fleet-type:ligero-comercial, sigla:DGT, regulacion:tacografo, plazo:30-dias, multa:2001-4000
+2. topic:logistica-distribucion, market:mexico, fleet-type:transporte-carga, player:uber-freight, corredor:usa-mexico, crecimiento:4.2%, hub:phoenix, temporada:anticipada
+3. topic:electrificacion-flotas, market:espana, fleet-type:ligero-comercial, player:wallbox, potencia:360kw, puerto:sitges, tiempo:18min, inversion:12M
+4. topic:electrificacion-flotas, market:espana, fleet-type:ligero-comercial, player:volkswagen, precio:sub-25000, capacidad:200000, planta:martorell, modelos:id-polo-raval
+5. topic:compliance, market:mexico, fleet-type:transporte-carga, player:fruehauf, sigla:SICT, participacion:35%, crecimiento:8%, segmento:plataformas
+6. topic:compliance, market:espana, fleet-type:flotas-corporativas, sigla:DGT, dispositivo:v16, plazo:2027, precio:45-80, plataforma:dgt-3.0
+7. topic:compliance, market:mexico, fleet-type:construccion, player:banobras, sigla:SICT, inversion:20000M, ruta:lecheria-aifa, tiempo:45min
+8. topic:operacion-flotas, market:espana, fleet-type:flotas-corporativas, player:mobius, tecnologia:vexa, ia:valoracion, tiempo:10min, precision:95%, volumen:15000-mes
+9. topic:electrificacion-flotas, market:global, fleet-type:construccion, player:danfoss, autonomia:50%, runtime:8h, ahorro:30%, sector:construccion
+10. topic:electrificacion-flotas, market:global, fleet-type:ligero-comercial, player:byd, exportaciones:80%, volumen:42000, precio:28000usd, mercados:europa-latam
+
+════════════════════════════════════════════════════════════════
+The Fleet Radar · by Pulpo · Nº 10 · 8 de junio de 2026
+Próxima edición: 15 de junio de 2026 (lunes) — cadencia semanal
+════════════════════════════════════════════════════════════════

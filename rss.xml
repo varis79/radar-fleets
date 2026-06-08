@@ -9,14 +9,26 @@
   <copyright>© 2026 Pulpo · getpulpo.com</copyright>
   <managingEditor>team@getpulpo.com (The Fleet Radar · by Pulpo)</managingEditor>
   <webMaster>team@getpulpo.com (The Fleet Radar · by Pulpo)</webMaster>
-  <lastBuildDate>Mon, 01 Jun 2026 07:00:00 +0200</lastBuildDate>
-  <pubDate>Mon, 01 Jun 2026 07:00:00 +0200</pubDate>
+  <lastBuildDate>Mon, 08 Jun 2026 07:00:00 +0200</lastBuildDate>
+  <pubDate>Mon, 08 Jun 2026 07:00:00 +0200</pubDate>
   <ttl>1440</ttl>
   <image>
     <url>https://thefleetradar.com/og-default.png</url>
     <title>The Fleet Radar · by Pulpo</title>
     <link>https://thefleetradar.com/</link>
   </image>
+
+  <item>
+    <title>Nº 10 · Tacógrafos, carga eléctrica y el pulso México-USA</title>
+    <link>https://thefleetradar.com/magazines/2026-06-08-radar-fleet-by-pulpo.html</link>
+    <guid isPermaLink="true">https://thefleetradar.com/magazines/2026-06-08-radar-fleet-by-pulpo.html</guid>
+    <pubDate>Mon, 08 Jun 2026 07:00:00 +0200</pubDate>
+    <dc:creator>The Fleet Radar · by Pulpo</dc:creator>
+    <category>Fleet management</category>
+    <description><![CDATA[
+      La semana trajo señales claras desde tres frentes. España acelera hacia el tacógrafo obligatorio en furgonetas con menos de 30 días para el cumplimiento, mientras operadores reportan retrasos críticos en la instalación. México consolida su posición logística con Uber Freight anticipando temporada alta y Fruehauf manteniendo 35% del segmento de semirremolques. En electrificación, Wallbox despliega sus primeros cargadores Supernova PowerRing de 360kW en Sitges y Volkswagen arranca producción de EVs asequibles en Martorell.
+    ]]></description>
+  </item>
 
   <item>
     <title>Nº 9 · Hot Sale presiona última milla y Visa entra a gestión de flotas</title>

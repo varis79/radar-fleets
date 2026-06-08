@@ -1,14 +1,14 @@
 {
-  "week": "2026-W23",
+  "week": "2026-W24",
   "steps": [
     {
       "name": "ingest",
       "result": {
-        "week": "2026-W23",
-        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W23-raw.jsonl",
-        "total_items": 157,
+        "week": "2026-W24",
+        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W24-raw.jsonl",
+        "total_items": 160,
         "per_source": {
-          "FleetOwner": 3,
+          "FleetOwner": 7,
           "FreightWaves": 14,
           "Transport Topics": 20,
           "Trucking Dive": 10,
@@ -16,44 +16,47 @@
           "Smart Cities Dive": 10,
           "Electrek": 20,
           "Transport & Energy": 10,
-          "Fleet People ES": 3,
           "AECOC": 0,
           "T21 MX": 10,
           "Mundo Logístico MX": 0,
-          "Inside EVs": 20,
+          "Inside EVs": 19,
           "CleanTechnica · Clean Transport": 20,
-          "GoogleNews · MX · telemática flotas": 0,
-          "GoogleNews · MX · combustible/control gasto": 2,
+          "GoogleNews · MX · telemática flotas": 1,
+          "GoogleNews · MX · combustible/control gasto": 1,
           "GoogleNews · MX · electrificación": 0,
-          "GoogleNews · MX · última milla": 4,
+          "GoogleNews · MX · última milla": 0,
           "GoogleNews · MX · regulación autotransporte": 0,
-          "GoogleNews · ES · vehículos comerciales": 0,
-          "GoogleNews · ES · electrificación flotas": 1,
-          "GoogleNews · ES · ITV/mantenimiento": 0,
-          "GoogleNews · ES · DGT/V-16/ZBE": 0,
-          "GoogleNews · ES · renting/leasing flotas": 0
+          "GoogleNews · ES · vehículos comerciales": 2,
+          "GoogleNews · ES · electrificación flotas": 3,
+          "GoogleNews · ES · ITV/mantenimiento": 1,
+          "GoogleNews · ES · DGT/V-16/ZBE": 1,
+          "GoogleNews · ES · renting/leasing flotas": 1
         },
-        "errors": []
+        "errors": [
+          {
+            "source": "Fleet People ES",
+            "error": "feed-bozo: <unknown>:7:2: mismatched tag"
+          }
+        ]
       }
     },
     {
       "name": "classify",
       "result": {
-        "week": "2026-W23",
-        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W23-classified.jsonl",
-        "total": 157,
-        "with_topic": 113,
-        "with_fleet_type": 13,
-        "with_players": 10,
+        "week": "2026-W24",
+        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W24-classified.jsonl",
+        "total": 160,
+        "with_topic": 111,
+        "with_fleet_type": 9,
+        "with_players": 12,
         "by_market": {
-          "usa": 84,
-          "mexico": 18,
-          "china": 13,
-          "canada": 1,
-          "europa": 11,
-          "espana": 4,
-          "global": 24,
-          "chile": 1,
+          "usa": 80,
+          "mexico": 13,
+          "canada": 3,
+          "china": 11,
+          "espana": 9,
+          "europa": 13,
+          "global": 30,
           "latam": 1
         }
       }
@@ -61,43 +64,38 @@
     {
       "name": "dedupe",
       "result": {
-        "week": "2026-W23",
-        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W23-dedup.jsonl",
-        "in": 157,
-        "after_url_dedup": 157,
-        "after_title_dedup": 157
+        "week": "2026-W24",
+        "path": "/home/runner/work/radar-fleets/radar-fleets/content/raw/2026-W24-dedup.jsonl",
+        "in": 160,
+        "after_url_dedup": 160,
+        "after_title_dedup": 160
       }
     },
     {
       "name": "select",
       "result": {
-        "week": "2026-W23",
+        "week": "2026-W24",
         "mode": "normal",
-        "total_candidates": 156,
-        "total_after_memory_dedup": 156,
+        "total_candidates": 160,
+        "total_after_memory_dedup": 160,
         "total_chosen": 12,
         "warnings": [],
-        "discarded_competitor": [
-          {
-            "id": "d966bed7af593be6",
-            "title": "Impulsando el Futuro: Visa y Mendel Presentan una Solución de Flotas - Revista Movilidad3"
-          }
-        ],
+        "discarded_competitor": [],
         "discarded_repetition": [],
-        "path": "/home/runner/work/radar-fleets/radar-fleets/content/decisions/2026-W23-selection.json"
+        "path": "/home/runner/work/radar-fleets/radar-fleets/content/decisions/2026-W24-selection.json"
       }
     },
     {
       "name": "compose",
       "result": {
         "status": "composed",
-        "week": "2026-W23",
+        "week": "2026-W24",
         "mode": "normal",
-        "number": 9,
-        "edition_date": "2026-06-01",
-        "html_path": "magazines/2026-06-01-radar-fleet-by-pulpo.html",
-        "summary_path": "magazines/2026-06-01-radar-fleet-by-pulpo-summary.txt",
-        "slack_path": "content/decisions/2026-W23-slack.txt",
+        "number": 10,
+        "edition_date": "2026-06-08",
+        "html_path": "magazines/2026-06-08-radar-fleet-by-pulpo.html",
+        "summary_path": "magazines/2026-06-08-radar-fleet-by-pulpo-summary.txt",
+        "slack_path": "content/decisions/2026-W24-slack.txt",
         "llm": {
           "mode": "llm",
           "model": "claude-opus-4-1-20250805"
@@ -111,21 +109,15 @@
       "name": "qa",
       "result": {
         "status": "fail",
-        "week": "2026-W23",
+        "week": "2026-W24",
         "blockers": 1,
-        "warnings": 1,
+        "warnings": 0,
         "issues": [
           {
-            "check": "C3-voice",
+            "check": "C1-framing",
             "severity": "block",
-            "message": "Estructura 'no es X, es Y' detectada",
-            "sample": "No es una tarjeta de combustible más. Es u"
-          },
-          {
-            "check": "C8-claim",
-            "severity": "warn",
-            "message": "porcentaje sin fuente explícita: 25% más (revisar que la cifra tenga contexto)",
-            "sample": "dinámico bien entrenado puede optimizar 25% más rutas que un operador tradicional, just"
+            "message": "Término 'competidor' (visible)",
+            "sample": "competidores"
           }
         ]
       }
@@ -134,12 +126,12 @@
       "name": "publish",
       "result": {
         "status": "published",
-        "week": "2026-W23",
-        "edition_date": "2026-06-01",
-        "number": 9,
+        "week": "2026-W24",
+        "edition_date": "2026-06-08",
+        "number": 10,
         "files_touched": [
-          "magazines/2026-06-01-radar-fleet-by-pulpo.html",
-          "magazines/2026-06-01-radar-fleet-by-pulpo-summary.txt",
+          "magazines/2026-06-08-radar-fleet-by-pulpo.html",
+          "magazines/2026-06-08-radar-fleet-by-pulpo-summary.txt",
           "index.html",
           "archive.html",
           "sitemap.xml",
